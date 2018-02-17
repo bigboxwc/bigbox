@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 class ActivateLicense extends Component {
 	constructor(props) {
@@ -26,7 +27,21 @@ class ActivateLicense extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		alert('A name was submitted: ' + this.state.license);
+
+		axios.get('https://bigbox.dev/edd-api/v2/edd-sl', {
+			params: {
+				edd_action: 'activate_license',
+				license: this.state.license,
+				item_name: encodeURIComponent(BigBoxNUX.itemName),
+				url: BigBoxNUX.domain,
+			}
+		})
+			.then((response) => {
+				console.log(response);
+			})
+			.catch((response) => {
+				console.log(response);
+			});
 	}
 
   render() {

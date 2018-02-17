@@ -97,6 +97,11 @@ class SetupGuide implements Registerable, Service {
 	public function admin_enqueue_scripts() {
 		wp_register_style( 'bigbox-nux', get_template_directory_uri() . '/public/css/nux.min.css' );
 		wp_register_script( 'bigbox-nux', get_template_directory_uri() . '/public/js/nux.min.js' );
+
+		wp_localize_script( 'bigbox-nux', 'BigBoxNUX', [
+			'domain'   => home_url( '/' ),
+			'itemName' => 'BigBox WooCommerce Theme',
+		] );
 	}
 
 	/**
