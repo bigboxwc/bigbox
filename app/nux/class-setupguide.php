@@ -109,6 +109,10 @@ class SetupGuide implements Registerable, Service {
 			'license'  => get_option( 'bigbox_license', '' ),
 			'domain'   => home_url( '/' ),
 			'itemName' => 'BigBox WooCommerce Theme',
+			'i18n'     => [
+				'placeholder' => esc_html__( 'Enter license key...', 'bigbox' ),
+				'activate'    => esc_html__( 'Activate License', 'bigbox' ),
+			],
 		] );
 	}
 
