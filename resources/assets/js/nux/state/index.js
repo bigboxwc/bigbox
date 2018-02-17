@@ -1,13 +1,17 @@
+/**
+ * External dependencies.
+ */
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 
-function reducer(state) {
-	return state;
-};
+/**
+ * Internal dependencies.
+ */
+import { activateLicense } from './ActivateLicense/reducer';
 
 const configureStore = () => createStore(
-  reducer,
-  applyMiddleware(thunkMiddleware),
+	activateLicense,
+	applyMiddleware(thunkMiddleware),
 );
 
 export default configureStore;

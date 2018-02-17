@@ -1,6 +1,11 @@
 #poststuff.bigbox-setup-guide-steps {
   margin: 25px 40px 0 20px;
 
+  @media only screen and (max-width: 500px) {
+    margin-right: 20px;
+    margin-left: 10px;
+  }
+
   .accordion-container {
     border: 1px solid #ddd;
   }
@@ -12,10 +17,48 @@
   h3.hndle {
     padding: 12px 20px;
   }
+
+  p {
+    font-size: 15px;
+  }
+
+  p:first-child,
+  h3 {
+    margin-top: 0;
+  }
 }
 
 .bigbox-setup-guide {
   .about-text {
     min-height: 0;
   }
+}
+
+.bigbox-activate-license {
+  display: flex;
+  align-items: center;
+
+  [type="text"] {
+    font-size: 18px;
+    margin: 0;
+    padding: 10px;
+    width: 350px;
+  }
+
+  .button {
+    font-size: 16px;
+    margin: -1px 0 0 10px;
+    padding: 8px 15px;
+    height: auto;
+  }
+}
+
+.license--status-invalid[type="text"] {
+  border-color: #dc3232;
+  box-shadow: 0 0 2px rgba(220, 50, 50, 0.8);
+}
+
+.license--status-valid[type="text"] {
+  border-color: #32dc66;
+  box-shadow: 0 0 2px rgba(50, 220, 100, 0.8);
 }

@@ -52,6 +52,13 @@ class SetupGuide implements Registerable, Service {
 		add_action( 'admin_menu', [ $this, 'add_menu_item' ] );
 		add_action( 'admin_menu', [ $this, 'add_meta_boxes' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
+
+		register_setting( 'general', 'bigbox_license', [
+			'sanitize_callback' => 'esc_attr',
+			'show_in_rest'      => true,
+			'type'              => 'string',
+			'default'           => 'public',
+		] );
 	}
 
 	/**
@@ -96,9 +103,10 @@ class SetupGuide implements Registerable, Service {
 	 */
 	public function admin_enqueue_scripts() {
 		wp_register_style( 'bigbox-nux', get_template_directory_uri() . '/public/css/nux.min.css' );
-		wp_register_script( 'bigbox-nux', get_template_directory_uri() . '/public/js/nux.min.js' );
+		wp_register_script( 'bigbox-nux', get_template_directory_uri() . '/public/js/nux.min.js', [ 'wp-api' ] );
 
 		wp_localize_script( 'bigbox-nux', 'BigBoxNUX', [
+			'license'  => get_option( 'bigbox_license', '' ),
 			'domain'   => home_url( '/' ),
 			'itemName' => 'BigBox WooCommerce Theme',
 		] );

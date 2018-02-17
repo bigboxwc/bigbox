@@ -14,4 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
+<p><?php esc_html_e( 'Please enter the license key received with your purchase to enable automatic updates and ensure your website stays up to date and secure.', 'bigbox' ); ?></p>
+
 <div id="bigbox-activate-license"></div>

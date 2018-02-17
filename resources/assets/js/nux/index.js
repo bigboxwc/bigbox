@@ -8,12 +8,15 @@ import { Provider } from 'react-redux';
 /**
  * Internal dependencies.
  */
-import configureStore from './store';
-import ActivateLicense from './activate-license.js';
+import '../../scss/nux.scss';
+import configureStore from './state';
+import ActivateLicense from './components/ActivateLicense.js';
 
 const NUX = () => (
 	<Provider store={configureStore()}>
-		<ActivateLicense />
+		<ActivateLicense
+      license={BigBoxNUX.license}
+    />
 	</Provider>
 );
 
