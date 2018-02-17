@@ -9,7 +9,7 @@
  * @author Spencer Finnell
  */
 
-namespace BigBox\Website;
+namespace BigBox;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -107,7 +107,9 @@ final class Theme implements Registerable {
 	 * @return array Array of fully qualified class names.
 	 */
 	private function get_services() {
-		return [];
+		return [
+			NUX\SetupGuide::class,
+		];
 	}
 
 }

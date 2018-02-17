@@ -7,6 +7,7 @@
   "devDependencies": {
     "autoprefixer": "^7.2.4",
     "axios": "^0.17.1",
+    "babel-cli": "^6.26.0",
     "babel-core": "6.26.0",
     "babel-eslint": "8.0.3",
     "babel-jest": "22.0.4",
@@ -17,6 +18,7 @@
     "babel-plugin-transform-react-jsx": "6.24.1",
     "babel-plugin-transform-runtime": "6.23.0",
     "babel-preset-env": "1.6.0",
+    "babel-preset-react": "^6.24.1",
     "babel-traverse": "6.26.0",
     "bootstrap": "^4.0.0",
     "browser-sync": "^2.11.1",
@@ -28,7 +30,12 @@
     "node-sass": "^4.7.2",
     "popper.js": "^1.12.9",
     "postcss-loader": "^2.0.10",
+    "prop-types": "^15.6.0",
     "raw-loader": "^0.5.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.6",
     "svg-sprite-loader": "^3.6.2",
     "svgo": "^1.0.4",
@@ -38,6 +45,7 @@
   "scripts": {
     "build": "cross-env BABEL_ENV=default NODE_ENV=production webpack",
     "dev": "cross-env BABEL_ENV=default webpack --watch",
+    "setup": "npm install && composer install",
     "package-theme": "./bin/build-theme-zip.sh"
   },
   "repository": {

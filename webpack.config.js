@@ -21,17 +21,25 @@ const extractConfig = {
 		},
 		{
 			loader: 'sass-loader',
+      query: {
+        outputStyle: 'production' === process.env.NODE_ENV ? 'compressed' : 'nested',
+      },
 		},
 	],
 };
 
-const cssPlugin = new ExtractTextPlugin( {
+const themeCSS = new ExtractTextPlugin( {
 	filename: './public/css/app.min.css',
 } );
 
-module.exports = {
+const nuxCSS = new ExtractTextPlugin( {
+	filename: './public/css/nux.min.css',
+} );
+
+const config = {
   entry: {
     app: './resources/assets/js/app.js',
+    nux: './resources/assets/js/nux',
   },
 	output: {
 		filename: 'public/js/[name].min.js',
@@ -55,14 +63,20 @@ module.exports = {
 			},
 			{
 				test: /.js$/,
-				loader: 'babel-loader',
+				use: 'babel-loader',
 				exclude: /node_modules/,
 				include: /js/,
 			},
 			{
-				test: /.s?css$/,
-				use: cssPlugin.extract( extractConfig ),
+				test: /nux\.scss$/,
+				use: nuxCSS.extract( extractConfig ),
 				include: /scss/,
+			},
+			{
+				test: /.s?css$/,
+				use: themeCSS.extract( extractConfig ),
+				include: /scss/,
+        exclude: /nux\.scss$/
 			},
 		],
 	},
@@ -73,7 +87,8 @@ module.exports = {
 		new webpack.DefinePlugin( {
 			'process.env.NODE_ENV': JSON.stringify( process.env.NODE_ENV || 'development' ),
 		} ),
-		cssPlugin,
+		nuxCSS,
+		themeCSS,
 		new SpritePlugin(),
 		new webpack.ProvidePlugin( {
 			'$': 'jquery',
@@ -84,3 +99,14 @@ module.exports = {
 		} ),
 	],
 };
+
+switch ( process.env.NODE_ENV ) {
+	case 'production':
+		config.plugins.push( new webpack.optimize.UglifyJsPlugin() );
+		break;
+
+	default:
+		config.devtool = 'source-map';
+}
+
+module.exports = config;

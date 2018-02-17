@@ -1,0 +1,21 @@
+#poststuff.bigbox-setup-guide-steps {
+  margin: 25px 40px 0 20px;
+
+  .accordion-container {
+    border: 1px solid #ddd;
+  }
+
+  .accordion-section:last-child {
+    border-bottom: 0;
+  }
+
+  h3.hndle {
+    padding: 12px 20px;
+  }
+}
+
+.bigbox-setup-guide {
+  .about-text {
+    min-height: 0;
+  }
+}

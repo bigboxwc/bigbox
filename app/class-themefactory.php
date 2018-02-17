@@ -9,7 +9,7 @@
  * @author Spencer Finnell
  */
 
-namespace BigBox\Website;
+namespace BigBox;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.

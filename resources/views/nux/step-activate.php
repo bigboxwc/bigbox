@@ -1,25 +1,17 @@
 <?php
 /**
- * BigBox Exception.
+ * Activate purchase.
  *
  * @since 1.0.0
  *
  * @package BigBox
- * @category Bootstrap
+ * @category NUX
  * @author Spencer Finnell
  */
-
-namespace BigBox\Exception;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+?>
 
-/**
- * BigBox interface.
- *
- * @since 1.0.0
- */
-interface BigBoxException {
-
-}
+<div id="bigbox-activate-license"></div>
