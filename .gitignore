@@ -1,0 +1,8 @@
+.env
+.DS_Store
+*.log
+*.zip
+node_modules
+public
+vendor/autoload.php
+vendor/composer

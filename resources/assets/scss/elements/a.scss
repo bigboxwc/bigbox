@@ -1,0 +1,9 @@
+a {
+  color: gray(600);
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+
+  &:hover {
+    color: theme-color('primary');
+  }
+}

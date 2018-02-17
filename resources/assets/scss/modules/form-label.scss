@@ -1,0 +1,14 @@
+.form-label {
+  @include form-label;
+}
+
+.form-label--checkbox {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  margin: 0;
+
+  span {
+    margin-left: 5px;
+  }
+}

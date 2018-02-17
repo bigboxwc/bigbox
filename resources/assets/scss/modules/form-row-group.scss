@@ -1,0 +1,8 @@
+.form-row-group {
+  display: flex;
+  justify-content: space-between;
+
+  &:last-child {
+    margin-bottom: -1rem;
+  }
+}

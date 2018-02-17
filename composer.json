@@ -1,0 +1,15 @@
+{
+	"name": "bigbox/website",
+	"description": "WooCommerce solutions for large stores.",
+	"type": "wordpress-theme",
+	"license": "GPL-3.0",
+	"authors": [
+		{
+			"name": "Spencer Finnell",
+			"email": "spencerfinnell@gmail.com"
+		}
+	],
+	"autoload": {
+		"classmap": ["app/"]
+	}
+}

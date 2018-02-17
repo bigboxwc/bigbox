@@ -1,0 +1,35 @@
+.button {
+	@include button--primary;
+}
+
+.button__pill {
+  color: gray(500);
+  font-size: 14px;
+  margin: 0 0 0 8px;
+  padding: 3px 10px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 40px;
+  display: flex;
+  align-items: baseline;
+
+  sub {
+    font-size: 11px;
+    opacity: 0.60;
+  }
+}
+
+.button--blank {
+  @include button--blank;
+}
+
+.button--danger {
+	@include button--danger;
+}
+
+.button--size-sm {
+  @include button--size-sm;
+}
+
+.button--size-block {
+  @include button--size-block;
+}

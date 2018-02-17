@@ -1,0 +1,43 @@
+.form-input {
+  @include form-input;
+
+  + .button {
+    margin-left: 1rem;
+  }
+}
+
+textarea,
+[type="email"],
+[type="search"],
+[type="tel"],
+[type="url"],
+[type="password"],
+[type="text"] {
+  width: 100%;
+  display: block;
+}
+
+button {
+  @include button;
+}
+
+[type="checkbox"] {
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-input-placeholder {
+  color: gray(300);
+}
+
+::-moz-placeholder {
+  color: gray(300);
+}
+
+:-ms-input-placeholder {
+  color: gray(300);
+}
+
+:-moz-placeholder {
+  color: gray(300);
+}
