@@ -2,7 +2,6 @@
  * External dependencies.
  */
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
@@ -11,30 +10,51 @@ import classNames from 'classnames';
  * Internal dependencies.
  */
 import { activateLicense } from './../state/ActivateLicense/actions.js';
+import { INITIAL_STATE } from './../state/ActivateLicense/reducer.js';
+
+// i18n bootstrapped in page.
+const {
+	licensePlaceholder,
+	licenseSubmit,
+	licenseValid,
+	licenseInvalid,
+	licenseLabel,
+} = BigBoxNUX.i18n;
 
 class ActivateLicense extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			license: props.license,
-		};
+		this.state = INITIAL_STATE;
 
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	componentWillMount() {
-		this.props.activateLicense(this.props.license);
+	componentWillReceiveProps(nextProps) {
+		this.setState(nextProps);
 	}
 
+	// Check license on page load.
+	componentDidMount() {
+		const {
+			activateLicense,
+			license,
+		} = this.props;
+
+		activateLicense(license);
+	}
+
+	// License key changed.
 	handleChange(event) {
 		this.setState({
+			license: event.target.value,
 			validLicense: false,
-			license: event.target.value
+			isSubmitting: false,
 		});
 	}
 
+	// Activate site on submit.
 	handleSubmit(event) {
 		event.preventDefault();
 
@@ -42,18 +62,25 @@ class ActivateLicense extends Component {
 	}
 
 	render() {
-		const inputClass = classNames({
+		const {
+			license,
+			validLicense,
+			isSubmitting
+		} = this.state;
+
+		const licenseClass = classNames({
 			'license': true,
-			[`license--status-${this.props.validLicense ? 'valid' : 'invalid'}`]: true,
+			[`license--status-${validLicense ? 'valid' : 'invalid'}`]: true,
 		});
 
 		return [
 			<form key="enter-license" className="bigbox-activate-license" onSubmit={this.handleSubmit}>
-				<input type="text" name="license" className={inputClass} value={this.state.license} onChange={this.handleChange} placeholde={BigBoxNUX.i18n.placeholder} />
-				<input type="submit" name="submit" className="button button-large button-primary" value={BigBoxNUX.i18n.activate} disabled={this.props.isSubmitting} />
+				<input type="text" name="license" className={licenseClass} value={license} onChange={this.handleChange} placeholder={licensePlaceholder} />
+				<input type="submit" name="submit" className="button button-large button-primary" value={licenseSubmit} disabled={isSubmitting || validLicense} />
 			</form>,
+			
 			<p key="license-status">
-				<strong>License:</strong> <span className={inputClass}>{this.props.validLicense ? 'Valid' : 'Invalid'}</span>
+				<strong>{licenseLabel}:</strong> <span className={licenseClass}>{validLicense ? licenseValid : licenseInvalid}</span>
 			</p>
 		];
 	}
@@ -61,7 +88,7 @@ class ActivateLicense extends Component {
 
 const mapStateToProps = (state, ownProps) => {
 	return {
-		license: state.license || ownProps.license,
+		license: (state.license || ownProps.license) || '',
 		validLicense: state.validLicense || false,
 		isSubmitting: state.isSubmitting || false,
 	};
