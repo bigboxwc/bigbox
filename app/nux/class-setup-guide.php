@@ -11,6 +11,7 @@
 
 namespace BigBox\NUX;
 
+use BigBox\ThemeFactory;
 use BigBox\Registerable;
 use BigBox\Service;
 
@@ -38,10 +39,6 @@ class Setup_Guide implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function register() {
-		// Register license manager.
-		// @todo Don't instantiate here.
-		( new License_Manager() )->register();
-
 		$this->steps = [
 			'license-manager'     => [
 				'label' => __( 'Enable Automatic Updates', 'bigbox' ),
@@ -54,9 +51,18 @@ class Setup_Guide implements Registerable, Service {
 			],
 		];
 
-		add_action( 'admin_menu', [ $this, 'add_menu_item' ] );
-		add_action( 'admin_menu', [ $this, 'add_meta_boxes' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
+		add_action( 'admin_menu', [ $this, 'add_menu_item' ] );
+		add_action( 'admin_menu', [ $this, 'add_meta_boxes' ], 20 );
+	}
+
+	/**
+	 * Enqueue scripts/styles.
+	 *
+	 * @since 1.0.0
+	 */
+	public function admin_enqueue_scripts() {
+		wp_register_style( 'bigbox-nux', get_template_directory_uri() . '/public/css/nux.min.css' );
 	}
 
 	/**
@@ -76,6 +82,15 @@ class Setup_Guide implements Registerable, Service {
 	}
 
 	/**
+	 * Output page contents.
+	 *
+	 * @since 1.0.0
+	 */
+	public function output_page() {
+		bigbox_view( 'nux/admin-page' );
+	}
+
+	/**
 	 * Add a metabox for each step.
 	 *
 	 * @since 1.0.0
@@ -92,24 +107,6 @@ class Setup_Guide implements Registerable, Service {
 				array_merge( [ 'step' => $key ], $step )
 			);
 		}
-	}
-
-	/**
-	 * Enqueue scripts/styles.
-	 *
-	 * @since 1.0.0
-	 */
-	public function admin_enqueue_scripts() {
-		wp_register_style( 'bigbox-nux', get_template_directory_uri() . '/public/css/nux.min.css' );
-	}
-
-	/**
-	 * Output page contents.
-	 *
-	 * @since 1.0.0
-	 */
-	public function output_page() {
-		bigbox_view( 'nux/admin-page' );
 	}
 
 	/**
