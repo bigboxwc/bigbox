@@ -39,13 +39,14 @@ class SetupGuide implements Registerable, Service {
 	 */
 	public function register() {
 		$this->steps = [
-			'activate'        => [
-				'label'     => __( 'Enable Automatic Updates', 'bigbox' ),
-				'completed' => false,
+			'activate'            => [
+				'label' => __( 'Enable Automatic Updates', 'bigbox' ),
 			],
-			'install-plugins' => [
-				'label'     => __( 'Install Plugins', 'bigbox' ),
-				'completed' => false,
+			'install-plugins'     => [
+				'label' => __( 'Recommended Plugins', 'bigbox' ),
+			],
+			'install-woocommerce' => [
+				'label' => __( 'Install WooCommerce', 'bigbox' ),
 			],
 		];
 
@@ -73,7 +74,7 @@ class SetupGuide implements Registerable, Service {
 			'edit_theme_options',
 			'bigbox',
 			[ $this, 'output_page' ],
-			''
+			'dashicons-store'
 		);
 	}
 
@@ -134,7 +135,7 @@ class SetupGuide implements Registerable, Service {
 	 * @param array $metabox Current metabox arguments.
 	 */
 	public function step( $null, $metabox ) {
-		bigbox_view( 'nux/step-' . $metabox['args']['step'], [
+		bigbox_view( 'nux/steps/' . $metabox['args']['step'], [
 			'step' => $metabox['args'],
 		] );
 	}

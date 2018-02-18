@@ -50,7 +50,7 @@ class ActivateLicense extends Component {
 		return (
 			<form className="bigbox-activate-license" onSubmit={this.handleSubmit}>
 				<input type="text" name="license" className={inputClass} value={this.state.license} onChange={this.handleChange} placeholde={BigBoxNUX.i18n.placeholder} />
-				<input type="submit" name="submit" className="button button-primary" value={BigBoxNUX.i18n.activate} disabled={this.props.isSubmitting} />
+				<input type="submit" name="submit" className="button button-large button-primary" value={BigBoxNUX.i18n.activate} disabled={this.props.isSubmitting} />
 			</form>
 		);
 	}

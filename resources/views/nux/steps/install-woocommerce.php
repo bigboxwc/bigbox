@@ -1,6 +1,6 @@
 <?php
 /**
- * Install plugins.
+ * Install recommended plugins.
  *
  * @since 1.0.0
  *
@@ -12,6 +12,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-?>
 
-Install plugins.
+$plugin = new BigBox\NUX\WooCommerce_ListTable();
+$plugin->prepare_items();
+$plugin->display();
