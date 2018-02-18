@@ -58,6 +58,7 @@ class Theme_Updater implements Registerable {
 		add_filter( 'delete_site_transient_update_themes', [ $this, 'delete_theme_update_transient' ] );
 		add_action( 'load-update-core.php', [ $this, 'delete_theme_update_transient' ] );
 		add_action( 'load-themes.php', [ $this, 'delete_theme_update_transient' ] );
+		add_filter( 'http_request_args', [ $this, 'disable_wporg_request' ], 5, 2 );
 	}
 
 	/**
@@ -149,6 +150,33 @@ class Theme_Updater implements Registerable {
 		}
 
 		return (array) $update_data;
+	}
+
+	/**
+	 * Disable requests to wp.org repository for this theme.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array  $request Request to .org.
+	 * @param string $url URL to check.
+	 * @return array
+	 */
+	public function disable_wporg_request( $request, $url ) {
+		// If it's not a theme update request, bail.
+		if ( 0 !== strpos( $url, 'https://api.wordpress.org/themes/update-check/1.1/' ) ) {
+			return $request;
+		}
+
+		$themes = json_decode( $request['body']['themes'] );
+		$parent = get_option( 'template' );
+		$child  = get_option( 'stylesheet' );
+
+		unset( $themes->themes->$parent );
+		unset( $themes->themes->$child );
+
+		$request['body']['themes'] = wp_json_encode( $themes );
+
+		return $request;
 	}
 
 }
