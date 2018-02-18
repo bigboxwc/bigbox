@@ -98,6 +98,7 @@ class WooCommerce_ListTable extends \WP_Plugin_Install_List_Table {
 	 * @since 1.0.0
 	 */
 	public function display() {
+		add_thickbox();
 		wp_enqueue_script( 'plugin-install' );
 		wp_enqueue_script( 'updates' );
 
