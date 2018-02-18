@@ -1,5 +1,4 @@
-// @todo cleanup
-
+// All panels
 #poststuff.bigbox-setup-guide-steps {
   margin: 15px 40px 0 20px;
 
@@ -26,13 +25,13 @@
   }
 }
 
-.helpful-links {
-  margin-bottom: 0;
-}
-
 .bigbox-setup-guide {
   .about-text {
     min-height: 0;
+  }
+
+  .helpful-links {
+    margin-bottom: 0;
   }
 }
 
@@ -50,12 +49,6 @@
   .button {
     margin: -1px 0 0 10px;
   }
-}
-
-.button.button-primary.button-large {
-  font-size: 16px;
-  padding: 8px 15px;
-  height: auto;
 }
 
 .license--status-invalid[type="text"] {
@@ -90,6 +83,12 @@
     border: 0;
     width: 100%;
   }
+}
+
+.button.button-primary.button-large {
+  font-size: 16px;
+  padding: 8px 20px;
+  height: auto;
 }
 
 .nux-panel-cta {

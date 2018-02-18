@@ -43,7 +43,7 @@ function bigbox_enqueue_scripts() {
 		'wp-api',
 	];
 
-	// Combined application scripts. See `gulpfile.js` for more.
+	// Combined application scripts.
 	wp_enqueue_script( $stylesheet, get_template_directory_uri() . '/public/js/app.min.js', $deps, $version, true );
 
 	// Send information to application scripts.
