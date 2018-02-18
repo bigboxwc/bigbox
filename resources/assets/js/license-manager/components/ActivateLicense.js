@@ -19,7 +19,7 @@ const {
 	licenseValid,
 	licenseInvalid,
 	licenseLabel,
-} = BigBoxNUX.i18n;
+} = BigBoxLicenseManager.i18n;
 
 class ActivateLicense extends Component {
 	constructor(props) {

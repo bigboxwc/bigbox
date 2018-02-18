@@ -42,12 +42,12 @@ export function activateLicense(license = '') {
 			type: LICENSE_REQUEST,
 		});
 
-		axios.get('https://bigbox.dev', {
+		axios.get(BigBoxLicenseManager.remote.apiRoot, {
 			params: {
 				edd_action: 'activate_license',
 				license: license,
-				item_name: encodeURIComponent(BigBoxNUX.itemName),
-				url: BigBoxNUX.domain,
+				item_name: encodeURIComponent(BigBoxLicenseManager.remote.itemName),
+				url: BigBoxLicenseManager.local.domain,
 			}
 		})
 			.then((response) => {

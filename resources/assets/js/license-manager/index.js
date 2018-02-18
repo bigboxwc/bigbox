@@ -8,19 +8,18 @@ import { Provider } from 'react-redux';
 /**
  * Internal dependencies.
  */
-import '../../scss/nux.scss';
 import configureStore from './state';
 import ActivateLicense from './components/ActivateLicense.js';
 
 const NUX = () => (
 	<Provider store={configureStore()}>
 		<ActivateLicense
-      license={BigBoxNUX.license}
+      license={BigBoxLicenseManager.local.license}
     />
 	</Provider>
 );
 
 ReactDOM.render(
 	<NUX />,
-	document.getElementById('bigbox-activate-license')
+	document.getElementById('bigbox-license-manager')
 );

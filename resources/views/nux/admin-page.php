@@ -14,7 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 wp_enqueue_style( 'bigbox-nux' );
-wp_enqueue_script( 'bigbox-nux' );
 ?>
 
 <div class="wrap about-wrap bigbox-setup-guide">

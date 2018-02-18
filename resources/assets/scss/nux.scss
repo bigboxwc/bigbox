@@ -39,6 +39,41 @@
   }
 }
 
+#poststuff .install-plugins {
+  .inside,
+  .accordion-section-content {
+    margin: 0;
+  }
+
+  .plugin-list {
+    overflow: hidden;
+  }
+}
+
+#poststuff .install-woocommerce {
+  .accordion-section-content {
+    padding: 0;
+  }
+
+  .plugin-card {
+    float: none;
+    margin: 0;
+    border: 0;
+    width: 100%;
+  }
+}
+
+.button.button-primary.button-large {
+  font-size: 16px;
+  padding: 8px 20px;
+  height: auto;
+}
+
+.nux-panel-cta {
+  text-align: center;
+  margin: 1rem 0;
+}
+
 .bigbox-activate-license {
   display: flex;
   align-items: center;
@@ -73,39 +108,4 @@
     border-color: #00be30;
     box-shadow: 0 0 2px rgba(#00be30, 0.8);
   }
-}
-
-#poststuff .install-plugins {
-  .inside,
-  .accordion-section-content {
-    margin: 0;
-  }
-
-  .plugin-list {
-    overflow: hidden;
-  }
-}
-
-#poststuff .install-woocommerce {
-  .accordion-section-content {
-    padding: 0;
-  }
-
-  .plugin-card {
-    float: none;
-    margin: 0;
-    border: 0;
-    width: 100%;
-  }
-}
-
-.button.button-primary.button-large {
-  font-size: 16px;
-  padding: 8px 20px;
-  height: auto;
-}
-
-.nux-panel-cta {
-  text-align: center;
-  margin: 1rem 0;
 }

@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class SetupGuide implements Registerable, Service {
+class Setup_Guide implements Registerable, Service {
 
 	/**
 	 * Steps to use for guide meta boxes.
@@ -38,8 +38,12 @@ class SetupGuide implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function register() {
+		// Register license manager.
+		// @todo Don't instantiate here.
+		( new License_Manager() )->register();
+
 		$this->steps = [
-			'activate'            => [
+			'license-manager'     => [
 				'label' => __( 'Enable Automatic Updates', 'bigbox' ),
 			],
 			'install-plugins'     => [
@@ -53,13 +57,6 @@ class SetupGuide implements Registerable, Service {
 		add_action( 'admin_menu', [ $this, 'add_menu_item' ] );
 		add_action( 'admin_menu', [ $this, 'add_meta_boxes' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
-
-		register_setting( 'general', 'bigbox_license', [
-			'sanitize_callback' => 'esc_attr',
-			'show_in_rest'      => true,
-			'type'              => 'string',
-			'default'           => 'public',
-		] );
 	}
 
 	/**
@@ -104,20 +101,6 @@ class SetupGuide implements Registerable, Service {
 	 */
 	public function admin_enqueue_scripts() {
 		wp_register_style( 'bigbox-nux', get_template_directory_uri() . '/public/css/nux.min.css' );
-		wp_register_script( 'bigbox-nux', get_template_directory_uri() . '/public/js/nux.min.js', [ 'wp-api' ] );
-
-		wp_localize_script( 'bigbox-nux', 'BigBoxNUX', [
-			'license'  => get_option( 'bigbox_license', '' ),
-			'domain'   => home_url( '/' ),
-			'itemName' => 'BigBox WooCommerce Theme',
-			'i18n'     => [
-				'licensePlaceholder' => esc_html__( 'Enter license key...', 'bigbox' ),
-				'licenseSubmit'      => esc_html__( 'Activate License', 'bigbox' ),
-				'licenseLabel'       => esc_html__( 'License', 'bigbox' ),
-				'licenseValid'       => esc_html__( 'Valid', 'bigbox' ),
-				'licenseInvalid'     => esc_html__( 'Invalid', 'bigbox' ),
-			],
-		] );
 	}
 
 	/**

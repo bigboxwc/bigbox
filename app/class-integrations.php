@@ -30,7 +30,7 @@ final class Integrations implements Registerable, Service {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @throws Exception\InvalidService If a service is not valid.
+	 * @throws Exception\InvalidService If a integration is not valid.
 	 */
 	public function register() {
 		add_action( 'after_setup_theme', [ $this, 'register_integrations' ], 5 );
@@ -62,7 +62,7 @@ final class Integrations implements Registerable, Service {
 	 * @param string $class Integration class to instantiate.
 	 *
 	 * @return Service
-	 * @throws Exception\InvalidIntegration If the service is not valid.
+	 * @throws Exception\InvalidIntegration If the integration is not valid.
 	 */
 	public function instantiate_integration( $class ) {
 		if ( ! class_exists( $class ) ) {
