@@ -108,6 +108,7 @@ final class Theme implements Registerable {
 	 */
 	private function get_services() {
 		return [
+			Integrations::class,
 			NUX\SetupGuide::class,
 		];
 	}

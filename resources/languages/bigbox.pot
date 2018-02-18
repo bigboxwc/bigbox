@@ -1,0 +1,109 @@
+# Copyright (C) 2018 Spencer Finnell
+# This file is distributed under the GNU General Public License v3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: BigBox @@pkg.version\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/bigbox-theme\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2018-02-18T01:32:40+00:00\n"
+"PO-Revision-Date: 2018-02-18T01:32:40+00:00\n"
+"X-Domain: bigbox\n"
+
+#: functions.php:29
+msgid "BigBox requires PHP version <code>%s</code> or above to be active. Please contact your web host to upgrade."
+msgstr ""
+
+#: app/nux/class-setupguide.php:43
+msgid "Enable Automatic Updates"
+msgstr ""
+
+#: app/nux/class-setupguide.php:46
+msgid "Recommended Plugins"
+msgstr ""
+
+#: app/nux/class-setupguide.php:49
+msgid "Install WooCommerce"
+msgstr ""
+
+#. Theme Name of the theme
+#: app/nux/class-setupguide.php:72
+#: app/nux/class-setupguide.php:73
+msgid "BigBox"
+msgstr ""
+
+#: app/nux/class-setupguide.php:114
+msgid "Enter license key..."
+msgstr ""
+
+#: app/nux/class-setupguide.php:115
+msgid "Activate License"
+msgstr ""
+
+#: app/theme/svg.php:59
+msgid "Please define an SVG icon filename."
+msgstr ""
+
+#: app/exception/class-invalidintegration.php:37
+msgid "The integration \"%s\" is not recognized and cannot be registered."
+msgstr ""
+
+#: app/exception/class-invalidservice.php:37
+msgid "The service \"%s\" is not recognized and cannot be registered."
+msgstr ""
+
+#: resources/views/nux/admin-page.php:21
+msgid "🎉 Welcome to BigBox"
+msgstr ""
+
+#: resources/views/nux/admin-page.php:24
+msgid "Use the steps below to finish setting up your new website."
+msgstr ""
+
+#: resources/views/nux/admin-page.php:28
+msgid "Search Documentation"
+msgstr ""
+
+#: resources/views/nux/admin-page.php:29
+msgid "Contact Support"
+msgstr ""
+
+#: resources/views/nux/steps/install-plugins.php:51
+#: resources/views/nux/steps/install-plugins.php:52
+msgid "Get %s"
+msgstr ""
+
+#: resources/views/nux/steps/install-plugins.php:56
+msgid "More information about %s"
+msgstr ""
+
+#: resources/views/nux/steps/install-plugins.php:57
+msgid "More Details"
+msgstr ""
+
+#: resources/views/nux/steps/install-plugins.php:74
+msgid "Read More on the Blog"
+msgstr ""
+
+#: resources/views/nux/steps/activate.php:17
+msgid "Please enter the license key received with your purchase to enable automatic updates and ensure your website stays up to date and secure."
+msgstr ""
+
+#. Theme URI of the theme
+msgid "https://bigboxwp.com"
+msgstr ""
+
+#. Description of the theme
+msgid "WooCommerce theme for large product catalogs."
+msgstr ""
+
+#. Author of the theme
+msgid "Spencer Finnell"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://spencerfinnell.com/"
+msgstr ""

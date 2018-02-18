@@ -55,7 +55,7 @@ status "Installing dependencies..."
 npm install
 composer install
 status "Creating language files..."
-wp i18n make-pot .
+wp i18n make-pot . resources/languages/bigbox.pot --domain=bigbox
 status "Generating build..."
 npm run build
 

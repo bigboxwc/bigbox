@@ -33,3 +33,18 @@ function bigbox_get_theme_version() {
 
 	return $version;
 }
+
+/**
+ * Determine if an integration is active.
+ *
+ * @since 1.0.0
+ *
+ * @param string $integration Integration to check.
+ * @return bool
+ */
+function bigbox_is_integration_active( $integration ) {
+	$integrations = new BigBox\Integrations();
+	$integration  = $integrations->instantiate_integration( $integrations->get_integrations()[ $integration ] );
+
+	return $integration->is_active();
+}

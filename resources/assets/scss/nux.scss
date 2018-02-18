@@ -23,6 +23,10 @@
   h3 {
     margin-top: 0;
   }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .bigbox-setup-guide {
@@ -51,14 +55,23 @@
   }
 }
 
-.license--status-invalid[type="text"] {
-  border-color: #dc3232;
-  box-shadow: 0 0 2px rgba(220, 50, 50, 0.8);
+.license--status-invalid {
+  color: #dc3232;
+
+  &[type="text"] {
+    border-color: #dc3232;
+    box-shadow: 0 0 2px rgba(220, 50, 50, 0.8);
+  }
 }
 
-.license--status-valid[type="text"] {
-  border-color: #00be30;
-  box-shadow: 0 0 2px rgba(#00be30, 0.8);
+.license--status-valid {
+  color: #00be30;
+
+  &[type="text"] {
+    color: #00be30;
+    border-color: #00be30;
+    box-shadow: 0 0 2px rgba(#00be30, 0.8);
+  }
 }
 
 #poststuff .install-plugins {
