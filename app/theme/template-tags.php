@@ -44,7 +44,8 @@ function bigbox_get_theme_version() {
  */
 function bigbox_is_integration_active( $integration ) {
 	$integrations = new BigBox\Integrations();
-	$integration  = $integrations->instantiate_integration( $integrations->get_integrations()[ $integration ] );
 
-	return $integration->is_active();
+	return $integrations
+		->instantiate_integration( $integrations->get_integrations()[ $integration ] )
+		->is_active();
 }
