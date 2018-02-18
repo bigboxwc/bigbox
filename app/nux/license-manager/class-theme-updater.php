@@ -31,11 +31,40 @@ class Theme_Updater implements Registerable, Service {
 	 * @var string $remote_api_url
 	 */
 	private $remote_api_url;
-	private $request_data;
+
+	/**
+	 * Response key and transient key.
+	 *
+	 * @var string $response_key
+	 */
 	private $response_key;
+
+	/**
+	 * Theme slug.
+	 *
+	 * @var string $theme_slug
+	 */
 	private $theme_slug;
+
+	/**
+	 * Current license skey.
+	 *
+	 * @var string $license_key
+	 */
 	private $license_key;
+
+	/**
+	 * Current theme version.
+	 *
+	 * @var string $version
+	 */
 	private $version;
+
+	/**
+	 * Current theme author.
+	 *
+	 * @var string $author
+	 */
 	private $author;
 
 	/**
@@ -47,7 +76,7 @@ class Theme_Updater implements Registerable, Service {
 		$this->license        = get_option( 'bigbox_license', '' );
 		$this->item_name      = 'BigBox WooCommerce Theme';
 		$this->version        = bigbox_get_theme_version();
-		$this->theme_slug     = 'bigbox';
+		$this->theme_slug     = 'bigbox-theme';
 		$this->author         = 'Spencer Finnell';
 		$this->beta           = false;
 		$this->remote_api_url = 'https://bigbox.dev/';
@@ -114,8 +143,9 @@ class Theme_Updater implements Registerable, Service {
 			$response = wp_remote_post(
 				$this->remote_api_url,
 				[
-					'timeout' => 15,
-					'body'    => $api_params,
+					'timeout'   => 5,
+					'body'      => $api_params,
+					'sslverify' => false,
 				]
 			);
 
@@ -132,16 +162,13 @@ class Theme_Updater implements Registerable, Service {
 
 			// If the response failed, try again in 30 minutes.
 			if ( $failed ) {
-				$data              = new \stdClass();
-				$data->new_version = $this->version;
+				$update_data              = new \stdClass();
+				$update_data->new_version = $this->version;
 
-				set_transient( $this->response_key, $data, strtotime( '+30 minutes', current_time( 'timestamp' ) ) );
+				set_transient( $this->response_key, $update_data, strtotime( '+30 minutes', current_time( 'timestamp' ) ) );
 
 				return false;
-			}
-
-			// If the status is 'ok', return the update arguments.
-			if ( ! $failed ) {
+			} else {
 				$update_data->sections = maybe_unserialize( $update_data->sections );
 
 				set_transient( $this->response_key, $update_data, strtotime( '+12 hours', current_time( 'timestamp' ) ) );
