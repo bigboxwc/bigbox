@@ -26,11 +26,54 @@ if ( ! defined( 'ABSPATH' ) ) {
 class License_Manager implements Registerable, Service {
 
 	/**
+	 * API URL to query against.
+	 *
+	 * @var string $remote_api_url
+	 */
+	private $remote_api_url;
+
+	/**
+	 * Theme slug.
+	 *
+	 * @var string $theme_slug
+	 */
+	private $theme_slug;
+
+	/**
+	 * Current license skey.
+	 *
+	 * @var string $license_key
+	 */
+	private $license_key;
+
+	/**
+	 * Current theme version.
+	 *
+	 * @var string $version
+	 */
+	private $version;
+
+	/**
 	 * Connect to WordPress.
 	 *
 	 * @since 1.0.0
 	 */
 	public function register() {
+		$this->license        = get_option( 'bigbox_license', '' );
+		$this->item_name      = 'BigBox WooCommerce Theme';
+		$this->version        = bigbox_get_theme_version();
+		$this->theme_slug     = 'bigbox-theme';
+		$this->remote_api_url = 'https://bigbox.dev/';
+
+		// Register automatic updater with args.
+		( new License_Manager\Theme_Updater() )->register( [
+			'license'        => $this->license,
+			'item_name'      => $this->item_name,
+			'version'        => $this->version,
+			'theme_slug'     => $this->theme_slug,
+			'remote_api_url' => $this->remote_api_url,
+		] );
+
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
 
 		register_setting( 'general', 'bigbox_license', [
@@ -50,11 +93,11 @@ class License_Manager implements Registerable, Service {
 		wp_register_script( 'bigbox-license-manager', get_template_directory_uri() . '/public/js/license-manager.min.js', [ 'wp-api' ] );
 		wp_localize_script( 'bigbox-license-manager', 'BigBoxLicenseManager', [
 			'remote' => [
-				'apiRoot'  => 'https://bigbox.dev/',
-				'itemName' => 'BigBox WooCommerce Theme',
+				'apiRoot'  => $this->remote_api_url,
+				'itemName' => $this->item_name,
 			],
 			'local'  => [
-				'license' => get_option( 'bigbox_license', '' ),
+				'license' => $this->license,
 				'domain'  => home_url( '/' ),
 			],
 			'i18n'   => [

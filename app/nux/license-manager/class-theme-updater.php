@@ -12,7 +12,6 @@
 namespace BigBox\NUX\License_Manager;
 
 use BigBox\Registerable;
-use BigBox\Service;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -23,14 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Theme_Updater implements Registerable, Service {
-
-	/**
-	 * API URL to query against.
-	 *
-	 * @var string $remote_api_url
-	 */
-	private $remote_api_url;
+class Theme_Updater implements Registerable {
 
 	/**
 	 * Response key and transient key.
@@ -40,47 +32,22 @@ class Theme_Updater implements Registerable, Service {
 	private $response_key;
 
 	/**
-	 * Theme slug.
+	 * Arguments.
 	 *
-	 * @var string $theme_slug
+	 * @var array $args
 	 */
-	private $theme_slug;
-
-	/**
-	 * Current license skey.
-	 *
-	 * @var string $license_key
-	 */
-	private $license_key;
-
-	/**
-	 * Current theme version.
-	 *
-	 * @var string $version
-	 */
-	private $version;
-
-	/**
-	 * Current theme author.
-	 *
-	 * @var string $author
-	 */
-	private $author;
+	private $args;
 
 	/**
 	 * Connect to WordPress.
 	 *
+	 * @param array $args Extended arguments.
+	 *
 	 * @since 1.0.0
 	 */
-	public function register() {
-		$this->license        = get_option( 'bigbox_license', '' );
-		$this->item_name      = 'BigBox WooCommerce Theme';
-		$this->version        = bigbox_get_theme_version();
-		$this->theme_slug     = 'bigbox-theme';
-		$this->author         = 'Spencer Finnell';
-		$this->beta           = false;
-		$this->remote_api_url = 'https://bigbox.dev/';
-		$this->response_key   = 'bigbox-update-response';
+	public function register( $args = [] ) {
+		$this->response_key = 'bigbox-update-response';
+		$this->args         = $args;
 
 		add_filter( 'site_transient_update_themes', [ $this, 'theme_update_transient' ] );
 		add_filter( 'delete_site_transient_update_themes', [ $this, 'delete_theme_update_transient' ] );
@@ -101,7 +68,7 @@ class Theme_Updater implements Registerable, Service {
 		$update_data = $this->check_for_update();
 
 		if ( $update_data ) {
-			$value->response[ $this->theme_slug ] = $update_data;
+			$value->response[ $this->args['theme_slug'] ] = $update_data;
 		}
 
 		return $value;
@@ -130,21 +97,18 @@ class Theme_Updater implements Registerable, Service {
 		if ( false === $update_data ) {
 			$failed = false;
 
-			$api_params = [
-				'edd_action' => 'get_version',
-				'license'    => $this->license,
-				'name'       => $this->item_name,
-				'slug'       => $this->theme_slug,
-				'version'    => $this->version,
-				'author'     => $this->author,
-				'beta'       => $this->beta,
-			];
-
 			$response = wp_remote_post(
-				$this->remote_api_url,
+				$this->args['remote_api_url'],
 				[
 					'timeout'   => 5,
-					'body'      => $api_params,
+					'body'      => [
+						'edd_action' => 'get_version',
+						'license'    => $this->args['license'],
+						'name'       => $this->args['item_name'],
+						'slug'       => $this->args['theme_slug'],
+						'version'    => $this->args['version'],
+						'beta'       => false,
+					],
 					'sslverify' => false,
 				]
 			);
