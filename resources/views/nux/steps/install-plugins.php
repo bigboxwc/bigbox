@@ -53,7 +53,7 @@ $plugins = [
 						</a>
 					</li>
 					<li>
-						<a href="<?php echo esc_url( $data['url'] ); ?>" aria-label="<?php esc_attr( sprintf( __( 'More information about %s', 'bigbox' ), $data['label'] ) ); ?>">
+						<a href="<?php echo esc_url( $data['more'] ); ?>" aria-label="<?php esc_attr( sprintf( __( 'More information about %s', 'bigbox' ), $data['label'] ) ); ?>">
 							<?php esc_html_e( 'More Details', 'bigbox' ); ?>
 						</a>
 					</li>

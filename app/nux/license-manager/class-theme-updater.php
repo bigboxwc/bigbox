@@ -46,6 +46,11 @@ class Theme_Updater implements Registerable {
 	 * @since 1.0.0
 	 */
 	public function register( $args = [] ) {
+		// Disable on debug.
+		if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
+			return true;
+		}
+
 		$this->response_key = 'bigbox-update-response';
 		$this->args         = $args;
 
@@ -127,7 +132,7 @@ class Theme_Updater implements Registerable {
 			// If the response failed, try again in 30 minutes.
 			if ( $failed ) {
 				$update_data              = new \stdClass();
-				$update_data->new_version = $this->version;
+				$update_data->new_version = $this->args['version'];
 
 				set_transient( $this->response_key, $update_data, strtotime( '+30 minutes', current_time( 'timestamp' ) ) );
 
@@ -139,7 +144,7 @@ class Theme_Updater implements Registerable {
 			}
 		}
 
-		if ( version_compare( $this->version, $update_data->new_version, '>=' ) ) {
+		if ( version_compare( $this->args['version'], $update_data->new_version, '>=' ) ) {
 			return false;
 		}
 
