@@ -59,6 +59,8 @@ class Theme_Updater implements Registerable {
 		add_action( 'load-update-core.php', [ $this, 'delete_theme_update_transient' ] );
 		add_action( 'load-themes.php', [ $this, 'delete_theme_update_transient' ] );
 		add_filter( 'http_request_args', [ $this, 'disable_wporg_request' ], 5, 2 );
+
+		add_action( 'admin_init', [ $this, 'add_menu_count' ] );
 	}
 
 	/**
@@ -150,6 +152,27 @@ class Theme_Updater implements Registerable {
 		}
 
 		return (array) $update_data;
+	}
+
+	/**
+	 * Add count to "Themes" menu item.
+	 *
+	 * @since 1.0.0
+	 */
+	public function add_menu_count() {
+		global $submenu;
+
+		$count = '';
+
+		if ( ! is_multisite() && current_user_can( 'update_themes' ) ) {
+			if ( ! isset( $update_data ) ) {
+				$update_data = wp_get_update_data();
+
+				$count = "<span class='update-plugins count-{$update_data['counts']['themes']}'><span class='theme-count'>" . number_format_i18n( $update_data['counts']['themes'] ) . '</span></span>';
+			}
+		}
+
+		$submenu['themes.php'][5][0] = sprintf( _x( 'Themes %s', 'admin menu item update count', 'bigbox' ), $count ); // @codingStandardsIgnoreLine
 	}
 
 	/**
