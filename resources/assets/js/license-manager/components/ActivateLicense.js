@@ -70,8 +70,13 @@ class ActivateLicense extends Component {
 
 		const licenseClass = classNames({
 			'license': true,
-			[`license--status-${validLicense ? 'valid' : 'invalid'}`]: true,
+			[`license--status-${validLicense ? 'valid' : 'invalid'}`]: ! isSubmitting,
 		});
+
+		const spinnerStyle = {
+			float: 'none',
+			margin: '-4px 0 0 5px',
+		}
 
 		return [
 			<form key="enter-license" className="bigbox-activate-license" onSubmit={this.handleSubmit}>
@@ -80,7 +85,7 @@ class ActivateLicense extends Component {
 			</form>,
 			
 			<p key="license-status">
-				<strong>{licenseLabel}:</strong> <span className={licenseClass}>{validLicense ? licenseValid : licenseInvalid}</span>
+				<strong>{licenseLabel}:</strong> { isSubmitting ? <span className="spinner is-active" style={spinnerStyle} /> : <span className={licenseClass}>{validLicense ? licenseValid : licenseInvalid}</span> }
 			</p>
 		];
 	}

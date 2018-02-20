@@ -11,7 +11,7 @@ export const LICENSE_REQUEST_SUCCESS = 'license/REQUEST_SUCCESS';
 export const LICENSE_REQUEST_FAILURE = 'license/REQUEST_FAILURE';
 
 export const INITIAL_STATE = {
-	license: '',
+	license: BigBoxLicenseManager.local.license,
 	validLicense: false,
 	isSubmitting: false,
 };
@@ -21,9 +21,8 @@ export function activateLicense(state = {}, action) {
 		case LICENSE_REQUEST:
 			return {
 				...state,
-				license: '',
-				validLicense: false,
 				isSubmitting: true,
+				license: action.license,
 			};
 		case LICENSE_REQUEST_SUCCESS:
 			return {
@@ -40,9 +39,6 @@ export function activateLicense(state = {}, action) {
 				isSubmitting: false,
 			};
 		default:
-			return {
-				...state,
-				INITIAL_STATE,
-			};
+			return INITIAL_STATE;
 	}
 }

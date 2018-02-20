@@ -41,6 +41,7 @@ export function activateLicense(license = '') {
 	return (dispatch) => {
 		dispatch({
 			type: LICENSE_REQUEST,
+			license,
 		});
 
 		axios.get(BigBoxLicenseManager.remote.apiRoot, {
@@ -54,16 +55,15 @@ export function activateLicense(license = '') {
 			.then((response) => {
 				const args = {
 						type: LICENSE_REQUEST_SUCCESS,
+						license,
 				}
 
 				if ('valid' === response.data.license) {
-					args['license']      = license;
 					args['validLicense'] = true;
 
 					// Remove count in menu.
 					$('#toplevel_page_bigbox .update-plugins' ).remove();
 				} else {
-					args['license']      = '';
 					args['validLicense'] = false;
 				}
 
