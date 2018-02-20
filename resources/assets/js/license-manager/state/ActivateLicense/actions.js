@@ -17,7 +17,7 @@ import {
  *
  * @param {String} licenses License to save.
  */
-function saveLicense(license) {
+function saveLicense(license, licenseStatus) {
 	axios({
 		url: `${wpApiSettings.root}${wpApiSettings.versionString}settings`,
 		method: 'POST',
@@ -26,6 +26,7 @@ function saveLicense(license) {
 		},
 		params: {
 			'bigbox_license': license,
+			'bigbox_license_status': licenseStatus,
 		}
 	});
 }
@@ -51,21 +52,23 @@ export function activateLicense(license = '') {
 			}
 		})
 			.then((response) => {
-				if ('valid' === response.data.license) {
-					dispatch({
+				const args = {
 						type: LICENSE_REQUEST_SUCCESS,
-						license,
-						validLicense: true,
-					});
-				} else {
-					dispatch({
-						type: LICENSE_REQUEST_SUCCESS,
-						license: '',
-						validLicense: false,
-					});
 				}
 
-				saveLicense(license);
+				if ('valid' === response.data.license) {
+					args['license']      = license;
+					args['validLicense'] = true;
+
+					// Remove count in menu.
+					$('#toplevel_page_bigbox .update-plugins' ).remove();
+				} else {
+					args['license']      = '';
+					args['validLicense'] = false;
+				}
+
+				dispatch(args);
+				saveLicense(license, response.data.license);
 			})
 			.catch((response) => {
 				dispatch({

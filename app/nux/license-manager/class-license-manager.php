@@ -82,6 +82,13 @@ class License_Manager implements Registerable, Service {
 			'type'              => 'string',
 			'default'           => 'public',
 		] );
+
+		register_setting( 'general', 'bigbox_license_status', [
+			'sanitize_callback' => 'esc_attr',
+			'show_in_rest'      => true,
+			'type'              => 'string',
+			'default'           => 'public',
+		] );
 	}
 
 	/**
