@@ -110,7 +110,7 @@ class License_Manager implements Registerable, Service {
 			'i18n'   => [
 				'licensePlaceholder' => esc_html__( 'Enter license key...', 'bigbox' ),
 				'licenseSubmit'      => esc_html__( 'Activate License', 'bigbox' ),
-				'licenseLabel'       => esc_html__( 'License', 'bigbox' ),
+				'licenseLabel'       => esc_html__( 'License Status', 'bigbox' ),
 				'licenseValid'       => esc_html__( 'Valid', 'bigbox' ),
 				'licenseInvalid'     => esc_html__( 'Invalid', 'bigbox' ),
 			],

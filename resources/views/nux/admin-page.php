@@ -23,6 +23,10 @@ wp_enqueue_style( 'bigbox-nux' );
 		<?php echo wp_kses_post( __( 'Use the steps below to finish setting up your new website.', 'bigbox' ) ); ?>
 	</p>
 
+	<div class="wp-badge" style="width: auto; height: auto; background: none; margin: 0; padding: 0;">
+		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/screenshot.png" width="220" alt="" />
+	</div>
+
 	<p class="helpful-links">
 		<a href="https://docs.bigbowc.com/" class="button button-primary" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Search Documentation', 'bigbox' ); ?></a>&nbsp;
 		<a href="https://bigboxwc.com/account/support" class="button button-secondary" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Contact Support', 'bigbox' ); ?></a>
