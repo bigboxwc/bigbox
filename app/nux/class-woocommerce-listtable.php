@@ -37,8 +37,6 @@ class WooCommerce_ListTable extends \WP_Plugin_Install_List_Table {
 	 * @since 1.0.0
 	 */
 	public function prepare_items() {
-		$this->groups = [];
-
 		$this->set_pagination_args( [
 			'total_items' => 1,
 			'per_page'    => 1,
