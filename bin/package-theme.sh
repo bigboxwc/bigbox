@@ -59,6 +59,9 @@ wp i18n make-pot . resources/languages/bigbox.pot --domain=bigbox
 status "Generating build..."
 npm run build
 
+# Update version in style.css
+sed -i "" "s|BIGBOX_VERSION|${PACKAGE_VERSION}|g" style.css
+
 # Remove any existing zip file
 rm -f bigbox*.zip
 
@@ -83,5 +86,8 @@ zip -r bigbox.zip \
 # Rename and cleanup.
 unzip bigbox.zip -d bigbox && zip -r "bigbox-$PACKAGE_VERSION.zip" bigbox
 rm -rf bigbox && rm -f bigbox.zip
+
+# Reset style.css -- kinda ghetto.
+git reset head --hard
 
 status "Done. Version v$PACKAGE_VERSION build complete."

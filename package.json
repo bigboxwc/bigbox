@@ -48,7 +48,7 @@
     "build": "cross-env BABEL_ENV=default NODE_ENV=production webpack",
     "dev": "cross-env BABEL_ENV=default webpack --watch",
     "setup": "npm install && composer install",
-    "package-theme": "./bin/build-theme-zip.sh"
+    "package-theme": "./bin/package-theme.sh"
   },
   "repository": {
     "type": "git",
