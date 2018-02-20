@@ -168,11 +168,13 @@ class Theme_Updater implements Registerable {
 			if ( ! isset( $update_data ) ) {
 				$update_data = wp_get_update_data();
 
-				$count = "<span class='update-plugins count-{$update_data['counts']['themes']}'><span class='theme-count'>" . number_format_i18n( $update_data['counts']['themes'] ) . '</span></span>';
+				if ( 0 !== $update_data['counts']['themes'] ) {
+					$count = "<span class='update-plugins count-{$update_data['counts']['themes']}'><span class='theme-count'>" . number_format_i18n( $update_data['counts']['themes'] ) . '</span></span>';
+
+					$submenu['themes.php'][5][0] = sprintf( _x( 'Themes %s', 'admin menu item update count', 'bigbox' ), $count ); // @codingStandardsIgnoreLine
+				}
 			}
 		}
-
-		$submenu['themes.php'][5][0] = sprintf( _x( 'Themes %s', 'admin menu item update count', 'bigbox' ), $count ); // @codingStandardsIgnoreLine
 	}
 
 	/**
