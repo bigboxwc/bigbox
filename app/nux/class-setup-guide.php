@@ -40,20 +40,53 @@ class Setup_Guide implements Registerable, Service {
 	 */
 	public function register() {
 		$this->steps = [
-			'license-manager'     => [
-				'label' => __( 'Enable Automatic Updates', 'bigbox' ),
+			'license-manager' => [
+				'label'    => __( 'Enable Automatic Updates', 'bigbox' ),
+				'priority' => 10,
 			],
-			'install-plugins'     => [
-				'label' => __( 'Recommended Plugins', 'bigbox' ),
+			'install-plugins' => [
+				'label'    => __( 'Optimize Your Website', 'bigbox' ),
+				'priority' => 20,
 			],
-			'install-woocommerce' => [
-				'label' => __( 'Install WooCommerce', 'bigbox' ),
+			'customize'       => [
+				'label'    => __( 'Customize Appearance', 'bigbox' ),
+				'priority' => 40,
 			],
 		];
+
+		if ( ! bigbox_is_integration_active( 'woocommerce' ) ) {
+			$this->steps['install-woocommerce'] = [
+				'label'    => __( 'Install WooCommerce', 'bigbox' ),
+				'priority' => 30,
+			];
+		}
 
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
 		add_action( 'admin_menu', [ $this, 'add_menu_item' ] );
 		add_action( 'admin_menu', [ $this, 'add_meta_boxes' ], 20 );
+	}
+
+	/**
+	 * Get steps.
+	 *
+	 * Public entrance for further filtering.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
+	public function get_steps() {
+		$steps = apply_filters( 'bigbox_setup_guide_steps', $this->steps );
+
+		uasort( $steps, function( $a, $b ) {
+			if ( $a['priority'] === $b['priority'] ) {
+				return 0;
+			}
+
+			return $a['priority'] < $b['priority'] ? -1 : 1;
+		} );
+
+		return $steps;
 	}
 
 	/**
@@ -100,7 +133,7 @@ class Setup_Guide implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function add_meta_boxes() {
-		foreach ( $this->steps as $key => $step ) {
+		foreach ( $this->get_steps() as $key => $step ) {
 			add_meta_box(
 				$key,
 				esc_html( $step['label'] ),
