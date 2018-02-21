@@ -1,111 +1,114 @@
 // All panels
 #poststuff.bigbox-setup-guide-steps {
-  margin: 15px 40px 0 20px;
+	margin: 15px 40px 0 20px;
 
-  @media only screen and (max-width: 500px) {
-    margin-right: 20px;
-    margin-left: 10px;
-  }
+	@media only screen and (max-width: 500px) {
+		margin-right: 20px;
+		margin-left: 10px;
+	}
 
-  .accordion-container {
-    border: 1px solid #ddd;
-  }
+	.accordion-container {
+		border: 1px solid #ddd;
+	}
 
-  .accordion-section:last-child {
-    border-bottom: 0;
-  }
+	.accordion-section:last-child {
+		border-bottom: 0;
+	}
 
-  h3.hndle {
-    padding: 12px 20px;
-  }
+	h3.hndle {
+		padding: 12px 20px;
+	}
 
-  p:first-child,
-  h3 {
-    margin-top: 0;
-  }
+	p:first-child,
+	h3 {
+		margin-top: 0;
+	}
 
-  p:last-child {
-    margin-bottom: 0;
-  }
+	p:last-child {
+		margin-bottom: 0;
+	}
 }
 
 .bigbox-setup-guide {
-  .about-text {
-    min-height: 0;
-  }
 
-  .helpful-links {
-    margin-bottom: 0;
-  }
+	.about-text {
+		min-height: 0;
+	}
+
+	.helpful-links {
+		margin-bottom: 0;
+	}
 }
 
 #poststuff .install-plugins {
-  .inside,
-  .accordion-section-content {
-    margin: 0;
-  }
 
-  .plugin-list {
-    overflow: hidden;
-  }
+	.inside,
+	.accordion-section-content {
+		margin: 0;
+	}
+
+	.plugin-list {
+		overflow: hidden;
+	}
 }
 
 #poststuff .install-woocommerce {
-  .accordion-section-content {
-    padding: 0;
-  }
 
-  .plugin-card {
-    float: none;
-    margin: 0;
-    border: 0;
-    width: 100%;
-  }
+	.accordion-section-content {
+		padding: 0;
+	}
+
+	.plugin-card {
+		float: none;
+		margin: 0;
+		border: 0;
+		width: 100%;
+	}
 }
 
 .button.button-primary.button-large {
-  font-size: 16px;
-  padding: 8px 20px;
-  height: auto;
+	font-size: 16px;
+	padding: 8px 20px;
+	height: auto;
 }
 
 .nux-panel-cta {
-  text-align: center;
-  margin: 1rem 0;
+	text-align: center;
+	margin: 1rem 0;
 }
 
 .bigbox-activate-license {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 
-  [type="text"] {
-    font-size: 18px;
-    margin: 0;
-    padding: 10px;
-    width: 375px;
-  }
+	[type="text"] {
+		font-size: 18px;
+		margin: 0;
+		padding: 10px;
+		width: 375px;
+	}
 
-  .button {
-    margin: -1px 0 0 10px;
-  }
+	.button {
+		margin: -1px 0 0 10px;
+	}
 }
 
 .license--status-invalid {
-  color: #dc3232;
+	color: #dc3232;
 
-  &[type="text"] {
-    color: #dc3232;
-    border-color: #dc3232;
-    box-shadow: 0 0 2px rgba(220, 50, 50, 0.8);
-  }
+	&[type="text"] {
+		color: #dc3232;
+		border-color: #dc3232;
+		box-shadow: 0 0 2px rgba(220, 50, 50, 0.8);
+	}
 }
 
 .license--status-valid {
-  color: #00be30;
+	color: #00be30;
 
-  &[type="text"] {
-    color: #00be30;
-    border-color: #00be30;
-    box-shadow: 0 0 2px rgba(#00be30, 0.8);
-  }
+	&[type="text"] {
+		color: #00be30;
+		border-color: #00be30;
+		box-shadow: 0 0 2px rgba(#00be30, 0.8);
+	}
 }

@@ -1,28 +1,28 @@
 @mixin form-row {
-  margin: 0 0 2em;
+	margin: 0 0 2em;
 
-  &:not(.form-row--half):not(:first-of-type):last-of-type,
-  &:not(.form-row--half):not(:first-child):last-child {
-    margin-bottom: 0;
-  }
+	&:not(.form-row--half):not(:first-of-type):last-of-type,
+	&:not(.form-row--half):not(:first-child):last-child {
+		margin-bottom: 0;
+	}
 }
 
 @mixin form-label {
-  font-weight: 700;
-  font-size: 16px;
-  margin: 0 0 8px;
-  display: block;
+	font-weight: 700;
+	font-size: 16px;
+	margin: 0 0 8px;
+	display: block;
 }
 
 @mixin form-input {
-  color: gray(700);
-  font: 400 18px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  padding: 10px;
-  border: 2px solid #ddd;
-  border-radius: 3px;
+	color: gray(700);
+	font: 400 18px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	padding: 10px;
+	border: 2px solid #ddd;
+	border-radius: 3px;
 
-  &:focus {
-    outline: 0;
-    border-color: rgba(theme-color('primary'), 0.80);
-  }
+	&:focus {
+		outline: 0;
+		border-color: rgba(theme-color("primary"), 0.8);
+	}
 }

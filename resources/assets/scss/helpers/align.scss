@@ -1,28 +1,29 @@
 .alignfull,
 .alignwide {
-  margin-left: calc( -100vw / 2 + 100% / 2 );
-  margin-right: calc( -100vw / 2 + 100% / 2 );
-  max-width: 100vw;
+	margin-left: calc(-100vw / 2 + 100% / 2);
+	margin-right: calc(-100vw / 2 + 100% / 2);
+	max-width: 100vw;
 
-  iframe,
-  img {
-    width: 100%;
-    height: auto;
-  }
+	iframe,
+	img {
+		width: 100%;
+		height: auto;
+	}
 }
 
 .alignleft {
-  float: left;
+	float: left;
 }
 
 .alignright {
-  float: right;
+	float: right;
 }
 
 @include media-breakpoint-up(xl) {
-  .alignwide {
-    margin-left: -10%;
-    margin-right: -10%;
-    width: 120%;
-  }
+
+	.alignwide {
+		margin-left: -10%;
+		margin-right: -10%;
+		width: 120%;
+	}
 }
