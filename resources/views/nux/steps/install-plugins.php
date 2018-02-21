@@ -61,7 +61,7 @@ $plugins = [
 						</a>
 					</li>
 					<li>
-						<a href="<?php echo esc_url( $data['more'] ); ?>" aria-label="<?php esc_attr( $item['more'] ); ?>">
+						<a href="<?php echo esc_url( $data['more'] ); ?>" aria-label="<?php esc_attr( $i18n['more'] ); ?>">
 							<?php esc_html_e( 'More Details', 'bigbox' ); ?>
 						</a>
 					</li>
