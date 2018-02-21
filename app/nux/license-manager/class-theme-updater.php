@@ -54,7 +54,7 @@ class Theme_Updater implements Registerable {
 		$this->response_key = 'bigbox-update-response';
 		$this->args         = $args;
 
-		add_filter( 'site_transient_update_themes', [ $this, 'theme_update_transient' ] );
+		add_filter( 'pre_set_site_transient_update_themes', [ $this, 'theme_update_transient' ] );
 		add_filter( 'delete_site_transient_update_themes', [ $this, 'delete_theme_update_transient' ] );
 		add_action( 'load-update-core.php', [ $this, 'delete_theme_update_transient' ] );
 		add_action( 'load-themes.php', [ $this, 'delete_theme_update_transient' ] );
@@ -73,6 +73,10 @@ class Theme_Updater implements Registerable {
 	 *                        the request fails returns false.
 	 */
 	public function theme_update_transient( $value ) {
+		if ( isset( $value->response[ $this->args['theme_slug'] ] ) ) {
+			return $value;
+		}
+
 		$update_data = $this->check_for_update();
 
 		if ( $update_data ) {
