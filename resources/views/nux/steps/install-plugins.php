@@ -32,7 +32,15 @@ $plugins = [
 <p><?php echo wp_kses_post( 'Below is a list of recommended plugins to help optimize your WooCommerce website. You can read about theses suggestions and find more great information <a href="https://bigboxwc.com/blog">on our blog</a>.', 'bigbox' ); ?></p>
 
 <div class="plugin-list">
-	<?php foreach ( $plugins as $slug => $data ) : ?>
+	<?php
+	foreach ( $plugins as $slug => $data ) :
+		$i18n = [
+			// Translators: %s Plugin name.
+			'get'  => sprintf( __( 'Get %s', 'bigbox' ), $data['label'] ),
+			// Translators: %s Plugin name.
+			'more' => sprintf( __( 'More information about %s', 'bigbox' ), $data['label'] ),
+		];
+	?>
 
 	<div class="plugin-card">
 		<div class="plugin-card-top">
@@ -48,12 +56,12 @@ $plugins = [
 			<div class="action-links">
 				<ul class="plugin-action-buttons">
 					<li>
-						<a class="button" href="<?php echo esc_url( $data['buy'] ); ?>" aria-label="<?php esc_attr( sprintf( __( 'Get %s', 'bigbox' ), $data['label'] ) ); ?>">
-							<?php echo esc_html( sprintf( __( 'Get %s', 'bigbox' ), $data['label'] ) ); ?>
+						<a class="button" href="<?php echo esc_url( $data['buy'] ); ?>" aria-label="<?php esc_attr( $i18n['get'] ); ?>">
+							<?php echo esc_html( $i18n['get'] ); ?>
 						</a>
 					</li>
 					<li>
-						<a href="<?php echo esc_url( $data['more'] ); ?>" aria-label="<?php esc_attr( sprintf( __( 'More information about %s', 'bigbox' ), $data['label'] ) ); ?>">
+						<a href="<?php echo esc_url( $data['more'] ); ?>" aria-label="<?php esc_attr( $item['more'] ); ?>">
 							<?php esc_html_e( 'More Details', 'bigbox' ); ?>
 						</a>
 					</li>

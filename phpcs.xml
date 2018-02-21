@@ -6,6 +6,7 @@
 	<description>PHP_CodeSniffer ruleset.</description>
 	
 	<file>./app</file>
+	<file>./resources/views/</file>
 
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>

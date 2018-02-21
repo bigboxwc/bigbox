@@ -71,8 +71,5 @@
   "bugs": {
     "url": "https://github.com/spencerfinnell/bigbox-theme/issues"
   },
-  "homepage": "https://bigboxwp.com",
-  "dependencies": {
-    "g": "^2.0.1"
-  }
+  "homepage": "https://bigboxwp.com"
 }
