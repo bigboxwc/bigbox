@@ -23,7 +23,8 @@
 		"wp": true,
 		"wpApiSettings": true,
 		"window": true,
-		"document": true
+		"document": true,
+		"$": true
 	},
 	"plugins": [
 		"wordpress",

@@ -1,3 +1,5 @@
+/* global BigBoxLicenseManager */
+
 /**
  * External dependencies.
  */
@@ -15,7 +17,8 @@ import {
 /**
  * Save a license option.
  *
- * @param {string} licenses License to save.
+ * @param {string} license License to save.
+ * @param {string} licenseStatus License status. valid or invalid.
  */
 function saveLicense( license, licenseStatus ) {
 	axios( {
@@ -70,7 +73,7 @@ export function activateLicense( license = '' ) {
 				dispatch( args );
 				saveLicense( license, response.data.license );
 			} )
-			.catch( ( response ) => {
+			.catch( () => {
 				dispatch( {
 					type: LICENSE_REQUEST_FAILURE,
 				} );

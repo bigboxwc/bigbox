@@ -1,7 +1,9 @@
+/* global BigBoxLicenseManager */
+
 /**
  * External dependencies.
  */
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
@@ -38,11 +40,11 @@ class ActivateLicense extends Component {
 	// Check license on page load.
 	componentDidMount() {
 		const {
-			activateLicense,
+			doActivateLicense,
 			license,
 		} = this.props;
 
-		activateLicense( license );
+		doActivateLicense( license );
 	}
 
 	// License key changed.
@@ -58,7 +60,7 @@ class ActivateLicense extends Component {
 	handleSubmit( event ) {
 		event.preventDefault();
 
-		this.props.activateLicense( this.state.license );
+		this.props.doActivateLicense( this.state.license );
 	}
 
 	render() {
@@ -99,9 +101,9 @@ const mapStateToProps = ( state, ownProps ) => {
 	};
 };
 
-const mapDispatchToProps = ( dispatch, ownProps ) => {
+const mapDispatchToProps = ( dispatch ) => {
 	return bindActionCreators( {
-		activateLicense,
+		doActivateLicense: activateLicense,
 	}, dispatch );
 };
 

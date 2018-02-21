@@ -1,7 +1,4 @@
-/**
- * External dependencies.
- */
-import { combineReducers } from 'redux';
+/* global BigBoxLicenseManager */
 
 /**
  * Internal dependencies.
