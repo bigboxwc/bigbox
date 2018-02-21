@@ -22,17 +22,17 @@ const {
 } = BigBoxLicenseManager.i18n;
 
 class ActivateLicense extends Component {
-	constructor(props) {
-		super(props);
+	constructor( props ) {
+		super( props );
 
 		this.state = INITIAL_STATE;
 
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleChange = this.handleChange.bind( this );
+		this.handleSubmit = this.handleSubmit.bind( this );
 	}
 
-	componentWillReceiveProps(nextProps) {
-		this.setState(nextProps);
+	componentWillReceiveProps( nextProps ) {
+		this.setState( nextProps );
 	}
 
 	// Check license on page load.
@@ -42,67 +42,67 @@ class ActivateLicense extends Component {
 			license,
 		} = this.props;
 
-		activateLicense(license);
+		activateLicense( license );
 	}
 
 	// License key changed.
-	handleChange(event) {
-		this.setState({
+	handleChange( event ) {
+		this.setState( {
 			license: event.target.value,
 			validLicense: false,
 			isSubmitting: false,
-		});
+		} );
 	}
 
 	// Activate site on submit.
-	handleSubmit(event) {
+	handleSubmit( event ) {
 		event.preventDefault();
 
-		this.props.activateLicense(this.state.license);
+		this.props.activateLicense( this.state.license );
 	}
 
 	render() {
 		const {
 			license,
 			validLicense,
-			isSubmitting
+			isSubmitting,
 		} = this.state;
 
-		const licenseClass = classNames({
-			'license': true,
-			[`license--status-${validLicense ? 'valid' : 'invalid'}`]: ! isSubmitting,
-		});
+		const licenseClass = classNames( {
+			license: true,
+			[ `license--status-${ validLicense ? 'valid' : 'invalid' }` ]: ! isSubmitting,
+		} );
 
 		const spinnerStyle = {
 			float: 'none',
 			margin: '-4px 0 0 5px',
-		}
+		};
 
 		return [
-			<form key="enter-license" className="bigbox-activate-license" onSubmit={this.handleSubmit}>
-				<input type="text" name="license" className={licenseClass} value={license} onChange={this.handleChange} placeholder={licensePlaceholder} />
-				<input type="submit" name="submit" className="button button-large button-primary" value={licenseSubmit} disabled={isSubmitting || validLicense} />
+			<form key="enter-license" className="bigbox-activate-license" onSubmit={ this.handleSubmit }>
+				<input type="text" name="license" className={ licenseClass } value={ license } onChange={ this.handleChange } placeholder={ licensePlaceholder } />
+				<input type="submit" name="submit" className="button button-large button-primary" value={ licenseSubmit } disabled={ isSubmitting || validLicense } />
 			</form>,
-			
+
 			<p key="license-status">
-				<strong>{licenseLabel}:</strong> { isSubmitting ? <span className="spinner is-active" style={spinnerStyle} /> : <span className={licenseClass}>{validLicense ? licenseValid : licenseInvalid}</span> }
-			</p>
+				<strong>{ licenseLabel }:</strong> { isSubmitting ? <span className="spinner is-active" style={ spinnerStyle } /> : <span className={ licenseClass }>{ validLicense ? licenseValid : licenseInvalid }</span> }
+			</p>,
 		];
 	}
-};
+}
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = ( state, ownProps ) => {
 	return {
-		license: (state.license || ownProps.license) || '',
+		license: ( state.license || ownProps.license ) || '',
 		validLicense: state.validLicense || false,
 		isSubmitting: state.isSubmitting || false,
 	};
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-	return bindActionCreators({
+const mapDispatchToProps = ( dispatch, ownProps ) => {
+	return bindActionCreators( {
 		activateLicense,
-	}, dispatch);
+	}, dispatch );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ActivateLicense);
+export default connect( mapStateToProps, mapDispatchToProps )( ActivateLicense );

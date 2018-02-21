@@ -25,6 +25,12 @@
     "choices.js": "^3.0.3",
     "classnames": "^2.2.5",
     "cross-env": "^5.0.1",
+    "eslint": "^4.16.0",
+    "eslint-config-wordpress": "^2.0.0",
+    "eslint-plugin-jest": "^21.12.2",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-wordpress": "git://github.com/WordPress-Coding-Standards/eslint-plugin-wordpress.git#327b6bdec434177a6e841bd3210e87627ccfcecb",
     "exports-loader": "^0.7.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
@@ -47,8 +53,10 @@
   "scripts": {
     "build": "cross-env BABEL_ENV=default NODE_ENV=production webpack",
     "dev": "cross-env BABEL_ENV=default webpack --watch",
-    "setup": "npm install && composer install",
-    "package-theme": "./bin/package-theme.sh"
+    "lint": "./node_modules/.bin/eslint .",
+    "lint:fix": "./node_modules/.bin/eslint . --fix",
+    "package-theme": "./bin/package-theme.sh",
+    "setup": "npm install && composer install"
   },
   "repository": {
     "type": "git",
@@ -59,5 +67,8 @@
   "bugs": {
     "url": "https://github.com/spencerfinnell/bigbox-theme/issues"
   },
-  "homepage": "https://bigboxwp.com"
+  "homepage": "https://bigboxwp.com",
+  "dependencies": {
+    "g": "^2.0.1"
+  }
 }

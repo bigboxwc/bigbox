@@ -6,7 +6,7 @@ import { combineReducers } from 'redux';
 /**
  * Internal dependencies.
  */
-export const LICENSE_REQUEST         = 'license/REQUEST';
+export const LICENSE_REQUEST = 'license/REQUEST';
 export const LICENSE_REQUEST_SUCCESS = 'license/REQUEST_SUCCESS';
 export const LICENSE_REQUEST_FAILURE = 'license/REQUEST_FAILURE';
 
@@ -16,8 +16,8 @@ export const INITIAL_STATE = {
 	isSubmitting: false,
 };
 
-export function activateLicense(state = {}, action) {
-	switch (action.type) {
+export function activateLicense( state = {}, action ) {
+	switch ( action.type ) {
 		case LICENSE_REQUEST:
 			return {
 				...state,

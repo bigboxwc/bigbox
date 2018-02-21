@@ -12,14 +12,14 @@ import configureStore from './state';
 import ActivateLicense from './components/ActivateLicense.js';
 
 const NUX = () => (
-	<Provider store={configureStore()}>
+	<Provider store={ configureStore() }>
 		<ActivateLicense
-      license={BigBoxLicenseManager.local.license}
-    />
+			license={ BigBoxLicenseManager.local.license }
+		/>
 	</Provider>
 );
 
 ReactDOM.render(
 	<NUX />,
-	document.getElementById('bigbox-license-manager')
+	document.getElementById( 'bigbox-license-manager' )
 );

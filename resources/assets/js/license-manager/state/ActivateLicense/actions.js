@@ -15,67 +15,67 @@ import {
 /**
  * Save a license option.
  *
- * @param {String} licenses License to save.
+ * @param {string} licenses License to save.
  */
-function saveLicense(license, licenseStatus) {
-	axios({
-		url: `${wpApiSettings.root}${wpApiSettings.versionString}settings`,
+function saveLicense( license, licenseStatus ) {
+	axios( {
+		url: `${ wpApiSettings.root }${ wpApiSettings.versionString }settings`,
 		method: 'POST',
 		headers: {
-			'X-WP-Nonce': wpApiSettings.nonce
+			'X-WP-Nonce': wpApiSettings.nonce,
 		},
 		params: {
-			'bigbox_license': license,
-			'bigbox_license_status': licenseStatus,
-		}
-	});
+			bigbox_license: license,
+			bigbox_license_status: licenseStatus,
+		},
+	} );
 }
 
 /**
  * Attempt to activate a license.
  *
- * @param  {String}   license License
+ * @param  {string}   license License
  * @return {Function} Action thunk
  */
-export function activateLicense(license = '') {
-	return (dispatch) => {
-		dispatch({
+export function activateLicense( license = '' ) {
+	return ( dispatch ) => {
+		dispatch( {
 			type: LICENSE_REQUEST,
 			license,
-		});
+		} );
 
-		axios.get(BigBoxLicenseManager.remote.apiRoot, {
+		axios.get( BigBoxLicenseManager.remote.apiRoot, {
 			params: {
 				edd_action: 'activate_license',
 				license: license,
-				item_name: encodeURIComponent(BigBoxLicenseManager.remote.itemName),
+				item_name: encodeURIComponent( BigBoxLicenseManager.remote.itemName ),
 				url: BigBoxLicenseManager.local.domain,
-			}
-		})
-			.then((response) => {
+			},
+		} )
+			.then( ( response ) => {
 				const args = {
-						type: LICENSE_REQUEST_SUCCESS,
-						license,
-				}
+					type: LICENSE_REQUEST_SUCCESS,
+					license,
+				};
 
-				if ('valid' === response.data.license) {
-					args['validLicense'] = true;
+				if ( 'valid' === response.data.license ) {
+					args.validLicense = true;
 
 					// Remove count in menu.
-					$('#toplevel_page_bigbox .update-plugins' ).remove();
+					$( '#toplevel_page_bigbox .update-plugins' ).remove();
 				} else {
-					args['validLicense'] = false;
+					args.validLicense = false;
 				}
 
-				dispatch(args);
-				saveLicense(license, response.data.license);
-			})
-			.catch((response) => {
-				dispatch({
+				dispatch( args );
+				saveLicense( license, response.data.license );
+			} )
+			.catch( ( response ) => {
+				dispatch( {
 					type: LICENSE_REQUEST_FAILURE,
-				});
+				} );
 
-				saveLicense('');
-			});
-	}
+				saveLicense( '' );
+			} );
+	};
 }
