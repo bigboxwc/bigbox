@@ -11,5 +11,9 @@
 	],
 	"autoload": {
 		"classmap": ["app/"]
+	},
+	"scripts": {
+		"lint": "phpcs",
+		"lint:fix": "phpcbf"
 	}
 }

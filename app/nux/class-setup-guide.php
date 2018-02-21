@@ -78,13 +78,15 @@ class Setup_Guide implements Registerable, Service {
 	public function get_steps() {
 		$steps = apply_filters( 'bigbox_setup_guide_steps', $this->steps );
 
-		uasort( $steps, function( $a, $b ) {
-			if ( $a['priority'] === $b['priority'] ) {
-				return 0;
-			}
+		uasort(
+			$steps, function( $a, $b ) {
+				if ( $a['priority'] === $b['priority'] ) {
+					return 0;
+				}
 
-			return $a['priority'] < $b['priority'] ? -1 : 1;
-		} );
+				return $a['priority'] < $b['priority'] ? -1 : 1;
+			}
+		);
 
 		return $steps;
 	}
@@ -155,9 +157,11 @@ class Setup_Guide implements Registerable, Service {
 	 * @param array $metabox Current metabox arguments.
 	 */
 	public function step( $null, $metabox ) {
-		bigbox_view( 'nux/steps/' . $metabox['args']['step'], [
-			'step' => $metabox['args'],
-		] );
+		bigbox_view(
+			'nux/steps/' . $metabox['args']['step'], [
+				'step' => $metabox['args'],
+			]
+		);
 	}
 
 }

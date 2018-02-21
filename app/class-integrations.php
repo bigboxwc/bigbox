@@ -47,11 +47,13 @@ final class Integrations implements Registerable, Service {
 		$integrations = $this->get_integrations();
 		$integrations = array_map( [ $this, 'instantiate_integration' ], $integrations );
 
-		array_walk( $integrations, function( Integration $integration ) {
-			if ( $integration->is_active() ) {
-				$integration->register();
+		array_walk(
+			$integrations, function( Integration $integration ) {
+				if ( $integration->is_active() ) {
+					$integration->register();
+				}
 			}
-		} );
+		);
 	}
 
 	/**

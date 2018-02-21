@@ -70,9 +70,11 @@ final class Theme implements Registerable {
 		$services = $this->get_services();
 		$services = array_map( [ $this, 'instantiate_service' ], $services );
 
-		array_walk( $services, function( Service $service ) {
-			$service->register();
-		} );
+		array_walk(
+			$services, function( Service $service ) {
+				$service->register();
+			}
+		);
 	}
 
 	/**

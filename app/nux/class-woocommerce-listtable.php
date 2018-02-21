@@ -37,10 +37,12 @@ class WooCommerce_ListTable extends \WP_Plugin_Install_List_Table {
 	 * @since 1.0.0
 	 */
 	public function prepare_items() {
-		$this->set_pagination_args( [
-			'total_items' => 1,
-			'per_page'    => 1,
-		] );
+		$this->set_pagination_args(
+			[
+				'total_items' => 1,
+				'per_page'    => 1,
+			]
+		);
 
 		$this->items = $this->query_dotorg();
 	}
@@ -74,9 +76,13 @@ class WooCommerce_ListTable extends \WP_Plugin_Install_List_Table {
 			];
 
 			foreach ( $plugins as $plugin ) {
-				$plugin = plugins_api( 'plugin_information', wp_parse_args( [
-					'slug' => $plugin,
-				], $args ) );
+				$plugin = plugins_api(
+					'plugin_information', wp_parse_args(
+						[
+							'slug' => $plugin,
+						], $args
+					)
+				);
 
 				if ( ! is_wp_error( $plugin ) ) {
 					$items[] = $plugin;
