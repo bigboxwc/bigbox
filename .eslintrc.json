@@ -3,6 +3,7 @@
 	"parser": "babel-eslint",
 	"extends": [
 		"wordpress",
+		"eslint:recommended",
 		"plugin:react/recommended",
 		"plugin:jsx-a11y/recommended",
 		"plugin:jest/recommended"
