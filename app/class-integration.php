@@ -47,14 +47,16 @@ abstract class Integration {
 	protected $active = false;
 
 	/**
-	 * Set the integration's working directory.
+	 * Setup integration.
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $dir The working directory.
+	 * @param array  $dependencies List of required dependencies.
+	 * @param string $dir Integration directory.
 	 */
-	public function set_dir( $dir ) {
-		$this->dir = $dir;
+	public function __construct( $dependencies, $dir ) {
+		$this->dependencies = $dependencies;
+		$this->dir          = $dir;
 	}
 
 	/**
@@ -66,17 +68,6 @@ abstract class Integration {
 	 */
 	public function get_dir() {
 		return $this->dir;
-	}
-
-	/**
-	 * Set a list of required dependencies.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param array $dependencies List of required dependencies.
-	 */
-	public function set_dependencies( $dependencies ) {
-		$this->dependencies = $dependencies;
 	}
 
 	/**

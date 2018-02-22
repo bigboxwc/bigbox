@@ -32,13 +32,12 @@ class WooCommerce extends Integration implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		$this->set_dependencies(
+		parent::__construct(
 			[
 				defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
-			]
+			],
+			dirname( __FILE__ )
 		);
-
-		$this->set_dir( dirname( __FILE__ ) );
 	}
 
 	/**
