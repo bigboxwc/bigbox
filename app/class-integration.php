@@ -28,7 +28,7 @@ abstract class Integration {
 	 * @var string $dir
 	 * @since 1.0.0
 	 */
-	protected $dir = null;
+	private $dir = null;
 
 	/**
 	 * List of required dependencies.
@@ -36,7 +36,7 @@ abstract class Integration {
 	 * @var array $active
 	 * @since 1.0.0
 	 */
-	protected $dependencies = [];
+	private $dependencies = [];
 
 	/**
 	 * If this integration is active and meets dependency requiremens.
@@ -56,7 +56,7 @@ abstract class Integration {
 	 */
 	public function __construct( $slug, $dependencies ) {
 		$this->dependencies = $dependencies;
-		$this->dir          = get_template_directory() . 'app/integrations' . $slug;
+		$this->dir          = get_template_directory() . trailingslashit( 'app/integrations' ) . $slug;
 	}
 
 	/**
