@@ -51,12 +51,12 @@ abstract class Integration {
 	 *
 	 * @since 1.0.0
 	 *
+	 * @param string $slug Integration slug.
 	 * @param array  $dependencies List of required dependencies.
-	 * @param string $dir Integration directory.
 	 */
-	public function __construct( $dependencies, $dir ) {
+	public function __construct( $slug, $dependencies ) {
 		$this->dependencies = $dependencies;
-		$this->dir          = $dir;
+		$this->dir          = get_template_directory() . 'app/integrations' . $slug;
 	}
 
 	/**

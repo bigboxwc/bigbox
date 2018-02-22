@@ -61,17 +61,16 @@ final class Integrations implements Registerable, Service {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $class Integration class to instantiate.
-	 *
+	 * @param array $integration Integration information.
 	 * @return Service
 	 * @throws Exception\InvalidIntegration If the integration is not valid.
 	 */
-	public function instantiate_integration( $class ) {
-		if ( ! class_exists( $class ) ) {
-			throw Exception\InvalidIntegration::from_integration( $class );
+	public function instantiate_integration( $integration ) {
+		if ( ! class_exists( $integration['class'] ) ) {
+			throw Exception\InvalidIntegration::from_integration( $integration['class'] );
 		}
 
-		$integration = new $class();
+		$integration = new $integration['class']( $integration['slug'], $integration['dependencies'] );
 
 		if ( ! $integration instanceof Integration ) {
 			throw Exception\InvalidIntegration::from_integration( $integration );
@@ -89,7 +88,13 @@ final class Integrations implements Registerable, Service {
 	 */
 	public function get_integrations() {
 		return [
-			'woocommerce' => Integration\WooCommerce::class,
+			'woocommerce' => [
+				'slug'         => 'woocommerce',
+				'class'        => Integration\WooCommerce::class,
+				'dependencies' => [
+					defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
+				],
+			],
 		];
 	}
 

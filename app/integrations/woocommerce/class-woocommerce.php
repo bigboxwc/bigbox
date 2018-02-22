@@ -27,20 +27,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 class WooCommerce extends Integration implements Registerable, Service {
 
 	/**
-	 * Define the dependencies.
-	 *
-	 * @since 1.0.0
-	 */
-	public function __construct() {
-		parent::__construct(
-			[
-				defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
-			],
-			dirname( __FILE__ )
-		);
-	}
-
-	/**
 	 * Connect to WordPress.
 	 *
 	 * @since 1.0.0
