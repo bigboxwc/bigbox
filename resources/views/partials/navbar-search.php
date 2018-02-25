@@ -24,12 +24,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="navbar-search__category">
 		<label for="s" class="screen-reader-text"><?php esc_html_e( 'Choose a category:', 'bigbox' ); ?></label>
 		<select>
-			<option selected="selected">All</option>
+			<option>All</option>
+			<option selected="selected">Home &amp; Grocery</option>
 		</select>
 	</div>
 
 	<div class="navbar-search__submit">
-		<input type="submit" name="submit" value="<?php esc_attr_e( 'Search', 'bigbox' ); ?>" />
+		<button type="submit" name="submit" aria-title="<?php esc_attr_e( 'Search', 'bigbox' ); ?>">
+			<?php bigbox_svg( 'search' ); ?>
+		</button>
 	</div>
 
 </form>

@@ -7,3 +7,4 @@
 import '../scss/nux.scss';
 import '../scss/style.scss';
 import '../images/nux/*';
+import '../images/icons/*';

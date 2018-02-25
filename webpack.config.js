@@ -48,21 +48,7 @@ const config = {
 	module: {
 		rules: [
 			{
-				test: /\.svg$/,
-				use: [
-					{
-						loader: 'svg-sprite-loader',
-						options: {
-							extract: true,
-							spriteFilename: './public/images/sprite.svg',
-						},
-					},
-					'svgo-loader',
-				],
-				include: /images/,
-			},
-			{
-				test: /\.(png|jp(e*)g|svg)$/,
+				test: /\.(png|jp(e*)g)$/,
 				use: [
 					{
 						loader: 'file-loader',
@@ -73,6 +59,20 @@ const config = {
 							outputPath: './public/images/',
 						},
 					},
+				],
+				include: /images/,
+			},
+			{
+				test: /\.svg$/,
+				use: [
+					{
+						loader: 'svg-sprite-loader',
+						options: {
+							extract: true,
+							spriteFilename: './public/images/sprite.svg',
+						},
+					},
+					'svgo-loader',
 				],
 				include: /images/,
 			},

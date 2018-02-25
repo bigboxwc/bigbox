@@ -72,7 +72,7 @@ function bigbox_get_svg( $args = [] ) {
 	$args = wp_parse_args( $args, $defaults );
 
 	// Add default classes.
-	$args['classes'][] = 'icon';
+	$args['classes'][] = 'bigbox-icon';
 
 	// Set aria hidden.
 	$aria_hidden = ' aria-hidden="true"';
