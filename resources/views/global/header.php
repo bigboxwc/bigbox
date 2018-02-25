@@ -29,3 +29,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</head>
 
 	<body <?php body_class(); ?>>
+
+		<?php bigbox_partial( 'navbar' ); ?>

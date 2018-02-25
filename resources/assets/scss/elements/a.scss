@@ -1,9 +1,9 @@
 a {
-	color: gray(600);
-	border-bottom: 2px solid transparent;
+	color: gray('600');
 	text-decoration: none;
 
 	&:hover {
 		color: theme-color("primary");
+		text-decoration: underline;
 	}
 }
