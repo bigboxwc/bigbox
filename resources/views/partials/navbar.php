@@ -19,7 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php
 	bigbox_partial( 'branding' );
 	bigbox_partial( 'navbar-search' );
-	bigbox_partial( 'navbar-menu' );
+	bigbox_partial( 'navbar-primary-menu' );
+	bigbox_partial( 'navbar-secondary-menu' );
 	?>
 	
 </div>
