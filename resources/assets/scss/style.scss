@@ -4,6 +4,7 @@
  * Defined before Bootstrap to override.
  */
 @import "variables/colors";
+@import "variables/box";
 
 /**
  * External dependencies
@@ -15,7 +16,7 @@
 // Choices
 $choices-button-icon-path: "~choices.js/assets/icons";
 $choices-bg-color: #fff;
-$choices-border-radius: 3px;
+$choices-border-radius: $border-radius;
 $choices-highlight-color: theme-color("primary");
 $choices-keyline-color: #ddd;
 
@@ -58,4 +59,6 @@ $choices-keyline-color: #ddd;
 // Navbar
 @import "modules/navbar";
 @import "modules/navbar-search";
+@import "modules/navbar-menu";
+@import "modules/megamenu";
 @import "modules/branding";

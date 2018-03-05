@@ -5,6 +5,8 @@
 	flex: 1 0 auto;
 	margin-left: $grid-gutter-width / 2;
 	margin-right: $grid-gutter-width / 2;
+	padding-top: $grid-gutter-width / 2;
+	padding-bottom: $grid-gutter-width / 2;
 }
 
 .navbar-search__category,
@@ -22,7 +24,7 @@
 		font-size: 0.75rem;
 		background: gray('100');
 		border: 0;
-		border-right: 1px solid gray('400');
+		border-right: 1px solid gray('300');
 		border-top-left-radius: 3px;
 		border-bottom-left-radius: 3px;
 		border-top-right-radius: 0;
@@ -53,7 +55,7 @@
 		color: $white;
 		padding: 0 $grid-gutter-width;
 		font-weight: 400;
-		background: color('green');
+		background: color('yellow');
 		border: 0;
 		border-bottom-left-radius: 0;
 		border-top-left-radius: 0;
