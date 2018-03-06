@@ -1,0 +1,10 @@
+.wooocommerce,
+.woocommerce-page {
+	ul.products {
+		display: flex;
+		flex-wrap: wrap;
+		margin: $vertical-spacer 0;
+		padding: 0;
+		list-style: none;
+	}
+}

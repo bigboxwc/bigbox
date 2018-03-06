@@ -21,6 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div id="secondary" class="sidebar-area" role="complementary">
+<div id="secondary" class="site-secondary" role="complementary">
 	Sidebar
 </div>

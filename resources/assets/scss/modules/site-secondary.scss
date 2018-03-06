@@ -1,0 +1,4 @@
+.site-secondary {
+	@include make-col-ready;
+	@include make-col(4);
+}
