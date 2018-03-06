@@ -29,7 +29,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</li>
 
 		<li class="navbar-menu__item">
-			<a href="#">Saved Items</a>
+			<a href="#">
+				<?php bigbox_svg( 'heart' ); ?>
+				Saved Items
+			</a>
 		</li>
+
 	</ul>
 </div>

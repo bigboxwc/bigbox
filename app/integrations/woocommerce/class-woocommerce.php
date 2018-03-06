@@ -32,6 +32,9 @@ class WooCommerce extends Integration implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function register() {
+		include_once $this->get_dir() . '/template-hooks.php';
+		include_once $this->get_dir() . '/template-functions.php';
+
 		add_action( 'after_setup_theme', [ $this, 'add_theme_support' ] );
 	}
 
@@ -41,6 +44,12 @@ class WooCommerce extends Integration implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function add_theme_support() {
-		add_theme_support( 'woocommerce' );
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
+		add_theme_support( 'woocommerce', array(
+			'thumbnail_image_width' => 200,
+			'single_image_width'    => 300,
+		) );
 	}
 }

@@ -5,6 +5,24 @@
  */
 @import "variables/colors";
 @import "variables/box";
+@import "variables/vertical";
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1400px
+) !default;
 
 /**
  * External dependencies
@@ -12,6 +30,7 @@
 // Bootstrap
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/bootstrap-grid";
+@import "~bootstrap/scss/utilities";
 
 // Choices
 $choices-button-icon-path: "~choices.js/assets/icons";
@@ -38,6 +57,7 @@ $choices-keyline-color: #ddd;
 @import "helpers/animation-spin";
 @import "helpers/align";
 @import "helpers/ui";
+@import "helpers/screen-reader-text";
 
 // HTML Elements
 @import "elements/html";
@@ -62,3 +82,11 @@ $choices-keyline-color: #ddd;
 @import "modules/navbar-menu";
 @import "modules/megamenu";
 @import "modules/branding";
+
+// Product card
+@import "modules/product-grid";
+@import "modules/product-card";
+
+// Product
+@import "modules/price";
+@import "modules/star-rating";

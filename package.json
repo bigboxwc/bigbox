@@ -57,8 +57,8 @@
     "dev": "cross-env BABEL_ENV=default webpack --watch",
     "lint": "./node_modules/.bin/eslint .; exit 0",
     "lint:fix": "./node_modules/.bin/eslint * --fix; exit 0",
-    "css:lint": "./node_modules/.bin/stylelint resources/**/*.scss --syntax scss; exit 0",
-    "css:lint:fix": "./node_modules/.bin/stylelint resources/**/*.scss --syntax scss --fix; exit 0",
+    "css-lint": "./node_modules/.bin/stylelint resources/**/*.scss --syntax scss; exit 0",
+    "css-lint:fix": "./node_modules/.bin/stylelint resources/**/*.scss --syntax scss --fix; exit 0",
     "package-theme": "./bin/package-theme.sh",
     "setup": "npm install && composer install"
   },
@@ -71,5 +71,8 @@
   "bugs": {
     "url": "https://github.com/spencerfinnell/bigbox-theme/issues"
   },
-  "homepage": "https://bigboxwp.com"
+  "homepage": "https://bigboxwp.com",
+  "dependencies": {
+    "npm": "^5.7.1"
+  }
 }

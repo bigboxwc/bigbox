@@ -62,7 +62,7 @@ final class Integrations implements Registerable, Service {
 	 * @since 1.0.0
 	 *
 	 * @param array $integration Integration information.
-	 * @return Service
+	 * @return Integration
 	 * @throws Exception\InvalidIntegration If the integration is not valid.
 	 */
 	public function instantiate_integration( $integration ) {

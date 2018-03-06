@@ -1,13 +1,13 @@
 // stylelint-disable
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
+$gray-200: #f7f9fa !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
+$gray-600: #2f2f33 !default;
 $gray-700: #495057 !default;
-$gray-800: #343a40 !default;
+$gray-800: #3b4257 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
@@ -24,13 +24,13 @@ $grays: map-merge((
 	"900": $gray-900
 ), $grays);
 
-$blue:    #3275da !default;
+$blue:    #3c64ff !default;
 $indigo:  #6610f2 !default;
-$purple:  #222c3c !default;
-$pink:    #e83e8c !default;
+$purple:  #312344 !default;
+$pink:    #d91b5b !default;
 $red:     #dc3545 !default;
 $orange:  #fd7e14 !default;
-$yellow:  #efcf35 !default;
+$yellow:  #f9c95d !default;
 $green:   #3cbb63 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;

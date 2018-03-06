@@ -19,11 +19,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<ul class="navbar-menu__items">
 
 		<li class="navbar-menu__item">
-			<a href="#">Spencer Finnell</a>
+			<a href="#">Account</a>
 		</li>
 
 		<li class="navbar-menu__item">
-			<a href="#">View Cart</a>
+			<a href="#">Cart</a>
 		</li>
+
 	</ul>
 </div>

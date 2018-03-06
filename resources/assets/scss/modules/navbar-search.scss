@@ -20,15 +20,12 @@
 
 	select {
 		appearance: none;
-		color: theme-color('dark');
+		color: theme-color("dark");
 		font-size: 0.75rem;
-		background: gray('100');
+		background: gray("100");
 		border: 0;
-		border-right: 1px solid gray('300');
-		border-top-left-radius: 3px;
-		border-bottom-left-radius: 3px;
-		border-top-right-radius: 0;
-		border-bottom-right-radius: 0;
+		border-right: 1px solid gray("300");
+		border-radius: $border-radius 0 0 $border-radius;
 		padding: 0 15px;
 	}
 }
@@ -51,17 +48,20 @@
 		@include form-input;
 
 		cursor: pointer;
-		font-size: 0.90rem;
+		font-size: 0.9rem;
 		color: $white;
 		padding: 0 $grid-gutter-width;
 		font-weight: 400;
-		background: theme-color('primary');
+		background: color("yellow");
 		border: 0;
-		border-bottom-left-radius: 0;
-		border-top-left-radius: 0;
+		border-radius: 0 $border-radius $border-radius 0;
+
+		&:hover {
+			box-shadow: none;
+		}
 	}
 
 	svg {
-		fill: $white;
+		fill: darken(color("yellow"), 45%);
 	}
 }

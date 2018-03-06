@@ -14,6 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 ?>
+			</div>
+		</div>
 
 		<?php wp_footer(); ?>
 

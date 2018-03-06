@@ -18,13 +18,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="navbar-search__keywords">
 		<label for="s" class="screen-reader-text"><?php esc_html_e( 'Find a product:', 'bigbox' ); ?></label>
-		<input type="search" name="s" class="form-input" />
+		<input type="search" name="s" class="form-input" placeholder="<?php esc_html_e( 'Find a product...', 'bigbox' ); ?>" />
 	</div>
 
 	<div class="navbar-search__category">
 		<label for="s" class="screen-reader-text"><?php esc_html_e( 'Choose a category:', 'bigbox' ); ?></label>
+
 		<select>
-			<option>All</option>
+			<option>All Categories</option>
 			<option selected="selected">Home &amp; Grocery</option>
 		</select>
 	</div>

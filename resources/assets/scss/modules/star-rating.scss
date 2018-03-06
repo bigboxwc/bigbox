@@ -1,0 +1,19 @@
+.star-rating {
+	display: flex;
+	align-items: center;
+}
+
+.star-rating__stars {
+	svg {
+		margin: 0 2px;
+		fill: darken(color("yellow"), 5%);
+		width: 16px;
+		height: 16px;
+	}
+}
+
+.star-rating__count {
+	font-size: 0.75rem;
+	opacity: 0.50;
+	margin-left: 5px;
+}

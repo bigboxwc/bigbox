@@ -46,7 +46,7 @@ class Setup_Guide implements Registerable, Service {
 			],
 			'install-plugins' => [
 				'label'    => __( 'Optimize Your Website', 'bigbox' ),
-				'priority' => 20,
+				'priority' => 30,
 			],
 			'customize'       => [
 				'label'    => __( 'Customize Appearance', 'bigbox' ),
@@ -57,7 +57,7 @@ class Setup_Guide implements Registerable, Service {
 		if ( ! bigbox_is_integration_active( 'woocommerce' ) ) {
 			$this->steps['install-woocommerce'] = [
 				'label'    => __( 'Install WooCommerce', 'bigbox' ),
-				'priority' => 30,
+				'priority' => 20,
 			];
 		}
 

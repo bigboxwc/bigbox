@@ -56,7 +56,7 @@ abstract class Integration {
 	 */
 	public function __construct( $slug, $dependencies ) {
 		$this->dependencies = $dependencies;
-		$this->dir          = get_template_directory() . trailingslashit( 'app/integrations' ) . $slug;
+		$this->dir          = get_template_directory() . trailingslashit( '/app/integrations' ) . $slug;
 	}
 
 	/**

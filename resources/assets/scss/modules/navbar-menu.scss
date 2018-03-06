@@ -4,9 +4,9 @@
 
 .navbar-menu--secondary {
 	width: 100%;
-	padding-top: $grid-gutter-width / 2;
-	padding-bottom: $grid-gutter-width / 2;
-	border-top: 1px solid rgba(255, 255, 255, 0.10);
+	padding-top: $grid-gutter-width / 4;
+	padding-bottom: $grid-gutter-width / 4;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar-menu__items {
@@ -17,20 +17,28 @@
 }
 
 .navbar-menu__item {
-	font-size: 0.90rem;
+	font-size: 0.85rem;
 
 	a {
-		color: #fff;
-		opacity: 0.90;
+		color: color("white");
+		opacity: 0.9;
 		padding: 5px 10px;
 		border: 1px solid transparent;
 		border-radius: $border-radius;
+		display: flex;
+		align-items: center;
 
 		&:hover {
 			opacity: 1;
 			text-decoration: none;
-			border: 1px solid rgba(color('white'), 0.20);
-			box-shadow: 0 1px 0 rgba(color('black'), 0.20), 0 1px 2px rgba(color('black'), 0.40), 0 0 5px rgba(color('white'), 0.10);
+			border: 1px solid rgba(color("white"), 0.2);
+		}
+
+		svg {
+			fill: color("white");
+			width: 12px;
+			height: 12px;
+			margin-right: 4px;
 		}
 	}
 }
