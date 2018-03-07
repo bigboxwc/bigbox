@@ -15,26 +15,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div class="product-card">
-	<div class="product-card__preview">
+<div class="product">
+	<div class="product__preview">
 		<a href="#">
 			<img src="https://images-na.ssl-images-amazon.com/images/I/41NoqeaXK6L.jpg" alt="" />
 		</a>
 	</div>
 
-	<div class="product-card__description">
-		<h2 class="product-card__title">
+	<div class="product__description">
+		<h2 class="product__title">
 			<a href="#">Certified Refurbished Vitamix 5200 Blender, Black</a>
 		</h2>
 
-		<div class="product-card__shipping">Ships in 4-7 days</div>
+		<div class="product__shipping">Ships in 4-7 days</div>
 
-		<div class="product-card__sale">
+		<div class="product__sale">
 			<a href="#">Save 40%</a>
 		</div>
 
-		<div class="product-card__stats m-0">
-			<div class="product-card__price price">
+		<div class="product__stats m-0">
+			<div class="product__price price">
 				<a href="#">
 					<ins><sup>$</sup>499<sup>99</sup></ins>
 					<del><sup>$</sup>699<sup>99</sup></del>
@@ -42,8 +42,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		</div>
 
-		<div class="product-card__stats">
-			<div class="star-rating product-card__rating">
+		<div class="product__stats">
+			<div class="star-rating product__rating">
 				<span class="star-rating__stars">
 					<?php
 					bigbox_svg( 'star' );

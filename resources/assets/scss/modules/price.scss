@@ -1,6 +1,7 @@
 .price {
 	font-size: 1.25rem;
 
+	.woocommerce-Price-currencySymbol,
 	sup {
     font-size: 0.60em;
     vertical-align: top;
@@ -21,6 +22,14 @@
 	a:hover,
 	ins {
 		text-decoration: none;
+	}
+
+	ins {
+		order: 0;
+	}
+
+	del {
+		order: 1;
 	}
 
 	del {

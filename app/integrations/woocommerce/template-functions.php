@@ -37,5 +37,62 @@ function bigbox_woocommerce_enqueue_styles( $styles ) {
  * @return string
  */
 function bigbox_woocommerce_template_path( $path ) {
-	return 'app/integrations/woocommerce/views';
+	return 'app/integrations/woocommerce/views/';
+}
+
+/**
+ * Adjust opening wrapper tag.
+ *
+ * @since 1.0.0
+ */
+function bigbox_woocommerce_output_content_wrapper() {
+	echo '<div id="main" class="site-primary" role="main">';
+}
+
+/**
+ * Adjust closing wrapper tag.
+ *
+ * @since 1.0.0
+ */
+function bigbox_woocommerce_output_content_wrapper_end() {
+	echo '</div>';
+}
+
+/**
+ * Add note about shipping estimate.
+ *
+ * @since 1.0.0
+ */
+function bigbox_woocommerce_after_shop_loop_item_title_shipping() {
+	echo '<div class="product__shipping">Ships in 4-7 days</div>';
+}
+
+/**
+ * Adjust rating output to use star icons.
+ *
+ * @since 1.0.0
+ *
+ * @param string $html   Current HTML.
+ * @param float  $rating Rating to be shown.
+ * @param int    $count  Total number of ratings.
+ * @return string
+ */
+function bigbox_woocommerce_get_star_rating_html( $html, $rating, $count ) {
+	ob_start();
+?>
+
+<span class="star-rating__stars">
+	<?php
+	bigbox_svg( 'star' );
+	bigbox_svg( 'star' );
+	bigbox_svg( 'star' );
+	bigbox_svg( 'star' );
+	bigbox_svg( 'star' );
+	?>
+</span>
+
+<span class="star-rating__count" aria-title="<?php sprintf( esc_attr__( '%1$s customer ratings', 'bigbox' ), $count ); ?>"><?php echo esc_html( $count ); ?></span>
+
+<?php
+	return ob_get_clean();
 }

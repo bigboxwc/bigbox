@@ -83,6 +83,13 @@ $choices-keyline-color: #ddd;
 @import "modules/megamenu";
 @import "modules/branding";
 
+// Content
+@import "modules/site-primary";
+@import "modules/site-secondary";
+
+// Shop
+@import "modules/breadcrumbs";
+
 // Product card
 @import "modules/products";
 @import "modules/product";

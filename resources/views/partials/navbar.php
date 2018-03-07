@@ -24,3 +24,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 	?>
 	
 </div>
+
+<?php do_action( 'bigbox_navbar_after' ); ?>

@@ -1,6 +1,6 @@
-.site-secondary {
+.site-primary {
 	@include make-col-ready;
-	@include make-col(2);
+	@include make-col(10);
 	margin-top: $vertical-spacer;
 	margin-bottom: $vertical-spacer;
 }
