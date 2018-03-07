@@ -5,9 +5,9 @@
 		flex-wrap: wrap;
 		align-items: flex-start;
 		margin: 0 0 ( $grid-gutter-width / 3 ); 
+		padding: 0 0 ( $grid-gutter-width / 3 ); 
 		width: 100%;
-		
-		@include card;
+		border-bottom: 1px solid gray('300');
 	}
 }
 
@@ -24,18 +24,17 @@
 	display: flex;
 	flex-direction: column;
 	padding: $spacer;
-	background: rgba(gray('100'), 0.80);
-	border-left: 1px solid gray('300');
 	position: relative;
 	height: 100%;
 }
 
+.woocommerce-loop-category__title,
 .woocommerce-loop-product__title,
 .product__title {
 	font-weight: 400;
-	font-size: 1rem;
-	margin: ( $vertical-spacer / 2 ) 0;
-	order: 1;
+	font-size: 1.15rem;
+	margin: 0;
+	order: 0;
 }
 
 .product__stats {
@@ -43,8 +42,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	order: 2;
-	margin: ( $vertical-spacer / 2 ) 0;
+	margin: ( $vertical-spacer / 4 ) 0;
 
 	&:last-child {
 		margin-bottom: 0;
@@ -58,23 +56,38 @@
 }
 
 .product__sale {
-	position: absolute;
-	top: 13px;
-	right: -1px;
-	order: 0;
+	margin-left: 10px;
 
 	a {
 		color: color("white");
 		font-size: 0.75rem;
 		line-height: 1;
 		text-transform: uppercase;
+		font-weight: 700;
 		background: color("green");
-		border-radius: $border-radius 0 0 $border-radius;
+		border-radius: $border-radius;
 		padding: 5px 5px 4px;
 		display: block;
 
 		&:hover {
 			text-decoration: none;
+		}
+	}
+}
+
+.product__has-variations {
+	a {
+		color: gray('600');
+		font-size: 0.75rem;
+		background: gray('100');
+		border: 1px solid gray('300');
+		border-radius: $border-radius;
+		padding: 5px 5px 4px;
+
+		&:hover {
+			color: gray('800');
+			text-decoration: none;
+			border: 1px solid gray('500');
 		}
 	}
 }

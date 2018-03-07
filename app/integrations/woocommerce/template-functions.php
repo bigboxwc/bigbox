@@ -23,6 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function bigbox_woocommerce_enqueue_styles( $styles ) {
 	unset( $styles['woocommerce-general'] );
+	unset( $styles['woocommerce-layout'] );
 	unset( $styles['woocommerce-smallscreen'] );
 
 	return $styles;
@@ -59,12 +60,25 @@ function bigbox_woocommerce_output_content_wrapper_end() {
 }
 
 /**
- * Add note about shipping estimate.
+ * Show note for variable products.
  *
  * @since 1.0.0
  */
-function bigbox_woocommerce_after_shop_loop_item_title_shipping() {
-	echo '<div class="product__shipping">Ships in 4-7 days</div>';
+function bigbox_woocommerce_after_shop_loop_item_title_variations() {
+	global $product;
+
+	if ( 'variable' !== $product->get_type() ) {
+		return;
+	}
+?>
+
+<div class="product__has-variations product__stats">
+	<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>">
+		<?php esc_html_e( 'See More Options', 'bigbox' ); ?>
+	</a>
+</div>
+
+<?php
 }
 
 /**
@@ -91,7 +105,7 @@ function bigbox_woocommerce_get_star_rating_html( $html, $rating, $count ) {
 	?>
 </span>
 
-<span class="star-rating__count" aria-title="<?php sprintf( esc_attr__( '%1$s customer ratings', 'bigbox' ), $count ); ?>"><?php echo esc_html( $count ); ?></span>
+<span class="star-rating__count" aria-title="<?php printf( esc_attr__( '%1$s customer ratings', 'bigbox' ), $count ); ?>"><?php echo esc_html( $count ); ?></span>
 
 <?php
 	return ob_get_clean();

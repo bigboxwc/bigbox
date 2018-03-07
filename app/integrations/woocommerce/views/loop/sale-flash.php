@@ -23,14 +23,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $post, $product;
 
 if ( $product->is_on_sale() ) :
-	$percentage = round( ( $product->get_regular_price() - $product->get_sale_price() ) / $product->get_regular_price() * 100 );
+	if ( 'simple' === $product->get_type() ) :
+		$percentage = round( ( $product->get_regular_price() - $product->get_sale_price() ) / $product->get_regular_price() * 100 );
+		$flash      = sprintf( esc_html__( 'Save %1$s%%', 'bigbox' ), $percentage );
+	else :
+		$flash = esc_html__( 'Sale!', 'bigbox' );
+	endif;
 ?>
 
 <div class="product__sale">
 	<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>">
 		<?php
 		// Translators: %1$s Sale price percentage.
-		echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . sprintf( esc_html__( 'Save %1$s%%', 'bigbox' ), $percentage ). '</span>', $post, $product );
+		echo apply_filters( 'woocommerce_sale_flash', $flash, $post, $product );
 		?>
 	</a>
 </div>
