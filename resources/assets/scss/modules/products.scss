@@ -3,8 +3,8 @@
 	ul.products {
 		display: flex;
 		flex-wrap: wrap;
-		margin: $vertical-spacer 0;
-		padding: 0;
+		margin: 0 0 $vertical-spacer;
+		padding: ( $grid-gutter-width / 3 ) 0 0;
 		list-style: none;
 	}
 }

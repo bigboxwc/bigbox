@@ -14,6 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 ?>
+
+				<?php wc_get_template( 'global/sidebar-tertiary.php' ); ?>
+
 			</div>
 		</div>
 

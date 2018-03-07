@@ -5,7 +5,12 @@
 	margin-bottom: $vertical-spacer;
 	order: 0;
 
-	@include media-breakpoint-up(xl) {
+	@include media-breakpoint-up(md) {
+
+		@include make-col(4);
+	}
+
+	@include media-breakpoint-up(lg) {
 
 		@include make-col(2.5);
 	}

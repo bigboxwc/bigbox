@@ -88,12 +88,14 @@ $choices-keyline-color: #ddd;
 // Content
 @import "modules/site-primary";
 @import "modules/site-secondary";
+@import "modules/site-tertiary";
 @import "modules/page-title";
 @import "modules/widget";
 
 // Shop
 @import "modules/ordering";
 @import "modules/breadcrumbs";
+@import "modules/woocommerce-products-header";
 
 // Product card
 @import "modules/products";

@@ -49,6 +49,8 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_after_
 /**
  * @see archive-product.php
  */
+add_filter( 'woocommerce_show_page_title', '__return_false' );
+
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 add_action( 'bigbox_navbar_after', 'woocommerce_breadcrumb' );
 

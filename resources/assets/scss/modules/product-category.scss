@@ -21,6 +21,7 @@
 		}
 
 		a {
+			color: initial;
 			display: flex;
 			flex-direction: column;
 			width: 100%;
@@ -36,6 +37,7 @@
 
 .woocommerce-loop-category__title {
 	font-weight: 500;
+	font-size: 1rem;
 	text-align: center;
 	margin: 0;
 	padding: $spacer;

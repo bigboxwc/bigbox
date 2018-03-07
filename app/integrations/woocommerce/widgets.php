@@ -21,9 +21,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 function bigbox_woocommerce_register_sidebars() {
 	register_sidebar(
 		array(
-			// Translators: Widget column number.
-			'name'          => __( 'Shop Sidebar', 'bigbox' ),
+			'name'          => __( 'Shop Sidebar (Left)', 'bigbox' ),
 			'id'            => 'shop',
+			'description'   => '',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => __( 'Shop Sidebar (Right)', 'bigbox' ),
+			'id'            => 'shop-tertiary',
 			'description'   => '',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
