@@ -7,6 +7,6 @@
 
 	@include media-breakpoint-up(xl) {
 
-		@include make-col(9);
+		@include make-col(9.5);
 	}
 }
