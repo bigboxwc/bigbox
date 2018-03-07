@@ -60,6 +60,15 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 3
 remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination' );
 
 /**
+ * @see single-product.php
+ */
+add_action( 'the_post', function() {
+	if ( is_singular( 'product' ) ) {
+		remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar' );
+	}
+} );
+
+/**
  * @see class-wc-breadcrumb.php
  */
 add_filter( 'woocommerce_get_breadcrumb', 'bigbox_woocommerce_get_breadcrumb', 99 );

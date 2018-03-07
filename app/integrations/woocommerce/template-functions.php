@@ -134,6 +134,10 @@ function bigbox_woocommerce_breadcrumb_defaults( $args ) {
  * @return array
  */
 function bigbox_woocommerce_get_breadcrumb( $crumbs ) {
+	if ( is_singular( 'product' ) ) {
+		return $crumbs;
+	}
+
 	ob_start();
 	woocommerce_result_count();
 	$count = ob_get_clean();
