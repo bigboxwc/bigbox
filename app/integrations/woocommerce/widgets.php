@@ -25,7 +25,7 @@ function bigbox_woocommerce_register_sidebars() {
 			'name'          => __( 'Shop Sidebar', 'bigbox' ),
 			'id'            => 'shop',
 			'description'   => '',
-			'before_widget' => '<div id="%1$s" class="%2$s">',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',

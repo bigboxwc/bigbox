@@ -4,7 +4,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-items: flex-start;
-		margin: 0 0 ( $grid-gutter-width / 2 ); 
+		margin: 0 0 ( $grid-gutter-width / 3 ); 
 		width: 100%;
 		
 		@include card;
@@ -25,6 +25,7 @@
 	flex-direction: column;
 	padding: $spacer;
 	background: rgba(gray('100'), 0.80);
+	border-left: 1px solid gray('300');
 	position: relative;
 	height: 100%;
 }
