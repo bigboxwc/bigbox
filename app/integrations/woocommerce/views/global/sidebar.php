@@ -22,5 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div id="secondary" class="site-secondary" role="complementary">
+	Filter
 	<?php woocommerce_catalog_ordering(); ?>
 </div>

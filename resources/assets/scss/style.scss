@@ -52,6 +52,7 @@ $choices-keyline-color: #ddd;
 @import "mixins/button";
 @import "mixins/form";
 @import "mixins/link";
+@import "mixins/card";
 
 // Helpers
 @import "helpers/animation-spin";
@@ -69,6 +70,7 @@ $choices-keyline-color: #ddd;
 // Repeatable Patterns
 @import "modules/button";
 @import "modules/icon";
+@import "modules/card";
 
 // Forms
 @import "modules/form-row";
@@ -89,6 +91,7 @@ $choices-keyline-color: #ddd;
 @import "modules/page-title";
 
 // Shop
+@import "modules/ordering";
 @import "modules/breadcrumbs";
 
 // Product card

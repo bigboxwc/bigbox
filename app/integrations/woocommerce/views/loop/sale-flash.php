@@ -22,16 +22,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $post, $product;
 
+if ( $product->is_on_sale() ) :
+	$percentage = round( ( $product->get_regular_price() - $product->get_sale_price() ) / $product->get_regular_price() * 100 );
 ?>
-<?php if ( $product->is_on_sale() ) : ?>
-
 
 <div class="product__sale">
 	<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>">
-		<?php echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . esc_html__( 'Sale!', 'woocommerce' ) . '</span>', $post, $product ); ?>
+		<?php
+		// Translators: %1$s Sale price percentage.
+		echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . sprintf( esc_html__( 'Save %1$s%%', 'bigbox' ), $percentage ). '</span>', $post, $product );
+		?>
 	</a>
 </div>
 
-<?php endif;
-
-/* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
+<?php
+endif;
