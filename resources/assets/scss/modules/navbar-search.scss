@@ -5,8 +5,7 @@
 	flex: 1 0 auto;
 	margin-left: $grid-gutter-width / 2;
 	margin-right: $grid-gutter-width / 2;
-	padding-top: $grid-gutter-width / 2;
-	padding-bottom: $grid-gutter-width / 2;
+	box-shadow: 0 0 10px darken(theme-color("primary"), 10%);
 }
 
 .navbar-search__category,
@@ -50,9 +49,8 @@
 		cursor: pointer;
 		font-size: 0.9rem;
 		color: $white;
-		padding: 0 $grid-gutter-width;
+		padding: 0 ( $grid-gutter-width / 2 );
 		font-weight: 400;
-		background: color("yellow");
 		border: 0;
 		border-radius: 0 $border-radius $border-radius 0;
 
@@ -62,6 +60,6 @@
 	}
 
 	svg {
-		fill: darken(color("yellow"), 45%);
+		fill: color("blue");
 	}
 }

@@ -16,12 +16,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="navbar">
 	
-	<?php
-	bigbox_partial( 'branding' );
-	bigbox_partial( 'navbar-search' );
-	bigbox_partial( 'navbar-primary-menu' );
-	bigbox_partial( 'navbar-secondary-menu' );
-	?>
+	<div class="navbar__inner">
+		<?php
+		bigbox_partial( 'branding' );
+		bigbox_partial( 'navbar-search' );
+		bigbox_partial( 'navbar-primary-menu' );
+		?>
+	</div>
+
+	<?php bigbox_partial( 'navbar-secondary-menu' ); ?>
 	
 </div>
 
