@@ -22,13 +22,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product;
 
-if ( get_option( 'woocommerce_enable_review_rating' ) === 'no' ) {
+if ( get_option( 'woocommerce_enable_review_rating' ) === 'no' ) :
 	return;
-}
+endif;
+
+$stars = wc_get_rating_html( $product->get_average_rating(), $product->get_review_count() );
+
+if ( '' === $stars ) :
+	return;
+endif;
 ?>
 
 <div class="product__stats">
 	<div class="star-rating product__rating">
-		<?php echo wc_get_rating_html( $product->get_average_rating(), $product->get_review_count() ); ?>
+		<?php echo $stars; ?>
 	</div>
 </div>
