@@ -34,6 +34,7 @@ class WooCommerce extends Integration implements Registerable, Service {
 	public function register() {
 		include_once $this->get_dir() . '/template-hooks.php';
 		include_once $this->get_dir() . '/template-functions.php';
+		include_once $this->get_dir() . '/widgets.php';
 
 		add_action( 'after_setup_theme', [ $this, 'add_theme_support' ] );
 	}
@@ -47,6 +48,7 @@ class WooCommerce extends Integration implements Registerable, Service {
 		add_theme_support( 'wc-product-gallery-zoom' );
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-slider' );
+
 		add_theme_support( 'woocommerce', array(
 			'thumbnail_image_width' => 200,
 			'single_image_width'    => 300,

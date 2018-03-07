@@ -95,6 +95,13 @@ final class Integrations implements Registerable, Service {
 					defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
 				],
 			],
+			'facetwp' => [
+				'slug'         => 'facetwp',
+				'class'        => Integration\FacetWP::class,
+				'dependencies' => [
+					defined( 'FACETWP_VERSION' ) && FACETWP_VERSION,
+				],
+			],
 		];
 	}
 
