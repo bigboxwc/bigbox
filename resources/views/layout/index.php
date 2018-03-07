@@ -15,16 +15,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 bigbox_view( 'global/header' );
-?>
 
-<div class="container">
-	<div class="product-grid">
-		<?php bigbox_partial( 'product-card' ); ?>
-		<?php bigbox_partial( 'product-card' ); ?>
-		<?php bigbox_partial( 'product-card' ); ?>
-		<?php bigbox_partial( 'product-card' ); ?>
-	</div>
-</div>
-
-<?php
 bigbox_view( 'global/footer' );

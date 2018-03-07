@@ -22,5 +22,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div id="secondary" class="site-secondary" role="complementary">
-	Sidebar
+	<?php woocommerce_catalog_ordering(); ?>
 </div>
