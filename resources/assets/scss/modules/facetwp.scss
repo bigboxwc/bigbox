@@ -1,0 +1,24 @@
+.facetwp-facet {
+	.site-secondary & {
+		margin-bottom: 0;
+	}
+}
+
+.facetwp-selections {
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li[data-facet] {
+		display: block;
+		margin-bottom: 1rem;
+	}
+}
+
+.facetwp-selection-label {
+	font-weight: 700;
+	display: block;
+	margin: 0 0 0.5rem;
+}

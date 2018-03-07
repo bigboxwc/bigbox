@@ -46,8 +46,15 @@ class WooCommerceShippingEstimates extends Integration implements Registerable, 
 		if ( $product->is_virtual() ) {
 			return;
 		}
+?>
 
-		echo '<div class="product__shipping product__stats">Ships in 4-7 days</div>';
+<div class="product__stats">
+	<div class="product__shipping">
+		<strong>Estimated Delivery:</strong> March 8, 2018
+	</div>
+</div>
+
+<?php
 	}
 
 }

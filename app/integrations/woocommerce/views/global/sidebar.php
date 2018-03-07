@@ -26,5 +26,7 @@ endif;
 ?>
 
 <div id="secondary" class="site-secondary" role="complementary">
-	<?php dynamic_sidebar( 'shop' ); ?>
+	<div class="shop-filters">
+		<?php dynamic_sidebar( 'shop' ); ?>
+	</div>
 </div>

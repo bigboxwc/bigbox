@@ -1,0 +1,23 @@
+.product_list_widget,
+.product-categories,
+.woocommerce-widget-layered-nav-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.product_list_widget {
+	a {
+		display: block;
+	}
+
+	li {
+		margin-bottom: 1rem;
+	}
+
+	.price {
+		font-size: 1rem;
+		line-height: 1;
+		margin-top: 10px;
+	}
+}
