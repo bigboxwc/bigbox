@@ -96,3 +96,38 @@ function bigbox_woocommerce_get_star_rating_html( $html, $rating, $count ) {
 <?php
 	return ob_get_clean();
 }
+
+/**
+ * Breadcrumb arguments.
+ *
+ * @since 1.0.0
+ *
+ * @param array $args Arugments.
+ * @return array
+ */
+function bigbox_woocommerce_breadcrumb_defaults( $args ) {
+	$args['delimiter'] = '&nbsp;&#8250;&nbsp;';
+
+	return $args;
+}
+
+/**
+ * Append to breadcrumbs.
+ *
+ * @since 1.0.0
+ *
+ * @param array $crumbs Existing crumbs.
+ * @return array
+ */
+function bigbox_woocommerce_get_breadcrumb( $crumbs ) {
+	ob_start();
+	woocommerce_result_count();
+	$count = ob_get_clean();
+
+	$crumbs[] = array(
+		$count,
+		'',
+	);
+
+	return $crumbs;
+}
