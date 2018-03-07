@@ -12,6 +12,7 @@
 		@include media-breakpoint-up(sm) {
 			flex-direction: row;
 			margin: 0 0 ( $grid-gutter-width / 3 ); 
+			padding: ( $grid-gutter-width / 3 ) 0 0;
 
 			&:not(.product-category):first-child {
 				border-top: 0;
