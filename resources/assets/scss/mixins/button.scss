@@ -1,10 +1,9 @@
 @mixin button {
-	font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font: 400 16px/1.5 $font-family-sans-serif;
 	cursor: pointer;
 	padding: 13px 20px;
 	border: 0;
 	border-radius: $border-radius;
-	transition: transform 0.1s ease-in-out, box-shadow 0.2s ease-in;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -17,7 +16,6 @@
 	}
 
 	&:hover {
-		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 		border: 0;
 		text-decoration: none;
 	}
@@ -29,14 +27,6 @@
 	@include button;
 	color: #fff;
 	background-color: theme-color("primary");
-	background-image: linear-gradient(170deg, theme-color("primary"), lighten(theme-color("primary"), 5%));
-	box-shadow: 0 2px 4px rgba(theme-color("primary"), 0.1), 0 4px 10px rgba(theme-color("primary"), 0.3) !important; // [1]
-
-	&:hover {
-		color: #fff;
-		box-shadow: 0 4px 10px rgba(theme-color("primary"), 0.3), 0 7px 20px rgba(theme-color("primary"), 0.2) !important; // [1]
-		transform: translateY(-2px);
-	}
 }
 
 @mixin button--secondary {
@@ -44,17 +34,7 @@
 	@include button;
 	color: gray(700);
 	background-color: gray(500);
-	background-image: linear-gradient(170deg, gray(100), gray(200));
-	box-shadow: 0 2px 4px rgba(gray(200), 0.1), 0 4px 10px rgba(gray(500), 0.1) !important; // [1]
 	border: 1px solid gray(300);
-
-	&:hover {
-		color: gray(700);
-		background-color: gray(500);
-		background-image: linear-gradient(170deg, gray(100), gray(200));
-		box-shadow: 0 2px 4px rgba(gray(200), 0.2), 0 4px 10px rgba(gray(500), 0.2) !important; // [1]
-		border: 1px solid gray(300);
-	}
 }
 
 // [1] Gutenberg adds their own !important declaration.
@@ -72,18 +52,11 @@
 	}
 }
 
-// [1] Gutenberg adds their own !important declaration.
 @mixin button--danger {
 
 	@include button;
 	@include button--primary;
 	background-color: color("red");
-	background-image: linear-gradient(170deg, color("red"), lighten(color("red"), 5%)) !important; // [1]
-	box-shadow: 0 2px 4px rgba(color("red"), 0.1), 0 4px 10px rgba(color("red"), 0.3) !important; // [1]
-
-	&:hover {
-		box-shadow: 0 4px 10px rgba(color("red"), 0.3), 0 7px 20px rgba(color("red"), 0.2) !important; // [1]
-	}
 }
 
 @mixin button--size-sm {

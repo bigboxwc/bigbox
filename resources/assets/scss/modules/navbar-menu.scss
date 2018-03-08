@@ -7,6 +7,9 @@
 	padding-top: $grid-gutter-width / 4;
 	padding-bottom: $grid-gutter-width / 4;
 	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .navbar-menu__items {
@@ -27,6 +30,7 @@
 		border-radius: $border-radius;
 		display: flex;
 		align-items: center;
+		position: relative;
 
 		&:hover {
 			opacity: 1;
@@ -44,6 +48,7 @@
 }
 
 .navbar-menu__item--stacked {
+
 	a {
 		text-align: center;
 		line-height: 1;
@@ -61,8 +66,26 @@
 }
 
 .navbar-menu__item--parent {
+
 	svg {
 		margin: 0 0 0 5px;
 		width: 9px;
 	}
+}
+
+.navbar-menu__cart-count {
+	font-size: 0.75rem;
+	line-height: 1;
+	position: absolute;
+	top: -7px;
+	left: 50%;
+	transform: translateX(-25px);
+	background: theme-color("success");
+	border-radius: 15px;
+	min-width: 20px;
+	height: 20px;
+	padding: 0 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

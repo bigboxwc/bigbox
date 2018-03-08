@@ -25,13 +25,13 @@ global $product;
 
 <?php if ( $price_html = $product->get_price_html() ) : ?>
 
+<?php woocommerce_show_product_loop_sale_flash(); ?>
+
 <div class="product__stats">
 	<span class="price">
 		<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>">
 			<?php echo $price_html; ?>
 		</a>
-
-		<?php woocommerce_show_product_loop_sale_flash(); ?>
 	</span>
 </div>
 

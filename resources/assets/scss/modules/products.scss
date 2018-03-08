@@ -1,5 +1,6 @@
 .woocommerce,
 .woocommerce-page {
+
 	ul.products {
 		margin-top: 0;
 		margin-bottom: $vertical-spacer;
@@ -7,5 +8,11 @@
 		list-style: none;
 
 		@include make-row;
+		@include card;
+
+		@include media-breakpoint-down(lg) {
+			border-right: 0;
+			border-radius: $border-radius 0 0 $border-radius;
+		}
 	}
 }

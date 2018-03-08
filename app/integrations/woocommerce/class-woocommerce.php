@@ -49,9 +49,16 @@ class WooCommerce extends Integration implements Registerable, Service {
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-slider' );
 
-		add_theme_support( 'woocommerce', array(
-			'thumbnail_image_width' => 200,
-			'single_image_width'    => 300,
-		) );
+		add_theme_support(
+			'woocommerce',
+			[
+				'thumbnail_image_width' => 200,
+				'single_image_width'    => 300,
+				'product_grid'          => [
+					'min_columns' => 1,
+					'max_columns' => 5,
+				],
+			]
+		);
 	}
 }

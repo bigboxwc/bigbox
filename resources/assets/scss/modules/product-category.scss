@@ -1,5 +1,6 @@
 .woocommerce-page ul.products,
 .woocommerce ul.products {
+
 	li.product.product-category {
 		flex-direction: column;
 		margin: 0 0 ( $grid-gutter-width / 2 ); 
@@ -47,8 +48,8 @@
 	text-align: center;
 	margin: 0;
 	padding: $spacer;
-	border-top: 1px solid gray('300');
-	background: rgba(gray('100'), 0.80);
+	border-top: 1px solid gray("300");
+	background: rgba(gray("100"), 0.8);
 	flex: 1;
 
 	.count {

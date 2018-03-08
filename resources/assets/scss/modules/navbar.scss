@@ -1,7 +1,7 @@
 .navbar {
 	color: color("white");
 	background: theme-color("primary");
-	box-shadow: 0 0 10px gray('400');
+	box-shadow: 0 0 10px gray("400");
 	
 	@include make-container();
 }

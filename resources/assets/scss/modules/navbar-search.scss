@@ -60,6 +60,6 @@
 	}
 
 	svg {
-		fill: color("blue");
+		fill: darken( color("blue"), 10% );
 	}
 }

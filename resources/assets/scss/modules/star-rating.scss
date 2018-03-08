@@ -4,6 +4,7 @@
 }
 
 .star-rating__stars {
+
 	svg {
 		margin: 0 2px;
 		fill: darken(color("yellow"), 5%);
@@ -14,6 +15,6 @@
 
 .star-rating__count {
 	font-size: 0.75rem;
-	opacity: 0.50;
+	opacity: 0.5;
 	margin-left: 5px;
 }

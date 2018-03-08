@@ -27,7 +27,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<li class="navbar-menu__item navbar-menu__item--stacked">
 			<a href="#">
-				<?php bigbox_svg( 'basket' ); ?>
+				<span class="navbar-menu__cart-count">1</span>
+				<?php bigbox_svg( 'cart' ); ?>
 				Cart
 			</a>
 		</li>

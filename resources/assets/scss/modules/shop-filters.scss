@@ -7,12 +7,16 @@
 }
 
 .product_list_widget {
+
 	a {
 		display: block;
 	}
 
 	li {
 		margin-bottom: 1rem;
+		padding: 1rem;
+
+		@include card;
 	}
 
 	.price {

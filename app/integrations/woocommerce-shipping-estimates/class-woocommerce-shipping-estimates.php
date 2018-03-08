@@ -50,7 +50,7 @@ class WooCommerceShippingEstimates extends Integration implements Registerable, 
 
 <div class="product__stats">
 	<div class="product__shipping">
-		<strong>Estimated Delivery:</strong> March 8, 2018
+		<strong>Delivery:</strong> March 8
 	</div>
 </div>
 

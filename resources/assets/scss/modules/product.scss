@@ -11,6 +11,7 @@
 
 .woocommerce-page ul.products,
 .woocommerce ul.products {
+
 	li.product {
 		display: flex;
 		flex-wrap: wrap;
@@ -18,7 +19,7 @@
 		flex-direction: column;
 		padding-top: $spacer; 
 		padding-bottom: $spacer; 
-		border-bottom: 1px solid gray('300');
+		border-bottom: 1px solid gray("300");
 
 		@include make-col-ready;
 		@include make-col(12);
@@ -37,6 +38,7 @@
 	}
 
 	&.columns-2 li.product {
+
 		@include media-breakpoint-up(lg) {
 			
 			@include horizontal-card;
@@ -75,7 +77,7 @@
 
 	&.columns-5 li.product {
 
-		@include media-breakpoint-up(xxl) {
+		@include media-breakpoint-up(xl) {
 
 			@include make-col(2.4);
 		}
@@ -129,13 +131,14 @@
 }
 
 .product__shipping {
+	color: gray("500");
 	font-size: 0.75rem;
-	opacity: 0.50;
 	order: 0;
 }
 
 .product__sale {
-	margin-left: 10px;
+	display: inline-block;
+	margin: ( $vertical-spacer / 4 ) 0;
 
 	a {
 		color: color("white");
@@ -146,7 +149,7 @@
 		background: color("green");
 		border-radius: $border-radius;
 		padding: 5px 5px 4px;
-		display: block;
+		display: inline-block;
 
 		&:hover {
 			text-decoration: none;
@@ -155,18 +158,19 @@
 }
 
 .product__has-variations {
+
 	a {
-		color: gray('600');
+		color: gray("600");
 		font-size: 0.75rem;
-		background: gray('100');
-		border: 1px solid gray('300');
+		background: gray("100");
+		border: 1px solid gray("300");
 		border-radius: $border-radius;
 		padding: 5px 5px 4px;
 
 		&:hover {
-			color: gray('800');
+			color: gray("800");
 			text-decoration: none;
-			border: 1px solid gray('500');
+			border: 1px solid gray("500");
 		}
 	}
 }

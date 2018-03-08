@@ -39,4 +39,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</li>
 
 	</ul>
+
+	<ul class="navbar-menu__items">
+		
+		<li class="navbar-menu__item">
+			<a href="#">Help</a>
+		</li>
+
+		<li class="navbar-menu__item">
+			<a href="#">Deals and Discounts</a>
+		</li>
+
+		<li class="navbar-menu__item">
+			<a href="#">Orders</a>
+		</li>
+
+	</ul>
+
 </div>
