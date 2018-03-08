@@ -1,7 +1,8 @@
 @mixin horizontal-card {
 	flex-direction: row;
-	margin: 0 0 ( $grid-gutter-width / 3 ); 
-	padding: 0 0 ( $grid-gutter-width / 3 );
+	margin-bottom: ( $grid-gutter-width / 3 ); 
+	padding-top: 0;
+	padding-bottom: ( $grid-gutter-width / 3 );
 
 	.product__description {
 		padding: $spacer;
@@ -15,9 +16,12 @@
 		flex-wrap: wrap;
 		align-items: flex-start;
 		flex-direction: column;
-		padding: $spacer 0; 
-		width: 100%;
+		padding-top: $spacer; 
+		padding-bottom: $spacer; 
 		border-bottom: 1px solid gray('300');
+
+		@include make-col-ready;
+		@include make-col(12);
 	}
 
 	&.columns-1 li.product {
@@ -45,7 +49,8 @@
 	&.columns-5 li.product {
 
 		@include media-breakpoint-up(sm) {
-			width: calc( 50% - ( #{$grid-gutter-width} / 2 ) );
+
+			@include make-col(6);
 		}
 	}
 
@@ -53,12 +58,9 @@
 	&.columns-4 li.product,
 	&.columns-5 li.product {
 
-		@include media-breakpoint-up(sm) {
-			width: calc( 50% - ( #{$grid-gutter-width} / 2 ) );
-		}
-
 		@include media-breakpoint-up(md) {
-			width: calc( 33.3333% - ( #{$grid-gutter-width} / 2 ) );
+
+			@include make-col(4);
 		}
 	}
 
@@ -66,14 +68,16 @@
 	&.columns-5 li.product {
 
 		@include media-breakpoint-up(lg) {
-			width: calc( 25% - ( #{$grid-gutter-width} / 2 ) );
+
+			@include make-col(4);
 		}
 	}
 
 	&.columns-5 li.product {
 
 		@include media-breakpoint-up(xl) {
-			width: calc( 20% - ( #{$grid-gutter-width} / 2 ) );
+
+			@include make-col(2.4);
 		}
 	}
 }

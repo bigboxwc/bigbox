@@ -1,11 +1,11 @@
 .woocommerce,
 .woocommerce-page {
 	ul.products {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		margin: 0 0 $vertical-spacer;
+		margin-top: 0;
+		margin-bottom: $vertical-spacer;
 		padding: ( $grid-gutter-width / 3 ) 0 0;
 		list-style: none;
+
+		@include make-row;
 	}
 }
