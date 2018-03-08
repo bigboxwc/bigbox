@@ -89,4 +89,5 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		?>
 
 	</div>
+
 </li>

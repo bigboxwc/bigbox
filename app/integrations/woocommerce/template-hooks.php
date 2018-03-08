@@ -46,6 +46,14 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop
 add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 5 );
 add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_after_shop_loop_item_title_variations', 8 );
 
+add_action( 'woocommerce_before_shop_loop_item', function() {
+	echo '<div class="product__inner">';
+} );
+
+add_action( 'woocommerce_after_shop_loop_item', function() {
+	echo '</div>';
+} );
+
 /**
  * @see archive-product.php
  */
