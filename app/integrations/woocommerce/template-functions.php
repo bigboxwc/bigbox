@@ -92,16 +92,20 @@ function bigbox_woocommerce_after_shop_loop_item_title_variations() {
  * @return string
  */
 function bigbox_woocommerce_get_star_rating_html( $html, $rating, $count ) {
+	$full_stars  = floor( $rating );
+	$half_stars  = ceil( $rating - floor( $rating ) );
+	$empty_stars = 5 - floor( $rating ) - ceil( $rating - floor( $rating ) );
+
 	ob_start();
 ?>
 
-<span class="star-rating__stars">
+<span class="star-rating__stars" aria-title="<?php printf( esc_html__( '%1$s average rating', 'bigbox' ), $rating ); ?>">
 	<?php
-	bigbox_svg( 'star' );
-	bigbox_svg( 'star' );
-	bigbox_svg( 'star' );
-	bigbox_svg( 'star' );
-	bigbox_svg( 'star' );
+	// @codingStandardsIgnoreStart
+	echo str_repeat( bigbox_get_svg( 'star' ), $full_stars );
+	echo str_repeat( bigbox_get_svg( 'star-half' ), $half_stars );
+	echo str_repeat( bigbox_get_svg( 'star-empty' ), $empty_stars );
+	// @codingStandardsIgnoreEnd
 	?>
 </span>
 

@@ -4,20 +4,10 @@
  * Defined before Bootstrap to override.
  */
 @import "variables/colors";
+@import "variables/grid";
 @import "variables/box";
 @import "variables/vertical";
-
-$grid-breakpoints: (
-	xs: 0,
-	sm: 576px,
-	md: 768px,
-	lg: 992px,
-	xl: 1200px,
-) !default;
-
-$container-max-widths: (
-	xl: 1550px,
-) !default;
+@import "variables/choices";
 
 /**
  * External dependencies
@@ -28,12 +18,6 @@ $container-max-widths: (
 @import "~bootstrap/scss/utilities";
 
 // Choices
-$choices-button-icon-path: "~choices.js/assets/icons";
-$choices-bg-color: #fff;
-$choices-border-radius: $border-radius;
-$choices-highlight-color: theme-color("primary");
-$choices-keyline-color: #ddd;
-
 @import "~choices.js/assets/styles/scss/choices";
 
 /**

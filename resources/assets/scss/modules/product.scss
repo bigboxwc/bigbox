@@ -1,11 +1,14 @@
 @mixin horizontal-card {
-	flex-direction: row;
-	margin-bottom: ( $grid-gutter-width / 3 ); 
 	padding-top: 0;
-	padding-bottom: ( $grid-gutter-width / 3 );
+	padding-bottom: 0;
 
 	.product__description {
-		padding: $spacer;
+		padding-left: $spacer;
+		padding-right: $spacer;
+	}
+
+	.product__inner {
+		flex-direction: row;
 	}
 }
 
@@ -26,15 +29,15 @@
 			@include horizontal-card;
 		}
 
-		&:first-child {
+		&:first-child .product__inner {
 			padding-top: 0;
 		}
 	}
 
 	&.columns-2 li.product {
 
-		@include media-breakpoint-up(lg) {
-			
+		@include media-breakpoint-up(xl) {
+		
 			@include horizontal-card;
 		}
 	}
@@ -83,6 +86,7 @@
 	flex-wrap: wrap;
 	align-items: flex-start;
 	flex-direction: column;
+	width: 100%;
 	padding-top: $spacer; 
 	padding-bottom: $spacer; 
 	border-bottom: 1px solid gray("200");
@@ -108,7 +112,7 @@
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	padding: $spacer 0 0;
+	padding: $spacer 0;
 	height: 100%;
 	position: relative;
 }
@@ -117,7 +121,7 @@
 .woocommerce-loop-product__title,
 .product__title {
 	font-weight: 400;
-	font-size: 1.15rem;
+	font-size: 1rem;
 	margin: 0;
 	order: 0;
 }
@@ -135,7 +139,7 @@
 }
 
 .product__shipping {
-	color: gray("500");
+	color: gray("600");
 	font-size: 0.75rem;
 	order: 0;
 }

@@ -4,7 +4,7 @@
 	ul.products {
 		margin-top: 0;
 		margin-bottom: $vertical-spacer;
-		padding: ( $grid-gutter-width / 3 ) 0 0;
+		padding: 0;
 		list-style: none;
 
 		@include make-row;

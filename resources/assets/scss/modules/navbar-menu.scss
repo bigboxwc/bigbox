@@ -24,7 +24,7 @@
 
 	a {
 		color: color("white");
-		opacity: 0.9;
+		opacity: 0.95;
 		padding: 5px 10px;
 		border: 1px solid transparent;
 		border-radius: $border-radius;
@@ -35,7 +35,7 @@
 		&:hover {
 			opacity: 1;
 			text-decoration: none;
-			border: 1px solid rgba(color("white"), 0.2);
+			border: 1px solid rgba(color("white"), 0.3);
 		}
 	}
 
