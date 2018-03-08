@@ -16,4 +16,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 bigbox_view( 'global/header' );
 
+while ( have_posts() ) :
+	the_post();
+?>
+
+<div id="main" class="site-primary" role="main">
+	<?php the_content(); ?>
+</div>
+
+<?php
+endwhile;
+
 bigbox_view( 'global/footer' );

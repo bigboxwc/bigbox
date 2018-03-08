@@ -34,6 +34,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<button type="submit" name="submit" aria-title="<?php esc_attr_e( 'Search', 'bigbox' ); ?>">
 			<?php bigbox_svg( 'search' ); ?>
 		</button>
+
+		<input type="hidden" name="post_type" value="product" />
 	</div>
 
 </form>

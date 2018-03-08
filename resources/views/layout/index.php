@@ -15,5 +15,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 bigbox_view( 'global/header' );
+?>
 
+<div id="main" class="site-primary" role="main">
+	Hi
+</div>
+
+<?php
 bigbox_view( 'global/footer' );

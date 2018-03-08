@@ -52,7 +52,10 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_after_
 add_filter( 'woocommerce_show_page_title', '__return_false' );
 
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
-add_action( 'bigbox_navbar_after', 'woocommerce_breadcrumb' );
+
+if ( is_woocommerce() ) {
+	add_action( 'bigbox_navbar_after', 'woocommerce_breadcrumb' );
+}
 
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
@@ -67,11 +70,6 @@ add_action( 'the_post', function() {
 		remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar' );
 	}
 } );
-
-/**
- * @see class-wc-breadcrumb.php
- */
-add_filter( 'woocommerce_get_breadcrumb', 'bigbox_woocommerce_get_breadcrumb', 99 );
 
 /**
  * @see wc-formatting-functions.php
