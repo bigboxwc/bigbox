@@ -18,12 +18,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="navbar-menu navbar-menu--primary">
 	<ul class="navbar-menu__items">
 
-		<li class="navbar-menu__item">
-			<a href="#">Account</a>
+		<li class="navbar-menu__item navbar-menu__item--stacked">
+			<a href="#">
+				<?php bigbox_svg( 'user' ); ?>
+				Account
+			</a>
 		</li>
 
-		<li class="navbar-menu__item">
-			<a href="#">Cart</a>
+		<li class="navbar-menu__item navbar-menu__item--stacked">
+			<a href="#">
+				<?php bigbox_svg( 'basket' ); ?>
+				Cart
+			</a>
 		</li>
 
 	</ul>

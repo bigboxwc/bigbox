@@ -17,8 +17,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="navbar-menu navbar-menu--secondary">
 	<ul class="navbar-menu__items">
 
-		<li class="navbar-menu__item">
-			<a href="#">All Departments</a>
+		<li class="navbar-menu__item navbar-menu__item--parent">
+			<a href="#">
+				All Departments
+				<?php bigbox_svg( 'arrow-down' ); ?>
+			</a>
 
 			<ul class="megamenu">
 				<li class="megamenu__parent-item">
