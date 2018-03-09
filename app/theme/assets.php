@@ -24,7 +24,7 @@ function bigbox_enqueue_styles() {
 
 	$deps = [];
 
-	wp_enqueue_style( 'select2' );
+	wp_enqueue_style( $stylesheet . '-fonts', 'https://fonts.googleapis.com/css?family=Nunito' );
 	wp_enqueue_style( $stylesheet, get_template_directory_uri() . '/public/css/app.min.css', $deps, $version );
 }
 add_action( 'wp_enqueue_scripts', 'bigbox_enqueue_styles' );

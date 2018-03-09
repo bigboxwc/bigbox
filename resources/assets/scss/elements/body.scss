@@ -1,6 +1,6 @@
 body {
 	color: gray("700");
-	font: 400 1rem/1.5 $font-family-sans-serif;
+	font: $font-weight-normal #{$font-size-base}/#{$line-height-base} $font-family-sans-serif;
 	margin: 0;
 	padding: 0;
 	background: color("white");

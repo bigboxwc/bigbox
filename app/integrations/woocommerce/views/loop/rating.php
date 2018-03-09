@@ -33,8 +33,6 @@ if ( '' === $stars ) :
 endif;
 ?>
 
-<div class="product__stats">
-	<div class="star-rating product__rating">
-		<?php echo $stars; ?>
-	</div>
+<div class="product__rating">
+	<?php echo $stars; ?>
 </div>

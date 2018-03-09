@@ -109,7 +109,11 @@ function bigbox_woocommerce_get_star_rating_html( $html, $rating, $count ) {
 	?>
 </span>
 
-<span class="star-rating__count" aria-title="<?php printf( esc_attr__( '%1$s customer ratings', 'bigbox' ), $count ); ?>"><?php echo esc_html( $count ); ?></span>
+<?php if ( 0 !== $count ) : ?>
+
+	<span class="star-rating__count" aria-title="<?php printf( esc_attr__( '%1$s customer ratings', 'bigbox' ), $count ); ?>"><?php echo esc_html( $count ); ?></span>
+
+<?php endif; ?>
 
 <?php
 	return ob_get_clean();

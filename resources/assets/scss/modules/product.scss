@@ -3,8 +3,7 @@
 	padding-bottom: 0;
 
 	.product__description {
-		padding-left: $spacer;
-		padding-right: $spacer;
+		padding: 0 $spacer;
 	}
 
 	.product__inner {
@@ -140,7 +139,7 @@
 
 .product__shipping {
 	color: gray("600");
-	font-size: 0.75rem;
+	font-size: 0.85rem;
 	order: 0;
 }
 
