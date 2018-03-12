@@ -1,0 +1,19 @@
+.single-product {
+	.site-primary > .product {
+
+		@include make-row;
+	}
+
+	.summary {
+
+		@include make-col-ready;
+		@include make-col(6);
+	}
+
+	.related.products,
+	.product-data {
+
+		@include make-col-ready;
+		@include make-col(12);
+	}
+}

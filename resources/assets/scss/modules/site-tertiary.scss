@@ -5,10 +5,8 @@
 	margin-top: $vertical-spacer;
 	margin-bottom: $vertical-spacer;
 	order: 2;
-	display: none;
 
 	@include media-breakpoint-up(xl) {
-		display: block;
 
 		@include make-col(2);
 	}

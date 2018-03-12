@@ -1,0 +1,5 @@
+.woocommerce-product-gallery {
+
+	@include make-col-ready;
+	@include make-col(6);
+}
