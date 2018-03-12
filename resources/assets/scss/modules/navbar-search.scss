@@ -5,7 +5,7 @@
 	flex: 1 0 auto;
 	margin-left: $grid-gutter-width / 2;
 	margin-right: $grid-gutter-width / 2;
-	box-shadow: 0 0 10px darken(theme-color("primary"), 10%);
+	box-shadow: 0 0 10px darken(theme-color("primary"), 5%);
 }
 
 .navbar-search__category,

@@ -60,6 +60,24 @@ function bigbox_woocommerce_output_content_wrapper_end() {
 }
 
 /**
+ * Adjust closing wrapper for categories.
+ *
+ * Close the opening <ul class="products"> and start a new one.
+ *
+ * @since 1.0.0
+ *
+ * @return string
+ */
+function woocommerce_after_output_product_categories( $output ) {
+	ob_start();
+
+	wc_get_template( 'loop/loop-end.php' );
+	wc_get_template( 'loop/loop-start.php' );
+
+	return ob_get_clean();
+}
+
+/**
  * Show note for variable products.
  *
  * @since 1.0.0
