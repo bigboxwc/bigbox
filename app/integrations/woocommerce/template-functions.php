@@ -129,6 +129,10 @@ function bigbox_woocommerce_after_shop_loop_item_title_variations() {
  * @return array
  */
 function bigbox_woocommerce_product_tabs( $tabs ) {
+	if ( isset( $tabs['reviews'] ) ) {
+		unset( $tabs['reviews'] );
+	}
+
 	add_filter( 'woocommerce_product_description_heading', function() {
 		return esc_html__( 'Product description', 'bigbox' );
 	} );
@@ -168,7 +172,7 @@ function bigbox_woocommerce_get_star_rating_html( $html, $rating, $count ) {
 	?>
 </span>
 
-<?php if ( 0 !== $count ) : ?>
+<?php if ( 0 !== $count && ! is_singular( 'product' ) ) : ?>
 
 	<span class="star-rating__count" aria-title="<?php printf( esc_attr__( '%1$s customer ratings', 'bigbox' ), $count ); ?>"><?php echo esc_html( $count ); ?></span>
 
@@ -187,7 +191,7 @@ function bigbox_woocommerce_get_star_rating_html( $html, $rating, $count ) {
  * @return array
  */
 function bigbox_woocommerce_breadcrumb_defaults( $args ) {
-	$args['delimiter'] = '&nbsp;&#8250;&nbsp;';
+	$args['delimiter'] = '&nbsp&nbsp;&#8250;&nbsp;&nbsp';
 
 	return $args;
 }

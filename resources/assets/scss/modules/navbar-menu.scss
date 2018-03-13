@@ -81,7 +81,7 @@
 	top: -7px;
 	left: 50%;
 	transform: translateX(-25px);
-	background: theme-color("success");
+	background: darken(theme-color("primary"), 15%);
 	border-radius: 15px;
 	min-width: 20px;
 	height: 20px;

@@ -1,6 +1,6 @@
 .breadcrumbs,
 .woocommerce-breadcrumb {
-	color: gray("700");
+	color: gray("600");
 	font-size: 0.75rem;
 	background: gray("100");
 	display: flex;
@@ -10,4 +10,8 @@
 	@include make-container();
 
 	padding: ( $grid-gutter-width / 3 ) ( ( $grid-gutter-width / 2 ) + 10px );
+	
+	a {
+		color: theme-color("dark");
+	}
 }

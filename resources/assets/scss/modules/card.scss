@@ -2,3 +2,8 @@
 
 	@include card;
 }
+
+.card--featured {
+
+	@include card--featured;
+}

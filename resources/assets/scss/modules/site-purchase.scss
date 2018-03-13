@@ -2,10 +2,42 @@
 
 	@include make-col-ready;
 	@include make-col(12);
+	position: sticky;
+	top: ( $grid-gutter-width / 2 );
 	margin-bottom: $vertical-spacer;
+	z-index: 10;
 
 	@include media-breakpoint-up(xl) {
 
 		@include make-col(2.5);
+	}
+
+	.card {
+		padding: $spacer;
+	}
+
+	.admin-bar & {
+		top: ( $grid-gutter-width / 2 ) + 32px;
+	}
+}
+
+.single_add_to_cart_button {
+	font-size: 0.90rem;
+	margin-top: $spacer;
+	padding: 10px 20px;
+	width: 100%;
+	background-color: theme-color("success");
+}
+
+.cart {
+	label {
+		font-size: 0.90rem;
+		line-height: 1;
+		margin-right: 8px;
+	}
+
+	.quantity {
+		display: flex;
+		align-items: center;
 	}
 }

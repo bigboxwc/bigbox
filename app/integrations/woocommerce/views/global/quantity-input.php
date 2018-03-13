@@ -35,7 +35,7 @@ else :
 ?>
 
 <div class="quantity">
-	<label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></label>
+	<label for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'bigbox' ); ?>:</label>
 
 	<select id="<?php echo esc_attr( $input_id ); ?>" name="<?php echo esc_attr( $input_name ); ?>" title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'woocommerce' ) ?>" aria-labelledby="<?php echo ! empty( $args['product_name'] ) ? sprintf( esc_attr__( '%s quantity', 'woocommerce' ), $args['product_name'] ) : ''; ?>">
 		<?php for ( $i = $min_value; $i <= $max_value; $i++ ) : ?>
