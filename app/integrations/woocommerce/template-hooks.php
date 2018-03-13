@@ -79,7 +79,7 @@ add_action( 'woocommerce_after_single_product_summary', function() {
 	}
 ?>
 
-<div id="tertiary" class="site-purchase" role="complementary">
+<div id="purchase" class="woocommerce-single-product-purchase" role="complementary">
 	<div class="card card--featured">
 		<?php do_action( 'bigbox_purchase_form' ); ?>
 	</div>
@@ -98,6 +98,9 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
 
 add_action( 'bigbox_purchase_form', 'woocommerce_template_single_add_to_cart' );
+
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
 /**
  * @see wc-formatting-functions.php

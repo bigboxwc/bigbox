@@ -2,7 +2,7 @@
 .woocommerce-page {
 
 	ul.products {
-		margin-top: 0;
+		margin-top: $spacer * -1;
 		margin-bottom: $vertical-spacer;
 		padding: 0;
 		list-style: none;

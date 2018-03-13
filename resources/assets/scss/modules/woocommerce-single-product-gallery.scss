@@ -8,8 +8,6 @@
 	.flex-viewport {
 		order: 1;
 		flex: 1 1 auto;
-
-		@include card;
 	}
 
 	.flex-control-nav {
@@ -33,7 +31,14 @@
 	}
 }
 
+.flex-viewport,
+div:not(.flex-viewport) > .woocommerce-product-gallery__wrapper {
+
+	@include card;
+}
+
 .woocommerce-product-gallery__wrapper {
+	width: 100%;
 	margin: 0;
 	padding: 0;
 
@@ -44,10 +49,6 @@
 	img {
 		min-width: 100%;
 	}
-}
-
-.woocommerce-product-gallery__image {
-	
 }
 
 .woocommerce-product-gallery__trigger {

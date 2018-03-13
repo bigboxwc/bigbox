@@ -16,17 +16,6 @@
 		@include make-col-ready;
 		@include make-col(4.5);
 	}
-
-	.related.products,
-	.product-data {
-
-		@include make-col-ready;
-		@include make-col(12);
-	}
-
-	.related.products {
-		padding: $vertical-spacer;
-	}
 }
 
 .woocommerce-product-details__short-description {
@@ -43,22 +32,21 @@
 	align-items: center;
 
 	.product__sale {
-		margin: 0;
+		margin: 0 0 0 10px;
 	}
 }
 
-.product-data {
+.woocommerce-single-product-data {
 	border: 1px solid gray("200");
 	border-width: 1px 0;
 }
 
-.single-product__section {
+.woocommerce-single-product-data__section {
 	margin: $vertical-spacer 0;
 	padding: 0 $spacer; 
 }
 
-.related.products,
-.single-product__section {
+.woocommerce-single-product-data__section {
 	h2 {
 		color: darken(theme-color("primary"), 20%);
 		font-size: 1.15rem;

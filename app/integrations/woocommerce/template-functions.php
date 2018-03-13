@@ -129,10 +129,6 @@ function bigbox_woocommerce_after_shop_loop_item_title_variations() {
  * @return array
  */
 function bigbox_woocommerce_product_tabs( $tabs ) {
-	if ( isset( $tabs['reviews'] ) ) {
-		unset( $tabs['reviews'] );
-	}
-
 	add_filter( 'woocommerce_product_description_heading', function() {
 		return esc_html__( 'Product description', 'bigbox' );
 	} );
@@ -140,6 +136,22 @@ function bigbox_woocommerce_product_tabs( $tabs ) {
 	add_filter( 'woocommerce_product_additional_information_heading', function() {
 		return esc_html__( 'Product information', 'bigbox' );
 	} );
+
+	$tabs['upsells'] = [
+		'title'    => esc_html__( 'You may also enjoy', 'bigbox' ),
+		'priority' => 20,
+		'callback' => 'woocommerce_upsell_display',
+	];
+
+	$tabs['related'] = [
+		'title'    => esc_html__( 'Related products', 'bigbox' ),
+		'priority' => 30,
+		'callback' => 'woocommerce_output_related_products',
+	];
+
+	if ( isset( $tabs['reviews'] ) ) {
+		$tabs['reviews']['priority'] = 40;
+	}
 
 	return $tabs;
 }

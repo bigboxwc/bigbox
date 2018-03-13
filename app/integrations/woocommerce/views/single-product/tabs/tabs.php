@@ -30,19 +30,28 @@ $tabs = apply_filters( 'woocommerce_product_tabs', array() );
 
 if ( ! empty( $tabs ) ) : ?>
 	
-	<div class="product-data">
+	<div class="woocommerce-single-product-data">
 
-	<?php foreach ( $tabs as $key => $tab ) : ?>
-
-		<div class="single-product__section" id="tab-<?php echo esc_attr( $key ); ?>">
-			<?php
+	<?php
+		foreach ( $tabs as $key => $tab ) :
 			if ( isset( $tab['callback'] ) ) :
+				ob_start();
 				call_user_func( $tab['callback'], $key, $tab );
-			endif;
-			?>
-		</div>
 
-	<?php endforeach; ?>
+				$content = trim( ob_get_clean() );
+
+				if ( '' !== $content ) :
+		?>
+
+			<div class="woocommerce-single-product-data__section" id="tab-<?php echo esc_attr( $key ); ?>">
+				<?php echo $content; ?>
+			</div>
+
+		<?php
+				endif;
+			endif;
+		endforeach;
+		?>
 
 	</div>
 
