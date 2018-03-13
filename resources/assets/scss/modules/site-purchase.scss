@@ -1,0 +1,11 @@
+.site-purchase {
+
+	@include make-col-ready;
+	@include make-col(12);
+	margin-bottom: $vertical-spacer;
+
+	@include media-breakpoint-up(xl) {
+
+		@include make-col(2.5);
+	}
+}

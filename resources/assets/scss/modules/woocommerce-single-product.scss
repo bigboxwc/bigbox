@@ -12,7 +12,7 @@
 	.summary {
 
 		@include make-col-ready;
-		@include make-col(5);
+		@include make-col(4.5);
 	}
 
 	.related.products,
@@ -25,6 +25,10 @@
 	.related.products {
 		padding: $vertical-spacer;
 	}
+}
+
+.woocommerce-product-details__short-description {
+	font-size: 0.90rem;
 }
 
 .single-product__section {
