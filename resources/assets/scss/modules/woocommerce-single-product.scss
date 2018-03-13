@@ -36,14 +36,8 @@
 	}
 }
 
-.woocommerce-single-product-data {
-	border: 1px solid gray("200");
-	border-width: 1px 0;
-}
-
 .woocommerce-single-product-data__section {
-	margin: $vertical-spacer 0;
-	padding: 0 $spacer; 
+	margin: $vertical-spacer;
 }
 
 .woocommerce-single-product-data__section {
@@ -96,4 +90,8 @@
 	p {
 		margin-top: 0;
 	}
+}
+
+.comment-respond {
+	margin-top: $vertical-spacer;
 }

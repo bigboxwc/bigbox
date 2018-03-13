@@ -23,21 +23,23 @@
 
 .single_add_to_cart_button {
 	font-size: 0.90rem;
-	margin-top: $spacer;
 	padding: 10px 20px;
 	width: 100%;
 	background-color: theme-color("success");
 }
 
-.cart {
-	label {
-		font-size: 0.90rem;
-		line-height: 1;
-		margin-right: 8px;
-	}
+.add-to-cart .quantity,
+.add-to-cart__action {
+	line-height: 1;
+	margin-bottom: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
 
-	.quantity {
-		display: flex;
-		align-items: center;
-	}
+.add-to-cart label,
+.add-to-cart__action-label {
+	font-size: 0.90rem;
+	line-height: 1;
+	margin-right: 8px;
 }
