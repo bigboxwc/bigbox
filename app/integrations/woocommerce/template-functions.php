@@ -191,28 +191,3 @@ function bigbox_woocommerce_breadcrumb_defaults( $args ) {
 
 	return $args;
 }
-
-/**
- * Append to breadcrumbs.
- *
- * @since 1.0.0
- *
- * @param array $crumbs Existing crumbs.
- * @return array
- */
-function bigbox_woocommerce_get_breadcrumb( $crumbs ) {
-	if ( is_singular( 'product' ) || wc_get_loop_prop( 'total' ) === 0 ) {
-		return $crumbs;
-	}
-
-	ob_start();
-	woocommerce_result_count();
-	$count = ob_get_clean();
-
-	$crumbs[] = array(
-		$count,
-		'',
-	);
-
-	return $crumbs;
-}

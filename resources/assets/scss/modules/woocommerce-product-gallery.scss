@@ -1,7 +1,36 @@
 .woocommerce-product-gallery {
+	margin: 0 0 $vertical-spacer;
+	display: flex;
 
 	@include make-col-ready;
-	@include make-col(6);
+	@include make-col(7);
+
+	.flex-viewport {
+		order: 1;
+		flex: 1 1 auto;
+
+		@include card;
+	}
+
+	.flex-control-nav {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		order: 0;
+		display: flex;
+		flex: 1 0 100px;
+		flex-wrap: wrap;
+		flex-direction: column;
+
+		li {
+			cursor: pointer;
+			margin-bottom: ( $vertical-spacer / 2 );
+		}
+
+		img {
+			display: block;
+		}
+	}
 }
 
 .woocommerce-product-gallery__wrapper {
@@ -15,6 +44,10 @@
 	img {
 		min-width: 100%;
 	}
+}
+
+.woocommerce-product-gallery__image {
+	
 }
 
 .woocommerce-product-gallery__trigger {

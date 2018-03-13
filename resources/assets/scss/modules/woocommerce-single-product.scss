@@ -12,7 +12,7 @@
 	.summary {
 
 		@include make-col-ready;
-		@include make-col(6);
+		@include make-col(5);
 	}
 
 	.related.products,
@@ -23,13 +23,16 @@
 	}
 
 	.related.products {
-		padding: $spacer * 2;
+		padding: $vertical-spacer;
 	}
 }
 
 .single-product__section {
-	padding: ( $spacer * 2 ) $spacer; 
-	border-top: 1px solid gray("200");
+	padding: $vertical-spacer $spacer; 
+
+	&:first-child {
+		border-top: 1px solid gray("200");
+	}
 
 	&:last-child {
 		border-bottom: 1px solid gray("200");
@@ -39,12 +42,42 @@
 .related.products,
 .single-product__section {
 	h2 {
-		color: theme-color("dark");
-		font-size: 1.05rem;
-		margin: 0;
+		color: darken(theme-color("primary"), 20%);
+		font-size: 1.15rem;
+		margin: 0 0 ( $vertical-spacer / 2 );
 	}
 
 	p:last-child {
 		margin-bottom: 0;
+	}
+}
+
+.shop_attributes {
+	width: 100%;
+	border: 1px solid gray("300");
+	border-collapse: collapse;
+
+	th {
+		color: theme-color("dark");
+		text-align: left;
+		margin: 0;
+	}
+
+	th,
+	td {
+		border: 1px solid gray("300");
+		vertical-align: middle;
+		padding: 10px;
+	}
+
+	tr:nth-child(even) {
+		th,
+		td {
+			background: gray("100");
+		}
+	}
+
+	p {
+		margin-top: 0;
 	}
 }
