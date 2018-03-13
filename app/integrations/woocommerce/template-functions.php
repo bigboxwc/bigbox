@@ -60,6 +60,24 @@ function bigbox_woocommerce_output_content_wrapper_end() {
 }
 
 /**
+ * Shop item loop opening tag.
+ *
+ * @since 1.0.0
+ */
+function bigbox_woocommerce_before_shop_loop_item() {
+	echo '<div class="product__inner">';
+}
+
+/**
+ * Shop item loop closing tag.
+ *
+ * @since 1.0.0
+ */
+function bigbox_woocommerce_after_shop_loop_item() {
+	echo '</div>';
+}
+
+/**
  * Adjust closing wrapper for categories.
  *
  * Close the opening <ul class="products"> and start a new one.
@@ -97,6 +115,29 @@ function bigbox_woocommerce_after_shop_loop_item_title_variations() {
 </div>
 
 <?php
+}
+
+/**
+ * Modify default tab titles.
+ *
+ * WooCommerce core doesn't use the actual set titles so instead we can
+ * filter the direct strings here.
+ *
+ * @since 1.0.0
+ *
+ * @param array $tabs Current tabs.
+ * @return array
+ */
+function bigbox_woocommerce_product_tabs( $tabs ) {
+	add_filter( 'woocommerce_product_description_heading', function() {
+		return esc_html__( 'Product description', 'bigbox' );
+	} );
+
+	add_filter( 'woocommerce_product_additional_information_heading', function() {
+		return esc_html__( 'Product information', 'bigbox' );
+	} );
+
+	return $tabs;
 }
 
 /**

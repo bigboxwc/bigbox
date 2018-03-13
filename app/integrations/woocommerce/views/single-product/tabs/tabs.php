@@ -34,7 +34,7 @@ if ( ! empty( $tabs ) ) : ?>
 
 	<?php foreach ( $tabs as $key => $tab ) : ?>
 
-		<div class="product-product__section" id="tab-<?php echo esc_attr( $key ); ?>">
+		<div class="single-product__section" id="tab-<?php echo esc_attr( $key ); ?>">
 			<?php
 			if ( isset( $tab['callback'] ) ) :
 				call_user_func( $tab['callback'], $key, $tab );

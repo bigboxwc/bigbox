@@ -4,6 +4,11 @@
 		@include make-row;
 	}
 
+	.product_title {
+		font-size: 1.30rem;
+		font-weight: 400;
+	}
+
 	.summary {
 
 		@include make-col-ready;
@@ -15,5 +20,31 @@
 
 		@include make-col-ready;
 		@include make-col(12);
+	}
+
+	.related.products {
+		padding: $spacer * 2;
+	}
+}
+
+.single-product__section {
+	padding: ( $spacer * 2 ) $spacer; 
+	border-top: 1px solid gray("200");
+
+	&:last-child {
+		border-bottom: 1px solid gray("200");
+	}
+}
+
+.related.products,
+.single-product__section {
+	h2 {
+		color: theme-color("dark");
+		font-size: 1.05rem;
+		margin: 0;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
 	}
 }

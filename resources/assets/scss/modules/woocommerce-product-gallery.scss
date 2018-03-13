@@ -3,3 +3,57 @@
 	@include make-col-ready;
 	@include make-col(6);
 }
+
+.woocommerce-product-gallery__wrapper {
+	margin: 0;
+	padding: 0;
+
+	a {
+		display: block;
+	}
+
+	img {
+		min-width: 100%;
+	}
+}
+
+.woocommerce-product-gallery__trigger {
+	position: absolute;
+	top: 20px;
+	right: 20px + ( $grid-gutter-width / 2 );
+	font-size: 2em;
+	z-index: 9;
+	width: 36px;
+	height: 36px;
+	background: #fff;
+	text-indent: -9999px;
+	border-radius: 100%;
+	box-sizing: content-box;
+
+	&:before {
+		content: "";
+		display: block;
+		width: 12px;
+		height: 12px;
+		border: 2px solid gray("500");
+		border-radius: 100%;
+		position: absolute;
+		top: 9px;
+		left: 9px;
+		box-sizing: content-box;
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		width: 2px;
+		height: 8px;
+		background: gray("500");
+		border-radius: 6px;
+		position: absolute;
+		top: 21px;
+		left: 22px;
+		transform: rotate(-45deg);
+		box-sizing: content-box;
+	}
+}
