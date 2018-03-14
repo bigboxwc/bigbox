@@ -1,3 +1,5 @@
+// [1] 10px added to .navbar-menu__item a
+// Fixes visual alignment.
 .breadcrumbs,
 .woocommerce-breadcrumb {
 	color: gray("600");
@@ -9,7 +11,7 @@
 	
 	@include make-container();
 
-	padding: ( $grid-gutter-width / 3 ) ( ( $grid-gutter-width / 2 ) + 10px );
+	padding: ( $spacer * 0.75 ) calc( #{$spacer} + 10px ); // [1]
 	
 	a {
 		color: theme-color("dark");

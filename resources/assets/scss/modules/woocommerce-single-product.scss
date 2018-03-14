@@ -37,14 +37,14 @@
 }
 
 .woocommerce-single-product-data__section {
-	margin: $vertical-spacer;
+	margin: ( $spacer * 2 );
 }
 
 .woocommerce-single-product-data__section {
 	h2 {
 		color: darken(theme-color("primary"), 20%);
 		font-size: 1.15rem;
-		margin: 0 0 ( $vertical-spacer / 2 );
+		margin: 0 0 $spacer;
 	}
 
 	p:last-child {
@@ -93,5 +93,5 @@
 }
 
 .comment-respond {
-	margin-top: $vertical-spacer;
+	margin-top: ( $spacer * 2 );
 }

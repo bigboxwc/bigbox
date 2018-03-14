@@ -3,8 +3,7 @@
 	flex-wrap: wrap;
 	position: relative;
 	flex: 1 0 auto;
-	margin-left: $grid-gutter-width / 2;
-	margin-right: $grid-gutter-width / 2;
+	margin: 0 $spacer;
 	box-shadow: 0 0 10px darken(theme-color("primary"), 5%);
 }
 
@@ -49,7 +48,7 @@
 		cursor: pointer;
 		font-size: 0.9rem;
 		color: $white;
-		padding: 0 ( $grid-gutter-width / 2 );
+		padding: 0 ( $spacer / 2 );
 		font-weight: 400;
 		border: 0;
 		border-radius: 0 $border-radius $border-radius 0;

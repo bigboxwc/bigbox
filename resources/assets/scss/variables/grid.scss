@@ -1,3 +1,6 @@
+$spacer: 1rem;
+$grid-gutter-width: ( $spacer * 2 );
+
 $grid-breakpoints: (
 	xs: 0,
 	sm: 576px,

@@ -2,31 +2,31 @@
 .woocommerce ul.products {
 
 	&:first-of-type {
-		margin-bottom: calc( #{$vertical-spacer} - ( #{$grid-gutter-width} / 2 ) );
+		margin-bottom: 0;
 	}
 
 	li.product.product-category {
 		flex-direction: column;
-		margin: 0 0 ( $grid-gutter-width / 2 ); 
+		margin: 0 0 ( $spacer * 2 ); 
 		padding: 0;
 		border: 0;
 
 		@include make-col-ready;
-		@include make-col(12);
+		@include make-col(6);
 
 		@include media-breakpoint-up(sm) {
-
-			@include make-col(6);
-		}
-
-		@include media-breakpoint-up(md) {
 
 			@include make-col(4);
 		}
 
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(md) {
 
 			@include make-col(3);
+		}
+
+		@include media-breakpoint-up(lg) {
+
+			@include make-col(2.5);
 		}
 
 		a {

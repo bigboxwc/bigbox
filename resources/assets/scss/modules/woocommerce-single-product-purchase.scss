@@ -3,8 +3,8 @@
 	@include make-col-ready;
 	@include make-col(12);
 	position: sticky;
-	top: ( $grid-gutter-width / 2 );
-	margin-bottom: $vertical-spacer;
+	top: ( $spacer / 2 );
+	margin-bottom: ( $spacer * 2 );
 	z-index: 10;
 
 	@include media-breakpoint-up(xl) {
@@ -16,8 +16,9 @@
 		padding: $spacer;
 	}
 
+	// [1] Admin bar has a set px offset.
 	.admin-bar & {
-		top: ( $grid-gutter-width / 2 ) + 32px;
+		top: calc( #{( $spacer / 2 )} + 32px ); // [1]
 	}
 }
 

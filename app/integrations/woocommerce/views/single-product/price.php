@@ -20,13 +20,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+// @codingStandardsIgnoreFile
+
 global $product;
+
+if ( $price_html = $product->get_price_html() ) :
 ?>
 
 <div class="woocommerce-product-price">
 	<div class="price">
-		<?php echo $product->get_price_html(); ?>
+		<?php echo $price_html; ?>
 	</div>
 
 	<?php woocommerce_show_product_loop_sale_flash(); ?>
 </div>
+
+<?php
+endif;

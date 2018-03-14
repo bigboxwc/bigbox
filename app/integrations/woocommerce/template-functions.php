@@ -86,7 +86,7 @@ function bigbox_woocommerce_after_shop_loop_item() {
  *
  * @return string
  */
-function woocommerce_after_output_product_categories( $output ) {
+function bigbox_woocommerce_after_output_product_categories( $output ) {
 	ob_start();
 
 	wc_get_template( 'loop/loop-end.php' );

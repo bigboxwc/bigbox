@@ -1,5 +1,5 @@
 .woocommerce-product-gallery {
-	margin: 0 0 $vertical-spacer;
+	margin: 0 0 ( $spacer * 2 );
 	display: flex;
 
 	@include make-col-ready;
@@ -11,7 +11,7 @@
 	}
 
 	.flex-control-nav {
-		margin: 0;
+		margin: 0 $spacer 0 0;
 		padding: 0;
 		list-style: none;
 		order: 0;
@@ -22,7 +22,7 @@
 
 		li {
 			cursor: pointer;
-			margin-bottom: ( $vertical-spacer / 2 );
+			margin-bottom: $spacer;
 		}
 
 		img {
@@ -42,7 +42,8 @@ div:not(.flex-viewport) > .woocommerce-product-gallery__wrapper {
 	margin: 0;
 	padding: 0;
 
-	a {
+	a,
+	img {
 		display: block;
 	}
 
@@ -51,10 +52,11 @@ div:not(.flex-viewport) > .woocommerce-product-gallery__wrapper {
 	}
 }
 
+// [1] .woocommerce-product-gallery (parent) includes grid gutter spacing.
 .woocommerce-product-gallery__trigger {
 	position: absolute;
-	top: 20px;
-	right: 20px + ( $grid-gutter-width / 2 );
+	top: $spacer;
+	right: $spacer + ( $grid-gutter-width / 2 ); // [1]
 	font-size: 2em;
 	z-index: 9;
 	width: 36px;
