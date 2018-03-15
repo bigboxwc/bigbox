@@ -71,7 +71,9 @@ add_action( 'the_post', function() {
 add_filter( 'woocommerce_product_tabs', 'bigbox_woocommerce_product_tabs', 20 );
 
 add_action( 'woocommerce_after_single_product_summary', function() {
-	if ( ! is_singular( 'product' ) ) {
+	global $product;
+
+	if ( ! is_singular( 'product' ) || ! $product->is_purchasable() ) {
 		return;
 	}
 ?>
@@ -91,8 +93,6 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 15 );
 
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
 
 add_action( 'bigbox_purchase_form', 'woocommerce_template_single_add_to_cart' );
 

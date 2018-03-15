@@ -14,16 +14,14 @@
 	.summary {
 
 		@include make-col-ready;
-		@include make-col(9.5);
 
+		flex: 1 0;
 		padding-left: ( $grid-gutter-width / 2 ) + $spacer;
 	}
 }
 
 .single-product .woocommerce-product-gallery + .summary {
 	padding-left: ( $grid-gutter-width / 2 );
-
-	@include make-col(4.5);
 }
 
 .woocommerce-product-details__short-description {

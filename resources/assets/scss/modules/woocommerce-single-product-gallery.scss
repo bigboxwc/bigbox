@@ -1,9 +1,7 @@
 .woocommerce-product-gallery {
 	margin: 0 0 ( $spacer * 2 );
-	display: flex;
 
 	@include make-col-ready;
-	@include make-col(5);
 
 	.flex-viewport {
 		order: 1;
@@ -31,12 +29,6 @@
 	}
 }
 
-.flex-viewport,
-div:not(.flex-viewport) > .woocommerce-product-gallery__wrapper {
-
-	@include card;
-}
-
 .woocommerce-product-gallery__wrapper {
 	width: 100%;
 	margin: 0;
@@ -45,10 +37,6 @@ div:not(.flex-viewport) > .woocommerce-product-gallery__wrapper {
 	a,
 	img {
 		display: block;
-	}
-
-	img {
-		min-width: 100%;
 	}
 }
 
