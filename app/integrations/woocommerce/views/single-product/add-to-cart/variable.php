@@ -28,7 +28,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
 	<?php if ( empty( $available_variations ) && false !== $available_variations ) : ?>
 
-		<p class="stock out-of-stock"><?php _e( 'This product is currently out of stock and unavailable.', 'bigbox' ); ?></p>
+		<span class="stock out-of-stock"><?php _e( 'This product is currently out of stock and unavailable.', 'bigbox' ); ?></span>
 
 	<?php else : ?>
 
@@ -45,15 +45,20 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 		
 					<div class="add-to-cart__action-value">
 						<?php
-							$selected = isset( $_REQUEST[ 'attribute_' . $attribute_name ] ) ? wc_clean( stripslashes( urldecode( $_REQUEST[ 'attribute_' . $attribute_name ] ) ) ) : $product->get_variation_default_attribute( $attribute_name );
-							wc_dropdown_variation_attribute_options( array( 'options' => $options, 'attribute' => $attribute_name, 'product' => $product, 'selected' => $selected ) );
+						$selected = isset( $_REQUEST[ 'attribute_' . $attribute_name ] ) ? wc_clean( stripslashes( urldecode( $_REQUEST[ 'attribute_' . $attribute_name ] ) ) ) : $product->get_variation_default_attribute( $attribute_name );
+
+						wc_dropdown_variation_attribute_options( [
+							'options'          => $options,
+							'attribute'        => $attribute_name,
+							'product'          => $product,
+							'selected'         => $selected,
+							'show_option_none' => esc_html__( 'Select an option', 'bigbox' ),
+						] );
 						?>
 					</div>
 
 				</div>
 			<?php endforeach;?>
-
-			<?php echo end( $attribute_keys ) === $attribute_name ? apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'bigbox' ) . '</a>' ) : ''; ?>
 
 		</div>
 

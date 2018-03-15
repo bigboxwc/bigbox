@@ -40,7 +40,61 @@
 
 .add-to-cart label,
 .add-to-cart__action-label {
+	color: theme-color("dark");
 	font-size: 0.90rem;
+	font-weight: 500;
 	line-height: 1;
 	margin-right: 8px;
+}
+
+.single_variation_wrap {
+	margin-top: $spacer;
+	padding-top: $spacer;
+	border-top: 1px solid gray("200");
+}
+
+.woocommerce-variation {
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+
+	.woocommerce-variation--loaded & {
+		display: flex;
+		margin-bottom: $spacer;
+		padding-bottom: $spacer;
+		border-bottom: 1px solid gray("200");
+	}
+}
+
+.woocommerce-variation-availability,
+.woocommerce-variation-price {
+	margin-top: $spacer;
+}
+
+.woocommerce-variation-description {
+	font-size: 0.90rem;
+
+	p:only-child {
+		margin: 0;
+	}
+
+	p:first-child {
+		margin-top: 0;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.woocommerce-variation-availability {
+	font-size: 0.90rem;
+
+	p {
+		margin: 0;
+	}
+
+	.in-stock {
+		color: color("green");
+	}
 }
