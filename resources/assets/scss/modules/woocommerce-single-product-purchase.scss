@@ -58,8 +58,9 @@
 	justify-content: space-between;
 	align-items: center;
 
+	// [1] jQuery .slide() functions set inline as `block`
 	.woocommerce-variation--loaded & {
-		display: flex;
+		display: flex !important; // [1]
 		margin-bottom: $spacer;
 		padding-bottom: $spacer;
 		border-bottom: 1px solid gray("200");

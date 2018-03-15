@@ -6,15 +6,24 @@
 
 	.product_title {
 		color: theme-color("dark");
-		font-size: 1.30rem;
+		font-size: 1.50rem;
+		font-weight: 500;
 		margin: 1rem 0;
 	}
 
 	.summary {
 
 		@include make-col-ready;
-		@include make-col(4.5);
+		@include make-col(9.5);
+
+		padding-left: ( $grid-gutter-width / 2 ) + $spacer;
 	}
+}
+
+.single-product .woocommerce-product-gallery + .summary {
+	padding-left: ( $grid-gutter-width / 2 );
+
+	@include make-col(4.5);
 }
 
 .woocommerce-product-details__short-description {
@@ -41,7 +50,7 @@
 
 .woocommerce-single-product-data__section {
 	h2 {
-		color: darken(theme-color("primary"), 20%);
+		color: theme-color("dark");
 		font-size: 1.15rem;
 		font-weight: 500;
 		margin: 0 0 $spacer;
