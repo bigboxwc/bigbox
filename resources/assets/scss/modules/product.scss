@@ -111,16 +111,18 @@
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	padding: $spacer 0 0;
 	height: 100%;
 	position: relative;
+}
+
+.product__preview + .product__description {
+	padding: $spacer 0 0;
 }
 
 .woocommerce-loop-category__title,
 .woocommerce-loop-product__title,
 .product__title {
 	color: theme-color("dark");
-	font-weight: 400;
 	font-size: 1rem;
 	margin: 0;
 	order: 0;
@@ -131,7 +133,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: $spacer 0;
+	margin: ( $spacer / 2 ) 0;
 
 	&:last-child {
 		margin-bottom: 0;

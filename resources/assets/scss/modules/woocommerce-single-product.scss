@@ -7,7 +7,6 @@
 	.product_title {
 		color: theme-color("dark");
 		font-size: 1.30rem;
-		font-weight: 400;
 		margin: 1rem 0;
 	}
 
@@ -44,6 +43,7 @@
 	h2 {
 		color: darken(theme-color("primary"), 20%);
 		font-size: 1.15rem;
+		font-weight: 500;
 		margin: 0 0 $spacer;
 	}
 
