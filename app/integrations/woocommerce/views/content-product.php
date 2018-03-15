@@ -37,6 +37,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	do_action( 'woocommerce_before_shop_loop_item' );
 	?>
 
+	<?php if ( '' !== $product->get_image() ) : ?>
 	<div class="product__preview">
 		<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>">
 			<?php
@@ -50,6 +51,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 			?>
 		</a>
 	</div>
+	<?php endif; ?>
 
 	<div class="product__description">
 
