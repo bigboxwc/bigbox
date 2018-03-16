@@ -1,0 +1,20 @@
+.woocommerce-message {
+	overflow: hidden;
+	margin: 0 0 ( $spacer * 2 );
+	padding: ( $spacer / 2 ) $spacer;
+	display: flex;
+	align-items: center;
+
+	@include card;
+	@include card--featured;
+
+	.wc-forward {
+		margin-right: -( $spacer / 2 );
+		padding: 10px 20px;
+		margin-left: auto;
+		order: 1;
+
+		@include button--success;
+		@include button--size-sm;
+	}
+}

@@ -37,6 +37,7 @@
 }
 
 .navbar-mobile-backdrop {
+	cursor: default;
 	position: fixed;
 	visibility: hidden;
 	content: "";
@@ -46,7 +47,6 @@
 	height: 100vh;
 	z-index: 5;
 	background: none;
-	cursor: default;
 	transition: background 0.2s ease;
 	display: block;
 }

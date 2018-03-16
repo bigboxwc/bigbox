@@ -109,9 +109,16 @@ add_action( 'woocommerce_after_single_product_summary', function() {
 
 add_action( 'bigbox_purchase_form', 'woocommerce_template_single_add_to_cart' );
 
+// Adjust sharing position.
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
+add_action( 'bigbox_purchase_form', 'woocommerce_template_single_sharing', 20 );
+
 // Remove related and upsells (added back with tabs).
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+// Add product meta to the Additional Information tab.
+add_action( 'woocommerce_product_additional_information', 'bigbox_woocommerce_product_additional_information', 99 );
 
 /**
  * @see wc-formatting-functions.php

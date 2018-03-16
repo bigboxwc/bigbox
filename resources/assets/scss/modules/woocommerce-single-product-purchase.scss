@@ -30,10 +30,10 @@
 }
 
 .single_add_to_cart_button {
-	font-size: 0.90rem;
-	padding: 10px 20px;
-	width: 100%;
-	background-color: theme-color("success");
+
+	@include button--success;
+	@include button--size-sm;
+	@include button--size-block;
 }
 
 .add-to-cart .quantity,
@@ -65,9 +65,7 @@
 	justify-content: space-between;
 	align-items: center;
 
-	// [1] jQuery .slide() functions set inline as `block`
 	.woocommerce-variation--loaded & {
-		display: flex !important; // [1]
 		margin-bottom: $spacer;
 		padding-bottom: $spacer;
 		border-bottom: 1px solid gray("200");
@@ -79,12 +77,13 @@
 	margin-top: $spacer;
 }
 
+.woocommerce-variation-price:empty {
+	display: none;
+}
+
 .woocommerce-variation-description {
 	font-size: 0.90rem;
-
-	p:only-child {
-		margin: 0;
-	}
+	width: 100%;
 
 	p:first-child {
 		margin-top: 0;
@@ -92,6 +91,10 @@
 
 	p:last-child {
 		margin-bottom: 0;
+	}
+
+	p:only-child {
+		margin: 0;
 	}
 }
 

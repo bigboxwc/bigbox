@@ -175,6 +175,30 @@ function bigbox_woocommerce_product_tabs( $tabs ) {
 }
 
 /**
+ * Add product meta under additional information.
+ *
+ * @since 1.0.0
+ */
+function bigbox_woocommerce_product_additional_information() {
+	global $product;
+
+	if ( wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( 'variable' ) ) ) :
+?>
+
+	<p class="sku_wrapper">
+		<?php esc_html_e( 'SKU:', 'bigbox' ); ?>
+		<span class="sku"><?php echo ( $sku = $product->get_sku() ) ? $sku : esc_html__( 'N/A', 'bigbox' ); ?></span>
+	</p>
+
+<?php
+	endif;
+
+	echo wc_get_product_category_list( $product->get_id(), ', ', '<p class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'bigbox' ) . ' ', '</p>' );
+
+	echo wc_get_product_tag_list( $product->get_id(), ', ', '<p class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'bigbox' ) . ' ', '</p>' );
+}
+
+/**
  * Adjust rating output to use star icons.
  *
  * @since 1.0.0

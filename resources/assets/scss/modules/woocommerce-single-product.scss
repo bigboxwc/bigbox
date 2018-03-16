@@ -128,3 +128,15 @@
 .comment-respond {
 	margin-top: ( $spacer * 2 );
 }
+
+.tagged_as,
+.posted_in {
+	a {
+		color: theme-color("secondary");
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

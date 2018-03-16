@@ -75,11 +75,13 @@
 
 // Shop
 @import "modules/shop-filters";
+@import "modules/facetwp";
 @import "modules/ordering";
 @import "modules/breadcrumbs";
+
 @import "modules/woocommerce-products-header";
 @import "modules/woocommerce-widget-layered-nav-list";
-@import "modules/facetwp";
+@import "modules/woocommerce-message";
 
 @import "modules/woocommerce-single-product-gallery";
 @import "modules/woocommerce-single-product";

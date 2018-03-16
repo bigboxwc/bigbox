@@ -50,7 +50,7 @@
 		&:hover {
 			opacity: 1;
 			text-decoration: none;
-			border: 1px solid rgba(color("white"), 0.3);
+			border: 1px solid rgba(color("white"), 0.2);
 		}
 	}
 
@@ -95,7 +95,7 @@
 	top: -7px;
 	left: 50%;
 	transform: translateX(-25px);
-	background: theme-color("secondary");
+	background: theme-color("success");
 	border-radius: 15px;
 	min-width: 20px;
 	height: 20px;
