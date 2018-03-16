@@ -1,6 +1,14 @@
 .navbar-menu {
 	width: auto;
-	display: none;
+	display: flex;
+}
+
+.navbar-menu--primary {
+	order: 1;
+
+	@include media-breakpoint-up(md) {
+		order: 3;
+	}
 }
 
 .navbar-menu--secondary {
@@ -10,6 +18,11 @@
 	border-top: 1px solid rgba(255, 255, 255, 0.1);
 	justify-content: space-between;
 	align-items: center;
+	display: none;
+
+	@include media-breakpoint-up(md) {
+		display: flex;
+	}
 }
 
 .navbar-menu__items {

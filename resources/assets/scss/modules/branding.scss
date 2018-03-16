@@ -5,7 +5,8 @@
 	font-size: 1rem;
 	text-transform: uppercase;
 	line-height: 1;
-	margin: 0 0 $spacer;
+	margin: 0;
+	order: 0;
 
 	@include media-breakpoint-up(lg) {
 		margin: 0;
