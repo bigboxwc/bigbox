@@ -1,9 +1,9 @@
 a {
-	color: theme-color("secondary");
+	color: theme-color("primary");
 	text-decoration: none;
 
 	&:hover {
-		color: theme-color("primary");
+		color: theme-color("secondary");
 		text-decoration: underline;
 	}
 }

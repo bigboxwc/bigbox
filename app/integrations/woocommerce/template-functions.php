@@ -78,6 +78,24 @@ function bigbox_woocommerce_after_shop_loop_item() {
 }
 
 /**
+ * Page count and ordering opening tag.
+ *
+ * @since 1.0.0
+ */
+function bigbox_woocommerce_before_shop_loop() {
+	echo '<div class="woocommerce-products-meta">';
+}
+
+/**
+ * Page count and ordering closing tag.
+ *
+ * @since 1.0.0
+ */
+function bigbox_woocommerce_before_shop_loop_after() {
+	echo '</div>';
+}
+
+/**
  * Adjust closing wrapper for categories.
  *
  * Close the opening <ul class="products"> and start a new one.

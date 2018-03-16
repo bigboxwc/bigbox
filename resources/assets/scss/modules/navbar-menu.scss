@@ -16,7 +16,7 @@
 	width: 100%;
 	padding-top: $spacer / 2;
 	padding-bottom: $spacer / 2;
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.05);
 	justify-content: space-between;
 	align-items: center;
 	display: none;
@@ -95,7 +95,7 @@
 	top: -7px;
 	left: 50%;
 	transform: translateX(-25px);
-	background: darken(theme-color("primary"), 15%);
+	background: theme-color("secondary");
 	border-radius: 15px;
 	min-width: 20px;
 	height: 20px;

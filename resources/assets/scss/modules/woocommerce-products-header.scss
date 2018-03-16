@@ -1,3 +1,9 @@
 .woocommerce-products-header {
-	display: none;
+}
+
+.woocommerce-products-meta {
+	font-size: 0.90rem;
+	margin: $spacer 0 ( $spacer * 2 );
+	display: flex;
+	justify-content: space-between;
 }
