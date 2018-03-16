@@ -5,6 +5,7 @@
 
 .navbar-menu--primary {
 	order: 1;
+	margin-left: auto;
 
 	@include media-breakpoint-up(md) {
 		order: 3;

@@ -1,0 +1,58 @@
+.navbar-mobile-toggle--open {
+	width: 24px;
+	height: 24px;
+	margin-right: $spacer;
+
+	@include media-breakpoint-up(md) {
+		display: none;
+	}
+
+	&:hover svg,
+	svg {
+		fill: #fff;
+	}
+}
+
+.navbar-mobile {
+	color: gray("700");
+	text-align: left;
+	padding: 1.5rem;
+	width: calc(100% - 64px);
+	max-width: 320px;
+	position: fixed;
+	top: 0;
+	right: auto;
+	left: 0;
+	height: 100vh;
+	background: #fff;
+	transform: translateX(-100%);
+	transition: transform 0.25s ease-in-out;
+	z-index: 10;
+	will-change: transform;
+}
+
+.navbar-mobile:target,
+.navbar-mobile[aria-expanded="true"] {
+	transform: none;
+}
+
+.navbar-mobile-backdrop {
+	position: fixed;
+	visibility: hidden;
+	content: "";
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 5;
+	background: none;
+	cursor: default;
+	transition: background 0.2s ease;
+	display: block;
+}
+
+.navbar-mobile:target + .navbar-mobile-backdrop,
+.navbar-mobile[aria-expanded="true"] + .navbar-mobile-backdrop {
+	background: rgba(0, 0, 0, 0.5);
+	visibility: visible;
+}

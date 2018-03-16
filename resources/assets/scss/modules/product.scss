@@ -3,7 +3,7 @@
 	padding-bottom: 0;
 
 	.product__preview + .product__description {
-		padding: $spacer;
+		padding: 0 $spacer;
 	}
 
 	.product__inner {
@@ -111,6 +111,7 @@
 
 .product__description {
 	position: relative;
+	flex: 1;
 }
 
 .product__preview + .product__description {

@@ -18,6 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	
 	<div class="navbar__inner">
 		<?php
+		bigbox_partial( 'navbar-mobile' );
 		bigbox_partial( 'branding' );
 		bigbox_partial( 'navbar-search' );
 		bigbox_partial( 'navbar-primary-menu' );
