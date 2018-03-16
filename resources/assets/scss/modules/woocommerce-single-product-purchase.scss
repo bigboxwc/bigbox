@@ -1,14 +1,14 @@
 .woocommerce-single-product-purchase {
 
-	@include make-col-ready;
-	@include make-col(12);
-	position: sticky;
-	top: ( $spacer / 2 );
-	margin-bottom: ( $spacer * 2 );
+	margin: ( $spacer * 2 ) 0;
 	z-index: 10;
 
 	@include media-breakpoint-up(xl) {
+		margin: 0;
+		position: sticky;
+		top: ( $spacer / 2 );
 
+		@include make-col-ready;
 		@include make-col(2.5);
 	}
 

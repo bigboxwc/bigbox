@@ -1,7 +1,7 @@
 .woocommerce-page ul.products,
 .woocommerce ul.products {
 
-	&:first-of-type {
+	&:not(:first-child) {
 		margin-top: 0;
 		margin-bottom: 0;
 	}
