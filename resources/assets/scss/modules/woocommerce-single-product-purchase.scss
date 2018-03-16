@@ -3,7 +3,14 @@
 	margin: ( $spacer * 2 ) 0;
 	z-index: 10;
 
-	@include media-breakpoint-up(xl) {
+	@include media-breakpoint-up(md) {
+		margin: 0;
+
+		@include make-col-ready;
+		@include make-col(12);
+	}
+
+	@include media-breakpoint-up(lg) {
 		margin: 0;
 		position: sticky;
 		top: ( $spacer / 2 );

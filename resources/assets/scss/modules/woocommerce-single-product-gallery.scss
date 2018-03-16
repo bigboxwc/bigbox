@@ -1,10 +1,16 @@
 .woocommerce-product-gallery {
-	margin: 0 0 ( $spacer * 2 );
+	display: flex;
 
-	@include media-breakpoint-up(xl) {
-		display: flex;
+	@include vertical-spacing("down");
+
+	@include media-breakpoint-up(md) {
 
 		@include make-col-ready;
+		@include make-col(6);
+	}
+
+	@include media-breakpoint-up(lg) {
+
 		@include make-col(5);
 	}
 
@@ -20,18 +26,19 @@
 		display: flex;
 		justify-content: space-between;
 
-		@include media-breakpoint-up(xl) {
+		@include media-breakpoint-up(sm) {
 			margin: 0 $spacer 0 0;
 			order: 0;
 			flex: 1 0 75px;
 			flex-wrap: wrap;
 			flex-direction: column;
+			justify-content: normal;
 		}
 
 		li {
 			cursor: pointer;
 
-			@include media-breakpoint-up(xl) {
+			@include media-breakpoint-up(sm) {
 				margin: 0 0 $spacer;
 			}
 		}

@@ -1,0 +1,28 @@
+@mixin vertical-spacing( $direction: 'both' ) {
+
+	@if $direction == 'both' {
+		margin-top: $spacer;
+		margin-bottom: $spacer;
+
+		@include media-breakpoint-up(md) {
+			margin-top: ( $spacer * 2 );
+			margin-bottom: ( $spacer * 2 );
+		}
+	}
+
+	@if $direction == 'down' {
+		margin-bottom: $spacer;
+
+		@include media-breakpoint-up(md) {
+			margin-bottom: ( $spacer * 2 );
+		}
+	}
+
+	@if $direction == 'up' {
+		margin-top: $spacer;
+
+		@include media-breakpoint-up(md) {
+			margin-top: ( $spacer * 2 );
+		}
+	}
+}

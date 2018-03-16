@@ -3,8 +3,11 @@
 	flex-wrap: wrap;
 	position: relative;
 	flex: 1 0 auto;
-	margin: 0 $spacer;
 	box-shadow: 0 0 10px darken(theme-color("primary"), 5%);
+
+	@include media-breakpoint-up(lg) {
+		margin: 0 $spacer;
+	}
 }
 
 .navbar-search__category,

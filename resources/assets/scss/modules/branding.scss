@@ -5,8 +5,12 @@
 	font-size: 1rem;
 	text-transform: uppercase;
 	line-height: 1;
-	margin: 0;
-	padding-left: 11px; // [1]
+	margin: 0 0 $spacer;
+
+	@include media-breakpoint-up(lg) {
+		margin: 0;
+		padding-left: 11px; // [1]
+	}
 	
 	a {
 		color: color("white");
