@@ -29,6 +29,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param string   $post_type The current post type.
  */
 function bigbox_page_templates( $post_templates, $theme, $post, $post_type ) {
+	if ( bigbox_is_integration_active( 'woocommerce' ) ) {
+		$post_templates['resources/views/layout/shop-home.php'] = esc_html__( 'Homepage', 'bigbox' );
+	}
+
 	return $post_templates;
 }
 add_filter( 'theme_page_templates', 'bigbox_page_templates', 10, 4 );

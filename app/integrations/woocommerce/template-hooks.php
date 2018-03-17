@@ -120,6 +120,9 @@ remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_r
 // Add product meta to the Additional Information tab.
 add_action( 'woocommerce_product_additional_information', 'bigbox_woocommerce_product_additional_information', 99 );
 
+// Always show Additional Information.
+add_filter( 'wc_product_enable_dimensions_display', '__return_true' );
+
 /**
  * @see wc-formatting-functions.php
  */
