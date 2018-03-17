@@ -19,12 +19,13 @@ bigbox_view( 'global/header' );
 ?>
 
 <div id="main" class="site-primary" role="main">
-
-
 	<?php
 	/**
-	 * Hook: woocommerce_sidebar.
-	 *
+	 * @hooked bigbox_shop_home_onsale - 10
+	 */
+	do_action( 'bigbox_shop_home' );
+
+	/**
 	 * @hooked woocommerce_get_sidebar - 10
 	 */
 	do_action( 'woocommerce_sidebar' );

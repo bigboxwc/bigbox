@@ -19,6 +19,13 @@ add_filter( 'woocommerce_enqueue_styles', 'bigbox_woocommerce_enqueue_styles' );
 // Look in the integration for templates.
 add_filter( 'woocommerce_template_path', 'bigbox_woocommerce_template_path' );
 
+// Load custom page templates.
+add_filter( 'theme_page_templates', 'bigbox_woocommerce_page_templates' );
+
+/**
+ * @see content-single-product.php
+ */
+
 /**
  * @see archive-product.php
  */
@@ -71,6 +78,8 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_after_
 /**
  * @see content-single-product.php
  */
+
+// Remove sidebar on single product pages.
 add_action( 'the_post', function() {
 	if ( is_singular( 'product' ) ) {
 		remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar' );

@@ -23,16 +23,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  *
- * @param array    $post_templates The current list of templates.
- * @param WP_Theme $theme The current WordPress theme.
- * @param WP_Post  $post the current post object.
- * @param string   $post_type The current post type.
+ * @param array $page_templates The current list of templates.
  */
-function bigbox_page_templates( $post_templates, $theme, $post, $post_type ) {
-	if ( bigbox_is_integration_active( 'woocommerce' ) ) {
-		$post_templates['resources/views/layout/shop-home.php'] = esc_html__( 'Homepage', 'bigbox' );
-	}
-
-	return $post_templates;
+function bigbox_page_templates( $page_templates ) {
+	return $page_templates;
 }
-add_filter( 'theme_page_templates', 'bigbox_page_templates', 10, 4 );
+add_filter( 'theme_page_templates', 'bigbox_page_templates' );
