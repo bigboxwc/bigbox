@@ -41,7 +41,7 @@ class WooCommerceShippingEstimates extends Integration implements Registerable, 
 	 * @since 1.0.0
 	 */
 	public function add_shipping_estimate() {
-		global $product;
+		$product = wc_get_product( get_post() );
 
 		if ( $product->is_virtual() ) {
 			return;
