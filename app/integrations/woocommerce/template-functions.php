@@ -148,6 +148,21 @@ function bigbox_woocommerce_after_shop_loop_item_title_variations() {
 }
 
 /**
+ * Custom purchase form area.
+ *
+ * @since 1.0.0
+ */
+function bigbox_purchase_form() {
+	$product = wc_get_product( get_post() );
+
+	if ( ! is_singular( 'product' ) || ! $product->is_purchasable() ) {
+		return;
+	}
+
+	wc_get_template( 'single-product/add-to-cart/purchase-form.php' );
+}
+
+/**
  * Modify default tab titles.
  *
  * WooCommerce core doesn't use the actual set titles so instead we can

@@ -99,23 +99,8 @@ add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_r
 // Adjust add to cart position.
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 
-add_action( 'woocommerce_after_single_product_summary', function() {
-	global $product;
-
-	if ( ! is_singular( 'product' ) || ! $product->is_purchasable() ) {
-		return;
-	}
-?>
-
-<div id="purchase" class="woocommerce-single-product-purchase" role="complementary">
-	<div class="woocommerce-purchase-form">
-		<?php do_action( 'bigbox_purchase_form' ); ?>
-	</div>
-</div>
-<?php
-
-}, 5 );
-
+// Add custom purchase form.
+add_action( 'woocommerce_after_single_product_summary', 'bigbox_purchase_form', 5 );
 add_action( 'bigbox_purchase_form', 'woocommerce_template_single_add_to_cart' );
 
 // Adjust sharing position.
