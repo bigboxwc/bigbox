@@ -4,8 +4,10 @@
 	@include vertical-spacing();
 	@include make-col-ready;
 
-	@include media-breakpoint-up(md) {
-		margin: 0;
+	@include media-breakpoint-up(sm) {
+		width: auto;
+
+		@include make-col-offset(6);
 	}
 
 	@include media-breakpoint-up(lg) {
@@ -29,23 +31,17 @@
 }
 
 .woocommerce-purchase-form {
+	@include card;
+	@include card--featured;
 
-	@include media-breakpoint-up(lg) {
-		padding: $spacer;
-		
-		@include card;
-		@include card--featured;
-	}
+	padding: $spacer;
 }
 
 .single_add_to_cart_button {
 
 	@include button--success;
 	@include button--size-sm;
-
-	@include media-breakpoint-up(lg) {
-		@include button--size-block;
-	}
+	@include button--size-block;
 }
 
 .add-to-cart .quantity,
@@ -54,10 +50,7 @@
 	margin-bottom: 1rem;
 	display: flex;
 	align-items: center;
-
-	@include media-breakpoint-up(lg) {
-		justify-content: space-between;
-	}
+	justify-content: space-between;
 }
 
 .add-to-cart label,

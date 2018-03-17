@@ -21,7 +21,7 @@
 	}
 
 	.flex-control-nav {
-		margin: $spacer 0 0;
+		margin: $spacer ( ( $spacer / 2 ) * -1 ) 0;
 		padding: 0;
 		list-style: none;
 		display: flex;
@@ -38,8 +38,9 @@
 
 		li {
 			cursor: pointer;
+			margin: 0 ( $spacer / 2 );
 
-			@include media-breakpoint-up(sm) {
+			@include media-breakpoint-up(xl) {
 				margin: 0 0 $spacer;
 			}
 		}
