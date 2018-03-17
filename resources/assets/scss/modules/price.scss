@@ -1,5 +1,5 @@
 .price {
-	font-size: 1.25rem;
+	font-size: $font-size-lg;
 	color: initial;
 	display: flex;
 	align-items: center;
@@ -37,7 +37,7 @@
 	}
 
 	del {
-		font-size: 0.90rem;
+		font-size: 0.90em;
 		margin-left: 6px;
 		opacity: 0.45;
 

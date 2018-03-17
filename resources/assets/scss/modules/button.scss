@@ -5,7 +5,7 @@
 
 .button__pill {
 	color: gray(500);
-	font-size: 14px;
+	font-size: $font-size-xs;
 	margin: 0 0 0 8px;
 	padding: 3px 10px;
 	background: rgba(0, 0, 0, 0.05);
@@ -14,7 +14,7 @@
 	align-items: baseline;
 
 	sub {
-		font-size: 11px;
+		font-size: 0.75em;
 		opacity: 0.6;
 	}
 }

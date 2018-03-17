@@ -71,7 +71,7 @@
 
 // [1] Override standard sizing growth on larger devices.
 @mixin button--size-sm {
-	font-size: 0.90rem;
+	font-size: $font-size-sm;
 	padding: 10px 20px;
 
 	@include media-breakpoint-up(md) {

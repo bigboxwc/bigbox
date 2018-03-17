@@ -34,7 +34,7 @@
 }
 
 .navbar-menu__item {
-	font-size: 0.85rem;
+	font-size: $font-size-sm;
 	line-height: 1;
 
 	a {
@@ -89,7 +89,7 @@
 }
 
 .navbar-menu__cart-count {
-	font-size: 0.75rem;
+	font-size: $font-size-xs;
 	line-height: 1;
 	position: absolute;
 	top: -7px;

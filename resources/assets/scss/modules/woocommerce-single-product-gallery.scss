@@ -1,15 +1,16 @@
 .woocommerce-product-gallery {
-	display: flex;
 
 	@include vertical-spacing("down");
+	@include make-col-ready;
 
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(sm) {
+		float: left;
 
-		@include make-col-ready;
 		@include make-col(6);
 	}
 
 	@include media-breakpoint-up(lg) {
+		display: flex;
 
 		@include make-col(5);
 	}
@@ -26,7 +27,7 @@
 		display: flex;
 		justify-content: space-between;
 
-		@include media-breakpoint-up(sm) {
+		@include media-breakpoint-up(lg) {
 			margin: 0 $spacer 0 0;
 			order: 0;
 			flex: 1 0 75px;
@@ -73,7 +74,7 @@ div:not(.flex-viewport) > .woocommerce-product-gallery__wrapper {
 	top: $spacer;
 	right: $spacer + ( $grid-gutter-width / 2 ); // [1]
 	font-size: 2em;
-	z-index: 9;
+	z-index: 1;
 	width: 36px;
 	height: 36px;
 	background: #fff;

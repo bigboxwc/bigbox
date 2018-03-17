@@ -57,7 +57,7 @@
 	&.columns-4 li.product,
 	&.columns-5 li.product {
 
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(md) {
 
 			@include make-col(4);
 		}
@@ -66,7 +66,7 @@
 	&.columns-4 li.product,
 	&.columns-5 li.product {
 
-		@include media-breakpoint-up(xl) {
+		@include media-breakpoint-up(lg) {
 
 			@include make-col(3);
 		}
@@ -122,7 +122,7 @@
 .woocommerce-loop-product__title,
 .product__title {
 	color: theme-color("dark");
-	font-size: 1rem;
+	font-size: $font-size-base;
 	font-weight: 500;
 	margin: 0;
 	order: 0;
@@ -139,7 +139,7 @@
 
 .product__shipping {
 	color: gray("600");
-	font-size: 0.85rem;
+	font-size: $font-size-sm;
 	order: 0;
 }
 
@@ -149,7 +149,7 @@
 
 	a {
 		color: color("white");
-		font-size: 0.75rem;
+		font-size: $font-size-xs;
 		line-height: 1;
 		text-transform: uppercase;
 		font-weight: 500;
@@ -168,7 +168,7 @@
 
 	a {
 		color: gray("600");
-		font-size: 0.75rem;
+		font-size: $font-size-xs;
 		background: gray("100");
 		padding: 5px 5px 4px;
 		display: inline-block;

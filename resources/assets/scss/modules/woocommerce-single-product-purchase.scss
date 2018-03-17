@@ -1,31 +1,40 @@
 .woocommerce-single-product-purchase {
-
-	margin: ( $spacer * 2 ) 0;
 	z-index: 10;
+
+	@include vertical-spacing();
+	@include make-col-ready;
 
 	@include media-breakpoint-up(md) {
 		margin: 0;
-
-		@include make-col-ready;
-		@include make-col(12);
 	}
 
 	@include media-breakpoint-up(lg) {
 		margin: 0;
-		position: sticky;
 		top: ( $spacer / 2 );
 
-		@include make-col-ready;
+		@include make-col(3);
+
+		position: sticky;
+
+		// [1] Admin bar has a set px offset.
+		.admin-bar & {
+			top: calc( #{( $spacer / 2 )} + 32px ); // [1]
+		}
+	}
+
+	@include media-breakpoint-up(xl) {
+
 		@include make-col(2.5);
 	}
+}
 
-	.card {
+.woocommerce-purchase-form {
+
+	@include media-breakpoint-up(lg) {
 		padding: $spacer;
-	}
-
-	// [1] Admin bar has a set px offset.
-	.admin-bar & {
-		top: calc( #{( $spacer / 2 )} + 32px ); // [1]
+		
+		@include card;
+		@include card--featured;
 	}
 }
 
@@ -33,7 +42,10 @@
 
 	@include button--success;
 	@include button--size-sm;
-	@include button--size-block;
+
+	@include media-breakpoint-up(lg) {
+		@include button--size-block;
+	}
 }
 
 .add-to-cart .quantity,
@@ -42,13 +54,16 @@
 	margin-bottom: 1rem;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+
+	@include media-breakpoint-up(lg) {
+		justify-content: space-between;
+	}
 }
 
 .add-to-cart label,
 .add-to-cart__action-label {
 	color: theme-color("dark");
-	font-size: 0.90rem;
+	font-size: $font-size-sm;
 	font-weight: 500;
 	line-height: 1;
 	margin-right: 8px;
@@ -82,7 +97,7 @@
 }
 
 .woocommerce-variation-description {
-	font-size: 0.90rem;
+	font-size: $font-size-sm;
 	width: 100%;
 
 	p:first-child {
@@ -99,13 +114,21 @@
 }
 
 .woocommerce-variation-availability {
-	font-size: 0.90rem;
+	font-size: $font-size-sm;
 
 	p {
 		margin: 0;
 	}
+}
+
+.add-to-cart {
+	font-size: $font-size-sm;
 
 	.in-stock {
 		color: color("green");
+	}
+
+	.out-of-stock {
+		color: color("red");
 	}
 }

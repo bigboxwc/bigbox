@@ -28,7 +28,7 @@
 	select {
 		appearance: none;
 		color: theme-color("dark");
-		font-size: 0.75rem;
+		font-size: $font-size-xs;
 		background: gray("100");
 		border: 0;
 		border-right: 1px solid gray("300");
@@ -55,7 +55,7 @@
 		@include form-input;
 
 		cursor: pointer;
-		font-size: 0.9rem;
+		font-size: $font-size-sm;
 		color: color("white");
 		padding: 0 ( $spacer / 2 );
 		background-color: color("white");

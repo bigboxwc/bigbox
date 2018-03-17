@@ -99,7 +99,7 @@ add_action( 'woocommerce_after_single_product_summary', function() {
 ?>
 
 <div id="purchase" class="woocommerce-single-product-purchase" role="complementary">
-	<div class="card card--featured">
+	<div class="woocommerce-purchase-form">
 		<?php do_action( 'bigbox_purchase_form' ); ?>
 	</div>
 </div>

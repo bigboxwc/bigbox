@@ -2,7 +2,7 @@
 }
 
 .woocommerce-products-meta {
-	font-size: 0.90rem;
+	font-size: $font-size-sm;
 	margin: $spacer 0 ( $spacer * 2 );
 	display: flex;
 	justify-content: space-between;
