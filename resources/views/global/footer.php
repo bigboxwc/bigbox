@@ -20,7 +20,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		</div>
 
-		<?php wp_footer(); ?>
+		<?php
+		bigbox_partial( 'footer-nav' );
+		bigbox_partial( 'footer-copyright' );
+
+		wp_footer();
+		?>
 
 	</body>
 </html>

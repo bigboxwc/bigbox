@@ -19,9 +19,6 @@ add_filter( 'woocommerce_enqueue_styles', 'bigbox_woocommerce_enqueue_styles' );
 // Look in the integration for templates.
 add_filter( 'woocommerce_template_path', 'bigbox_woocommerce_template_path' );
 
-// Load custom page templates.
-add_filter( 'theme_page_templates', 'bigbox_woocommerce_page_templates' );
-
 /**
  * @see content-single-product.php
  */

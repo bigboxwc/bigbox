@@ -99,10 +99,7 @@
 .products,
 .woocommerce-single-product-data__section {
 	> h2 {
-		color: theme-color("dark");
-		font-size: $font-size-lg;
-		font-weight: 500;
-		margin: 0;
+		@include single-product-section-title;
 	}
 
 	p:last-child {
@@ -153,16 +150,4 @@
 
 .comment-respond {
 	margin-top: ( $spacer * 2 );
-}
-
-.tagged_as,
-.posted_in {
-	a {
-		color: theme-color("secondary");
-		text-decoration: underline;
-
-		&:hover {
-			text-decoration: none;
-		}
-	}
 }

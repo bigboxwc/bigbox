@@ -6,12 +6,8 @@
 @import "variables/colors";
 @import "variables/grid";
 @import "variables/box";
+@import "variables/fonts";
 @import "variables/choices";
-
-$font-size-base: 1rem;
-$font-size-xs: ($font-size-base * 0.75);
-$font-size-sm: ($font-size-base * 0.90);
-$font-size-xl: ($font-size-base * 1.50);
 
 /**
  * External dependencies
@@ -43,6 +39,7 @@ $font-size-xl: ($font-size-base * 1.50);
 @import "helpers/align";
 @import "helpers/ui";
 @import "helpers/screen-reader-text";
+@import "helpers/type";
 
 // HTML Elements
 @import "elements/html";
@@ -77,6 +74,11 @@ $font-size-xl: ($font-size-base * 1.50);
 @import "modules/page-title";
 @import "modules/widget";
 @import "modules/widget-title";
+@import "modules/hentry";
+
+// Footer
+@import "modules/footer-nav";
+@import "modules/footer-copyright";
 
 // Shop
 @import "modules/shop-filters";
@@ -91,6 +93,7 @@ $font-size-xl: ($font-size-base * 1.50);
 @import "modules/woocommerce-single-product-gallery";
 @import "modules/woocommerce-single-product";
 @import "modules/woocommerce-single-product-purchase";
+@import "modules/woocommerce-single-product-reviews";
 
 // Product card
 @import "modules/products";

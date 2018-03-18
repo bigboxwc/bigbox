@@ -1,0 +1,11 @@
+.hentry {
+
+	> h2 {
+		color: theme-color("dark");
+		font-size: $font-size-lg;
+		font-weight: $font-weight-base;
+		line-height: 1;
+		margin: ( $spacer * 2 ) 0 ( -$spacer );
+	}
+
+}

@@ -54,8 +54,8 @@ $colors: map-merge((
 
 $theme-colors: () !default;
 $theme-colors: map-merge((
-	"primary":    $gray-800,
-	"secondary":  $blue,
+	"primary":    $blue,
+	"secondary":  $orange,
 	"success":    $green,
 	"info":       $cyan,
 	"warning":    $yellow,

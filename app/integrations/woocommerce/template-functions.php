@@ -41,19 +41,6 @@ function bigbox_woocommerce_template_path() {
 }
 
 /**
- * Custom page templates.
- *
- * @since 1.0.0
- *
- * @param array $page_templates The current list of templates.
- */
-function bigbox_woocommerce_page_templates( $page_templates ) {
-	$page_templates[ bigbox_woocommerce_template_path() . 'shop-home.php' ] = esc_html__( 'Homepage', 'bigbox' );
-
-	return $page_templates;
-}
-
-/**
  * Adjust opening wrapper tag.
  *
  * @since 1.0.0

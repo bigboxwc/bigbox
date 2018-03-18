@@ -14,10 +14,10 @@
 }
 
 @mixin form-input {
-	color: gray(700);
-	font: 400 1rem/1.5 $font-family-sans-serif;
-	padding: 10px;
-	border: 2px solid #ddd;
+	color: gray("700");
+	font: $font-weight-normal #{$font-size-base}/#{$line-height-base} $font-family-sans-serif;
+	padding: ( $spacer / 2 );
+	border: 1px solid gray("500");
 	border-radius: $border-radius;
 
 	&:focus {
