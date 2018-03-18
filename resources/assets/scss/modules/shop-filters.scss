@@ -19,8 +19,11 @@
 		@include card;
 	}
 
+	.product__stats {
+		margin: ( $spacer / 2 ) 0;
+	}
+
 	.price {
 		line-height: 1;
-		margin-top: 10px;
 	}
 }

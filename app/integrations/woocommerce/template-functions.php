@@ -37,7 +37,7 @@ function bigbox_woocommerce_enqueue_styles( $styles ) {
  * @return string
  */
 function bigbox_woocommerce_template_path() {
-	return 'app/integrations/woocommerce/views/';
+	return 'app/integrations/woocommerce/templates/';
 }
 
 /**

@@ -30,12 +30,16 @@ global $product;
 	</a>
 
 	<?php if ( ! empty( $show_rating ) ) : ?>
+	<div class="product__stats">
 		<?php echo wc_get_rating_html( $product->get_average_rating() ); ?>
+	</div>
 	<?php endif; ?>
 
-	<span class="price">
+	<?php if ( '' != $product->get_price_html()  ) : ?>
+	<span class="product__stats price">
 		<?php echo $product->get_price_html(); ?>
 	</span>
+	<?php endif; ?>
 
 	<?php do_action( 'woocommerce_widget_product_item_end', $args ); ?>
 </li>
