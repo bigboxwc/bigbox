@@ -20,6 +20,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( is_singular( 'product' ) ) :
+?>
+
+<div class="add-to-cart__action">
+
+	<div class="add-to-cart__action-label">
+		<label for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'bigbox' ); ?>:</label>
+	</div>
+
+	<div class="add-to-cart__action-value">
+	<?php
 	wc_get_template( 'single-product/add-to-cart/quantity.php', [
 		'min_value'   => $min_value,
 		'max_value'   => $max_value,
@@ -31,7 +41,11 @@ if ( is_singular( 'product' ) ) :
 		'args'        => $args,
 		'step'        => $step,
 	] );
+	?>
+	</div>
+</div>
 
+<?php
 	return;
 endif;
 

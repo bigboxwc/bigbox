@@ -12,6 +12,8 @@ const transformInput = function( $form, variation = false ) {
 	// Remove any existing.
 	$original.detach();
 
+	const selectedValue = variation ? 0 : $original.val();
+
 	const min = variation.min_qty || $original.attr( 'min' );
 	let   max = variation.max_qty || $original.attr( 'max' );
 
@@ -28,13 +30,13 @@ const transformInput = function( $form, variation = false ) {
 	// Add <option>s
 	for ( i = min; i <= max; i++ ) {
 		$select
-			.append( $( `<option value=${i}>${i}</option>` ) );
+			.append( $( `<option value=${i} ${ i == selectedValue ? 'selected' : ''}>${i}</option>` ) );
 	}
 };
 
 $(function() {
 
-	$( 'form.cart' ).each( function() {
+	$( 'form.woocommerce-cart-form, form.cart' ).each( function() {
 		const $form = $( this );
 
 		// Variation update.
