@@ -70,7 +70,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 						<?php if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) : ?>
 						<div class="product__stats">
-							<?php esc_html_e( 'Available on backorder', 'woocommerce' ); ?>
+							<?php esc_html_e( 'Available on backorder', 'bigbox' ); ?>
 						</div>
 						<?php endif; ?>
 
@@ -111,6 +111,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 	</ul>
 
+	<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'bigbox' ); ?>"><?php esc_html_e( 'Update cart', 'bigbox' ); ?></button>
+
+	<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
+
+	<?php do_action( 'woocommerce_cart_actions' ); ?>
 	<?php do_action( 'woocommerce_after_cart_contents' ); ?>
 	<?php do_action( 'woocommerce_after_cart_table' ); ?>
 </form>
