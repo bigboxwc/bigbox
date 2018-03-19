@@ -6,11 +6,17 @@ WooCommerce theme for large product catalogs.
 
 ```
 $ git clone git@github.com:spencerfinnell/bigbox-theme bigbox && cd bigbox
-$ npm run setup
+$ npm run setup-theme
 ```
 
 ## Develop
 
 ```
 $ npm run dev
+```
+
+## Release
+
+```
+$ npm run package-theme
 ```
