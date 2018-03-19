@@ -16,5 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div class="footer-copyright">
-hi
+	<div class="container">
+		<p><?php echo esc_html( get_theme_mod( 'copyright', sprintf( '&copy; %s. All Rights Reserved.', get_bloginfo( 'name' ) ) ) ); ?></p>
+	</div>
 </div>

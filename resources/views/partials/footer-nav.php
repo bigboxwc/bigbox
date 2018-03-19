@@ -16,5 +16,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div class="footer-nav">
-hi
+	<div class="container">
+		<div class="row">
+
+			<?php for ( $i = 1; $i <= bigbox_get_footer_nav_columns(); $i++ ) : ?>
+			<div class="col">
+				<?php dynamic_sidebar( 'footer-' . $i ); ?>
+			</div>
+			<?php endfor; ?>
+
+		</div>
+	</div>
 </div>

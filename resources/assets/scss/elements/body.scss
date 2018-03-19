@@ -3,7 +3,14 @@ body {
 	font: $font-weight-normal #{$font-size-base}/#{$line-height-base} $font-family-sans-serif;
 	margin: 0;
 	padding: 0;
+	min-height: 100vh;
 	background: color("white");
 	position: relative;
 	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+
+	&.admin-bar {
+		min-height: calc( 100vh - 32px );
+	}
 }

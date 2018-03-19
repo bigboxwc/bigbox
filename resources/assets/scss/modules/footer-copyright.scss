@@ -1,4 +1,10 @@
 .footer-copyright {
-	color: color("white");
-	background: gray("800");
+	color: gray("700");
+	font-size: $font-size-xs;
+	background: gray("100");
+}
+
+// No .footer-widgets available.
+.container + .footer-copyright {
+	margin-top: auto;
 }

@@ -1,4 +1,13 @@
 .footer-nav {
-	color: color("white");
-	background: gray("700");
+	margin-top: auto;
+	margin-bottom: ( $spacer * 2 );
+}
+
+.footer-widget {
+
+	> ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
 }
