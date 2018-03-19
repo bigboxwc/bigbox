@@ -24,7 +24,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 function bigbox_woocommerce_enqueue_styles( $styles ) {
 	unset( $styles['woocommerce-general'] );
 	unset( $styles['woocommerce-layout'] );
-	unset( $styles['woocommerce-smallscreen'] );
 
 	return $styles;
 }
