@@ -15,8 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-				<?php wc_get_template( 'global/sidebar-tertiary.php' ); ?>
-
 			</div>
 		</div>
 
