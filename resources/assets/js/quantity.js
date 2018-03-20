@@ -4,9 +4,8 @@
  * @param {object} DOM element.
  * @param {bool|object} Variation
  */
-export const transformInput = function( $form, variation = false ) {
-	const $qty      = $form.find( '.qty' )
-	const $wrapper  = $form.find( '#add-to-cart-quantity' );
+export const transformInput = function( $qty, variation = false ) {
+	const $wrapper  = $qty.parent();
 	const $original = $qty;
 
 	// Remove any existing.
@@ -36,18 +35,19 @@ export const transformInput = function( $form, variation = false ) {
 
 $(function() {
 
-	$( 'form.woocommerce-cart-form, form.cart' ).each( function() {
+	$( 'form.cart' ).each( function() {
 		const $form = $( this );
+		const $qty  = $form.find( '.qty' );
 
 		// Variation update.
 		$form.on( 'show_variation', function() {
-			transformInput( $( this ) );
+			transformInput( $qty );
 
 			$( this ).addClass( 'woocommerce-variation--loaded' );
 		} );
 
 		// All.
-		transformInput( $form, false );
+		transformInput( $qty, false );
 	} );
 
 });

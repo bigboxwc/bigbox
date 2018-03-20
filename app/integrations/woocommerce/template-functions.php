@@ -277,11 +277,31 @@ function bigbox_update_cart() {
 	$cart = $values['cart'];
 
 	foreach ( $cart as $cart_key => $cart_value ) {
-		WC()->cart->set_quantity( $cart_key, $cart_value['qty'] );
+		$qty = (int) $cart_value['qty'];
+
+		// Remove from cart if setting to 0
+		if ( 0 === $qty ) {
+			WC()->cart->remove_cart_item( $cart_key );
+
+			continue;
+		}
+
+		WC()->cart->set_quantity( $cart_key, $qty );
 	}
 
 	ob_start();
-	wc_get_template( 'cart/cart.php' );
+
+	// Check cart items are valid.
+	do_action( 'woocommerce_check_cart_items' );
+
+	WC()->cart->calculate_totals();
+
+	if ( WC()->cart->is_empty() ) {
+		wc_get_template( 'cart/cart-empty.php' );
+	} else {
+		wc_get_template( 'cart/cart.php' );
+	}
+
 	$cart = ob_get_clean();
 
 	return wp_send_json_success( [

@@ -5,7 +5,21 @@ import { transformInput } from './quantity';
 
 const $form = $( 'form.woocommerce-cart-form' );
 
+/**
+ * Collect all quantity inputs and update to selects.
+ */
+const transformQtys = function() {
+	$form.find( '.qty' ).each( function() {
+		transformInput( $( this ), false );
+	} );
+};
+
+/**
+ * Update cart contents when quantity changes.
+ */
 $form.on( 'change', '.qty', function() {
+	const $input = $( this );
+
 	$form.addClass( 'processing' ).block( {
 		message: null,
 		overlayCSS: {
@@ -24,7 +38,10 @@ $form.on( 'change', '.qty', function() {
 				.removeClass( 'processing' )
 				.unblock();
 
-			transformInput( $form, false );
+			transformQtys();
 		},
 	} );
 } );
+
+// Update all on load.
+transformQtys();
