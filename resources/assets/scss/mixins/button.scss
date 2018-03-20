@@ -1,5 +1,6 @@
 @mixin button {
 	font: $font-weight-normal #{$font-size-base}/#{$line-height-base} $font-family-sans-serif;
+	text-align: center;
 	cursor: pointer;
 	padding: 10px 20px;
 	border: 0;
@@ -28,8 +29,12 @@
 @mixin button--primary {
 
 	@include button;
-	color: #fff;
+	color: color("white");
 	background-color: theme-color("primary");
+
+	&:hover {
+		color: color("white");
+	}
 }
 
 @mixin button--secondary {

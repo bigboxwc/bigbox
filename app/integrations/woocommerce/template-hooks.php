@@ -118,12 +118,6 @@ add_action( 'woocommerce_product_additional_information', 'bigbox_woocommerce_pr
 add_filter( 'wc_product_enable_dimensions_display', '__return_true' );
 
 /**
- * @see cart/cart.php
- */
-
-remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cart_totals' );
-
-/**
  * @see wc-formatting-functions.php
  */
 

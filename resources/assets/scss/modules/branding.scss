@@ -1,6 +1,6 @@
 // [1] 10px added to .navbar-menu__item a -- fixes visual alignment.
 .branding {
-	font-weight: 700;
+	font-weight: $font-weight-bold;
 	color: color("white");
 	font-size: $font-size-lg;
 	text-transform: uppercase;

@@ -23,6 +23,7 @@ button {
 	@include button;
 }
 
+[type="radio"],
 [type="checkbox"] {
 	margin: 0;
 	padding: 0;

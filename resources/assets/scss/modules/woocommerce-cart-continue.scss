@@ -1,9 +1,39 @@
 .cart_totals {
+	#shipping_method {
+		font-size: $font-size-sm;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			display: flex;
+			align-items: center;
+		}
+
+		label {
+			margin-left: 5px;
+		}
+	}
+}
+
+.shipping-calculator-button {
+	font-size: $font-size-xs;
+
+	.woocommerce-shipping-calculator & {
+		display: none;
+	}
 }
 
 .coupons-next {
 	color: gray("600");
 	text-align: center;
 	font-size: $font-size-xs;
-	padding: $spacer;
+	padding: 0 $spacer $spacer;
+}
+
+.checkout-button {
+
+	@include button--success;
+	@include button--size-sm;
+	@include button--size-block;
 }

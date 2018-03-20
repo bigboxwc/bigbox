@@ -4,20 +4,26 @@
 }
 
 .woocommerce-cart-wrapper__content {
+	order: 2;
+	
+	@include make-col-ready();
 
-	@include make-col-ready;
-
-	@include media-breakpoint-up(xl) {
-
-		@include make-col(9);
-	}
+	width: auto;
+	flex: 1 0;
 }
 
 .woocommerce-cart-wrapper__purchase-form {
+	order: 1;
 
 	@include make-col-ready;
 
-	@include media-breakpoint-up(xl) {
+	@include media-breakpoint-up(sm) {
+		order: 3;
+
+		@include make-col(6);
+	}
+
+	@include media-breakpoint-up(lg) {
 
 		@include make-col(3);
 	}

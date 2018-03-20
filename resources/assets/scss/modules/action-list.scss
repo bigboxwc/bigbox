@@ -2,7 +2,7 @@
 
 }
 
-.action-list__action {
+.action-list__item {
 	line-height: 1;
 	margin-bottom: 1rem;
 	display: flex;
@@ -10,14 +10,21 @@
 	justify-content: space-between;
 }
 
-.action-list__action-label {
+.action-list__item-label {
 	color: theme-color("dark");
 	font-size: $font-size-sm;
-	font-weight: 500;
+	font-weight: $font-weight-bold;
 	line-height: 1;
-	margin-right: 8px;
+	margin-right: $spacer;
+
+	small {
+		color: gray("600");
+		font-weight: $font-weight-normal;
+		font-size: $font-size-xs;
+		display: block;
+	}
 }
 
-.action-list__action-value {
+.action-list__item-value {
 	font-size: $font-size-base;
 }

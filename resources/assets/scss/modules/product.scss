@@ -123,7 +123,7 @@
 .product__title {
 	color: theme-color("dark");
 	font-size: $font-size-base;
-	font-weight: 500;
+	font-weight: $font-weight-bold;
 	margin: 0;
 	order: 0;
 }
@@ -152,7 +152,7 @@
 		font-size: $font-size-xs;
 		line-height: 1;
 		text-transform: uppercase;
-		font-weight: 500;
+		font-weight: $font-weight-bold;
 		background: color("green");
 		border-radius: $border-radius;
 		padding: 5px 5px 4px;

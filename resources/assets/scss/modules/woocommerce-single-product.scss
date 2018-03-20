@@ -15,8 +15,8 @@
 	.product_title {
 		color: theme-color("dark");
 		font-size: $font-size-xl;
-		font-weight: 500;
-		margin: 1rem 0;
+		font-weight: $font-weight-bold;
+		margin: $spacer 0;
 	}
 
 	.summary {

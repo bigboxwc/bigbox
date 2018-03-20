@@ -1,6 +1,6 @@
 @mixin single-product-section-title {
 	color: theme-color("dark");
 	font-size: $font-size-lg;
-	font-weight: 500;
+	font-weight: $font-weight-bold;
 	margin: 0;
 }
