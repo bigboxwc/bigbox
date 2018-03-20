@@ -1,0 +1,9 @@
+.woocommerce .woocommerce-cart-form {
+	
+	@include make-row();
+
+	.products {
+		
+		@include make-col-ready();
+	}
+}

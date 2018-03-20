@@ -111,6 +111,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 	</ul>
 
+	<div id="tertiary" class="site-tertiary" role="complementary">
+		hi
+	</div>
+
 	<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
 
 	<?php do_action( 'woocommerce_cart_actions' ); ?>
