@@ -262,3 +262,18 @@ function bigbox_woocommerce_breadcrumb_defaults( $args ) {
 
 	return $args;
 }
+
+/**
+ * Pagination arguments.
+ *
+ * @since 1.0.0
+ *
+ * @param array $args Arguments.
+ * @return array
+ */
+function bigbox_woocommerce_pagination_args( $args ) {
+	$args['prev_text'] = esc_html__( '&larr; Previous Page' );
+	$args['next_text'] = esc_html__( 'Next Page &rarr;' );
+
+	return $args;
+}

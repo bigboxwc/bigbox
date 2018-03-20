@@ -47,6 +47,9 @@ if ( is_woocommerce() ) {
 	add_action( 'bigbox_navbar_after', 'woocommerce_breadcrumb' );
 }
 
+// Update pagination.
+add_filter( 'woocommerce_pagination_args', 'bigbox_woocommerce_pagination_args' );
+
 /**
  * @see content-product.php
  */

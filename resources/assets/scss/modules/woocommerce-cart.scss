@@ -17,24 +17,20 @@
 
 	@include make-col-ready;
 
-	@include media-breakpoint-up(sm) {
-		order: 3;
+	// Scale purchase form down as page expands.
+	$formBp: (
+		sm: 6,
+		md: 5,
+		lg: 4,
+		xl: 3,
+	);
+	
+	@each $bp, $cols in $formBp {
 
-		@include make-col(6);
-	}
+		@include media-breakpoint-up($bp) {
+			order: 3;
 
-	@include media-breakpoint-up(md) {
-
-		@include make-col(5);
-	}
-
-	@include media-breakpoint-up(lg) {
-
-		@include make-col(4);
-	}
-
-	@include media-breakpoint-up(xl) {
-
-		@include make-col(3);
+			@include make-col($cols);
+		}
 	}
 }

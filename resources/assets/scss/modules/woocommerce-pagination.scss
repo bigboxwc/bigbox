@@ -1,0 +1,41 @@
+$spacing: ( $spacer / 2 );
+
+.woocommerce-pagination {
+	font-size: $font-size-lg;
+	background: gray("100");
+	border-radius: $border-radius;
+
+	ul.page-numbers {
+		margin: ( $spacer * 2 ) 0 $spacer;
+		padding: ( $spacer / 3 ) 0;
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+	}
+
+	li {
+		margin: 0 $spacing;
+	}
+
+	a {
+		padding: 0 $spacing;
+	}
+
+	.next,
+	.prev {
+		font-size: $font-size-base;
+	}
+
+	.current {
+		color: theme-color("dark");
+	}
+
+	.next {
+		margin-left: $spacing;
+	}
+
+	.prev {
+		margin-right: $spacing;
+	}
+}
