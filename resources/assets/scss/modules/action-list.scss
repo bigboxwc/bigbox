@@ -1,0 +1,23 @@
+.action-list {
+
+}
+
+.action-list__action {
+	line-height: 1;
+	margin-bottom: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.action-list__action-label {
+	color: theme-color("dark");
+	font-size: $font-size-sm;
+	font-weight: 500;
+	line-height: 1;
+	margin-right: 8px;
+}
+
+.action-list__action-value {
+	font-size: $font-size-base;
+}

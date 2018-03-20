@@ -69,7 +69,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						</div>
 
 						<?php if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) : ?>
-						<div class="product__stats">
+						<div class="product__stats stock">
 							<?php esc_html_e( 'Available on backorder', 'bigbox' ); ?>
 						</div>
 						<?php endif; ?>

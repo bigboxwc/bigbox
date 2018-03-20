@@ -44,22 +44,20 @@
 	@include button--size-block;
 }
 
+// @todo consolodate
+
 .add-to-cart .quantity,
 .add-to-cart__action {
-	line-height: 1;
-	margin-bottom: 1rem;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	@extend .action-list__action;
 }
 
 .add-to-cart label,
 .add-to-cart__action-label {
-	color: theme-color("dark");
-	font-size: $font-size-sm;
-	font-weight: 500;
-	line-height: 1;
-	margin-right: 8px;
+	@extend .action-list__action-label;
+}
+
+.action-form__action-value {
+	@extend .action-list__action-value;
 }
 
 .single_variation_wrap {
