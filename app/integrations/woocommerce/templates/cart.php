@@ -14,9 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-// Only remove totals when this template is applied.
-remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cart_totals' );
-
 bigbox_view( 'global/header' );
 
 while ( have_posts() ) :
