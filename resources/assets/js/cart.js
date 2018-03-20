@@ -1,47 +1,79 @@
 /**
+ * External dependencies.
+ */
+import { forEach } from 'lodash';
+
+/**
  * Internal dependencies.
  */
 import { transformInput } from './quantity';
 
-const $form = $( 'form.woocommerce-cart-form' );
+// Partials to update.
+const partials = {
+	'cart'  : $( '#bigbox-cart' ),
+	'totals': $( '#bigbox-cart-totals' ),
+}
 
 /**
  * Collect all quantity inputs and update to selects.
  */
 const transformQtys = function() {
-	$form.find( '.qty' ).each( function() {
+	partials.cart.find( '.qty' ).each( function() {
 		transformInput( $( this ), false );
 	} );
 };
 
 /**
+ * Block partials when something is changing.
+ */
+const blockPartials = function() {
+	forEach( partials, ( $el ) => {
+		$el.addClass( 'processing' ).block( {
+			message: null,
+			overlayCSS: {
+				background: '#fff',
+				opacity: 0.6
+			}
+		} );
+	} );
+}
+
+/**
+ * Update partials with response data.
+ *
+ * @param {object} response Response fragments to map to partials.
+ */
+const updatePartials = function( response ) {
+	forEach( partials, ( $el, partial ) => {
+		$el
+			.html( response.data[ partial ] )
+
+			// Unblock
+			.removeClass( 'processing' )
+			.unblock();
+	} );
+
+	// Transform inputs to selects again.
+	transformQtys();
+}
+
+/**
  * Update cart contents when quantity changes.
  */
-$form.on( 'change', '.qty', function() {
-	const $input = $( this );
-
-	$form.addClass( 'processing' ).block( {
-		message: null,
-		overlayCSS: {
-			background: '#fff',
-			opacity: 0.6
-		}
-	} );
+partials.cart.on( 'change', '.qty', function() {
+	blockPartials();
 
 	wp.ajax.send( 'bigbox_update_cart', {
 		data: {
-			checkout: $form.serialize(),
+			checkout: partials.cart.serialize(),
 		},
 		success( response ) {
-			$form
-				.html( response.data )
-				.removeClass( 'processing' )
-				.unblock();
-
-			transformQtys();
+			updatePartials( response );
 		},
 	} );
 } );
 
-// Update all on load.
-transformQtys();
+// Transform quantities on load.
+$( function() {
+	transformQtys();
+} );

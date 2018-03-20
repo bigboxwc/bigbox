@@ -123,10 +123,6 @@ add_filter( 'wc_product_enable_dimensions_display', '__return_true' );
 
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cart_totals' );
 
-// Update cart when quantity changes.
-add_action( 'wp_ajax_nopriv_bigbox_update_cart', 'bigbox_update_cart' );
-add_action( 'wp_ajax_bigbox_update_cart', 'bigbox_update_cart' );
-
 /**
  * @see wc-formatting-functions.php
  */

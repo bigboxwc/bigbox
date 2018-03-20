@@ -13,15 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( $max_value && $min_value === $max_value ) :
-?>
-
-<input type="hidden" id="<?php echo esc_attr( $input_id ); ?>" class="qty" name="<?php echo esc_attr( $input_name ); ?>" value="<?php echo esc_attr( $min_value ); ?>" />
-
-<?php
-else :
-	/* translators: %s: Quantity. */
-	$labelledby = ! empty( $args['product_name'] ) ? sprintf( __( '%s quantity', 'bigbox' ), strip_tags( $args['product_name'] ) ) : '';
+/* translators: %s: Quantity. */
+$labelledby = ! empty( $args['product_name'] ) ? sprintf( __( '%s quantity', 'bigbox' ), strip_tags( $args['product_name'] ) ) : '';
 ?>
 
 <div id="add-to-cart-quantity">
@@ -41,6 +34,3 @@ else :
 		aria-labelledby="<?php echo esc_attr( $labelledby ); ?>"
 	/>
 </div>
-
-<?php
-endif;

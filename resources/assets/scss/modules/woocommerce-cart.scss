@@ -1,0 +1,24 @@
+.woocommerce-cart-wrapper {
+
+	@include make-row();
+}
+
+.woocommerce-cart-wrapper__content {
+
+	@include make-col-ready;
+
+	@include media-breakpoint-up(xl) {
+
+		@include make-col(9);
+	}
+}
+
+.woocommerce-cart-wrapper__purchase-form {
+
+	@include make-col-ready;
+
+	@include media-breakpoint-up(xl) {
+
+		@include make-col(3);
+	}
+}

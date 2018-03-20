@@ -24,7 +24,7 @@ wc_print_notices();
 
 do_action( 'woocommerce_before_cart' ); ?>
 
-<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
+<form id="bigbox-cart" class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 	<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
@@ -93,6 +93,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 							wc_get_template( 'single-product/add-to-cart/quantity.php', [
 								'input_name'   => "cart[{$cart_item_key}][qty]",
 								'input_value'  => $cart_item['quantity'],
+								'input_id'     => "cart-{$cart_item_key}",
+								'step'         => 1,
+								'pattern'      => '',
+								'inputmode'    => '',
 								'max_value'    => $_product->is_sold_individually() ? 1 : $_product->get_max_purchase_quantity(),
 								'min_value'    => '0',
 								'product_name' => $_product->get_name(),
@@ -110,10 +114,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<?php do_action( 'woocommerce_cart_contents' ); ?>
 
 	</ul>
-
-	<div id="tertiary" class="site-tertiary" role="complementary">
-		hi
-	</div>
 
 	<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
 
