@@ -22,6 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function bigbox_woocommerce_page_templates( $page_templates ) {
 	$page_templates[ bigbox_woocommerce_template_path() . 'cart.php' ] = esc_html__( 'Cart', 'bigbox' );
+	$page_templates[ bigbox_woocommerce_template_path() . 'checkout.php' ] = esc_html__( 'Checkout', 'bigbox' );
 
 	return $page_templates;
 }
