@@ -93,7 +93,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : ?>
 					<div class="tax-rate action-list__item">
 						<div id="tax-rate-<?php echo sanitize_title( $code ); ?>" class="action-list__item-label">
-							<?php echo wp_kses_post( sprintf( __( 'Tax %s', 'bigbox' ), $tax->label ) . ': ' . $estimated_text ); ?>
+							<?php echo wp_kses_post( $tax->label . ': ' . $estimated_text ); ?>
 						</div>
 						<div clas="action-list__item-value" labelledby="tax-rate-<?php echo sanitize_title( $code ); ?>">
 							<?php echo wp_kses_post( $tax->formatted_amount ); ?>
@@ -105,7 +105,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				<div class="action-list__item">
 					<div id="tax-total" class="tax-total action-list__item-label">
-						<?php echo wp_kses_post( sprintf( __( 'Tax %s', 'bigbox' ), WC()->countries->tax_or_vat() ) . ': ' . $estimated_text ); ?>
+						<?php echo wp_kses_post( WC()->countries->tax_or_vat() . ': ' . $estimated_text ); ?>
 					</div>
 					<div class="action-list__item-value" labelledby="tax-total">
 						<?php wc_cart_totals_taxes_total_html(); ?>

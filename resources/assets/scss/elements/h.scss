@@ -1,0 +1,7 @@
+$headings: 1, 2, 3, 4, 5, 6;
+
+@each $heading in $headings {
+	h#{$heading} {
+		font-weight: $font-weight-bold;
+	}
+}
