@@ -23,7 +23,6 @@
 
 .navbar-search__category {
 	order: 0;
-	display: none;
 
 	select {
 		appearance: none;
@@ -44,7 +43,7 @@
 	[type="search"] {
 		font-size: $font-size-base;
 		border: 0;
-		border-radius: $border-radius 0 0 $border-radius;
+		border-radius: 0;
 	}
 }
 

@@ -12,24 +12,31 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-?>
 
+if ( ! bigbox_is_integration_active( 'woocommerce' ) ) :
+	return;
+endif;
+?>
 
 <div class="navbar-menu navbar-menu--primary">
 	<ul class="navbar-menu__items">
 
 		<li class="navbar-menu__item navbar-menu__item--stacked">
-			<a href="#">
-				<?php bigbox_svg( 'user' ); ?>
-				Account
+			<a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>">
+				<?php
+				bigbox_svg( 'user' );
+				esc_html_e( 'Account', 'bigbox' );
+				?>
 			</a>
 		</li>
 
 		<li class="navbar-menu__item navbar-menu__item--stacked">
-			<a href="#">
-				<span class="navbar-menu__cart-count">1</span>
-				<?php bigbox_svg( 'cart' ); ?>
-				Cart
+			<a href="<?php echo esc_url( wc_get_cart_url() ); ?>">
+				<span class="navbar-menu__cart-count"><?php echo esc_html( count( WC()->cart->get_cart_contents() ) ); ?></span>
+				<?php
+				bigbox_svg( 'cart' );
+				esc_html_e( 'Cart', 'bigbox' );
+				?>
 			</a>
 		</li>
 
