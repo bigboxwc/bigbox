@@ -4,7 +4,7 @@
  * @param {object} DOM element.
  * @param {bool|object} Variation
  */
-const transformInput = function( $form, variation = false ) {
+export const transformInput = function( $form, variation = false ) {
 	const $qty      = $form.find( '.qty' )
 	const $wrapper  = $form.find( '#add-to-cart-quantity' );
 	const $original = $qty;
@@ -28,7 +28,7 @@ const transformInput = function( $form, variation = false ) {
 	$wrapper.append( $select )
 
 	// Add <option>s
-	for ( i = min; i <= max; i++ ) {
+	for ( let i = min; i <= max; i++ ) {
 		$select
 			.append( $( `<option value=${i} ${ i == selectedValue ? 'selected' : ''}>${i}</option>` ) );
 	}

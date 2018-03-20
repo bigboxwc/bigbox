@@ -111,8 +111,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 	</ul>
 
-	<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'bigbox' ); ?>"><?php esc_html_e( 'Update cart', 'bigbox' ); ?></button>
-
 	<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
 
 	<?php do_action( 'woocommerce_cart_actions' ); ?>

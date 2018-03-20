@@ -262,3 +262,29 @@ function bigbox_woocommerce_breadcrumb_defaults( $args ) {
 
 	return $args;
 }
+
+/**
+ * Update cart data via AJAX.
+ *
+ * @todo check nonce.
+ *
+ * @since 1.0.0
+ */
+function bigbox_update_cart() {
+	$values = array();
+	parse_str( $_POST['checkout'], $values );
+
+	$cart = $values['cart'];
+
+	foreach ( $cart as $cart_key => $cart_value ) {
+		WC()->cart->set_quantity( $cart_key, $cart_value['qty'] );
+	}
+
+	ob_start();
+	wc_get_template( 'cart/cart.php' );
+	$cart = ob_get_clean();
+
+	return wp_send_json_success( [
+		'data' => $cart,
+	] );
+}

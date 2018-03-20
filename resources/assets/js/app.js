@@ -10,3 +10,4 @@ import '../images/nux/*';
 import '../images/icons/*';
 
 import './quantity.js';
+import './cart.js';

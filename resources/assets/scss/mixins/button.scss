@@ -18,6 +18,10 @@
 		border: 0;
 		text-decoration: none;
 	}
+
+	&:disabled {
+		opacity: 0.5;
+	}
 }
 
 // [1] Gutenberg adds their own !important declaration.
