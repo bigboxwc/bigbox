@@ -1,0 +1,12 @@
+.woocommerce-page {
+
+	.form-row {
+
+		@include form-row;
+	}
+
+	.input-text {
+
+		@include form-input;
+	}
+}

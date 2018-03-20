@@ -1,12 +1,3 @@
-.form-input {
-
-	@include form-input;
-
-	+ .button {
-		margin-left: $spacer;
-	}
-}
-
 textarea,
 [type="email"],
 [type="search"],
@@ -16,6 +7,12 @@ textarea,
 [type="text"] {
 	width: 100%;
 	display: block;
+
+	@include form-input;
+
+	+ .button {
+		margin-left: $spacer;
+	}
 }
 
 button {

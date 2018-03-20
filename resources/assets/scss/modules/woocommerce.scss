@@ -1,0 +1,19 @@
+.woocommerce {
+
+	.col2-set {
+
+		@include make-row();
+	}
+
+	.col-1,
+	.col-2 {
+
+		@include make-col-ready();
+		@include make-col(12);
+
+		@include media-breakpoint-up(md) {
+
+			@include make-col(6);
+		}
+	}
+}

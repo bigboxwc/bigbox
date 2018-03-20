@@ -1,0 +1,28 @@
+.select2-container--default {
+
+	&:focus {
+		outline: 0;
+
+		.select2-selection--single {
+			border-color: rgba(theme-color("primary"), 0.8);
+		}
+	}
+
+	.select2-selection--single {
+		margin: 0;
+		height: auto;
+		border: 1px solid gray("500");
+		border-radius: $border-radius;
+
+		.select2-selection__rendered {
+			color: gray("700");
+			font: $font-weight-normal #{$font-size-sm}/#{$line-height-base} $font-family-sans-serif;
+			padding: ( $spacer / 2 );
+		}
+
+		.select2-selection__arrow {
+			height: calc( 100% - 1px );
+			right: 4px;
+		}
+	}
+}

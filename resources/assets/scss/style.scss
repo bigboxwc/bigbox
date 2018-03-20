@@ -60,6 +60,9 @@
 @import "modules/form-label";
 @import "modules/form-input";
 
+@import "modules/select2";
+@import "modules/woocommerce-form";
+
 // Navbar
 @import "modules/navbar";
 @import "modules/navbar-search";
@@ -86,6 +89,8 @@
 @import "modules/facetwp";
 @import "modules/ordering";
 @import "modules/breadcrumbs";
+
+@import "modules/woocommerce";
 
 @import "modules/woocommerce-products-header";
 @import "modules/woocommerce-widget-layered-nav-list";

@@ -42,6 +42,7 @@
 	flex: 1;
 
 	[type="search"] {
+		font-size: $font-size-base;
 		border: 0;
 		border-radius: $border-radius 0 0 $border-radius;
 	}

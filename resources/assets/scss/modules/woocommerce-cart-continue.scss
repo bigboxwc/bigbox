@@ -24,6 +24,24 @@
 	}
 }
 
+.shipping-calculator-form {
+
+	.select2-container--default .select2-selection--single .select2-selection__rendered,
+	.input-text {
+		font-size: $font-size-xs;
+	}
+
+	p:last-child {
+		margin: ( $spacer * 2 );
+	}
+
+	button {
+
+		@include button--size-sm;
+	}
+
+}
+
 .coupons-next {
 	color: gray("600");
 	text-align: center;
