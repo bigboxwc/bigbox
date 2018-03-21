@@ -119,32 +119,6 @@
 .shop_attributes {
 	width: 100%;
 	margin-top: $spacer;
-	border: 1px solid gray("300");
-	border-collapse: collapse;
-
-	th {
-		color: theme-color("dark");
-		text-align: left;
-		margin: 0;
-	}
-
-	th,
-	td {
-		border: 1px solid gray("300");
-		vertical-align: middle;
-		padding: 10px;
-	}
-
-	tr:nth-child(even) {
-		th,
-		td {
-			background: gray("100");
-		}
-	}
-
-	p {
-		margin-top: 0;
-	}
 }
 
 .comment-respond {
