@@ -3,7 +3,7 @@ a {
 	text-decoration: none;
 
 	&:hover {
-		color: theme-color("secondary");
+		color: darken(theme-color("primary"), 10%);
 		text-decoration: underline;
 	}
 }
