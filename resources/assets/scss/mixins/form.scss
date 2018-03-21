@@ -14,7 +14,6 @@
 }
 
 @mixin form-input {
-	color: gray("700");
 	font: $font-weight-normal #{$font-size-sm}/#{$line-height-base} $font-family-sans-serif;
 	padding: ( $spacer / 2 );
 	border: 1px solid gray("500");

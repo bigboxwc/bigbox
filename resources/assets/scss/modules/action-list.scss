@@ -17,7 +17,6 @@
 }
 
 .action-list__item-label {
-	color: gray("700");
 	font-size: $font-size-sm;
 	font-weight: $font-weight-bold;
 	line-height: 1;
@@ -32,5 +31,6 @@
 }
 
 .action-list__item-value {
+	color: gray("900");
 	font-size: $font-size-base;
 }

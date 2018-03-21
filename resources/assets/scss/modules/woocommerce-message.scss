@@ -5,7 +5,6 @@
 	padding: $spacer;
 
 	@include card;
-	@include card--featured;
 
 	.wc-forward {
 		margin-right: -( $spacer / 2 );

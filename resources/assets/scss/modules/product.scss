@@ -121,7 +121,6 @@
 .woocommerce-loop-category__title,
 .woocommerce-loop-product__title,
 .product__title {
-	color: theme-color("dark");
 	font-size: $font-size-base;
 	margin: 0;
 	order: 0;
@@ -137,7 +136,6 @@
 }
 
 .product__shipping {
-	color: gray("600");
 	font-size: $font-size-sm;
 	order: 0;
 }
@@ -166,7 +164,7 @@
 .product__has-variations {
 
 	a {
-		color: gray("600");
+		color: inherit;
 		font-size: $font-size-xs;
 		background: gray("100");
 		padding: 5px 5px 4px;
@@ -175,7 +173,6 @@
 		border-radius: $border-radius;
 
 		&:hover {
-			color: gray("800");
 			text-decoration: none;
 			border: 1px solid gray("500");
 		}

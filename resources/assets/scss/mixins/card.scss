@@ -1,11 +1,9 @@
 @mixin card {
-	background: color("white");
+	background: gray("100");
 	border-radius: $border-radius;
-	border: 1px solid gray("200");
-	box-shadow: rgba(gray("200"), 0.5) 0 1px 1px;
+	border: 1px solid gray("300");
+	box-shadow: gray("200") 0 1px 2px;
 }
 
 @mixin card--featured {
-	border: 1px solid gray("400");
-	box-shadow: rgba(gray("200"), 0.8) 0 1px 1px, 0 0 0 3px rgba(gray("200"), 0.50);
 }

@@ -1,14 +1,14 @@
 // stylelint-disable
 $white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
+$gray-100: #f7f9fa !default;
+$gray-200: #e2ebf4 !default;
+$gray-300: #c0cddb !default;
+$gray-400: #818ba7 !default;
+$gray-500: #727b93 !default;
+$gray-600: #697288 !default;
+$gray-700: #3b4257 !default;
+$gray-800: #394054 !default;
+$gray-900: #2b3040 !default;
 $black:    #000 !default;
 
 $grays: () !default;
@@ -68,4 +68,4 @@ $theme-colors: map-merge((
 // Set a specific jump point for requesting color jumps
 $theme-color-interval: 8% !default;
 
-$body-color: $gray-800;
+$body-color: $gray-700;
