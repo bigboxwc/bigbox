@@ -18,7 +18,8 @@ const partials = {
  * Collect all quantity inputs and update to selects.
  */
 const transformQtys = function() {
-	partials.cart.find( '.qty' ).each( function() {
+	// Can't use the cached partial because the whole element is replaced in WooCommerce.
+	$( '#bigbox-cart' ).find( '.qty' ).each( function() {
 		transformInput( $( this ), false );
 	} );
 };
@@ -52,9 +53,6 @@ const updatePartials = function( response ) {
 			.removeClass( 'processing' )
 			.unblock();
 	} );
-
-	// Transform inputs to selects again.
-	transformQtys();
 }
 
 /**
@@ -73,7 +71,8 @@ partials.cart.on( 'change', '.qty', function() {
 	} );
 } );
 
-// Transform quantities on load.
-$( function() {
-	transformQtys();
-} );
+/**
+ * Transform quantity fields.
+ */
+transformQtys();                                          // Page load.
+$( document.body ).on( 'updated_wc_div', transformQtys ); // Shipping updated.

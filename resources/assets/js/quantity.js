@@ -7,6 +7,7 @@
 export const transformInput = function( $qty, variation = false ) {
 	const $wrapper  = $qty.parent();
 	const $original = $qty;
+	console.log($original);
 
 	// Remove any existing.
 	$original.detach();

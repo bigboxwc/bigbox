@@ -27,6 +27,7 @@
 .shipping-calculator-form {
 
 	.select2-container--default .select2-selection--single .select2-selection__rendered,
+	.select2-container--default .select2-selection--single .select2-results__options,
 	.input-text {
 		font-size: $font-size-xs;
 	}
@@ -40,6 +41,16 @@
 		@include button--size-sm;
 	}
 
+}
+
+.shipping-note {
+	margin: 0 $spacer;
+	color: gray("600");
+	font-size: $font-size-sm;
+
+	p {
+		margin: 0;
+	}
 }
 
 .coupons-next {

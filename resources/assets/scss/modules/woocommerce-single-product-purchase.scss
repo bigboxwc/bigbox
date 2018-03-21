@@ -12,16 +12,8 @@
 
 	@include media-breakpoint-up(lg) {
 		margin: 0;
-		top: ( $spacer / 2 );
 
 		@include make-col(3);
-
-		position: sticky;
-
-		// [1] Admin bar has a set px offset.
-		.admin-bar & {
-			top: calc( #{( $spacer / 2 )} + 32px ); // [1]
-		}
 	}
 
 	@include media-breakpoint-up(xl) {
@@ -35,6 +27,11 @@
 	@include card--featured;
 
 	padding: $spacer;
+
+	.stock {
+		font-size: $font-size-sm;
+		margin-top: 0;
+	}
 }
 
 .single_add_to_cart_button {

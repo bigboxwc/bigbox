@@ -10,15 +10,21 @@
 	justify-content: space-between;
 }
 
+.action-list__item--inset {
+	.action-list__item-label {
+		margin-left: $spacer;
+	}
+}
+
 .action-list__item-label {
-	color: theme-color("dark");
+	color: gray("700");
 	font-size: $font-size-sm;
 	font-weight: $font-weight-bold;
 	line-height: 1;
 	margin-right: $spacer;
 
 	small {
-		color: gray("600");
+		color: gray("500");
 		font-weight: $font-weight-normal;
 		font-size: $font-size-xs;
 		display: block;

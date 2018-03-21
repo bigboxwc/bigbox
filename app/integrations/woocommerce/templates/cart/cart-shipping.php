@@ -51,20 +51,43 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Show single method.
 elseif ( 1 === count( $available_methods ) ) :
 	$method = current( $available_methods );
-	printf( '%3$s <input type="hidden" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d" value="%2$s" class="shipping_method" />', $index, esc_attr( $method->id ), wc_cart_totals_shipping_method_label( $method ) );
+?>
+
+<div class="action-list__item action-list__item--inset">
+	<div class="action-list__item-label">
+		<?php echo wc_cart_totals_shipping_method_label( $method ); // @codingStandardsIgnoreLine ?>
+	</div>
+	<div class="action-list__item-value">
+		<?php echo bigbox_woocommerce_cart_shipping_method_price( $method ); // @codingStandardsIgnoreLine ?>
+	</div>
+</div>
+
+<?php
+	printf( 
+		'<input type="hidden" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d" value="%2$s" class="shipping_method" />', 
+		$index,
+		esc_attr( $method->id )
+	);
+
 	do_action( 'woocommerce_after_shipping_rate', $method, $index );
 
 // No shipping.
 elseif ( WC()->customer->has_calculated_shipping() ) :
+	echo '<div class="shipping-note">';
 	echo apply_filters( is_cart() ? 'woocommerce_cart_no_shipping_available_html' : 'woocommerce_no_shipping_available_html', wpautop( __( 'There are no shipping methods available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'woocommerce' ) ) );
+	echo '</div>';
 
 // Unavailable.
 elseif ( ! is_cart() ) :
+	echo '<div class="shipping-note">';
 	echo wpautop( __( 'Enter your full address to see shipping costs.', 'woocommerce' ) );
+	echo '</div>';
 endif;
 
 if ( $show_package_details ) :
+	echo '<div class="shipping-note">';
 	echo '<p class="woocommerce-shipping-contents"><small>' . esc_html( $package_details ) . '</small></p>';
+	echo '</div>';
 endif;
 ?>
 

@@ -2,7 +2,9 @@
 	color: theme-color("dark");
 	font-size: $font-size-xl;
 	line-height: 1;
-	margin: 0 0 $spacer;
+	margin: 0 0 ( $spacer * 2 );
+	padding: 0 0 $spacer;
+	border-bottom: 2px solid gray("200");
 
 	&:first-child {
 		margin-top: 0;

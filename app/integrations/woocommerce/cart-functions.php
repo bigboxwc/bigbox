@@ -14,6 +14,48 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Get a shipping price.
+ *
+ * @since 1.0.0
+ *
+ * @param WC_Shipping_Rate $method Shipping method rate data.
+ * @return false|string
+ */
+function bigbox_woocommerce_cart_shipping_method_price( $method ) {
+	$price = false;
+
+	if ( $method->cost >= 0 && $method->get_method_id() !== 'free_shipping' ) {
+		if ( WC()->cart->display_prices_including_tax() ) {
+			$price = wc_price( $method->cost + $method->get_shipping_tax() );
+		} else {
+			$price = wc_price( $method->cost );
+		}
+	}
+
+	return $price;
+}
+
+/**
+ * Get a shipping methods full label including price.
+ *
+ * @since 1.0.0
+ *
+ * @param string           $label Current label output.
+ * @param WC_Shipping_Rate $method Shipping method rate data.
+ * @return string
+ */
+function bigbox_woocommerce_cart_shipping_method_full_label( $label, $method ) {
+	$label = $method->get_label() . ':';
+
+	if ( $method->cost >= 0 && $method->get_method_id() !== 'free_shipping' ) {
+		$label .= ' <small class="tax_label">' . WC()->countries->ex_tax_or_vat() . '</small>';
+	}
+
+	return $label;
+}
+add_filter( 'woocommerce_cart_shipping_method_full_label', 'bigbox_woocommerce_cart_shipping_method_full_label', 10, 2 );
+
+/**
  * Update cart data via AJAX.
  *
  * @todo check nonce.
