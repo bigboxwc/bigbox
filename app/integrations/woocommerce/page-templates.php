@@ -14,16 +14,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Filter returned page templates.
+ * Auto apply page templates to assigned WooCommerce pages.
  *
  * @since 1.0.0
  *
- * @param array $page_templates The current list of templates.
+ * @param array $templates The current list of templates.
+ * @return array
  */
-function bigbox_woocommerce_page_templates( $page_templates ) {
-	$page_templates[ bigbox_woocommerce_template_path() . 'cart.php' ] = esc_html__( 'Cart', 'bigbox' );
-	$page_templates[ bigbox_woocommerce_template_path() . 'checkout.php' ] = esc_html__( 'Checkout', 'bigbox' );
+function bigbox_woocommerce_page_templates( $templates ) {
+	if ( is_cart() ) {
+		$templates = array_merge( [ bigbox_woocommerce_template_path() . 'cart.php' ], $templates );
+	}
 
-	return $page_templates;
+	if ( is_checkout() ) {
+		$templates = array_merge( [ bigbox_woocommerce_template_path() . 'checkout.php' ], $templates );
+	}
+
+	return $templates;
 }
-add_filter( 'theme_page_templates', 'bigbox_woocommerce_page_templates' );
+add_filter( 'page_template_hierarchy', 'bigbox_woocommerce_page_templates', 5 );
