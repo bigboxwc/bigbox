@@ -54,7 +54,7 @@ $colors: map-merge((
 
 $theme-colors: () !default;
 $theme-colors: map-merge((
-	"primary":    $blue,
+	"primary":    $gray-700,
 	"secondary":  $orange,
 	"success":    $green,
 	"info":       $cyan,
@@ -67,3 +67,5 @@ $theme-colors: map-merge((
 
 // Set a specific jump point for requesting color jumps
 $theme-color-interval: 8% !default;
+
+$body-color: $gray-800;

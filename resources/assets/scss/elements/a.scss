@@ -1,9 +1,9 @@
 a {
-	color: theme-color("primary");
+	color: theme-color("dark");
 	text-decoration: none;
 
 	&:hover {
-		color: darken(theme-color("primary"), 10%);
+		color: darken(theme-color("dark"), 10%);
 		text-decoration: underline;
 	}
 }

@@ -25,4 +25,13 @@
 			right: 4px;
 		}
 	}
+
+	.select2-results__options {
+		font-size: $font-size-sm;
+	}
+
+	.select2-results__option--highlighted[aria-selected],
+	.select2-results__option--highlighted[data-selected] {
+		background-color: theme-color("primary");
+	}
 }

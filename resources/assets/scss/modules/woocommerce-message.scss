@@ -2,9 +2,7 @@
 .woocommerce-message {
 	overflow: hidden;
 	margin: 0 0 ( $spacer * 2 );
-	padding: ( $spacer / 2 ) $spacer;
-	display: flex;
-	align-items: center;
+	padding: $spacer;
 
 	@include card;
 	@include card--featured;
@@ -18,4 +16,10 @@
 		@include button--success;
 		@include button--size-sm;
 	}
+}
+
+.woocommerce-message {
+	display: flex;
+	align-items: center;
+	padding: ( $spacer / 2 ) $spacer;
 }
