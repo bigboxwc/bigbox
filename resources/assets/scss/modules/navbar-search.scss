@@ -68,6 +68,6 @@
 	}
 
 	svg {
-		fill: darken( color("blue"), 10% );
+		fill: theme-color("primary");
 	}
 }
