@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 		<div class="navbar">
-			
+
 			<div class="navbar__inner">
 				<?php
 				bigbox_partial( 'navbar-mobile' );

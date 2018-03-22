@@ -101,6 +101,7 @@ function bigbox_woocommerce_before_shop_loop_after() {
  *
  * @since 1.0.0
  *
+ * @param string $output Category output.
  * @return string
  */
 function bigbox_woocommerce_after_output_product_categories( $output ) {
@@ -205,15 +206,17 @@ function bigbox_woocommerce_product_additional_information() {
 
 	<p class="sku_wrapper">
 		<?php esc_html_e( 'SKU:', 'bigbox' ); ?>
-		<span class="sku"><?php echo ( $sku = $product->get_sku() ) ? $sku : esc_html__( 'N/A', 'bigbox' ); ?></span>
+		<span class="sku"><?php echo esc_html( ( $product->get_sku() ) ? $product->get_sku() : __( 'N/A', 'bigbox' ) ); ?></span>
 	</p>
 
 <?php
 	endif;
 
-	echo wc_get_product_category_list( $product->get_id(), ', ', '<p class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'bigbox' ) . ' ', '</p>' );
+	// @codingStandardsIgnoreStart
+	echo wc_get_product_category_list( $product->get_id(), ', ', '<p class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'bigbox' ) . ' ', '</p>' ); 
 
 	echo wc_get_product_tag_list( $product->get_id(), ', ', '<p class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'bigbox' ) . ' ', '</p>' );
+	// @codingStandardsIgnoreEnd
 }
 
 /**
@@ -231,10 +234,16 @@ function bigbox_woocommerce_get_star_rating_html( $html, $rating, $count ) {
 	$half_stars  = ceil( $rating - floor( $rating ) );
 	$empty_stars = 5 - floor( $rating ) - ceil( $rating - floor( $rating ) );
 
+	// Translators: %1$s Rating value.
+	$title = __( '%1$s average rating', 'bigbox' );
+
+	// Translators: %1$s Number of ratings.
+	$count_title = __( '%1$s customer ratings', 'bigbox' );
+
 	ob_start();
 ?>
 
-<span class="star-rating__stars" aria-title="<?php printf( esc_html__( '%1$s average rating', 'bigbox' ), $rating ); ?>">
+<span class="star-rating__stars" aria-title="<?php esc_attr( sprintf( $title, $rating ) ); ?>">
 	<?php
 	// @codingStandardsIgnoreStart
 	echo str_repeat( bigbox_get_svg( 'star' ), $full_stars );
@@ -246,7 +255,9 @@ function bigbox_woocommerce_get_star_rating_html( $html, $rating, $count ) {
 
 <?php if ( 0 !== $count && ! is_singular( 'product' ) ) : ?>
 
-	<span class="star-rating__count" aria-title="<?php printf( esc_attr__( '%1$s customer ratings', 'bigbox' ), $count ); ?>"><?php echo esc_html( $count ); ?></span>
+	<span class="star-rating__count" aria-title="<?php esc_attr( sprintf( $count_title, $count ) ); ?>">
+		<?php echo esc_html( $count ); ?>
+	</span>
 
 <?php endif; ?>
 
@@ -277,8 +288,8 @@ function bigbox_woocommerce_breadcrumb_defaults( $args ) {
  * @return array
  */
 function bigbox_woocommerce_pagination_args( $args ) {
-	$args['prev_text'] = esc_html__( '&larr; Previous Page' );
-	$args['next_text'] = esc_html__( 'Next Page &rarr;' );
+	$args['prev_text'] = esc_html__( '&larr; Previous Page', 'bigbox' );
+	$args['next_text'] = esc_html__( 'Next Page &rarr;', 'bigbox' );
 
 	return $args;
 }

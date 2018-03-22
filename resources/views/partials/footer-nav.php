@@ -13,13 +13,15 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
+$count = bigbox_get_footer_nav_columns();
 ?>
 
 <div class="footer-nav">
 	<div class="container">
 		<div class="row">
 
-			<?php for ( $i = 1; $i <= bigbox_get_footer_nav_columns(); $i++ ) : ?>
+			<?php for ( $i = 1; $i <= $count; $i++ ) : ?>
 			<div class="col">
 				<?php dynamic_sidebar( 'footer-' . $i ); ?>
 			</div>

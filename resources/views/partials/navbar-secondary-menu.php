@@ -12,48 +12,16 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
+$menus = bigbox_get_primary_nav_menus();
+
+if ( '' === trim( $menus ) ) :
+	return;
+endif;
 ?>
 
 <div class="navbar-menu navbar-menu--secondary">
-	<ul class="navbar-menu__items">
 
-		<li class="navbar-menu__item navbar-menu__item--parent">
-			<a href="#">
-				All Departments
-				<?php bigbox_svg( 'arrow-down' ); ?>
-			</a>
-
-			<ul class="megamenu">
-				<li class="megamenu__parent-item">
-					<a href="#">Electronics</a>
-				</li>
-			</ul>
-
-		</li>
-
-		<li class="navbar-menu__item">
-			<a href="#">
-				<?php bigbox_svg( 'heart' ); ?>
-				Saved Items
-			</a>
-		</li>
-
-	</ul>
-
-	<ul class="navbar-menu__items">
-		
-		<li class="navbar-menu__item">
-			<a href="#">Help</a>
-		</li>
-
-		<li class="navbar-menu__item">
-			<a href="#">Deals and Discounts</a>
-		</li>
-
-		<li class="navbar-menu__item">
-			<a href="#">Orders</a>
-		</li>
-
-	</ul>
+	<?php echo $menus; // @codingStandardsIgnoreLine ?>
 
 </div>

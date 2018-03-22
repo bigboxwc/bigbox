@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div class="navbar">
-	
+
 	<div class="navbar__inner">
 		<?php
 		bigbox_partial( 'navbar-mobile' );
@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 
 	<?php bigbox_partial( 'navbar-secondary-menu' ); ?>
-	
+
 </div>
 
 <?php do_action( 'bigbox_navbar_after' ); ?>

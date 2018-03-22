@@ -14,6 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * @see woocommerce/templates/archive-product.php
+ * @see woocommerce/templates/archive-product.php.
  */
 add_action( 'woocommerce_after_shop_loop', 'bigbox_facetwp_pagination' );

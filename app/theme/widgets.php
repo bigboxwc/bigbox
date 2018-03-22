@@ -19,8 +19,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 function bigbox_register_sidebars() {
+	$count = bigbox_get_footer_nav_columns();
+
 	// Footer widgets.
-	for ( $i = 1; $i <= bigbox_get_footer_nav_columns(); $i++ ) {
+	for ( $i = 1; $i <= $count; $i++ ) {
 		register_sidebar(
 			array(
 				// Translators: Widget column number.

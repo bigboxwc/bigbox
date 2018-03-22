@@ -33,11 +33,13 @@
 	display: flex;
 }
 
+// [1] No unique class for reusable menus.
+.navbar-menu .menu-item, // [1]
 .navbar-menu__item {
 	font-size: $font-size-sm;
 	line-height: 1;
 
-	a {
+	> a {
 		color: color("white");
 		opacity: 0.95;
 		padding: 7px 10px;

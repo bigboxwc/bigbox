@@ -20,6 +20,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <nav id="navbar-mobile" class="navbar-mobile">
 	<a href="#navbar-mobile-toggle" class="navbar-mobile-item--close navbar-mobile-item" aria-label="<?php esc_attr_e( 'Close menu', 'bigbox' ); ?>"><?php esc_html_e( '&times; Close', 'bigbox' ); ?></a>
+
+	<?php echo bigbox_get_primary_nav_menus(); // @codingStandardsIgnoreLine ?>
 </nav>
 
 <a id="navbar-mobile-toggle" href="#navbar-mobile-toggle" class="navbar-mobile-backdrop" tabindex="-1" aria-hidden="true" aria-label="<?php esc_attr_e( 'Close menu', 'bigbox' ); ?>" hidden=""></a>
