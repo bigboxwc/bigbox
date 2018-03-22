@@ -53,6 +53,8 @@ const updatePartials = function( response ) {
 			.removeClass( 'processing' )
 			.unblock();
 	} );
+
+	transformQtys();
 }
 
 /**
@@ -74,5 +76,16 @@ partials.cart.on( 'change', '.qty', function() {
 /**
  * Transform quantity fields.
  */
-transformQtys();                                          // Page load.
-$( document.body ).on( 'updated_wc_div', transformQtys ); // Shipping updated.
+transformQtys();
+
+const $body    = $( document.body );
+const triggers = [
+	'update_checkout',
+	'updated_wc_div',
+	'updated_cart_totals',
+	'updated_shipping_method',
+];
+
+triggers.forEach( ( trigger ) => {
+	$body.on( trigger, transformQtys );
+} );
