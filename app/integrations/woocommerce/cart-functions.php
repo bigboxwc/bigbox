@@ -100,12 +100,14 @@ function bigbox_update_cart() {
 
 	$totals = ob_get_clean();
 
-	return wp_send_json_success( [
-		'data' => [
-			'cart'   => $cart,
-			'totals' => $totals,
+	return wp_send_json_success(
+		[
+			'data' => [
+				'cart'   => $cart,
+				'totals' => $totals,
+			],
 		]
-	] );
+	);
 }
 add_action( 'wp_ajax_nopriv_bigbox_update_cart', 'bigbox_update_cart' );
 add_action( 'wp_ajax_bigbox_update_cart', 'bigbox_update_cart' );

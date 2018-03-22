@@ -35,7 +35,7 @@ global $product;
 	</div>
 	<?php endif; ?>
 
-	<?php if ( '' != $product->get_price_html()  ) : ?>
+	<?php if ( '' != $product->get_price_html() ) : ?>
 	<span class="product__stats price">
 		<?php echo $product->get_price_html(); ?>
 	</span>

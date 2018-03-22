@@ -80,7 +80,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 							<del class="subtotal">
 							<?php
 							printf(
-								'%s &times %s', 
+								'%s &times %s',
 								$cart_item['quantity'],
 								apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ) // PHPCS: XSS ok.
 							);
@@ -90,17 +90,19 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 						<div class="product__stats">
 							<?php
-							wc_get_template( 'single-product/add-to-cart/quantity.php', [
-								'input_name'   => "cart[{$cart_item_key}][qty]",
-								'input_value'  => $cart_item['quantity'],
-								'input_id'     => "cart-{$cart_item_key}",
-								'step'         => 1,
-								'pattern'      => '',
-								'inputmode'    => '',
-								'max_value'    => $_product->is_sold_individually() ? 1 : $_product->get_max_purchase_quantity(),
-								'min_value'    => '0',
-								'product_name' => $_product->get_name(),
-							] );
+							wc_get_template(
+								'single-product/add-to-cart/quantity.php', [
+									'input_name'   => "cart[{$cart_item_key}][qty]",
+									'input_value'  => $cart_item['quantity'],
+									'input_id'     => "cart-{$cart_item_key}",
+									'step'         => 1,
+									'pattern'      => '',
+									'inputmode'    => '',
+									'max_value'    => $_product->is_sold_individually() ? 1 : $_product->get_max_purchase_quantity(),
+									'min_value'    => '0',
+									'product_name' => $_product->get_name(),
+								]
+							);
 							?>
 						</div>
 

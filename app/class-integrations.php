@@ -88,7 +88,7 @@ final class Integrations implements Registerable, Service {
 	 */
 	public function get_integrations() {
 		return [
-			'woocommerce' => [
+			'woocommerce'                    => [
 				'slug'         => 'woocommerce',
 				'class'        => Integration\WooCommerce::class,
 				'dependencies' => [
@@ -103,7 +103,7 @@ final class Integrations implements Registerable, Service {
 					class_exists( 'WC_Shipping_Estimate' ),
 				],
 			],
-			'facetwp' => [
+			'facetwp'                        => [
 				'slug'         => 'facetwp',
 				'class'        => Integration\FacetWP::class,
 				'dependencies' => [

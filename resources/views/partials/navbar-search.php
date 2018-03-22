@@ -26,9 +26,11 @@ endif;
 	</div>
 
 	<?php
-	$categories = get_terms( [
-		'taxonomy' => 'product_cat',
-	] );
+	$categories = get_terms(
+		[
+			'taxonomy' => 'product_cat',
+		]
+	);
 
 	if ( $categories && ! is_wp_error( $categories ) && ! empty( $categories ) ) :
 	?>

@@ -83,11 +83,13 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_after_
  */
 
 // Remove sidebar on single product pages.
-add_action( 'the_post', function() {
-	if ( is_singular( 'product' ) ) {
-		remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar' );
+add_action(
+	'the_post', function() {
+		if ( is_singular( 'product' ) ) {
+			remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar' );
+		}
 	}
-} );
+);
 
 // Filter product tabs.
 add_filter( 'woocommerce_product_tabs', 'bigbox_woocommerce_product_tabs', 20 );

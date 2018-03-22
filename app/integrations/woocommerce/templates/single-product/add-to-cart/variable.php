@@ -10,7 +10,7 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	https://docs.woocommerce.com/document/template-structure/
+ * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
  * @version 3.4.0
  */
@@ -23,7 +23,7 @@ $attribute_keys = array_keys( $attributes );
 
 do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
-<form class="variations_form add-to-cart cart" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data' data-product_id="<?php echo absint( $product->get_id() ); ?>" data-product_variations="<?php echo htmlspecialchars( wp_json_encode( $available_variations ) ) ?>">
+<form class="variations_form add-to-cart cart" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data' data-product_id="<?php echo absint( $product->get_id() ); ?>" data-product_variations="<?php echo htmlspecialchars( wp_json_encode( $available_variations ) ); ?>">
 	<?php do_action( 'woocommerce_before_variations_form' ); ?>
 
 	<?php if ( empty( $available_variations ) && false !== $available_variations ) : ?>
@@ -47,18 +47,20 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 						<?php
 						$selected = isset( $_REQUEST[ 'attribute_' . $attribute_name ] ) ? wc_clean( stripslashes( urldecode( $_REQUEST[ 'attribute_' . $attribute_name ] ) ) ) : $product->get_variation_default_attribute( $attribute_name );
 
-						wc_dropdown_variation_attribute_options( [
-							'options'          => $options,
-							'attribute'        => $attribute_name,
-							'product'          => $product,
-							'selected'         => $selected,
-							'show_option_none' => esc_html__( 'Select an option', 'bigbox' ),
-						] );
+						wc_dropdown_variation_attribute_options(
+							[
+								'options'          => $options,
+								'attribute'        => $attribute_name,
+								'product'          => $product,
+								'selected'         => $selected,
+								'show_option_none' => esc_html__( 'Select an option', 'bigbox' ),
+							]
+						);
 						?>
 					</div>
 
 				</div>
-			<?php endforeach;?>
+			<?php endforeach; ?>
 
 		</div>
 
@@ -73,6 +75,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
 				/**
 				 * woocommerce_single_variation hook. Used to output the cart button and placeholder for variation data.
+				 *
 				 * @since 2.4.0
 				 * @hooked woocommerce_single_variation - 10 Empty div for variation data.
 				 * @hooked woocommerce_single_variation_add_to_cart_button - 20 Qty and cart button.

@@ -30,17 +30,19 @@ if ( is_singular( 'product' ) ) :
 
 	<div class="add-to-cart__action-value">
 	<?php
-	wc_get_template( 'single-product/add-to-cart/quantity.php', [
-		'min_value'   => $min_value,
-		'max_value'   => $max_value,
-		'input_id'    => $input_id,
-		'input_name'  => $input_name,
-		'input_value' => $input_value,
-		'inputmode'   => $inputmode,
-		'pattern'     => $pattern,
-		'args'        => $args,
-		'step'        => $step,
-	] );
+	wc_get_template(
+		'single-product/add-to-cart/quantity.php', [
+			'min_value'   => $min_value,
+			'max_value'   => $max_value,
+			'input_id'    => $input_id,
+			'input_name'  => $input_name,
+			'input_value' => $input_value,
+			'inputmode'   => $inputmode,
+			'pattern'     => $pattern,
+			'args'        => $args,
+			'step'        => $step,
+		]
+	);
 	?>
 	</div>
 </div>

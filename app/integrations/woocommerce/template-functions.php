@@ -161,13 +161,17 @@ function bigbox_purchase_form() {
  * @return array
  */
 function bigbox_woocommerce_product_tabs( $tabs ) {
-	add_filter( 'woocommerce_product_description_heading', function() {
-		return esc_html__( 'Product description', 'bigbox' );
-	} );
+	add_filter(
+		'woocommerce_product_description_heading', function() {
+			return esc_html__( 'Product description', 'bigbox' );
+		}
+	);
 
-	add_filter( 'woocommerce_product_additional_information_heading', function() {
-		return esc_html__( 'Product information', 'bigbox' );
-	} );
+	add_filter(
+		'woocommerce_product_additional_information_heading', function() {
+			return esc_html__( 'Product information', 'bigbox' );
+		}
+	);
 
 	$tabs['upsells'] = [
 		'title'    => esc_html__( 'You may also enjoy', 'bigbox' ),

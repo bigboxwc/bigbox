@@ -12,9 +12,9 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
+ * @see         https://docs.woocommerce.com/document/template-structure/
+ * @author      WooThemes
+ * @package     WooCommerce/Templates
  * @version     3.2.0
  */
 if ( ! defined( 'ABSPATH' ) ) {
@@ -37,9 +37,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php foreach ( $available_methods as $method ) : ?>
 			<li>
 				<?php
-					printf( '<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s />
+					printf(
+						'<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s />
 						<label for="shipping_method_%1$d_%2$s">%5$s</label>',
-						$index, sanitize_title( $method->id ), esc_attr( $method->id ), checked( $method->id, $chosen_method, false ), wc_cart_totals_shipping_method_label( $method ) );
+						$index, sanitize_title( $method->id ), esc_attr( $method->id ), checked( $method->id, $chosen_method, false ), wc_cart_totals_shipping_method_label( $method )
+					);
 
 					do_action( 'woocommerce_after_shipping_rate', $method, $index );
 				?>
@@ -63,8 +65,8 @@ elseif ( 1 === count( $available_methods ) ) :
 </div>
 
 <?php
-	printf( 
-		'<input type="hidden" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d" value="%2$s" class="shipping_method" />', 
+	printf(
+		'<input type="hidden" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d" value="%2$s" class="shipping_method" />',
 		$index,
 		esc_attr( $method->id )
 	);
@@ -77,7 +79,7 @@ elseif ( WC()->customer->has_calculated_shipping() ) :
 	echo apply_filters( is_cart() ? 'woocommerce_cart_no_shipping_available_html' : 'woocommerce_no_shipping_available_html', wpautop( __( 'There are no shipping methods available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'woocommerce' ) ) );
 	echo '</div>';
 
-// Unavailable.
+	// Unavailable.
 elseif ( ! is_cart() ) :
 	echo '<div class="shipping-note">';
 	echo wpautop( __( 'Enter your full address to see shipping costs.', 'woocommerce' ) );
