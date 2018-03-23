@@ -68,9 +68,14 @@ function bigbox_facetwp_result_count() {
  * @return string
  */
 function bigbox_facetwp_result_count_output( $output, $params ) {
+	if ( $params['lower'] === $params['upper'] || 1 === $params['total'] ) {
+		/* translators: %d: total results */
+		return sprintf( _n( 'Showing the single result', 'Showing all %d results', $params['total'], 'bigbox' ), $params['total'] );
+	}
+
 	return sprintf( 
 		// Translators: %1$s Lower count. %2$s Upper count. %3$s Total count.
-		__( '%1$s-%2$s of %3$s results', 'bigbox' ),
+		__( 'Showing %1$s&ndash;%2$s of %3$s results', 'bigbox' ),
 		$params['lower'],
 		$params['upper'],
 		$params['total']

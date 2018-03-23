@@ -3,13 +3,16 @@ $spacing: ( $spacer / 2 );
 .woocommerce-pagination {
 	text-align: center;
 	font-size: $font-size-lg;
-	margin: ( $spacer * 2 ) 0 $spacer;
-	padding: ( $spacer / 3 ) 0;
-	background: gray("100");
 	border-radius: $border-radius;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	&:not(:empty) {
+		margin: ( $spacer * 2 ) 0 $spacer;
+		padding: ( $spacer / 3 ) 0;
+		background: gray("100");
+	}
 
 	ul.page-numbers {
 		margin: 0;
