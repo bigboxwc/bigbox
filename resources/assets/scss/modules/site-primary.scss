@@ -7,3 +7,12 @@
 	flex: 1 0;
 	order: 1;
 }
+
+.site-primary--narrow {
+
+	@include media-breakpoint-up(lg) {
+
+		@include make-col(8);
+		margin: $grid-gutter-width auto;
+	}
+}
