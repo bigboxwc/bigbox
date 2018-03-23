@@ -1,6 +1,6 @@
 <?php
 /**
- * Page.
+ * Template Name: Narrow-width
  *
  * @since 1.0.0
  * @version 1.0.0
@@ -20,7 +20,7 @@ while ( have_posts() ) :
 	the_post();
 ?>
 
-<div id="main" class="site-primary" role="main">
+<div id="main" class="site-primary site-primary--narrow" role="main">
 	<h1 class="page-title"><?php the_title(); ?></h1>
 
 	<article class="hentry">
