@@ -37,12 +37,24 @@
 
 	@include media-breakpoint-up(md) {
 		display: flex;
+
+		.sub-menu {
+			visibility: hidden;
+			opacity: 0;
+			width: 200px;
+			margin: 0;
+			padding: $spacer;
+			list-style: none;
+			background: color("white");
+			position: absolute;
+			z-index: 10;
+		}
 	}
 }
 
 // [1] No unique class for reusable menus.
-.navbar-menu .menu-item, // [1]
-.navbar-menu__item {
+.navbar-menu__items > .menu-item, // [1]
+.navbar-menu__items > .navbar-menu__item {
 	font-size: $font-size-sm;
 	line-height: 1;
 
@@ -63,6 +75,11 @@
 		}
 	}
 
+	&:hover .sub-menu {
+		opacity: 1;
+		visibility: visible;
+	}
+
 	svg {
 		fill: color("white");
 		width: 12px;
@@ -71,9 +88,9 @@
 	}
 }
 
-.navbar-menu__item--stacked {
+.navbar-menu__items > .navbar-menu__item--stacked {
 
-	a {
+	> a {
 		text-align: center;
 		line-height: 1;
 		min-width: 80px;
