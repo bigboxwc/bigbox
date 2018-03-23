@@ -1,3 +1,5 @@
+// @todo fook this file.
+
 .navbar-menu {
 	width: auto;
 	display: flex;
@@ -11,6 +13,7 @@
 		order: 3;
 	}
 
+	// Always in a line.
 	.navbar-menu__items {
 		display: flex;
 	}
@@ -52,14 +55,13 @@
 	}
 }
 
-// [1] No unique class for reusable menus.
-.navbar-menu__items > .menu-item, // [1]
-.navbar-menu__items > .navbar-menu__item {
+// [1] WordPress' built in class.
+.navbar-menu__items .menu-item, // [1]
+.navbar-menu__items .navbar-menu__item {
 	font-size: $font-size-sm;
 	line-height: 1;
 
-	> a {
-		color: color("white");
+	a {
 		opacity: 0.95;
 		padding: 7px 10px;
 		border: 1px solid transparent;
@@ -89,8 +91,7 @@
 }
 
 .navbar-menu__items > .navbar-menu__item--stacked {
-
-	> a {
+	a {
 		text-align: center;
 		line-height: 1;
 		min-width: 80px;
@@ -103,14 +104,6 @@
 		display: block;
 		width: 20px;
 		height: 20px;
-	}
-}
-
-.navbar-menu__item--parent {
-
-	svg {
-		margin: 0 0 0 5px;
-		width: 9px;
 	}
 }
 
