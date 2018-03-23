@@ -14,8 +14,7 @@
 }
 
 .navbar-mobile {
-	text-align: left;
-	padding: 1.5rem;
+	padding: $spacer;
 	width: calc(100% - 64px);
 	max-width: 320px;
 	position: fixed;
@@ -28,6 +27,26 @@
 	transition: transform 0.25s ease-in-out;
 	z-index: 10;
 	will-change: transform;
+
+	.admin-bar & {
+		top: 32px;
+	}
+
+	li {
+		margin-bottom: ( $spacer / 2 );
+	}
+
+	.sub-menu {
+		font-size: $font-size-sm;
+		margin-top: ( $spacer / 2 );
+		padding: 0 0 0 $spacer;
+		list-style: none;
+		border-left: 1px solid gray("300");
+
+		li {
+			margin-bottom: ( $spacer / 3 );
+		}
+	}
 }
 
 .navbar-mobile:target,
@@ -54,4 +73,15 @@
 .navbar-mobile[aria-expanded="true"] + .navbar-mobile-backdrop {
 	background: rgba(0, 0, 0, 0.5);
 	visibility: visible;
+}
+
+.navbar-mobile__close {
+	font-size: $font-size-sm;
+	text-transform: uppercase;
+	font-weight: $font-weight-bold;
+	display: block;
+	margin: ( -$spacer ) ( -$spacer ) $spacer;
+	padding: $spacer;
+	background: gray("100");
+	border-bottom: 1px solid gray("200");
 }

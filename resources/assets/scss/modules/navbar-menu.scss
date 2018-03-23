@@ -10,6 +10,10 @@
 	@include media-breakpoint-up(md) {
 		order: 3;
 	}
+
+	.navbar-menu__items {
+		display: flex;
+	}
 }
 
 .navbar-menu--secondary {
@@ -30,7 +34,10 @@
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	display: flex;
+
+	@include media-breakpoint-up(md) {
+		display: flex;
+	}
 }
 
 // [1] No unique class for reusable menus.
