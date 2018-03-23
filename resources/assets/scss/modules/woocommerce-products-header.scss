@@ -3,7 +3,8 @@
 
 .woocommerce-products-meta {
 	font-size: $font-size-sm;
-	margin: $spacer 0 ( $spacer * 2 );
+	margin: $spacer 0;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
