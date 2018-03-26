@@ -11,3 +11,4 @@ import '../images/icons/*';
 
 import './quantity.js';
 import './cart.js';
+import './checkout.js';

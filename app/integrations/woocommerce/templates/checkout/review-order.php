@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div class="woocommerce-checkout-review-order">
+<div id="bigbox-review-cart" class="woocommerce-checkout-review-order">
 	<ul class="products columns-1">
 
 	<?php
@@ -76,6 +76,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 					);
 					?>
 					</del>
+				</div>
+
+				<div class="product__stats">
+					<?php
+					wc_get_template(
+						'single-product/add-to-cart/quantity.php', [
+							'input_name'   => "cart[{$cart_item_key}][qty]",
+							'input_value'  => $cart_item['quantity'],
+							'input_id'     => "cart-{$cart_item_key}",
+							'step'         => 1,
+							'pattern'      => '',
+							'inputmode'    => '',
+							'max_value'    => $_product->is_sold_individually() ? 1 : $_product->get_max_purchase_quantity(),
+							'min_value'    => '0',
+							'product_name' => $_product->get_name(),
+						]
+					);
+					?>
 				</div>
 			</div>
 		</div>

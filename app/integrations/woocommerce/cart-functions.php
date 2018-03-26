@@ -56,12 +56,11 @@ function bigbox_woocommerce_cart_shipping_method_full_label( $label, $method ) {
 add_filter( 'woocommerce_cart_shipping_method_full_label', 'bigbox_woocommerce_cart_shipping_method_full_label', 10, 2 );
 
 /**
- * Update cart data via AJAX.
+ * Update global cart and totals.
  *
- * @todo check nonce.
  * @since 1.0.0
  */
-function bigbox_update_cart() {
+function bigbox_update_cart_and_totals() {
 	$values = array();
 	parse_str( $_POST['checkout'], $values );
 
@@ -81,8 +80,16 @@ function bigbox_update_cart() {
 	}
 
 	WC()->cart->calculate_totals();
+}
 
-	// Get cart.
+/**
+ * Get cart HTML.
+ *
+ * @since 1.0.0
+ *
+ * @return string
+ */
+function bigbox_get_cart_html() {
 	ob_start();
 
 	if ( WC()->cart->is_empty() ) {
@@ -91,20 +98,38 @@ function bigbox_update_cart() {
 		wc_get_template( 'cart/cart.php' );
 	}
 
-	$cart = ob_get_clean();
+	return ob_get_clean();
+}
 
-	// Get totals
+/**
+ * Get totals HTML.
+ *
+ * @since 1.0.0
+ *
+ * @return string
+ */
+function bigbox_get_totals_html() {
 	ob_start();
 
 	woocommerce_cart_totals();
 
-	$totals = ob_get_clean();
+	return ob_get_clean();
+}
+
+/**
+ * Update cart data via AJAX.
+ *
+ * @todo check nonce.
+ * @since 1.0.0
+ */
+function bigbox_update_cart() {
+	bigbox_update_cart_and_totals();
 
 	return wp_send_json_success(
 		[
 			'data' => [
-				'cart'   => $cart,
-				'totals' => $totals,
+				'cart'   => bigbox_get_cart_html(),
+				'totals' => bigbox_get_totals_html(),
 			],
 		]
 	);

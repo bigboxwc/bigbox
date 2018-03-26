@@ -9,25 +9,27 @@ import { forEach } from 'lodash';
 import { transformInput } from './quantity';
 
 // Partials to update.
-const partials = {
+export const partials = {
 	'cart'  : $( '#bigbox-cart' ),
 	'totals': $( '#bigbox-cart-totals' ),
+	'review': $( '#bigbox-review-cart' ),
 }
 
 /**
  * Collect all quantity inputs and update to selects.
  */
-const transformQtys = function() {
-	// Can't use the cached partial because the whole element is replaced in WooCommerce.
-	$( '#bigbox-cart' ).find( '.qty' ).each( function() {
-		transformInput( $( this ), false );
+export const transformQtys = function() {
+	forEach ( partials, function( $el ) {
+		$el.find( '.qty' ).each( function() {
+			transformInput( $( this ), false );
+		} );
 	} );
 };
 
 /**
  * Block partials when something is changing.
  */
-const blockPartials = function() {
+export const blockPartials = function() {
 	forEach( partials, ( $el ) => {
 		$el.addClass( 'processing' ).block( {
 			message: null,
@@ -44,7 +46,7 @@ const blockPartials = function() {
  *
  * @param {object} response Response fragments to map to partials.
  */
-const updatePartials = function( response ) {
+export const updatePartials = function( response ) {
 	forEach( partials, ( $el, partial ) => {
 		$el
 			.html( response.data[ partial ] )
@@ -80,7 +82,9 @@ transformQtys();
 
 const $body    = $( document.body );
 const triggers = [
-	'update_checkout',
+	'init_checkout',
+	'payment_method_selected',
+	'updated_checkout',
 	'updated_wc_div',
 	'updated_cart_totals',
 	'updated_shipping_method',
