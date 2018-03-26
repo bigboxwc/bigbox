@@ -12,7 +12,7 @@ import { partials, updatePartials, blockPartials } from './cart';
 /**
  * Update cart contents when quantity changes.
  */
-partials.review.on( 'change', '.qty', function() {
+$( partials.review ).on( 'change', '.qty', function() {
 	blockPartials();
 
 	wp.ajax.send( 'bigbox_update_cart_review', {

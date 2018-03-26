@@ -10,17 +10,19 @@ import { transformInput } from './quantity';
 
 // Partials to update.
 export const partials = {
-	'cart'  : $( '#bigbox-cart' ),
-	'totals': $( '#bigbox-cart-totals' ),
-	'review': $( '#bigbox-review-cart' ),
+	cart:   '#bigbox-cart',
+	totals: '#bigbox-cart-totals',
+	review: '#bigbox-review-cart',
 }
 
 /**
  * Collect all quantity inputs and update to selects.
+ *
+ * Can't loop because we don't want to use the cache.
  */
-export const transformQtys = function() {
-	forEach ( partials, function( $el ) {
-		$el.find( '.qty' ).each( function() {
+export const transformQtys = () => {
+	forEach ( partials, ( selector ) => {
+		$( selector ).find( '.qty' ).each( function() {
 			transformInput( $( this ), false );
 		} );
 	} );
@@ -29,9 +31,9 @@ export const transformQtys = function() {
 /**
  * Block partials when something is changing.
  */
-export const blockPartials = function() {
-	forEach( partials, ( $el ) => {
-		$el.addClass( 'processing' ).block( {
+export const blockPartials = () => {
+	forEach( partials, ( selector ) => {
+		$( selector ).addClass( 'processing' ).block( {
 			message: null,
 			overlayCSS: {
 				background: '#fff',
@@ -46,9 +48,9 @@ export const blockPartials = function() {
  *
  * @param {object} response Response fragments to map to partials.
  */
-export const updatePartials = function( response ) {
-	forEach( partials, ( $el, partial ) => {
-		$el
+export const updatePartials = ( response ) => {
+	forEach( partials, ( selector, partial ) => {
+		$( selector )
 			.replaceWith( response.data[ partial ] )
 
 			// Unblock
@@ -62,12 +64,12 @@ export const updatePartials = function( response ) {
 /**
  * Update cart contents when quantity changes.
  */
-partials.cart.on( 'change', '.qty', function() {
+$( partials.cart ).on( 'change', '.qty', function() {
 	blockPartials();
 
 	wp.ajax.send( 'bigbox_update_cart', {
 		data: {
-			checkout: partials.cart.serialize(),
+			checkout: $(this).serialize(),
 		},
 		success( response ) {
 			updatePartials( response );
