@@ -1,0 +1,32 @@
+form.woocommerce-checkout {
+	
+	@include make-row();
+}
+
+.woocommerce-checkout__info {
+
+	@include make-col-ready();
+
+	@include media-breakpoint-up(lg) {
+
+		@include make-col(8);
+	}
+}
+
+.woocommerce-checkout__review {
+
+	@include make-col-ready();
+
+	@include media-breakpoint-up(lg) {
+
+		@include make-col(4);
+	}
+}
+
+.woocommerce-billing-fields {
+
+	h3 {
+
+		@include single-product-section-title();
+	}
+}

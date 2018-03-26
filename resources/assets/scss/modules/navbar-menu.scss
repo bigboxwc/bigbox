@@ -36,9 +36,10 @@
 		margin: 0;
 		padding: $spacer;
 		list-style: none;
-		background: color("white");
 		position: absolute;
 		z-index: 10;
+		
+		@include card;
 
 		a {
 			color: initial;

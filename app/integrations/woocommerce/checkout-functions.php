@@ -17,6 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( apply_filters( 'bigbox_optimize_checkout', true ) ) {
 	add_filter( 'woocommerce_billing_fields', 'bigbox_woocommerce_billing_fields' );
 	add_filter( 'woocommerce_default_address_fields', 'bigbox_woocommerce_default_address_fields' );
+	
+	remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
 }
 
 /**

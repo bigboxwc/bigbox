@@ -30,7 +30,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<body <?php body_class( 'bigbox-minimal' ); ?>>
 
-
 		<div class="navbar">
 
 			<div class="navbar__inner">

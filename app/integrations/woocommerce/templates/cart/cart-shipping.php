@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php if ( 1 < count( $available_methods ) ) : ?>
 
-	<ul id="shipping_method">
+	<ul id="shipping_method" class="shipping-methods">
 		<?php foreach ( $available_methods as $method ) : ?>
 			<li>
 				<?php
