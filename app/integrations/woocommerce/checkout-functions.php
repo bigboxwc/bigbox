@@ -38,11 +38,6 @@ if ( apply_filters( 'bigbox_optimize_checkout', true ) ) {
 			wc_get_template( 'checkout/submit.php' );
 		}, 40
 	);
-
-	// Remove coupons/login.
-	// @todo output again.
-	remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
-	remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
 }
 
 /**

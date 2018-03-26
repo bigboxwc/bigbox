@@ -123,3 +123,12 @@ form.woocommerce-checkout {
 		border-radius: $border-radius !important;
 	}
 }
+
+#order_review {
+	position: sticky;
+	top: $spacer;
+
+	.admin-bar & {
+		top: calc( 32px + #{$spacer} );
+	}
+}

@@ -30,6 +30,7 @@
 	.select2-container--default .select2-selection--single .select2-results__options,
 	.input-text {
 		font-size: $font-size-xs;
+		min-height: 33px;
 	}
 
 	p:last-child {
