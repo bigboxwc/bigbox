@@ -8,11 +8,20 @@
 	order: 1;
 }
 
+.site-primary--10,
 .site-primary--narrow {
 
 	@include media-breakpoint-up(lg) {
 
 		@include make-col(9);
 		margin: $grid-gutter-width auto;
+	}
+}
+
+.site-primary--10 {
+
+	@include media-breakpoint-up(lg) {
+
+		@include make-col(10);
 	}
 }

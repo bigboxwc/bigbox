@@ -43,15 +43,3 @@ require_once __DIR__ . '/bootstrap/template-loader.php';
 
 // Start things.
 require_once __DIR__ . '/bootstrap/app.php';
-add_action( 'woocommerce_cart_calculate_fees','woocommerce_custom_surcharge' );
-function woocommerce_custom_surcharge() {
-  global $woocommerce;
-
-	if ( is_admin() && ! defined( 'DOING_AJAX' ) )
-		return;
-
-	$percentage = 0.01;
-	$surcharge = ( $woocommerce->cart->cart_contents_total + $woocommerce->cart->shipping_total ) * $percentage;	
-	$woocommerce->cart->add_fee( 'Surcharge', $surcharge, true, '' );
-
-}

@@ -22,6 +22,10 @@ if ( apply_filters( 'bigbox_optimize_checkout', true ) ) {
 
 	remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
 	remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+
+	add_action( 'woocommerce_review_order_before_submit', function() {
+		wc_get_template( 'cart/cart-totals.php' );
+	}, 30 );
 }
 
 /**
@@ -104,7 +108,11 @@ function bigbox_get_cart_review_html() {
 function bigbox_update_cart_review() {
 	bigbox_update_cart_and_totals();
 
-	return wp_send_json_success(
+	if ( ! defined( 'WOOCOMMERCE_CHECKOUT' ) ) {
+		define( 'WOOCOMMERCE_CHECKOUT', true );
+	}
+
+	$json = wp_send_json_success(
 		[
 			'data' => [
 				'review' => bigbox_get_cart_review_html(),
@@ -112,6 +120,10 @@ function bigbox_update_cart_review() {
 			],
 		]
 	);
+
+	define( 'WOOCOMMERCE_CHECKOUT', false );
+
+	return $json;
 }
 add_action( 'wp_ajax_nopriv_bigbox_update_cart_review', 'bigbox_update_cart_review' );
 add_action( 'wp_ajax_bigbox_update_cart_review', 'bigbox_update_cart_review' );

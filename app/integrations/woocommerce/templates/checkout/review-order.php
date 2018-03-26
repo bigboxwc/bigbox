@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div id="bigbox-review-cart" class="woocommerce-checkout-review-order">
+<div id="bigbox-review-cart">
 	<ul class="products columns-1">
 
 	<?php

@@ -111,7 +111,7 @@ function bigbox_get_cart_html() {
 function bigbox_get_totals_html() {
 	ob_start();
 
-	woocommerce_cart_totals();
+	wc_get_template( 'cart/cart-totals.php' );
 
 	return ob_get_clean();
 }

@@ -1,5 +1,5 @@
 @mixin single-product-section-title {
 	color: theme-color("dark");
 	font-size: $font-size-lg;
-	margin: 0;
+	margin: 0 0 $spacer;
 }

@@ -31,7 +31,7 @@ while ( have_posts() ) :
 		<?php if ( ! WC()->cart->is_empty() ) : ?>
 		<div class="woocommerce-cart-wrapper__purchase-form woocommerce-cart-continue">
 
-			<div id="bigbox-cart-totals" class="woocommerce-purchase-form">
+			<div class="woocommerce-purchase-form">
 				<?php woocommerce_cart_totals(); ?>
 			</div>
 

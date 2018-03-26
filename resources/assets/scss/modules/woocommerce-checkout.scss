@@ -6,27 +6,40 @@ form.woocommerce-checkout {
 .woocommerce-checkout__info {
 
 	@include make-col-ready();
+	@include make-col(6);
 
 	@include media-breakpoint-up(lg) {
 
-		@include make-col(8);
+		@include make-col(7);
 	}
 }
 
 .woocommerce-checkout__review {
 
 	@include make-col-ready();
+	@include make-col(6);
 
 	@include media-breakpoint-up(lg) {
 
-		@include make-col(4);
+		@include make-col(5);
 	}
 }
 
-.woocommerce-billing-fields {
+.woocommerce-checkout-review-order {
+	padding: $spacer;
 
-	h3 {
+	@include card;
+}
 
-		@include single-product-section-title();
-	}
+#place_order {
+
+	@include button--success;
+	@include button--size-sm;
+	@include button--size-block;
+}
+
+#order_review_heading,
+.woocommerce-billing-fields h3 {
+
+	@include single-product-section-title();
 }

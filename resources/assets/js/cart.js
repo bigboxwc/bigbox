@@ -49,7 +49,7 @@ export const blockPartials = function() {
 export const updatePartials = function( response ) {
 	forEach( partials, ( $el, partial ) => {
 		$el
-			.html( response.data[ partial ] )
+			.replaceWith( response.data[ partial ] )
 
 			// Unblock
 			.removeClass( 'processing' )

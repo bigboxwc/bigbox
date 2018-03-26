@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<div class="cart_totals <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
+<div id="bigbox-cart-totals" class="cart_totals <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
 
@@ -132,9 +132,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</div>
 
+	<?php if ( ! is_checkout() ) : ?>
 	<div class="wc-proceed-to-checkout">
 		<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
 	</div>
+	<?php endif; ?>
 
 	<?php do_action( 'woocommerce_after_cart_totals' ); ?>
 
