@@ -22,6 +22,7 @@
 		// [1] Center on large minimal pages.
 		@include media-breakpoint-up(sm) {
 			margin: 0 auto; // [1]
+			padding-left: 0;
 		}
 	}
 }

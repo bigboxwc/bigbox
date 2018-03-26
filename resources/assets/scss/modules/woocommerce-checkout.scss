@@ -39,7 +39,87 @@ form.woocommerce-checkout {
 }
 
 #order_review_heading,
+.woocommerce-checkout-payment h3,
+.woocommerce-shipping-fields h3,
 .woocommerce-billing-fields h3 {
 
 	@include single-product-section-title();
+}
+
+.woocommerce-form__label-for-checkbox {
+	display: flex;
+	align-items: center;
+
+	span {
+		margin-left: 10px;
+	}
+}
+
+.wc_payment_methods {
+	margin: 0 0 ( $spacer * 2 );
+	padding: 0;
+	list-style: none;
+
+	@include card;
+
+	li {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		padding: $spacer ( $spacer * 1.5 );
+		border-bottom: 1px solid gray("300");
+
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+
+	[type="radio"] {
+		display: none;
+	}
+
+	[type="radio"]:checked + label {
+		color: theme-color("dark");
+	}
+
+	label {
+		color: gray("600");
+		font-weight: $font-weight-bold;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		img {
+			float: right;
+			margin-top: -2px;
+		}
+	}
+
+	.payment_box p {
+		font-size: $font-size-sm;
+		margin: $spacer 0 0;
+	}
+}
+
+.payment_method_paypal {
+	img {
+		display: none;
+	}
+
+	.about_paypal {
+		font-size: $font-size-sm;
+	}
+}
+
+.wc-credit-card-form {
+	margin: $spacer 0;
+	padding: 0;
+	border: 0;
+
+	#stripe-card-element {
+
+		border: 1px solid gray("300") !important;
+		border-radius: $border-radius !important;
+	}
 }

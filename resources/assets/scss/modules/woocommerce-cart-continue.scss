@@ -1,7 +1,7 @@
 .cart_totals {
 	#shipping_method {
 		font-size: $font-size-sm;
-		margin: 0 0 0 $spacer;
+		margin: 0 0 $spacer $spacer;
 		padding: 0;
 		list-style: none;
 
@@ -44,7 +44,7 @@
 }
 
 .shipping-note {
-	margin: 0 $spacer;
+	margin: 0 $spacer $spacer;
 	font-size: $font-size-sm;
 
 	p {
