@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class WooCommerceShippingEstimates extends Integration implements Registerable, Service {
+class WooCommerce_Shipping_Estimates extends Integration implements Registerable, Service {
 
 	/**
 	 * Connect to WordPress.

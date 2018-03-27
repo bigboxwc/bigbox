@@ -97,7 +97,7 @@ final class Integrations implements Registerable, Service {
 			],
 			'woocommerce-shipping-estimates' => [
 				'slug'         => 'woocommerce-shipping-estimates',
-				'class'        => Integration\WooCommerceShippingEstimates::class,
+				'class'        => Integration\WooCommerce_Shipping_Estimates::class,
 				'dependencies' => [
 					defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
 					class_exists( 'WC_Shipping_Estimate' ),
