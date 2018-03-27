@@ -38,7 +38,33 @@ if ( apply_filters( 'bigbox_optimize_checkout', true ) ) {
 			wc_get_template( 'checkout/submit.php' );
 		}, 40
 	);
+
+	// Move coupons
+	remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form' );
+	add_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_coupon_form' );
 }
+
+/**
+ * Update "Billing details" text string.
+ *
+ * @since 1.0.0
+ */
+function bigbox_woocommerce_billing_details_title( $translation, $original, $domain ) {
+	if ( 'woocommerce' !== $domain ) {
+		return $translation;
+	}
+
+	if ( 'Billing details' === $original ) {
+		return esc_html__( '2. Billing Details', 'bigbox' );
+	}
+
+	if ( 'Billing &amp; Shipping' === $original ) {
+		return esc_html__( '2. Billing &amp; Shipping', 'bigbox' );
+	}
+
+	return $translation;
+}
+add_filter( 'gettext', 'bigbox_woocommerce_billing_details_title', 10, 3 );
 
 /**
  * Adjust order for billing form fields.
@@ -90,7 +116,6 @@ function bigbox_woocommerce_default_address_fields( $fields ) {
 
 	return $fields;
 }
-
 
 /**
  * Get cart review HTML.

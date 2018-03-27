@@ -34,7 +34,6 @@ form.woocommerce-checkout {
 #place_order {
 
 	@include button--success;
-	@include button--size-sm;
 	@include button--size-block;
 }
 
@@ -59,20 +58,16 @@ form.woocommerce-checkout {
 	margin: 0 0 ( $spacer * 2 );
 	padding: 0;
 	list-style: none;
+}
+
+.wc_payment_method {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-bottom: $spacer;
+	padding: $spacer;
 
 	@include card;
-
-	li {
-		display: flex;
-		align-items: center;
-		flex-wrap: wrap;
-		padding: $spacer ( $spacer * 1.5 );
-		border-bottom: 1px solid gray("300");
-
-		&:last-child {
-			border-bottom: 0;
-		}
-	}
 
 	[type="radio"] {
 		display: none;
@@ -83,7 +78,7 @@ form.woocommerce-checkout {
 	}
 
 	label {
-		color: gray("600");
+		color: gray("500");
 		font-weight: $font-weight-bold;
 		width: 100%;
 		display: flex;
@@ -130,5 +125,46 @@ form.woocommerce-checkout {
 
 	.admin-bar & {
 		top: calc( 32px + #{$spacer} );
+	}
+}
+
+.woocommerce-form-coupon {
+	margin-bottom: ( $spacer * 1.5 );
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	p:first-child {
+		font-size: $font-size-xs;
+		margin: 0 0 ( $spacer / 2 );
+		width: 100%;
+	}
+
+	.form-row-first,
+	.form-row-last {
+		flex: 1 0;
+		margin-bottom: 0;
+	}
+
+	.form-row-first {
+		flex-basis: 60%;
+	}
+
+	.form-row-last {
+		margin-left: $spacer;
+	}
+
+	[name="apply_coupon"] {
+
+		@include button--secondary;
+		@include button--size-sm;
+		@include button--size-block;
+	}
+}
+
+.woocommerce-form-login-toggle {
+	.woocommerce-info {
+
+		@include card--primary;
 	}
 }

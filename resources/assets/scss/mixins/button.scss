@@ -42,7 +42,6 @@
 	@include button;
 	color: gray(700);
 	background-color: gray(500);
-	border: 1px solid gray(300);
 }
 
 // [1] Gutenberg adds their own !important declaration.
@@ -81,10 +80,10 @@
 // [1] Override standard sizing growth on larger devices.
 @mixin button--size-sm {
 	font-size: $font-size-sm;
-	padding: 10px 20px;
+	padding: 9px 20px;
 
 	@include media-breakpoint-up(md) {
-		padding: 10px 20px; // [1]
+		padding: 9px 20px; // [1]
 	}
 }
 

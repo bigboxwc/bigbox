@@ -1,5 +1,6 @@
 .woocommerce-info,
-.woocommerce-message {
+.woocommerce-message,
+.woocommerce-NoticeGroup li {
 	overflow: hidden;
 	margin: 0 0 ( $spacer * 2 );
 	padding: $spacer;
@@ -21,4 +22,20 @@
 	display: flex;
 	align-items: center;
 	padding: ( $spacer / 2 ) $spacer;
+}
+
+.woocommerce-NoticeGroup {
+	width: 100%;
+
+	.woocommerce-error {
+
+		@include make-col-ready();
+		margin: 0;
+		list-style: none;
+
+		li {
+
+			@include card--error;
+		}
+	}
 }

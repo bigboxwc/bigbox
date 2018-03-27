@@ -1,0 +1,27 @@
+.woocommerce-form-login {
+	margin-bottom: ( $spacer * 2);
+
+	p:first-child {
+		font-size: $font-size-sm;
+		margin-top: 0;
+	}
+
+	.form-row {
+		display: flex;
+		flex-wrap: wrap;
+
+		.woocommerce-form__label {
+			margin-left: $spacer;
+		}
+
+		.button {
+
+			@include button--size-sm;
+		}
+	}
+
+	.lost_password {
+		font-size: $font-size-sm;
+		margin-bottom: 0;
+	}
+}

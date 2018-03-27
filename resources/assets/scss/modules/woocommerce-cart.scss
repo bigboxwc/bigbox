@@ -22,7 +22,6 @@
 		sm: 6,
 		md: 5,
 		lg: 4,
-		xl: 3,
 	);
 	
 	@each $bp, $cols in $formBp {

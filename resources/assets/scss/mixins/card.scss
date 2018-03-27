@@ -5,5 +5,19 @@
 	box-shadow: gray("200") 0 1px 2px;
 }
 
-@mixin card--featured {
+@mixin card--primary {
+
+	@include card;
+
+	background: rgba(theme-color("success"), 0.20);
+	border: 1px solid rgba(theme-color("success"), 0.80);
+	box-shadow: rgba(theme-color("success"), 0.30) 0 1px 2px;
+}
+
+@mixin card--error {
+	@include card;
+
+	background: rgba(theme-color("danger"), 0.20);
+	border: 1px solid rgba(theme-color("danger"), 0.80);
+	box-shadow: rgba(theme-color("danger"), 0.30) 0 1px 2px;
 }
