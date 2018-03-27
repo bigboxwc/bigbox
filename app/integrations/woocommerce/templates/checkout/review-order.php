@@ -21,19 +21,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div id="bigbox-review-cart">
-	<ul class="products columns-1">
-		<?php do_action( 'woocommerce_review_order_before_cart_contents' ); ?>
+<div class="woocommerce-checkout-review-order-table">
 
-		<?php
-		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) :
-			wc_get_template( 'cart/cart-item.php', [
-				'cart_item_key' => $cart_item_key,
-				'cart_item'     => $cart_item,
-			] );
-		endforeach;
-		?>
+	<div id="bigbox-review-cart">
+		<ul class="products columns-1">
+			<?php do_action( 'woocommerce_review_order_before_cart_contents' ); ?>
 
-		<?php do_action( 'woocommerce_review_order_after_cart_contents' ); ?>
-	</ul>
+			<?php
+			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) :
+				wc_get_template( 'cart/cart-item.php', [
+					'cart_item_key' => $cart_item_key,
+					'cart_item'     => $cart_item,
+				] );
+			endforeach;
+			?>
+
+			<?php do_action( 'woocommerce_review_order_after_cart_contents' ); ?>
+		</ul>
+	</div>
+
+	<div id="order_review" class="woocommerce-checkout-review-order">
+		<?php wc_get_template( 'cart/cart-totals.php' ); ?>
+		<?php wc_get_template( 'checkout/submit.php' ); ?>
+	</div>
+
 </div>

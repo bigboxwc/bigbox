@@ -21,27 +21,8 @@ if ( apply_filters( 'bigbox_optimize_checkout', true ) ) {
 	add_filter( 'woocommerce_default_address_fields', 'bigbox_woocommerce_default_address_fields' );
 
 	// Rearrange review, payment, and totals.
-	remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
 	remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
 	add_action( 'woocommerce_checkout_before_customer_details', 'woocommerce_checkout_payment', 20 );
-
-	add_action( 'woocommerce_checkout_before_order_review', 'woocommerce_order_review' );
-
-	add_action(
-		'woocommerce_checkout_order_review', function() {
-			wc_get_template( 'cart/cart-totals.php' );
-		}, 30
-	);
-
-	add_action(
-		'woocommerce_checkout_order_review', function() {
-			wc_get_template( 'checkout/submit.php' );
-		}, 40
-	);
-
-	// Move coupons
-	remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form' );
-	add_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_coupon_form' );
 }
 
 /**

@@ -53,14 +53,12 @@ endif;
 		<?php endif; ?>
 	</div>
 
-	<div class="woocommerce-checkout__review">
+	<div class="woocommerce-checkout__review ">
 		<h3 id="order_review_heading"><?php _e( '3. Order Summary', 'woocommerce' ); ?></h3>
 
 		<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
-		<div id="order_review" class="woocommerce-checkout-review-order">
-			<?php do_action( 'woocommerce_checkout_order_review' ); ?>
-		</div>
+		<?php do_action( 'woocommerce_checkout_order_review' ); ?>
 
 		<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
 	</div>
