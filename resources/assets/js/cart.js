@@ -15,6 +15,8 @@ export const partials = {
 	review: '#bigbox-cart-review',
 }
 
+const $body = $( document.body );
+
 /**
  * Collect all quantity inputs and update to selects.
  *
@@ -63,13 +65,16 @@ export const updatePartials = ( response ) => {
 
 /**
  * Update cart contents when quantity changes.
+ *
+ * For some reason this doesn't work as well as the one in `checkout.js`
+ * that targets the form directly.
  */
-$( '#bigbox-cart' ).on( 'change', '.qty', function() {
+$body.delegate( `${partials.cart} .qty`, 'change', () => {
 	blockPartials();
 
 	wp.ajax.send( 'bigbox_update_cart', {
 		data: {
-			checkout: $(this).serialize(),
+			checkout: $( partials.cart ).serialize(),
 		},
 		success( response ) {
 			updatePartials( response );
@@ -82,7 +87,6 @@ $( '#bigbox-cart' ).on( 'change', '.qty', function() {
  */
 transformQtys();
 
-const $body    = $( document.body );
 const triggers = [
 	'init_checkout',
 	'payment_method_selected',
