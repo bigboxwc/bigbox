@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
 global $order_button_text;
 
 if ( ! $order_button_text ) :
-	$order_button_text = apply_filters( 'woocommerce_pay_order_button_text', __( 'Pay for order', 'woocommerce' ) );
+	$order_button_text = apply_filters( 'woocommerce_pay_order_button_text', __( 'Pay for order', 'bigbox' ) );
 endif;
 
 if ( ! is_ajax() ) {
@@ -30,9 +30,9 @@ if ( ! is_ajax() ) {
 
 <div class="form-row place-order">
 	<noscript>
-		<p><?php esc_html_e( 'Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.', 'woocommerce' ); ?></p>
+		<p><?php esc_html_e( 'Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.', 'bigbox' ); ?></p>
 
-		<button type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="<?php esc_attr_e( 'Update totals', 'woocommerce' ); ?>"><?php esc_html_e( 'Update totals', 'woocommerce' ); ?></button>
+		<button type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="<?php esc_attr_e( 'Update totals', 'bigbox' ); ?>"><?php esc_html_e( 'Update totals', 'bigbox' ); ?></button>
 	</noscript>
 
 	<?php wc_get_template( 'checkout/terms.php' ); ?>

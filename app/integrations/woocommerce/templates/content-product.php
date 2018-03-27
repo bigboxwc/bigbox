@@ -17,12 +17,12 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 
 global $product;
 
-// Ensure visibility
+// Ensure visibility.
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }

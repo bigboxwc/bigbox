@@ -25,7 +25,7 @@ $_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], 
 if (
 	! $_product ||
 	! $_product->exists() ||
-	$cart_item['quantity'] === 0
+	0 === $cart_item['quantity']
 	|| ! apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) :
 		return;
 endif;
@@ -52,7 +52,10 @@ $product_thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product
 				</a>
 			</h2>
 
-			<?php if ( '' !== ( $data = wc_get_formatted_cart_item_data( $cart_item ) ) ) : ?>
+			<?php
+			$data = wc_get_formatted_cart_item_data( $cart_item );
+			if ( '' !== $data ) : 
+			?>
 			<div class="product__stats">
 				<?php echo $data; // PHPCS: XSS ok. ?>
 			</div>
@@ -69,11 +72,12 @@ $product_thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product
 
 				<del class="subtotal">
 				<?php
-				printf(
-					'%s &times %s',
+				echo esc_html( sprintf(
+					// Translators: %1$s cart item quantity. %2$s Cart item price.
+					__( '%1$s &times %2$s', 'bigbox' ),
 					$cart_item['quantity'],
 					apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ) // PHPCS: XSS ok.
-				);
+				) );
 				?>
 				</del>
 			</div>

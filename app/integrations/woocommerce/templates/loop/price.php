@@ -17,13 +17,15 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 
 global $product;
+
+$price_html = $product->get_price_html()
 ?>
 
-<?php if ( $price_html = $product->get_price_html() ) : ?>
+<?php if ( $price_html ) : ?>
 
 <div class="product__stats">
 	<?php woocommerce_show_product_loop_sale_flash(); ?>

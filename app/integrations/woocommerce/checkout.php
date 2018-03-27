@@ -29,6 +29,10 @@ if ( apply_filters( 'bigbox_optimize_checkout', true ) ) {
  * Update "Billing details" text string.
  *
  * @since 1.0.0
+ *
+ * @param string $translation Translated string.
+ * @param string $original Original string.
+ * @param string $domain Text domain.
  */
 function bigbox_woocommerce_billing_details_title( $translation, $original, $domain ) {
 	if ( 'woocommerce' !== $domain ) {

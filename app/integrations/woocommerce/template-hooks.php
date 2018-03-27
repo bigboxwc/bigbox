@@ -20,7 +20,7 @@ add_filter( 'woocommerce_enqueue_styles', 'bigbox_woocommerce_enqueue_styles' );
 add_filter( 'woocommerce_template_path', 'bigbox_woocommerce_template_path' );
 
 /**
- * @see archive-product.php
+ * archive-product.php.
  */
 
 // Replace outer content wrapper.
@@ -44,7 +44,7 @@ add_action( 'bigbox_navbar_after', 'woocommerce_breadcrumb' );
 add_filter( 'woocommerce_pagination_args', 'bigbox_woocommerce_pagination_args' );
 
 /**
- * @see content-product.php
+ * content-product.php.
  */
 
 // Add extra markup inside product.
@@ -72,7 +72,7 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop
 add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_after_shop_loop_item_title_variations', 8 );
 
 /**
- * @see content-single-product.php
+ * content-single-product.php.
  */
 
 // Remove sidebar on single product pages.
@@ -116,21 +116,21 @@ add_action( 'woocommerce_product_additional_information', 'bigbox_woocommerce_pr
 add_filter( 'wc_product_enable_dimensions_display', '__return_true' );
 
 /**
- * @see templates/cart/cart.php
+ * templates/cart/cart.php.
  */
 
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cart_totals' );
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 
 /**
- * @see wc-formatting-functions.php
+ * wc-formatting-functions.php.
  */
 
 // Custom rating stars.
 add_filter( 'woocommerce_get_star_rating_html', 'bigbox_woocommerce_get_star_rating_html', 10, 3 );
 
 /**
- * @see wc-template-functions.php
+ * wc-template-functions.php.
  */
 
 // Custom breadcrum arguments.

@@ -58,18 +58,21 @@ add_filter( 'woocommerce_cart_shipping_method_full_label', 'bigbox_woocommerce_c
 /**
  * Update global cart and totals.
  *
+ * @todo Check nonce.
+ *
  * @since 1.0.0
  */
 function bigbox_update_cart_and_totals() {
 	$values = array();
-	parse_str( $_POST['checkout'], $values );
 
-	$cart = $values['cart'];
+	parse_str( $_POST['checkout'], $values ); // @codingStandardsIgnoreLine
+
+	$cart = wp_unslash( $values['cart'] );
 
 	foreach ( $cart as $cart_key => $cart_value ) {
-		$qty = (int) $cart_value['qty'];
+		$qty = absint( $cart_value['qty'] );
 
-		// Remove from cart if setting to 0
+		// Remove from cart if setting to 0.
 		if ( 0 === $qty ) {
 			WC()->cart->remove_cart_item( $cart_key );
 

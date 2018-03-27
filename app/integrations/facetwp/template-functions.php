@@ -70,7 +70,7 @@ function bigbox_facetwp_result_count() {
 function bigbox_facetwp_result_count_output( $output, $params ) {
 	if ( $params['lower'] === $params['upper'] || 1 === $params['total'] ) {
 		/* translators: %d: total results */
-		return sprintf( _n( 'Showing the single result', 'Showing all %d results', $params['total'], 'bigbox' ), $params['total'] );
+		return sprintf( _n( 'Showing the single result', 'Showing all %d results', $params['total'], 'bigbox' ), $params['total'] ); // @codingStandardsIgnoreLine
 	}
 
 	return sprintf(

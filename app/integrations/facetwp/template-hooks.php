@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * @see woocommerce/templates/archive-product.php.
+ * woocommerce/templates/archive-product.php.
  */
 
 // Add pagination.

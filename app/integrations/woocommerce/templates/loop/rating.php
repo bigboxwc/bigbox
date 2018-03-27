@@ -34,5 +34,5 @@ endif;
 ?>
 
 <div class="product__rating">
-	<?php echo $stars; ?>
+	<?php echo $stars; // @codingStandardsIgnoreLine ?>
 </div>

@@ -40,7 +40,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 			);
 		endforeach;
 		?>
-		 
+		
 
 		<?php do_action( 'woocommerce_cart_contents' ); ?>
 

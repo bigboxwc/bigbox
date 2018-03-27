@@ -25,19 +25,19 @@ global $product;
 	<?php do_action( 'woocommerce_widget_product_item_start', $args ); ?>
 
 	<a href="<?php echo esc_url( $product->get_permalink() ); ?>">
-		<?php echo $product->get_image(); ?>
-		<span class="product-title"><?php echo $product->get_name(); ?></span>
+		<?php echo wp_kses_post( $product->get_image() ); ?>
+		<span class="product-title"><?php echo esc_html( $product->get_name() ); ?></span>
 	</a>
 
 	<?php if ( ! empty( $show_rating ) ) : ?>
 	<div class="product__stats">
-		<?php echo wc_get_rating_html( $product->get_average_rating() ); ?>
+		<?php echo wc_get_rating_html( $product->get_average_rating() ); // @codingStandardsIgnoreLine ?>
 	</div>
 	<?php endif; ?>
 
-	<?php if ( '' != $product->get_price_html() ) : ?>
+	<?php if ( '' !== $product->get_price_html() ) : ?>
 	<span class="product__stats price">
-		<?php echo $product->get_price_html(); ?>
+		<?php echo wp_kses_post( $product->get_price_html() ); ?>
 	</span>
 	<?php endif; ?>
 

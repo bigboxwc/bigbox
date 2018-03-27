@@ -1,8 +1,8 @@
 /**
  * Transform quantity input in to a <select> box.
  *
- * @param {Object} DOM element.
- * @param {boolean|Object} Variation
+ * @param {Object} $qty DOM element.
+ * @param {boolean|Object} variation Variation data.
  */
 export const transformInput = function( $qty, variation = false ) {
 	const $wrapper = $qty.parent();
@@ -29,6 +29,6 @@ export const transformInput = function( $qty, variation = false ) {
 	// Add <option>s
 	for ( let i = min; i <= max; i++ ) {
 		$select
-			.append( $( `<option value=${ i } ${ i == selectedValue ? 'selected' : '' }>${ i }</option>` ) );
+			.append( $( `<option value=${ i } ${ i === selectedValue ? 'selected' : '' }>${ i }</option>` ) );
 	}
 };
