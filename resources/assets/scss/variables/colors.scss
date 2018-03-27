@@ -1,7 +1,7 @@
 // stylelint-disable
 $white:    #fff !default;
 $gray-100: #f7f9fa !default;
-$gray-200: #e2ebf4 !default;
+$gray-200: #dde4ec !default;
 $gray-300: #bac7d4 !default;
 $gray-400: #818ba7 !default;
 $gray-500: #727b93 !default;
@@ -24,7 +24,7 @@ $grays: map-merge((
 	"900": $gray-900
 ), $grays);
 
-$blue:    #4147ff !default;
+$blue:    #336cd1 !default;
 $indigo:  #6610f2 !default;
 $purple:  #7941ff !default;
 $pink:    #d91b5b !default;
@@ -54,14 +54,14 @@ $colors: map-merge((
 
 $theme-colors: () !default;
 $theme-colors: map-merge((
-	"primary":    $gray-700,
+	"primary":    $blue,
 	"secondary":  $orange,
 	"success":    $green,
 	"info":       $cyan,
 	"warning":    $yellow,
 	"danger":     $red,
 	"light":      $gray-100,
-	"dark":       $gray-900
+	"dark":       $gray-700
 ), $theme-colors);
 // stylelint-enable
 

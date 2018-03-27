@@ -1,0 +1,28 @@
+.woocommerce-MyAccount-navigation {
+	margin: -( $spacer ) 0 ( $spacer * 2 );
+	border-bottom: 1px solid gray("200");
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+.woocommerce-MyAccount-navigation-link {
+	text-align: center;
+
+	a {
+		padding: $spacer;
+		display: block;
+		margin-bottom: -1px;
+	}
+
+	&.is-active {
+		a {
+			box-shadow: inset 0 -2px 0 0 theme-color("primary");
+		}
+	}
+}

@@ -1,6 +1,6 @@
 <?php
 /**
- * WooCommerce checkout functions.
+ * WooCommerce checkout modifications.
  *
  * @since 1.0.0
  *

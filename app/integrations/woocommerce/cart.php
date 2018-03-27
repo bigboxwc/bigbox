@@ -1,6 +1,6 @@
 <?php
 /**
- * WooCommerce cart functions.
+ * WooCommerce cart modifications.
  *
  * @since 1.0.0
  *

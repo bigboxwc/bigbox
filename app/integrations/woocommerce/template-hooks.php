@@ -38,10 +38,7 @@ add_action( 'woocommerce_before_shop_loop', 'bigbox_woocommerce_before_shop_loop
 
 // Move breadcrumb under navbar.
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
-
-if ( is_woocommerce() ) {
-	add_action( 'bigbox_navbar_after', 'woocommerce_breadcrumb' );
-}
+add_action( 'bigbox_navbar_after', 'woocommerce_breadcrumb' );
 
 // Update pagination.
 add_filter( 'woocommerce_pagination_args', 'bigbox_woocommerce_pagination_args' );
