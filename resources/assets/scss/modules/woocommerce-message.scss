@@ -1,8 +1,9 @@
 .woocommerce-info,
 .woocommerce-message,
 .woocommerce-error li {
+	font-size: $font-size-sm;
 	overflow: hidden;
-	margin: 0 0 ( $spacer * 2 );
+	margin: 0 0 ($spacer * 2);
 	padding: $spacer;
 
 	@include card;

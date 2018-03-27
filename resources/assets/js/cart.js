@@ -10,10 +10,10 @@ import { transformInput } from './quantity';
 
 // Partials to update.
 export const partials = {
-	cart:   '#bigbox-cart',
+	cart: '#bigbox-cart',
 	totals: '#bigbox-cart-totals',
 	review: '#bigbox-cart-review',
-}
+};
 
 const $body = $( document.body );
 
@@ -23,7 +23,7 @@ const $body = $( document.body );
  * Can't loop because we don't want to use the cache.
  */
 export const transformQtys = () => {
-	forEach ( partials, ( selector ) => {
+	forEach( partials, ( selector ) => {
 		$( selector ).find( '.qty' ).each( function() {
 			transformInput( $( this ), false );
 		} );
@@ -39,16 +39,16 @@ export const blockPartials = () => {
 			message: null,
 			overlayCSS: {
 				background: '#fff',
-				opacity: 0.6
-			}
+				opacity: 0.6,
+			},
 		} );
 	} );
-}
+};
 
 /**
  * Update partials with response data.
  *
- * @param {object} response Response fragments to map to partials.
+ * @param {Object} response Response fragments to map to partials.
  */
 export const updatePartials = ( response ) => {
 	forEach( partials, ( selector, partial ) => {
@@ -61,7 +61,7 @@ export const updatePartials = ( response ) => {
 	} );
 
 	transformQtys();
-}
+};
 
 /**
  * Update cart contents when quantity changes.
@@ -69,7 +69,7 @@ export const updatePartials = ( response ) => {
  * For some reason this doesn't work as well as the one in `checkout.js`
  * that targets the form directly.
  */
-$body.delegate( `${partials.cart} .qty`, 'change', () => {
+$body.delegate( `${ partials.cart } .qty`, 'change', () => {
 	blockPartials();
 
 	wp.ajax.send( 'bigbox_update_cart', {

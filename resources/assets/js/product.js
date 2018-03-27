@@ -6,8 +6,7 @@ import { transformInput } from './quantity';
 /**
  * Transform purchase form quantities.
  */
-$(function() {
-
+$( function() {
 	// Can't cache the .qty input because it gets replaced.
 	const $form = $( 'form.cart' );
 
@@ -19,5 +18,4 @@ $(function() {
 
 	// All.
 	transformInput( $form.find( '.qty' ), false );
-
-});
+} );

@@ -1,6 +1,7 @@
 .select2-container--default {
 
 	&:focus {
+
 		.select2-selection--single {
 			border-color: rgba(theme-color("primary"), 0.8);
 		}
@@ -15,7 +16,7 @@
 		.select2-selection__rendered {
 			color: gray("700");
 			font: $font-weight-normal #{$font-size-sm}/#{$line-height-base} $font-family-sans-serif;
-			padding: ( $spacer / 2 );
+			padding: ($spacer / 2);
 			min-height: 39px;
 		}
 

@@ -38,7 +38,7 @@ function bigbox_woocommerce_page_templates( $templates ) {
 		} else {
 			$add[] = 'resources/views/layout/minimal-5.php';
 		}
-	} else if ( is_account_page() && is_user_logged_in() ) {
+	} elseif ( is_account_page() && is_user_logged_in() ) {
 		$add[] = 'resources/views/layout/narrow.php';
 	}
 

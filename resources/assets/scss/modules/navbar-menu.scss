@@ -5,8 +5,10 @@
 
 .navbar-menu--primary,
 .navbar-menu--secondary {
+
 	.menu-item,
 	.navbar-menu__item {
+
 		a {
 			color: color("white");
 			opacity: 0.95;
@@ -36,7 +38,7 @@
 		list-style: none;
 		position: absolute;
 		z-index: 10;
-		
+
 		@include card;
 
 		a {
@@ -111,6 +113,7 @@
 }
 
 .navbar-menu__items > .navbar-menu__item--stacked {
+
 	a {
 		text-align: center;
 		line-height: 1;

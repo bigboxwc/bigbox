@@ -1,13 +1,7 @@
 /**
- * External dependencies.
- */
-import { forEach } from 'lodash';
-
-/**
  * Internal dependencies.
  */
-import { transformInput } from './quantity';
-import { partials, updatePartials, blockPartials } from './cart';
+import { updatePartials, blockPartials } from './cart';
 
 /**
  * Update cart contents when quantity changes.

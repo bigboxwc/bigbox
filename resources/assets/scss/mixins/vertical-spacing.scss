@@ -1,6 +1,6 @@
-@mixin vertical-spacing( $direction: 'both' ) {
+@mixin vertical-spacing( $direction: "both" ) {
 
-	@if $direction == 'both' {
+	@if $direction == "both" {
 		margin-top: $spacer;
 		margin-bottom: $spacer;
 
@@ -10,7 +10,7 @@
 		}
 	}
 
-	@if $direction == 'down' {
+	@if $direction == "down" {
 		margin-bottom: $spacer;
 
 		@include media-breakpoint-up(md) {
@@ -18,7 +18,7 @@
 		}
 	}
 
-	@if $direction == 'up' {
+	@if $direction == "up" {
 		margin-top: $spacer;
 
 		@include media-breakpoint-up(md) {

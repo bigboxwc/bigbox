@@ -6,11 +6,11 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	
+
 	@include make-container();
 
-	padding: ( $spacer * 0.75 ) calc( #{$spacer} + 11px ); // [1]
-	
+	padding: ( $spacer * 0.75 ) calc(#{$spacer} + 11px); // [1]
+
 	a {
 		color: theme-color("dark");
 	}

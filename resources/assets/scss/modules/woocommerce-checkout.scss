@@ -1,29 +1,16 @@
 form.woocommerce-checkout {
-	
+
 	@include make-row();
 }
 
-.woocommerce-checkout__info {
-
-	@include make-col-ready();
-	@include make-col(6);
-
-	@include media-breakpoint-up(lg) {
-
-		@include make-col(7);
-	}
-}
-
-.woocommerce-checkout__review {
-
-	@include make-col-ready();
-	@include make-col(6);
-
-	@include media-breakpoint-up(lg) {
-
-		@include make-col(5);
-	}
-}
+@include responsiveMap( (
+	sm: 12,
+	md: 6,
+	lg: 7,
+	),
+	".woocommerce-checkout__info",
+	".woocommerce-checkout__review"
+);
 
 .woocommerce-checkout-review-order {
 	padding: $spacer;
@@ -98,6 +85,7 @@ form.woocommerce-checkout {
 }
 
 .payment_method_paypal {
+
 	img {
 		display: none;
 	}
@@ -124,19 +112,19 @@ form.woocommerce-checkout {
 	top: $spacer;
 
 	.admin-bar & {
-		top: calc( 32px + #{$spacer} );
+		top: calc(32px + #{$spacer});
 	}
 }
 
 .woocommerce-form-coupon {
-	margin-bottom: ( $spacer * 1.5 );
+	margin-bottom: ($spacer * 1.5);
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 
 	p:first-child {
 		font-size: $font-size-xs;
-		margin: 0 0 ( $spacer / 2 );
+		margin: 0 0 ($spacer / 2);
 		width: 100%;
 	}
 
@@ -163,6 +151,7 @@ form.woocommerce-checkout {
 }
 
 .woocommerce-form-login-toggle {
+
 	.woocommerce-info {
 
 		@include card--primary;

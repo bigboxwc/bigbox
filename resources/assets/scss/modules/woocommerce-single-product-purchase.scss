@@ -22,6 +22,7 @@
 }
 
 .woocommerce-purchase-form {
+
 	@include card;
 
 	padding: $spacer;
@@ -43,15 +44,18 @@
 
 .add-to-cart .quantity,
 .add-to-cart__action {
+
 	@extend .action-list__item;
 }
 
 .add-to-cart label,
 .add-to-cart__action-label {
+
 	@extend .action-list__item-label;
 }
 
 .action-form__action-value {
+
 	@extend .action-list__item-value;
 }
 

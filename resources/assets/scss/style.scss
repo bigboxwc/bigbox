@@ -15,6 +15,7 @@
 // Bootstrap
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/bootstrap-grid";
+@import "~bootstrap/scss/functions";
 
 // Choices
 @import "~choices.js/assets/styles/scss/choices";
@@ -23,10 +24,8 @@
  * Internal dependencies
  */
 
-// Color system.
-@import "functions/colors";
-
 // Mixins
+@import "mixins/responsiveMap";
 @import "mixins/button";
 @import "mixins/form";
 @import "mixins/link";
@@ -36,7 +35,6 @@
 // Helpers
 @import "helpers/animation-spin";
 @import "helpers/align";
-@import "helpers/ui";
 @import "helpers/screen-reader-text";
 @import "helpers/type";
 
@@ -64,7 +62,6 @@
 @import "modules/form-row-group";
 @import "modules/form-label";
 @import "modules/form-input";
-
 @import "modules/select2";
 
 // Navbar
@@ -93,27 +90,19 @@
 @import "modules/facetwp";
 @import "modules/ordering";
 @import "modules/breadcrumbs";
-
-@import "modules/woocommerce"; // Override some low level WooCommerce systems.
-
+@import "modules/woocommerce";
 @import "modules/woocommerce-products-header";
-@import "modules/woocommerce-widget-layered-nav-list";
 @import "modules/woocommerce-message";
-
 @import "modules/woocommerce-single-product-gallery";
 @import "modules/woocommerce-single-product";
 @import "modules/woocommerce-single-product-purchase";
 @import "modules/woocommerce-single-product-reviews";
-
 @import "modules/woocommerce-cart";
 @import "modules/woocommerce-cart-form";
 @import "modules/woocommerce-cart-continue";
-
 @import "modules/woocommerce-checkout";
-
 @import "modules/woocommerce-account";
 @import "modules/woocommerce-form-login";
-
 @import "modules/woocommerce-pagination";
 
 // Product card

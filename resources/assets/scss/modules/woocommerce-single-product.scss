@@ -1,8 +1,9 @@
 .single-product {
+
 	.site-primary > .product {
 		display: block;
-		margin-left: -( $grid-gutter-width / 2 );
-		margin-right: -( $grid-gutter-width / 2 );
+		margin-left: -($grid-gutter-width / 2);
+		margin-right: -($grid-gutter-width / 2);
 
 		@include media-breakpoint-up(lg) {
 			display: flex;
@@ -97,7 +98,9 @@
 
 .products,
 .woocommerce-single-product-data__section {
+
 	> h2 {
+
 		@include single-product-section-title;
 	}
 

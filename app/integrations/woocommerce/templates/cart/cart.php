@@ -32,12 +32,15 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 		<?php
 		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) :
-			wc_get_template( 'cart/cart-item.php', [
-				'cart_item_key' => $cart_item_key,
-				'cart_item'     => $cart_item,
-			] );
+			wc_get_template(
+				'cart/cart-item.php', [
+					'cart_item_key' => $cart_item_key,
+					'cart_item'     => $cart_item,
+				]
+			);
 		endforeach;
-		?> 
+		?>
+		 
 
 		<?php do_action( 'woocommerce_cart_contents' ); ?>
 
@@ -52,11 +55,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<div class="cart-collaterals">
 		<?php
 			/**
-			* Cart collaterals hook.
-			*
-			* @hooked woocommerce_cross_sell_display
-			* @hooked woocommerce_cart_totals - 10
-			*/
+			 * Cart collaterals hook.
+			 *
+			 * @hooked woocommerce_cross_sell_display
+			 * @hooked woocommerce_cart_totals - 10
+			 */
 			do_action( 'woocommerce_cart_collaterals' );
 		?>
 	</div>

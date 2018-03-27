@@ -26,8 +26,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param array $page_templates The current list of templates.
  */
 function bigbox_page_templates( $page_templates ) {
-	$page_templates['resources/views/layout/narrow.php'] = esc_html__( 'Narrow-width', 'bigbox' );
-	$page_templates['resources/views/layout/minimal.php'] = esc_html__( 'Minimal', 'bigbox' );
+	$page_templates['resources/views/layout/narrow.php']    = esc_html__( 'Narrow-width', 'bigbox' );
+	$page_templates['resources/views/layout/minimal.php']   = esc_html__( 'Minimal', 'bigbox' );
 	$page_templates['resources/views/layout/minimal-5.php'] = esc_html__( 'Minimal (Narrow-width)', 'bigbox' );
 
 	return $page_templates;

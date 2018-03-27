@@ -5,7 +5,7 @@
 
 .woocommerce-cart-wrapper__content {
 	order: 2;
-	
+
 	@include make-col-ready();
 
 	width: auto;
@@ -23,7 +23,7 @@
 		md: 5,
 		lg: 4,
 	);
-	
+
 	@each $bp, $cols in $formBp {
 
 		@include media-breakpoint-up($bp) {

@@ -1,0 +1,49 @@
+// Given a map of responsive breakpoints and column widths create a
+// responsive two column layout using hte remaining column withs to
+// calculate the second column.
+// 
+// 
+// @include responsiveMap( (
+// 		sm: 12,
+// 		md: 6,
+// 		lg: 7,
+// 	),
+// 	".woocommerce-checkout__info",
+// 	".woocommerce-checkout__review"
+// );
+//
+@mixin responsiveMap( $map: "", $columnA: "", $columnB: "" ) {
+
+	#{$columnA},
+	#{$columnB} {
+
+		@include make-col-ready();
+	}
+
+	@each $bp, $cols in $map {
+
+		#{$columnA} {
+
+			@include media-breakpoint-up($bp) {
+
+				@include make-col($cols);
+			}
+		}
+
+		#{$columnB} {
+
+			@include media-breakpoint-up($bp) {
+
+				@if 12 == $cols {
+
+					@include make-col(12);
+				} @else {
+
+					@include make-col( $grid-columns - $cols );
+				}
+			}
+		}
+
+	}
+
+}

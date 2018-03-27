@@ -1,6 +1,7 @@
 $headings: 1, 2, 3, 4, 5, 6;
 
 @each $heading in $headings {
+
 	h#{$heading} {
 		color: theme-color("dark");
 		font-weight: $font-weight-bold;
