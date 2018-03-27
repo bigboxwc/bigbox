@@ -32,7 +32,9 @@ while ( have_posts() ) :
 		<div class="woocommerce-cart-wrapper__purchase-form woocommerce-cart-continue">
 
 			<div class="woocommerce-purchase-form">
-				<?php woocommerce_cart_totals(); ?>
+				<div id="bigbox-cart-totals">
+					<?php woocommerce_cart_totals(); ?>
+				</div>
 			</div>
 
 			<?php if ( wc_coupons_enabled() ) : ?>
@@ -43,6 +45,8 @@ while ( have_posts() ) :
 		<?php endif; ?>
 
 	</div>
+
+	<?php woocommerce_cross_sell_display(); ?>
 
 	<div class="hentry">
 		<?php echo apply_filters( 'the_content', str_replace( '[woocommerce_cart]', '', get_post()->post_content ) ); ?>

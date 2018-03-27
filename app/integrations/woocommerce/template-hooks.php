@@ -127,6 +127,7 @@ add_filter( 'wc_product_enable_dimensions_display', '__return_true' );
  */
 
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cart_totals' );
+remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 
 /**
  * @see wc-formatting-functions.php

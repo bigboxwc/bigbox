@@ -37,3 +37,8 @@
 .cart-empty {
 	margin-top: 0;
 }
+
+.cross-sells h2 {
+
+	@include single-product-section-title();
+}

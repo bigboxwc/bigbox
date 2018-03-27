@@ -134,7 +134,6 @@ function bigbox_update_cart_review() {
 		[
 			'data' => [
 				'review' => bigbox_get_cart_review_html(),
-				'totals' => bigbox_get_totals_html(),
 			],
 		]
 	);
