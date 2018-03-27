@@ -32,22 +32,3 @@ export const transformInput = function( $qty, variation = false ) {
 			.append( $( `<option value=${i} ${ i == selectedValue ? 'selected' : ''}>${i}</option>` ) );
 	}
 };
-
-$(function() {
-
-	$( 'form.cart' ).each( function() {
-		const $form = $( this );
-		const $qty  = $form.find( '.qty' );
-
-		// Variation update.
-		$form.on( 'show_variation', function() {
-			transformInput( $qty );
-
-			$( this ).addClass( 'woocommerce-variation--loaded' );
-		} );
-
-		// All.
-		transformInput( $qty, false );
-	} );
-
-});

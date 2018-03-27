@@ -8,7 +8,7 @@
 	@include card;
 
 	.wc-forward {
-		margin-right: -( $spacer / 2 );
+		margin: -( $spacer / 2 );
 		padding: 10px 20px;
 		margin-left: auto;
 		order: 1;

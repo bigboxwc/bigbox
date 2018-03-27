@@ -12,7 +12,7 @@ import { transformInput } from './quantity';
 export const partials = {
 	cart:   '#bigbox-cart',
 	totals: '#bigbox-cart-totals',
-	review: '#bigbox-review-cart',
+	review: '#bigbox-cart-review',
 }
 
 /**
@@ -64,7 +64,7 @@ export const updatePartials = ( response ) => {
 /**
  * Update cart contents when quantity changes.
  */
-$( partials.cart ).on( 'change', '.qty', function() {
+$( '#bigbox-cart' ).on( 'change', '.qty', function() {
 	blockPartials();
 
 	wp.ajax.send( 'bigbox_update_cart', {

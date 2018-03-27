@@ -37,7 +37,8 @@ if ( ! empty( $tabs ) ) : ?>
 	foreach ( $tabs as $key => $tab ) :
 		if ( isset( $tab['callback'] ) ) :
 			ob_start();
-			call_user_func( $tab['callback'], $key, $tab );
+
+			call_user_func( $tab['callback'] );
 
 			$content = trim( ob_get_clean() );
 
@@ -48,11 +49,11 @@ if ( ! empty( $tabs ) ) : ?>
 			<?php echo $content; ?>
 		</div>
 
-		<?php
+	<?php
 			endif;
-			endif;
-		endforeach;
-		?>
+		endif;
+	endforeach;
+	?>
 
 	</div>
 

@@ -113,7 +113,7 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 add_action( 'bigbox_purchase_form', 'woocommerce_template_single_sharing', 20 );
 
 // Remove related and upsells (added back with tabs).
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15, 4 );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
 // Add product meta to the Additional Information tab.
