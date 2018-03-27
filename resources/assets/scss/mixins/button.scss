@@ -1,5 +1,6 @@
 @mixin button {
 	font: $font-weight-normal #{$font-size-base}/#{$line-height-base} $font-family-sans-serif;
+	text-decoration: none;
 	text-align: center;
 	cursor: pointer;
 	padding: 10px 20px;
@@ -73,7 +74,7 @@
 	background-color: theme-color("success");
 
 	&:hover {
-		background-color: darken(theme-color("success"), 10%);
+		background-color: darken(theme-color("success"), 5%);
 	}
 }
 

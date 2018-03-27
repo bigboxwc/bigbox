@@ -1,6 +1,6 @@
 .woocommerce-info,
 .woocommerce-message,
-.woocommerce-NoticeGroup li {
+.woocommerce-error li {
 	overflow: hidden;
 	margin: 0 0 ( $spacer * 2 );
 	padding: $spacer;
@@ -9,32 +9,29 @@
 
 	.wc-forward {
 		margin: -( $spacer / 2 );
+		margin-left: $spacer;
 		padding: 10px 20px;
-		margin-left: auto;
-		order: 1;
+		float: right;
 
 		@include button--success;
 		@include button--size-sm;
 	}
 }
 
-.woocommerce-message {
-	display: flex;
-	align-items: center;
-}
-
 .woocommerce-NoticeGroup {
 	width: 100%;
 
-	.woocommerce-error {
+	@include make-col-ready();
+}
 
-		@include make-col-ready();
-		margin: 0;
-		list-style: none;
+.woocommerce-error {
 
-		li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
 
-			@include card--error;
-		}
+	li {
+
+		@include card--error;
 	}
 }

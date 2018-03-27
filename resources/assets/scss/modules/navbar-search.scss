@@ -37,7 +37,6 @@
 }
 
 .navbar-search__keywords {
-	order: 1;
 	flex: 1;
 
 	[type="search"] {
@@ -48,8 +47,6 @@
 }
 
 .navbar-search__submit {
-	order: 2;
-
 	[type="submit"] {
 
 		@include form-input;

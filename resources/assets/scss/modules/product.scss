@@ -91,6 +91,10 @@
 	.product:only-child & {
 		border-bottom: 0;
 	}
+
+	a {
+		text-decoration: none;
+	}
 }
 
 .product__preview {

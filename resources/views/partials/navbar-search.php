@@ -20,11 +20,6 @@ endif;
 
 <form action="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" method="GET" class="navbar-search">
 
-	<div class="navbar-search__keywords">
-		<label for="s" class="screen-reader-text"><?php esc_html_e( 'Find a product:', 'bigbox' ); ?></label>
-		<input type="search" name="s" class="form-input" placeholder="<?php esc_html_e( 'Find a product...', 'bigbox' ); ?>" />
-	</div>
-
 	<?php
 	$categories = get_terms(
 		[
@@ -47,6 +42,11 @@ endif;
 	</div>
 
 	<?php endif; ?>
+
+	<div class="navbar-search__keywords">
+		<label for="s" class="screen-reader-text"><?php esc_html_e( 'Find a product:', 'bigbox' ); ?></label>
+		<input type="search" name="s" class="form-input" placeholder="<?php esc_html_e( 'Find a product...', 'bigbox' ); ?>" />
+	</div>
 
 	<div class="navbar-search__submit">
 		<button type="submit" name="submit" aria-title="<?php esc_attr_e( 'Search', 'bigbox' ); ?>">
