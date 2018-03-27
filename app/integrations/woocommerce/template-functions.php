@@ -199,7 +199,7 @@ function bigbox_woocommerce_product_tabs( $tabs ) {
  * @since 1.0.0
  */
 function bigbox_woocommerce_product_additional_information() {
-	global $product;
+	$product = wc_get_product( get_post() );
 
 	if ( wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( 'variable' ) ) ) :
 ?>

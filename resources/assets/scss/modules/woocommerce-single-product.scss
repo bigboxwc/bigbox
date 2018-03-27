@@ -116,7 +116,7 @@
 	margin-left: 8px;
 }
 
-.shop_attributes {
+.shop_attributes:not(:blank) {
 	width: 100%;
 	margin-top: $spacer;
 }
