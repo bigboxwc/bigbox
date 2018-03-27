@@ -27,7 +27,15 @@ function bigbox_woocommerce_page_templates( $templates ) {
 	}
 
 	if ( is_checkout() ) {
-		$templates = array_merge( [ bigbox_woocommerce_template_path() . 'checkout.php' ], $templates );
+		$templates = array_merge( [ 'resources/views/layout/minimal.php' ], $templates );
+	}
+
+	if ( is_account_page() && ! is_user_logged_in() ) {
+		if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) {
+			$templates = array_merge( [ 'resources/views/layout/minimal.php' ], $templates );
+		} else {
+			$templates = array_merge( [ 'resources/views/layout/minimal-5.php' ], $templates );
+		}
 	}
 
 	return $templates;

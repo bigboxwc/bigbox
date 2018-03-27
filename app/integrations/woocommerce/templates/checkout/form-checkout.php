@@ -54,7 +54,7 @@ endif;
 	</div>
 
 	<div class="woocommerce-checkout__review ">
-		<h3 id="order_review_heading"><?php _e( '3. Order Summary', 'woocommerce' ); ?></h3>
+		<h3 id="order_review_heading"><?php _e( 'Order Summary', 'woocommerce' ); ?></h3>
 
 		<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 

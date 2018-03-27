@@ -8,12 +8,19 @@
 
 		@include make-row();
 
+		.woocommerce-form {
+
+			@include make-row();
+		}
+
+		.woocommerce-LostPassword,
 		.form-row {
 
 			@include make-col-ready();
 			@include form-row;
 		}
 
+		.woocommerce-LostPassword,
 		.form-row--wide {
 
 			@include make-col(12);
@@ -29,6 +36,10 @@
 				@include make-col(6);
 			}
 		}
+	}
+
+	.col2-set {
+		margin-top: -( $spacer );
 	}
 
 	.col-1,

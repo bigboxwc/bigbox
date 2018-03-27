@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Narrow-width
+ * Template Name: Minimal (Narrow)
  *
  * @since 1.0.0
  * @version 1.0.0
@@ -14,13 +14,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-bigbox_view( 'global/header' );
+bigbox_view( 'global/header-min' );
 
 while ( have_posts() ) :
 	the_post();
 ?>
 
-<div id="main" class="site-primary site-primary--10" role="main">
+<div id="main" class="site-primary site-primary--5" role="main">
 	<h1 class="page-title"><?php the_title(); ?></h1>
 
 	<article class="hentry">
@@ -31,4 +31,4 @@ while ( have_posts() ) :
 <?php
 endwhile;
 
-bigbox_view( 'global/footer' );
+bigbox_view( 'global/footer-min' );
