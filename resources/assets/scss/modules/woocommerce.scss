@@ -65,4 +65,11 @@
 
 		@include form-input;
 	}
+
+	// Lessen the input to select "flash"
+	.input-text.qty {
+		font-size: $font-size-xs;
+		padding: 1px 5px;
+		max-width: 30px;
+	}
 }
