@@ -48,7 +48,7 @@ function bigbox_add_theme_support() {
 	add_theme_support(
 		'custom-logo', [
 			'flex-width'  => true,
-			'header-text' => [ 'site-title' ],
+			'header-text' => true,
 		]
 	);
 }
