@@ -4,7 +4,6 @@ $( () => {
 
 	$real = $( '#navbar-search__category select:first-of-type' );
 	$fake = $( '#navbar-search__category select:last-of-type' )
-	console.log($real);
 
 	$real.change( () => {
 		$fake.find( 'option' ).html( $real.find( 'option:selected' ).text() );
