@@ -72,12 +72,12 @@ $product_thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product
 
 				<del class="subtotal">
 				<?php
-				echo esc_html( sprintf(
+				printf(
 					// Translators: %1$s cart item quantity. %2$s Cart item price.
 					__( '%1$s &times %2$s', 'bigbox' ),
-					$cart_item['quantity'],
+					absint( $cart_item['quantity'] ),
 					apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ) // PHPCS: XSS ok.
-				) );
+				);
 				?>
 				</del>
 			</div>
