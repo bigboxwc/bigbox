@@ -11,7 +11,7 @@ export const transformInput = function( $qty, variation = false ) {
 	// Remove any existing.
 	$original.detach();
 
-	const selectedValue = variation ? 0 : $original.val();
+	const selectedValue = variation ? 0 : ( $original.val() ? parseInt( $original.val() ) : 0 );
 
 	const min = variation.min_qty || $original.attr( 'min' );
 	let max = variation.max_qty || $original.attr( 'max' );
