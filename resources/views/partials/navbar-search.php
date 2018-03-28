@@ -31,7 +31,7 @@ endif;
 	?>
 
 	<div class="navbar-search__category">
-		<label for="s" class="screen-reader-text"><?php esc_html_e( 'Choose a category:', 'bigbox' ); ?></label>
+		<label for="product_cat" class="screen-reader-text"><?php esc_html_e( 'Choose a category:', 'bigbox' ); ?></label>
 
 		<select name="product_cat">
 			<option value=""><?php esc_html_e( 'All Categories', 'bigbox' ); ?></option>

@@ -74,3 +74,17 @@
 		}
 	}
 }
+
+.facetwp-search-wrap {
+	display: flex;
+
+	.facetwp-btn {
+		top: 9px;
+		right: 9px;
+
+		&:before {
+			background-size: 19px;
+			background-position: center center;
+		}
+	}
+}
