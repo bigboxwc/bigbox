@@ -19,6 +19,9 @@ add_filter( 'woocommerce_enqueue_styles', 'bigbox_woocommerce_enqueue_styles' );
 // Look in the integration for templates.
 add_filter( 'woocommerce_template_path', 'bigbox_woocommerce_template_path' );
 
+// Modify global JS settings.
+add_filter( 'bigboxJsSettings', 'bigbox_woocommerce_js_settings' );
+
 /**
  * archive-product.php.
  */

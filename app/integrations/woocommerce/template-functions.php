@@ -41,6 +41,24 @@ function bigbox_woocommerce_template_path() {
 }
 
 /**
+ * JS settings.
+ *
+ * @since 1.0.0
+ *
+ * @param array $settings Javascript settings.
+ * @return array
+ */
+function bigbox_woocommerce_js_settings( $settings ) {
+	$settings['products'] = [
+		'quantitySelector' => [
+			'max' => 30,
+		],
+	];
+
+	return $settings;
+}
+
+/**
  * Adjust opening wrapper tag.
  *
  * @since 1.0.0

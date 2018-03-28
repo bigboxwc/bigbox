@@ -2,7 +2,7 @@
 .breadcrumbs,
 .woocommerce-breadcrumb {
 	font-size: $font-size-xs;
-	background: gray("100");
+	background: rgba(theme-color("primary"), 0.03);
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;

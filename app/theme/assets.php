@@ -47,8 +47,8 @@ function bigbox_enqueue_scripts() {
 
 	// Send information to application scripts.
 	wp_localize_script(
-		$stylesheet, 'BigBox', apply_filters(
-			'bigbox_i18n', []
+		$stylesheet, 'bigbox', apply_filters(
+			'bigboxJsSettings', []
 		)
 	);
 }
