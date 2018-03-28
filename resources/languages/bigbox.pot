@@ -2,50 +2,16 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: BigBox @@pkg.version\n"
+"Project-Id-Version: BigBox BIGBOX_VERSION\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/bigbox-theme\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2018-02-18T01:32:40+00:00\n"
-"PO-Revision-Date: 2018-02-18T01:32:40+00:00\n"
+"POT-Creation-Date: 2018-03-28T20:54:36+00:00\n"
+"PO-Revision-Date: 2018-03-28T20:54:36+00:00\n"
 "X-Domain: bigbox\n"
-
-#: functions.php:29
-msgid "BigBox requires PHP version <code>%s</code> or above to be active. Please contact your web host to upgrade."
-msgstr ""
-
-#: app/nux/class-setupguide.php:43
-msgid "Enable Automatic Updates"
-msgstr ""
-
-#: app/nux/class-setupguide.php:46
-msgid "Recommended Plugins"
-msgstr ""
-
-#: app/nux/class-setupguide.php:49
-msgid "Install WooCommerce"
-msgstr ""
-
-#. Theme Name of the theme
-#: app/nux/class-setupguide.php:72
-#: app/nux/class-setupguide.php:73
-msgid "BigBox"
-msgstr ""
-
-#: app/nux/class-setupguide.php:114
-msgid "Enter license key..."
-msgstr ""
-
-#: app/nux/class-setupguide.php:115
-msgid "Activate License"
-msgstr ""
-
-#: app/theme/svg.php:59
-msgid "Please define an SVG icon filename."
-msgstr ""
 
 #: app/exception/class-invalidintegration.php:37
 msgid "The integration \"%s\" is not recognized and cannot be registered."
@@ -55,45 +21,461 @@ msgstr ""
 msgid "The service \"%s\" is not recognized and cannot be registered."
 msgstr ""
 
-#: resources/views/nux/admin-page.php:21
-msgid "🎉 Welcome to BigBox"
+#: app/integrations/facetwp/template-functions.php:42
+#: app/integrations/woocommerce/template-functions.php:309
+msgid "&larr; Previous Page"
 msgstr ""
 
-#: resources/views/nux/admin-page.php:24
+#: app/integrations/facetwp/template-functions.php:46
+#: app/integrations/woocommerce/template-functions.php:310
+msgid "Next Page &rarr;"
+msgstr ""
+
+#: app/integrations/facetwp/template-functions.php:73
+#: app/integrations/woocommerce/templates/loop/result-count.php:27
+msgid "Showing the single result"
+msgid_plural "Showing all %d results"
+msgstr[0] ""
+
+#: app/integrations/facetwp/template-functions.php:78
+msgid "Showing %1$s&ndash;%2$s of %3$s results"
+msgstr ""
+
+#: app/integrations/woocommerce/checkout.php:43
+msgid "2. Billing Details"
+msgstr ""
+
+#: app/integrations/woocommerce/checkout.php:47
+msgid "2. Billing &amp; Shipping"
+msgstr ""
+
+#: app/integrations/woocommerce/checkout.php:83
+msgid "Apartment, suite, etc"
+msgstr ""
+
+#: app/integrations/woocommerce/template-functions.php:149
+msgid "See More Options"
+msgstr ""
+
+#: app/integrations/woocommerce/template-functions.php:185
+msgid "Product description"
+msgstr ""
+
+#: app/integrations/woocommerce/template-functions.php:191
+msgid "Product information"
+msgstr ""
+
+#: app/integrations/woocommerce/template-functions.php:196
+msgid "You may also enjoy"
+msgstr ""
+
+#: app/integrations/woocommerce/template-functions.php:202
+msgid "Related products"
+msgstr ""
+
+#: app/integrations/woocommerce/template-functions.php:226
+msgid "SKU:"
+msgstr ""
+
+#: app/integrations/woocommerce/template-functions.php:227
+msgid "N/A"
+msgstr ""
+
+#: app/integrations/woocommerce/template-functions.php:234
+msgid "Category:"
+msgid_plural "Categories:"
+msgstr[0] ""
+
+#: app/integrations/woocommerce/template-functions.php:236
+msgid "Tag:"
+msgid_plural "Tags:"
+msgstr[0] ""
+
+#: app/integrations/woocommerce/template-functions.php:256
+msgid "%1$s average rating"
+msgstr ""
+
+#: app/integrations/woocommerce/template-functions.php:259
+msgid "%1$s customer ratings"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/cart/cart-item.php:66
+msgid "Available on backorder"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/cart/cart-item.php:77
+msgid "%1$s &times %2$s"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/cart/cart-shipping.php:32
+#: app/integrations/woocommerce/templates/cart/cart-totals.php:66
+msgid "Calculate shipping"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/cart/cart-shipping.php:85
+msgid "There are no shipping methods available. Please ensure that your address has been entered correctly, or contact us if you need any help."
+msgstr ""
+
+#: app/integrations/woocommerce/templates/cart/cart-shipping.php:91
+msgid "Enter your full address to see shipping costs."
+msgstr ""
+
+#: app/integrations/woocommerce/templates/cart/cart-totals.php:32
+msgid "Subtotal"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/cart/cart-totals.php:63
+msgid "Shipping"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/cart/cart-totals.php:90
+msgid "est. for %s"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/cart/cart-totals.php:125
+msgid "Total"
+msgstr ""
+
+#. Template Name of the theme
+#: resources/views/partials/navbar-primary-menu.php:38
+msgid "Cart"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/cart.php:41
+msgid "Do you have a gift card or promotional code? We'll ask you to enter your claim code when it's time to pay."
+msgstr ""
+
+#: app/integrations/woocommerce/templates/checkout/form-checkout.php:27
+msgid "You must be logged in to checkout."
+msgstr ""
+
+#: app/integrations/woocommerce/templates/checkout/form-checkout.php:57
+msgid "Order Summary"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/checkout/payment.php:23
+msgid "1. Payment Method"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/checkout/payment.php:35
+msgid "Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements."
+msgstr ""
+
+#: app/integrations/woocommerce/templates/checkout/payment.php:35
+msgid "Please fill in your details above to see available payment methods."
+msgstr ""
+
+#: app/integrations/woocommerce/templates/checkout/submit.php:23
+msgid "Pay for order"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/checkout/submit.php:33
+msgid "Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so."
+msgstr ""
+
+#: app/integrations/woocommerce/templates/checkout/submit.php:35
+msgid "Update totals"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Checkout"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/global/quantity-input.php:28
+#: app/integrations/woocommerce/templates/global/quantity-input.php:68
+msgid "Quantity"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/global/quantity-input.php:64
+#: app/integrations/woocommerce/templates/single-product/add-to-cart/quantity.php:17
+msgid "%s quantity"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/global/quantity-input.php:79
+#: app/integrations/woocommerce/templates/single-product/add-to-cart/quantity.php:30
+msgctxt "Product quantity input tooltip"
+msgid "Qty"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/loop/result-count.php:32
+msgctxt "with first and last result"
+msgid "Showing the single result"
+msgid_plural "Showing %1$d&ndash;%2$d of %3$d results"
+msgstr[0] ""
+
+#: app/integrations/woocommerce/templates/loop/sale-flash.php:28
+msgid "Save %1$s%%"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/loop/sale-flash.php:30
+msgid "Sale!"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product/add-to-cart/variable.php:31
+msgid "This product is currently out of stock and unavailable."
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product/add-to-cart/variable.php:56
+msgid "Select an option"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product/product-image.php:52
+msgid "Awaiting product image"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:31
+msgid "Product reviews"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:57
+msgid "There are no reviews yet."
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:70
+msgid "Add a review"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:71
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:76
+msgid "Name"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:78
+msgid "Email"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:81
+msgid "Submit"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:87
+msgid "You must be <a href=\"%s\">logged in</a> to post a review."
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:91
+msgid "Your rating"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:92
+msgid "Rate&hellip;"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:93
+msgid "Perfect"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:94
+msgid "Good"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:95
+msgid "Average"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:96
+msgid "Not that bad"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:97
+msgid "Very poor"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:101
+msgid "Your review"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:110
+msgid "Only logged in customers who have purchased this product may leave a review."
+msgstr ""
+
+#: app/integrations/woocommerce/widgets.php:24
+msgid "Shop Sidebar (Left)"
+msgstr ""
+
+#: app/integrations/woocommerce/widgets.php:36
+msgid "Shop Sidebar (Right)"
+msgstr ""
+
+#: app/nux/class-setup-guide.php:44
+msgid "Enable Automatic Updates"
+msgstr ""
+
+#: app/nux/class-setup-guide.php:48
+msgid "Optimize Your Website"
+msgstr ""
+
+#: app/nux/class-setup-guide.php:52
+msgid "Customize Appearance"
+msgstr ""
+
+#: app/nux/class-setup-guide.php:59
+msgid "Install WooCommerce"
+msgstr ""
+
+#. Theme Name of the theme
+#: app/nux/class-setup-guide.php:110
+#: app/nux/class-setup-guide.php:111
+msgid "BigBox"
+msgstr ""
+
+#: app/nux/license-manager/class-license-manager.php:118
+msgid "Enter license key..."
+msgstr ""
+
+#: app/nux/license-manager/class-license-manager.php:119
+msgid "Activate License"
+msgstr ""
+
+#: app/nux/license-manager/class-license-manager.php:120
+msgid "License Status"
+msgstr ""
+
+#: app/nux/license-manager/class-license-manager.php:121
+msgid "Valid"
+msgstr ""
+
+#: app/nux/license-manager/class-license-manager.php:122
+msgid "Invalid"
+msgstr ""
+
+#: app/nux/license-manager/class-theme-updater.php:178
+msgctxt "admin menu item update count"
+msgid "Themes %s"
+msgstr ""
+
+#: app/theme/customize.php:30
+msgid "Not output but used for SEO"
+msgstr ""
+
+#: app/theme/customize.php:33
+msgid "Display Site Title"
+msgstr ""
+
+#: app/theme/nav-menus.php:23
+msgid "Primary Left"
+msgstr ""
+
+#: app/theme/nav-menus.php:24
+msgid "Primary Right"
+msgstr ""
+
+#. Template Name of the theme
+#: app/theme/page-templates.php:29
+msgid "Narrow-width"
+msgstr ""
+
+#. Template Name of the theme
+#: app/theme/page-templates.php:30
+msgid "Minimal"
+msgstr ""
+
+#: app/theme/page-templates.php:31
+msgid "Minimal (Narrow-width)"
+msgstr ""
+
+#: app/theme/svg.php:59
+msgid "Please define an SVG icon filename."
+msgstr ""
+
+#: app/theme/widgets.php:29
+msgid "Footer Navigation Column %d"
+msgstr ""
+
+#: functions.php:29
+msgid "BigBox requires PHP version <code>%s</code> or above to be active. Please contact your web host to upgrade."
+msgstr ""
+
+#: resources/views/layout/index.php:21
+msgid "Blog"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Minimal (Narrow)"
+msgstr ""
+
+#: resources/views/nux/admin-page.php:20
+msgid "📦 Welcome to BigBox"
+msgstr ""
+
+#: resources/views/nux/admin-page.php:23
 msgid "Use the steps below to finish setting up your new website."
 msgstr ""
 
-#: resources/views/nux/admin-page.php:28
+#: resources/views/nux/admin-page.php:31
 msgid "Search Documentation"
 msgstr ""
 
-#: resources/views/nux/admin-page.php:29
+#: resources/views/nux/admin-page.php:32
 msgid "Contact Support"
 msgstr ""
 
-#: resources/views/nux/steps/install-plugins.php:51
-#: resources/views/nux/steps/install-plugins.php:52
+#: resources/views/nux/steps/install-plugins.php:39
 msgid "Get %s"
 msgstr ""
 
-#: resources/views/nux/steps/install-plugins.php:56
+#: resources/views/nux/steps/install-plugins.php:41
 msgid "More information about %s"
 msgstr ""
 
-#: resources/views/nux/steps/install-plugins.php:57
+#: resources/views/nux/steps/install-plugins.php:65
 msgid "More Details"
 msgstr ""
 
-#: resources/views/nux/steps/install-plugins.php:74
+#: resources/views/nux/steps/install-plugins.php:82
 msgid "Read More on the Blog"
 msgstr ""
 
-#: resources/views/nux/steps/activate.php:17
-msgid "Please enter the license key received with your purchase to enable automatic updates and ensure your website stays up to date and secure."
+#: resources/views/nux/steps/license-manager.php:22
+msgid "Please enter the license key received with your purchase to enable automatic updates and ensure your website stays up to date and secure. You can find your license key on your %1$sBigBox account page%2$s."
+msgstr ""
+
+#: resources/views/nux/steps/license-manager.php:26
+msgid "Unable to load license manager. Please enable Javascript."
+msgstr ""
+
+#: resources/views/partials/navbar-mobile.php:17
+msgid "Open menu"
+msgstr ""
+
+#: resources/views/partials/navbar-mobile.php:22
+#: resources/views/partials/navbar-mobile.php:27
+msgid "Close menu"
+msgstr ""
+
+#: resources/views/partials/navbar-mobile.php:22
+msgid "Close"
+msgstr ""
+
+#: resources/views/partials/navbar-primary-menu.php:28
+msgid "Account"
+msgstr ""
+
+#: resources/views/partials/navbar-search.php:34
+msgid "Choose a category:"
+msgstr ""
+
+#: resources/views/partials/navbar-search.php:37
+#: resources/views/partials/navbar-search.php:44
+msgid "All Categories"
+msgstr ""
+
+#: resources/views/partials/navbar-search.php:51
+msgid "Find a product:"
+msgstr ""
+
+#: resources/views/partials/navbar-search.php:52
+msgid "Find a product..."
+msgstr ""
+
+#: resources/views/partials/navbar-search.php:56
+msgid "Search"
 msgstr ""
 
 #. Theme URI of the theme
-msgid "https://bigboxwp.com"
+msgid "https://bigboxwc.com"
 msgstr ""
 
 #. Description of the theme
