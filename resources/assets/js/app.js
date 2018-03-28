@@ -6,9 +6,10 @@
 // @see webpack.config.js
 import '../scss/nux.scss';
 import '../scss/style.scss';
+
 import '../images/*.svg';
-import '../images/nux/*.png';
 import '../images/icons/*.svg';
+import '../images/nux/*.png';
 
 import './quantity.js';
 import './cart.js';

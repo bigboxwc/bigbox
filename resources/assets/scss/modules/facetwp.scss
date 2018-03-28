@@ -40,6 +40,29 @@
 
 .facetwp-facet {
 
+	.facetwp-slider {
+		border-color: transparent;
+		box-shadow: none;
+		background-color: gray("200");
+
+		.noUi-connect {
+			background-color: theme-color("primary");
+		}
+
+		.noUi-handle {
+			border-color: gray("300");
+			box-shadow: none;
+		}
+	}
+
+	.facetwp-slider-reset {
+		margin-top: ($spacer / 2);
+		box-shadow: none;
+
+		@include button--secondary;
+		@include button--size-xs;
+	}
+
 	.facetwp-star {
 
 		.facetwp-counter {

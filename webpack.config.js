@@ -38,7 +38,7 @@ const nuxCSS = new ExtractTextPlugin( {
 
 const config = {
 	entry: {
-		app: './resources/assets/js/app.js',
+		'app':             './resources/assets/js/app.js',
 		'license-manager': './resources/assets/js/license-manager',
 	},
 	output: {
@@ -59,8 +59,7 @@ const config = {
 					},
 					'svgo-loader',
 				],
-				include: /images/,
-				exclude: /public/,
+				include: /icons/,
 			},
 			{
 				test: /\.(png|jp(e*)g|svg)$/,
@@ -68,14 +67,14 @@ const config = {
 					{
 						loader: 'file-loader',
 						options: {
+							limit: 8000, // Convert images < 8kb to base64 strings
 							name: '[name].[ext]',
 							useRelativePath: true,
-							outputPath: './public/images/',
+							outputPath: './public/',
 						},
 					},
 				],
-				include: /images/,
-				exclude: [ /public/, /icons/ ]
+				exclude: /icons/,
 			},
 			{
 				test: /.js$/,
