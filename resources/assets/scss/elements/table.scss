@@ -2,10 +2,12 @@ table {
 	border-collapse: collapse;
 	border-style: hidden;
 	width: 100%;
-
+	
 	td,
 	th {
 		padding: ($spacer / 2) $spacer;
+		border: 1px solid gray("200");
+		vertical-align: middle;
 	}
 
 	th {
@@ -13,17 +15,12 @@ table {
 		text-align: left;
 		text-transform: uppercase;
 		font-size: $font-size-xs;
-		font-weight: $font-weight-base;
+		letter-spacing: 0.05em;
 	}
 
 	tbody {
 		box-shadow: 0 0 0 1px gray("200");
 		border-radius: $border-radius;
-
-		td {
-			border: 1px solid gray("200");
-			vertical-align: middle;
-		}
 
 		tr:nth-child(even) {
 

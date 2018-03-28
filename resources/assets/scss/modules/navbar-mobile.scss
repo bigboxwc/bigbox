@@ -32,20 +32,23 @@
 		top: 32px;
 	}
 
-	li {
-		margin-bottom: ( $spacer / 2 );
+	// [1] WordPress' built in class.
+	.navbar-menu__items .menu-item, // [1]
+	.navbar-menu__items .navbar-menu__item {
+		font-size: $font-size-base;
+		line-height: $line-height-base;
+
+		a {
+			padding: ($spacer / 2) 0;
+		}
 	}
 
 	.sub-menu {
 		font-size: $font-size-sm;
-		margin-top: ( $spacer / 2 );
+		margin: 0 0 0 ($spacer / 2);
 		padding: 0 0 0 $spacer;
 		list-style: none;
 		border-left: 1px solid gray("300");
-
-		li {
-			margin-bottom: ( $spacer / 3 );
-		}
 	}
 }
 

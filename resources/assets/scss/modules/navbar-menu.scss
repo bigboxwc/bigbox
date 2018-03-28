@@ -8,19 +8,11 @@
 
 	.menu-item,
 	.navbar-menu__item {
+		position: relative;
 
 		a {
-			color: color("white");
-			opacity: 0.95;
-			padding: 7px 10px;
-			border: 1px solid transparent;
-			border-radius: $border-radius;
-
-			&:hover {
-				opacity: 1;
-				text-decoration: none;
-				border: 1px solid rgba(color("white"), 0.2);
-			}
+			color: rgba(color("white"), 0.95);
+			padding: $spacer 10px;
 		}
 
 		&:hover .sub-menu {
@@ -29,21 +21,48 @@
 		}
 	}
 
+	.menu-item-has-children > a {
+		position: relative;
+		padding-right: ($spacer * 1.5);
+
+		&:after {
+			content: '';
+			position: absolute;
+			right: 5px;
+			top: calc(50% - 2px);
+			width: 0; 
+			height: 0; 
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-top: 4px solid color("white");
+		}
+	}
+
 	.sub-menu {
+
 		visibility: hidden;
 		opacity: 0;
 		width: 200px;
 		margin: 0;
-		padding: $spacer;
+		padding: ($spacer / 2) $spacer;
+		background: color("white");
+		border-radius: 0 0 $border-radius $border-radius;
+		box-shadow: gray("300") 0 4px 10px;
 		list-style: none;
 		position: absolute;
+		left: 0;
+		top: 100%;
 		z-index: 10;
+		transition: all 0.15s ease-in-out;
+		transform-origin: top left;
 
-		@include card;
+		li {
+			line-height: $line-height-base;
+		}
 
 		a {
-			color: initial;
-			padding: 0;
+			color: gray("600");
+			padding: ($spacer / 3) 0;
 			border: 0;
 
 			&:hover {
@@ -69,12 +88,17 @@
 
 .navbar-menu--secondary {
 	width: 100%;
-	padding-top: $spacer / 2;
-	padding-bottom: $spacer / 2;
 	border-top: 1px solid rgba(255, 255, 255, 0.05);
 	justify-content: space-between;
 	align-items: center;
 	display: none;
+
+	.menu-item,
+	.navbar-menu__item {
+		a:hover {
+			text-decoration: underline;
+		}
+	}
 
 	@include media-breakpoint-up(md) {
 		display: flex;
@@ -120,6 +144,14 @@
 		min-width: 80px;
 		padding: 4px 10px;
 		flex-direction: column;
+		border: 1px solid transparent;
+		border-radius: $border-radius;
+
+		&:hover {
+			opacity: 1;
+			text-decoration: none;
+			border: 1px solid rgba(color("white"), 0.2);
+		}
 	}
 
 	svg {

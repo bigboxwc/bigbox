@@ -13,8 +13,7 @@ $gray-700: $gray;
 $gray-800: darken($gray, 11%);
 $gray-900: darken($gray, 22%);
 
-$grays: ();
-$grays: map-merge((
+$grays: (
 	"100": $gray-100,
 	"200": $gray-200,
 	"300": $gray-300,
@@ -24,7 +23,7 @@ $grays: map-merge((
 	"700": $gray-700,
 	"800": $gray-800,
 	"900": $gray-900
-), $grays);
+);
 
 $blue:    #346bcc;
 $indigo:  #6610f2;
@@ -37,8 +36,7 @@ $green:   #8dbc54;
 $teal:    #20c997;
 $cyan:    #17a2b8;
 
-$colors: ();
-$colors: map-merge((
+$colors: (
 	"blue":       $blue,
 	"indigo":     $indigo,
 	"purple":     $purple,
@@ -52,22 +50,17 @@ $colors: map-merge((
 	"white":      $white,
 	"black":      $black,
 	"gray":       $gray-600
-), $colors);
+);
 
-$theme-colors: ();
-$theme-colors: map-merge((
+$theme-colors: (
 	"primary":    $blue,
 	"secondary":  $orange,
 	"success":    $green,
 	"info":       $cyan,
 	"warning":    $yellow,
 	"danger":     $red,
-	"light":      $gray-100,
+	"light":      rgba($blue, 0.10),
 	"dark":       $gray-700
-), $theme-colors);
-// stylelint-enable
-
-// Set a specific jump point for requesting color jumps
-$theme-color-interval: 8%;
+);
 
 $body-color: $gray-700;

@@ -2,14 +2,14 @@
 .breadcrumbs,
 .woocommerce-breadcrumb {
 	font-size: $font-size-xs;
-	background: rgba(theme-color("primary"), 0.03);
+	background: lighten(theme-color("light"), 30%);
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 
 	@include make-container();
 
-	padding: ( $spacer * 0.75 ) calc(#{$spacer} + 11px); // [1]
+	padding: ($spacer * 0.75) calc(#{$spacer} + 11px); // [1]
 
 	a {
 		color: theme-color("dark");
