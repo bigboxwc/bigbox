@@ -8,8 +8,10 @@
 }
 
 @mixin form-label {
+	cursor: pointer;
+	line-height: 1;
 	font-weight: $font-weight-bold;
-	margin: 0 0 8px;
+	margin: 0 0 ($spacer / 2);
 	display: block;
 }
 

@@ -1,31 +1,73 @@
 table {
-	border-radius: $border-radius;
-	box-shadow: 0 0 0 1px gray("300");
 	border-collapse: collapse;
 	border-style: hidden;
+	width: 100%;
+
+	td,
+	th {
+		padding: ($spacer / 2) $spacer;
+	}
 
 	th {
-		color: theme-color("dark");
+		color: gray("500");
 		text-align: left;
-		margin: 0;
+		text-transform: uppercase;
+		font-size: $font-size-xs;
+		font-weight: $font-weight-base;
 	}
 
-	th,
-	td {
-		border: 1px solid gray("300");
-		vertical-align: middle;
-		padding: 10px;
-	}
+	tbody {
+		box-shadow: 0 0 0 1px gray("200");
+		border-radius: $border-radius;
 
-	tr:nth-child(even) {
-
-		th,
 		td {
-			background: gray("100");
+			border: 1px solid gray("200");
+			vertical-align: middle;
 		}
+
+		tr:nth-child(even) {
+
+			th,
+			td {
+				background: rgba(theme-color("primary"), 0.03);
+			}
+		}
+
+		tr:first-child,
+		tr:only-child {
+
+			td {
+				border-top: 0;
+			}
+		}
+	}
+
+	tfoot {
+		tr:first-child,
+		tr:only-child {
+
+			th,
+			td {
+				padding-top: $spacer;
+			}
+		}
+
+		td {
+			font-weight: $font-weight-bold;
+		}
+	}
+
+	a {
+		text-decoration: none;
 	}
 
 	p {
 		margin-top: 0;
+	}
+
+	.button {
+
+		@include button--secondary;
+		@include button--size-xs;
 	}
 }
