@@ -1,8 +1,22 @@
-.facetwp-facet {
+.widget .facetwp-facet {
+	margin-bottom: 0;
 
-	.site-secondary & {
-		margin-bottom: 0;
+	.fs-wrap,
+	.fs-dropdown {
+		max-width: 100%;
 	}
+
+	.facetwp-star {
+		display: flex;
+		align-items: center;
+		line-height: 1;
+		margin-bottom: ($spacer / 2);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
 }
 
 .facetwp-selections {
@@ -22,4 +36,18 @@
 .facetwp-selection-label {
 	display: block;
 	margin: 0 0 0.5rem;
+}
+
+.facetwp-facet {
+
+	.facetwp-star {
+
+		.facetwp-counter {
+			display: none;
+		}
+
+		.star-icon {
+			background-image: url("../images/stars.svg");
+		}
+	}
 }
