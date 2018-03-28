@@ -30,7 +30,7 @@ endif;
 	if ( $categories && ! is_wp_error( $categories ) && ! empty( $categories ) ) :
 	?>
 
-	<div class="navbar-search__category">
+	<div id="navbar-search__category" class="navbar-search__category">
 		<label for="product_cat" class="screen-reader-text"><?php esc_html_e( 'Choose a category:', 'bigbox' ); ?></label>
 
 		<select name="product_cat">
@@ -38,6 +38,10 @@ endif;
 			<?php foreach ( $categories as $category ) : ?>
 			<option value="<?php echo esc_attr( $category->slug ); ?>"><?php echo esc_html( $category->name ); ?></option>
 			<?php endforeach; ?>
+		</select>
+
+		<select>
+			<option value=""><?php esc_html_e( 'All Categories', 'bigbox' ); ?></option>
 		</select>
 	</div>
 

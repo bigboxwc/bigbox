@@ -39,6 +39,7 @@
 }
 
 .facetwp-facet {
+	position: relative;
 
 	.facetwp-slider {
 		border-color: transparent;
@@ -55,14 +56,6 @@
 		}
 	}
 
-	.facetwp-slider-reset {
-		margin-top: ($spacer / 2);
-		box-shadow: none;
-
-		@include button--secondary;
-		@include button--size-xs;
-	}
-
 	.facetwp-star {
 
 		.facetwp-counter {
@@ -73,6 +66,15 @@
 			background-image: url("../images/stars.svg");
 		}
 	}
+}
+
+.facetwp-autocomplete-update,
+.facetwp-slider-reset {
+	margin-top: ($spacer / 2);
+	box-shadow: none;
+
+	@include button--primary;
+	@include button--size-xs;
 }
 
 .facetwp-search-wrap {
@@ -87,4 +89,10 @@
 			background-position: center center;
 		}
 	}
+}
+
+body .autocomplete-suggestions {
+	border: 1px solid gray("300");
+	border-radius: $border-radius;
+	box-shadow: gray("200") 0 1px 2px;
 }

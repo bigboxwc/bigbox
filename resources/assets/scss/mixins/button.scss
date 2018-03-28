@@ -41,8 +41,7 @@
 @mixin button--secondary {
 
 	@include button;
-	color: gray("600");
-	background-color: gray("200");
+	background-color: gray("300");
 }
 
 // [1] Gutenberg adds their own !important declaration.

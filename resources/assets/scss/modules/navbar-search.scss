@@ -33,8 +33,13 @@
 		border-right: 1px solid gray("200");
 		border-radius: $border-radius 0 0 $border-radius;
 		padding: 0 15px;
+
+		&:last-of-type {
+			display: none;
+		}
 	}
 }
+
 
 .navbar-search__keywords {
 	flex: 1;
