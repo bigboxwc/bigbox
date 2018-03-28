@@ -44,5 +44,12 @@ function bigbox_add_theme_support() {
 	add_theme_support( 'gutenberg' );
 	add_theme_support( 'align-wide' );
 	add_theme_support( 'editor-color-palette', [] );
+
+	add_theme_support(
+		'custom-logo', [
+			'flex-width'  => true,
+			'header-text' => [ 'site-title' ],
+		]
+	);
 }
 add_action( 'after_setup_theme', 'bigbox_add_theme_support' );

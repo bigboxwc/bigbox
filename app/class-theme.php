@@ -43,15 +43,16 @@ final class Theme implements Registerable {
 		$helpers = [
 			'extras',
 			'views',
-			'svg',
 			'template-tags',
 			'assets',
+			'svg',
 			'nav-menus',
+			'comments',
 			'page-templates',
 			'theme-support',
 			'widgets',
+			'customize',
 			'wordpress',
-			'comments',
 		];
 
 		foreach ( $helpers as $file ) {

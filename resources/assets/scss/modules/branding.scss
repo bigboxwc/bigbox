@@ -1,21 +1,16 @@
 // [1] 10px added to .navbar-menu__item a -- fixes visual alignment.
 .branding {
-	font-weight: $font-weight-bold;
-	color: color("white");
-	font-size: $font-size-lg;
-	text-transform: uppercase;
-	line-height: 1;
-	margin: 0;
 	order: 0;
+	display: flex;
+	align-items: center;
+
+	img {
+		display: block;
+	}
 
 	@include media-breakpoint-up(lg) {
 		margin: 0;
 		padding-left: 11px; // [1]
-	}
-
-	a {
-		color: color("white");
-		text-decoration: none;
 	}
 
 	.bigbox-minimal & {
@@ -26,4 +21,22 @@
 			padding-left: 0;
 		}
 	}
+}
+
+.site-title {
+	font-weight: $font-weight-bold;
+	color: color("white");
+	font-size: $font-size-lg;
+	text-transform: uppercase;
+	line-height: 1;
+	margin: 0;
+
+	a {
+		color: color("white");
+		text-decoration: none;
+	}
+}
+
+.custom-logo-link + .site-title {
+	margin: 0 0 0 $spacer;
 }
