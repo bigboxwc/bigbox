@@ -4,6 +4,7 @@
 	.woocommerce-shipping-fields__field-wrapper,
 	.woocommerce-additional-fields__field-wrapper,
 	.woocommerce-billing-fields__field-wrapper,
+	.woocommerce-EditAccountForm,
 	.col2-set {
 
 		@include make-row();
@@ -18,6 +19,11 @@
 
 			@include make-col-ready();
 			@include form-row;
+
+			span {
+				color: gray("500");
+				font-size: $font-size-sm;
+			}
 		}
 
 		.woocommerce-LostPassword,

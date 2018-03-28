@@ -1,5 +1,5 @@
 @mixin form-row {
-	margin: 0 0 $spacer;
+	margin: 0 0 ($spacer * 1.5);
 
 	&:not(.form-row--half):not(:first-of-type):last-of-type,
 	&:not(.form-row--half):not(:first-child):last-child {
@@ -14,13 +14,13 @@
 }
 
 @mixin form-input {
-	font: $font-weight-normal #{$font-size-sm}/#{$line-height-base} $font-family-sans-serif;
+	font: $font-weight-normal #{$font-size-base}/#{$line-height-base} $font-family-sans-serif;
 	padding: ( $spacer / 2 );
 	border: 1px solid gray("300");
 	border-radius: $border-radius;
 
 	&:focus {
 		border-color: gray("400");
-		box-shadow: 0 0 4px rgba(theme-color("primary"), 0.2);
+		box-shadow: 0 0 4px theme-color-level("primary", 1);
 	}
 }

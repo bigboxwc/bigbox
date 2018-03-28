@@ -55,8 +55,9 @@
 }
 
 .coupons-next {
+	color: gray("500");
 	text-align: center;
-	font-size: $font-size-xs;
+	font-size: $font-size-sm;
 	padding: 0 $spacer $spacer;
 }
 

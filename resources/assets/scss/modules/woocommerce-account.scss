@@ -28,3 +28,40 @@
 		}
 	}
 }
+
+.woocommerce-edit-account {
+
+	fieldset {
+		margin: 0 0 $spacer;
+		padding: 0;
+		width: 100%;
+		border: 0;
+
+		legend {
+			display: none;
+		}
+	}
+
+	// Because WooCommerce template HTML is bleh.
+	.clear + p {
+
+		@include make-col-ready();
+	}
+}
+
+.woocommerce-Addresses {
+
+	header {
+		margin-bottom: $spacer;
+	}
+
+	address {
+		font-style: normal;
+	}
+
+	.edit {
+
+		@include button--secondary;
+		@include button--size-xs;
+	}
+}

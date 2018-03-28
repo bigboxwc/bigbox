@@ -1,8 +1,8 @@
 @mixin card {
-	background: rgba(gray("100"), 0.75);
+	background: rgba(theme-color("primary"), 0.03);
 	border-radius: $border-radius;
-	border: 1px solid gray("300");
-	box-shadow: gray("200") 0 1px 2px;
+	border: 1px solid rgba(theme-color("primary"), 0.20);
+	box-shadow: rgba(theme-color("primary"), 0.10) 0 1px 2px;
 }
 
 @mixin card--primary {
