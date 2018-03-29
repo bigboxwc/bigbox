@@ -13,7 +13,13 @@
  */
 
 // Bootstrap
-@import "~bootstrap/scss/bootstrap-grid";
+@import "~bootstrap/scss/functions";
+
+@import "~bootstrap/scss/mixins/breakpoints";
+@import "~bootstrap/scss/mixins/grid-framework";
+@import "~bootstrap/scss/mixins/grid";
+
+@import "~bootstrap/scss/grid";
 
 /**
  * Internal dependencies

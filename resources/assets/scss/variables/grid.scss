@@ -1,5 +1,8 @@
 $spacer: 1rem;
-$grid-gutter-width: ( $spacer * 2 );
+
+$enable-grid-classes: true;
+$grid-gutter-width:   ( $spacer * 2 );
+$grid-columns:        12 !default;
 
 $grid-breakpoints: (
 	xs: 0,
@@ -12,3 +15,4 @@ $grid-breakpoints: (
 $container-max-widths: (
 	xl: 1550px,
 );
+
