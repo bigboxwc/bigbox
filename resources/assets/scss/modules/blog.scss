@@ -1,0 +1,11 @@
+.blog-post {
+	margin: ($spacer * 3) 0;
+	padding-bottom: ($spacer * 3);
+	border-bottom: 1px solid theme-color("light");
+
+	&:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+		border: 0;
+	}
+}
