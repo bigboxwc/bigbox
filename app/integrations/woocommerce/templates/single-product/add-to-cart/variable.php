@@ -35,28 +35,30 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 		<div class="variations">
 
 			<?php foreach ( $attributes as $attribute_name => $options ) : ?>
-				<div class="add-to-cart__action">
+				<div class="action-list__item">
 
-					<div class="add-to-cart__action-label">
+					<div class="action-list__item-label">
 						<label for="<?php echo sanitize_title( $attribute_name ); ?>">
 							<?php echo wc_attribute_label( $attribute_name ); ?>:
 						</label>
 					</div>
 		
-					<div class="add-to-cart__action-value">
-						<?php
-						$selected = isset( $_REQUEST[ 'attribute_' . $attribute_name ] ) ? wc_clean( stripslashes( urldecode( $_REQUEST[ 'attribute_' . $attribute_name ] ) ) ) : $product->get_variation_default_attribute( $attribute_name );
+					<div class="action-list__item-value">
+						<div>
+							<?php
+							$selected = isset( $_REQUEST[ 'attribute_' . $attribute_name ] ) ? wc_clean( stripslashes( urldecode( $_REQUEST[ 'attribute_' . $attribute_name ] ) ) ) : $product->get_variation_default_attribute( $attribute_name );
 
-						wc_dropdown_variation_attribute_options(
-							[
-								'options'          => $options,
-								'attribute'        => $attribute_name,
-								'product'          => $product,
-								'selected'         => $selected,
-								'show_option_none' => esc_html__( 'Select an option', 'bigbox' ),
-							]
-						);
-						?>
+							wc_dropdown_variation_attribute_options(
+								[
+									'options'          => $options,
+									'attribute'        => $attribute_name,
+									'product'          => $product,
+									'selected'         => $selected,
+									'show_option_none' => esc_html__( 'Select an option', 'bigbox' ),
+								]
+							);
+							?>
+						</div>
 					</div>
 
 				</div>

@@ -13,11 +13,19 @@
 	}
 }
 
+.action-list__item-label,
+.action-list__item-action {
+	flex: 1;
+}
+
 .action-list__item-label {
-	font-size: $font-size-sm;
-	font-weight: $font-weight-bold;
 	line-height: 1;
-	margin-right: $spacer;
+	font-weight: $font-weight-bold;
+	margin: 0 $spacer 0 0;
+
+	label {
+		margin: 0;
+	}
 
 	small {
 		color: gray("500");
@@ -30,4 +38,14 @@
 .action-list__item-value {
 	color: gray("900");
 	font-size: $font-size-base;
+	justify-content: flex-end;
+	display: flex;
+	align-items: center;
+
+	select {
+		width: 100%;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
 }

@@ -9,9 +9,10 @@
 
 	@include card;
 
-	background: rgba(theme-color("success"), 0.2);
-	border: 1px solid rgba(theme-color("success"), 0.8);
-	box-shadow: rgba(theme-color("success"), 0.3) 0 1px 2px;
+	color: theme-color("dark");
+	border: 1px solid rgba(theme-color("success"), 0.5);
+	background: rgba(theme-color("success"), 0.10);
+	box-shadow: inset rgba(theme-color("success"), 0.10) 0 0 0 3px, rgba(theme-color("success"), 0.3) 0 1px 2px;
 }
 
 @mixin card--error {

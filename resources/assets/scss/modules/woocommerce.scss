@@ -20,7 +20,8 @@
 			@include make-col-ready();
 			@include form-row;
 
-			span {
+			// Hopefully only target form descriptions.
+			> span {
 				color: gray("400");
 				font-size: $font-size-sm;
 			}
@@ -42,10 +43,6 @@
 				@include make-col(6);
 			}
 		}
-	}
-
-	.col2-set {
-		margin-top: -($spacer);
 	}
 
 	.col-1,
@@ -72,4 +69,9 @@
 		padding: 1px 5px;
 		max-width: 30px;
 	}
+}
+
+.woocommerce-column__title {
+
+	@include single-product-section-title;
 }

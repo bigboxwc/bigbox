@@ -52,25 +52,50 @@ form.woocommerce-checkout {
 	align-items: center;
 	flex-wrap: wrap;
 	margin-bottom: $spacer;
-	padding: $spacer;
-
-	@include card;
 
 	[type="radio"] {
 		display: none;
 	}
 
 	[type="radio"]:checked + label {
-		color: theme-color("dark");
+
+		@include card--primary;
+
+		&:before {
+			width: 7px;
+			height: 11px;
+			border: solid darken(theme-color("success"), 10);
+			border-width: 0 2px 2px 0;
+			transform: rotate(45deg);
+			border-radius: 0;
+			margin-left: 5px;
+			left: $spacer;
+			top: calc(50% - 7px);
+		}
 	}
 
 	label {
 		color: gray("500");
-		font-weight: $font-weight-bold;
 		width: 100%;
+		margin: 0;
+		padding: $spacer $spacer $spacer ($spacer * 2.5);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		position: relative;
+
+		@include card;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: $spacer;
+			top: calc(50% - 6px);
+			width: 12px;
+			height: 12px;
+			border: 2px solid rgba(theme-color("primary"), .50);
+			border-radius: 50%;
+		}
 
 		img {
 			float: right;
@@ -156,4 +181,10 @@ form.woocommerce-checkout {
 
 		@include card--primary;
 	}
+}
+
+.woocommerce-remove-coupon {
+	color: theme-color("danger");
+	font-size: $font-size-sm;
+	margin-left: 5px;
 }

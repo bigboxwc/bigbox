@@ -90,6 +90,11 @@
 	padding: $spacer;
 	border-bottom: 1px solid theme-color("light");
 
+	&:last-child {
+		border-bottom: 0;
+		padding-bottom: 0;
+	}
+
 	@include media-breakpoint-up(lg) {
 		padding: ($spacer * 2);
 	}

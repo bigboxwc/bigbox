@@ -15,8 +15,8 @@
 
 		.select2-selection__rendered {
 			color: gray("700");
-			font: $font-weight-normal #{$font-size-sm}/#{$line-height-base} $font-family-sans-serif;
-			padding: ($spacer / 2);
+			font: $font-weight-normal #{$font-size-base}/1 $font-family-sans-serif;
+			padding: 13px ($spacer / 2) 12px;
 			min-height: 39px;
 		}
 

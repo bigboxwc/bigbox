@@ -22,13 +22,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( is_singular( 'product' ) ) :
 ?>
 
-<div class="add-to-cart__action">
+<div class="action-list__item">
 
-	<div class="add-to-cart__action-label">
+	<div class="action-list__item-label">
 		<label for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'bigbox' ); ?>:</label>
 	</div>
 
-	<div class="add-to-cart__action-value">
+	<div class="action-list__item-value">
 	<?php
 	wc_get_template(
 		'single-product/add-to-cart/quantity.php', [
@@ -45,6 +45,7 @@ if ( is_singular( 'product' ) ) :
 	);
 	?>
 	</div>
+
 </div>
 
 <?php

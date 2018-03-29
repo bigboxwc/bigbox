@@ -49,8 +49,11 @@
 	}
 }
 
+.woocommerce-column--billing-address,
+.woocommerce-column--shipping-address,
 .woocommerce-Addresses {
 
+	h2,
 	header {
 		margin-bottom: $spacer;
 	}
@@ -64,4 +67,9 @@
 		@include button--secondary;
 		@include button--size-xs;
 	}
+}
+
+.woocommerce-customer-details {
+
+	@include vertical-spacing;
 }

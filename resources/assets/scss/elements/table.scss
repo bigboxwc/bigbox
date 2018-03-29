@@ -1,6 +1,8 @@
 table {
 	border-collapse: collapse;
 	border-style: hidden;
+	box-shadow: 0 0 0 1px gray("200");
+	border-radius: $border-radius;
 	width: 100%;
 	
 	td,
@@ -11,7 +13,7 @@ table {
 	}
 
 	th {
-		color: gray("500");
+		color: gray("600");
 		text-align: left;
 		text-transform: uppercase;
 		font-size: $font-size-xs;
@@ -19,9 +21,6 @@ table {
 	}
 
 	tbody {
-		box-shadow: 0 0 0 1px gray("200");
-		border-radius: $border-radius;
-
 		tr:nth-child(even) {
 
 			th,
