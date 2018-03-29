@@ -34,7 +34,7 @@ function bigbox_customize_css() {
 			$css->add( [
 				'selectors'    => $selectors,
 				'declarations' => [ 
-					$declaration => $color,
+					$declaration => esc_attr( $color ),
 				],
 			] );
 		}
@@ -42,6 +42,49 @@ function bigbox_customize_css() {
 
 	return $css->build();
 }
+
+/**
+ * Enqueue customizer scripts.
+ *
+ * @since 1.0.0
+ */
+function bigbox_customize_preview_init() {
+	wp_enqueue_script(
+		'bigbox-customize-preview',
+		get_template_directory_uri() . '/public/js/customize-preview.min.js',
+		[ 'customize-preview' ],
+		bigbox_get_theme_version(),
+		true
+	);
+}
+add_action( 'customize_preview_init', 'bigbox_customize_preview_init', 99 );
+
+/**
+ * Return filtered inline CSS for live previews.
+ *
+ * @since 1.0.0
+ *
+ * @return array
+ */
+function bigbox_preview_css() {
+	$customized = json_decode( wp_unslash( $_POST['customized'] ), true );
+
+	// Filter `get_theme_mod()` calls for customized settings.
+	foreach ( $customized as $setting_id => $value ) {
+		add_filter(
+			'theme_mod_' . sanitize_key( $setting_id ), function( $value ) {
+				if ( isset( $customized[ $setting_id ] ) ) {
+					return $customized[ $setting_id ];
+				}
+
+				return $value;
+			}
+		);
+	}
+
+	return wp_send_json_success( bigbox_customize_css() );
+}
+add_action( 'wp_ajax_bigbox-preview-css', 'bigbox_preview_css' );
 
 /**
  * Adds postMessage support for site title and adds a note about description not being output.

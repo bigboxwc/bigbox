@@ -14,6 +14,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Return the theme slug.
+ *
+ * This is static and not derivated from style.css
+ *
+ * @since 1.0.0
+ *
+ * @return string
+ */
+
+function bigbox_get_theme_name() {
+	return 'bigbox';
+}
+
+/**
  * Return the current version of the parent theme.
  *
  * @since 1.0.0

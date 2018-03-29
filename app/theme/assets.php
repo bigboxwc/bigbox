@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function bigbox_enqueue_styles() {
 	$version    = bigbox_get_theme_version();
-	$stylesheet = 'bigbox';
+	$stylesheet = bigbox_get_theme_name();
 
 	$deps = [];
 
@@ -29,6 +29,7 @@ function bigbox_enqueue_styles() {
 	}
 
 	wp_enqueue_style( $stylesheet, get_template_directory_uri() . '/public/css/app.min.css', $deps, $version );
+	wp_add_inline_style( bigbox_get_theme_name(), bigbox_customize_css() );
 }
 add_action( 'wp_enqueue_scripts', 'bigbox_enqueue_styles' );
 
@@ -39,7 +40,7 @@ add_action( 'wp_enqueue_scripts', 'bigbox_enqueue_styles' );
  */
 function bigbox_enqueue_scripts() {
 	$version    = bigbox_get_theme_version();
-	$stylesheet = 'bigbox';
+	$stylesheet = bigbox_get_theme_name();
 
 	$deps = [
 		'wp-util',
