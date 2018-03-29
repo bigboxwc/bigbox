@@ -9,12 +9,21 @@
 }
 
 .site-primary--5,
+.site-primary--8,
 .site-primary--10 {
 
 	@include media-breakpoint-up(lg) {
 
 		@include make-col(5);
 		margin: $grid-gutter-width auto;
+	}
+}
+
+.site-primary--8 {
+
+	@include media-breakpoint-up(lg) {
+
+		@include make-col(8);
 	}
 }
 

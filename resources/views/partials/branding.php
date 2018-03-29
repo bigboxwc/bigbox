@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$tag  = is_home() || is_front_page() ? 'h1' : 'p';
+$tag  = is_front_page() ? 'h1' : 'p';
 $text = (bool) get_theme_mod( 'header_text', 1 );
 ?>
 
