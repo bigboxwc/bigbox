@@ -1,13 +1,19 @@
 .site-tertiary {
 
 	@include make-col-ready;
-	@include make-col(12);
 	margin-top: ( $spacer * 2 );
 	margin-bottom: ( $spacer * 2 );
 	order: 2;
+	display: none;
+
+	@include media-breakpoint-up(lg) {
+		display: block;
+
+		@include make-col(2);
+	}
 
 	@include media-breakpoint-up(xl) {
 
-		@include make-col(2);
+		@include make-col(1.5);
 	}
 }

@@ -45,6 +45,10 @@ function bigbox_woocommerce_cart_shipping_method_price( $method ) {
  * @return string
  */
 function bigbox_woocommerce_cart_shipping_method_full_label( $label, $method ) {
+	if ( ! is_cart() ) {
+		return $label;
+	}
+
 	$label = $method->get_label() . ':';
 
 	if ( $method->cost >= 0 && $method->get_method_id() !== 'free_shipping' ) {
@@ -53,7 +57,7 @@ function bigbox_woocommerce_cart_shipping_method_full_label( $label, $method ) {
 
 	return $label;
 }
-add_filter( 'woocommerce_cart_shipping_method_full_label', 'bigbox_woocommerce_cart_shipping_method_full_label', 10, 2 );
+add_filter( 'woocommerce_cart_shipping_method_full_label', 'bigbox_woocommerce_cart_shipping_method_full_label', 5, 2 );
 
 /**
  * Update global cart and totals.

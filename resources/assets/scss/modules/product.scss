@@ -140,8 +140,9 @@
 }
 
 .product__shipping {
-	color: gray("500");
+	color: gray("600");
 	font-size: $font-size-sm;
+	line-height: $line-height-base;
 	order: 0;
 }
 

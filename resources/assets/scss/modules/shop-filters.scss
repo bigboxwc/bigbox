@@ -9,21 +9,23 @@
 .product_list_widget {
 
 	a {
+		text-decoration: none;
 		display: block;
 	}
 
 	li {
-		margin-bottom: 1rem;
-		padding: 1rem;
-
-		@include card;
+		margin-bottom: $spacer;
 	}
 
 	.product__stats {
-		margin: ( $spacer / 2 ) 0;
+		margin: ($spacer / 2) 0;
 	}
 
 	.price {
 		line-height: 1;
+	}
+
+	del {
+		display: none;
 	}
 }
