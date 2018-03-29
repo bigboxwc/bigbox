@@ -1,14 +1,13 @@
 // stylelint-disable
 $gray:     #3b4257;
-
-$gray-100: lighten($gray, 68%);
-$gray-200: lighten($gray, 65%);
-$gray-300: lighten($gray, 44%);
-$gray-400: lighten($gray, 33%);
-$gray-500: lighten($gray, 22%);
-$gray-600: lighten($gray, 11%);
-$gray-700: $gray;
-$gray-800: darken($gray, 11%);
+$gray-100: lighten($gray, 68%) !default;
+$gray-200: lighten($gray, 65%) !default;
+$gray-300: lighten($gray, 44%) !default;
+$gray-400: lighten($gray, 33%) !default;
+$gray-500: lighten($gray, 22%) !default;
+$gray-600: lighten($gray, 11%) !default;
+$gray-700: $gray               !default;
+$gray-800: darken($gray, 11%)  !default;
 
 $grays: (
 	"100": $gray-100,
@@ -19,7 +18,7 @@ $grays: (
 	"600": $gray-600,
 	"700": $gray-700,
 	"800": $gray-800,
-);
+) !default;
 
 $theme-colors: (
 	"primary":    #346bcc,
@@ -30,6 +29,6 @@ $theme-colors: (
 	"danger":     #e05f59,
 	"light":      #fbfcff,
 	"dark":       $gray-700
-);
+) !default;
 
-$body-color: $gray-700;
+$body-color: $gray-700 !default;

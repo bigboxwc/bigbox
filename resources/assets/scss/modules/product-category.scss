@@ -52,8 +52,8 @@
 	text-align: center;
 	margin: 0;
 	padding: $spacer;
-	border-top: 1px solid gray("200");
-	background: gray("100");
+	border-top: 1px solid rgba(theme-color("primary"), 0.25);
+	background: theme-color("light");
 	flex: 1;
 
 	.count {
