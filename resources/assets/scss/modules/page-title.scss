@@ -9,4 +9,8 @@
 		margin-top: 0;
 		padding-top: 0;
 	}
+
+	&--lg {
+		font-size: ($font-size-xl * 1.5);
+	}
 }

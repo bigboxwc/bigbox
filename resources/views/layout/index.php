@@ -18,7 +18,7 @@ bigbox_view( 'global/header-min' );
 ?>
 
 <div id="main" class="site-primary site-primary--8">
-	<h1 class="page-title"><?php echo get_option( 'page_for_posts' ) ? esc_html( get_the_title( get_option( 'page_for_posts' ) ) ) : esc_html__( 'Blog', 'bigbox' ); ?></h1>
+	<h1 class="page-title page-title--lg"><?php echo get_option( 'page_for_posts' ) ? esc_html( get_the_title( get_option( 'page_for_posts' ) ) ) : esc_html__( 'Blog', 'bigbox' ); ?></h1>
 
 	<?php
 	if ( have_posts() ) :
