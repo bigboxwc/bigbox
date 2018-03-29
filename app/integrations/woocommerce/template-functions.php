@@ -224,9 +224,9 @@ function bigbox_woocommerce_display_product_attributes() {
 
 	wc_display_product_attributes( wc_get_product( get_post() ) );
 
-	$attributes = trim( preg_replace( '/\s/', '', ob_get_clean() ) );
+	$attributes = ob_get_clean();
 
-	if ( '<tableclass="shop_attributes"></table>' !== $attributes ) {
+	if ( '<tableclass="shop_attributes"></table>' !== trim( preg_replace( '/\s/', '', $attributes ) ) ) {
 		echo $attributes;
 	}
 }
