@@ -1,8 +1,0 @@
-@mixin link-focus {
-	color: theme-color("primary");
-	border-bottom-color: theme-color("primary");
-
-	&:hover {
-		border-bottom-color: transparent;
-	}
-}

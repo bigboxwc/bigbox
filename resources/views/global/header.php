@@ -34,23 +34,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="container">
 			<div class="row">
-
-<style>
-<?php
-$config = include get_template_directory() . '/app/theme/customize/config-css.php';
-$scheme = include get_template_directory() . '/app/theme/customize/config-scheme.php';
-$grays  = include get_template_directory() . '/app/theme/customize/config-grays.php';
-
-$defaults = array_merge( $scheme, $grays );
-
-foreach ( $config as $color => $properties ) {
-	$color = get_theme_mod( "color-${color}", $defaults[ $color ]['default'] );
-
-	foreach ( $properties as $property => $selectors ) {
-		foreach ( $selectors as $selector ) {
-			printf( '%s { %s: %s }', $selector, $property, $color );
-		}
-	}
-}
-?>
-</style>

@@ -12,7 +12,9 @@
 return [
 	'primary' => [
 		'background-color' => [
-			'.navbar'
-		]
+			'.navbar',
+			'.facetwp-facet .facetwp-slider .noUi-connect',
+			'.select2-container--default .select2-results__option--highlighted[data-selected]',
+		],
 	]
 ];

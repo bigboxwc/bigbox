@@ -14,6 +14,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Build inline CSS.
+ *
+ * @since 1.0.0
+ */
+function bigbox_customize_css() {
+	$css = new \BigBox\Theme\Customize\Inline_CSS();
+
+	$config = include get_template_directory() . '/app/theme/customize/config-css.php';
+	$scheme = include get_template_directory() . '/app/theme/customize/config-scheme.php';
+	$grays  = include get_template_directory() . '/app/theme/customize/config-grays.php';
+
+	$defaults = array_merge( $scheme, $grays );
+
+	foreach ( $config as $color => $data ) {
+		$color = get_theme_mod( "color-${color}", $defaults[ $color ]['default'] );
+
+		foreach ( $data as $declaration => $selectors ) {
+			$css->add( [
+				'selectors'    => $selectors,
+				'declarations' => [ 
+					$declaration => $color,
+				],
+			] );
+		}
+	}
+
+	return $css->build();
+}
+
+/**
  * Adds postMessage support for site title and adds a note about description not being output.
  *
  * @since 1.0.0
