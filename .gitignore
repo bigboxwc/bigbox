@@ -4,5 +4,4 @@
 *.zip
 node_modules
 public
-vendor/autoload.php
-vendor/composer
+vendor
