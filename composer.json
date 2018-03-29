@@ -15,8 +15,5 @@
 	"scripts": {
 		"lint": "phpcs",
 		"lint:fix": "phpcbf"
-	},
-	"require": {
-		"leafo/scssphp": "^0.7.5"
 	}
 }
