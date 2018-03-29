@@ -2,7 +2,7 @@
 .woocommerce-message,
 .woocommerce-error li {
 	overflow: hidden;
-	margin: 0 0 ($spacer * 2);
+	margin: 0 0 $spacer;
 	padding: $spacer;
 
 	@include card;

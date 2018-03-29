@@ -175,16 +175,17 @@ form.woocommerce-checkout {
 	}
 }
 
-.woocommerce-form-login-toggle {
-
-	.woocommerce-info {
-
-		@include card--primary;
-	}
-}
-
 .woocommerce-remove-coupon {
 	color: theme-color("danger");
 	font-size: $font-size-sm;
 	margin-left: 5px;
+}
+
+.wc-terms-and-conditions {
+	font-size: $font-size-sm;
+	margin: ($spacer * 2) 0 $spacer;
+}
+
+#ship-to-different-address {
+	font-size: $font-size-base;
 }
