@@ -11,7 +11,6 @@ $gray-500: lighten($gray, 22%);
 $gray-600: lighten($gray, 11%);
 $gray-700: $gray;
 $gray-800: darken($gray, 11%);
-$gray-900: darken($gray, 22%);
 
 $grays: (
 	"100": $gray-100,
@@ -22,34 +21,24 @@ $grays: (
 	"600": $gray-600,
 	"700": $gray-700,
 	"800": $gray-800,
-	"900": $gray-900
 );
 
 $blue:    #346bcc;
-$indigo:  #6610f2;
-$purple:  #7941ff;
-$pink:    #d91b5b;
 $red:     #e05f59;
 $orange:  #fd7356;
 $yellow:  #f9c95d;
 $green:   #8dbc54;
-$teal:    #20c997;
 $cyan:    #17a2b8;
 
 $colors: (
 	"blue":       $blue,
-	"indigo":     $indigo,
-	"purple":     $purple,
-	"pink":       $pink,
 	"red":        $red,
 	"orange":     $orange,
 	"yellow":     $yellow,
 	"green":      $green,
-	"teal":       $teal,
 	"cyan":       $cyan,
 	"white":      $white,
 	"black":      $black,
-	"gray":       $gray-600
 );
 
 $theme-colors: (
