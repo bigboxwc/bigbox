@@ -7,7 +7,6 @@
 @import "variables/grid";
 @import "variables/box";
 @import "variables/fonts";
-@import "variables/choices";
 
 /**
  * External dependencies
@@ -105,6 +104,7 @@
 @import "modules/woocommerce-account";
 @import "modules/woocommerce-form-login";
 @import "modules/woocommerce-pagination";
+@import "modules/woocommerce-store-notice";
 
 // Product card
 @import "modules/products";
