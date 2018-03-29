@@ -68,8 +68,14 @@ remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_prod
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
 
-add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 10 );
 add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 5 );
+add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 10 );
+
+add_action( 'woocommerce_after_shop_loop_item_title', function() {
+	echo '<div class="product__stock">';
+	echo wc_get_stock_html( wc_get_product( get_post() ) );
+	echo '</div>';
+}, 15 );
 
 // Add note about variations.
 add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_after_shop_loop_item_title_variations', 8 );
@@ -95,6 +101,10 @@ add_action(
 
 // Filter product tabs.
 add_filter( 'woocommerce_product_tabs', 'bigbox_woocommerce_product_tabs', 20 );
+
+// Only output attributes if there are any.
+remove_action( 'woocommerce_product_additional_information', 'wc_display_product_attributes', 10 );
+add_action( 'woocommerce_product_additional_information', 'bigbox_woocommerce_display_product_attributes', 10 );
 
 // Remove sale flash (output in price template).
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash' );

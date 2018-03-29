@@ -212,6 +212,26 @@ function bigbox_woocommerce_product_tabs( $tabs ) {
 }
 
 /**
+ * Maybe display shop attributes.
+ *
+ * WooCommerce always outputs a blank table which doesn't work well
+ * when we globally apply borders to tables.
+ *
+ * @since 1.0.0
+ */
+function bigbox_woocommerce_display_product_attributes() {
+	ob_start();
+
+	wc_display_product_attributes( wc_get_product( get_post() ) );
+
+	$attributes = trim( preg_replace( '/\s/', '', ob_get_clean() ) );
+
+	if ( '<tableclass="shop_attributes"></table>' !== $attributes ) {
+		echo $attributes;
+	}
+}
+
+/**
  * Add product meta under additional information.
  *
  * @since 1.0.0
