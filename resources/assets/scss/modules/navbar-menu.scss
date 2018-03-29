@@ -11,7 +11,7 @@
 		position: relative;
 
 		a {
-			color: rgba(color("white"), 0.95);
+			color: color("white");
 			padding: $spacer 10px;
 		}
 
@@ -88,7 +88,7 @@
 
 .navbar-menu--secondary {
 	width: 100%;
-	border-top: 1px solid rgba(255, 255, 255, 0.05);
+	border-top: 1px solid rgba(color("white"), 0.08);
 	justify-content: space-between;
 	align-items: center;
 	display: none;

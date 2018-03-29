@@ -21,6 +21,7 @@
     "babel-preset-env": "1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-traverse": "6.26.0",
+    "bootstrap": "^4.0.0",
     "browser-sync": "^2.11.1",
     "classnames": "^2.2.5",
     "cross-env": "^5.0.1",

@@ -86,7 +86,7 @@
 	height: 100%;
 	padding-top: $spacer;
 	padding-bottom: $spacer;
-	border-bottom: 1px solid rgba(theme-color("primary"), 0.10);
+	border-bottom: 1px solid gray("200");
 
 	.product:only-child & {
 		border-bottom: 0;

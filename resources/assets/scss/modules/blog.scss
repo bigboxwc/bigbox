@@ -2,7 +2,7 @@
 	text-align: center;
 	margin: ($spacer * 3) 0;
 	padding-bottom: ($spacer * 3);
-	border-bottom: 1px solid theme-color("light");
+	border-bottom: 1px solid gray("200");
 
 	&:last-child {
 		margin-bottom: 0;

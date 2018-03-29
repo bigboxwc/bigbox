@@ -1,5 +1,5 @@
 @mixin card {
-	background: rgba(theme-color("primary"), 0.02);
+	background: theme-color("light");
 	border-radius: $border-radius;
 	border: 1px solid rgba(theme-color("primary"), 0.25);
 	box-shadow: theme-color("light") 0 1px 2px;

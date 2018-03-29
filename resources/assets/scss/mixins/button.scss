@@ -64,7 +64,7 @@
 
 	@include button;
 	@include button--primary;
-	background-color: color("red");
+	background-color: theme-color("danger");
 }
 
 @mixin button--success {

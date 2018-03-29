@@ -74,7 +74,7 @@
 
 .navbar-mobile:target + .navbar-mobile-backdrop,
 .navbar-mobile[aria-expanded="true"] + .navbar-mobile-backdrop {
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(color("black"), 0.5);
 	visibility: visible;
 }
 
