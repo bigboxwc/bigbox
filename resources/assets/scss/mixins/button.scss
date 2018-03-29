@@ -1,5 +1,5 @@
 @mixin button {
-	color: color("white");
+	color: #fff;
 	font: $font-weight-normal #{$font-size-base}/#{$line-height-base} $font-family-sans-serif;
 	text-decoration: none;
 	text-align: center;
@@ -31,11 +31,10 @@
 @mixin button--primary {
 
 	@include button;
-	color: color("white");
 	background-color: theme-color("primary");
 
 	&:hover {
-		color: color("white");
+		color: #fff;
 	}
 }
 

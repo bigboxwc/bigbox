@@ -28,7 +28,7 @@
 		appearance: none;
 		color: theme-color("dark");
 		font-size: $font-size-xs;
-		background: color("white");
+		background: #fff;
 		border: 0;
 		border-right: 1px solid gray("200");
 		border-radius: $border-radius 0 0 $border-radius;
@@ -58,9 +58,9 @@
 
 		cursor: pointer;
 		font-size: $font-size-sm;
-		color: color("white");
+		color: #fff;
 		padding: 0 ( $spacer / 2 );
-		background-color: color("white");
+		background-color: #fff;
 		border: 0;
 		border-radius: 0 $border-radius $border-radius 0;
 

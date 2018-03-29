@@ -8,7 +8,7 @@
 
 	svg {
 		margin: 0 1px;
-		fill: darken(color("yellow"), 5%);
+		fill: theme-color("warning");
 		width: 16px;
 		height: 16px;
 	}

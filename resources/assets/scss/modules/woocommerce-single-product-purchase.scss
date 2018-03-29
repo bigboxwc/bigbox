@@ -96,10 +96,10 @@
 	font-size: $font-size-sm;
 
 	.in-stock {
-		color: color("green");
+		color: theme-color("success");
 	}
 
 	.out-of-stock {
-		color: color("red");
+		color: theme-color("danger");
 	}
 }

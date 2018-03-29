@@ -1,6 +1,4 @@
 // stylelint-disable
-$white:    #fff;
-$black:    #000;
 $gray:     #3b4257;
 
 $gray-100: lighten($gray, 68%);
@@ -23,31 +21,13 @@ $grays: (
 	"800": $gray-800,
 );
 
-$blue:    #346bcc;
-$red:     #e05f59;
-$orange:  #fd7356;
-$yellow:  #f9c95d;
-$green:   #8dbc54;
-$cyan:    #17a2b8;
-
-$colors: (
-	"blue":       $blue,
-	"red":        $red,
-	"orange":     $orange,
-	"yellow":     $yellow,
-	"green":      $green,
-	"cyan":       $cyan,
-	"white":      $white,
-	"black":      $black,
-);
-
 $theme-colors: (
-	"primary":    $blue,
-	"secondary":  $orange,
-	"success":    $green,
-	"info":       $cyan,
-	"warning":    $yellow,
-	"danger":     $red,
+	"primary":    #346bcc,
+	"secondary":  #fd7356,
+	"success":    #8dbc54,
+	"info":       #17a2b8,
+	"warning":    #f9c95d,
+	"danger":     #e05f59,
 	"light":      #fbfcff,
 	"dark":       $gray-700
 );

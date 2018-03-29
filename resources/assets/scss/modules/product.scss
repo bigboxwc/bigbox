@@ -151,13 +151,13 @@
 	margin: 0 0 $spacer;
 
 	a {
-		color: color("white");
+		color: #fff;
 		font-size: $font-size-xs;
 		line-height: 1;
 		text-transform: uppercase;
 		text-decoration: none;
 		font-weight: $font-weight-bold;
-		background: color("green");
+		background: theme-color("success");
 		border-radius: $border-radius;
 		padding: 5px 5px 4px;
 		display: inline-block;

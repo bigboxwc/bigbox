@@ -11,7 +11,7 @@
 		position: relative;
 
 		a {
-			color: color("white");
+			color: #fff;
 			padding: $spacer 10px;
 		}
 
@@ -45,7 +45,7 @@
 		width: 200px;
 		margin: 0;
 		padding: ($spacer / 2) $spacer;
-		background: color("white");
+		background: #fff;
 		border-radius: 0 0 $border-radius $border-radius;
 		box-shadow: gray("300") 0 2px 12px;
 		list-style: none;
@@ -88,7 +88,7 @@
 
 .navbar-menu--secondary {
 	width: 100%;
-	border-top: 1px solid rgba(color("white"), 0.08);
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
 	justify-content: space-between;
 	align-items: center;
 	display: none;
@@ -129,7 +129,7 @@
 	}
 
 	svg {
-		fill: color("white");
+		fill: #fff;
 		width: 12px;
 		height: 12px;
 		margin-right: 4px;
@@ -150,7 +150,7 @@
 		&:hover {
 			opacity: 1;
 			text-decoration: none;
-			border: 1px solid rgba(color("white"), 0.2);
+			border: 1px solid rgba(255, 255, 255, 0.2);
 		}
 	}
 
