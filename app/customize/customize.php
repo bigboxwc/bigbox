@@ -13,12 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-// Modify core controls.
-require_once get_template_directory() . '/app/customize/controls/wordpress.php';
+// Colors and Type helpers.
+require_once get_template_directory() . '/app/customize/color-functions.php';
+require_once get_template_directory() . '/app/customize/type-functions.php';
 
-// Colors and Type
-require_once get_template_directory() . '/app/customize/colors.php';
-require_once get_template_directory() . '/app/customize/type.php';
+// Controls
+require_once get_template_directory() . '/app/customize/controls.php';
 
 // Handle live preview.
 require_once get_template_directory() . '/app/customize/preview.php';

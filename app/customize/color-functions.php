@@ -1,6 +1,6 @@
 <?php
 /**
- * Customize colors.
+ * Color helper functions.
  *
  * @since 1.0.0
  *
@@ -8,9 +8,6 @@
  * @category Theme
  * @author Spencer Finnell
  */
-
-// Load color controls.
-require_once get_template_directory() . '/app/customize/controls/colors.php';
 
 /**
  * Get color configs.
