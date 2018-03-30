@@ -45,13 +45,13 @@ function bigbox_get_theme_font_weight( $weight = 'base' ) {
 }
 
 /**
- * Create a URL for to load a Google font.
+ * Get a Google font family and variants.
  *
- * @since 1.0.0
+ * Raleway:400,500
  *
- * @return mixed URL if needed. False otherwise.
+ * @return string
  */
-function bigbox_get_google_fonts_url() {
+function bigbox_get_google_font_family_string() {
 	$family = bigbox_get_theme_font_family();
 
 	if ( ! $family || 'default' == $family ) {
@@ -64,7 +64,19 @@ function bigbox_get_google_fonts_url() {
 	$weights = implode( ',', [ $base, $bold ] );
 	$family  = urlencode( $family );
 
-	$url = '//fonts.googleapis.com/css';
+	return $family . ':' . $weights;
+}
 
-	return esc_url_raw( add_query_arg( [ 'family' => $family . ':' . $weights ], $url ) );
+/**
+ * Create a URL for to load a Google font.
+ *
+ * @since 1.0.0
+ *
+ * @return mixed URL if needed. False otherwise.
+ */
+function bigbox_get_google_fonts_url() {
+	$family_string = bigbox_get_google_font_family_string();
+	$base_url      = '//fonts.googleapis.com/css';
+
+	return esc_url_raw( add_query_arg( [ 'family' => $family_string ], $base_url ) );
 }
