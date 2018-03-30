@@ -76,7 +76,12 @@ function bigbox_get_google_font_family_string() {
  */
 function bigbox_get_google_fonts_url() {
 	$family_string = bigbox_get_google_font_family_string();
-	$base_url      = '//fonts.googleapis.com/css';
+
+	if ( ! $family_string ) {
+		return false;
+	}
+
+	$base_url = '//fonts.googleapis.com/css';
 
 	return esc_url_raw( add_query_arg( [ 'family' => $family_string ], $base_url ) );
 }
