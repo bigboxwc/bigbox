@@ -1,7 +1,12 @@
 .widget {
+	font-size: $font-size-sm;
 	margin-bottom: 1rem;
 	padding-bottom: 1rem;
 	border-bottom: 1px solid gray("200");
+
+	a {
+		text-decoration: none;
+	}
 
 	&:first-child .widget-title {
 		margin-top: 0;

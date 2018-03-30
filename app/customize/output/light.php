@@ -35,6 +35,8 @@ return [
 			'.woocommerce-message',
 			'.woocommerce-info',
 			'.woocommerce-purchase-form',
+			'.breadcrumbs',
+			'.woocommerce-breadcrumb',
 			'.wc_payment_method [type="radio"] label',
 			'.flex-viewport',
 			'div:not(.flex-viewport) > .woocommerce-product-gallery__wrapper',

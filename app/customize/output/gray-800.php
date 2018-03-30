@@ -11,14 +11,4 @@
 
 $gray800 = bigbox_get_theme_color( 'gray-800' );
 
-return [
-	// Solid color
-	[
-		'selectors'    => [
-			'a:hover',
-		],
-		'declarations' => [
-			'color' => esc_attr( $gray800 ),
-		],
-	],
-];
+return [];

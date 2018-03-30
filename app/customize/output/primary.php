@@ -51,4 +51,15 @@ return [
 			'border-color' => esc_attr( $rgba25 ),
 		],
 	],
+
+	// @mixin button
+	[
+		'selectors'    => [
+			'.button',
+			'button',
+		],
+		'declarations' => [
+			'background-color' => esc_attr( $primary ),
+		],
+	],
 ];

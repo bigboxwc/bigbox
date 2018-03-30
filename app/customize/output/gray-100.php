@@ -17,8 +17,6 @@ return [
 		'selectors'    => [
 			'table tbody tr:nth-child(even) th',
 			'table tbody tr:nth-child(even) td',
-			'.breadcrumbs',
-			'.woocommerce-breadcrumb',
 			'.button__pill',
 			'.facetwp-facet .facetwp-slider',
 			'.footer-copyright',
