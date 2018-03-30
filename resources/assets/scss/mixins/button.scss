@@ -1,6 +1,6 @@
 @mixin button {
 	color: #fff;
-	font: $font-weight-base #{$font-size-base}/#{$line-height-base} $font-family-sans-serif;
+	font: #{$font-size-base}/#{$line-height-base} $font-family-sans-serif;
 	text-decoration: none;
 	text-align: center;
 	cursor: pointer;

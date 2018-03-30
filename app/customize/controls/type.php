@@ -57,12 +57,18 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 	);
 
 	$weights = [
-		'base' => esc_html__( 'Base Font Weight', 'bigbox' ),
-		'bold' => esc_html__( 'Bold Font Weight', 'bigbox' ),
+		'base' => [
+			'label'  => esc_html__( 'Base Font Weight', 'bigbox' ),
+			'weight' => 400,
+		],
+		'bold' => [
+			'label'  => esc_html__( 'Bold Font Weight', 'bigbox' ),
+			'weight' => 500,
+		]
 	];
 
-	foreach ( $weights as $weight => $label ) {
-		$key = "type-{$weight}";
+	foreach ( $weights as $weight => $data ) {
+		$key = "type-font-weight-{$weight}";
 
 		$wp_customize->add_setting(
 			$key, [
@@ -73,10 +79,10 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 
 		$wp_customize->add_control(
 			$key, [
-				'label'    => $label,
+				'label'    => $data['label'],
 				'type'     => 'select',
 				'choices'  => [
-					'normal' => 400
+					'normal' => $data['weight'],
 				],
 				'section'  => 'type',
 			]

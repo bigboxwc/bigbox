@@ -1,10 +1,6 @@
 .facetwp-pager {
 
 	@extend .woocommerce-pagination;
-
-	.facetwp-page.active {
-		font-weight: $font-weight-base;
-	}
 }
 
 .facetwp-pager-label {
