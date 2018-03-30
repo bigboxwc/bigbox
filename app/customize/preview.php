@@ -20,6 +20,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function bigbox_customize_preview_init() {
 	wp_enqueue_script(
+		'webfontloader',
+		'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js',
+		[],
+		'1.6.26'
+	);
+
+	wp_enqueue_script(
 		'bigbox-customize-preview',
 		get_template_directory_uri() . '/public/js/customize-preview.min.js',
 		[ 'customize-preview' ],
@@ -52,6 +59,9 @@ function bigbox_preview_css() {
 		);
 	}
 
-	return wp_send_json_success( bigbox_customize_css() );
+	return wp_send_json_success( [
+		'css'        => bigbox_customize_css(),
+		'fontFamily' => bigbox_get_google_font_family_string(),
+	] );
 }
 add_action( 'wp_ajax_bigbox-preview-css', 'bigbox_preview_css' );
