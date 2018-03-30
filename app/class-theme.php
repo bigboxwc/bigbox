@@ -51,13 +51,14 @@ final class Theme implements Registerable {
 			'page-templates',
 			'theme-support',
 			'widgets',
-			'customize',
 			'wordpress',
 		];
 
 		foreach ( $helpers as $file ) {
 			require_once get_template_directory() . '/app/theme/' . $file . '.php';
 		}
+
+		require_once get_template_directory() . '/app/customize/customize.php';
 	}
 
 	/**

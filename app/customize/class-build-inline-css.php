@@ -11,7 +11,7 @@
  * @author Spencer Finnell
  */
 
-namespace BigBox\Theme\Customize;
+namespace BigBox\Customize;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0.
  */
-class Inline_CSS {
+class Build_Inline_CSS {
 	/**
 	 * The array for storing added CSS rule data.
 	 *

@@ -21,8 +21,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return array
  */
 function bigbox_get_theme_colors() {
-	$scheme = include get_template_directory() . '/app/theme/customize/config-scheme.php';
-	$grays  = include get_template_directory() . '/app/theme/customize/config-grays.php';
+	$scheme = include get_template_directory() . '/app/customize/config-scheme.php';
+	$grays  = include get_template_directory() . '/app/customize/config-grays.php';
 
 	$defaults = array_merge( $scheme, $grays );
 
@@ -69,13 +69,13 @@ function bigbox_get_theme_default_color( $key ) {
  * @since 1.0.0
  */
 function bigbox_customize_css() {
-	$css = new \BigBox\Theme\Customize\Inline_CSS();
+	$css = new \BigBox\Customize\Build_Inline_CSS();
 
 	$colors = bigbox_get_theme_colors();
 	$colors = array_merge( $colors['scheme'], $colors['grays'] );
 
 	foreach ( $colors as $key => $data ) {
-		$file = get_template_directory() . '/app/theme/customize/output/' . $key . '.php';
+		$file = get_template_directory() . '/app/customize/output/' . $key . '.php';
 
 		if ( ! file_exists( $file ) ) {
 			continue;
