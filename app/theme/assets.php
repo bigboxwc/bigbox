@@ -24,8 +24,16 @@ function bigbox_enqueue_styles() {
 
 	$deps = [];
 
+	// Load Google fonts if needed.
+	$google = bigbox_get_google_fonts_url();
+
+	if ( $google ) {
+		wp_enqueue_style( $stylesheet . '-fonts', $google );
+	}
+
+	// Base and dynamic styles.
 	wp_enqueue_style( $stylesheet, get_template_directory_uri() . '/public/css/app.min.css', $deps, $version );
-	wp_add_inline_style( bigbox_get_theme_name(), bigbox_customize_css() );
+	wp_add_inline_style( $stylesheet, bigbox_customize_css() );
 }
 add_action( 'wp_enqueue_scripts', 'bigbox_enqueue_styles' );
 

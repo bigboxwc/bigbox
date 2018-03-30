@@ -29,12 +29,11 @@ require_once get_template_directory() . '/app/customize/preview.php';
  * @since 1.0.0
  */
 function bigbox_customize_css() {
-	$css = new \BigBox\Customize\Build_Inline_CSS();
+	$css      = new \BigBox\Customize\Build_Inline_CSS();
+	$colors   = bigbox_get_theme_colors();
+	$controls = array_merge( [ 'type' => [] ], $colors['scheme'], $colors['grays'] );
 
-	$colors = bigbox_get_theme_colors();
-	$colors = array_merge( $colors['scheme'], $colors['grays'] );
-
-	foreach ( $colors as $key => $data ) {
+	foreach ( $controls as $key => $data ) {
 		$file = get_template_directory() . '/app/customize/output/' . $key . '.php';
 
 		if ( ! file_exists( $file ) ) {
