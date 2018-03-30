@@ -1,0 +1,10151 @@
+{
+  "ABeeZee": {
+    "label": "ABeeZee",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Abel": {
+    "label": "Abel",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Abhaya Libre": {
+    "label": "Abhaya Libre",
+    "variants": [
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "sinhala"
+    ]
+  },
+  "Abril Fatface": {
+    "label": "Abril Fatface",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Aclonica": {
+    "label": "Aclonica",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Acme": {
+    "label": "Acme",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Actor": {
+    "label": "Actor",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Adamina": {
+    "label": "Adamina",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Advent Pro": {
+    "label": "Advent Pro",
+    "variants": [
+      "100",
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "greek"
+    ]
+  },
+  "Aguafina Script": {
+    "label": "Aguafina Script",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Akronim": {
+    "label": "Akronim",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Aladin": {
+    "label": "Aladin",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Aldrich": {
+    "label": "Aldrich",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Alef": {
+    "label": "Alef",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "hebrew"
+    ]
+  },
+  "Alegreya": {
+    "label": "Alegreya",
+    "variants": [
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Alegreya SC": {
+    "label": "Alegreya SC",
+    "variants": [
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Alegreya Sans": {
+    "label": "Alegreya Sans",
+    "variants": [
+      "100",
+      "100italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Alegreya Sans SC": {
+    "label": "Alegreya Sans SC",
+    "variants": [
+      "100",
+      "100italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Alex Brush": {
+    "label": "Alex Brush",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Alfa Slab One": {
+    "label": "Alfa Slab One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Alice": {
+    "label": "Alice",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "cyrillic",
+      "cyrillic-ext"
+    ]
+  },
+  "Alike": {
+    "label": "Alike",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Alike Angular": {
+    "label": "Alike Angular",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Allan": {
+    "label": "Allan",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Allerta": {
+    "label": "Allerta",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Allerta Stencil": {
+    "label": "Allerta Stencil",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Allura": {
+    "label": "Allura",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Almendra": {
+    "label": "Almendra",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Almendra Display": {
+    "label": "Almendra Display",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Almendra SC": {
+    "label": "Almendra SC",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Amarante": {
+    "label": "Amarante",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Amaranth": {
+    "label": "Amaranth",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Amatic SC": {
+    "label": "Amatic SC",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "hebrew",
+      "latin-ext",
+      "cyrillic",
+      "vietnamese"
+    ]
+  },
+  "Amethysta": {
+    "label": "Amethysta",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Amiko": {
+    "label": "Amiko",
+    "variants": [
+      "regular",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Amiri": {
+    "label": "Amiri",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Amita": {
+    "label": "Amita",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Anaheim": {
+    "label": "Anaheim",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Andada": {
+    "label": "Andada",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Andika": {
+    "label": "Andika",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Angkor": {
+    "label": "Angkor",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Annie Use Your Telescope": {
+    "label": "Annie Use Your Telescope",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Anonymous Pro": {
+    "label": "Anonymous Pro",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "greek"
+    ]
+  },
+  "Antic": {
+    "label": "Antic",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Antic Didone": {
+    "label": "Antic Didone",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Antic Slab": {
+    "label": "Antic Slab",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Anton": {
+    "label": "Anton",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Arapey": {
+    "label": "Arapey",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Arbutus": {
+    "label": "Arbutus",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Arbutus Slab": {
+    "label": "Arbutus Slab",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Architects Daughter": {
+    "label": "Architects Daughter",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Archivo": {
+    "label": "Archivo",
+    "variants": [
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Archivo Black": {
+    "label": "Archivo Black",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Archivo Narrow": {
+    "label": "Archivo Narrow",
+    "variants": [
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Aref Ruqaa": {
+    "label": "Aref Ruqaa",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "arabic",
+      "latin"
+    ]
+  },
+  "Arima Madurai": {
+    "label": "Arima Madurai",
+    "variants": [
+      "100",
+      "200",
+      "300",
+      "regular",
+      "500",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "tamil"
+    ]
+  },
+  "Arimo": {
+    "label": "Arimo",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "hebrew",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Arizonia": {
+    "label": "Arizonia",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Armata": {
+    "label": "Armata",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Arsenal": {
+    "label": "Arsenal",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Artifika": {
+    "label": "Artifika",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Arvo": {
+    "label": "Arvo",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Arya": {
+    "label": "Arya",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Asap": {
+    "label": "Asap",
+    "variants": [
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Asap Condensed": {
+    "label": "Asap Condensed",
+    "variants": [
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Asar": {
+    "label": "Asar",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Asset": {
+    "label": "Asset",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Assistant": {
+    "label": "Assistant",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "600",
+      "700",
+      "800"
+    ],
+    "subsets": [
+      "latin",
+      "hebrew"
+    ]
+  },
+  "Astloch": {
+    "label": "Astloch",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Asul": {
+    "label": "Asul",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Athiti": {
+    "label": "Athiti",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "thai"
+    ]
+  },
+  "Atma": {
+    "label": "Atma",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "bengali"
+    ]
+  },
+  "Atomic Age": {
+    "label": "Atomic Age",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Aubrey": {
+    "label": "Aubrey",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Audiowide": {
+    "label": "Audiowide",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Autour One": {
+    "label": "Autour One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Average": {
+    "label": "Average",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Average Sans": {
+    "label": "Average Sans",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Averia Gruesa Libre": {
+    "label": "Averia Gruesa Libre",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Averia Libre": {
+    "label": "Averia Libre",
+    "variants": [
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Averia Sans Libre": {
+    "label": "Averia Sans Libre",
+    "variants": [
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Averia Serif Libre": {
+    "label": "Averia Serif Libre",
+    "variants": [
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Bad Script": {
+    "label": "Bad Script",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "cyrillic"
+    ]
+  },
+  "Bahiana": {
+    "label": "Bahiana",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Baloo": {
+    "label": "Baloo",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "devanagari"
+    ]
+  },
+  "Baloo Bhai": {
+    "label": "Baloo Bhai",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "gujarati",
+      "vietnamese"
+    ]
+  },
+  "Baloo Bhaijaan": {
+    "label": "Baloo Bhaijaan",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Baloo Bhaina": {
+    "label": "Baloo Bhaina",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "oriya"
+    ]
+  },
+  "Baloo Chettan": {
+    "label": "Baloo Chettan",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "malayalam",
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Baloo Da": {
+    "label": "Baloo Da",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "bengali"
+    ]
+  },
+  "Baloo Paaji": {
+    "label": "Baloo Paaji",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "gurmukhi"
+    ]
+  },
+  "Baloo Tamma": {
+    "label": "Baloo Tamma",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "kannada"
+    ]
+  },
+  "Baloo Tammudu": {
+    "label": "Baloo Tammudu",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "telugu",
+      "vietnamese"
+    ]
+  },
+  "Baloo Thambi": {
+    "label": "Baloo Thambi",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "tamil"
+    ]
+  },
+  "Balthazar": {
+    "label": "Balthazar",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Bangers": {
+    "label": "Bangers",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Barlow": {
+    "label": "Barlow",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Barlow Condensed": {
+    "label": "Barlow Condensed",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Barlow Semi Condensed": {
+    "label": "Barlow Semi Condensed",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Barrio": {
+    "label": "Barrio",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Basic": {
+    "label": "Basic",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Battambang": {
+    "label": "Battambang",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Baumans": {
+    "label": "Baumans",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Bayon": {
+    "label": "Bayon",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Belgrano": {
+    "label": "Belgrano",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Bellefair": {
+    "label": "Bellefair",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "hebrew",
+      "latin-ext"
+    ]
+  },
+  "Belleza": {
+    "label": "Belleza",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "BenchNine": {
+    "label": "BenchNine",
+    "variants": [
+      "300",
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Bentham": {
+    "label": "Bentham",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Berkshire Swash": {
+    "label": "Berkshire Swash",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Bevan": {
+    "label": "Bevan",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Bigelow Rules": {
+    "label": "Bigelow Rules",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Bigshot One": {
+    "label": "Bigshot One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Bilbo": {
+    "label": "Bilbo",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Bilbo Swash Caps": {
+    "label": "Bilbo Swash Caps",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "BioRhyme": {
+    "label": "BioRhyme",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "700",
+      "800"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "BioRhyme Expanded": {
+    "label": "BioRhyme Expanded",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "700",
+      "800"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Biryani": {
+    "label": "Biryani",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "600",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Bitter": {
+    "label": "Bitter",
+    "variants": [
+      "regular",
+      "italic",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Black Ops One": {
+    "label": "Black Ops One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Bokor": {
+    "label": "Bokor",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Bonbon": {
+    "label": "Bonbon",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Boogaloo": {
+    "label": "Boogaloo",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Bowlby One": {
+    "label": "Bowlby One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Bowlby One SC": {
+    "label": "Bowlby One SC",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Brawler": {
+    "label": "Brawler",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Bree Serif": {
+    "label": "Bree Serif",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Bubblegum Sans": {
+    "label": "Bubblegum Sans",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Bubbler One": {
+    "label": "Bubbler One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Buda": {
+    "label": "Buda",
+    "variants": [
+      "300"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Buenard": {
+    "label": "Buenard",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Bungee": {
+    "label": "Bungee",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Bungee Hairline": {
+    "label": "Bungee Hairline",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Bungee Inline": {
+    "label": "Bungee Inline",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Bungee Outline": {
+    "label": "Bungee Outline",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Bungee Shade": {
+    "label": "Bungee Shade",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Butcherman": {
+    "label": "Butcherman",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Butterfly Kids": {
+    "label": "Butterfly Kids",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Cabin": {
+    "label": "Cabin",
+    "variants": [
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Cabin Condensed": {
+    "label": "Cabin Condensed",
+    "variants": [
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Cabin Sketch": {
+    "label": "Cabin Sketch",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Caesar Dressing": {
+    "label": "Caesar Dressing",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Cagliostro": {
+    "label": "Cagliostro",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Cairo": {
+    "label": "Cairo",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "600",
+      "700",
+      "900"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Calligraffitti": {
+    "label": "Calligraffitti",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Cambay": {
+    "label": "Cambay",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Cambo": {
+    "label": "Cambo",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Candal": {
+    "label": "Candal",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Cantarell": {
+    "label": "Cantarell",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Cantata One": {
+    "label": "Cantata One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Cantora One": {
+    "label": "Cantora One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Capriola": {
+    "label": "Capriola",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Cardo": {
+    "label": "Cardo",
+    "variants": [
+      "regular",
+      "italic",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Carme": {
+    "label": "Carme",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Carrois Gothic": {
+    "label": "Carrois Gothic",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Carrois Gothic SC": {
+    "label": "Carrois Gothic SC",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Carter One": {
+    "label": "Carter One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Catamaran": {
+    "label": "Catamaran",
+    "variants": [
+      "100",
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "tamil"
+    ]
+  },
+  "Caudex": {
+    "label": "Caudex",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Caveat": {
+    "label": "Caveat",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic"
+    ]
+  },
+  "Caveat Brush": {
+    "label": "Caveat Brush",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Cedarville Cursive": {
+    "label": "Cedarville Cursive",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Ceviche One": {
+    "label": "Ceviche One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Changa": {
+    "label": "Changa",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Changa One": {
+    "label": "Changa One",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Chango": {
+    "label": "Chango",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Chathura": {
+    "label": "Chathura",
+    "variants": [
+      "100",
+      "300",
+      "regular",
+      "700",
+      "800"
+    ],
+    "subsets": [
+      "latin",
+      "telugu"
+    ]
+  },
+  "Chau Philomene One": {
+    "label": "Chau Philomene One",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Chela One": {
+    "label": "Chela One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Chelsea Market": {
+    "label": "Chelsea Market",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Chenla": {
+    "label": "Chenla",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Cherry Cream Soda": {
+    "label": "Cherry Cream Soda",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Cherry Swash": {
+    "label": "Cherry Swash",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Chewy": {
+    "label": "Chewy",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Chicle": {
+    "label": "Chicle",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Chivo": {
+    "label": "Chivo",
+    "variants": [
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "700",
+      "700italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Chonburi": {
+    "label": "Chonburi",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "thai"
+    ]
+  },
+  "Cinzel": {
+    "label": "Cinzel",
+    "variants": [
+      "regular",
+      "700",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Cinzel Decorative": {
+    "label": "Cinzel Decorative",
+    "variants": [
+      "regular",
+      "700",
+      "900"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Clicker Script": {
+    "label": "Clicker Script",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Coda": {
+    "label": "Coda",
+    "variants": [
+      "regular",
+      "800"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Coda Caption": {
+    "label": "Coda Caption",
+    "variants": [
+      "800"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Codystar": {
+    "label": "Codystar",
+    "variants": [
+      "300",
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Coiny": {
+    "label": "Coiny",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "tamil"
+    ]
+  },
+  "Combo": {
+    "label": "Combo",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Comfortaa": {
+    "label": "Comfortaa",
+    "variants": [
+      "300",
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek"
+    ]
+  },
+  "Coming Soon": {
+    "label": "Coming Soon",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Concert One": {
+    "label": "Concert One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Condiment": {
+    "label": "Condiment",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Content": {
+    "label": "Content",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Contrail One": {
+    "label": "Contrail One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Convergence": {
+    "label": "Convergence",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Cookie": {
+    "label": "Cookie",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Copse": {
+    "label": "Copse",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Corben": {
+    "label": "Corben",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Cormorant": {
+    "label": "Cormorant",
+    "variants": [
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Cormorant Garamond": {
+    "label": "Cormorant Garamond",
+    "variants": [
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Cormorant Infant": {
+    "label": "Cormorant Infant",
+    "variants": [
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Cormorant SC": {
+    "label": "Cormorant SC",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Cormorant Unicase": {
+    "label": "Cormorant Unicase",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Cormorant Upright": {
+    "label": "Cormorant Upright",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Courgette": {
+    "label": "Courgette",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Cousine": {
+    "label": "Cousine",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "hebrew",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Coustard": {
+    "label": "Coustard",
+    "variants": [
+      "regular",
+      "900"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Covered By Your Grace": {
+    "label": "Covered By Your Grace",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Crafty Girls": {
+    "label": "Crafty Girls",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Creepster": {
+    "label": "Creepster",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Crete Round": {
+    "label": "Crete Round",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Crimson Text": {
+    "label": "Crimson Text",
+    "variants": [
+      "regular",
+      "italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Croissant One": {
+    "label": "Croissant One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Crushed": {
+    "label": "Crushed",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Cuprum": {
+    "label": "Cuprum",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Cutive": {
+    "label": "Cutive",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Cutive Mono": {
+    "label": "Cutive Mono",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Damion": {
+    "label": "Damion",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Dancing Script": {
+    "label": "Dancing Script",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Dangrek": {
+    "label": "Dangrek",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "David Libre": {
+    "label": "David Libre",
+    "variants": [
+      "regular",
+      "500",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "hebrew",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Dawning of a New Day": {
+    "label": "Dawning of a New Day",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Days One": {
+    "label": "Days One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Dekko": {
+    "label": "Dekko",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Delius": {
+    "label": "Delius",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Delius Swash Caps": {
+    "label": "Delius Swash Caps",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Delius Unicase": {
+    "label": "Delius Unicase",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Della Respira": {
+    "label": "Della Respira",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Denk One": {
+    "label": "Denk One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Devonshire": {
+    "label": "Devonshire",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Dhurjati": {
+    "label": "Dhurjati",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "telugu"
+    ]
+  },
+  "Didact Gothic": {
+    "label": "Didact Gothic",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Diplomata": {
+    "label": "Diplomata",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Diplomata SC": {
+    "label": "Diplomata SC",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Domine": {
+    "label": "Domine",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Donegal One": {
+    "label": "Donegal One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Doppio One": {
+    "label": "Doppio One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Dorsa": {
+    "label": "Dorsa",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Dosis": {
+    "label": "Dosis",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Dr Sugiyama": {
+    "label": "Dr Sugiyama",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Duru Sans": {
+    "label": "Duru Sans",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Dynalight": {
+    "label": "Dynalight",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "EB Garamond": {
+    "label": "EB Garamond",
+    "variants": [
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Eagle Lake": {
+    "label": "Eagle Lake",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Eater": {
+    "label": "Eater",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Economica": {
+    "label": "Economica",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Eczar": {
+    "label": "Eczar",
+    "variants": [
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "El Messiri": {
+    "label": "El Messiri",
+    "variants": [
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "cyrillic"
+    ]
+  },
+  "Electrolize": {
+    "label": "Electrolize",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Elsie": {
+    "label": "Elsie",
+    "variants": [
+      "regular",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Elsie Swash Caps": {
+    "label": "Elsie Swash Caps",
+    "variants": [
+      "regular",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Emblema One": {
+    "label": "Emblema One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Emilys Candy": {
+    "label": "Emilys Candy",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Encode Sans": {
+    "label": "Encode Sans",
+    "variants": [
+      "100",
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Encode Sans Condensed": {
+    "label": "Encode Sans Condensed",
+    "variants": [
+      "100",
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Encode Sans Expanded": {
+    "label": "Encode Sans Expanded",
+    "variants": [
+      "100",
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Encode Sans Semi Condensed": {
+    "label": "Encode Sans Semi Condensed",
+    "variants": [
+      "100",
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Encode Sans Semi Expanded": {
+    "label": "Encode Sans Semi Expanded",
+    "variants": [
+      "100",
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Engagement": {
+    "label": "Engagement",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Englebert": {
+    "label": "Englebert",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Enriqueta": {
+    "label": "Enriqueta",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Erica One": {
+    "label": "Erica One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Esteban": {
+    "label": "Esteban",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Euphoria Script": {
+    "label": "Euphoria Script",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Ewert": {
+    "label": "Ewert",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Exo": {
+    "label": "Exo",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Exo 2": {
+    "label": "Exo 2",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic"
+    ]
+  },
+  "Expletus Sans": {
+    "label": "Expletus Sans",
+    "variants": [
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Fanwood Text": {
+    "label": "Fanwood Text",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Farsan": {
+    "label": "Farsan",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "gujarati",
+      "vietnamese"
+    ]
+  },
+  "Fascinate": {
+    "label": "Fascinate",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Fascinate Inline": {
+    "label": "Fascinate Inline",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Faster One": {
+    "label": "Faster One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Fasthand": {
+    "label": "Fasthand",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Fauna One": {
+    "label": "Fauna One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Faustina": {
+    "label": "Faustina",
+    "variants": [
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Federant": {
+    "label": "Federant",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Federo": {
+    "label": "Federo",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Felipa": {
+    "label": "Felipa",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Fenix": {
+    "label": "Fenix",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Finger Paint": {
+    "label": "Finger Paint",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Fira Mono": {
+    "label": "Fira Mono",
+    "variants": [
+      "regular",
+      "500",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Fira Sans": {
+    "label": "Fira Sans",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Fira Sans Condensed": {
+    "label": "Fira Sans Condensed",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Fira Sans Extra Condensed": {
+    "label": "Fira Sans Extra Condensed",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Fjalla One": {
+    "label": "Fjalla One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Fjord One": {
+    "label": "Fjord One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Flamenco": {
+    "label": "Flamenco",
+    "variants": [
+      "300",
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Flavors": {
+    "label": "Flavors",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Fondamento": {
+    "label": "Fondamento",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Fontdiner Swanky": {
+    "label": "Fontdiner Swanky",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Forum": {
+    "label": "Forum",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext"
+    ]
+  },
+  "Francois One": {
+    "label": "Francois One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Frank Ruhl Libre": {
+    "label": "Frank Ruhl Libre",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "700",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "hebrew",
+      "latin-ext"
+    ]
+  },
+  "Freckle Face": {
+    "label": "Freckle Face",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Fredericka the Great": {
+    "label": "Fredericka the Great",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Fredoka One": {
+    "label": "Fredoka One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Freehand": {
+    "label": "Freehand",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Fresca": {
+    "label": "Fresca",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Frijole": {
+    "label": "Frijole",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Fruktur": {
+    "label": "Fruktur",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Fugaz One": {
+    "label": "Fugaz One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "GFS Didot": {
+    "label": "GFS Didot",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "greek"
+    ]
+  },
+  "GFS Neohellenic": {
+    "label": "GFS Neohellenic",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "greek"
+    ]
+  },
+  "Gabriela": {
+    "label": "Gabriela",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "cyrillic",
+      "cyrillic-ext"
+    ]
+  },
+  "Gafata": {
+    "label": "Gafata",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Galada": {
+    "label": "Galada",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "bengali"
+    ]
+  },
+  "Galdeano": {
+    "label": "Galdeano",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Galindo": {
+    "label": "Galindo",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Gentium Basic": {
+    "label": "Gentium Basic",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Gentium Book Basic": {
+    "label": "Gentium Book Basic",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Geo": {
+    "label": "Geo",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Geostar": {
+    "label": "Geostar",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Geostar Fill": {
+    "label": "Geostar Fill",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Germania One": {
+    "label": "Germania One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Gidugu": {
+    "label": "Gidugu",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "telugu"
+    ]
+  },
+  "Gilda Display": {
+    "label": "Gilda Display",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Give You Glory": {
+    "label": "Give You Glory",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Glass Antiqua": {
+    "label": "Glass Antiqua",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Glegoo": {
+    "label": "Glegoo",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Gloria Hallelujah": {
+    "label": "Gloria Hallelujah",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Goblin One": {
+    "label": "Goblin One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Gochi Hand": {
+    "label": "Gochi Hand",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Gorditas": {
+    "label": "Gorditas",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Goudy Bookletter 1911": {
+    "label": "Goudy Bookletter 1911",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Graduate": {
+    "label": "Graduate",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Grand Hotel": {
+    "label": "Grand Hotel",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Gravitas One": {
+    "label": "Gravitas One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Great Vibes": {
+    "label": "Great Vibes",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Griffy": {
+    "label": "Griffy",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Gruppo": {
+    "label": "Gruppo",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Gudea": {
+    "label": "Gudea",
+    "variants": [
+      "regular",
+      "italic",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Gurajada": {
+    "label": "Gurajada",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "telugu"
+    ]
+  },
+  "Habibi": {
+    "label": "Habibi",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Halant": {
+    "label": "Halant",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Hammersmith One": {
+    "label": "Hammersmith One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Hanalei": {
+    "label": "Hanalei",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Hanalei Fill": {
+    "label": "Hanalei Fill",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Handlee": {
+    "label": "Handlee",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Hanuman": {
+    "label": "Hanuman",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Happy Monkey": {
+    "label": "Happy Monkey",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Harmattan": {
+    "label": "Harmattan",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "arabic",
+      "latin"
+    ]
+  },
+  "Headland One": {
+    "label": "Headland One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Heebo": {
+    "label": "Heebo",
+    "variants": [
+      "100",
+      "300",
+      "regular",
+      "500",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "hebrew"
+    ]
+  },
+  "Henny Penny": {
+    "label": "Henny Penny",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Herr Von Muellerhoff": {
+    "label": "Herr Von Muellerhoff",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Hind": {
+    "label": "Hind",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Hind Guntur": {
+    "label": "Hind Guntur",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "telugu"
+    ]
+  },
+  "Hind Madurai": {
+    "label": "Hind Madurai",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "tamil"
+    ]
+  },
+  "Hind Siliguri": {
+    "label": "Hind Siliguri",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "bengali"
+    ]
+  },
+  "Hind Vadodara": {
+    "label": "Hind Vadodara",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "gujarati"
+    ]
+  },
+  "Holtwood One SC": {
+    "label": "Holtwood One SC",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Homemade Apple": {
+    "label": "Homemade Apple",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Homenaje": {
+    "label": "Homenaje",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "IBM Plex Mono": {
+    "label": "IBM Plex Mono",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "IBM Plex Sans": {
+    "label": "IBM Plex Sans",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "IBM Plex Sans Condensed": {
+    "label": "IBM Plex Sans Condensed",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "IBM Plex Serif": {
+    "label": "IBM Plex Serif",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "IM Fell DW Pica": {
+    "label": "IM Fell DW Pica",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "IM Fell DW Pica SC": {
+    "label": "IM Fell DW Pica SC",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "IM Fell Double Pica": {
+    "label": "IM Fell Double Pica",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "IM Fell Double Pica SC": {
+    "label": "IM Fell Double Pica SC",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "IM Fell English": {
+    "label": "IM Fell English",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "IM Fell English SC": {
+    "label": "IM Fell English SC",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "IM Fell French Canon": {
+    "label": "IM Fell French Canon",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "IM Fell French Canon SC": {
+    "label": "IM Fell French Canon SC",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "IM Fell Great Primer": {
+    "label": "IM Fell Great Primer",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "IM Fell Great Primer SC": {
+    "label": "IM Fell Great Primer SC",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Iceberg": {
+    "label": "Iceberg",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Iceland": {
+    "label": "Iceland",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Imprima": {
+    "label": "Imprima",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Inconsolata": {
+    "label": "Inconsolata",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Inder": {
+    "label": "Inder",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Indie Flower": {
+    "label": "Indie Flower",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Inika": {
+    "label": "Inika",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Inknut Antiqua": {
+    "label": "Inknut Antiqua",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Irish Grover": {
+    "label": "Irish Grover",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Istok Web": {
+    "label": "Istok Web",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext"
+    ]
+  },
+  "Italiana": {
+    "label": "Italiana",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Italianno": {
+    "label": "Italianno",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Itim": {
+    "label": "Itim",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "thai"
+    ]
+  },
+  "Jacques Francois": {
+    "label": "Jacques Francois",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Jacques Francois Shadow": {
+    "label": "Jacques Francois Shadow",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Jaldi": {
+    "label": "Jaldi",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Jim Nightshade": {
+    "label": "Jim Nightshade",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Jockey One": {
+    "label": "Jockey One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Jolly Lodger": {
+    "label": "Jolly Lodger",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Jomhuria": {
+    "label": "Jomhuria",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Josefin Sans": {
+    "label": "Josefin Sans",
+    "variants": [
+      "100",
+      "100italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Josefin Slab": {
+    "label": "Josefin Slab",
+    "variants": [
+      "100",
+      "100italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Joti One": {
+    "label": "Joti One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Judson": {
+    "label": "Judson",
+    "variants": [
+      "regular",
+      "italic",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Julee": {
+    "label": "Julee",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Julius Sans One": {
+    "label": "Julius Sans One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Junge": {
+    "label": "Junge",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Jura": {
+    "label": "Jura",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Just Another Hand": {
+    "label": "Just Another Hand",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Just Me Again Down Here": {
+    "label": "Just Me Again Down Here",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Kadwa": {
+    "label": "Kadwa",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "devanagari"
+    ]
+  },
+  "Kalam": {
+    "label": "Kalam",
+    "variants": [
+      "300",
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Kameron": {
+    "label": "Kameron",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Kanit": {
+    "label": "Kanit",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "thai"
+    ]
+  },
+  "Kantumruy": {
+    "label": "Kantumruy",
+    "variants": [
+      "300",
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Karla": {
+    "label": "Karla",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Karma": {
+    "label": "Karma",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Katibeh": {
+    "label": "Katibeh",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Kaushan Script": {
+    "label": "Kaushan Script",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Kavivanar": {
+    "label": "Kavivanar",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "tamil"
+    ]
+  },
+  "Kavoon": {
+    "label": "Kavoon",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Kdam Thmor": {
+    "label": "Kdam Thmor",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Keania One": {
+    "label": "Keania One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Kelly Slab": {
+    "label": "Kelly Slab",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic"
+    ]
+  },
+  "Kenia": {
+    "label": "Kenia",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Khand": {
+    "label": "Khand",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Khmer": {
+    "label": "Khmer",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Khula": {
+    "label": "Khula",
+    "variants": [
+      "300",
+      "regular",
+      "600",
+      "700",
+      "800"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Kite One": {
+    "label": "Kite One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Knewave": {
+    "label": "Knewave",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Kotta One": {
+    "label": "Kotta One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Koulen": {
+    "label": "Koulen",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Kranky": {
+    "label": "Kranky",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Kreon": {
+    "label": "Kreon",
+    "variants": [
+      "300",
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Kristi": {
+    "label": "Kristi",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Krona One": {
+    "label": "Krona One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Kumar One": {
+    "label": "Kumar One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "gujarati"
+    ]
+  },
+  "Kumar One Outline": {
+    "label": "Kumar One Outline",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "gujarati"
+    ]
+  },
+  "Kurale": {
+    "label": "Kurale",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "devanagari"
+    ]
+  },
+  "La Belle Aurore": {
+    "label": "La Belle Aurore",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Laila": {
+    "label": "Laila",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Lakki Reddy": {
+    "label": "Lakki Reddy",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "telugu"
+    ]
+  },
+  "Lalezar": {
+    "label": "Lalezar",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Lancelot": {
+    "label": "Lancelot",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Lateef": {
+    "label": "Lateef",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "arabic",
+      "latin"
+    ]
+  },
+  "Lato": {
+    "label": "Lato",
+    "variants": [
+      "100",
+      "100italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "700",
+      "700italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "League Script": {
+    "label": "League Script",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Leckerli One": {
+    "label": "Leckerli One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Ledger": {
+    "label": "Ledger",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic"
+    ]
+  },
+  "Lekton": {
+    "label": "Lekton",
+    "variants": [
+      "regular",
+      "italic",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Lemon": {
+    "label": "Lemon",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Lemonada": {
+    "label": "Lemonada",
+    "variants": [
+      "300",
+      "regular",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Libre Barcode 128": {
+    "label": "Libre Barcode 128",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Libre Barcode 128 Text": {
+    "label": "Libre Barcode 128 Text",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Libre Barcode 39": {
+    "label": "Libre Barcode 39",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Libre Barcode 39 Extended": {
+    "label": "Libre Barcode 39 Extended",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Libre Barcode 39 Extended Text": {
+    "label": "Libre Barcode 39 Extended Text",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Libre Barcode 39 Text": {
+    "label": "Libre Barcode 39 Text",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Libre Baskerville": {
+    "label": "Libre Baskerville",
+    "variants": [
+      "regular",
+      "italic",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Libre Franklin": {
+    "label": "Libre Franklin",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Life Savers": {
+    "label": "Life Savers",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Lilita One": {
+    "label": "Lilita One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Lily Script One": {
+    "label": "Lily Script One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Limelight": {
+    "label": "Limelight",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Linden Hill": {
+    "label": "Linden Hill",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Lobster": {
+    "label": "Lobster",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Lobster Two": {
+    "label": "Lobster Two",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Londrina Outline": {
+    "label": "Londrina Outline",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Londrina Shadow": {
+    "label": "Londrina Shadow",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Londrina Sketch": {
+    "label": "Londrina Sketch",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Londrina Solid": {
+    "label": "Londrina Solid",
+    "variants": [
+      "100",
+      "300",
+      "regular",
+      "900"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Lora": {
+    "label": "Lora",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Love Ya Like A Sister": {
+    "label": "Love Ya Like A Sister",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Loved by the King": {
+    "label": "Loved by the King",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Lovers Quarrel": {
+    "label": "Lovers Quarrel",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Luckiest Guy": {
+    "label": "Luckiest Guy",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Lusitana": {
+    "label": "Lusitana",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Lustria": {
+    "label": "Lustria",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Macondo": {
+    "label": "Macondo",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Macondo Swash Caps": {
+    "label": "Macondo Swash Caps",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Mada": {
+    "label": "Mada",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "900"
+    ],
+    "subsets": [
+      "arabic",
+      "latin"
+    ]
+  },
+  "Magra": {
+    "label": "Magra",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Maiden Orange": {
+    "label": "Maiden Orange",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Maitree": {
+    "label": "Maitree",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "thai"
+    ]
+  },
+  "Mako": {
+    "label": "Mako",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Mallanna": {
+    "label": "Mallanna",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "telugu"
+    ]
+  },
+  "Mandali": {
+    "label": "Mandali",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "telugu"
+    ]
+  },
+  "Manuale": {
+    "label": "Manuale",
+    "variants": [
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Marcellus": {
+    "label": "Marcellus",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Marcellus SC": {
+    "label": "Marcellus SC",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Marck Script": {
+    "label": "Marck Script",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic"
+    ]
+  },
+  "Margarine": {
+    "label": "Margarine",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Marko One": {
+    "label": "Marko One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Marmelad": {
+    "label": "Marmelad",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic"
+    ]
+  },
+  "Martel": {
+    "label": "Martel",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "600",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Martel Sans": {
+    "label": "Martel Sans",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "600",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Marvel": {
+    "label": "Marvel",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Mate": {
+    "label": "Mate",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Mate SC": {
+    "label": "Mate SC",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Maven Pro": {
+    "label": "Maven Pro",
+    "variants": [
+      "regular",
+      "500",
+      "700",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "McLaren": {
+    "label": "McLaren",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Meddon": {
+    "label": "Meddon",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "MedievalSharp": {
+    "label": "MedievalSharp",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Medula One": {
+    "label": "Medula One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Meera Inimai": {
+    "label": "Meera Inimai",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "tamil"
+    ]
+  },
+  "Megrim": {
+    "label": "Megrim",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Meie Script": {
+    "label": "Meie Script",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Merienda": {
+    "label": "Merienda",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Merienda One": {
+    "label": "Merienda One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Merriweather": {
+    "label": "Merriweather",
+    "variants": [
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "700",
+      "700italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Merriweather Sans": {
+    "label": "Merriweather Sans",
+    "variants": [
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Metal": {
+    "label": "Metal",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Metal Mania": {
+    "label": "Metal Mania",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Metamorphous": {
+    "label": "Metamorphous",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Metrophobic": {
+    "label": "Metrophobic",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Michroma": {
+    "label": "Michroma",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Milonga": {
+    "label": "Milonga",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Miltonian": {
+    "label": "Miltonian",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Miltonian Tattoo": {
+    "label": "Miltonian Tattoo",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Mina": {
+    "label": "Mina",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "bengali"
+    ]
+  },
+  "Miniver": {
+    "label": "Miniver",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Miriam Libre": {
+    "label": "Miriam Libre",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "hebrew",
+      "latin-ext"
+    ]
+  },
+  "Mirza": {
+    "label": "Mirza",
+    "variants": [
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Miss Fajardose": {
+    "label": "Miss Fajardose",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Mitr": {
+    "label": "Mitr",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "thai"
+    ]
+  },
+  "Modak": {
+    "label": "Modak",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Modern Antiqua": {
+    "label": "Modern Antiqua",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Mogra": {
+    "label": "Mogra",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "gujarati"
+    ]
+  },
+  "Molengo": {
+    "label": "Molengo",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Molle": {
+    "label": "Molle",
+    "variants": [
+      "italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Monda": {
+    "label": "Monda",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Monofett": {
+    "label": "Monofett",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Monoton": {
+    "label": "Monoton",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Monsieur La Doulaise": {
+    "label": "Monsieur La Doulaise",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Montaga": {
+    "label": "Montaga",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Montez": {
+    "label": "Montez",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Montserrat": {
+    "label": "Montserrat",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Montserrat Alternates": {
+    "label": "Montserrat Alternates",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Montserrat Subrayada": {
+    "label": "Montserrat Subrayada",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Moul": {
+    "label": "Moul",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Moulpali": {
+    "label": "Moulpali",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Mountains of Christmas": {
+    "label": "Mountains of Christmas",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Mouse Memoirs": {
+    "label": "Mouse Memoirs",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Mr Bedfort": {
+    "label": "Mr Bedfort",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Mr Dafoe": {
+    "label": "Mr Dafoe",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Mr De Haviland": {
+    "label": "Mr De Haviland",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Mrs Saint Delafield": {
+    "label": "Mrs Saint Delafield",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Mrs Sheppards": {
+    "label": "Mrs Sheppards",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Mukta": {
+    "label": "Mukta",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Mukta Mahee": {
+    "label": "Mukta Mahee",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "gurmukhi"
+    ]
+  },
+  "Mukta Malar": {
+    "label": "Mukta Malar",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "tamil"
+    ]
+  },
+  "Mukta Vaani": {
+    "label": "Mukta Vaani",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "gujarati"
+    ]
+  },
+  "Muli": {
+    "label": "Muli",
+    "variants": [
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Mystery Quest": {
+    "label": "Mystery Quest",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "NTR": {
+    "label": "NTR",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "telugu"
+    ]
+  },
+  "Nanum Brush Script": {
+    "label": "Nanum Brush Script",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "korean",
+      "latin"
+    ]
+  },
+  "Nanum Gothic": {
+    "label": "Nanum Gothic",
+    "variants": [
+      "regular",
+      "700",
+      "800"
+    ],
+    "subsets": [
+      "korean",
+      "latin"
+    ]
+  },
+  "Nanum Gothic Coding": {
+    "label": "Nanum Gothic Coding",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "korean",
+      "latin"
+    ]
+  },
+  "Nanum Myeongjo": {
+    "label": "Nanum Myeongjo",
+    "variants": [
+      "regular",
+      "700",
+      "800"
+    ],
+    "subsets": [
+      "korean",
+      "latin"
+    ]
+  },
+  "Nanum Pen Script": {
+    "label": "Nanum Pen Script",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "korean",
+      "latin"
+    ]
+  },
+  "Neucha": {
+    "label": "Neucha",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "cyrillic"
+    ]
+  },
+  "Neuton": {
+    "label": "Neuton",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "italic",
+      "700",
+      "800"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "New Rocker": {
+    "label": "New Rocker",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "News Cycle": {
+    "label": "News Cycle",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Niconne": {
+    "label": "Niconne",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Nixie One": {
+    "label": "Nixie One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Nobile": {
+    "label": "Nobile",
+    "variants": [
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Nokora": {
+    "label": "Nokora",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Norican": {
+    "label": "Norican",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Nosifer": {
+    "label": "Nosifer",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Nothing You Could Do": {
+    "label": "Nothing You Could Do",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Noticia Text": {
+    "label": "Noticia Text",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Noto Sans": {
+    "label": "Noto Sans",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "devanagari",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Noto Serif": {
+    "label": "Noto Serif",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Nova Cut": {
+    "label": "Nova Cut",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Nova Flat": {
+    "label": "Nova Flat",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Nova Mono": {
+    "label": "Nova Mono",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "greek"
+    ]
+  },
+  "Nova Oval": {
+    "label": "Nova Oval",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Nova Round": {
+    "label": "Nova Round",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Nova Script": {
+    "label": "Nova Script",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Nova Slim": {
+    "label": "Nova Slim",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Nova Square": {
+    "label": "Nova Square",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Numans": {
+    "label": "Numans",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Nunito": {
+    "label": "Nunito",
+    "variants": [
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Nunito Sans": {
+    "label": "Nunito Sans",
+    "variants": [
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Odor Mean Chey": {
+    "label": "Odor Mean Chey",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Offside": {
+    "label": "Offside",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Old Standard TT": {
+    "label": "Old Standard TT",
+    "variants": [
+      "regular",
+      "italic",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Oldenburg": {
+    "label": "Oldenburg",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Oleo Script": {
+    "label": "Oleo Script",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Oleo Script Swash Caps": {
+    "label": "Oleo Script Swash Caps",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Open Sans": {
+    "label": "Open Sans",
+    "variants": [
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Open Sans Condensed": {
+    "label": "Open Sans Condensed",
+    "variants": [
+      "300",
+      "300italic",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Oranienbaum": {
+    "label": "Oranienbaum",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext"
+    ]
+  },
+  "Orbitron": {
+    "label": "Orbitron",
+    "variants": [
+      "regular",
+      "500",
+      "700",
+      "900"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Oregano": {
+    "label": "Oregano",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Orienta": {
+    "label": "Orienta",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Original Surfer": {
+    "label": "Original Surfer",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Oswald": {
+    "label": "Oswald",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "vietnamese"
+    ]
+  },
+  "Over the Rainbow": {
+    "label": "Over the Rainbow",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Overlock": {
+    "label": "Overlock",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Overlock SC": {
+    "label": "Overlock SC",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Overpass": {
+    "label": "Overpass",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Overpass Mono": {
+    "label": "Overpass Mono",
+    "variants": [
+      "300",
+      "regular",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Ovo": {
+    "label": "Ovo",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Oxygen": {
+    "label": "Oxygen",
+    "variants": [
+      "300",
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Oxygen Mono": {
+    "label": "Oxygen Mono",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "PT Mono": {
+    "label": "PT Mono",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext"
+    ]
+  },
+  "PT Sans": {
+    "label": "PT Sans",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext"
+    ]
+  },
+  "PT Sans Caption": {
+    "label": "PT Sans Caption",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext"
+    ]
+  },
+  "PT Sans Narrow": {
+    "label": "PT Sans Narrow",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext"
+    ]
+  },
+  "PT Serif": {
+    "label": "PT Serif",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext"
+    ]
+  },
+  "PT Serif Caption": {
+    "label": "PT Serif Caption",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext"
+    ]
+  },
+  "Pacifico": {
+    "label": "Pacifico",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "vietnamese"
+    ]
+  },
+  "Padauk": {
+    "label": "Padauk",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "myanmar"
+    ]
+  },
+  "Palanquin": {
+    "label": "Palanquin",
+    "variants": [
+      "100",
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Palanquin Dark": {
+    "label": "Palanquin Dark",
+    "variants": [
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Pangolin": {
+    "label": "Pangolin",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Paprika": {
+    "label": "Paprika",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Parisienne": {
+    "label": "Parisienne",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Passero One": {
+    "label": "Passero One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Passion One": {
+    "label": "Passion One",
+    "variants": [
+      "regular",
+      "700",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Pathway Gothic One": {
+    "label": "Pathway Gothic One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Patrick Hand": {
+    "label": "Patrick Hand",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Patrick Hand SC": {
+    "label": "Patrick Hand SC",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Pattaya": {
+    "label": "Pattaya",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "vietnamese",
+      "thai"
+    ]
+  },
+  "Patua One": {
+    "label": "Patua One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Pavanam": {
+    "label": "Pavanam",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "tamil"
+    ]
+  },
+  "Paytone One": {
+    "label": "Paytone One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Peddana": {
+    "label": "Peddana",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "telugu"
+    ]
+  },
+  "Peralta": {
+    "label": "Peralta",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Permanent Marker": {
+    "label": "Permanent Marker",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Petit Formal Script": {
+    "label": "Petit Formal Script",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Petrona": {
+    "label": "Petrona",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Philosopher": {
+    "label": "Philosopher",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Piedra": {
+    "label": "Piedra",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Pinyon Script": {
+    "label": "Pinyon Script",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Pirata One": {
+    "label": "Pirata One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Plaster": {
+    "label": "Plaster",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Play": {
+    "label": "Play",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek"
+    ]
+  },
+  "Playball": {
+    "label": "Playball",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Playfair Display": {
+    "label": "Playfair Display",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "vietnamese"
+    ]
+  },
+  "Playfair Display SC": {
+    "label": "Playfair Display SC",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "vietnamese"
+    ]
+  },
+  "Podkova": {
+    "label": "Podkova",
+    "variants": [
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Poiret One": {
+    "label": "Poiret One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic"
+    ]
+  },
+  "Poller One": {
+    "label": "Poller One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Poly": {
+    "label": "Poly",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Pompiere": {
+    "label": "Pompiere",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Pontano Sans": {
+    "label": "Pontano Sans",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Poppins": {
+    "label": "Poppins",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Port Lligat Sans": {
+    "label": "Port Lligat Sans",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Port Lligat Slab": {
+    "label": "Port Lligat Slab",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Pragati Narrow": {
+    "label": "Pragati Narrow",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Prata": {
+    "label": "Prata",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Preahvihear": {
+    "label": "Preahvihear",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Press Start 2P": {
+    "label": "Press Start 2P",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "greek"
+    ]
+  },
+  "Pridi": {
+    "label": "Pridi",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "thai"
+    ]
+  },
+  "Princess Sofia": {
+    "label": "Princess Sofia",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Prociono": {
+    "label": "Prociono",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Prompt": {
+    "label": "Prompt",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "thai"
+    ]
+  },
+  "Prosto One": {
+    "label": "Prosto One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic"
+    ]
+  },
+  "Proza Libre": {
+    "label": "Proza Libre",
+    "variants": [
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Puritan": {
+    "label": "Puritan",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Purple Purse": {
+    "label": "Purple Purse",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Quando": {
+    "label": "Quando",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Quantico": {
+    "label": "Quantico",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Quattrocento": {
+    "label": "Quattrocento",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Quattrocento Sans": {
+    "label": "Quattrocento Sans",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Questrial": {
+    "label": "Questrial",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Quicksand": {
+    "label": "Quicksand",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Quintessential": {
+    "label": "Quintessential",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Qwigley": {
+    "label": "Qwigley",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Racing Sans One": {
+    "label": "Racing Sans One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Radley": {
+    "label": "Radley",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Rajdhani": {
+    "label": "Rajdhani",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Rakkas": {
+    "label": "Rakkas",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Raleway": {
+    "label": "Raleway",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Raleway Dots": {
+    "label": "Raleway Dots",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Ramabhadra": {
+    "label": "Ramabhadra",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "telugu"
+    ]
+  },
+  "Ramaraja": {
+    "label": "Ramaraja",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "telugu"
+    ]
+  },
+  "Rambla": {
+    "label": "Rambla",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Rammetto One": {
+    "label": "Rammetto One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Ranchers": {
+    "label": "Ranchers",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Rancho": {
+    "label": "Rancho",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Ranga": {
+    "label": "Ranga",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Rasa": {
+    "label": "Rasa",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "gujarati"
+    ]
+  },
+  "Rationale": {
+    "label": "Rationale",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Ravi Prakash": {
+    "label": "Ravi Prakash",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "telugu"
+    ]
+  },
+  "Redressed": {
+    "label": "Redressed",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Reem Kufi": {
+    "label": "Reem Kufi",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "arabic",
+      "latin"
+    ]
+  },
+  "Reenie Beanie": {
+    "label": "Reenie Beanie",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Revalia": {
+    "label": "Revalia",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Rhodium Libre": {
+    "label": "Rhodium Libre",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Ribeye": {
+    "label": "Ribeye",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Ribeye Marrow": {
+    "label": "Ribeye Marrow",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Righteous": {
+    "label": "Righteous",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Risque": {
+    "label": "Risque",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Roboto": {
+    "label": "Roboto",
+    "variants": [
+      "100",
+      "100italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "700",
+      "700italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Roboto Condensed": {
+    "label": "Roboto Condensed",
+    "variants": [
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Roboto Mono": {
+    "label": "Roboto Mono",
+    "variants": [
+      "100",
+      "100italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Roboto Slab": {
+    "label": "Roboto Slab",
+    "variants": [
+      "100",
+      "300",
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Rochester": {
+    "label": "Rochester",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Rock Salt": {
+    "label": "Rock Salt",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Rokkitt": {
+    "label": "Rokkitt",
+    "variants": [
+      "100",
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Romanesco": {
+    "label": "Romanesco",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Ropa Sans": {
+    "label": "Ropa Sans",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Rosario": {
+    "label": "Rosario",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Rosarivo": {
+    "label": "Rosarivo",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Rouge Script": {
+    "label": "Rouge Script",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Rozha One": {
+    "label": "Rozha One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Rubik": {
+    "label": "Rubik",
+    "variants": [
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "700",
+      "700italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "hebrew",
+      "latin-ext",
+      "cyrillic"
+    ]
+  },
+  "Rubik Mono One": {
+    "label": "Rubik Mono One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic"
+    ]
+  },
+  "Ruda": {
+    "label": "Ruda",
+    "variants": [
+      "regular",
+      "700",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Rufina": {
+    "label": "Rufina",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Ruge Boogie": {
+    "label": "Ruge Boogie",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Ruluko": {
+    "label": "Ruluko",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Rum Raisin": {
+    "label": "Rum Raisin",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Ruslan Display": {
+    "label": "Ruslan Display",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic"
+    ]
+  },
+  "Russo One": {
+    "label": "Russo One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic"
+    ]
+  },
+  "Ruthie": {
+    "label": "Ruthie",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Rye": {
+    "label": "Rye",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Sacramento": {
+    "label": "Sacramento",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Sahitya": {
+    "label": "Sahitya",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "devanagari"
+    ]
+  },
+  "Sail": {
+    "label": "Sail",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Saira": {
+    "label": "Saira",
+    "variants": [
+      "100",
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Saira Condensed": {
+    "label": "Saira Condensed",
+    "variants": [
+      "100",
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Saira Extra Condensed": {
+    "label": "Saira Extra Condensed",
+    "variants": [
+      "100",
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Saira Semi Condensed": {
+    "label": "Saira Semi Condensed",
+    "variants": [
+      "100",
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Salsa": {
+    "label": "Salsa",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Sanchez": {
+    "label": "Sanchez",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Sancreek": {
+    "label": "Sancreek",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Sansita": {
+    "label": "Sansita",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Sarala": {
+    "label": "Sarala",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Sarina": {
+    "label": "Sarina",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Sarpanch": {
+    "label": "Sarpanch",
+    "variants": [
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Satisfy": {
+    "label": "Satisfy",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Scada": {
+    "label": "Scada",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext"
+    ]
+  },
+  "Scheherazade": {
+    "label": "Scheherazade",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "arabic",
+      "latin"
+    ]
+  },
+  "Schoolbell": {
+    "label": "Schoolbell",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Scope One": {
+    "label": "Scope One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Seaweed Script": {
+    "label": "Seaweed Script",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Secular One": {
+    "label": "Secular One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "hebrew",
+      "latin-ext"
+    ]
+  },
+  "Sedgwick Ave": {
+    "label": "Sedgwick Ave",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Sedgwick Ave Display": {
+    "label": "Sedgwick Ave Display",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Sevillana": {
+    "label": "Sevillana",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Seymour One": {
+    "label": "Seymour One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic"
+    ]
+  },
+  "Shadows Into Light": {
+    "label": "Shadows Into Light",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Shadows Into Light Two": {
+    "label": "Shadows Into Light Two",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Shanti": {
+    "label": "Shanti",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Share": {
+    "label": "Share",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Share Tech": {
+    "label": "Share Tech",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Share Tech Mono": {
+    "label": "Share Tech Mono",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Shojumaru": {
+    "label": "Shojumaru",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Short Stack": {
+    "label": "Short Stack",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Shrikhand": {
+    "label": "Shrikhand",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "gujarati"
+    ]
+  },
+  "Siemreap": {
+    "label": "Siemreap",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Sigmar One": {
+    "label": "Sigmar One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Signika": {
+    "label": "Signika",
+    "variants": [
+      "300",
+      "regular",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Signika Negative": {
+    "label": "Signika Negative",
+    "variants": [
+      "300",
+      "regular",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Simonetta": {
+    "label": "Simonetta",
+    "variants": [
+      "regular",
+      "italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Sintony": {
+    "label": "Sintony",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Sirin Stencil": {
+    "label": "Sirin Stencil",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Six Caps": {
+    "label": "Six Caps",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Skranji": {
+    "label": "Skranji",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Slabo 13px": {
+    "label": "Slabo 13px",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Slabo 27px": {
+    "label": "Slabo 27px",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Slackey": {
+    "label": "Slackey",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Smokum": {
+    "label": "Smokum",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Smythe": {
+    "label": "Smythe",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Sniglet": {
+    "label": "Sniglet",
+    "variants": [
+      "regular",
+      "800"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Snippet": {
+    "label": "Snippet",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Snowburst One": {
+    "label": "Snowburst One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Sofadi One": {
+    "label": "Sofadi One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Sofia": {
+    "label": "Sofia",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Sonsie One": {
+    "label": "Sonsie One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Sorts Mill Goudy": {
+    "label": "Sorts Mill Goudy",
+    "variants": [
+      "regular",
+      "italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Source Code Pro": {
+    "label": "Source Code Pro",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Source Sans Pro": {
+    "label": "Source Sans Pro",
+    "variants": [
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Source Serif Pro": {
+    "label": "Source Serif Pro",
+    "variants": [
+      "regular",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Space Mono": {
+    "label": "Space Mono",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Special Elite": {
+    "label": "Special Elite",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Spectral": {
+    "label": "Spectral",
+    "variants": [
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "vietnamese"
+    ]
+  },
+  "Spectral SC": {
+    "label": "Spectral SC",
+    "variants": [
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "vietnamese"
+    ]
+  },
+  "Spicy Rice": {
+    "label": "Spicy Rice",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Spinnaker": {
+    "label": "Spinnaker",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Spirax": {
+    "label": "Spirax",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Squada One": {
+    "label": "Squada One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Sree Krushnadevaraya": {
+    "label": "Sree Krushnadevaraya",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "telugu"
+    ]
+  },
+  "Sriracha": {
+    "label": "Sriracha",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "thai"
+    ]
+  },
+  "Stalemate": {
+    "label": "Stalemate",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Stalinist One": {
+    "label": "Stalinist One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic"
+    ]
+  },
+  "Stardos Stencil": {
+    "label": "Stardos Stencil",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Stint Ultra Condensed": {
+    "label": "Stint Ultra Condensed",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Stint Ultra Expanded": {
+    "label": "Stint Ultra Expanded",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Stoke": {
+    "label": "Stoke",
+    "variants": [
+      "300",
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Strait": {
+    "label": "Strait",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Sue Ellen Francisco": {
+    "label": "Sue Ellen Francisco",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Suez One": {
+    "label": "Suez One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "hebrew",
+      "latin-ext"
+    ]
+  },
+  "Sumana": {
+    "label": "Sumana",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Sunshiney": {
+    "label": "Sunshiney",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Supermercado One": {
+    "label": "Supermercado One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Sura": {
+    "label": "Sura",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Suranna": {
+    "label": "Suranna",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "telugu"
+    ]
+  },
+  "Suravaram": {
+    "label": "Suravaram",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "telugu"
+    ]
+  },
+  "Suwannaphum": {
+    "label": "Suwannaphum",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Swanky and Moo Moo": {
+    "label": "Swanky and Moo Moo",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Syncopate": {
+    "label": "Syncopate",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Tangerine": {
+    "label": "Tangerine",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Taprom": {
+    "label": "Taprom",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "khmer"
+    ]
+  },
+  "Tauri": {
+    "label": "Tauri",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Taviraj": {
+    "label": "Taviraj",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "thai"
+    ]
+  },
+  "Teko": {
+    "label": "Teko",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Telex": {
+    "label": "Telex",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Tenali Ramakrishna": {
+    "label": "Tenali Ramakrishna",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "telugu"
+    ]
+  },
+  "Tenor Sans": {
+    "label": "Tenor Sans",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic"
+    ]
+  },
+  "Text Me One": {
+    "label": "Text Me One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "The Girl Next Door": {
+    "label": "The Girl Next Door",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Tienne": {
+    "label": "Tienne",
+    "variants": [
+      "regular",
+      "700",
+      "900"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Tillana": {
+    "label": "Tillana",
+    "variants": [
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Timmana": {
+    "label": "Timmana",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "telugu"
+    ]
+  },
+  "Tinos": {
+    "label": "Tinos",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "hebrew",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Titan One": {
+    "label": "Titan One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Titillium Web": {
+    "label": "Titillium Web",
+    "variants": [
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Trade Winds": {
+    "label": "Trade Winds",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Trirong": {
+    "label": "Trirong",
+    "variants": [
+      "100",
+      "100italic",
+      "200",
+      "200italic",
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "800",
+      "800italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese",
+      "thai"
+    ]
+  },
+  "Trocchi": {
+    "label": "Trocchi",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Trochut": {
+    "label": "Trochut",
+    "variants": [
+      "regular",
+      "italic",
+      "700"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Trykker": {
+    "label": "Trykker",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Tulpen One": {
+    "label": "Tulpen One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Ubuntu": {
+    "label": "Ubuntu",
+    "variants": [
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Ubuntu Condensed": {
+    "label": "Ubuntu Condensed",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Ubuntu Mono": {
+    "label": "Ubuntu Mono",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "greek-ext",
+      "greek"
+    ]
+  },
+  "Ultra": {
+    "label": "Ultra",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Uncial Antiqua": {
+    "label": "Uncial Antiqua",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Underdog": {
+    "label": "Underdog",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic"
+    ]
+  },
+  "Unica One": {
+    "label": "Unica One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "UnifrakturCook": {
+    "label": "UnifrakturCook",
+    "variants": [
+      "700"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "UnifrakturMaguntia": {
+    "label": "UnifrakturMaguntia",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Unkempt": {
+    "label": "Unkempt",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Unlock": {
+    "label": "Unlock",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Unna": {
+    "label": "Unna",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "VT323": {
+    "label": "VT323",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Vampiro One": {
+    "label": "Vampiro One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Varela": {
+    "label": "Varela",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Varela Round": {
+    "label": "Varela Round",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "hebrew",
+      "latin-ext",
+      "vietnamese"
+    ]
+  },
+  "Vast Shadow": {
+    "label": "Vast Shadow",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Vesper Libre": {
+    "label": "Vesper Libre",
+    "variants": [
+      "regular",
+      "500",
+      "700",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Vibur": {
+    "label": "Vibur",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Vidaloka": {
+    "label": "Vidaloka",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Viga": {
+    "label": "Viga",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Voces": {
+    "label": "Voces",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Volkhov": {
+    "label": "Volkhov",
+    "variants": [
+      "regular",
+      "italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Vollkorn": {
+    "label": "Vollkorn",
+    "variants": [
+      "regular",
+      "italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic",
+      "900",
+      "900italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese",
+      "greek"
+    ]
+  },
+  "Vollkorn SC": {
+    "label": "Vollkorn SC",
+    "variants": [
+      "regular",
+      "600",
+      "700",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Voltaire": {
+    "label": "Voltaire",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Waiting for the Sunrise": {
+    "label": "Waiting for the Sunrise",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Wallpoet": {
+    "label": "Wallpoet",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Walter Turncoat": {
+    "label": "Walter Turncoat",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Warnes": {
+    "label": "Warnes",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Wellfleet": {
+    "label": "Wellfleet",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Wendy One": {
+    "label": "Wendy One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Wire One": {
+    "label": "Wire One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Work Sans": {
+    "label": "Work Sans",
+    "variants": [
+      "100",
+      "200",
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700",
+      "800",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Yanone Kaffeesatz": {
+    "label": "Yanone Kaffeesatz",
+    "variants": [
+      "200",
+      "300",
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "vietnamese"
+    ]
+  },
+  "Yantramanav": {
+    "label": "Yantramanav",
+    "variants": [
+      "100",
+      "300",
+      "regular",
+      "500",
+      "700",
+      "900"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Yatra One": {
+    "label": "Yatra One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "devanagari"
+    ]
+  },
+  "Yellowtail": {
+    "label": "Yellowtail",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Yeseva One": {
+    "label": "Yeseva One",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext",
+      "cyrillic",
+      "cyrillic-ext",
+      "vietnamese"
+    ]
+  },
+  "Yesteryear": {
+    "label": "Yesteryear",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Yrsa": {
+    "label": "Yrsa",
+    "variants": [
+      "300",
+      "regular",
+      "500",
+      "600",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Zeyada": {
+    "label": "Zeyada",
+    "variants": [
+      "regular"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  },
+  "Zilla Slab": {
+    "label": "Zilla Slab",
+    "variants": [
+      "300",
+      "300italic",
+      "regular",
+      "italic",
+      "500",
+      "500italic",
+      "600",
+      "600italic",
+      "700",
+      "700italic"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  },
+  "Zilla Slab Highlight": {
+    "label": "Zilla Slab Highlight",
+    "variants": [
+      "regular",
+      "700"
+    ],
+    "subsets": [
+      "latin",
+      "latin-ext"
+    ]
+  }
+}

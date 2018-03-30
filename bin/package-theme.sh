@@ -77,6 +77,7 @@ zip -r bigbox.zip \
 	bootstrap \
 	resources/languages \
 	resources/views \
+	resources/data \
 	public \
 	vendor \
 	LICENSE \
