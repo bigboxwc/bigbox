@@ -56,6 +56,27 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 		]
 	);
 
+	$wp_customize->add_setting(
+		'type-font-size', [
+			'default'   => 1,
+			'transport' => 'postMessage',
+		]
+	);
+
+	$wp_customize->add_control(
+		'type-font-size', [
+			'label'    => esc_html__( 'Base Font Size', 'bigbox' ),
+			'description' => wp_kses( __( 'Value is measured in <code>em</code>. 1em = 16px', 'bigbox' ), [ 'code' => [] ] ),
+			'type'     => 'number',
+			'input_atts' => [
+				'min'  => 0,
+				'max'  => 999,
+				'step' => 0.01,
+			],
+			'section'  => 'type',
+		]
+	);
+
 	$weights = [
 		'base' => [
 			'label'  => esc_html__( 'Base Font Weight', 'bigbox' ),
@@ -82,7 +103,14 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 				'label'    => $data['label'],
 				'type'     => 'select',
 				'choices'  => [
-					'normal' => $data['weight'],
+					100 => 100,
+					200 => 200,
+					300 => 300,
+					400 => 400,
+					500 => 500,
+					600 => 600,
+					700 => 700,
+					800 => 800,
 				],
 				'section'  => 'type',
 			]

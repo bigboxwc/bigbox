@@ -20,7 +20,7 @@ function bigbox_get_theme_font_family() {
 	$family = get_theme_mod( 'type-font-family', 'default' );
 
 	if ( 'default' === $family ) {
-		return $false;
+		return false;
 	}
 
 	return $family;

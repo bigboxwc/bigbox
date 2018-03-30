@@ -18,6 +18,8 @@ import { forEach } from 'lodash';
 	const buildFamilyOptionsHtml = () => {
 		const options = [];
 
+		options.push( '<option value="default" data-variants="100,200,300,400,500,600,700,800">System Default</option>' );
+
 		forEach( fontList, ( data, family ) => {
 			options.push( `<option value="${family}" data-variants="${data.variants.join( ',' )}">${data.label}</option>` );
 		} );
@@ -76,7 +78,7 @@ import { forEach } from 'lodash';
 
 		// Build list of font families.
 		$familyInput
-			.append( buildFamilyOptionsHtml() )
+			.html( buildFamilyOptionsHtml() )
 			.val( familyValue )
 			.find( `[value="${familyValue}"]` )
 			.attr( 'selected', true )
