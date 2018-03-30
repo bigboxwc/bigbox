@@ -23,7 +23,7 @@ return [
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $success ),
-		]
+		],
 	],
 	// Solid border-color
 	[
@@ -32,7 +32,7 @@ return [
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $success ),
-		]
+		],
 	],
 	// Solid color
 	[
@@ -41,7 +41,7 @@ return [
 		],
 		'declarations' => [
 			'color' => esc_attr( $success ),
-		]
+		],
 	],
 
 	// @mixin card--primary
@@ -56,7 +56,7 @@ return [
 
 			// Since 90% of the values use $success we are filling out the color here as well for a unified list.
 			'color'            => esc_attr( get_theme_mod( 'color-dark', bigbox_get_theme_default_color( 'dark' ) ) ),
-		]
+		],
 	],
 
 	// @mixin button--success
@@ -77,6 +77,6 @@ return [
 		'declarations' => [
 			'background-color' => esc_attr( $success ),
 			'box-shadow'       => esc_attr( "inset {$rgba10} 0 0 0 3px, {$rgba30} 0 1px 2px" ),
-		]
+		],
 	],
 ];

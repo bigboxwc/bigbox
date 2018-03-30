@@ -22,7 +22,7 @@ return [
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $primary ),
-		]
+		],
 	],
 	// Solid fill
 	[
@@ -31,7 +31,7 @@ return [
 		],
 		'declarations' => [
 			'fill' => esc_attr( $primary ),
-		]
+		],
 	],
 	// Solid border-color
 	[
@@ -40,7 +40,7 @@ return [
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $primary ),
-		]
+		],
 	],
 	// RGBA 0.25 border-color
 	[
@@ -49,6 +49,6 @@ return [
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $rgba25 ),
-		]
+		],
 	],
 ];

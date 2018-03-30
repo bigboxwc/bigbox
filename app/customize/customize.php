@@ -151,7 +151,7 @@ function bigbox_customize_register( $wp_customize ) {
 	$wp_customize->get_control( 'blogdescription' )->description = esc_html__( 'Not output but used for SEO', 'bigbox' );
 
 	// Update label of Header Text
-	$wp_customize->get_control( 'header_text' )->label     = esc_html__( 'Display Site Title', 'bigbox' );
+	$wp_customize->get_control( 'header_text' )->label = esc_html__( 'Display Site Title', 'bigbox' );
 
 	// Update branding partial when Site Title or text changes.
 	foreach ( [ 'blogname', 'header_text' ] as $setting ) {
@@ -161,7 +161,7 @@ function bigbox_customize_register( $wp_customize ) {
 				'container_inclusive' => false,
 				'render_callback'     => function() {
 					bigbox_partial( 'branding' );
-				}
+				},
 			]
 		);
 	}
@@ -221,14 +221,13 @@ function bigbox_customize_register_colors( $wp_customize ) {
 				new WP_Customize_Color_Control(
 					$wp_customize,
 					$key,
-					[	
-						'label'    => $color['label'],
-						'section'  => 'colors-' . $section,
+					[
+						'label'   => $color['label'],
+						'section' => 'colors-' . $section,
 					]
 				)
 			);
 		}
-
 	}
 }
 add_action( 'customize_register', 'bigbox_customize_register_colors', 11 );
@@ -255,7 +254,7 @@ function bigbox_hex_to_rgba( $color, $opacity = false ) {
 		return $default;
 	}
 
-	$rgb = array_map('hexdec', $hex);    
+	$rgb = array_map( 'hexdec', $hex );
 
 	if ( $opacity ) {
 		if ( abs( $opacity ) > 1 ) {
@@ -265,7 +264,7 @@ function bigbox_hex_to_rgba( $color, $opacity = false ) {
 		$output = 'rgba(' . implode( ',', $rgb ) . ',' . $opacity . ')';
 	} else {
 		$output = 'rgb(' . implode( ',', $rgb ) . ')';
-	}    
+	}
 
 	return $output;
 }

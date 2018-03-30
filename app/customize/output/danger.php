@@ -23,7 +23,7 @@ return [
 		],
 		'declarations' => [
 			'color' => esc_attr( $danger ),
-		]
+		],
 	],
 
 	// @mixin card--error
@@ -36,7 +36,7 @@ return [
 			'border-color'     => esc_attr( $rgba50 ),
 			'background-color' => esc_attr( $rgba10 ),
 			'box-shadow'       => esc_attr( "inset {$rgba10} 0 0 0 3px, {$rgba30} 0 1px 2px" ),
-		]
+		],
 	],
 
 	// @mixin button--danger
@@ -44,6 +44,6 @@ return [
 		'selectors'    => [],
 		'declarations' => [
 			'background-color' => esc_attr( $danger ),
-		]
+		],
 	],
 ];

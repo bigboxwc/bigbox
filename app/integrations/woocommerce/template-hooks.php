@@ -71,11 +71,13 @@ remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_l
 add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 5 );
 add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 10 );
 
-add_action( 'woocommerce_after_shop_loop_item_title', function() {
-	echo '<div class="product__stock">';
-	echo wc_get_stock_html( wc_get_product( get_post() ) );
-	echo '</div>';
-}, 15 );
+add_action(
+	'woocommerce_after_shop_loop_item_title', function() {
+		echo '<div class="product__stock">';
+		echo wc_get_stock_html( wc_get_product( get_post() ) );
+		echo '</div>';
+	}, 15
+);
 
 // Add note about variations.
 add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_after_shop_loop_item_title_variations', 8 );
@@ -90,11 +92,13 @@ add_action(
 		// Remove (filters) sidebar on single products.
 		if ( is_singular( 'product' ) ) {
 			remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar' );
-		// Add (tertiary) sidebar on archives.
+			// Add (tertiary) sidebar on archives.
 		} else {
-			add_action( 'woocommerce_sidebar', function() {
-				wc_get_template( 'global/sidebar-tertiary.php' );
-			} );
+			add_action(
+				'woocommerce_sidebar', function() {
+					wc_get_template( 'global/sidebar-tertiary.php' );
+				}
+			);
 		}
 	}
 );

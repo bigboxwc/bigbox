@@ -9,10 +9,10 @@
  * @author Spencer Finnell
  */
 
-$light   = bigbox_get_theme_color( 'light' );
-$rgba10  = bigbox_hex_to_rgba( $light, 0.10 );
-$rgba30  = bigbox_hex_to_rgba( $light, 0.30 );
-$rgba50  = bigbox_hex_to_rgba( $light, 0.50 );
+$light  = bigbox_get_theme_color( 'light' );
+$rgba10 = bigbox_hex_to_rgba( $light, 0.10 );
+$rgba30 = bigbox_hex_to_rgba( $light, 0.30 );
+$rgba50 = bigbox_hex_to_rgba( $light, 0.50 );
 
 return [
 	// Solid color
@@ -23,7 +23,7 @@ return [
 		],
 		'declarations' => [
 			'color' => esc_attr( $light ),
-		]
+		],
 	],
 
 	// @mixin card
@@ -53,6 +53,6 @@ return [
 		'selectors'    => [],
 		'declarations' => [
 			'background-color' => esc_attr( $light ),
-		]
+		],
 	],
 ];

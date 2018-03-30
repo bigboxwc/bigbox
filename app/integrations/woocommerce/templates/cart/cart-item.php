@@ -54,7 +54,7 @@ $product_thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product
 
 			<?php
 			$data = wc_get_formatted_cart_item_data( $cart_item );
-			if ( '' !== $data ) : 
+			if ( '' !== $data ) :
 			?>
 			<div class="product__stats">
 				<?php echo $data; // PHPCS: XSS ok. ?>

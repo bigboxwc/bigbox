@@ -9,7 +9,7 @@
  * @author Spencer Finnell
  */
 
-$dark   = bigbox_get_theme_color( 'dark' );
+$dark = bigbox_get_theme_color( 'dark' );
 
 return [
 	// Solid color
@@ -29,6 +29,6 @@ return [
 		],
 		'declarations' => [
 			'color' => esc_attr( $dark ),
-		]
+		],
 	],
 ];

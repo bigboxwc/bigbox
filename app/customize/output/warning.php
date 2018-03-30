@@ -19,6 +19,6 @@ return [
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $warning ),
-		]
+		],
 	],
 ];

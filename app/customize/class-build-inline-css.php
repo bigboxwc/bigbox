@@ -72,8 +72,8 @@ class Build_Inline_CSS {
 		// Set line ending and tab
 		if ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) {
 			$this->line_ending = "\n";
-			$this->tab = "\t";
-			$this->space = " ";
+			$this->tab         = "\t";
+			$this->space       = ' ';
 		}
 	}
 
@@ -153,8 +153,7 @@ class Build_Inline_CSS {
 		// No matching selector set, add a new entry
 		if ( false === $match ) {
 			$this->data[ $media ][] = $entry;
-		}
-		// Yes, matching selector set, merge declarations
+		} // Yes, matching selector set, merge declarations
 		else {
 			$this->data[ $media ][ $match ]['declarations'] = array_merge( $this->data[ $media ][ $match ]['declarations'], $entry['declarations'] );
 		}
@@ -200,7 +199,7 @@ class Build_Inline_CSS {
 
 			if ( 'all' !== $query ) {
 				$output .= "\n@media " . $query . $s . '{' . $n;
-				$t = $this->tab;
+				$t       = $this->tab;
 			}
 
 			// Build each rule
@@ -260,7 +259,7 @@ class Build_Inline_CSS {
 		 * Note that when this output is prepared, it is not escaped, sanitized or otherwise altered.
 		 */
 		foreach ( $declarations as $property => $value ) {
-			$parsed_value  = "{$t}{$property}:{$s}{$value};$n";
+			$parsed_value = "{$t}{$property}:{$s}{$value};$n";
 
 			/**
 			 * Filter: Modify the final CSS declaration after being parsed.

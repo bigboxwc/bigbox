@@ -22,7 +22,7 @@ bigbox_view( 'global/header-min' );
 
 	<?php
 	if ( have_posts() ) :
-		while( have_posts() ) :
+		while ( have_posts() ) :
 			the_post();
 
 			bigbox_partial( 'content' );
