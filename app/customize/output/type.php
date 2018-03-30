@@ -18,6 +18,16 @@ $size        = get_theme_mod( 'type-font-size', 1 );
 $base = [
 	'selectors'    => [
 		'body',
+		'[type="email"]',
+		'[type="search"]',
+		'[type="tel"]',
+		'[type="url"]',
+		'[type="password"]',
+		'[type="text"]',
+		'textarea',
+		'select',
+		'button',
+		'.button'
 	],
 	'declarations' => [
 		'font-weight' => $weight_base,

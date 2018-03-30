@@ -78,14 +78,12 @@
 
 @mixin button--danger {
 
-	@include button;
 	@include button--primary;
 	background-color: theme-color("danger");
 }
 
 @mixin button--success {
 
-	@include button;
 	@include button--primary;
 	background-color: theme-color("success");
 }

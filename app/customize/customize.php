@@ -40,7 +40,10 @@ function bigbox_customize_css() {
 			continue;
 		}
 
-		$config = include $file;
+		$config = apply_filters(
+			'bigbox_customize_css_' . $key,
+			include $file
+		);
 
 		foreach ( $config as $data ) {
 			$css->add( $data );
