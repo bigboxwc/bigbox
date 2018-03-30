@@ -20,8 +20,4 @@
 	padding: ( $spacer / 2 );
 	border: 1px solid gray("300");
 	border-radius: $border-radius;
-
-	&:focus {
-		border-color: gray("400");
-	}
 }

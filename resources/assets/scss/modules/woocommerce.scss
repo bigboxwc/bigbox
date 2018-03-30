@@ -22,7 +22,7 @@
 
 			// Hopefully only target form descriptions.
 			> span {
-				color: gray("400");
+				opacity: 0.50;
 				font-size: $font-size-sm;
 			}
 		}
