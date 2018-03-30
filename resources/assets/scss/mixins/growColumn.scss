@@ -1,0 +1,20 @@
+// Given a map of responsive breakpoints and column widths create a
+// responsive two column layout using hte remaining column withs to
+// calculate the second column.
+// 
+// @include growColumn( (
+// 		sm: 12,
+// 		md: 6,
+// 		lg: 7,
+// ) );
+//
+@mixin growColumn( $map: "" ) {
+
+	@each $bp, $cols in $map {
+
+		@include media-breakpoint-up($bp) {
+
+			@include make-col($cols);
+		}
+	}
+}

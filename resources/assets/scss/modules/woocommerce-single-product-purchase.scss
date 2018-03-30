@@ -52,7 +52,6 @@
 	align-items: center;
 
 	.woocommerce-variation--loaded & {
-		margin-bottom: $spacer;
 		padding-bottom: $spacer;
 		border-bottom: 1px solid gray("100");
 	}

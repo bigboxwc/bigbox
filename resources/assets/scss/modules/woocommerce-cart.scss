@@ -17,21 +17,11 @@
 
 	@include make-col-ready;
 
-	// Scale purchase form down as page expands.
-	$formBp: (
+	@include growColumn( (
 		sm: 6,
 		md: 5,
 		lg: 4,
-	);
-
-	@each $bp, $cols in $formBp {
-
-		@include media-breakpoint-up($bp) {
-			order: 3;
-
-			@include make-col($cols);
-		}
-	}
+	) );
 }
 
 .cart-empty {

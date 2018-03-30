@@ -2,8 +2,7 @@
 // responsive two column layout using hte remaining column withs to
 // calculate the second column.
 // 
-// 
-// @include responsiveMap( (
+// @include complimentaryColumns( (
 // 		sm: 12,
 // 		md: 6,
 // 		lg: 7,
@@ -12,7 +11,7 @@
 // 	".woocommerce-checkout__review"
 // );
 //
-@mixin responsiveMap( $map: "", $columnA: "", $columnB: "" ) {
+@mixin complimentaryColumns( $map: "", $columnA: "", $columnB: "" ) {
 
 	#{$columnA},
 	#{$columnB} {

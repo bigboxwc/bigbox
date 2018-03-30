@@ -3,7 +3,7 @@ form.woocommerce-checkout {
 	@include make-row();
 }
 
-@include responsiveMap( (
+@include complimentaryColumns( (
 	sm: 12,
 	md: 6,
 	lg: 7,

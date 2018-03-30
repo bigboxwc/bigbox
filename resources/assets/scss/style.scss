@@ -26,7 +26,8 @@
  */
 
 // Mixins
-@import "mixins/responsiveMap";
+@import "mixins/complimentaryColumns";
+@import "mixins/growColumn";
 @import "mixins/button";
 @import "mixins/form";
 @import "mixins/card";
