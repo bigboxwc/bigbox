@@ -169,7 +169,7 @@ form.woocommerce-checkout {
 
 	[name="apply_coupon"] {
 
-		@include button--secondary;
+		@include button;
 		@include button--size-sm;
 		@include button--size-block;
 	}

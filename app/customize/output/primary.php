@@ -42,6 +42,15 @@ return [
 			'border-color' => esc_attr( $primary ),
 		],
 	],
+	// Solid outline-color
+	[
+		'selectors'    => [
+			':focus',
+		],
+		'declarations' => [
+			'outline-color' => esc_attr( $primary ),
+		],
+	],
 	// RGBA 0.25 border-color
 	[
 		'selectors'    => [
@@ -57,6 +66,7 @@ return [
 		'selectors'    => [
 			'.button',
 			'button',
+			'.woocommerce-form-coupon [name="apply_coupon"]',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $primary ),

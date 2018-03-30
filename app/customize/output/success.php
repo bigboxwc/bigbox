@@ -76,7 +76,6 @@ return [
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $success ),
-			'box-shadow'       => esc_attr( "inset {$rgba10} 0 0 0 3px, {$rgba30} 0 1px 2px" ),
 		],
 	],
 ];

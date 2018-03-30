@@ -180,7 +180,7 @@ function bigbox_customize_register_colors( $wp_customize ) {
 	$wp_customize->add_panel(
 		'colors', [
 			'title'    => _x( 'Colors', 'customizer panel title', 'bigbox' ),
-			'priority' => 25,
+			'priority' => 200,
 		]
 	);
 

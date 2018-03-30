@@ -30,7 +30,6 @@ return [
 			'.woocommerce-column--billing-address .edit',
 			'.woocommerce-column--shipping-address .edit',
 			'.woocommerce-Addresses .edit',
-			'.woocommerce-form-coupon [name="apply_coupon"]',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $gray400 ),
