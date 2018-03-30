@@ -42,7 +42,7 @@ export const transformInput = function( $qty, variation = false ) {
 	}
 
 	// Add <select>
-	const $select = $( `<select class="qty" min=${ min } max=${ max } name=${ $original.attr( 'name' ) } />` );
+	const $select = $( `<select class="qty" min="${ min }" max="${ max }" name="${ $original.attr( 'name' ) }" />` );
 
 	$wrapper.append( $select );
 

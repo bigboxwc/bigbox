@@ -40,7 +40,8 @@ add_action( 'customize_register', 'bigbox_customize_register_type_sections' );
 function bigbox_customize_register_type_controls( $wp_customize ) {
 	$wp_customize->add_setting(
 		'type-font-family', [
-			'default' => 'default',
+			'default'   => 'default',
+			'transport' => 'postMessage',
 		]
 	);
 
@@ -65,7 +66,8 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 
 		$wp_customize->add_setting(
 			$key, [
-				'default' => 'normal',
+				'default'   => 'normal',
+				'transport' => 'postMessage',
 			]
 		);
 

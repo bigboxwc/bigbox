@@ -38,9 +38,10 @@ const nuxCSS = new ExtractTextPlugin( {
 
 const config = {
 	entry: {
-		'app':               './resources/assets/js/app.js',
-		'license-manager':   './resources/assets/js/license-manager',
-		'customize-preview': './resources/assets/js/customize-preview',
+		'app':                './resources/assets/js/app.js',
+		'license-manager':    './resources/assets/js/license-manager',
+		'customize-preview':  './resources/assets/js/customize-preview',
+		'customize-controls': './resources/assets/js/customize-controls',
 	},
 	output: {
 		filename: 'public/js/[name].min.js',
