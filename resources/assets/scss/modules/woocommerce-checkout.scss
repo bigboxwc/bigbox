@@ -64,7 +64,7 @@ form.woocommerce-checkout {
 		&:before {
 			width: 7px;
 			height: 11px;
-			border: solid darken(theme-color("success"), 10);
+			border-color: theme-color("success");
 			border-width: 0 2px 2px 0;
 			transform: rotate(45deg);
 			border-radius: 0;

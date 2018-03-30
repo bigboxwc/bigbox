@@ -24,10 +24,6 @@ function bigbox_enqueue_styles() {
 
 	$deps = [];
 
-	if ( apply_filters( 'bigbox_google_fonts', true ) ) {
-		wp_enqueue_style( $stylesheet . '-fonts', 'https://fonts.googleapis.com/css?family=Raleway:400,500' );
-	}
-
 	wp_enqueue_style( $stylesheet, get_template_directory_uri() . '/public/css/app.min.css', $deps, $version );
 	wp_add_inline_style( bigbox_get_theme_name(), bigbox_customize_css() );
 }

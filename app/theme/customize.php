@@ -14,6 +14,56 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Get color configs.
+ *
+ * @since 1.0.0
+ *
+ * @return array
+ */
+function bigbox_get_theme_colors() {
+	$scheme = include get_template_directory() . '/app/theme/customize/config-scheme.php';
+	$grays  = include get_template_directory() . '/app/theme/customize/config-grays.php';
+
+	$defaults = array_merge( $scheme, $grays );
+
+	return [
+		'scheme' => $scheme,
+		'grays'  => $grays,
+	];
+}
+
+/**
+ * Get a color.
+ *
+ * @since 1.0.0
+ *
+ * @param string $key Color key
+ * @return mixed String or false on no value.
+ */
+function bigbox_get_theme_color( $key ) {
+	return get_theme_mod( "color-{$key}", bigbox_get_theme_default_color( $key ) );
+}
+
+/**
+ * Get a default color.
+ *
+ * @since 1.0.0
+ *
+ * @param  string $key Color key.
+ * @return mixed String or false on no default.
+ */
+function bigbox_get_theme_default_color( $key ) {
+	$colors = bigbox_get_theme_colors();
+	$all    = array_merge( $colors['scheme'], $colors['grays'] );
+
+	if ( isset( $all[ $key ] ) ) {
+		return $all[ $key ]['default'];
+	}
+
+	return false;
+}
+
+/**
  * Build inline CSS.
  *
  * @since 1.0.0
@@ -21,22 +71,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 function bigbox_customize_css() {
 	$css = new \BigBox\Theme\Customize\Inline_CSS();
 
-	$config = include get_template_directory() . '/app/theme/customize/config-css.php';
-	$scheme = include get_template_directory() . '/app/theme/customize/config-scheme.php';
-	$grays  = include get_template_directory() . '/app/theme/customize/config-grays.php';
+	$colors = bigbox_get_theme_colors();
+	$colors = array_merge( $colors['scheme'], $colors['grays'] );
 
-	$defaults = array_merge( $scheme, $grays );
+	foreach ( $colors as $key => $data ) {
+		$file = get_template_directory() . '/app/theme/customize/output/' . $key . '.php';
 
-	foreach ( $config as $color => $data ) {
-		$color = get_theme_mod( "color-${color}", $defaults[ $color ]['default'] );
+		if ( ! file_exists( $file ) ) {
+			continue;
+		}
 
-		foreach ( $data as $declaration => $selectors ) {
-			$css->add( [
-				'selectors'    => $selectors,
-				'declarations' => [ 
-					$declaration => esc_attr( $color ),
-				],
-			] );
+		$config = include $file;
+
+		foreach ( $config as $data ) {
+			$css->add( $data );
 		}
 	}
 
@@ -154,9 +202,7 @@ function bigbox_customize_register_colors( $wp_customize ) {
 	);
 
 	// Add colors.
-	$scheme   = include get_template_directory() . '/app/theme/customize/config-scheme.php';
-	$grays    = include get_template_directory() . '/app/theme/customize/config-grays.php';
-	$controls = compact( 'scheme', 'grays' );
+	$controls = bigbox_get_theme_colors();
 
 	foreach ( $controls as $section => $colors ) {
 
@@ -186,3 +232,40 @@ function bigbox_customize_register_colors( $wp_customize ) {
 	}
 }
 add_action( 'customize_register', 'bigbox_customize_register_colors', 11 );
+
+/**
+ * Convert a HEX value to RGBA.
+ *
+ * @since 1.0.0
+ *
+ * @param string $color HEX value.
+ * @param int    $opacity Opacity to use.
+ * @return string
+ */
+function bigbox_hex_to_rgba( $color, $opacity = false ) {
+	if ( '#' === $color[0] ) {
+		$color = substr( $color, 1 );
+	}
+
+	if ( 6 === strlen( $color ) ) {
+		$hex = [ $color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5] ];
+	} elseif ( 3 === strlen( $color ) ) {
+		$hex = [ $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] ];
+	} else {
+		return $default;
+	}
+
+	$rgb = array_map('hexdec', $hex);    
+
+	if ( $opacity ) {
+		if ( abs( $opacity ) > 1 ) {
+			$opacity = 1.0;
+		}
+
+		$output = 'rgba(' . implode( ',', $rgb ) . ',' . $opacity . ')';
+	} else {
+		$output = 'rgb(' . implode( ',', $rgb ) . ')';
+	}    
+
+	return $output;
+}
