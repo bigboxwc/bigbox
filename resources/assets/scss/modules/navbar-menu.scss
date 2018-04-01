@@ -28,7 +28,7 @@
 		&:after {
 			content: '';
 			position: absolute;
-			right: 5px;
+			right: 7px;
 			top: calc(50% - 2px);
 			width: 0; 
 			height: 0; 
@@ -57,6 +57,7 @@
 		transform-origin: top left;
 
 		li {
+			font-size: $font-size-base;
 			line-height: $line-height-base;
 		}
 

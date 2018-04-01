@@ -3,12 +3,6 @@
 	margin: ($spacer * 3) 0;
 	padding-bottom: ($spacer * 3);
 	border-bottom: 1px solid gray("200");
-
-	&:last-child {
-		margin-bottom: 0;
-		padding-bottom: 0;
-		border: 0;
-	}
 }
 
 .blog-post__title {

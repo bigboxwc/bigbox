@@ -27,7 +27,10 @@ $base = [
 		'textarea',
 		'select',
 		'button',
-		'.button'
+
+		'.button',
+		'.navbar-menu--primary .sub-menu li',
+		'.navbar-menu--secondary .sub-menu li',
 	],
 	'declarations' => [
 		'font-weight' => $weight_base,
@@ -52,6 +55,7 @@ return [
 			'h5',
 			'h6',
 			'strong',
+			'label',
 			'table tfoot td',
 			'.product__sale a',
 			'.site-title',

@@ -31,8 +31,8 @@ function bigbox_register_sidebars() {
 				'description'   => '',
 				'before_widget' => '<div id="%1$s" class="widget footer-widget %2$s">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<h5 class="widget-title footer-widget__title">',
-				'after_title'   => '</h5>',
+				'before_title'  => '<h4 class="widget-title footer-widget__title">',
+				'after_title'   => '</h4>',
 			)
 		);
 	}

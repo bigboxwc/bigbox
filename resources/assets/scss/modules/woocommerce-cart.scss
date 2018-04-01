@@ -10,6 +10,10 @@
 
 	width: auto;
 	flex: 1 0;
+
+	@include media-breakpoint-up(sm) {
+		order: 1;
+	}
 }
 
 .woocommerce-cart-wrapper__purchase-form {
@@ -22,6 +26,10 @@
 		md: 5,
 		lg: 4,
 	) );
+
+	@include media-breakpoint-up(sm) {
+		order: 2;
+	}
 }
 
 .cart-empty {

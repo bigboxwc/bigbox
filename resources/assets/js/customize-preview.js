@@ -9,8 +9,6 @@ import { filter, forEach, debounce } from 'lodash';
 const updateCss = () => {
 	wp.ajax.send( 'bigbox-preview-css', {
 		success: ( response ) => {
-			console.log(response);
-
 			// Update inline CSS.
 			const selector = 'bigbox-inline-css';
 
