@@ -35,10 +35,10 @@ function bigbox_get_theme_font_family() {
  * @return string
  */
 function bigbox_get_theme_font_weight( $weight = 'base' ) {
-	$weight = get_theme_mod( "type-font-weight-{$weight}", 400 );
+	$weight = get_theme_mod( "type-font-weight-{$weight}", 'base' === $weight ? 'normal' : 'bold' );
 
 	if ( 'regular' === $weight ) {
-		return 400;
+		return 'normal';
 	}
 
 	return $weight;

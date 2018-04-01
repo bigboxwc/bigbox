@@ -53,8 +53,10 @@ import { forEach } from 'lodash';
 			const control = wp.customize.control( `type-font-weight-${weight}` );
 			const value   = control.setting();
 
+			const $select = $( control.container ).find( 'select' );
+
 			// Add HTML and select chosen item.
-			$( control.container ).find( 'select' )
+			$select
 				.html( buildWeightOptionsHtml( variants ) )
 				.val( value )
 				.find( `[value="${value}"]` )

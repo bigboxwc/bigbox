@@ -15,6 +15,15 @@ return [
 	// Solid color
 	[
 		'selectors'    => [
+			'body',
+			'[type="email"]',
+			'[type="search"]',
+			'[type="tel"]',
+			'[type="url"]',
+			'[type="password"]',
+			'[type="text"]',
+			'textarea',
+			'select',
 			'.select2-container--default .select2-selection--single .select2-selection__rendered',
 		],
 		'declarations' => [
