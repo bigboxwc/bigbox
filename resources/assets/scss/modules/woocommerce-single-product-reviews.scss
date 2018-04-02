@@ -22,6 +22,7 @@
 .review-breakdown {
 	margin-bottom: ($spacer * 2);
 	border: 1px solid gray("200");
+	border-radius: $border-radius;
 }
 
 .review-breakdown__item {
