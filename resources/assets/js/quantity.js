@@ -4,14 +4,26 @@
 /**
  * Create a generic list of options that can be appended multiple times.
  */
-const items = [];
+let   items     = [];
+const globalMax = bigbox.products.quantitySelector.max;
 
-const getOptions = () => {
-	if ( items.length > 0 ) {
+/**
+ * Generate HTML <option>s.
+ *
+ * Only generates new ones if a request comes in larger than the
+ * previoius global max.
+ *
+ * @param {Int} max Number of items to generate.
+ */
+const getOptions = ( max: globalMax ) => {
+	if ( items.length > 0 && max <= globalMax ) {
 		return items;
 	}
 
-	for ( let i = 0; i <= bigbox.products.quantitySelector.max; i++ ) {
+	items = [];
+
+	// Pad with globalMax
+	for ( let i = 0; i <= max; i++ ) {
 		items.push( `<option value=${i}>${i}</option>` );
 	}
 
@@ -31,14 +43,16 @@ export const transformInput = function( $qty, variation = false ) {
 	// Remove any existing.
 	$original.detach();
 
+	// Find original value.
 	const selectedValue = variation ? 0 : ( $original.val() ? parseInt( $original.val() ) : 0 );
 
-	const min = variation.min_qty || ( $original.attr( 'min' ) ? parseInt( $original.attr( 'min' ) ) : 0 );
-	let max   = variation.max_qty || ( $original.attr( 'max' ) ? parseInt( $original.attr( 'max' ) ) : 0 );
+	// Try to get preset min/max values.
+	const min = variation.min_qty || ( $original.attr( 'min' ) ? parseInt( $original.attr( 'min' ) ) : globalMax );
+	let max   = variation.max_qty || ( $original.attr( 'max' ) ? parseInt( $original.attr( 'max' ) ) : globalMax );
 
-	// Limit max.
-	if ( 0 === max ) {
-		max = bigbox.products.quantitySelector.max;
+	// If max (or globalMax) is less than original value reset max with padding.
+	if ( max < selectedValue ) {
+		max = parseInt( selectedValue + globalMax );
 	}
 
 	// Add <select>
@@ -46,7 +60,7 @@ export const transformInput = function( $qty, variation = false ) {
 
 	$wrapper.append( $select );
 
-	const options = getOptions();
+	const options = getOptions( max );
 
 	$select
 		.append( options.slice( min, ( max + 1 ) ).join( '' ) )
