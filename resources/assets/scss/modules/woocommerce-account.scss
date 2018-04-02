@@ -29,6 +29,11 @@
 	}
 }
 
+.woocommerce-MyAccount-content {
+	
+	@include vertical-spacing('down');
+}
+
 .woocommerce-edit-account {
 
 	fieldset {

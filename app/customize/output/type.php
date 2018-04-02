@@ -25,7 +25,6 @@ $base = [
 		'[type="password"]',
 		'[type="text"]',
 		'textarea',
-		'select',
 		'button',
 
 		'.button',
@@ -45,7 +44,17 @@ if ( $family ) {
 return [
 	$base,
 
-	// Bold
+	// Base weight.
+	[
+		'selectors'    => [
+			'.cart_totals #shipping_method label',
+			'.woocommerce-form__label-for-checkbox',
+		],
+		'declarations' => [
+			'font-weight' => $weight_base,
+		],
+	],
+	// Bold weight.
 	[
 		'selectors'    => [
 			'h1',

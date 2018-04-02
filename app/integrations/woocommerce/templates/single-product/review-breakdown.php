@@ -12,18 +12,21 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
+$count   = $product->get_review_count();
+$average = $product->get_average_rating();
+
+if ( 0 === $count ) {
+	return;
+}
 ?>
 
-<h3>
-<?php
-echo esc_html( sprintf( __( '%1$s out of 5 stars', 'bigbox' ), number_format( $product->get_average_rating(), 1 ) ) );
-
-?></h3>
+<h3> <?php echo esc_html( sprintf( __( '%1$s out of 5 stars', 'bigbox' ), number_format( $average, 1 ) ) ); ?></h3>
 
 <div class="review-breakdown">
 	<?php
 	for ( $i = 1; $i <= 5; $i++ ) :
-		$percent = round( ( $product->get_rating_count( $i ) / $product->get_review_count() ) * 100 );
+		$percent = round( ( $product->get_rating_count( $i ) / $count ) * 100 );
 	?>
 	<div class="review-breakdown__item">
 		<div class="review-breakdown__label">

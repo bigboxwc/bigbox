@@ -9,10 +9,11 @@
 		li {
 			display: flex;
 			align-items: center;
+			margin: 0 0 ($spacer / 2);
 		}
 
 		label {
-			margin-left: 5px;
+			margin: 0 0 0 5px;
 		}
 	}
 }
