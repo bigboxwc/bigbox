@@ -26,6 +26,7 @@ return [
 			'.widget',
 			'.woocommerce-MyAccount-navigation',
 			'.woocommerce-single-product-data__section',
+			'.footer-nav',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray200 ),

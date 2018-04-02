@@ -3,3 +3,65 @@
 
 	@include single-product-section-title;
 }
+
+.woocommerce-Reviews {
+
+	@include make-row();
+}
+
+@include complimentaryColumns( (
+	sm: 12,
+	md: 7,
+	lg: 9,
+	),
+	".woocommerce-reviews__main",
+	".woocommerce-reviews__info"
+);
+
+.review-breakdown {
+	margin-bottom: ($spacer * 2);
+	border: 1px solid gray("200");
+}
+
+.review-breakdown__item {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: ($spacer /2);
+	border-bottom: 1px solid gray("200");
+
+	&:last-child {
+		border-bottom: 0;
+	}
+}
+
+.review-breakdown__label {
+	text-align: right;
+	width: 50px;
+	flex: 0 0 60px;
+	margin-right: $spacer;
+}
+
+.review-breakdown__count {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+}
+
+.review-breakdown__count-label {
+	font-size: $font-size-sm;
+	color: darken(#f8c144, 30%);
+	padding: 2px 8px;
+	position: relative;
+	z-index: 2;
+	display: block;
+}
+
+.review-breakdown__count-bar {
+	background: #f8c144;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}

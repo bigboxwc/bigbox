@@ -1,7 +1,8 @@
 .footer-nav {
 	margin-top: auto;
-	margin-bottom: ( $spacer * 2 );
-	padding-top: $spacer;
+	margin-bottom: ($spacer * 2);
+	padding-top: ($spacer * 2);
+	border-top: 1px solid theme-color("light");
 }
 
 .footer-widget {

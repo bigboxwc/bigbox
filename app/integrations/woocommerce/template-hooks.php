@@ -113,10 +113,6 @@ add_action( 'woocommerce_product_additional_information', 'bigbox_woocommerce_di
 // Remove sale flash (output in price template).
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash' );
 
-// Adjust rating position.
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 15 );
-
 // Adjust add to cart position.
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 

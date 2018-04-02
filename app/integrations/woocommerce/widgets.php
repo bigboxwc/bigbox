@@ -42,5 +42,17 @@ function bigbox_woocommerce_register_sidebars() {
 			'after_title'   => '</h3>',
 		)
 	);
+
+	register_sidebar(
+		array(
+			'name'          => __( 'Shop Sidebar (Comments)', 'bigbox' ),
+			'id'            => 'shop-comments',
+			'description'   => '',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 }
 add_action( 'widgets_init', 'bigbox_woocommerce_register_sidebars' );
