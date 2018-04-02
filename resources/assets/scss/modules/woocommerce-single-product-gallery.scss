@@ -20,9 +20,10 @@
 	}
 
 	.flex-control-nav {
+
+		@include reset-list();
+
 		margin: $spacer ( ( $spacer / 2 ) * -1 ) 0;
-		padding: 0;
-		list-style: none;
 		display: flex;
 		justify-content: space-between;
 

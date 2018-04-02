@@ -71,6 +71,7 @@ return [
 			'.site-title',
 			'.action-list__item-label',
 			'.widget-title',
+			'.product-title',
 		],
 		'declarations' => [
 			'font-weight' => $weight_bold,

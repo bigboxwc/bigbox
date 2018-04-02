@@ -44,10 +44,12 @@
 	}
 
 	.sub-menu {
+
+		@include reset-list();
+
 		font-size: $font-size-sm;
 		margin: 0 0 0 ($spacer / 2);
 		padding: 0 0 0 $spacer;
-		list-style: none;
 		border-left: 1px solid gray("300");
 	}
 }

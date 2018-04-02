@@ -7,7 +7,7 @@ form.woocommerce-checkout {
 	sm: 12,
 	md: 6,
 	lg: 7,
-	),
+),
 	".woocommerce-checkout__info",
 	".woocommerce-checkout__review"
 );
@@ -43,9 +43,10 @@ form.woocommerce-checkout {
 }
 
 .wc_payment_methods {
+
+	@include reset-list();
+
 	margin: 0 0 ( $spacer * 2 );
-	padding: 0;
-	list-style: none;
 }
 
 .wc_payment_method {
@@ -88,7 +89,7 @@ form.woocommerce-checkout {
 		@include card;
 
 		&:before {
-			content: '';
+			content: "";
 			position: absolute;
 			left: $spacer;
 			top: calc(50% - 6px);

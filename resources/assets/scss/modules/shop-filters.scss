@@ -1,9 +1,8 @@
 .product_list_widget,
 .product-categories,
 .woocommerce-widget-layered-nav-list {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+
+	@include reset-list();
 }
 
 .product_list_widget {
@@ -14,7 +13,7 @@
 	}
 
 	li {
-		margin-bottom: $spacer;
+		margin-bottom: ($spacer * 1.5);
 	}
 
 	.product-title {
@@ -37,18 +36,18 @@
 .widget_layered_nav_filters {
 
 	ul {
-		margin: 0;
-		padding: 0;
-		list-style: none;
 		display: flex;
 		flex-flow: row wrap;
+
+		@include reset-list();
 	}
 
 	li {
 		margin-right: 5px;
 	}
-	
+
 	a {
+
 		@include button--pill;
 
 		padding-left: 20px;
@@ -56,7 +55,7 @@
 
 		&:before {
 			font-size: 21px;
-			content: '\00d7';
+			content: "\00d7";
 			margin-right: 5px;
 			position: absolute;
 			left: 5px;
@@ -66,6 +65,7 @@
 }
 
 .widget_price_filter {
+
 	.ui-slider {
 		position: relative;
 		text-align: left;
@@ -84,6 +84,7 @@
 		cursor: ew-resize;
 		outline: none;
 		top: -5px;
+
 		/* rtl:ignore */
 		margin-left: -10px;
 	}
@@ -135,5 +136,21 @@
 
 	.price_label {
 		font-size: $font-size-xs;
+	}
+}
+
+.widget_top_rated_products {
+	
+	.price {
+		
+		@include screen-reader-text();
+	}
+}
+
+.widget_rating_filter {
+
+	ul {
+
+		@include reset-list();
 	}
 }

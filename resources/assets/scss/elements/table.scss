@@ -21,6 +21,7 @@ table {
 	}
 
 	tbody {
+
 		tr:nth-child(even) {
 
 			th,
@@ -39,6 +40,7 @@ table {
 	}
 
 	tfoot {
+
 		tr:first-child,
 		tr:only-child {
 

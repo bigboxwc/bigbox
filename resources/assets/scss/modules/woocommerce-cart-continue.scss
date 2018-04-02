@@ -1,10 +1,11 @@
 .cart_totals {
 
 	#shipping_method {
+
+		@include reset-list();
+
 		font-size: $font-size-sm;
 		margin: 0 0 $spacer $spacer;
-		padding: 0;
-		list-style: none;
 
 		li {
 			display: flex;

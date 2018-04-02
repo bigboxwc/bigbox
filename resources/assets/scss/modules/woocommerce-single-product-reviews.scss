@@ -5,7 +5,8 @@
 }
 
 .woocommerce-Reviews {
-	@include vertical-spacing('down');
+
+	@include vertical-spacing("down");
 	@include make-row();
 }
 
@@ -13,7 +14,7 @@
 	sm: 12,
 	md: 7,
 	lg: 9,
-	),
+),
 	".woocommerce-reviews__main",
 	".woocommerce-reviews__info"
 );
@@ -67,6 +68,7 @@
 }
 
 p.stars {
+
 	a {
 		color: #f8c144;
 		position: relative;
@@ -85,32 +87,34 @@ p.stars {
 			width: 1em;
 			height: 1em;
 			line-height: 1;
-			content: '\2606';
+			content: "\2606";
 			text-indent: 0;
 		}
 
 		&:hover ~ a::before {
-			content: '\2606';
+			content: "\2606";
 		}
 	}
 
 	&:hover a::before {
-		content: '\2605';
+		content: "\2605";
 	}
 
 	&.selected {
+
 		a.active {
+
 			&::before {
-				content: '\2605';
+				content: "\2605";
 			}
 
 			~ a::before {
-				content: '\2606';
+				content: "\2606";
 			}
 		}
 
 		a:not(.active)::before {
-			content: '\2605';
+			content: "\2605";
 		}
 	}
 }

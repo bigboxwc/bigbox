@@ -19,12 +19,12 @@
 // Gutenberg currently uses <ul>
 // @see https://github.com/WordPress/gutenberg/issues/5890
 .wp-block-gallery {
-	padding: 0;
-	list-style: none;
 
+	@include reset-list();
 	@include vertical-spacing();
 
-	&.alignnone { margin-left: -8px;
+	&.alignnone {
+		margin-left: -8px;
 		margin-right: -8px;
 	}
 }

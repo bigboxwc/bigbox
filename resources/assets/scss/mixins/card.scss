@@ -11,8 +11,8 @@
 
 	color: theme-color("dark");
 	border: 1px solid rgba(theme-color("success"), 0.5);
-	background: rgba(theme-color("success"), 0.10);
-	box-shadow: inset rgba(theme-color("success"), 0.10) 0 0 0 3px, rgba(theme-color("success"), 0.3) 0 1px 2px;
+	background: rgba(theme-color("success"), 0.1);
+	box-shadow: inset rgba(theme-color("success"), 0.1) 0 0 0 3px, rgba(theme-color("success"), 0.3) 0 1px 2px;
 }
 
 @mixin card--error {
@@ -21,6 +21,6 @@
 
 	color: theme-color("danger");
 	border: 1px solid rgba(theme-color("danger"), 0.5);
-	box-shadow: inset rgba(theme-color("danger"), 0.10) 0 0 0 3px, rgba(theme-color("danger"), 0.3) 0 1px 2px;
+	box-shadow: inset rgba(theme-color("danger"), 0.1) 0 0 0 3px, rgba(theme-color("danger"), 0.3) 0 1px 2px;
 	background-color: #fff;
 }

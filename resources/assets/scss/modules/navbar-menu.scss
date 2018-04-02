@@ -26,7 +26,7 @@
 		padding-right: ($spacer * 1.5);
 
 		&:after {
-			content: '';
+			content: "";
 			position: absolute;
 			right: 7px;
 			top: calc(50% - 2px);
@@ -40,15 +40,15 @@
 
 	.sub-menu {
 
+		@include reset-list();
+
 		visibility: hidden;
 		opacity: 0;
 		width: 200px;
-		margin: 0;
 		padding: ($spacer / 2) $spacer;
 		background: #fff;
 		border-radius: 0 0 $border-radius $border-radius;
-		box-shadow: rgba(0, 0, 0, 0.30) 0 2px 12px;
-		list-style: none;
+		box-shadow: rgba(0, 0, 0, 0.3) 0 2px 12px;
 		position: absolute;
 		left: 0;
 		top: 100%;
@@ -96,6 +96,7 @@
 
 	.menu-item,
 	.navbar-menu__item {
+
 		a:hover {
 			text-decoration: underline;
 		}
@@ -107,9 +108,8 @@
 }
 
 .navbar-menu__items {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+
+	@include reset-list();
 
 	@include media-breakpoint-up(md) {
 		display: flex;
