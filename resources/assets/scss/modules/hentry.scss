@@ -6,9 +6,8 @@
 .hentry--page {
 
 	h2 {
-		@include single-product-section-title();
 
-		margin-bottom: 0;
+		@include single-product-section-title();
 	}
 }
 

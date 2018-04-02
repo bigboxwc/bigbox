@@ -1,4 +1,9 @@
 @mixin single-product-section-title {
 	font-size: $font-size-lg;
 	margin: 0 0 $spacer;
+
+	+ .wp-block-woocommerce-products,
+	+ .products {
+		margin-top: -($spacer);
+	}
 }

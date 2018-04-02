@@ -1,11 +1,6 @@
 .woocommerce-page ul.products,
 .woocommerce ul.products {
 
-	&:not(:first-child) {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
-
 	li.product.product-category {
 		flex-direction: column;
 		margin: 0 0 ($spacer * 2);

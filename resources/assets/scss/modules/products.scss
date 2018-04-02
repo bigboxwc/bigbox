@@ -4,8 +4,7 @@
 	ul.products {
 
 		@include reset-list();
+		@include vertical-spacing("down");
 		@include make-row();
-
-		margin-bottom: ( $spacer * 2 );
 	}
 }
