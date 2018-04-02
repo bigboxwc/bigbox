@@ -1,9 +1,40 @@
 .hentry {
+	line-height: 2em;
+}
 
-	> h2 {
-		font-size: $font-size-lg;
-		line-height: 1;
-		margin: ( $spacer * 2 ) 0 ( -$spacer );
+// Gutenberg currently uses <figure>
+// @see https://github.com/WordPress/gutenberg/pull/5706
+.wp-block-image {
+
+	@include vertical-spacing();
+
+	&.aligncenter {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
 	}
+}
 
+// Gutenberg currently uses <ul>
+// @see https://github.com/WordPress/gutenberg/issues/5890
+.wp-block-gallery {
+	padding: 0;
+	list-style: none;
+
+	@include vertical-spacing();
+
+	&.alignnone { margin-left: -8px;
+		margin-right: -8px;
+	}
+}
+
+.wp-block-separator {
+	margin: ($spacer * 3) auto;
+	max-width: 200px;
+}
+
+.wp-block-pullquote {
+
+	@include vertical-spacing();
 }

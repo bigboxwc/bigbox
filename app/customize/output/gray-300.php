@@ -23,16 +23,6 @@ return [
 			'border-color' => esc_attr( $gray300 ),
 		],
 	],
-	// Solid box-shadow
-	[
-		'selectors'    => [
-			'.navbar-menu--primary .sub-menu',
-			'.navbar-menu--secondary .sub-menu',
-		],
-		'declarations' => [
-			'box-shadow' => esc_attr( "$gray300 0 2px 12px" ),
-		],
-	],
 
 	// @mixin form--input
 	[

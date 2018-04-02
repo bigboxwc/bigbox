@@ -27,17 +27,3 @@ add_filter(
 		return bigbox_get_partial( 'searchform' );
 	}
 );
-
-/**
- * Wrap embeds so we can make them responsive.
- *
- * @since 1.0.0
- *
- * @param string $html Embed HTML.
- * @return string
- */
-function bigbox_embed_html( $html ) {
-	return '<div class="wp-embed">' . $html . '</div>';
-}
-add_filter( 'embed_oembed_html', 'bigbox_embed_html', 10, 3 );
-add_filter( 'video_embed_html', 'bigbox_embed_html' ); // Jetpack.

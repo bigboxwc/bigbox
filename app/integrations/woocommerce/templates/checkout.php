@@ -23,9 +23,7 @@ while ( have_posts() ) :
 <div id="main" class="site-primary site-primary--10" role="main">
 	<h1 class="page-title"><?php the_title(); ?></h1>
 
-	<div class="hentry">
-		<?php the_content(); ?>
-	</div>
+	<?php the_content(); ?>
 </div>
 
 <?php

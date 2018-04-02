@@ -16,6 +16,7 @@ return [
 	[
 		'selectors'    => [
 			'body',
+			'a:hover',
 			'[type="email"]',
 			'[type="search"]',
 			'[type="tel"]',

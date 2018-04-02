@@ -11,6 +11,11 @@
 	}
 
 	&--lg {
+		font-size: ($font-size-xl * 1.5);
+		font-weight: bolder;
+	}
+
+	&--xl {
 		font-size: ($font-size-xl * 2);
 		font-weight: bolder;
 	}

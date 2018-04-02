@@ -20,8 +20,13 @@ while ( have_posts() ) :
 	the_post();
 ?>
 
-<div id="main" class="site-primary" role="main">
-	<?php the_content(); ?>
+
+<div id="main" class="site-primary site-primary--8">
+	<h1 class="page-title page-title--lg"><?php the_title(); ?></h1>
+
+	<div class="hentry blog-post__content">
+		<?php the_content(); ?>
+	</div>
 </div>
 
 <?php

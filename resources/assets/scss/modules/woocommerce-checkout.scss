@@ -142,16 +142,26 @@ form.woocommerce-checkout {
 	}
 }
 
+.woocommerce-form-coupon-toggle {
+
+	@include vertical-spacing("down");
+
+	.woocommerce-info {
+		border: 0;
+		padding: 0;
+		background: none;
+	}
+}
+
 .woocommerce-form-coupon {
-	margin-bottom: ($spacer * 1.5);
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 
+	@include vertical-spacing("down");
+
 	p:first-child {
-		font-size: $font-size-xs;
-		margin: 0 0 ($spacer / 2);
-		width: 100%;
+		display: none;
 	}
 
 	.form-row-first,

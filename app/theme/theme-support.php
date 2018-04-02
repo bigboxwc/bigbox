@@ -13,16 +13,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+if ( ! isset( $content_width ) ) {
+	$content_width = 821;
+}
+
 /**
  * Declare view support for various built in WordPress features.
  *
  * @since 1.0.0
  */
 function bigbox_add_theme_support() {
-	if ( ! isset( $content_width ) ) {
-		$content_width = 930;
-	}
-
 	add_theme_support( 'title-tag' );
 
 	add_theme_support( 'automatic-feed-links' );

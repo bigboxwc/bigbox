@@ -27,6 +27,7 @@ return [
 			'.woocommerce-MyAccount-navigation',
 			'.woocommerce-single-product-data__section',
 			'.footer-nav',
+			'.wp-block-separator',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray200 ),

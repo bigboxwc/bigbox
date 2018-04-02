@@ -28,10 +28,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<h3 class="block-title blog-post__title">
 			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 		</h3>
+	</div>
 
-		<div class="hentry blog-post__content">
-			<?php the_excerpt(); ?>
-		</div>
+	<div class="hentry blog-post__content">
+		<?php the_excerpt(); ?>
 	</div>
 
 </div>
