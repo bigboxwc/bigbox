@@ -2,8 +2,7 @@ $spacing: ( $spacer / 2 );
 
 .woocommerce-pagination {
 	text-align: center;
-	font-size: $font-size-lg;
-	background: gray("100");
+	background: theme-color("light");
 	border-radius: $border-radius;
 	display: flex;
 	justify-content: center;
@@ -26,7 +25,7 @@ $spacing: ( $spacer / 2 );
 	.current,
 	a {
 		color: inherit;
-		margin: 0 $spacing;
+		text-decoration: none;
 		padding: 0 $spacing;
 	}
 

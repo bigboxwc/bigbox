@@ -30,6 +30,7 @@ $base = [
 		'.button',
 		'.navbar-menu--primary .sub-menu li',
 		'.navbar-menu--secondary .sub-menu li',
+		'.widget-title',
 	],
 	'declarations' => [
 		'font-weight' => $weight_base,
@@ -69,6 +70,7 @@ return [
 			'.product__sale a',
 			'.site-title',
 			'.action-list__item-label',
+			'.widget-title',
 		],
 		'declarations' => [
 			'font-weight' => $weight_bold,

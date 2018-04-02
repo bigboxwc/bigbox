@@ -25,6 +25,16 @@ return [
 			'color' => esc_attr( $light ),
 		],
 	],
+	// Solid background-color
+	[
+		'selectors'    => [
+			'.woocommerce-pagination',
+			'.facetwp-pager',
+		],
+		'declarations' => [
+			'background-color' => esc_attr( $light ),
+		],
+	],
 
 	// @mixin card
 	[

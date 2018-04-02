@@ -17,4 +17,18 @@
 		padding-bottom: 0;
 		border-bottom: 0;
 	}
+
+	li {
+		margin-bottom: ($spacer / 3);
+	}
+
+	ul ul {
+		margin: ($spacer / 3) 0 0;
+		padding-left: 10px;
+		list-style: none;
+
+		li {
+			margin: 0;
+		}
+	}
 }

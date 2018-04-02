@@ -19,7 +19,6 @@ return [
 			'.navbar-menu--primary .sub-menu a',
 			'.navbar-menu--secondary .sub-menu a',
 			'.product__stock',
-			'.product__has-variations a',
 		],
 		'declarations' => [
 			'color' => esc_attr( $gray600 ),

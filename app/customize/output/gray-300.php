@@ -16,7 +16,6 @@ return [
 	[
 		'selectors'    => [
 			'.navbar-mobile .sub-menu',
-			'.product__has-variations a',
 			'.wc-credit-card-form #stripe-card-element',
 		],
 		'declarations' => [

@@ -17,12 +17,9 @@ return [
 		'selectors'    => [
 			'table tbody tr:nth-child(even) th',
 			'table tbody tr:nth-child(even) td',
-			'.button__pill',
 			'.facetwp-facet .facetwp-slider',
 			'.footer-copyright',
 			'.navbar-mobile__close',
-			'.product__has-variations a',
-			'.woocommerce-pagination',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $gray100 ),

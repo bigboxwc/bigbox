@@ -43,7 +43,7 @@
 	font-size: $font-size-sm;
 	text-align: center;
 	margin: 0;
-	padding: $spacer;
+	padding: ($spacer / 2) ($spacer / 4);
 	border-top: 1px solid rgba(theme-color("primary"), 0.25);
 	background: theme-color("light");
 	flex: 1;

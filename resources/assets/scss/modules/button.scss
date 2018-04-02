@@ -3,19 +3,9 @@
 	@include button--primary;
 }
 
-.button__pill {
-	font-size: $font-size-xs;
-	margin: 0 0 0 8px;
-	padding: 3px 10px;
-	background: gray("100");
-	border-radius: 40px;
-	display: flex;
-	align-items: baseline;
+.button--pill {
 
-	sub {
-		font-size: 0.75em;
-		opacity: 0.6;
-	}
+	@include button--pill;
 }
 
 .button--blank {

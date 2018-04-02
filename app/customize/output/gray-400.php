@@ -15,7 +15,6 @@ return [
 	// Solid border-color
 	[
 		'selectors'    => [
-			'.product__has-variations a:hover',
 			'.wc_payment_method [type="radio"] label:before',
 		],
 		'declarations' => [
@@ -33,6 +32,28 @@ return [
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $gray400 ),
+		],
+	],
+
+	// @mixin button--pill
+	[
+		'selectors'    => [
+			'.product__has-variations a',
+			'.widget_layered_nav_filters a',
+		],
+		'declarations' => [
+			'background-color' => esc_attr( $gray100 ),
+			'border-color' => esc_attr( bigbox_get_theme_color( 'gray-300' ) ),
+			'color' => esc_attr( bigbox_get_theme_color( 'gray-500' ) ),
+		],
+	],
+	[
+		'selectors'    => [
+			'.product__has-variations a:hover',
+			'.widget_layered_nav_filters a:hover',
+		],
+		'declarations' => [
+			'border-color' => esc_attr( bigbox_get_theme_color( 'gray-400' ) ),
 		],
 	],
 ];
