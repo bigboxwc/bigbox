@@ -22,8 +22,6 @@ function bigbox_enqueue_styles() {
 	$version    = bigbox_get_theme_version();
 	$stylesheet = bigbox_get_theme_name();
 
-	$deps = [];
-
 	// Load Google fonts if needed.
 	$google = bigbox_get_google_fonts_url();
 
@@ -32,7 +30,7 @@ function bigbox_enqueue_styles() {
 	}
 
 	// Base and dynamic styles.
-	wp_enqueue_style( $stylesheet, get_template_directory_uri() . '/public/css/app.min.css', $deps, $version );
+	wp_enqueue_style( $stylesheet, get_template_directory_uri() . '/public/css/app.min.css', [], $version );
 	wp_add_inline_style( $stylesheet, bigbox_customize_css() );
 }
 add_action( 'wp_enqueue_scripts', 'bigbox_enqueue_styles' );
