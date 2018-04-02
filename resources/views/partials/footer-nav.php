@@ -15,17 +15,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $count = bigbox_get_footer_nav_columns();
+ob_start();
+
+for ( $i = 1; $i <= $count; $i++ ) :
+	if ( is_active_sidebar( 'footer-' . $i ) ) :
+		echo '<div class="col">';
+			dynamic_sidebar( 'footer-' . $i );
+		echo '</div>';
+	endif;
+endfor;
+
+$widgets = trim( ob_get_clean() );
+
+if ( '' === $widgets ) :
+	return;
+endif;
 ?>
 
 <div class="footer-nav">
 	<div class="container">
 		<div class="row">
-
-			<?php for ( $i = 1; $i <= $count; $i++ ) : ?>
-			<div class="col">
-				<?php dynamic_sidebar( 'footer-' . $i ); ?>
-			</div>
-			<?php endfor; ?>
+		
+			<?php echo $widgets; // WPCS: XSS okay; ?>
 
 		</div>
 	</div>

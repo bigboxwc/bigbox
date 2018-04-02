@@ -12,7 +12,7 @@
 
 	.woocommerce-Button,
 	.wc-forward {
-		margin: -( $spacer / 2 );
+		margin: -( $spacer * 0.75 );
 		margin-left: $spacer;
 		padding: 10px 20px;
 		float: right;
