@@ -2,6 +2,16 @@
 	line-height: 2em;
 }
 
+// Assume most standard pages (full width) will be used with Gutenberg.
+.hentry--page {
+
+	h2 {
+		@include single-product-section-title();
+
+		margin-bottom: 0;
+	}
+}
+
 // Gutenberg currently uses <figure>
 // @see https://github.com/WordPress/gutenberg/pull/5706
 .wp-block-image {

@@ -20,6 +20,8 @@ return [
 			'.facetwp-facet .facetwp-slider',
 			'.footer-copyright',
 			'.navbar-mobile__close',
+			'.breadcrumbs',
+			'.woocommerce-breadcrumb',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $gray100 ),

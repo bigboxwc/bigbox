@@ -154,3 +154,7 @@
 		@include reset-list();
 	}
 }
+
+.wc-layered-nav-rating a {
+	display: flex;
+}

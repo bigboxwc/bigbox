@@ -48,7 +48,7 @@ while ( have_posts() ) :
 
 	<?php woocommerce_cross_sell_display(); ?>
 
-	<div class="hentry">
+	<div class="hentry hentry--page">
 		<?php echo apply_filters( 'the_content', str_replace( '[woocommerce_cart]', '', get_post()->post_content ) ); // @codingStandardsIgnoreLine ?>
 	</div>
 </div>

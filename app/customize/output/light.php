@@ -45,8 +45,6 @@ return [
 			'.woocommerce-message',
 			'.woocommerce-info',
 			'.woocommerce-purchase-form',
-			'.breadcrumbs',
-			'.woocommerce-breadcrumb',
 			'.wc_payment_method [type="radio"] label',
 			'.flex-viewport',
 			'div:not(.flex-viewport) > .woocommerce-product-gallery__wrapper',
@@ -56,7 +54,7 @@ return [
 			'box-shadow'       => esc_attr( "{$light} 0 1px 2px" ),
 
 			// Since 90% of the values use $light we are filling out the border-color here as well for a unified list.
-			'border-color'     => esc_attr( bigbox_hex_to_rgba( bigbox_get_theme_color( 'primary' ), 0.25 ) ),
+			'border-color'     => esc_attr( bigbox_hex_to_rgba( bigbox_get_theme_color( 'primary' ), 0.20 ) ),
 		],
 	],
 

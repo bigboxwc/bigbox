@@ -10,7 +10,7 @@
  */
 
 $primary = bigbox_get_theme_color( 'primary' );
-$rgba25  = bigbox_hex_to_rgba( $primary, 0.25 );
+$rgba20  = bigbox_hex_to_rgba( $primary, 0.20 );
 
 return [
 	// Solid background-color
@@ -19,6 +19,7 @@ return [
 			'.navbar',
 			'.facetwp-facet .facetwp-slider .noUi-connect',
 			'.select2-container--default .select2-results__option--highlighted[data-selected]',
+			'.widget_price_filter .ui-slider .ui-slider-range',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $primary ),
@@ -37,6 +38,7 @@ return [
 	[
 		'selectors'    => [
 			'.woocommerce-MyAccount-navigation-link.is-active a',
+			'.widget_price_filter .ui-slider .ui-slider-handle',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $primary ),
@@ -57,7 +59,7 @@ return [
 			'.woocommerce-loop-category__title',
 		],
 		'declarations' => [
-			'border-color' => esc_attr( $rgba25 ),
+			'border-color' => esc_attr( $rgba20 ),
 		],
 	],
 
