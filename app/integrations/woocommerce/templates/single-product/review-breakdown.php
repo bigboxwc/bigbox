@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <h3>
 <?php
-echo esc_html( sprintf( __( '%1$s out of 5 stars', 'bigbox' ), $product->get_average_rating() ) );
+echo esc_html( sprintf( __( '%1$s out of 5 stars', 'bigbox' ), number_format( $product->get_average_rating(), 1 ) ) );
 
 ?></h3>
 

@@ -1,0 +1,31 @@
+.commentlist {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.comment {
+	font-size: $font-size-sm;
+	margin: $spacer 0;
+	padding-bottom: $spacer;
+}
+
+.comment-text {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+
+	.avatar {
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+	}
+
+	.meta {
+		margin: 0 $spacer;
+	}
+
+	.description {
+		width: 100%;
+	}
+}

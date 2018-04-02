@@ -81,7 +81,7 @@ endif;
 								'email'  => '<p class="comment-form-email"><label for="email">' . esc_html__( 'Email', 'bigbox' ) . ' <span class="required">*</span></label> ' .
 											'<input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" aria-required="true" required /></p>',
 							),
-							'label_submit'        => __( 'Submit', 'bigbox' ),
+							'label_submit'        => __( 'Submit Review', 'bigbox' ),
 							'logged_in_as'        => '',
 							'comment_field'       => '',
 						);

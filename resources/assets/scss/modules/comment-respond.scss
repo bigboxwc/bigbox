@@ -1,0 +1,15 @@
+.comment-respond {
+
+}
+
+.comment-form {
+	> p {
+
+		@include form-row();
+	}
+
+	[type="submit"] {
+
+		@include button--primary();
+	}
+}

@@ -5,7 +5,7 @@
 }
 
 .woocommerce-Reviews {
-
+	@include vertical-spacing('down');
 	@include make-row();
 }
 
@@ -64,4 +64,53 @@
 	position: absolute;
 	left: 0;
 	top: 0;
+}
+
+p.stars {
+	a {
+		color: #f8c144;
+		position: relative;
+		height: 1em;
+		width: 1em;
+		margin-right: 3px;
+		text-indent: -999em;
+		display: inline-block;
+		text-decoration: none;
+
+		&::before {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 1em;
+			height: 1em;
+			line-height: 1;
+			content: '\2606';
+			text-indent: 0;
+		}
+
+		&:hover ~ a::before {
+			content: '\2606';
+		}
+	}
+
+	&:hover a::before {
+		content: '\2605';
+	}
+
+	&.selected {
+		a.active {
+			&::before {
+				content: '\2605';
+			}
+
+			~ a::before {
+				content: '\2606';
+			}
+		}
+
+		a:not(.active)::before {
+			content: '\2605';
+		}
+	}
 }

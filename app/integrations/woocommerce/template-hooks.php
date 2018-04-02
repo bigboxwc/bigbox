@@ -154,3 +154,15 @@ add_filter( 'woocommerce_get_star_rating_html', 'bigbox_woocommerce_get_star_rat
 
 // Custom breadcrum arguments.
 add_filter( 'woocommerce_breadcrumb_defaults', 'bigbox_woocommerce_breadcrumb_defaults' );
+
+/**
+ * single-product/review.php
+ */
+
+// Move gravatar position.
+remove_action( 'woocommerce_review_before', 'woocommerce_review_display_gravatar' );
+add_action( 'woocommerce_review_meta', 'woocommerce_review_display_gravatar', 5 );
+
+// Move rating output.
+remove_action( 'woocommerce_review_before_comment_meta', 'woocommerce_review_display_rating' );
+add_action( 'woocommerce_review_meta', 'woocommerce_review_display_rating', 15 );
