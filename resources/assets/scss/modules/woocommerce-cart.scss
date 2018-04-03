@@ -20,7 +20,7 @@
 	order: 1;
 
 	@include make-col-ready;
-	@include growColumn( (
+	@include grow-column( (
 		sm: 6,
 		md: 5,
 		lg: 4,

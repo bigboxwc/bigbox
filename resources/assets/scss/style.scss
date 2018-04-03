@@ -15,7 +15,6 @@
 // Bootstrap
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/mixins/breakpoints";
-@import "~bootstrap/scss/mixins/grid-framework";
 @import "~bootstrap/scss/mixins/grid";
 @import "~bootstrap/scss/grid";
 
@@ -24,8 +23,8 @@
  */
 
 // Mixins
-@import "mixins/complimentaryColumns";
-@import "mixins/growColumn";
+@import "mixins/complimentary-columns";
+@import "mixins/grow-column";
 @import "mixins/button";
 @import "mixins/form";
 @import "mixins/card";

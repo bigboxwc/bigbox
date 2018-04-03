@@ -15,7 +15,7 @@
 // @see https://github.com/WordPress/gutenberg/pull/5706
 .wp-block-image {
 
-	@include vertical-spacing();
+	@include vertical-spacing("margin");
 
 	&.aligncenter {
 		display: block;
@@ -30,7 +30,7 @@
 .wp-block-gallery {
 
 	@include reset-list();
-	@include vertical-spacing();
+	@include vertical-spacing("margin");
 
 	&.alignnone {
 		margin-left: -8px;
@@ -45,5 +45,5 @@
 
 .wp-block-pullquote {
 
-	@include vertical-spacing();
+	@include vertical-spacing("margin");
 }

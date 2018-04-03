@@ -17,7 +17,7 @@
 						"last 1 Android version",
 						"last 1 ChromeAndroid version",
 						"ie 11",
-						"> 1%"
+						"> 5%"
 					]
 				}
 			} 

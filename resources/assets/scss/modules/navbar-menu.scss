@@ -73,12 +73,15 @@
 	}
 }
 
+// [1] Reverse some visual padding for better alignment to searchbar below.
 .navbar-menu--primary {
 	order: 1;
 	margin-left: auto;
+	margin-right: -10px; // [1]
 
 	@include media-breakpoint-up(md) {
 		order: 3;
+		margin-right: 0; // [1]
 	}
 
 	// Always in a line.

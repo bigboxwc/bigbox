@@ -6,11 +6,11 @@
 
 .woocommerce-Reviews {
 
-	@include vertical-spacing("down");
+	@include vertical-spacing("margin", "down");
 	@include make-row();
 }
 
-@include complimentaryColumns( (
+@include complimentary-columns( (
 	sm: 12,
 	md: 7,
 	lg: 9,

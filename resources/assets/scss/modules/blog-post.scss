@@ -1,8 +1,16 @@
 .blog-post {
 	text-align: center;
-	margin: ($spacer * 3) 0;
-	padding-bottom: ($spacer * 3);
+	margin: 0 0 $spacer;
+	padding: $spacer 0;
 	border-bottom: 1px solid gray("200");
+
+	$map: (
+		md: 2,
+		lg: 3,
+	);
+
+	@include vertical-spacing("padding", "both", $map);
+	@include vertical-spacing("margin", "down", $map);
 }
 
 .blog-post__title {

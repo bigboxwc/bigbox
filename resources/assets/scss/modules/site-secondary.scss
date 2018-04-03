@@ -6,7 +6,7 @@
 	margin-bottom: ( $spacer * 2 );
 	order: 0;
 
-	@include growColumn( (
+	@include grow-column( (
 		md: 3,
 		lg: 2.5,
 		xl: 1.8, 

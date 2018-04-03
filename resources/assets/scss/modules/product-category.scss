@@ -11,7 +11,7 @@
 		@include make-col(6);
 
 		// Scale purchase form down as page expands.
-		@include growColumn( (
+		@include grow-column( (
 			sm: 4,
 			md: 3,
 			lg: 2,

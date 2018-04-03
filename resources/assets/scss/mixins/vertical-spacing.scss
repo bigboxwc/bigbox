@@ -1,28 +1,33 @@
-@mixin vertical-spacing( $direction: "both" ) {
+//
+// Given a property (margin or padding) to control adjust the vertical (top, bottom, or both)
+// spacing of an element. Optionally pass a mpa to increase the spacing
+// depending on the current breakpoint.
+//
+// @include vertical-spacing("padding", "both", (
+//   md: 2
+// ) );
+//
+@mixin vertical-spacing( $property: "margin", $direction: "both", $grow: () ) {
 
-	@if $direction == "both" {
-		margin-top: $spacer;
-		margin-bottom: $spacer;
-
-		@include media-breakpoint-up(md) {
-			margin-top: ( $spacer * 2 );
-			margin-bottom: ( $spacer * 2 );
-		}
+	@if $direction == "both" or $direction == "up" {
+		#{$property}-top: $spacer;
 	}
 
-	@if $direction == "down" {
-		margin-bottom: $spacer;
-
-		@include media-breakpoint-up(md) {
-			margin-bottom: ( $spacer * 2 );
-		}
+	@if $direction == "both" or $direction == "down" {
+		#{$property}-bottom: $spacer;
 	}
 
-	@if $direction == "up" {
-		margin-top: $spacer;
+	@each $bp, $multiplier in $grow {
 
-		@include media-breakpoint-up(md) {
-			margin-top: ( $spacer * 2 );
+		@include media-breakpoint-up( $bp ) {
+
+			@if $direction == "both" or $direction == "up" {
+				#{$property}-top: ( $spacer * $multiplier );
+			}
+
+			@if $direction == "both" or $direction == "down" {
+				#{$property}-bottom: ( $spacer * $multiplier );
+			}
 		}
 	}
 }

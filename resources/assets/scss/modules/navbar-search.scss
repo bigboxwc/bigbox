@@ -47,6 +47,10 @@
 		border: 0;
 		border-radius: 0;
 	}
+
+	&:first-child [type="search"] {
+		border-radius: $border-radius 0 0 $border-radius;
+	}
 }
 
 .navbar-search__submit {

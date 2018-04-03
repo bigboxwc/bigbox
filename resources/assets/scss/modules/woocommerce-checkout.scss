@@ -3,7 +3,7 @@ form.woocommerce-checkout {
 	@include make-row();
 }
 
-@include complimentaryColumns( (
+@include complimentary-columns( (
 	sm: 12,
 	md: 6,
 	lg: 7,
@@ -145,7 +145,7 @@ form.woocommerce-checkout {
 
 .woocommerce-form-coupon-toggle {
 
-	@include vertical-spacing("down");
+	@include vertical-spacing("margin", "down");
 
 	.woocommerce-info {
 		border: 0;
@@ -159,7 +159,7 @@ form.woocommerce-checkout {
 	flex-wrap: wrap;
 	justify-content: space-between;
 
-	@include vertical-spacing("down");
+	@include vertical-spacing("margin", "down");
 
 	p:first-child {
 		display: none;

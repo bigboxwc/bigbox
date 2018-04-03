@@ -1,6 +1,6 @@
 .site-primary {
 
-	@include make-col-ready;
+	@include make-col-ready();
 
 	margin-top: ( $grid-gutter-width / 2);
 	margin-bottom: ( $grid-gutter-width / 2);

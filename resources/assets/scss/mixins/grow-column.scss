@@ -1,14 +1,15 @@
+//
 // Given a map of responsive breakpoints and column widths create a
 // responsive two column layout using hte remaining column withs to
 // calculate the second column.
 // 
-// @include growColumn( (
+// @include grow-column( (
 // 		sm: 12,
 // 		md: 6,
 // 		lg: 7,
 // ) );
 //
-@mixin growColumn( $map: "" ) {
+@mixin grow-column( $map: "" ) {
 
 	@each $bp, $cols in $map {
 
