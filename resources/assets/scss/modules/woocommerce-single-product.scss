@@ -28,11 +28,10 @@
 		@include vertical-spacing("margin");
 		@include make-col-ready;
 
-		@include media-breakpoint-up(sm) {
+		@include media-breakpoint-up(md) {
 			width: auto;
 			margin-top: 0;
-
-			@include make-col-offset(6);
+			margin-left: 400px;
 		}
 
 		@include media-breakpoint-up(lg) {

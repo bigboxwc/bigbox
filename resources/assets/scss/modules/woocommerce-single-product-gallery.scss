@@ -1,14 +1,17 @@
 .woocommerce-product-gallery {
 
-	@include make-col-ready;
+	@include make-col-ready();
 
-	@include media-breakpoint-up(sm) {
-		float: left;
+	@include media-breakpoint-up(md) {
 
 		@include make-col(6);
+
+		float: left;
+		max-width: 400px;
 	}
 
-	@include media-breakpoint-up(lg) {
+	@include media-breakpoint-up(xl) {
+		float: none;
 		display: flex;
 
 		@include make-col(5);
@@ -16,32 +19,37 @@
 
 	.flex-viewport {
 		order: 1;
-		flex: 1 1 auto;
+		flex: 0 1 auto;
+
+		@include media-breakpoint-up(xl) {
+			flex-basis: 400px;
+			width: 400px;
+		}
+	}
+
+	.flex-direction-nav {
+
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
 	}
 
 	.flex-control-nav {
+		display: none;
 
 		@include reset-list();
 
-		margin: $spacer ( ( $spacer / 2 ) * -1 ) 0;
-		display: flex;
-		justify-content: space-between;
-
 		@include media-breakpoint-up(lg) {
-			margin: 0 $spacer 0 0;
+			margin-right: $spacer;
+			display: flex;
+			flex: 1 0 auto;
+			flex-direction: column;
 			order: 0;
-			flex: 1 0 75px;
-			flex-flow: column wrap;
-			justify-content: normal;
 		}
 
 		li {
+			margin: 0 0 $spacer;
 			cursor: pointer;
-			margin: 0 ( $spacer / 2 );
-
-			@include media-breakpoint-up(xl) {
-				margin: 0 0 $spacer;
-			}
 		}
 
 		img {
@@ -50,29 +58,16 @@
 	}
 }
 
-.flex-viewport,
-div:not(.flex-viewport) > .woocommerce-product-gallery__wrapper {
-
-	@include card;
-}
-
 .woocommerce-product-gallery__wrapper {
-	width: 100%;
 	margin: 0;
 	padding: 0;
-
-	a,
-	img {
-		display: block;
-		margin: 0 auto;
-	}
 }
 
 // [1] .woocommerce-product-gallery (parent) includes grid gutter spacing.
 .woocommerce-product-gallery__trigger {
 	position: absolute;
 	top: $spacer;
-	right: $spacer + ( $grid-gutter-width / 2 ); // [1]
+	left: $spacer + ( $grid-gutter-width / 2 ); // [1]
 	font-size: 2em;
 	z-index: 1;
 	width: 36px;
@@ -81,6 +76,11 @@ div:not(.flex-viewport) > .woocommerce-product-gallery__wrapper {
 	text-indent: -9999px;
 	border-radius: 100%;
 	box-sizing: content-box;
+
+	@include media-breakpoint-up(xl) {
+		right: $spacer + ( $grid-gutter-width / 2 ); // [1]
+		left: auto;
+	}
 
 	&:before {
 		content: "";

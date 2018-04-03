@@ -331,3 +331,17 @@ function bigbox_woocommerce_pagination_args( $args ) {
 
 	return $args;
 }
+
+/**
+ * Modify Flexlider gallery output.
+ *
+ * @since 1.0.0
+ *
+ * @param array $args Flexslider arguments.
+ * @return array
+ */
+function bigbox_woocommerce_single_product_carousel_options( $args ) {
+	$args['directionNav'] = true;
+
+	return $args;
+}

@@ -46,8 +46,6 @@ return [
 			'.woocommerce-info',
 			'.woocommerce-purchase-form',
 			'.wc_payment_method [type="radio"] label',
-			'.flex-viewport',
-			'div:not(.flex-viewport) > .woocommerce-product-gallery__wrapper',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $light ),

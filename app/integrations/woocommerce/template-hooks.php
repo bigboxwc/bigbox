@@ -134,6 +134,9 @@ add_action( 'woocommerce_product_additional_information', 'bigbox_woocommerce_pr
 // Always show Additional Information.
 add_filter( 'wc_product_enable_dimensions_display', '__return_true' );
 
+// Adjust gallery output.
+add_filter( 'woocommerce_single_product_carousel_options', 'bigbox_woocommerce_single_product_carousel_options' );
+
 /**
  * templates/cart/cart.php.
  */
