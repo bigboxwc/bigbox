@@ -29,7 +29,7 @@ function bigbox_woocommerce_page_templates( $templates ) {
 	}
 
 	if ( is_checkout() ) {
-		$add[] = 'resources/views/layout/minimal.php';
+		$add[] = bigbox_woocommerce_template_path() . 'checkout.php';
 	}
 
 	if ( is_account_page() && ! is_user_logged_in() ) {

@@ -108,6 +108,12 @@
 		max-width: 150px;
 	}
 
+	// Shrink on cart and checkout.
+	.woocommerce-checkout &,
+	.woocommerce-cart & {
+		max-width: 100px;
+	}
+
 	img {
 		display: block;
 	}
