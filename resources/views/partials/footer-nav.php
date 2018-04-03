@@ -19,7 +19,7 @@ ob_start();
 
 for ( $i = 1; $i <= $count; $i++ ) :
 	if ( is_active_sidebar( 'footer-' . $i ) ) :
-		echo '<div class="col">';
+		echo '<div class="footer-nav__col">';
 			dynamic_sidebar( 'footer-' . $i );
 		echo '</div>';
 	endif;
@@ -34,7 +34,7 @@ endif;
 
 <div class="footer-nav">
 	<div class="container">
-		<div class="row">
+		<div class="footer-nav__row">
 		
 			<?php echo $widgets; // WPCS: XSS okay; ?>
 

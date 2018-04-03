@@ -50,6 +50,7 @@
 @import "elements/small";
 
 // Repeatable Patterns
+@import "modules/container";
 @import "modules/button";
 @import "modules/icon";
 @import "modules/action-list";
@@ -61,6 +62,9 @@
 @import "modules/form-label";
 @import "modules/form-input";
 @import "modules/select2";
+
+// Page
+@import "modules/page";
 
 // Navbar
 @import "modules/navbar";

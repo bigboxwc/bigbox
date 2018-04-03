@@ -5,6 +5,20 @@
 	border-top: 1px solid theme-color("light");
 }
 
+.footer-nav__row {
+
+	@include make-row();
+}
+
+.footer-nav__col {
+
+	@include make-col-ready();
+
+	flex: 1 0 auto;
+	width: auto;
+	max-width: none;
+}
+
 .footer-widget {
 	border: 0;
 
