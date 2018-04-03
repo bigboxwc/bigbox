@@ -52,15 +52,6 @@ $product_thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product
 				</a>
 			</h2>
 
-			<?php
-			$data = wc_get_formatted_cart_item_data( $cart_item );
-			if ( '' !== $data ) :
-			?>
-			<div class="product__stats">
-				<?php echo $data; // PHPCS: XSS ok. ?>
-			</div>
-			<?php endif; ?>
-
 			<?php if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) : ?>
 			<div class="product__stats stock">
 				<?php esc_html_e( 'Available on backorder', 'bigbox' ); ?>
@@ -99,6 +90,15 @@ $product_thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product
 				);
 				?>
 			</div>
+
+			<?php
+			$data = wc_get_formatted_cart_item_data( $cart_item );
+			if ( '' !== $data ) :
+			?>
+			<div class="product__stats">
+				<?php echo $data; // PHPCS: XSS ok. ?>
+			</div>
+			<?php endif; ?>
 
 		</div>
 

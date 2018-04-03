@@ -41,9 +41,10 @@
 }
 
 .single_variation_wrap {
-	margin-top: $spacer;
-	padding-top: $spacer;
 	border-top: 1px solid gray("100");
+
+	@include vertical-spacing("margin", "up");
+	@include vertical-spacing("padding", "up");
 }
 
 .woocommerce-variation {
@@ -52,18 +53,22 @@
 	align-items: center;
 
 	.woocommerce-variation--loaded & {
-		padding-bottom: $spacer;
 		border-bottom: 1px solid gray("100");
+
+		@include vertical-spacing("margin", "down");
+		@include vertical-spacing("padding", "down");
 	}
 }
 
+.woocommerce-variation-description,
 .woocommerce-variation-availability,
 .woocommerce-variation-price {
-	margin-top: $spacer;
-}
 
-.woocommerce-variation-price:empty {
-	display: none;
+	@include vertical-spacing("margin", "both");
+
+	&:empty {
+		display: none;
+	}
 }
 
 .woocommerce-variation-description {
@@ -85,6 +90,7 @@
 
 .woocommerce-variation-availability {
 	font-size: $font-size-sm;
+	margin: 0;
 
 	p {
 		margin: 0;
