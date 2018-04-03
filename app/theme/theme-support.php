@@ -13,20 +13,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! isset( $content_width ) ) {
-	$content_width = 821;
-}
-
 /**
  * Declare view support for various built in WordPress features.
  *
  * @since 1.0.0
  */
 function bigbox_add_theme_support() {
-	add_theme_support( 'title-tag' );
+	// Set the default content width.
+	$GLOBALS['content_width'] = 821;
 
+	// Add gettext support.
+	load_theme_textdomain( 'bigbox', get_template_directory() . '/resources/languages' );
+
+	// Dynamic <title> tags.
+	add_theme_support( 'title-tag' );
+	
+	// Adds RSS feed links to HTML <head>.
 	add_theme_support( 'automatic-feed-links' );
 
+	// Use HTML markup for WordPress-generated markup.
 	add_theme_support(
 		'html5', [
 			'search-form',
@@ -37,14 +42,15 @@ function bigbox_add_theme_support() {
 		]
 	);
 
-	add_post_type_support( 'page', 'excerpt' );
-
+	// Allow featured images to be used.
 	add_theme_support( 'post-thumbnails' );
 
+	// Gutenberg support.
 	add_theme_support( 'gutenberg' );
 	add_theme_support( 'align-wide' );
 	add_theme_support( 'editor-color-palette', [] );
 
+	// Cusstom logo support.
 	add_theme_support(
 		'custom-logo', [
 			'flex-width'  => true,
