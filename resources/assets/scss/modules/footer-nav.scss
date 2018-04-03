@@ -1,8 +1,9 @@
 .footer-nav {
 	margin-top: auto;
-	margin-bottom: ($spacer * 2);
-	padding-top: ($spacer * 2);
-	border-top: 1px solid theme-color("light");
+
+	@include vertical-spacing("padding", "both", (
+		sm: 2,
+	) );
 }
 
 .footer-nav__row {

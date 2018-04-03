@@ -42,4 +42,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 
 		<div class="container">
-			<div class="page">
+			<div class="page-flow">

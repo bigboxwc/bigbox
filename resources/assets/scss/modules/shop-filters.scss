@@ -95,12 +95,12 @@
 		font-size: 0.7em;
 		display: block;
 		border: 0;
-		border-radius: 50%;
+		border-radius: $border-radius;
 		background-color: theme-color("primary");
 	}
 
 	.price_slider_wrapper .ui-widget-content {
-		border-radius: 50%;
+		border-radius: $border-radius;
 		background-color: gray("200");
 		border: 0;
 	}
