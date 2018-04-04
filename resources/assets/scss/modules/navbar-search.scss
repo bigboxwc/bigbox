@@ -14,6 +14,11 @@
 		margin: 0 $spacer;
 		width: auto;
 	}
+
+	.facetwp-facet {
+		margin: 0;
+		display: flex;
+	}
 }
 
 .navbar-search__category,
@@ -34,7 +39,7 @@
 		border-radius: $border-radius 0 0 $border-radius;
 		padding: 0 15px;
 
-		&:last-of-type {
+		&:last-of-type:not(:only-of-type) {
 			display: none;
 		}
 	}
@@ -44,6 +49,7 @@
 .navbar-search__keywords {
 	flex: 1;
 
+	[type="text"],
 	[type="search"] {
 		border: 0;
 		border-radius: 0;
@@ -51,6 +57,14 @@
 
 	&:first-child [type="search"] {
 		border-radius: $border-radius 0 0 $border-radius;
+	}
+
+	.facetwp-search-wrap {
+		width: 100%;
+
+		i {
+			display: none;
+		}
 	}
 }
 

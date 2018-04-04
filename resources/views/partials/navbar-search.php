@@ -21,8 +21,10 @@ endif;
 <form id="primary-search" action="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" method="GET" class="navbar-search">
 
 	<?php
-	$taxonomy = get_taxonomy( get_theme_mod( 'navbar-dropdown-source', 'product_cat' ) );
-	$terms    = get_terms( apply_filters( 'bigbox_navbar_search_dropdown',
+	$mod       = get_theme_mod( 'navbar-dropdown-source', 'product_cat' );
+	$whitelist = bigbox_woocommerce_customize_get_dropdown_taxonomies();
+	$taxonomy  = get_taxonomy( in_array( $mod, $whitelist ) ? $mod : 'product_cat' );
+	$terms     = get_terms( apply_filters( 'bigbox_navbar_search_dropdown',
 		[
 			'taxonomy'   => $taxonomy->name,
 			'hide_empty' => false,

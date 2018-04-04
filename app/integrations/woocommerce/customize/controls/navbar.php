@@ -14,33 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Return a list of taxonomies available for the dropdown.
- *
- * @since 1.0.0
- *
- * @return array
- */
-function bigbox_woocommerce_customize_get_dropdown_taxonomies() {
-	$taxonomies = get_object_taxonomies( 'product', 'objects' );
-	$choices    = [];
-
-	foreach ( $taxonomies as $taxonomy ) {
-		if ( ! $taxonomy->public ) {
-			continue;
-		}
-
-		$choices[ $taxonomy->name ] = esc_html( $taxonomy->label );
-	}
-
-	// This is public but let's remove it.
-	if ( isset( $choices[ 'product_shipping_class' ] ) ) {
-		unset( $choices[ 'product_shipping_class' ] );
-	}
-
-	return $choices;
-}
-
-/**
  * Navbar controls.
  *
  * @since 1.0.0
