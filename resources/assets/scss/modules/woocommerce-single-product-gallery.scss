@@ -13,9 +13,13 @@
 
 	.flex-viewport {
 		order: 1;
-		flex: 0 1 400px;
+		flex: 0 1 auto;
 		display: flex;
-		width: 400px;
+
+		@include media-breakpoint-up(sm) {
+			max-width: 400px;
+			flex-basis: 400px;
+		}
 	}
 
 	.flex-direction-nav {
