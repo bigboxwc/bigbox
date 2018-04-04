@@ -14,14 +14,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Render a view.
+ *
+ * @since 1.0.0
+ *
+ * @param string|array $templates The name of the template.
+ * @param array        $args Variables to pass to partial.
+ * @param string       $path Optional non-default path.
+ */
+function bigbox_view( $templates, $args = [], $path = 'resources/views' ) {
+	echo bigbox_get_view( $templates, $args, $path );
+}
+
+/**
  * Locate a piece of template.
  *
  * @since 1.0.0
  *
  * @param string|array $templates The name of the template.
  * @param array        $args Variables to pass to partial.
+ * @param string       $path Optional non-default path.
  */
-function bigbox_view( $templates, $args = [] ) {
+function bigbox_get_view( $templates, $args = [], $path = 'resources/views' ) {
 	if ( ! is_array( $templates ) ) {
 		$templates = [ $templates ];
 	}
@@ -35,14 +49,18 @@ function bigbox_view( $templates, $args = [] ) {
 
 	foreach ( $templates as $key => $template_name ) {
 		$_templates[] = $template_name . '.php';
-		$_templates[] = 'resources/views/' . $template_name . '.php';
+		$_templates[] = trailingslashit( $path ) . $template_name . '.php';
 	}
 
 	$template = locate_template( $_templates );
 
+	ob_start();
+
 	if ( $template ) {
 		include $template;
 	}
+
+	return ob_get_clean();
 }
 
 /**

@@ -31,6 +31,16 @@ abstract class Integration {
 	private $dir = null;
 
 	/**
+	 * Current working path.
+	 *
+	 * A relative short path from the theme root.
+	 *
+	 * @var string $dir
+	 * @since 1.0.0
+	 */
+	private $local_path = null;
+
+	/**
 	 * List of required dependencies.
 	 *
 	 * @var array $active
@@ -56,7 +66,19 @@ abstract class Integration {
 	 */
 	public function __construct( $slug, $dependencies ) {
 		$this->dependencies = $dependencies;
-		$this->dir          = get_template_directory() . trailingslashit( '/app/integrations' ) . $slug;
+		$this->local_path   = trailingslashit( '/app/integrations' ) . $slug;
+		$this->dir          = get_template_directory() . $this->get_local_path();
+	}
+
+	/**
+	 * Get the integrations local working path.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string
+	 */
+	public function get_local_path() {
+		return $this->local_path;
 	}
 
 	/**

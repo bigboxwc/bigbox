@@ -49,6 +49,25 @@ function bigbox_get_theme_version() {
 }
 
 /**
+ * Get an integration.
+ *
+ * @since 1.0.0
+ *
+ * @param string $integration Integration to check.
+ * @return mixed False when no integration can be found or Integration instance.
+ */
+function bigbox_get_integration( $integration ) {
+	$integrations = new BigBox\Integrations();
+	$integration  = $integrations->get_integrations()[ $integration ];
+
+	if ( ! $integration ) {
+		return false;
+	}
+
+	return $integrations->instantiate_integration( $integration );
+}
+
+/**
  * Determine if an integration is active.
  *
  * @since 1.0.0
@@ -57,9 +76,11 @@ function bigbox_get_theme_version() {
  * @return bool
  */
 function bigbox_is_integration_active( $integration ) {
-	$integrations = new BigBox\Integrations();
+	$integration = bigbox_get_integration( $integration );
 
-	return $integrations
-		->instantiate_integration( $integrations->get_integrations()[ $integration ] )
-		->is_active();
+	if ( ! $integration ) {
+		return false;
+	}
+
+	return $integration->is_active();
 }
