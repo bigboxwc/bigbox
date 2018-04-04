@@ -21,21 +21,13 @@ endif;
 <form id="primary-search" action="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" method="GET" class="navbar-search">
 
 	<?php
-	$mod       = get_theme_mod( 'navbar-dropdown-source', 'product_cat' );
-	$whitelist = bigbox_woocommerce_customize_get_dropdown_taxonomies();
-	$taxonomy  = get_taxonomy( in_array( $mod, $whitelist ) ? $mod : 'product_cat' );
-	$terms     = get_terms( apply_filters( 'bigbox_navbar_search_dropdown',
-		[
-			'taxonomy'   => $taxonomy->name,
-			'hide_empty' => false,
-		]
-	) );
+	$taxonomy = get_taxonomy( get_theme_mod( 'navbar-dropdown-source', 'product_cat' ) );
 
-	if ( $terms && ! is_wp_error( $terms ) && ! empty( $terms ) ) :
+	if ( $taxonomy ) :
 		$selected = isset( $_GET[ $taxonomy->name ] ) ? esc_attr( $_GET[ $taxonomy->name ] ) : null;
 
 		// Translators: %s Header search taxonomy label.
-		$all = '<option value="">' . esc_html( sprintf( __( 'All %s', 'bigbox' ), strtolower( $taxonomy->labels->name ) ) ) . '</option>';
+		$all = esc_html( sprintf( __( 'All %s', 'bigbox' ), strtolower( $taxonomy->labels->name ) ) ) 
 	?>
 
 	<div id="navbar-search__category" class="navbar-search__category">
@@ -46,21 +38,22 @@ endif;
 			?>:
 		</label>
 
-		<select name="<?php echo esc_attr( $taxonomy->name ); ?>">
-			<?php echo $all; // WPCS: XSS okay. ?>
-			<?php foreach ( $terms as $term ) : ?>
-			<option value="<?php echo esc_attr( $term->slug ); ?>" <?php selected( $selected, $term->slug ); ?>><?php echo esc_html( $term->name ); ?></option>
-			<?php endforeach; ?>
-		</select>
+		<?php
+		wp_dropdown_categories( apply_filters( 'bigbox_navbar_search_dropdown', [
+			'show_option_all' => $all,
+			'selected'        => $selected,
+			'name'            => $taxonomy->name,
+			'taxonomy'        => $taxonomy->name,
+			'hierarchical'    => true,
+			'value_field'     => 'slug',
+			'show_count'      => true,
+			'orderby'         => 'name',
+			'order'           => 'ASC',
+		] ) );
+		?>
 
 		<select>
-			<?php
-			if ( $selected ) :
-				echo '<option>' . $selected . '</option>'; // WPCS: XSS okay.
-			else :
-				echo $all; // WPCS: XSS okay.
-			endif;
-			?>
+			<?php echo '<option>' . ( $selected ? $selected : $all ) . '</option>'; // WPCS: XSS okay. ?>
 		</select>
 	</div>
 
