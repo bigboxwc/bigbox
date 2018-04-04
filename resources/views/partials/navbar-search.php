@@ -1,6 +1,6 @@
 <?php
 /**
- * Advanced searching in the nav bar.
+ * Searching in the nav bar.
  *
  * @since 1.0.0
  *
@@ -32,7 +32,7 @@ endif;
 	?>
 
 	<div id="navbar-search__category" class="navbar-search__category">
-		<label for="product_cat" class="screen-reader-text"><?php esc_html_e( 'Choose a category:', 'bigbox' ); ?></label>
+		<label for="product_cat" class="screen-reader-text"><?php esc_html_e( 'Choose a category', 'bigbox' ); ?>:</label>
 
 		<select name="product_cat">
 			<option value=""><?php esc_html_e( 'All Categories', 'bigbox' ); ?></option>
@@ -49,7 +49,7 @@ endif;
 	<?php endif; ?>
 
 	<div class="navbar-search__keywords">
-		<label for="s" class="screen-reader-text"><?php esc_html_e( 'Find a product:', 'bigbox' ); ?></label>
+		<label for="s" class="screen-reader-text"><?php esc_html_e( 'Find a product', 'bigbox' ); ?>:</label>
 		<input type="search" name="s" class="form-input" placeholder="<?php esc_html_e( 'Find a product...', 'bigbox' ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" />
 	</div>
 
