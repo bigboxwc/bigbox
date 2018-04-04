@@ -5,10 +5,23 @@
  */
 import { adjustWidth } from './navbar.js';
 
-// Don't push empty form values forward to help FacetWP load initially.
+/**
+ * Refresh FacetWP when on the shop page.
+ *
+ * @param {Event} e Submit event.
+ */
+$( '#facetwp-primary-search' ).submit( function ( e ) {
+	e.preventDefault();
+
+	FWP.refresh();
+} );
+
+/**
+ * Don't push empty form values forward to help FacetWP load initially.
+ */
 $( '#primary-search' ).submit( function () {
 	$( this )
-		.find( 'input[name], select' )
+		.find( 'input, select' )
 		.filter( function () {
 			return ! this.value;
 		} )
