@@ -13,6 +13,7 @@
 require_once get_template_directory() . '/app/customize/controls/wordpress.php';
 require_once get_template_directory() . '/app/customize/controls/colors.php';
 require_once get_template_directory() . '/app/customize/controls/type.php';
+require_once get_template_directory() . '/app/customize/controls/navbar.php';
 
 /**
  * Register scripts for controlling controls.

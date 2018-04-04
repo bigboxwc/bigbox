@@ -21,28 +21,44 @@ endif;
 <form id="primary-search" action="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" method="GET" class="navbar-search">
 
 	<?php
-	$categories = get_terms( apply_filters( 'bigbox_navbar_search_dropdown',
+	$taxonomy = get_taxonomy( get_theme_mod( 'navbar-dropdown-source', 'product_cat' ) );
+	$terms    = get_terms( apply_filters( 'bigbox_navbar_search_dropdown',
 		[
-			'taxonomy' => 'product_cat',
+			'taxonomy'   => $taxonomy->name,
+			'hide_empty' => false,
 		]
 	) );
 
-	if ( $categories && ! is_wp_error( $categories ) && ! empty( $categories ) ) :
-		$selected = isset( $_GET['product_cat'] ) ? esc_attr( $_GET['product_cat'] ) : null;
+	if ( $terms && ! is_wp_error( $terms ) && ! empty( $terms ) ) :
+		$selected = isset( $_GET[ $taxonomy->name ] ) ? esc_attr( $_GET[ $taxonomy->name ] ) : null;
+
+		// Translators: %s Header search taxonomy label.
+		$all = '<option value="">' . esc_html( sprintf( __( 'All %s', 'bigbox' ), strtolower( $taxonomy->labels->name ) ) ) . '</option>';
 	?>
 
 	<div id="navbar-search__category" class="navbar-search__category">
-		<label for="product_cat" class="screen-reader-text"><?php esc_html_e( 'Choose a category', 'bigbox' ); ?>:</label>
+		<label for="<?php echo esc_attr( $taxonomy->name ); ?>" class="screen-reader-text">
+			<?php
+			// Translators: %s Header search taxonomy name.
+			echo esc_html( sprintf( __( 'Choose a %s', 'bigbox' ), strtolower( $taxonomy->labels->singular_name ) ) );
+			?>:
+		</label>
 
-		<select name="product_cat">
-			<option value=""><?php esc_html_e( 'All Categories', 'bigbox' ); ?></option>
-			<?php foreach ( $categories as $category ) : ?>
-			<option value="<?php echo esc_attr( $category->slug ); ?>" <?php selected( $selected, $category->slug ); ?>><?php echo esc_html( $category->name ); ?></option>
+		<select name="<?php echo esc_attr( $taxonomy->name ); ?>">
+			<?php echo $all; // WPCS: XSS okay. ?>
+			<?php foreach ( $terms as $term ) : ?>
+			<option value="<?php echo esc_attr( $term->slug ); ?>" <?php selected( $selected, $term->slug ); ?>><?php echo esc_html( $term->name ); ?></option>
 			<?php endforeach; ?>
 		</select>
 
 		<select>
-			<option value=""><?php esc_html_e( 'All Categories', 'bigbox' ); ?></option>
+			<?php
+			if ( $selected ) :
+				echo '<option>' . $selected . '</option>'; // WPCS: XSS okay.
+			else :
+				echo $all; // WPCS: XSS okay.
+			endif;
+			?>
 		</select>
 	</div>
 

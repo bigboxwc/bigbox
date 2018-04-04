@@ -39,6 +39,7 @@ class WooCommerce extends Integration implements Registerable, Service {
 		include_once $this->get_dir() . '/account.php';
 		include_once $this->get_dir() . '/widgets.php';
 		include_once $this->get_dir() . '/page-templates.php';
+		include_once $this->get_dir() . '/customize.php';
 
 		add_action( 'after_setup_theme', [ $this, 'add_theme_support' ] );
 	}
