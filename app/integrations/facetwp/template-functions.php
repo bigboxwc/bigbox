@@ -14,6 +14,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Load a separate view for the navbar search.
+ *
+ * @since 1.0.0
+ *
+ * @return string
+ */
+function bigbox_facetwp_navbar_search() {
+	return bigbox_get_view( 'navbar-search', [], bigbox_get_integration( 'facetwp' )->get_local_path() . '/views/partials' );
+}
+
+/**
  * Output FacetWP pagination.
  *
  * @since 1.0.0

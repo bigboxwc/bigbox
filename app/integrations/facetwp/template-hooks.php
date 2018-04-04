@@ -14,6 +14,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * navbar.php.
+ */
+add_filter( 'bigbox_navbar_search', 'bigbox_facetwp_navbar_search' );
+
+/**
  * woocommerce/templates/archive-product.php.
  */
 
