@@ -23,6 +23,12 @@ add_filter( 'woocommerce_template_path', 'bigbox_woocommerce_template_path' );
 add_filter( 'bigboxJsSettings', 'bigbox_woocommerce_js_settings' );
 
 /**
+ * resources/views/partials/navbar-search.php.
+ */
+
+add_filter( 'bigbox_navbar_search', 'bigbox_woocommerce_navbar_search' );
+
+/**
  * archive-product.php.
  */
 

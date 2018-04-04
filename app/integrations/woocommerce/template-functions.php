@@ -59,6 +59,17 @@ function bigbox_woocommerce_js_settings( $settings ) {
 }
 
 /**
+ * Load a separate view for the navbar search.
+ *
+ * @since 1.0.0
+ *
+ * @return string
+ */
+function bigbox_woocommerce_navbar_search() {
+	return wc_get_template( 'global/navbar-search.php' );
+}
+
+/**
  * Adjust opening wrapper tag.
  *
  * @since 1.0.0

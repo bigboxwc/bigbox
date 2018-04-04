@@ -18,36 +18,15 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  *
+ * @param array $whitelist Facet types that can be used.
  * @return array
  */
-function bigbox_facetwp_customize_get_dropdown_sources() {
+function bigbox_facetwp_customize_get_sources( $whitelist = [] ) {
 	$facets  = FWP()->helper->get_facets();
 	$choices = [];
 
 	foreach ( $facets as $facet ) {
-		if ( 'dropdown' !== $facet['type'] ) {
-			continue;
-		}
-
-		$choices[ $facet['name'] ] = $facet['label'];
-	}
-
-	return $choices;
-}
-
-/**
- * Return a list of search or autocomplete facets.
- *
- * @since 1.0.0
- *
- * @return array
- */
-function bigbox_facetwp_customize_get_search_sources() {
-	$facets  = FWP()->helper->get_facets();
-	$choices = [];
-
-	foreach ( $facets as $facet ) {
-		if ( ! in_array( $facet['type'], [ 'search', 'autocomplete' ] ) ) {
+		if ( ! in_array( $facet['type'], $whitelist, true ) ) {
 			continue;
 		}
 
@@ -76,10 +55,10 @@ function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
 
 		$wp_customize->selective_refresh->add_partial(
 			$setting, [
-				'selector'            => '.navbar',
-				'container_inclusive' => false,
+				'selector'            => '.navbar-search',
+				'container_inclusive' => true,
 				'render_callback'     => function() {
-					bigbox_partial( 'navbar' );
+					bigbox_partial( 'navbar-search' );
 				},
 			]
 		);
@@ -87,19 +66,21 @@ function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
 
 	$wp_customize->add_control(
 		'navbar-dropdown-source', [
-			'label'    => esc_html__( 'Dropdown Source', 'bigbox' ),
-			'type'     => 'select',
-			'choices'  => bigbox_facetwp_customize_get_dropdown_sources(),
-			'section'  => 'navbar',
+			'label'       => esc_html__( 'Dropdown Source', 'bigbox' ),
+			'description' => esc_html__( 'Choose from one of your Dropdown facets', 'bigbox' ),
+			'type'        => 'select',
+			'choices'     => bigbox_facetwp_customize_get_sources( [ 'dropdown' ] ),
+			'section'     => 'navbar',
 		]
 	);
 
 	$wp_customize->add_control(
 		'navbar-search-source', [
-			'label'    => esc_html__( 'Search Source', 'bigbox' ),
-			'type'     => 'select',
-			'choices'  => bigbox_facetwp_customize_get_search_sources(),
-			'section'  => 'navbar',
+			'label'       => esc_html__( 'Search Source', 'bigbox' ),
+			'description' => esc_html__( 'Choose from one of your Search facets', 'bigbox' ),
+			'type'        => 'select',
+			'choices'     => bigbox_facetwp_customize_get_sources( [ 'search' ] ),
+			'section'     => 'navbar',
 		]
 	);
 }

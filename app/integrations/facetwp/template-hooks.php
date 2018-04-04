@@ -14,8 +14,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * navbar.php.
+ * resources/views/partials/navbar-search.php.
  */
+
+remove_all_filters( 'bigbox_navbar_search' );
 add_filter( 'bigbox_navbar_search', 'bigbox_facetwp_navbar_search' );
 
 /**
