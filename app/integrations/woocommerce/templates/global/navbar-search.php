@@ -38,21 +38,23 @@ endif;
 			?>:
 		</label>
 
-		<?php
-		wp_dropdown_categories( apply_filters( 'bigbox_navbar_search_dropdown', [
-			'show_option_all' => $all,
-			'selected'        => $selected,
-			'name'            => $taxonomy->name,
-			'taxonomy'        => $taxonomy->name,
-			'hierarchical'    => true,
-			'value_field'     => 'slug',
-			'show_count'      => true,
-			'orderby'         => 'name',
-			'order'           => 'ASC',
-		] ) );
-		?>
+		<div id="search-dropdown-real">
+			<?php
+			wp_dropdown_categories( apply_filters( 'bigbox_navbar_search_dropdown', [
+				'show_option_all' => $all,
+				'selected'        => $selected,
+				'name'            => $taxonomy->name,
+				'taxonomy'        => $taxonomy->name,
+				'hierarchical'    => true,
+				'value_field'     => 'slug',
+				'show_count'      => true,
+				'orderby'         => 'name',
+				'order'           => 'ASC',
+			] ) );
+			?>
+		</div>
 
-		<select>
+		<select id="search-dropdown-placeholder">
 			<?php echo '<option>' . ( $selected ? $selected : $all ) . '</option>'; // WPCS: XSS okay. ?>
 		</select>
 	</div>

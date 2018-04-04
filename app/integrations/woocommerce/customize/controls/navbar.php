@@ -56,6 +56,16 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 		]
 	);
 
+	$wp_customize->selective_refresh->add_partial(
+		'navbar-dropdown-source', [
+			'selector'            => '.navbar-search',
+			'container_inclusive' => true,
+			'render_callback'     => function() {
+				bigbox_partial( 'navbar-search' );
+			},
+		]
+	);
+
 	$wp_customize->add_control(
 		'navbar-dropdown-source', [
 			'label'    => esc_html__( 'Dropdown Source', 'bigbox' ),
