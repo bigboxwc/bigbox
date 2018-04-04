@@ -1,16 +1,11 @@
 /** global wp */
 
-$(document).on( 'facetwp-loaded', () => {
-
-	wp.hooks.addFilter( 'facetwp/set_options/autocomplete', ( $this, obj ) => {
-		return {
-			...$this,
-			collision: 'flip',
-			position: {
-				my: 'left top',
-				at: 'left bottom'
-			}
-		};
-	} );
-
-} );
+// Don't push empty form values forward to help FacetWP load initially.
+$( '#primary-search' ).submit( function () {
+	$( this )
+		.find( 'input[name], select' )
+		.filter( function () {
+			return ! this.value;
+		} )
+		.prop( 'name', '' );
+});

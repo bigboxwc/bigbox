@@ -3,10 +3,9 @@
 .woocommerce-info,
 .woocommerce-message,
 .woocommerce-error li {
-	line-height: 1;
 	overflow: hidden;
 	margin: 0 0 $spacer;
-	padding: ($spacer * 1.5);
+	padding: $spacer ($spacer * 1.5);
 
 	@include card;
 

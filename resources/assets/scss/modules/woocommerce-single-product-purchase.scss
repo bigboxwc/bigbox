@@ -64,10 +64,10 @@
 .woocommerce-variation-availability,
 .woocommerce-variation-price {
 
-	@include vertical-spacing("margin", "both");
+	@include vertical-spacing("margin", "down");
 
-	&:empty {
-		display: none;
+	&:last-of-type {
+		margin-bottom: 0;
 	}
 }
 

@@ -20,6 +20,7 @@ return [
 		'selectors'    => [
 			'.woocommerce-remove-coupon',
 			'.add-to-cart .outofstock',
+			'label .required',
 		],
 		'declarations' => [
 			'color' => esc_attr( $danger ),

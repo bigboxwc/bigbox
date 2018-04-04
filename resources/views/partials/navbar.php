@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php
 		bigbox_partial( 'navbar-mobile' );
 		bigbox_partial( 'branding' );
-		bigbox_partial( 'navbar-search' );
+		bigbox_partial( 'navbar-search' . ( bigbox_is_integration_active( 'facetwp' ) ? '-facetwp' : null ) );
 		bigbox_partial( 'navbar-primary-menu' );
 		?>
 	</div>

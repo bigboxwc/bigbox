@@ -19,12 +19,6 @@
 
 			@include make-col-ready();
 			@include form-row;
-
-			// Hopefully only target form descriptions.
-			> span {
-				opacity: 0.5;
-				font-size: $font-size-sm;
-			}
 		}
 
 		.woocommerce-LostPassword,
