@@ -13,11 +13,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$count = count( WC()->cart->get_cart_contents() );
-
 if ( ! bigbox_is_integration_active( 'woocommerce' ) ) :
 	return;
 endif;
+
+$count = count( WC()->cart->get_cart_contents() );
 ?>
 
 <div class="navbar-menu navbar-menu--primary">
