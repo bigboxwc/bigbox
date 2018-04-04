@@ -1,22 +1,15 @@
 .woocommerce-single-product-purchase {
 
 	@include vertical-spacing();
-	@include make-col-ready;
 
 	@include media-breakpoint-up(md) {
-		width: auto;
-		margin-left: 400px;
-	}
 
-	@include media-breakpoint-up(lg) {
-		margin: 0;
-
-		@include make-col(3);
+		@include make-col-ready();
 	}
 
 	@include media-breakpoint-up(xl) {
 
-		@include make-col(2.5);
+		@include make-col(5);
 	}
 }
 

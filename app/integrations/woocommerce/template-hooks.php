@@ -122,8 +122,15 @@ remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_pr
 // Adjust add to cart position.
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 
-// Add custom purchase form.
-add_action( 'woocommerce_after_single_product_summary', 'bigbox_purchase_form', 5 );
+add_action( 'woocommerce_single_product_summary', function() {
+	echo '<div class="summary__inner">';
+}, -1 );
+
+add_action( 'woocommerce_single_product_summary', function() {
+	echo '</div>';
+}, 499 );
+
+add_action( 'woocommerce_single_product_summary', 'bigbox_purchase_form', 500 );
 add_action( 'bigbox_purchase_form', 'woocommerce_template_single_add_to_cart' );
 
 // Adjust sharing position.

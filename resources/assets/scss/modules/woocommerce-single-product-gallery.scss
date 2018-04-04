@@ -1,33 +1,27 @@
 .woocommerce-product-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
 
-	@include make-col-ready();
+	@include col();
 
-	@include media-breakpoint-up(md) {
+	flex-shrink: 1;
 
-		@include make-col(6);
-
-		float: left;
-		max-width: 400px;
-	}
-
-	@include media-breakpoint-up(xl) {
-		float: none;
-		display: flex;
-
-		@include make-col(5);
+	@include media-breakpoint-up(lg) {
+		flex-direction: row;
 	}
 
 	.flex-viewport {
 		order: 1;
-		flex: 0 1 auto;
-
-		@include media-breakpoint-up(xl) {
-			flex-basis: 400px;
-			width: 400px;
-		}
+		flex: 0 1 400px;
+		display: flex;
+		width: 400px;
 	}
 
 	.flex-direction-nav {
+		order: 2;
+
+		@include reset-list();
 
 		@include media-breakpoint-up(lg) {
 			display: none;

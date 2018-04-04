@@ -20,8 +20,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function bigbox_register_nav_menus() {
 	$navs = [
-		'primary-left'  => esc_html__( 'Primary Left', 'bigbox' ),
-		'primary-right' => esc_html__( 'Primary Right', 'bigbox' ),
+		'primary'   => esc_html__( 'Primary', 'bigbox' ),
+		'secondary' => esc_html__( 'Secondary', 'bigbox' ),
 	];
 
 	$navs = apply_filters( 'bigbox_register_nav_menus', $navs );
@@ -46,7 +46,7 @@ function bigbox_get_primary_nav_menus( $args = [] ) {
 
 		wp_nav_menu(
 			[
-				'theme_location' => 'primary-left',
+				'theme_location' => 'primary',
 				'menu_class'     => 'navbar-menu__items',
 				'container'      => false,
 				'fallback_cb'    => false,
@@ -55,7 +55,7 @@ function bigbox_get_primary_nav_menus( $args = [] ) {
 
 		wp_nav_menu(
 			[
-				'theme_location' => 'primary-right',
+				'theme_location' => 'secondary',
 				'menu_class'     => 'navbar-menu__items',
 				'container'      => false,
 				'fallback_cb'    => false,
