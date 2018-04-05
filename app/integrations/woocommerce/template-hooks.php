@@ -52,6 +52,9 @@ add_action( 'bigbox_navbar_after', 'woocommerce_breadcrumb' );
 // Update pagination.
 add_filter( 'woocommerce_pagination_args', 'bigbox_woocommerce_pagination_args' );
 
+// Mobile filters.
+add_action( 'woocommerce_archive_description', 'bigbox_woocommerce_archive_mobile_filters' );
+
 /**
  * content-product.php.
  */
