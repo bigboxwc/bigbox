@@ -14,12 +14,7 @@
 	.flex-viewport {
 		order: 1;
 		flex: 0 1 auto;
-		display: flex;
-
-		@include media-breakpoint-up(sm) {
-			max-width: 400px;
-			flex-basis: 400px;
-		}
+		max-width: 400px;
 	}
 
 	.flex-direction-nav {
@@ -65,7 +60,7 @@
 .woocommerce-product-gallery__trigger {
 	position: absolute;
 	top: $spacer;
-	left: $spacer + ( $grid-gutter-width / 2 ); // [1]
+	right: $spacer + ( $grid-gutter-width / 2 ); // [1]
 	font-size: 2em;
 	z-index: 1;
 	width: 36px;
@@ -74,11 +69,6 @@
 	text-indent: -9999px;
 	border-radius: 100%;
 	box-sizing: content-box;
-
-	@include media-breakpoint-up(xl) {
-		right: $spacer + ( $grid-gutter-width / 2 ); // [1]
-		left: auto;
-	}
 
 	&:before {
 		content: "";
