@@ -13,15 +13,23 @@
 
 .footer-nav__col {
 
-	@include make-col-ready();
+	@include col();
 
-	flex: 1 0 auto;
-	width: auto;
-	max-width: none;
+	flex-grow: 1;
+	flex-basis: 100%;
+
+	@include media-breakpoint-up(sm) {
+		flex-basis: 50%;
+	}
+
+	@include media-breakpoint-up(md) {
+		flex-basis: 0;
+	}
 }
 
 .footer-widget {
 	border: 0;
+	padding-bottom: 0;
 
 	a {
 		color: gray("600");
