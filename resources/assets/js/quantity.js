@@ -51,7 +51,7 @@ export const transformInput = function( $qty, variation = false ) {
 	let max   = variation.max_qty || ( $original.attr( 'max' ) ? parseInt( $original.attr( 'max' ) ) : globalMax );
 
 	// If max (or globalMax) is less than original value reset max with padding.
-	if ( max < selectedValue ) {
+	if ( max <= selectedValue ) {
 		max = parseInt( selectedValue + globalMax );
 	}
 
