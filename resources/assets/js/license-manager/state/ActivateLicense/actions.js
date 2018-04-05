@@ -82,3 +82,45 @@ export function activateLicense( license = '' ) {
 			} );
 	};
 }
+
+/**
+ * Attempt to deactivate a license.
+ *
+ * @param  {string}   license License
+ * @return {Function} Action thunk
+ */
+export function deactivateLicense( license = '' ) {
+	return ( dispatch ) => {
+		dispatch( {
+			type: LICENSE_REQUEST,
+			license,
+		} );
+
+		axios.get( BigBoxLicenseManager.remote.apiRoot, {
+			params: {
+				edd_action: 'deactivate_license',
+				license: license,
+				item_name: encodeURIComponent( BigBoxLicenseManager.remote.itemName ),
+				url: BigBoxLicenseManager.local.domain,
+			},
+		} )
+			.then( ( response ) => {
+				const args = {
+					type: LICENSE_REQUEST_FAILURE,
+					license: '',
+					validLicense: false,
+				};
+
+				dispatch( args );
+
+				saveLicense( '', 'deactivated' );
+			} )
+			.catch( () => {
+				dispatch( {
+					type: LICENSE_REQUEST_FAILURE,
+				} );
+
+				saveLicense( '' );
+			} );
+	};
+}

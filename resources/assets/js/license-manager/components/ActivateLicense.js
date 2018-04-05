@@ -11,7 +11,7 @@ import classNames from 'classnames';
 /**
  * Internal dependencies.
  */
-import { activateLicense } from './../state/ActivateLicense/actions.js';
+import { activateLicense, deactivateLicense } from './../state/ActivateLicense/actions.js';
 import { INITIAL_STATE } from './../state/ActivateLicense/reducer.js';
 
 // i18n bootstrapped in page.
@@ -21,6 +21,7 @@ const {
 	licenseValid,
 	licenseInvalid,
 	licenseLabel,
+	licenseDeactivate,
 } = BigBoxLicenseManager.i18n;
 
 class ActivateLicense extends Component {
@@ -31,6 +32,7 @@ class ActivateLicense extends Component {
 
 		this.handleChange = this.handleChange.bind( this );
 		this.handleSubmit = this.handleSubmit.bind( this );
+		this.handleDeactivate = this.handleDeactivate.bind( this );
 	}
 
 	componentWillReceiveProps( nextProps ) {
@@ -63,6 +65,11 @@ class ActivateLicense extends Component {
 		this.props.doActivateLicense( this.state.license );
 	}
 
+	// Deactivate
+	handleDeactivate( event ) {
+		this.props.doDeactivateLicense( this.state.license );
+	}
+
 	render() {
 		const {
 			license,
@@ -89,6 +96,12 @@ class ActivateLicense extends Component {
 			<p key="license-status">
 				<strong>{ licenseLabel }:</strong> { isSubmitting ? <span className="spinner is-active" style={ spinnerStyle } /> : <span className={ licenseClass }>{ validLicense ? licenseValid : licenseInvalid }</span> }
 			</p>,
+
+			validLicense && (
+				<p key="deactivate-license">
+					<button className="button" onClick={ this.handleDeactivate } >{ licenseDeactivate }</button>
+				</p>
+			),
 		];
 	}
 }
@@ -104,6 +117,7 @@ const mapStateToProps = ( state, ownProps ) => {
 const mapDispatchToProps = ( dispatch ) => {
 	return bindActionCreators( {
 		doActivateLicense: activateLicense,
+		doDeactivateLicense: deactivateLicense,
 	}, dispatch );
 };
 

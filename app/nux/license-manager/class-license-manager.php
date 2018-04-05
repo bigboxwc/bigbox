@@ -120,6 +120,7 @@ class License_Manager implements Registerable, Service {
 					'licenseLabel'       => esc_html__( 'License Status', 'bigbox' ),
 					'licenseValid'       => esc_html__( 'Valid', 'bigbox' ),
 					'licenseInvalid'     => esc_html__( 'Invalid', 'bigbox' ),
+					'licenseDeactivate'  => esc_html__( 'Deactivate', 'bigbox' ),
 				],
 			]
 		);
