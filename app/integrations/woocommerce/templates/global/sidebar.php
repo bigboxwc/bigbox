@@ -20,13 +20,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-if ( ! is_active_sidebar( 'shop' ) ) :
+$sidebar = bigbox_get_dynamic_sidebar( 'shop' );
+
+if ( ! $sidebar ) :
 	return;
 endif;
 ?>
 
 <div id="secondary" class="site-secondary" role="complementary">
 	<div class="shop-filters">
-		<?php dynamic_sidebar( 'shop' ); ?>
+		<?php echo $sidebar; // WPCS: XSS okay. ?>
 	</div>
 </div>

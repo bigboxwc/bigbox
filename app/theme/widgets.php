@@ -14,6 +14,34 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Return a (potentially cached) dynamic sidebar.
+ *
+ * @since 1.0.0
+ *
+ * @param string $sidebar Sidebar name.
+ * @return mixed False for inactive sidebar or string of HTML.
+ */
+function bigbox_get_dynamic_sidebar( $sidebar ) {
+	if ( ! is_active_sidebar( 'shop' ) ) {
+		return false;
+	}
+
+	$content = wp_cache_get( $sidebar, 'bigbox-sidebar' );
+
+	if ( false !== $content ) {
+		return $content;
+	}
+
+	ob_start();
+	dynamic_sidebar( $sidebar );
+	$content = ob_get_clean();
+
+	wp_cache_set( $sidebar, $content, 'bigbox-sidebar', 60 * MINUTE_IN_SECONDS );
+
+	return $content;
+}
+
+/**
  * Register widgetized areas.
  *
  * @since 1.0.0
