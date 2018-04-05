@@ -363,5 +363,5 @@ function bigbox_woocommerce_single_product_carousel_options( $args ) {
  * @since 1.0.0
  */
 function bigbox_woocommerce_archive_mobile_filters() {
-	echo '<div>Filters</div>';
+	wc_get_template( 'loop/mobile-filters.php' );
 }

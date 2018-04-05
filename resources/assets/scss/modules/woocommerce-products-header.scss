@@ -4,4 +4,11 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position: relative;
+}
+
+.woocommerce-products-header__filter-toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
 }

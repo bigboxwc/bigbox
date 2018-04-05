@@ -5,16 +5,14 @@
 .woocommerce-error li {
 	overflow: hidden;
 	margin: 0 0 $spacer;
-	padding: $spacer ($spacer * 1.5);
+	padding: $spacer;
 
 	@include card;
 
 	.woocommerce-Button,
 	.wc-forward {
-		margin: -( $spacer * 0.75 );
-		margin-left: $spacer;
-		padding: 10px 20px;
-		float: right;
+		margin: -($spacer / 2);
+		margin-right: $spacer;
 
 		@include button--success;
 		@include button--size-sm;
