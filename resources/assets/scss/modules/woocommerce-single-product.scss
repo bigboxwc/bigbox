@@ -1,16 +1,10 @@
 .single-product {
 
 	.site-primary > .product {
-		display: block;
-		margin-left: -($grid-gutter-width / 2);
-		margin-right: -($grid-gutter-width / 2);
+		display: flex;
+		flex-wrap: wrap;
 
-		@include media-breakpoint-up(lg) {
-			display: flex;
-			flex-wrap: wrap;
-
-			@include make-row;
-		}
+		@include make-row();
 	}
 
 	.product_title {
@@ -24,41 +18,33 @@
 	}
 
 	.summary {
-
-		@include vertical-spacing("margin");
-		@include make-col-ready;
-
-		@include media-breakpoint-up(md) {
-			width: auto;
-			margin-top: 0;
-			margin-left: 400px;
-		}
-
-		@include media-breakpoint-up(lg) {
-			margin: 0;
-			padding-left: ($grid-gutter-width / 2) + $spacer;
-
-			@include make-col(4);
-		}
+		display: flex;
+		flex-grow: 1;
+		flex-direction: column;
 
 		@include media-breakpoint-up(xl) {
-
-			@include make-col(9.5);
+			flex-direction: row;
 		}
 	}
 }
 
-.single-product .woocommerce-product-gallery + .summary {
+.summary__inner {
+
+	@include col();
+
+	flex-grow: 1;
+
+	@include media-breakpoint-up(sm) {
+		flex-grow: 0;
+	}
 
 	@include media-breakpoint-up(lg) {
-		padding-left: ($grid-gutter-width / 2);
-
-		@include make-col(4);
+		width: 100%;
 	}
 
 	@include media-breakpoint-up(xl) {
-
-		@include make-col(4.5);
+		width: auto;
+		flex-grow: 1;
 	}
 }
 
@@ -81,8 +67,7 @@
 }
 
 .woocommerce-single-product-data {
-	clear: both;
-	overflow: hidden;
+	width: 100%;
 }
 
 .woocommerce-single-product-data__section {
