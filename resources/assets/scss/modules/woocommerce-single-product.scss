@@ -19,7 +19,7 @@
 
 	.summary {
 		display: flex;
-		flex-grow: 1;
+		flex: 1 0 0;
 		flex-direction: column;
 
 		@include media-breakpoint-up(xl) {
@@ -44,7 +44,7 @@
 
 	@include media-breakpoint-up(xl) {
 		width: auto;
-		flex-grow: 1;
+		flex: 1 1 auto;
 	}
 }
 
