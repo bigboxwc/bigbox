@@ -262,7 +262,7 @@ function bigbox_woocommerce_product_additional_information() {
 	endif;
 
 	// @codingStandardsIgnoreStart
-	echo wc_get_product_category_list( $product->get_id(), ', ', '<p class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'bigbox' ) . ' ', '</p>' ); 
+	echo wc_get_product_category_list( $product->get_id(), ', ', '<p class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'bigbox' ) . ' ', '</p>' );
 
 	echo wc_get_product_tag_list( $product->get_id(), ', ', '<p class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'bigbox' ) . ' ', '</p>' );
 	// @codingStandardsIgnoreEnd
@@ -363,5 +363,5 @@ function bigbox_woocommerce_single_product_carousel_options( $args ) {
  * @since 1.0.0
  */
 function bigbox_woocommerce_archive_mobile_filters() {
-	wc_get_template( 'loop/mobile-filters.php' );
+	wc_get_template( 'loop/shop-filters-mobile.php' );
 }

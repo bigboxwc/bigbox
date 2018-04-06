@@ -12,16 +12,24 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
+$menus = bigbox_get_primary_nav_menus();
+
+if ( '' === $menus ) :
+	return;
+endif;
 ?>
 
 <a href="#navbar-mobile" class="navbar-mobile-toggle navbar-mobile-toggle--open" aria-expanded="false" aria-controls="navbar-mobile" aria-label="<?php esc_attr_e( 'Open menu', 'bigbox' ); ?>" role="button">
 	<?php bigbox_svg( 'menu' ); ?>
 </a>
 
-<nav id="navbar-mobile" class="navbar-mobile">
-	<a href="#navbar-mobile-toggle" class="navbar-mobile__close" aria-label="<?php esc_attr_e( 'Close menu', 'bigbox' ); ?>"><?php esc_html_e( 'Close', 'bigbox' ); ?></a>
+<nav id="navbar-mobile" class="offcanvas-drawer">
+	<a href="#navbar-mobile-toggle" class="offcanvas-drawer__close" aria-label="<?php esc_attr_e( 'Close menu', 'bigbox' ); ?>">
+		<?php esc_html_e( 'Close', 'bigbox' ); ?>
+	</a>
 
-	<?php echo bigbox_get_primary_nav_menus(); // @codingStandardsIgnoreLine ?>
+	<?php echo $menus; // @codingStandardsIgnoreLine ?>
 </nav>
 
-<a id="navbar-mobile-toggle" href="#navbar-mobile-toggle" class="navbar-mobile-backdrop" tabindex="-1" aria-hidden="true" aria-label="<?php esc_attr_e( 'Close menu', 'bigbox' ); ?>" hidden=""></a>
+<a id="navbar-mobile-toggle" href="#navbar-mobile-toggle" class="offcanvas-drawer-backdrop" tabindex="-1" aria-hidden="true" aria-label="<?php esc_attr_e( 'Close menu', 'bigbox' ); ?>" hidden="true"></a>
