@@ -12,3 +12,53 @@
 		fill: #fff;
 	}
 }
+
+// Because .sub-menu items act as panels that look like top level items we
+// can style things a little more liberally here.
+.navbar--mobile {
+
+	ul {
+
+		@include reset-list();
+
+		a {
+			text-decoration: none;
+			padding: ($spacer / 2) $spacer;
+			display: block;
+		}
+	}
+
+	.sub-menu,
+	.navbar-menu__items {
+		padding: ($spacer / 2) 0;
+		border-bottom: 1px solid gray("200");
+
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+
+	.sub-menu {
+		display: none;
+	}
+
+	.menu-item-has-children {
+
+		> a {
+			position: relative;
+			padding-right: ($spacer * 1.5);
+
+			&:after {
+				content: "";
+				position: absolute;
+				right: $spacer;
+				top: calc(50% - 4px);
+				width: 0; 
+				height: 0; 
+				border-top: 5px solid transparent;
+				border-bottom: 5px solid transparent;
+				border-left: 5px solid gray("800");
+			}
+		}
+	}
+}

@@ -21,4 +21,14 @@ return [
 			'color' => esc_attr( $gray800 ),
 		],
 	],
+
+	// Solid border-left-color.
+	[
+		'selectors'    => [
+			'.navbar--mobile .menu-item-has-children > a:after',
+		],
+		'declarations' => [
+			'border-left-color' => esc_attr( $gray800 ),
+		],
+	],
 ];

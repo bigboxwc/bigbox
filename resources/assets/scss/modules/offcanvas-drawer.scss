@@ -1,5 +1,4 @@
 .offcanvas-drawer {
-	padding: $spacer;
 	width: calc(100% - 64px);
 	max-width: 320px;
 	position: fixed;
@@ -47,7 +46,6 @@
 	font-size: $font-size-sm;
 	text-transform: uppercase;
 	display: block;
-	margin: ( -$spacer ) ( -$spacer ) $spacer;
 	padding: $spacer;
 	background: gray("100");
 	border-bottom: 1px solid gray("200");

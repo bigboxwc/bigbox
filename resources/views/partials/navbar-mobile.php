@@ -24,7 +24,7 @@ endif;
 	<?php bigbox_svg( 'menu' ); ?>
 </a>
 
-<nav id="navbar-mobile" class="offcanvas-drawer">
+<nav id="navbar-mobile" class="offcanvas-drawer navbar--mobile">
 	<a href="#navbar-mobile-toggle" class="offcanvas-drawer__close" aria-label="<?php esc_attr_e( 'Close menu', 'bigbox' ); ?>">
 		<?php esc_html_e( 'Close', 'bigbox' ); ?>
 	</a>
