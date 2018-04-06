@@ -21,11 +21,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		bigbox_partial( 'navbar-mobile' );
 		bigbox_partial( 'branding' );
 		bigbox_partial( 'navbar-search' );		
-		bigbox_partial( 'navbar-primary-menu' );
+		bigbox_partial( 'navbar-menu-account' );
 		?>
 	</div>
 
-	<?php bigbox_partial( 'navbar-secondary-menu' ); ?>
+	<?php bigbox_partial( 'navbar-menu-primary' ); ?>
 
 </div>
 

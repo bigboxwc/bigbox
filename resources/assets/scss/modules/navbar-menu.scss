@@ -1,0 +1,177 @@
+//
+// Navbar menu system.
+//
+// A static "Account" menu area sits to the right of the search area and contains
+// link items with SVG icons top. This menu is a single level.
+//
+// A dynamic "Primary" menu area sits below the search and contains two WordPress-powered
+// standard menus. This contains menus with multiple levels.
+//
+// Notes:
+// [1] WordPress' built in class menu class name. To avoid having to add a custom one.
+// [2] Reverse some visual padding for better alignment to searchbar below.
+//
+
+// When the mobile menu is toggled.
+$menu-break-point: md;
+
+// Both menu containers in the .navbar.
+.navbar-menu--account,
+.navbar-menu--primary {
+
+	.menu-item { // [1]
+		position: relative;
+
+		a {
+			text-decoration: none;
+			display: flex;
+			align-items: center;
+		}
+
+		svg {
+			fill: #fff;
+		}
+	}
+}
+
+// Both lists in the .navbar.
+.navbar-menu__items {
+
+	@include reset-list();
+}
+
+// Account menu container.
+.navbar-menu--account {
+	order: 1;
+	margin-left: auto;
+	margin-right: -10px; // [2]
+
+	@include media-breakpoint-up( $menu-break-point ) {
+		order: 3;
+		margin-right: 0; // [2]
+	}
+
+	// Always list in a line.
+	.navbar-menu__items {
+		display: flex;
+	}
+	
+	// All account menu items are the same.
+	a {
+		color: #fff;
+		font-size: $font-size-sm;
+		line-height: 1;
+
+		&:hover {
+			color: #fff;
+		}
+	}
+}
+
+// Primary container. Holds two menus.
+.navbar-menu--primary {
+	width: 100%;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	justify-content: space-between;
+	align-items: center;
+	display: none;
+
+	@include media-breakpoint-up( $menu-break-point ) {
+		display: flex;
+	}
+
+	// Top level list.
+	.navbar-menu__items {
+
+		@include media-breakpoint-up( $menu-break-point ) {
+			display: flex;
+		}
+
+		// Top level links.
+		> .menu-item { // [1]
+			> a {
+				color: #fff;
+				font-size: $font-size-sm;
+				line-height: 1;
+				padding: $spacer 10px;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	// All links links.
+	.menu-item { // [1]
+		position: relative;
+
+		// Show submenu items when hovered.
+		&:hover > .sub-menu {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	// Dropdowns.
+	.sub-menu {
+		@include reset-list();
+
+		visibility: hidden;
+		opacity: 0;
+		min-width: 200px;
+		padding: ($spacer / 2) $spacer;
+		background: #fff;
+		border-radius: 0 0 $border-radius $border-radius;
+		box-shadow: rgba(0, 0, 0, 0.3) 0 2px 12px;
+		position: absolute;
+		left: 0;
+		top: 100%;
+		z-index: 10;
+		transition: all 0.15s ease-in-out;
+		transform-origin: top left;
+	}
+}
+
+.navbar-menu__item--stacked {
+
+	a {
+		text-align: center;
+		line-height: 1;
+		min-width: 80px;
+		padding: 4px 10px;
+		flex-direction: column;
+		border: 1px solid transparent;
+		border-radius: $border-radius;
+
+		&:hover {
+			opacity: 1;
+			text-decoration: none;
+			border: 1px solid rgba(255, 255, 255, 0.2);
+		}
+	}
+
+	svg {
+		margin: 0 0 2px;
+		display: block;
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.navbar-menu__cart-count {
+	font-size: $font-size-xs;
+	line-height: 1;
+	position: absolute;
+	top: -7px;
+	left: 50%;
+	transform: translateX(-25px);
+	background: theme-color("success");
+	border-radius: 15px;
+	min-width: 20px;
+	height: 20px;
+	padding: 0 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

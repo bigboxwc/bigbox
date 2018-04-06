@@ -20,7 +20,7 @@ if ( '' === trim( $menus ) ) :
 endif;
 ?>
 
-<div class="navbar-menu navbar-menu--secondary">
+<div class="navbar-menu navbar-menu--primary">
 
 	<?php echo $menus; // @codingStandardsIgnoreLine ?>
 

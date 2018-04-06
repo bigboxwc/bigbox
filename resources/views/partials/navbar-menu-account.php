@@ -20,10 +20,10 @@ endif;
 $count = count( WC()->cart->get_cart_contents() );
 ?>
 
-<div class="navbar-menu navbar-menu--primary">
+<div class="navbar-menu navbar-menu--account">
 	<ul class="navbar-menu__items">
 
-		<li class="navbar-menu__item navbar-menu__item--stacked">
+		<li class="menu-item navbar-menu__item--stacked">
 			<a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>">
 				<?php
 				bigbox_svg( 'user' );
@@ -32,7 +32,7 @@ $count = count( WC()->cart->get_cart_contents() );
 			</a>
 		</li>
 
-		<li class="navbar-menu__item navbar-menu__item--stacked">
+		<li class="menu-item navbar-menu__item--stacked">
 			<a href="<?php echo esc_url( 0 === $count ? get_permalink( wc_get_page_id( 'shop' ) ) : wc_get_cart_url() ); ?>">
 				<span class="navbar-menu__cart-count"><?php echo esc_html( $count ); ?></span>
 				<?php
