@@ -32,6 +32,7 @@ return [
 		'selectors'    => [
 			'.single_variation_wrap',
 			'.woocommerce-variation.woocommerce-variation--loaded',
+			'.footer-nav',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray100 ),
