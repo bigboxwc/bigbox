@@ -34,7 +34,7 @@ $product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product
 $product_thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 ?>
 
-<li class="product">
+<li class="product product--cart-item">
 	<div class="product__inner">
 
 		<?php if ( $product_thumbnail ) : ?>

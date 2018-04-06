@@ -59,6 +59,24 @@ function bigbox_woocommerce_js_settings( $settings ) {
 }
 
 /**
+ * Adjust the number of columns if the results returned need it.
+ *
+ * @since 1.0.0
+ *
+ * @param int $value Option value.
+ * @return int
+ */
+function bigbox_woocommerce_adjust_catalog_columns() {
+	$total   = wc_get_loop_prop( 'total' );
+	$columns = wc_get_loop_prop( 'columns' );
+
+	// If the total found is fewer than the number of columns show a standard list.
+	if ( $total <= absint( $columns ) ) {
+		wc_set_loop_prop( 'columns', 1 );
+	}
+}
+
+/**
  * Load a separate view for the navbar search.
  *
  * @since 1.0.0

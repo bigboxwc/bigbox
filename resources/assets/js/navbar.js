@@ -9,9 +9,7 @@ export const adjustWidth = () => {
 
 	let selected = $real.find( 'option:selected' ).text();
 
-	if ( selected.length ) {
-		$fake.find( 'option' ).html( selected );
-	}
+	$fake.find( 'option' ).html( selected.replace( '&nbsp;', ''  ));
 
 	// Adjust width.
 	$real.width( $fake.width() );

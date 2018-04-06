@@ -128,8 +128,7 @@
 	}
 
 	// Shrink on cart and checkout.
-	.woocommerce-checkout &,
-	.woocommerce-cart & {
+	.product--cart-item & {
 		max-width: 100px;
 	}
 

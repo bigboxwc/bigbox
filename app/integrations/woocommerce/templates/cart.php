@@ -38,7 +38,7 @@ while ( have_posts() ) :
 			</div>
 
 			<?php if ( wc_coupons_enabled() ) : ?>
-				<p class="coupons-next"><?php esc_html_e( 'Do you have a gift card or promotional code? We\'ll ask you to enter your claim code when it\'s time to pay.', 'bigbox' ); ?></p>
+				<p class="coupons-next"><?php esc_html_e( 'Do you have a coupon or promotional code? We\'ll ask you to enter your claim code when it\'s time to pay.', 'bigbox' ); ?></p>
 			<?php endif; ?>
 
 		</div>
