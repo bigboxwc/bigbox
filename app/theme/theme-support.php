@@ -27,7 +27,7 @@ function bigbox_add_theme_support() {
 
 	// Dynamic <title> tags.
 	add_theme_support( 'title-tag' );
-	
+
 	// Adds RSS feed links to HTML <head>.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -57,5 +57,10 @@ function bigbox_add_theme_support() {
 			'header-text' => true,
 		]
 	);
+
+	// Remove margin from admin bar.
+	add_theme_support( 'admin-bar', [
+		'callback' => '__return_false',
+	]	);
 }
 add_action( 'after_setup_theme', 'bigbox_add_theme_support' );
