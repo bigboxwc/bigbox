@@ -26,7 +26,7 @@ endif;
 
 <nav id="navbar-mobile" class="offcanvas-drawer navbar--mobile">
 	<a href="#navbar-mobile-toggle" class="offcanvas-drawer__close" aria-label="<?php esc_attr_e( 'Close menu', 'bigbox' ); ?>">
-		<?php esc_html_e( '&times; Close', 'bigbox' ); ?>
+		<?php esc_html_e( '&larr; Close', 'bigbox' ); ?>
 	</a>
 
 	<?php echo $menus; // @codingStandardsIgnoreLine ?>

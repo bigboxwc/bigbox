@@ -19,6 +19,13 @@
 	".woocommerce-reviews__info"
 );
 
+.woocommerce-verification-required {
+
+	@include card();
+
+	padding: $spacer;
+}
+
 .review-breakdown {
 	margin-bottom: ($spacer * 2);
 	border: 1px solid gray("200");

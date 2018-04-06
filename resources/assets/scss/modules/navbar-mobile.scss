@@ -48,15 +48,10 @@
 			position: relative;
 
 			&:after {
-				content: "";
+				content: "&rarr;";
 				position: absolute;
 				right: ($spacer * 1.5);
 				top: calc(50% - 4px);
-				width: 0; 
-				height: 0; 
-				border-top: 5px solid transparent;
-				border-bottom: 5px solid transparent;
-				border-left: 5px solid gray("800");
 			}
 		}
 	}

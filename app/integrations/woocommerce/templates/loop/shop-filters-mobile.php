@@ -30,7 +30,7 @@ endif;
 
 	<div id="shop-filters-mobile" class="offcanvas-drawer">
 		<a href="#shop-filters-mobile-toggle" class="offcanvas-drawer__close" aria-label="<?php esc_attr_e( 'Close filters', 'bigbox' ); ?>">
-			<?php esc_html_e( '&times; Close', 'bigbox' ); ?>
+			<?php esc_html_e( '&larr; Close', 'bigbox' ); ?>
 		</a>
 
 		<?php echo $sidebar; // @codingStandardsIgnoreLine ?>

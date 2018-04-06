@@ -3,7 +3,10 @@
 
 	ul.products {
 
-		@include reset-list();
+		margin-left: 0;
+		margin-right: 0;
+		padding: 0;
+		list-style: none;
 		@include vertical-spacing("margin", "down");
 		@include make-row();
 	}

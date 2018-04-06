@@ -46,6 +46,7 @@ return [
 			'.woocommerce-info',
 			'.woocommerce-purchase-form',
 			'.wc_payment_method [type="radio"] label',
+			'.woocommerce-verification-required',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $light ),

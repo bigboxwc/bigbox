@@ -21,6 +21,7 @@
 	&:after {
 		content: "";
 		background: transparent;
+		z-index: -1;
 		position: absolute;
 		top: 0;
 		right: 0;

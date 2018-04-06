@@ -65,5 +65,5 @@ export const transformInput = function( $qty, variation = false ) {
 	$select
 		.append( options.slice( min, ( max + 1 ) ).join( '' ) )
 		.find( `option[value=${selectedValue}]` )
-		.attr( 'selected', true );
+		.prop( 'selected', true );
 };
