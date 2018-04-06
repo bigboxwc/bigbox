@@ -30,4 +30,10 @@
 			margin: 0;
 		}
 	}
+
+	// Inside an off canvas drawer.
+	.offcanvas-drawer & {
+		padding: ($spacer * 1.5);
+		margin-bottom: 0;
+	}
 }

@@ -44,9 +44,10 @@
 
 .offcanvas-drawer__close {
 	font-size: $font-size-sm;
-	text-transform: uppercase;
+	font-weight: $font-weight-bold;
+	text-decoration: none;
 	display: block;
-	padding: $spacer;
+	padding: $spacer ($spacer * 1.5);
 	background: gray("100");
 	border-bottom: 1px solid gray("200");
 }

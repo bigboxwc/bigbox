@@ -27,8 +27,6 @@ if ( ! $sidebar ) :
 endif;
 ?>
 
-<div id="secondary" class="site-secondary" role="complementary">
-	<div class="shop-filters">
-		<?php echo $sidebar; // WPCS: XSS okay. ?>
-	</div>
+<div id="secondary" class="site-secondary shop-filters" role="complementary">
+	<?php echo $sidebar; // WPCS: XSS okay. ?>
 </div>

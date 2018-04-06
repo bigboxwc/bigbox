@@ -1,8 +1,7 @@
 <?php
 /**
- * Blog sidebar.
+ * This theme does not use a sidebar.
  *
- * @since 1.0.0
  * @version 1.0.0
  *
  * @package BigBox
@@ -13,8 +12,3 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-?>
-
-<div class="blog__secondary">
-	HI
-</div>

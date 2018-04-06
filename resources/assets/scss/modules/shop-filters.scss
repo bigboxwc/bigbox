@@ -1,3 +1,31 @@
+.shop-filters {
+
+}
+
+.shop-filters__mobile-toggle {
+	position: absolute;
+	right: 0;
+	bottom: $spacer;
+
+	@include media-breakpoint-up(md) {
+		display: none;
+	}
+}
+
+.shop-filters__mobile-toggle-link {
+	font-size: $font-size-sm;
+	font-weight: $font-weight-bold;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+
+	svg {
+		margin-left: 10px;
+		width: 18px;
+		height: 18px;
+	}
+}
+
 .product_list_widget,
 .product-categories,
 .woocommerce-widget-layered-nav-list {

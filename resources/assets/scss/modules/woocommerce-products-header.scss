@@ -10,26 +10,3 @@
 .woocommerce-products-header {
 	position: relative;
 }
-
-.woocommerce-products-header__filter-toggle {
-	position: absolute;
-	right: 0;
-	bottom: $spacer;
-
-	@include media-breakpoint-up(md) {
-		display: none;
-	}
-}
-
-.shop-filters-mobile-toggle {
-	font-size: $font-size-sm;
-	text-decoration: none;
-	display: flex;
-	align-items: center;
-
-	svg {
-		margin-right: 5px;
-		width: 18px;
-		height: 18px;
-	}
-}

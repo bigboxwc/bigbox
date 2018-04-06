@@ -1,5 +1,5 @@
 .page-title {
-	font-size: $font-size-xl;
+	font-size: $font-size-lg;
 	line-height: 1;
 	margin: 0 0 $spacer;
 	padding: 0 0 $spacer;
@@ -8,6 +8,10 @@
 	&:first-child {
 		margin-top: 0;
 		padding-top: 0;
+	}
+
+	@include media-breakpoint-up(md) {
+		font-size: $font-size-xl;
 	}
 
 	&--lg {

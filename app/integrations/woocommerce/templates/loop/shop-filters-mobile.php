@@ -20,17 +20,17 @@ if ( ! $sidebar ) :
 endif;
 ?>
 
-<div class="woocommerce-products-header__filter-toggle">
-	<a href="#shop-filters-mobile" class="shop-filters-mobile-toggle" aria-expanded="false" aria-controls="shop-filters-mobile" aria-label="<?php esc_attr_e( 'Filter', 'bigbox' ); ?>" role="button">
+<div class="shop-filters__mobile-toggle">
+	<a href="#shop-filters-mobile" class="shop-filters__mobile-toggle-link" aria-expanded="false" aria-controls="shop-filters-mobile" aria-label="<?php esc_attr_e( 'Filter', 'bigbox' ); ?>" role="button">
 		<?php
+		esc_html_e( 'Refine Results', 'bigbox' );
 		bigbox_svg( 'menu' );
-		esc_html_e( 'Filter', 'bigbox' );
 		?>
 	</a>
 
 	<div id="shop-filters-mobile" class="offcanvas-drawer">
 		<a href="#shop-filters-mobile-toggle" class="offcanvas-drawer__close" aria-label="<?php esc_attr_e( 'Close filters', 'bigbox' ); ?>">
-			<?php esc_html_e( 'Close', 'bigbox' ); ?>
+			<?php esc_html_e( '&times; Close', 'bigbox' ); ?>
 		</a>
 
 		<?php echo $sidebar; // @codingStandardsIgnoreLine ?>

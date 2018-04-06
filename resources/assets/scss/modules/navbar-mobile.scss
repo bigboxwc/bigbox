@@ -23,7 +23,7 @@
 
 		a {
 			text-decoration: none;
-			padding: ($spacer / 2) $spacer;
+			padding: ($spacer / 2) ($spacer * 1.5);
 			display: block;
 		}
 	}
@@ -46,12 +46,11 @@
 
 		> a {
 			position: relative;
-			padding-right: ($spacer * 1.5);
 
 			&:after {
 				content: "";
 				position: absolute;
-				right: $spacer;
+				right: ($spacer * 1.5);
 				top: calc(50% - 4px);
 				width: 0; 
 				height: 0; 
