@@ -7,6 +7,7 @@
 }
 
 .action-list__item--inset {
+	border-left: 1px dashed gray("400");
 
 	.action-list__item-label {
 		margin-left: $spacer;
@@ -28,7 +29,7 @@
 	}
 
 	small {
-		opacity: 0.5;
+		opacity: 0.7;
 		font-size: $font-size-xs;
 	}
 }

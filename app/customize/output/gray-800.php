@@ -16,6 +16,7 @@ return [
 	[
 		'selectors'    => [
 			'a',
+			'.woocommerce-terms-and-conditions-text',
 		],
 		'declarations' => [
 			'color' => esc_attr( $gray800 ),

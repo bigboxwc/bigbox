@@ -72,6 +72,7 @@ return [
 			'.action-list__item-label',
 			'.widget-title',
 			'.product-title',
+			'.woocommerce-terms-and-conditions-text',
 		],
 		'declarations' => [
 			'font-weight' => $weight_bold,
