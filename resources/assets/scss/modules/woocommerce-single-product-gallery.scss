@@ -17,11 +17,14 @@
 		max-width: 400px;
 	}
 
+	// [1] .woocommerce-product-gallery (parent) includes grid gutter spacing.
 	.flex-direction-nav {
 		order: 2;
 		position: absolute;
 		top: 50%;
-		width: 100%;
+		left: $spacer + ( $grid-gutter-width / 2 ); // [1]
+		right: $spacer + ( $grid-gutter-width / 2 ); // [1]
+		margin-top: -18px;
 		display: flex;
 		justify-content: space-between;
 
