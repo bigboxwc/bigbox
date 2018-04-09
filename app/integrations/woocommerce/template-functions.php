@@ -372,6 +372,16 @@ function bigbox_woocommerce_pagination_args( $args ) {
 function bigbox_woocommerce_single_product_carousel_options( $args ) {
 	$args['directionNav'] = true;
 
+	$args['nextText'] = bigbox_get_svg( [
+		'title' => __( 'Next', 'bigbox' ),
+		'icon'  => 'arrow-right',
+	] );
+
+	$args['prevText'] = bigbox_get_svg( [
+		'title' => __( 'Previous', 'bigbox' ),
+		'icon'  => 'arrow-left',
+	] );
+
 	return $args;
 }
 

@@ -50,4 +50,13 @@ return [
 			'background-color' => esc_attr( $gray700 ),
 		],
 	],
+	// Solid fill
+	[
+		'selectors'    => [
+			'.woocommerce-product-gallery .flex-direction-nav svg',
+		],
+		'declarations' => [
+			'fill' => esc_attr( $gray700 ),
+		],
+	],
 ];

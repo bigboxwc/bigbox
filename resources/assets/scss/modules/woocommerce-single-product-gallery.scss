@@ -19,8 +19,29 @@
 
 	.flex-direction-nav {
 		order: 2;
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
 
 		@include reset-list();
+
+		a {
+			width: 36px;
+			height: 36px;
+			background: #fff;
+			border-radius: 100%;
+			display: flex;
+			justify-content: center;
+		}
+
+		svg {
+			fill: gray("700");
+			align-self: center;
+			width: 20px;
+			height: 20px;
+		}
 
 		@include media-breakpoint-up(lg) {
 			display: none;
