@@ -35,6 +35,11 @@
 	@include vertical-spacing("margin", "down");
 }
 
+// When just the login form is displayed hide the title.
+.site-primary--5 .woocommerce h2 {
+	display: none;
+}
+
 .woocommerce-edit-account {
 
 	fieldset {

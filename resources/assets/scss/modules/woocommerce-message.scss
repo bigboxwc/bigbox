@@ -5,7 +5,7 @@
 .woocommerce-error li {
 	overflow: hidden;
 	margin: 0 0 $spacer;
-	padding: $spacer;
+	padding: ($spacer / 2) $spacer;
 
 	@include card;
 
