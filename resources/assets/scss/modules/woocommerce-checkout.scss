@@ -24,6 +24,11 @@ form.woocommerce-checkout {
 	@include button--size-block;
 }
 
+.woocommerce-billing-fields {
+
+	@include vertical-spacing("margin", "down");
+}
+
 #order_review_heading,
 .woocommerce-checkout-payment h3,
 .woocommerce-shipping-fields h3,

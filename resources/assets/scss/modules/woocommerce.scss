@@ -58,6 +58,15 @@
 		@include form-input;
 	}
 
+	// Let JS toggle .required/.optional.
+	.required {
+		visibility: hidden;
+	}
+
+	.optional {
+		visibility: visible;
+	}
+
 	// Lessen the input to select "flash"
 	.input-text.qty {
 		font-size: $font-size-xs;
