@@ -171,25 +171,17 @@
 }
 
 .product__sale {
+	color: #fff;
+	font-size: $font-size-xs;
+	line-height: 1;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: $font-weight-bold;
 	display: inline-block;
 	margin: 0 0 $spacer;
-
-	a {
-		color: #fff;
-		font-size: $font-size-xs;
-		line-height: 1;
-		text-transform: uppercase;
-		text-decoration: none;
-		font-weight: $font-weight-bold;
-		background: theme-color("success");
-		border-radius: $border-radius;
-		padding: 5px 5px 4px;
-		display: inline-block;
-
-		&:hover {
-			text-decoration: none;
-		}
-	}
+	padding: 5px 5px 4px;
+	background: theme-color("success");
+	border-radius: $border-radius;
 }
 
 .product__has-variations {

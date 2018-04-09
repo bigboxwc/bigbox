@@ -11,7 +11,6 @@
 //
 // Notes:
 // [1] WordPress' built in class menu class name. To avoid having to add a custom one.
-// [2] Reverse some visual padding for better alignment to searchbar below.
 //
 
 // When the mobile menu is toggled.
@@ -46,11 +45,9 @@ $menu-break-point: md;
 .navbar-menu--account {
 	order: 1;
 	margin-left: auto;
-	margin-right: -10px; // [2]
 
 	@include media-breakpoint-up( $menu-break-point ) {
 		order: 3;
-		margin-right: 0; // [2]
 	}
 
 	// Always list in a line.

@@ -32,12 +32,10 @@ if ( $product->is_on_sale() ) :
 ?>
 
 <div class="product__sale">
-	<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>">
-		<?php
-		// Translators: %1$s Sale price percentage.
-		echo apply_filters( 'woocommerce_sale_flash', $flash, $post, $product );
-		?>
-	</a>
+<?php
+// Translators: %1$s Sale price percentage.
+echo apply_filters( 'woocommerce_sale_flash', $flash, $post, $product );
+?>
 </div>
 
 <?php

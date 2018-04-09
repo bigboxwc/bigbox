@@ -48,10 +48,11 @@
 			position: relative;
 
 			&:after {
-				content: "&rarr;";
+				line-height: 1;
+				content: "\2192";
 				position: absolute;
 				right: ($spacer * 1.5);
-				top: calc(50% - 4px);
+				top: calc(50% - 8px);
 			}
 		}
 	}

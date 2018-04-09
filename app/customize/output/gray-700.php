@@ -35,6 +35,7 @@ return [
 	[
 		'selectors'    => [
 			'.woocommerce-product-gallery__trigger:before',
+			'.offcanvas-drawer__close:before',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray700 ),
