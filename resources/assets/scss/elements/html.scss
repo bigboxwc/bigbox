@@ -3,3 +3,8 @@
 *:after {
 	box-sizing: border-box;
 }
+
+html {
+	text-size-adjust: 100%;
+	-ms-overflow-style: scrollbar;
+}
