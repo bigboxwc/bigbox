@@ -10,6 +10,22 @@
 	@include make-row();
 }
 
+.woocommerce-reviews__main {
+	order: 2;
+
+	@include media-breakpoint-up(md) {
+		order: 1;
+	}
+}
+
+.woocommerce-reviews__info {
+	order: 1;
+
+	@include media-breakpoint-up(md) {
+		order: 2;
+	}
+}
+
 @include complimentary-columns( (
 	sm: 12,
 	md: 7,
