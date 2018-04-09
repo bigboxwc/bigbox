@@ -22,6 +22,7 @@ return [
 			'.navbar-mobile__close',
 			'.breadcrumbs',
 			'.woocommerce-breadcrumb',
+			'.navbar-search__category select',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $gray100 ),

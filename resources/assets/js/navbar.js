@@ -17,3 +17,8 @@ export const adjustWidth = () => {
 	// Trigger again on change.
 	$real.change( adjustWidth );
 };
+
+// Adjust on load.
+$( () => {
+	adjustWidth();
+} );

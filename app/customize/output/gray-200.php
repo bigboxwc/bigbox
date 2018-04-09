@@ -20,7 +20,6 @@ return [
 			'.blog-post',
 			'.facetwp-facetwp .facetwp-slider .noUi-handle',
 			'.navbar-mobile__close',
-			'.navbar-search__category select',
 			'.page-title',
 			'.product__inner',
 			'.widget',

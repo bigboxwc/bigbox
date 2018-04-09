@@ -24,4 +24,14 @@ return [
 			'color' => esc_attr( $gray600 ),
 		],
 	],
+
+	// Solid border-top-color
+	[
+		'selectors'    => [
+			'.navbar-search__category:before',
+		],
+		'declarations' => [
+			'border-top-color' => esc_attr( $gray600 ),
+		],
+	],
 ];
