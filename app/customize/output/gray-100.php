@@ -31,8 +31,6 @@ return [
 	// Solid border-color
 	[
 		'selectors'    => [
-			'.single_variation_wrap',
-			'.woocommerce-variation.woocommerce-variation--loaded',
 			'.footer-nav',
 		],
 		'declarations' => [

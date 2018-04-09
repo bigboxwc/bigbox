@@ -37,7 +37,7 @@ return [
 	// Solid color
 	[
 		'selectors'    => [
-			'.add-to-cart .instock',
+			'.woocommerce-purchase-form .instock',
 		],
 		'declarations' => [
 			'color' => esc_attr( $success ),

@@ -19,7 +19,7 @@ return [
 	[
 		'selectors'    => [
 			'.woocommerce-remove-coupon',
-			'.add-to-cart .outofstock',
+			'.woocommerce-purchase-form .outofstock',
 			'label .required',
 		],
 		'declarations' => [

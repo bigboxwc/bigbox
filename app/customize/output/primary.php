@@ -57,6 +57,8 @@ return [
 	[
 		'selectors'    => [
 			'.woocommerce-loop-category__title',
+			'.single_variation_wrap',
+			'.woocommerce-variation--loaded .woocommerce-variation',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $rgba20 ),

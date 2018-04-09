@@ -19,7 +19,6 @@ return [
 	[
 		'selectors'    => [
 			'.woocommerce-remove-coupon',
-			'.add-to-cart .outofstock',
 		],
 		'declarations' => [
 			'color' => esc_attr( $light ),
