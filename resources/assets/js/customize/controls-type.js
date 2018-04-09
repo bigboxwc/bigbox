@@ -37,7 +37,9 @@ import { forEach } from 'lodash';
 		const options = [];
 
 		forEach( variants, ( variant ) => {
-			options.push( `<option value="${variant}">${variant}</option>` );
+			if ( ! isNaN( variant ) || 'regular' === variant ) {
+				options.push( `<option value="${variant}">${variant}</option>` );
+			}
 		} );
 
 		return options.join( '' );
