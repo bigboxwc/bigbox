@@ -23,8 +23,8 @@ endif;
 <div class="shop-filters__mobile-toggle">
 	<a href="#shop-filters-mobile" class="shop-filters__mobile-toggle-link" aria-expanded="false" aria-controls="shop-filters-mobile" aria-label="<?php esc_attr_e( 'Filter', 'bigbox' ); ?>" role="button">
 		<?php
-		esc_html_e( 'Refine Results', 'bigbox' );
-		bigbox_svg( 'menu' );
+		esc_html_e( 'Filter Results', 'bigbox' );
+		bigbox_svg( 'filter' );
 		?>
 	</a>
 

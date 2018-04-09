@@ -53,6 +53,7 @@ return [
 	// Solid fill
 	[
 		'selectors'    => [
+			'.bigbox-icon',
 			'.woocommerce-product-gallery .flex-direction-nav svg',
 		],
 		'declarations' => [
