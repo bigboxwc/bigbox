@@ -20,25 +20,6 @@
 
 		@include make-col-ready;
 		@include make-col(12);
-
-		// Remove bottom borders on the last row of products.
-		&.first:last-of-type {
-			.product__inner {
-				border-bottom: 0;
-			}
-
-			+ li.product {
-				.product__inner {
-					border-bottom: 0;
-				}
-
-				+ li.product {
-					.product__inner {
-						border-bottom: 0;
-					}
-				}
-			}
-		}
 	}
 
 	&.columns-1 li.product {
