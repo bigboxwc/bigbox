@@ -137,6 +137,7 @@ $menu-break-point: md;
 	.sub-menu {
 		@include reset-list();
 
+		padding: ($spacer / 2) 0;
 		visibility: hidden;
 		opacity: 0;
 		min-width: 200px;
@@ -151,6 +152,7 @@ $menu-break-point: md;
 		transform-origin: top left;
 
 		.menu-item {
+			font-size: 0.9rem;
 			padding: ($spacer / 2) $spacer;
 		}
 

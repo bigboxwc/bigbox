@@ -9,5 +9,12 @@
 		list-style: none;
 		@include vertical-spacing("margin", "down");
 		@include make-row();
+
+	}
+
+	.no-products-found {
+		margin-left: ($grid-gutter-width / 2);
+		margin-right: ($grid-gutter-width / 2);
+		width: 100%;
 	}
 }

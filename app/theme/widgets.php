@@ -36,7 +36,7 @@ function bigbox_get_dynamic_sidebar( $sidebar ) {
 	dynamic_sidebar( $sidebar );
 	$content = ob_get_clean();
 
-	wp_cache_set( $sidebar, $content, 'bigbox-sidebar', 60 * MINUTE_IN_SECONDS );
+	wp_cache_set( $sidebar, $content, 'bigbox-sidebar', apply_filters( 'bigbox_dynamic_sidebar_cache', 60 * MINUTE_IN_SECONDS, $sidebar ) );
 
 	return $content;
 }
