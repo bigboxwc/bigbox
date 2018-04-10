@@ -1,8 +1,8 @@
 {
 	"name": "bigbox",
 	"title": "BigBox",
-	"version": "0.6.2",
-	"description": "WooCommerce theme for large product catalogs.",
+	"version": "0.6.3",
+	"description": "WooCommerce theme for large stores.",
 	"main": "webpack.config.js",
 	"devDependencies": {
 		"ajv": "^6.4.0",
