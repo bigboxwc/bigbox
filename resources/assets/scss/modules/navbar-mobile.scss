@@ -18,6 +18,7 @@
 .navbar--mobile {
 
 	ul {
+		max-width: 320px;
 
 		@include reset-list();
 
@@ -35,6 +36,7 @@
 	.navbar-menu__items {
 		padding: ($spacer / 2) 0;
 		border-bottom: 1px solid gray("200");
+		max-width: 320px;
 
 		&:last-child {
 			border-bottom: 0;
