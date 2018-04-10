@@ -1,7 +1,14 @@
 .navbar {
 	background: theme-color("primary");
+	position: relative;
 
 	@include make-container();
+
+	&:before {
+		background-image: linear-gradient(rgba(255, 255, 255, 0.10), transparent);
+
+		@include pseudo-overlay();
+	}
 }
 
 .navbar__inner {
@@ -10,4 +17,6 @@
 	align-items: center;
 	padding-top: $spacer;
 	padding-bottom: $spacer;
+	position: relative;
+	z-index: 1;
 }

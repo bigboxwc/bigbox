@@ -135,15 +135,15 @@ $menu-break-point: md;
 
 	// Dropdowns.
 	.sub-menu {
-		@include reset-list();
-
+		list-style: none;
+		margin: -1px 0;
 		padding: ($spacer / 2) 0;
 		visibility: hidden;
 		opacity: 0;
 		min-width: 200px;
 		background: #fff;
 		border-radius: 0 0 $border-radius $border-radius;
-		box-shadow: rgba(0, 0, 0, 0.3) 0 2px 12px;
+		border: 1px solid gray("600");
 		position: absolute;
 		left: 0;
 		top: 100%;
@@ -154,12 +154,31 @@ $menu-break-point: md;
 		.menu-item {
 			font-size: 0.9rem;
 			padding: ($spacer / 2) $spacer;
+			position: initial;
+		}
+
+		.menu-item-has-children > a {
+			position: relative;
+
+			&:after {
+				content: "";
+				mask-image: url("../images/arrow-right.svg");
+				mask-repeat: no-repeat;
+				mask-size: 11px 19px;
+				mask-position: center right;
+				background-color: gray("800");
+				width: 11px;
+				height: 19px;
+				position: absolute;
+				right: 0;
+			}
 		}
 
 		// ul > ul should fly out to the right.
 		.sub-menu {
 			left: 100%;
 			top: 0;
+			min-height: 100%;
 		}
 	}
 }
