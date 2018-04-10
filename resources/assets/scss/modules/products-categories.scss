@@ -1,14 +1,39 @@
 .woocommerce-page ul.products-categories,
 .woocommerce ul.products-categories {
+	display: flex;
+	overflow-x: scroll;
+	position: relative;
 	
 	@include vertical-spacing("margin", "down");
 
 	li.product.product-category {
-		min-width: 150px;
-		padding: 4px;
 		border-right: 1px solid rgba(theme-color("primary"), 0.1);
+		background: rgba(theme-color("primary"), 0.08);
 		display: flex;
 		flex-direction: column;
+
+		@include make-col-ready;
+		@include make-col(5);
+
+		// Scale purchase form down as page expands.
+		@include grow-column( (
+			sm: 2.9,
+			md: 3.4,
+			xl: 2,
+		) );
+
+		padding: 4px;
+
+		&:first-child {
+			border-top-left-radius: $border-radius;
+			border-bottom-left-radius: $border-radius;
+		}
+
+		&:last-child {
+			border-top-right-radius: $border-radius;
+			border-bottom-right-radius: $border-radius;
+			border-right: 0;
+		}
 
 		a {
 			text-decoration: none;
@@ -46,23 +71,8 @@
 	}
 }
 
-.woocommerce-shop-categories {
-	width: 100%;
-	display: flex;
-
-	@include make-col-ready();
-}
-
-.woocommerce-shop-categories-list {
-	background: rgba(theme-color("primary"), 0.08);
-	border-radius: $border-radius;
-	display: flex;
-	flex: 0;
-
-	@include reset-list();
-}
-
 .product-category__more {
 	margin: 0;
+	padding: $spacer;
 	justify-content: center;
 }

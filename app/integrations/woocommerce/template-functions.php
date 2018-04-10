@@ -142,25 +142,6 @@ function bigbox_woocommerce_before_shop_loop_after() {
 }
 
 /**
- * Adjust opening wrapper for product categories.
- *
- * @since 1.0.0
- *
- * @param string $output Category output.
- * @return string
- */
-function bigbox_woocommerce_before_output_product_categories( $output ) {
-	ob_start();
-?>
-
-		<li class="woocommerce-shop-categories">
-			<ul class="woocommerce-shop-categories-list">
-
-<?php
-	return ob_get_clean();
-}
-
-/**
  * Adjust closing wrapper for categories.
  *
  * Close the opening <ul class="products"> and start a new one.
@@ -171,19 +152,31 @@ function bigbox_woocommerce_before_output_product_categories( $output ) {
  * @return string
  */
 function bigbox_woocommerce_after_output_product_categories( $output ) {
+	$product_categories = woocommerce_get_product_subcategories( is_product_category() ? get_queried_object_id() : 0 );
+	$total              = count( $product_categories );
+
+	if ( $total <= 5 ) {
+		return;
+	}
+
+	$product_categories = array_slice( $product_categories, 5 );
+
 	ob_start();
 ?>
-			<li class="product-category product">
-				<div class="product-category__more">
-					hi
-				</div>
-			</li>
 
-		</ul>
-	</li>
-</ul>
+<li class="product-category product">
+	<div class="product-category__more">
+		<select>
+			<?php foreach ( $product_categories as $category ) : ?>
+			<option><?php echo esc_html( $category->name ); ?></option>
+			<?php endforeach; ?>
+		</select>
+	</div>
+</li>
 
 <?php
+	wc_get_template( 'loop/loop-end.php' );
+
 	wc_set_loop_prop( 'products-loop', 'main' );
 	wc_get_template( 'loop/loop-start.php' );
 

@@ -32,6 +32,8 @@ class WooCommerce extends Integration implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function register() {
+		include_once $this->get_dir() . '/wc-template-functions.php';
+
 		include_once $this->get_dir() . '/template-hooks.php';
 		include_once $this->get_dir() . '/template-functions.php';
 		include_once $this->get_dir() . '/cart.php';
