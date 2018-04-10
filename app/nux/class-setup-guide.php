@@ -106,7 +106,7 @@ class Setup_Guide implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function add_menu_item() {
-		add_menu_page(
+		add_theme_page(
 			esc_html__( 'BigBox', 'bigbox' ),
 			esc_html__( 'BigBox', 'bigbox' ),
 			'edit_theme_options',
