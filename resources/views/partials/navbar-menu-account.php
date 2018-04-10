@@ -17,11 +17,20 @@ if ( ! bigbox_is_integration_active( 'woocommerce' ) ) :
 	return;
 endif;
 
+$account = get_theme_mod( 'nav-item-account', true );
+$cart    = get_theme_mod( 'nav-item-cart', true );
+
+if ( ! $account && ! $cart ) {
+	return;
+}
+
 $count = count( WC()->cart->get_cart_contents() );
 ?>
 
 <div class="navbar-menu navbar-menu--account">
 	<ul class="navbar-menu__items">
+
+		<?php if ( $account ) : ?>
 
 		<li class="menu-item navbar-menu__item--stacked">
 			<a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>">
@@ -32,6 +41,12 @@ $count = count( WC()->cart->get_cart_contents() );
 			</a>
 		</li>
 
+		<?php
+		endif;
+
+		if ( $cart ) :
+		?>
+
 		<li class="menu-item navbar-menu__item--stacked">
 			<a href="<?php echo esc_url( 0 === $count ? get_permalink( wc_get_page_id( 'shop' ) ) : wc_get_cart_url() ); ?>">
 				<span class="navbar-menu__cart-count"><?php echo esc_html( $count ); ?></span>
@@ -41,6 +56,8 @@ $count = count( WC()->cart->get_cart_contents() );
 				?>
 			</a>
 		</li>
+
+		<?php endif; ?>
 
 	</ul>
 </div>

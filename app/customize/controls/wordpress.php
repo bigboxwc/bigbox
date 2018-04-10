@@ -36,7 +36,7 @@ function bigbox_customize_register( $wp_customize ) {
 	foreach ( [ 'blogname', 'header_text' ] as $setting ) {
 		$wp_customize->selective_refresh->add_partial(
 			$setting, [
-				'selector'            => '.branding',
+				'selector'            => '.site-title',
 				'container_inclusive' => false,
 				'render_callback'     => function() {
 					bigbox_partial( 'branding' );
