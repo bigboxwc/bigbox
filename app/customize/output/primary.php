@@ -13,6 +13,16 @@ $primary = bigbox_get_theme_color( 'primary' );
 $rgba20  = bigbox_hex_to_rgba( $primary, 0.20 );
 
 return [
+	// Solid color
+	[
+		'selectors'    => [
+			'a:hover',
+			'.navbar-menu--primary .sub-menu a:hover',
+		],
+		'declarations' => [
+			'color' => esc_attr( $primary ),
+		],
+	],
 	// Solid background-color
 	[
 		'selectors'    => [
@@ -53,19 +63,9 @@ return [
 			'outline-color' => esc_attr( $primary ),
 		],
 	],
-	// Solid color
-	[
-		'selectors'    => [
-			'.navbar-menu--primary .sub-menu a:hover',
-		],
-		'declarations' => [
-			'color' => esc_attr( $primary ),
-		],
-	],
 	// RGBA 0.25 border-color
 	[
 		'selectors'    => [
-			'.woocommerce-loop-category__title',
 			'.single_variation_wrap',
 			'.woocommerce-variation--loaded .woocommerce-variation',
 		],

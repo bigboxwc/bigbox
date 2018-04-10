@@ -38,8 +38,6 @@ return [
 	// @mixin card
 	[
 		'selectors'    => [
-			'.woocommerce-page ul.products li.product.product-category a',
-			'.woocommerce ul.products li.product.product-category a',
 			'.woocommerce-checkout-review-order',
 			'.woocommerce-message',
 			'.woocommerce-info',

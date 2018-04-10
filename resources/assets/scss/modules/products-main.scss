@@ -3,13 +3,16 @@
 
 	ul.products {
 
-		margin-left: 0;
-		margin-right: 0;
+		@include reset-list();
+		@include make-row();
+	}
+
+	ul.products-main {
+
 		padding: 0;
 		list-style: none;
-		@include vertical-spacing("margin", "down");
-		@include make-row();
 
+		@include vertical-spacing("margin", "down");
 	}
 
 	.no-products-found {

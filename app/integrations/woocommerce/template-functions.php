@@ -142,6 +142,25 @@ function bigbox_woocommerce_before_shop_loop_after() {
 }
 
 /**
+ * Adjust opening wrapper for product categories.
+ *
+ * @since 1.0.0
+ *
+ * @param string $output Category output.
+ * @return string
+ */
+function bigbox_woocommerce_before_output_product_categories( $output ) {
+	ob_start();
+?>
+
+		<li class="woocommerce-shop-categories">
+			<ul class="woocommerce-shop-categories-list">
+
+<?php
+	return ob_get_clean();
+}
+
+/**
  * Adjust closing wrapper for categories.
  *
  * Close the opening <ul class="products"> and start a new one.
@@ -153,8 +172,19 @@ function bigbox_woocommerce_before_shop_loop_after() {
  */
 function bigbox_woocommerce_after_output_product_categories( $output ) {
 	ob_start();
+?>
+			<li class="product-category product">
+				<div class="product-category__more">
+					hi
+				</div>
+			</li>
 
-	wc_get_template( 'loop/loop-end.php' );
+		</ul>
+	</li>
+</ul>
+
+<?php
+	wc_set_loop_prop( 'products-loop', 'main' );
 	wc_get_template( 'loop/loop-start.php' );
 
 	return ob_get_clean();

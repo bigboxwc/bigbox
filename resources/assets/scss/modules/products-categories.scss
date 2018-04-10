@@ -1,0 +1,68 @@
+.woocommerce-page ul.products-categories,
+.woocommerce ul.products-categories {
+	
+	@include vertical-spacing("margin", "down");
+
+	li.product.product-category {
+		min-width: 150px;
+		padding: 4px;
+		border-right: 1px solid rgba(theme-color("primary"), 0.1);
+		display: flex;
+		flex-direction: column;
+
+		a {
+			text-decoration: none;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			height: 100%;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			border-radius: $border-radius;
+		}
+	}
+}
+
+.product-category__more,
+.woocommerce-loop-category__title {
+	font-size: $font-size-sm;
+	font-weight: $font-weight-bold;
+	text-align: center;
+	margin: 4px 0 0;
+	padding: ($spacer / 2) ($spacer / 4);
+	background: #fff;
+	border-bottom: 1px solid rgba(theme-color("primary"), 0.15);
+	border-radius: $border-radius;
+	flex: 1;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+
+	.count {
+		display: none;
+	}
+}
+
+.woocommerce-shop-categories {
+	width: 100%;
+	display: flex;
+
+	@include make-col-ready();
+}
+
+.woocommerce-shop-categories-list {
+	background: rgba(theme-color("primary"), 0.08);
+	border-radius: $border-radius;
+	display: flex;
+	flex: 0;
+
+	@include reset-list();
+}
+
+.product-category__more {
+	margin: 0;
+	justify-content: center;
+}
