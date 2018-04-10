@@ -155,13 +155,12 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 	$product_categories = woocommerce_get_product_subcategories( is_product_category() ? get_queried_object_id() : 0 );
 	$total              = count( $product_categories );
 
-	if ( $total > 5 ) {
-		$product_categories = array_slice( $product_categories, 5 );
-	}
-
 	ob_start();
 
-	if ( ! empty( $product_categories ) ) {
+	if ( $total > 5 ) {
+		$product_categories = array_slice( $product_categories, 5, $total - 5 );
+
+		if ( ! empty( $product_categories ) ) {
 ?>
 
 <li class="product-category product">
@@ -177,6 +176,7 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 </li>
 
 <?php
+			}
 	}
 
 	wc_get_template( 'loop/loop-end.php' );
