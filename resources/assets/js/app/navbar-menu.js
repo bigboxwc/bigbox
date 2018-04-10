@@ -15,22 +15,19 @@ $( () => {
 		$( this ).parent().toggleClass( 'menu-item--opened' );
 	} );
 
+	const toggleClasses = function( $el ) {
+		$el
+			.toggleClass( 'menu-item-has-children--active' )
+			.parent()
+			.toggleClass( 'sub-menu--has-sibling' );
+	}
+
 	$( '.menu-item-has-children' ).hoverIntent({
 		over: function() {
-			const $link = $( this );
-
-			$link
-				.addClass( 'menu-item-has-children--active' )
-				.parent()
-				.addClass( 'sub-menu--has-sibling' );
+			toggleClasses( $( this ) );
 		},
 		out: function() {
-			const $link = $( this );
-
-			$link
-				.removeClass( 'menu-item-has-children--active' )
-				.parent()
-				.removeClass( 'sub-menu--has-sibling' );
+			toggleClasses( $( this ) );
 		},
 		timeout: 200,
 		sensitivity: 7,

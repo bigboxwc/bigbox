@@ -168,7 +168,6 @@ $menu-break-point: md;
 
 			&:after {
 				content: "";
-				mask-image: url("../images/arrow-right.svg");
 				mask-repeat: no-repeat;
 				mask-size: 6px 11px;
 				mask-position: center right;
@@ -201,6 +200,12 @@ $menu-break-point: md;
 		.sub-menu {
 			left: 100%;
 			border-bottom-left-radius: 0;
+		}
+
+		.menu-item-has-children > a {
+			&:after {
+				mask-image: url("../images/arrow-right.svg");
+			}
 		}
 	}
 }
