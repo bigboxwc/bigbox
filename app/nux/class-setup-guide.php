@@ -107,12 +107,8 @@ class Setup_Guide implements Registerable, Service {
 	 */
 	public function add_menu_item() {
 		add_menu_page(
-			__( 'BigBox', 'bigbox' ),
-			__( 'BigBox', 'bigbox' ) . (
-				'valid' !== get_option( 'bigbox_license_status', 'invalid' ) ?
-					' <span class="update-plugins">!</span>' :
-					null
-				),
+			esc_html__( 'BigBox', 'bigbox' ),
+			esc_html__( 'BigBox', 'bigbox' ),
 			'edit_theme_options',
 			'bigbox',
 			[ $this, 'output_page' ],

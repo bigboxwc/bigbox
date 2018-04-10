@@ -63,9 +63,6 @@ export function activateLicense( license = '' ) {
 
 				if ( 'valid' === response.data.license ) {
 					args.validLicense = true;
-
-					// Remove count in menu.
-					$( '#toplevel_page_bigbox .update-plugins' ).remove();
 				} else {
 					args.validLicense = false;
 				}
