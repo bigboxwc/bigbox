@@ -11,10 +11,10 @@ import '../images/*.svg';
 import '../images/icons/*.svg';
 import '../images/nux/*.png';
 
-import './facetwp.js';
-import './navbar.js';
-import './navbar-mobile.js';
-import './quantity.js';
-import './cart.js';
-import './checkout.js';
-import './product.js';
+import './app/facetwp.js';
+import './app/navbar.js';
+import './app/navbar-mobile.js';
+import './app/quantity.js';
+import './app/cart.js';
+import './app/checkout.js';
+import './app/product.js';
