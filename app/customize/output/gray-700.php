@@ -25,6 +25,8 @@ return [
 			'[type="text"]',
 			'textarea',
 			'select',
+			'.navbar-menu--primary .sub-menu a',
+			'.navbar-menu--secondary .sub-menu a',
 			'.select2-container--default .select2-selection--single .select2-selection__rendered',
 		],
 		'declarations' => [

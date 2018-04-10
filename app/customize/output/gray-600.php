@@ -16,8 +16,6 @@ return [
 	[
 		'selectors'    => [
 			'.footer-widget a',
-			'.navbar-menu--primary .sub-menu a',
-			'.navbar-menu--secondary .sub-menu a',
 			'.product__stock',
 		],
 		'declarations' => [

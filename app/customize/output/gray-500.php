@@ -24,4 +24,13 @@ return [
 			'color' => esc_attr( $gray500 ),
 		],
 	],
+	// Solid background-color
+	[
+		'selectors'    => [
+			'.navbar-menu__items-secondary .sub-menu .menu-item-has-children > a:after',
+		],
+		'declarations' => [
+			'background-color' => esc_attr( $gray500 ),
+		],
+	],
 ];

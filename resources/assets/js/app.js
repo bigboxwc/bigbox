@@ -13,7 +13,7 @@ import '../images/nux/*.png';
 
 import './app/facetwp.js';
 import './app/navbar.js';
-import './app/navbar-mobile.js';
+import './app/navbar-menu.js';
 import './app/quantity.js';
 import './app/cart.js';
 import './app/checkout.js';

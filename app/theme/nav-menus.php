@@ -42,12 +42,14 @@ function bigbox_get_primary_nav_menus( $args = [] ) {
 	$menus = wp_cache_get( 'bigbox_get_primary_nav_menus', 'bigbox' );
 
 	if ( false === $menus ) {
+		wp_enqueue_script( 'hoverIntent' );
+
 		ob_start();
 
 		wp_nav_menu(
 			[
 				'theme_location' => 'primary',
-				'menu_class'     => 'navbar-menu__items',
+				'menu_class'     => 'navbar-menu__items navbar-menu__items-primary',
 				'container'      => false,
 				'fallback_cb'    => false,
 			]
@@ -56,7 +58,7 @@ function bigbox_get_primary_nav_menus( $args = [] ) {
 		wp_nav_menu(
 			[
 				'theme_location' => 'secondary',
-				'menu_class'     => 'navbar-menu__items',
+				'menu_class'     => 'navbar-menu__items navbar-menu__items-secondary',
 				'container'      => false,
 				'fallback_cb'    => false,
 			]
