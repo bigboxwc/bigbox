@@ -23,9 +23,12 @@
 
 		a {
 			text-decoration: none;
-			padding: ($spacer / 2) ($spacer * 1.5);
-			display: block;
 		}
+	}
+
+	li {
+		padding: ($spacer / 2) ($spacer * 1.5);
+		display: flex;
 	}
 
 	.sub-menu,
@@ -42,18 +45,50 @@
 		display: none;
 	}
 
-	.menu-item-has-children {
+	li.menu-item--opened {
+		position: fixed;
+		top: 54px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: #fff;
+		z-index: 2;
+		padding-top: 1rem;
+
+		&:after {
+			content: "\2190";
+			top: 20px;
+		}
 
 		> a {
-			position: relative;
+			font-weight: bold;
+		}
 
-			&:after {
-				line-height: 1;
-				content: "\2192";
-				position: absolute;
-				right: ($spacer * 1.5);
-				top: calc(50% - 8px);
-			}
+		> .sub-menu {
+			display: block;
+			position: absolute;
+			top: 40px;
+			left: 0;
+			right: 0;
 		}
 	}
+
+	.menu-item-has-children {
+		position: relative;
+
+		&:after {
+			line-height: 1;
+			content: "\2192";
+			position: absolute;
+			right: ($spacer * 1.5);
+			top: 12px;
+		}
+	}
+}
+
+.mobile-menu-children-toggle {
+	display: block;
+	flex: 1;
+	margin-left: 1rem;
+	max-height: 20px;
 }
