@@ -16,6 +16,7 @@ return [
 	[
 		'selectors'    => [
 			'a',
+			'mark',
 			'.woocommerce-terms-and-conditions-text',
 			'.action-list__item-value',
 		],

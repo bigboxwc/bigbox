@@ -66,6 +66,7 @@ return [
 			'h6',
 			'strong',
 			'label',
+			'mark',
 			'table tfoot td',
 			'.product__sale a',
 			'.site-title',
