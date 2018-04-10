@@ -141,7 +141,7 @@ $menu-break-point: md;
 		padding: ($spacer / 2) 0;
 		visibility: hidden;
 		opacity: 0;
-		min-width: 200px;
+		min-width: 250px;
 		background: #fff;
 		border-radius: 0 0 $border-radius $border-radius;
 		border: 1px solid gray("300");
@@ -159,7 +159,7 @@ $menu-break-point: md;
 
 		.menu-item {
 			font-size: 0.9rem;
-			padding: ($spacer / 2) $spacer;
+			padding: ($spacer / 3) $spacer;
 			position: initial;
 		}
 
@@ -194,8 +194,13 @@ $menu-break-point: md;
 	.sub-menu {
 		left: 0;
 
+		&--has-sibling {
+			border-bottom-right-radius: 0;
+		}
+
 		.sub-menu {
 			left: 100%;
+			border-bottom-left-radius: 0;
 		}
 	}
 }
@@ -206,8 +211,13 @@ $menu-break-point: md;
 	.sub-menu {
 		right: 0;
 
+		&--has-sibling {
+			border-bottom-left-radius: 0;
+		}
+
 		.sub-menu {
 			right: 100%;
+			border-bottom-right-radius: 0;
 		}
 
 		.menu-item-has-children > a {

@@ -17,10 +17,20 @@ $( () => {
 
 	$( '.menu-item-has-children' ).hoverIntent({
 		over: function() {
-			$( this ).addClass( 'menu-item-has-children--active' );
+			const $link = $( this );
+
+			$link
+				.addClass( 'menu-item-has-children--active' )
+				.parent()
+				.addClass( 'sub-menu--has-sibling' );
 		},
 		out: function() {
-			$( this ).removeClass( 'menu-item-has-children--active' );
+			const $link = $( this );
+
+			$link
+				.removeClass( 'menu-item-has-children--active' )
+				.parent()
+				.removeClass( 'sub-menu--has-sibling' );
 		},
 		timeout: 200,
 		sensitivity: 7,

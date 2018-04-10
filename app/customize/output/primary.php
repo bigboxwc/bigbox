@@ -53,6 +53,15 @@ return [
 			'outline-color' => esc_attr( $primary ),
 		],
 	],
+	// Solid color
+	[
+		'selectors'    => [
+			'.navbar-menu--primary .sub-menu a:hover',
+		],
+		'declarations' => [
+			'color' => esc_attr( $primary ),
+		],
+	],
 	// RGBA 0.25 border-color
 	[
 		'selectors'    => [
