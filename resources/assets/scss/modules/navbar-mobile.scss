@@ -58,8 +58,8 @@
 		padding-top: 1rem;
 
 		&:after {
-			mask-image: url("../images/icons/arrow-left.svg");
-			top: 20px;
+			mask-image: url("../images/arrow-left.svg");
+			top: 16px;
 		}
 
 		> a {
@@ -84,7 +84,7 @@
 			position: absolute;
 			right: ($spacer * 1.5);
 			top: 11px;
-			mask-image: url("../images/icons/arrow-right.svg");
+			mask-image: url("../images/arrow-right.svg");
 			background-color: gray("800");
 			width: 11px;
 			height: 19px;
