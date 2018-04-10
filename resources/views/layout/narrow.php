@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Narrow-width
+ * Template Name: Narrow (10 columns)
  *
  * @since 1.0.0
  * @version 1.0.0

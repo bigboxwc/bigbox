@@ -14,13 +14,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+if ( ! isset( $columns ) ) {
+	$columns = 10;
+}
+
 bigbox_view( 'global/header-min' );
 
 while ( have_posts() ) :
 	the_post();
 ?>
 
-<div id="main" class="site-primary site-primary--10" role="main">
+	<div id="main" class="site-primary site-primary--<?php echo esc_attr( $columns ); ?>" role="main">
 	<h1 class="page-title"><?php the_title(); ?></h1>
 
 	<article class="hentry">

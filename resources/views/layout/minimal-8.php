@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Minimal (5 Columns)
+ * Template Name: Minimal (8 Columns)
  *
  * @since 1.0.0
  * @version 1.0.0
@@ -15,5 +15,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 bigbox_view( 'layout/minimal', [
-	'columns' => 5,
+	'columns' => 8,
 ] );
