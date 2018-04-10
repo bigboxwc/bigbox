@@ -155,7 +155,7 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 	$product_categories = woocommerce_get_product_subcategories( is_product_category() ? get_queried_object_id() : 0 );
 	$total              = count( $product_categories );
 
-	if ( $total <= 5 ) {
+	if ( $total > 5 ) {
 		$product_categories = array_slice( $product_categories, 5 );
 	}
 
