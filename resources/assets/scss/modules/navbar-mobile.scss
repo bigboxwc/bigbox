@@ -58,7 +58,7 @@
 		padding-top: 1rem;
 
 		&:after {
-			content: "\2190";
+			mask-image: url("../images/icons/arrow-left.svg");
 			top: 20px;
 		}
 
@@ -79,11 +79,15 @@
 		position: relative;
 
 		&:after {
+			content: "";
 			line-height: 1;
-			content: "\2192";
 			position: absolute;
 			right: ($spacer * 1.5);
-			top: 12px;
+			top: 11px;
+			mask-image: url("../images/icons/arrow-right.svg");
+			background-color: gray("800");
+			width: 11px;
+			height: 19px;
 		}
 	}
 }
