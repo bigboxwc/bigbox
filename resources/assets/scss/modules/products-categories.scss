@@ -75,4 +75,10 @@
 	margin: 0;
 	padding: $spacer;
 	justify-content: center;
+	flex-wrap: wrap;
+	flex-direction: column;
+
+	select {
+		margin-top: $spacer;
+	}
 }

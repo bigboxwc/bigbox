@@ -156,16 +156,18 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 	$total              = count( $product_categories );
 
 	if ( $total <= 5 ) {
-		return;
+		$product_categories = array_slice( $product_categories, 5 );
 	}
 
-	$product_categories = array_slice( $product_categories, 5 );
-
 	ob_start();
+
+	if ( ! empty( $product_categories ) ) {
 ?>
 
 <li class="product-category product">
 	<div class="product-category__more">
+		<div>More Categories</div>
+
 		<select>
 			<?php foreach ( $product_categories as $category ) : ?>
 			<option><?php echo esc_html( $category->name ); ?></option>
@@ -175,6 +177,8 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 </li>
 
 <?php
+	}
+
 	wc_get_template( 'loop/loop-end.php' );
 
 	wc_set_loop_prop( 'products-loop', 'main' );
