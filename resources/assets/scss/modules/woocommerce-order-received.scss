@@ -1,0 +1,13 @@
+// Remove redundant information.
+.woocommerce-thankyou-order-received,
+.woocommerce-thankyou-order-details,
+.woocommerce-order-details__title {
+	display: none;
+}
+
+.woocommerce-customer-details {
+	
+	@include vertical-spacing("margin", "both", (
+		sm: 2,
+	));
+}

@@ -28,7 +28,7 @@ function bigbox_woocommerce_page_templates( $templates ) {
 		$add[] = bigbox_woocommerce_template_path() . 'cart.php';
 	}
 
-	if ( is_checkout() ) {
+	if ( is_checkout() && ! is_order_received_page() ) {
 		$add[] = bigbox_woocommerce_template_path() . 'checkout.php';
 	}
 
@@ -39,6 +39,10 @@ function bigbox_woocommerce_page_templates( $templates ) {
 			$add[] = 'resources/views/layout/minimal-5.php';
 		}
 	} elseif ( is_account_page() && is_user_logged_in() ) {
+		$add[] = 'resources/views/layout/narrow.php';
+	}
+
+	if ( is_order_received_page() ) {
 		$add[] = 'resources/views/layout/narrow.php';
 	}
 
