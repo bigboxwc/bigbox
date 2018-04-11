@@ -172,6 +172,7 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 				'theme_location' => 'product-category-list',
 				'container'      => false,
 				'fallback_cb'    => false,
+				'depth'          => 1,
 			]
 		);
 		?>
@@ -180,7 +181,7 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 		<?php if ( ! empty( $more_categories ) ) : ?>
 		<form id="product-category-selector" action="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" method="GET" class="product-category-more__selector">
 			<select name="product_cat">
-				<option><?php echo esc_html_e( 'More categories...', 'bigbox' ); ?></option>
+				<option><?php echo esc_html_e( 'More...', 'bigbox' ); ?></option>
 
 				<?php foreach ( $more_categories as $category ) : ?>
 				<option value="<?php echo esc_url( get_term_link( $category ) ); ?>"><?php echo esc_html( $category->name ); ?></option>
