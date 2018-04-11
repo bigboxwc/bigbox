@@ -33,19 +33,16 @@ const updateCss = () => {
 	} );
 };
 
-// Wait for DOM ready.
-( function() {
-	// Wait for Preview ready.
-	wp.customize.bind( 'preview-ready', () => {
-		const controls = filter( Object.keys( wp.customize.settings.activeControls ), ( setting ) => {
-			return setting.match( /color/i ) || setting.match( /type/i );
-		} );
-
-		// Refresh CSS when each control changes.
-		forEach( controls, ( settingId ) => {
-			wp.customize( settingId, ( settingObj ) => {
-				settingObj.bind( debounce( updateCss, wp.customize.settings.timeouts.selectiveRefresh ) );
-			} );
+// Wait for Preview ready.
+wp.customize.bind( 'preview-ready', () => {
+	const controls = filter( Object.keys( wp.customize.settings.activeControls ), ( setting ) => {
+		return setting.match( /color/i ) || setting.match( /type/i );
+	} );
+	
+	// Refresh CSS when each control changes.
+	forEach( controls, ( settingId ) => {
+		wp.customize( settingId, ( settingObj ) => {
+			settingObj.bind( debounce( updateCss, wp.customize.settings.timeouts.selectiveRefresh ) );
 		} );
 	} );
 } );
