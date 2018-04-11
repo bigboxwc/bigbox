@@ -44,8 +44,8 @@ return [
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $gray100 ),
-			'border-color' => esc_attr( bigbox_get_theme_color( 'gray-300' ) ),
-			'color' => esc_attr( bigbox_get_theme_color( 'gray-500' ) ),
+			'border-color'     => esc_attr( bigbox_get_theme_color( 'gray-300' ) ),
+			'color'            => esc_attr( bigbox_get_theme_color( 'gray-500' ) ),
 		],
 	],
 	[

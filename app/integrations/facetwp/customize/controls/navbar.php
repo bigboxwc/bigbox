@@ -48,8 +48,9 @@ function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
 		// Choose which facet is used for the search.
 		$wp_customize->add_setting(
 			$setting, [
-				'default'   => null,
-				'transport' => 'postMessage',
+				'default'           => null,
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'sanitize_text_field',
 			]
 		);
 
@@ -71,6 +72,7 @@ function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
 			'type'        => 'select',
 			'choices'     => bigbox_facetwp_customize_get_sources( [ 'dropdown' ] ),
 			'section'     => 'navbar',
+			'priority'    => 20,
 		]
 	);
 
@@ -81,6 +83,7 @@ function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
 			'type'        => 'select',
 			'choices'     => bigbox_facetwp_customize_get_sources( [ 'search' ] ),
 			'section'     => 'navbar',
+			'priority'    => 20,
 		]
 	);
 }

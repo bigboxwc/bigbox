@@ -40,40 +40,42 @@ add_action( 'customize_register', 'bigbox_customize_register_type_sections' );
 function bigbox_customize_register_type_controls( $wp_customize ) {
 	$wp_customize->add_setting(
 		'type-font-family', [
-			'default'   => 'default',
-			'transport' => 'postMessage',
+			'default'           => 'default',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_text_field',
 		]
 	);
 
 	$wp_customize->add_control(
 		'type-font-family', [
-			'label'    => esc_html__( 'Font Family', 'bigbox' ),
-			'type'     => 'select',
-			'choices'  => [
+			'label'   => esc_html__( 'Font Family', 'bigbox' ),
+			'type'    => 'select',
+			'choices' => [
 				'default' => esc_html__( 'System Default', 'bigbox' ),
 			],
-			'section'  => 'type',
+			'section' => 'type',
 		]
 	);
 
 	$wp_customize->add_setting(
 		'type-font-size', [
-			'default'   => 1,
-			'transport' => 'postMessage',
+			'default'           => 1,
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_text_field',
 		]
 	);
 
 	$wp_customize->add_control(
 		'type-font-size', [
-			'label'    => esc_html__( 'Base Font Size', 'bigbox' ),
+			'label'       => esc_html__( 'Base Font Size', 'bigbox' ),
 			'description' => wp_kses( __( 'Value is measured in <code>em</code>. 1em = 16px', 'bigbox' ), [ 'code' => [] ] ),
-			'type'     => 'number',
-			'input_atts' => [
+			'type'        => 'number',
+			'input_atts'  => [
 				'min'  => 0,
 				'max'  => 999,
 				'step' => 0.01,
 			],
-			'section'  => 'type',
+			'section'     => 'type',
 		]
 	);
 
@@ -85,7 +87,7 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 		'bold' => [
 			'label'  => esc_html__( 'Bold Font Weight', 'bigbox' ),
 			'weight' => 500,
-		]
+		],
 	];
 
 	foreach ( $weights as $weight => $data ) {
@@ -93,16 +95,17 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 
 		$wp_customize->add_setting(
 			$key, [
-				'default'   => 'normal',
-				'transport' => 'postMessage',
+				'default'           => 'normal',
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'sanitize_text_field',
 			]
 		);
 
 		$wp_customize->add_control(
 			$key, [
-				'label'    => $data['label'],
-				'type'     => 'select',
-				'choices'  => [
+				'label'   => $data['label'],
+				'type'    => 'select',
+				'choices' => [
 					100 => 100,
 					200 => 200,
 					300 => 300,
@@ -112,7 +115,7 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 					700 => 700,
 					800 => 800,
 				],
-				'section'  => 'type',
+				'section' => 'type',
 			]
 		);
 

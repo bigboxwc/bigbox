@@ -119,7 +119,7 @@ class License_Manager implements Registerable, Service {
 					'licenseSubmit'      => esc_html__( 'Activate License', 'bigbox' ),
 					'licenseLabel'       => esc_html__( 'License Status', 'bigbox' ),
 					'licenseValid'       => esc_html__( 'Valid', 'bigbox' ),
-					'licenseInvalid'     => esc_html__( 'Inactive — not receiving automatic updates notifications.', 'bigbox' ),
+					'licenseInvalid'     => esc_html__( 'Inactive: not receiving automatic updates notifications.', 'bigbox' ),
 					'licenseDeactivate'  => esc_html__( 'Deactivate', 'bigbox' ),
 				],
 			]

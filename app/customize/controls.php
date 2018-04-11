@@ -13,7 +13,6 @@
 require_once get_template_directory() . '/app/customize/controls/wordpress.php';
 require_once get_template_directory() . '/app/customize/controls/colors.php';
 require_once get_template_directory() . '/app/customize/controls/type.php';
-require_once get_template_directory() . '/app/customize/controls/navbar.php';
 
 /**
  * Register scripts for controlling controls.
@@ -31,8 +30,10 @@ function bigbox_customize_controls_enqueue_scripts( $wp_customize ) {
 		true
 	);
 
-	wp_localize_script( 'bigbox-customize-controls', 'bigboxCustomizeControls', [
-		'fonts' => json_decode( file_get_contents( get_template_directory() . '/resources/data/google-fonts.json' ) ),
-	] );
+	wp_localize_script(
+		'bigbox-customize-controls', 'bigboxCustomizeControls', [
+			'fonts' => json_decode( file_get_contents( get_template_directory() . '/resources/data/google-fonts.json' ) ),
+		]
+	);
 }
 add_action( 'customize_controls_enqueue_scripts', 'bigbox_customize_controls_enqueue_scripts' );

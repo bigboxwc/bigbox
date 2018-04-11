@@ -25,11 +25,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return boolean
  */
 function woocommerce_output_product_categories( $args = array() ) {
-	$args = wp_parse_args( $args, array(
-		'before'    => apply_filters( 'woocommerce_before_output_product_categories', '' ),
-		'after'     => apply_filters( 'woocommerce_after_output_product_categories', '' ),
-		'parent_id' => 0,
-	) );
+	$args = wp_parse_args(
+		$args, array(
+			'before'    => apply_filters( 'woocommerce_before_output_product_categories', '' ),
+			'after'     => apply_filters( 'woocommerce_after_output_product_categories', '' ),
+			'parent_id' => 0,
+		)
+	);
 
 	$product_categories = woocommerce_get_product_subcategories( $args['parent_id'] );
 	$total              = count( $product_categories );
@@ -45,9 +47,11 @@ function woocommerce_output_product_categories( $args = array() ) {
 	echo $args['before']; // WPCS: XSS ok.
 
 	foreach ( $product_categories as $category ) {
-		wc_get_template( 'content-product_cat.php', array(
-			'category' => $category,
-		) );
+		wc_get_template(
+			'content-product_cat.php', array(
+				'category' => $category,
+			)
+		);
 	}
 
 	echo $args['after']; // WPCS: XSS ok.

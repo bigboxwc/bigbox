@@ -27,7 +27,7 @@ endif;
 		$selected = isset( $_GET[ $taxonomy->name ] ) ? esc_attr( $_GET[ $taxonomy->name ] ) : null;
 
 		// Translators: %s Header search taxonomy label.
-		$all = esc_html( sprintf( __( 'All %s', 'bigbox' ), strtolower( $taxonomy->labels->name ) ) ) 
+		$all = esc_html( sprintf( __( 'All %s', 'bigbox' ), strtolower( $taxonomy->labels->name ) ) )
 	?>
 
 	<div id="navbar-search__category" class="navbar-search__category">
@@ -35,22 +35,27 @@ endif;
 			<?php
 			// Translators: %s Header search taxonomy name.
 			echo esc_html( sprintf( __( 'Choose a %s', 'bigbox' ), strtolower( $taxonomy->labels->singular_name ) ) );
-			?>:
+			?>
+			:
 		</label>
 
 		<div id="search-dropdown-real">
 			<?php
-			wp_dropdown_categories( apply_filters( 'bigbox_navbar_search_dropdown', [
-				'show_option_all' => $all,
-				'selected'        => $selected,
-				'name'            => $taxonomy->name,
-				'taxonomy'        => $taxonomy->name,
-				'hierarchical'    => true,
-				'value_field'     => 'slug',
-				'show_count'      => true,
-				'orderby'         => 'name',
-				'order'           => 'ASC',
-			] ) );
+			wp_dropdown_categories(
+				apply_filters(
+					'bigbox_navbar_search_dropdown', [
+						'show_option_all' => $all,
+						'selected'        => $selected,
+						'name'            => $taxonomy->name,
+						'taxonomy'        => $taxonomy->name,
+						'hierarchical'    => true,
+						'value_field'     => 'slug',
+						'show_count'      => true,
+						'orderby'         => 'name',
+						'order'           => 'ASC',
+					]
+				)
+			);
 			?>
 		</div>
 

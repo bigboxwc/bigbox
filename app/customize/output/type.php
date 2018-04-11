@@ -34,7 +34,7 @@ $base = [
 	],
 	'declarations' => [
 		'font-weight' => $weight_base,
-		'font-size'   => "{$size}em"
+		'font-size'   => "{$size}em",
 	],
 ];
 

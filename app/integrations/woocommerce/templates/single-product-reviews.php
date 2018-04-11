@@ -117,10 +117,12 @@ endif;
 
 	<div class="woocommerce-reviews__info">
 		<?php
-		wc_get_template( 'single-product/review-breakdown.php', [
-			'product' => $product,
-		] );
-						
+		wc_get_template(
+			'single-product/review-breakdown.php', [
+				'product' => $product,
+			]
+		);
+
 		dynamic_sidebar( 'shop-comments' );
 		?>
 	</div>

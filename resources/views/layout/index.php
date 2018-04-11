@@ -27,6 +27,8 @@ bigbox_view( 'global/header' );
 
 			bigbox_partial( 'content' );
 		endwhile;
+
+		bigbox_partial( 'content-pagination' );
 	else :
 			bigbox_partial( 'content-none' );
 	endif;

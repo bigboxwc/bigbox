@@ -4,5 +4,9 @@ a {
 	&:hover {
 		color: theme-color("primary");
 		text-decoration: none;
+
+		.bigbox-icon {
+			color: theme-color("primary");
+		}
 	}
 }

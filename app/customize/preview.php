@@ -59,9 +59,11 @@ function bigbox_preview_css() {
 		);
 	}
 
-	return wp_send_json_success( [
-		'css'        => bigbox_customize_css(),
-		'fontFamily' => bigbox_get_google_font_family_string(),
-	] );
+	return wp_send_json_success(
+		[
+			'css'        => bigbox_customize_css(),
+			'fontFamily' => bigbox_get_google_font_family_string(),
+		]
+	);
 }
 add_action( 'wp_ajax_bigbox-preview-css', 'bigbox_preview_css' );

@@ -43,11 +43,13 @@ add_action( 'woocommerce_before_main_content', 'bigbox_woocommerce_output_conten
 add_action( 'woocommerce_after_main_content', 'bigbox_woocommerce_output_content_wrapper_end' );
 
 add_filter( 'woocommerce_after_output_product_categories', 'bigbox_woocommerce_after_output_product_categories' );
-add_filter( 'woocommerce_product_subcategories_args', function( $args ) {
-	$args['orderby'] = 'count';
+add_filter(
+	'woocommerce_product_subcategories_args', function( $args ) {
+		$args['orderby'] = 'count';
 
-	return $args;
-} );
+		return $args;
+	}
+);
 
 // Wrap result count and ordering.
 add_action( 'woocommerce_before_shop_loop', 'bigbox_woocommerce_before_shop_loop', 15 );
@@ -133,13 +135,17 @@ remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_pr
 // Adjust add to cart position.
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 
-add_action( 'woocommerce_single_product_summary', function() {
-	echo '<div class="summary__inner">';
-}, -1 );
+add_action(
+	'woocommerce_single_product_summary', function() {
+		echo '<div class="summary__inner">';
+	}, -1
+);
 
-add_action( 'woocommerce_single_product_summary', function() {
-	echo '</div>';
-}, 499 );
+add_action(
+	'woocommerce_single_product_summary', function() {
+		echo '</div>';
+	}, 499
+);
 
 add_action( 'woocommerce_single_product_summary', 'bigbox_purchase_form', 500 );
 add_action( 'bigbox_purchase_form', 'woocommerce_template_single_add_to_cart' );

@@ -176,7 +176,7 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 </li>
 
 <?php
-			}
+		}
 	}
 
 	wc_get_template( 'loop/loop-end.php' );
@@ -382,8 +382,8 @@ function bigbox_woocommerce_breadcrumb_defaults( $args ) {
  * @return array
  */
 function bigbox_woocommerce_pagination_args( $args ) {
-	$args['prev_text'] = esc_html__( '&larr; Previous Page', 'bigbox' );
-	$args['next_text'] = esc_html__( 'Next Page &rarr;', 'bigbox' );
+	$args['prev_text'] = bigbox_get_svg( array( 'icon' => 'arrow-left' ) ) . esc_html__( 'Previous Page', 'bigbox' );
+	$args['next_text'] = esc_html__( 'Next Page', 'bigbox' ) . bigbox_get_svg( array( 'icon' => 'arrow-right' ) );
 
 	return $args;
 }
@@ -399,15 +399,19 @@ function bigbox_woocommerce_pagination_args( $args ) {
 function bigbox_woocommerce_single_product_carousel_options( $args ) {
 	$args['directionNav'] = true;
 
-	$args['nextText'] = bigbox_get_svg( [
-		'title' => __( 'Next', 'bigbox' ),
-		'icon'  => 'arrow-right',
-	] );
+	$args['nextText'] = bigbox_get_svg(
+		[
+			'title' => __( 'Next', 'bigbox' ),
+			'icon'  => 'arrow-right',
+		]
+	);
 
-	$args['prevText'] = bigbox_get_svg( [
-		'title' => __( 'Previous', 'bigbox' ),
-		'icon'  => 'arrow-left',
-	] );
+	$args['prevText'] = bigbox_get_svg(
+		[
+			'title' => __( 'Previous', 'bigbox' ),
+			'icon'  => 'arrow-left',
+		]
+	);
 
 	return $args;
 }

@@ -19,4 +19,4 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 echo apply_filters( 'bigbox_navbar_search', '' );
-?>
+

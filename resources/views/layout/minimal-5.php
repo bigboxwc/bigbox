@@ -14,6 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-bigbox_view( 'layout/minimal', [
-	'columns' => 5,
-] );
+bigbox_view(
+	'layout/minimal', [
+		'columns' => 5,
+	]
+);

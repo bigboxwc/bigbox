@@ -37,7 +37,7 @@ endif;
 
 	<div id="navbar-search__category" class="navbar-search__category">
 		<label for="<?php echo esc_attr( $name ); ?>" class="screen-reader-text">
-			<?php echo esc_html( $dropdown['label']  ); ?>:
+			<?php echo esc_html( $dropdown['label'] ); ?>:
 		</label>
 
 		<div id="search-dropdown-real">
@@ -45,19 +45,23 @@ endif;
 		if ( is_shop() && ! is_customize_preview() ) :
 			echo facetwp_display( 'facet', $dropdown['name'] );
 		else :
-			wp_dropdown_categories( apply_filters( 'bigbox_navbar_search_dropdown', [
-				'show_option_all'   => false,
-				'show_option_none'  => $all,
-				'option_none_value' => '',
-				'name'              => $name,
-				'taxonomy'          => $taxonomy->name,
-				'hierarchical'      => 'no' !== $dropdown['hierarchical'],
-				'value_field'       => 'slug',
-				'show_count'        => true,
-				'orderby'           => $dropdown['orderby'],
-				'order'             => 'ASC',
-				'number'            => $dropdown['count'],
-			] ) );
+			wp_dropdown_categories(
+				apply_filters(
+					'bigbox_navbar_search_dropdown', [
+						'show_option_all'   => false,
+						'show_option_none'  => $all,
+						'option_none_value' => '',
+						'name'              => $name,
+						'taxonomy'          => $taxonomy->name,
+						'hierarchical'      => 'no' !== $dropdown['hierarchical'],
+						'value_field'       => 'slug',
+						'show_count'        => true,
+						'orderby'           => $dropdown['orderby'],
+						'order'             => 'ASC',
+						'number'            => $dropdown['count'],
+					]
+				)
+			);
 		endif;
 		?>
 		</div>
@@ -76,7 +80,7 @@ endif;
 
 	<div class="navbar-search__keywords">
 		<label for="<?php echo esc_attr( $name ); ?>" class="screen-reader-text">
-			<?php echo esc_html( $dropdown['label']  ); ?>:
+			<?php echo esc_html( $dropdown['label'] ); ?>:
 		</label>
 
 		<?php

@@ -41,6 +41,7 @@ return [
 	// Solid fill
 	[
 		'selectors'    => [
+			'a:hover .bigbox-icon',
 			'.navbar-search__submit svg',
 		],
 		'declarations' => [

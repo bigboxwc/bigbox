@@ -27,6 +27,8 @@ $spacing: ( $spacer / 2 );
 		color: inherit;
 		text-decoration: none;
 		padding: 0 $spacing;
+		display: flex;
+		align-items: center;
 	}
 
 	.next,
@@ -41,9 +43,22 @@ $spacing: ( $spacer / 2 );
 
 	.next {
 		margin-left: $spacing;
+
+		svg {
+			margin-left: $spacing;
+		}
 	}
 
 	.prev {
 		margin-right: $spacing;
+
+		svg {
+			margin-right: $spacing;
+		}
+	}
+
+	svg {
+		width: 16px;
+		height: 16px;
 	}
 }

@@ -31,7 +31,7 @@ if ( 0 === $count ) {
 	<div class="review-breakdown__item">
 		<div class="review-breakdown__label">
 		<?php
-		// Translators: %1$d Number of stars 
+		// Translators: %1$d Number of stars
 		printf( _n( '%1$d Star', '%1$d Stars', $i, 'bigbox' ), $i );
 		?>
 		</div>

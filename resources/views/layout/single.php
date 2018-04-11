@@ -25,7 +25,11 @@ while ( have_posts() ) :
 	<h1 class="page-title page-title--lg"><?php the_title(); ?></h1>
 
 	<div class="hentry blog-post__content">
-		<?php the_content(); ?>
+		<?php
+		the_content();
+		wp_link_pages();
+		comments_template();
+		?>
 	</div>
 </div>
 

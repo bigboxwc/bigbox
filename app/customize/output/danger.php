@@ -33,10 +33,10 @@ return [
 			'.woocommerce-error li',
 		],
 		'declarations' => [
-			'color'            => esc_attr( $danger ),
-			'border-color'     => esc_attr( $rgba50 ),
-			'box-shadow'       => esc_attr( "inset {$rgba10} 0 0 0 3px, {$rgba30} 0 1px 2px" ),
-			'font-weight'      => esc_attr( bigbox_get_theme_font_weight( 'bold' ) ),
+			'color'        => esc_attr( $danger ),
+			'border-color' => esc_attr( $rgba50 ),
+			'box-shadow'   => esc_attr( "inset {$rgba10} 0 0 0 3px, {$rgba30} 0 1px 2px" ),
+			'font-weight'  => esc_attr( bigbox_get_theme_font_weight( 'bold' ) ),
 		],
 	],
 

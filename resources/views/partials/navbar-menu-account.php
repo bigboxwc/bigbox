@@ -41,11 +41,9 @@ $count = count( WC()->cart->get_cart_contents() );
 			</a>
 		</li>
 
-		<?php
-		endif;
+		<?php endif; ?>
 
-		if ( $cart ) :
-		?>
+		<?php if ( $cart ) : ?>
 
 		<li class="menu-item navbar-menu__item--stacked">
 			<a href="<?php echo esc_url( 0 === $count ? get_permalink( wc_get_page_id( 'shop' ) ) : wc_get_cart_url() ); ?>">

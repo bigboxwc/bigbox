@@ -33,8 +33,8 @@ function bigbox_woocommerce_customize_get_dropdown_taxonomies() {
 	}
 
 	// This is public but let's remove it.
-	if ( isset( $choices[ 'product_shipping_class' ] ) ) {
-		unset( $choices[ 'product_shipping_class' ] );
+	if ( isset( $choices['product_shipping_class'] ) ) {
+		unset( $choices['product_shipping_class'] );
 	}
 
 	return $choices;
@@ -49,11 +49,11 @@ function bigbox_woocommerce_customize_get_dropdown_taxonomies() {
  */
 function bigbox_woocommerce_customize_register_navbar_sections( $wp_customize ) {
 	$wp_customize->add_section(
-		'nav-menus', array(
-			'title'    => esc_html_x( 'Settings', 'customizer section title', 'bigbox' ),
-			'panel'    => 'nav_menus',
+		'navbar', [
+			'title'    => _x( 'Header Settings', 'customizer section title (header search)', 'bigbox' ),
 			'priority' => 90,
-		)
+			'panel'    => 'woocommerce',
+		]
 	);
 }
 add_action( 'customize_register', 'bigbox_woocommerce_customize_register_navbar_sections' );
@@ -69,8 +69,9 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 	// Choose which taxonomy appears in the dropdown.
 	$wp_customize->add_setting(
 		'navbar-dropdown-source', [
-			'default'   => 'product_cat',
-			'transport' => 'postMessage',
+			'default'           => 'product_cat',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_text_field',
 		]
 	);
 
@@ -80,41 +81,45 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 			'type'     => 'select',
 			'choices'  => bigbox_woocommerce_customize_get_dropdown_taxonomies(),
 			'section'  => 'navbar',
+			'priority' => 20,
 		]
 	);
 
+	// Toggle account menu item.
 	$wp_customize->add_setting(
 		'nav-item-account', array(
-			'default'   => true,
-			'transport' => 'postMessage',
+			'default'           => true,
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'esc_attr',
 		)
 	);
 
 	$wp_customize->add_control(
 		'nav-item-account', array(
-			'label'    => esc_html__( 'Display account menu item', 'listify' ),
-			'type'     => 'checkbox',
-			'priority' => 10,
-			'section'  => 'nav-menus',
+			'label'   => esc_html__( 'Display account menu item', 'bigbox' ),
+			'type'    => 'checkbox',
+			'section' => 'navbar',
 		)
 	);
 
+	// Toggle cart menu item.
 	$wp_customize->add_setting(
 		'nav-item-cart', array(
-			'default'   => true,
-			'transport' => 'postMessage',
+			'default'           => true,
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'absint',
 		)
 	);
 
 	$wp_customize->add_control(
 		'nav-item-cart', array(
-			'label'    => esc_html__( 'Display cart menu item', 'listify' ),
-			'type'     => 'checkbox',
-			'priority' => 20,
-			'section'  => 'nav-menus',
+			'label'   => esc_html__( 'Display cart menu item', 'bigbox' ),
+			'type'    => 'checkbox',
+			'section' => 'navbar',
 		)
 	);
 
+	// Partial refreshes.
 	$wp_customize->selective_refresh->add_partial(
 		'navbar-dropdown-source', [
 			'selector'            => '.navbar-search',

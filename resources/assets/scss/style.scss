@@ -91,11 +91,6 @@
 @import "modules/footer-nav";
 @import "modules/footer-copyright";
 
-// Blog
-@import "modules/blog-post";
-@import "modules/commentlist";
-@import "modules/comment-respond";
-
 // Shop
 @import "modules/shop-filters";
 @import "modules/facetwp";
@@ -131,3 +126,9 @@
 // FacetWP
 @import "modules/facetwp-pager";
 @import "modules/facetwp-sort";
+
+// Blog
+@import "modules/blog-post";
+@import "modules/commentlist";
+@import "modules/comment-respond";
+@import "modules/nav-links";
