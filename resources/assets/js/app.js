@@ -17,4 +17,4 @@ import './app/navbar-menu.js';
 import './app/quantity.js';
 import './app/cart.js';
 import './app/checkout.js';
-import './app/product.js';
+import './app/products.js';

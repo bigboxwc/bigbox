@@ -40,6 +40,7 @@ class WooCommerce extends Integration implements Registerable, Service {
 		include_once $this->get_dir() . '/checkout.php';
 		include_once $this->get_dir() . '/account.php';
 		include_once $this->get_dir() . '/widgets.php';
+		include_once $this->get_dir() . '/nav-menus.php';
 		include_once $this->get_dir() . '/page-templates.php';
 		include_once $this->get_dir() . '/customize.php';
 

@@ -9,7 +9,8 @@
  * @author Spencer Finnell
  */
 
-$gray300 = bigbox_get_theme_color( 'gray-300' );
+$gray300    = bigbox_get_theme_color( 'gray-300' );
+$gray300_50 = bigbox_hex_to_rgba( $gray300, 0.50 );
 
 return [
 	// Solid border-color
@@ -21,6 +22,29 @@ return [
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray300 ),
+		],
+	],
+	// RGBA .50 border-color
+	[
+		'selectors'    => [
+			'.woocommerce-page ul.products-categories li.product.product-category',
+			'.woocommerce ul.products-categories li.product.product-category',
+			'.woocommerce-page ul.products-categories:after',
+			'.woocommerce ul.products-categories:after',
+			'.product-category-more__selector',
+			'.product-category-more__inner',
+			'.woocommerce-loop-category__title',
+		],
+		'declarations' => [
+			'border-color' => esc_attr( $gray300_50 ),
+		],
+	],
+	// RGBA .50 box-shadow
+	[
+		'selectors'    => [
+		],
+		'declarations' => [
+			'box-shadow' => '0 1px 0 ' . esc_attr( $gray300 ),
 		],
 	],
 

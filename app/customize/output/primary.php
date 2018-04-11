@@ -11,9 +11,6 @@
 
 $primary = bigbox_get_theme_color( 'primary' );
 $rgba20  = bigbox_hex_to_rgba( $primary, 0.20 );
-$rgba15  = bigbox_hex_to_rgba( $primary, 0.15 );
-$rgba10  = bigbox_hex_to_rgba( $primary, 0.10 );
-$rgba08  = bigbox_hex_to_rgba( $primary, 0.08 );
 
 return [
 	// Solid color
@@ -52,6 +49,7 @@ return [
 	[
 		'selectors'    => [
 			'.widget_price_filter .ui-slider .ui-slider-handle',
+			'.woocommerce-MyAccount-navigation-link.is-active a',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $primary ),
@@ -74,37 +72,6 @@ return [
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $rgba20 ),
-		],
-	],
-	// RGBA 0.15 border-color
-	[
-		'selectors'    => [
-			'.woocommerce-loop-category__title',
-			'.woocommerce-MyAccount-navigation-link.is-active a',
-			'.product-category__more',
-		],
-		'declarations' => [
-			'border-color' => esc_attr( $rgba15 ),
-		],
-	],
-	// RGBA 0.10 border-color
-	[
-		'selectors'    => [
-			'.woocommerce-page ul.products-categories li.product.product-category',
-			'.woocommerce ul.products-categories li.product.product-category',
-		],
-		'declarations' => [
-			'border-color' => esc_attr( $rgba10 ),
-		],
-	],
-	// RGBA 0.08 background-color
-	[
-		'selectors'    => [
-			'.woocommerce-page ul.products-categories li.product.product-category',
-			'.woocommerce ul.products-categories li.product.product-category',
-		],
-		'declarations' => [
-			'background-color' => esc_attr( $rgba08 ),
 		],
 	],
 

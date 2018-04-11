@@ -19,3 +19,15 @@ $( function() {
 	// All.
 	transformInput( $form.find( '.qty' ), false );
 } );
+
+/**
+ * Submit product category selector.
+ */
+$( function() {
+	const $form = $( '#product-category-selector' );
+
+	// Variation update.
+	$form.find( 'select' ).on( 'change', () => {
+		$form.submit();
+	} );
+} );

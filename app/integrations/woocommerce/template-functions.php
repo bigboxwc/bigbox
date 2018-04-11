@@ -158,26 +158,40 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 	ob_start();
 
 	if ( $total > 5 ) {
-		$product_categories = array_slice( $product_categories, 5, $total - 5 );
-
-		if ( ! empty( $product_categories ) ) {
+		$more_categories = array_slice( $product_categories, 5, $total - 5 );
+	}
 ?>
 
-<li class="product-category product">
-	<div class="product-category__more">
-		<div>More Categories</div>
+<li class="product-category product product-category-more">
+	<div class="product-category-more__inner">
 
-		<select>
-			<?php foreach ( $product_categories as $category ) : ?>
-			<option><?php echo esc_html( $category->name ); ?></option>
-			<?php endforeach; ?>
-		</select>
+		<div class="product-category-more__menu">
+		<?php
+		wp_nav_menu(
+			[
+				'theme_location' => 'product-category-list',
+				'container'      => false,
+				'fallback_cb'    => false,
+			]
+		);
+		?>
+		</div>
+
+		<?php if ( ! empty( $more_categories ) ) : ?>
+		<form id="product-category-selector" action="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" method="GET" class="product-category-more__selector">
+			<select name="product_cat">
+				<option><?php echo esc_html_e( 'More categories...', 'bigbox' ); ?></option>
+
+				<?php foreach ( $more_categories as $category ) : ?>
+				<option value="<?php echo esc_url( get_term_link( $category ) ); ?>"><?php echo esc_html( $category->name ); ?></option>
+				<?php endforeach; ?>
+			</select>
+		</form>
+		<?php endif; ?>
 	</div>
 </li>
 
 <?php
-		}
-	}
 
 	wc_get_template( 'loop/loop-end.php' );
 
