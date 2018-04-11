@@ -203,6 +203,7 @@ $menu-break-point: md;
 		}
 
 		.menu-item-has-children > a {
+
 			&:after {
 				mask-image: url("../images/arrow-right.svg");
 			}
@@ -252,6 +253,10 @@ $menu-break-point: md;
 			opacity: 1;
 			text-decoration: none;
 			border: 1px solid rgba(255, 255, 255, 0.2);
+
+			svg {
+				fill: #fff;
+			}
 		}
 	}
 

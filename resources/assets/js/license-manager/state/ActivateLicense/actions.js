@@ -101,7 +101,7 @@ export function deactivateLicense( license = '' ) {
 				url: BigBoxLicenseManager.local.domain,
 			},
 		} )
-			.then( ( response ) => {
+			.then( () => {
 				const args = {
 					type: LICENSE_REQUEST_FAILURE,
 					license: '',

@@ -1,7 +1,7 @@
 {
 	"name": "bigbox",
 	"title": "BigBox",
-	"version": "0.6.7",
+	"version": "0.7.0",
 	"description": "WooCommerce theme for large stores.",
 	"main": "webpack.config.js",
 	"devDependencies": {
@@ -10,7 +10,7 @@
 		"axios": "^0.17.1",
 		"babel-cli": "^6.26.0",
 		"babel-core": "6.26.0",
-		"babel-eslint": "8.0.3",
+		"babel-eslint": "^8.2.2",
 		"babel-jest": "22.0.4",
 		"babel-loader": "7.1.2",
 		"babel-plugin-import-glob": "^2.0.0",
@@ -25,7 +25,7 @@
 		"browser-sync": "^2.11.1",
 		"classnames": "^2.2.5",
 		"cross-env": "^5.0.1",
-		"eslint": "^4.16.0",
+		"eslint": "^4.19.1",
 		"eslint-config-wordpress": "^2.0.0",
 		"eslint-plugin-jest": "^21.12.2",
 		"eslint-plugin-jsx-a11y": "^6.0.3",
@@ -55,8 +55,8 @@
 	"scripts": {
 		"build": "cross-env BABEL_ENV=default NODE_ENV=production webpack",
 		"dev": "cross-env BABEL_ENV=default webpack --watch",
-		"lint": "./node_modules/.bin/eslint .; exit 0",
-		"lint:fix": "./node_modules/.bin/eslint * --fix; exit 0",
+		"lint": "./node_modules/.bin/eslint resources/assets/js; exit 0",
+		"lint:fix": "./node_modules/.bin/eslint resources/assets/js --fix; exit 0",
 		"css-lint": "./node_modules/.bin/stylelint resources/**/*.scss --syntax scss; exit 0",
 		"css-lint:fix": "./node_modules/.bin/stylelint resources/**/*.scss --syntax scss --fix; exit 0",
 		"generate-font-list": "ruby bin/generate-google-font-list.rb",

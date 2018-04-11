@@ -1,9 +1,7 @@
-/** global $ */
+/* global $ */
 
 $( () => {
-
-	const $mobile  = $( '#navbar-mobile' );
-	const $primary = $( '#navbar-primary' );
+	const $mobile = $( '#navbar-mobile' );
 
 	// Create a separate clickable area on menu items with children.
 	$mobile.find( '.menu-item-has-children' ).each( function() {
@@ -20,9 +18,9 @@ $( () => {
 			.toggleClass( 'menu-item-has-children--active' )
 			.parent()
 			.toggleClass( 'sub-menu--has-sibling' );
-	}
+	};
 
-	$( '.menu-item-has-children' ).hoverIntent({
+	$( '.menu-item-has-children' ).hoverIntent( {
 		over: function() {
 			toggleClasses( $( this ) );
 		},
@@ -31,6 +29,6 @@ $( () => {
 		},
 		timeout: 200,
 		sensitivity: 7,
-		interval: 90
-	});
+		interval: 90,
+	} );
 } );

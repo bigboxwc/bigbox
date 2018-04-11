@@ -1,3 +1,5 @@
+/* global WebFont, jQuery */
+
 /**
  * External dependencies.
  */
@@ -12,28 +14,27 @@ const updateCss = () => {
 			// Update inline CSS.
 			const selector = 'bigbox-inline-css';
 
-			$( `#${selector}` ).remove();
+			$( `#${ selector }` ).remove();
 
 			$( '<div>', {
-				id:   selector,
-				html: '&shy;<style>' + response.css + '</style>'
+				id: selector,
+				html: '&shy;<style>' + response.css + '</style>',
 			} ).appendTo( 'body' );
 
 			// Update web fonts.
 			if ( response.fontFamily ) {
-				WebFont.load({
+				WebFont.load( {
 					google: {
-						families: [ response.fontFamily ]
-					}
-				});
+						families: [ response.fontFamily ],
+					},
+				} );
 			}
 		},
 	} );
 };
 
 // Wait for DOM ready.
-(function( $ ){
-
+( function() {
 	// Wait for Preview ready.
 	wp.customize.bind( 'preview-ready', () => {
 		const controls = filter( Object.keys( wp.customize.settings.activeControls ), ( setting ) => {
@@ -46,6 +47,5 @@ const updateCss = () => {
 				settingObj.bind( debounce( updateCss, wp.customize.settings.timeouts.selectiveRefresh ) );
 			} );
 		} );
-
 	} );
-})( jQuery );
+} );

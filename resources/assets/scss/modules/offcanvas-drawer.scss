@@ -16,15 +16,15 @@
 #navbar-mobile,
 #shop-filters-mobile {
 
-  [aria-expanded="true"],
-  &:target {
-    transform: none;
+	[aria-expanded="true"],
+	&:target {
+		transform: none;
 
-    + .offcanvas-drawer-backdrop {
-      background: rgba(0, 0, 0, 0.5);
-      visibility: visible;
-    }
-  }
+		+ .offcanvas-drawer-backdrop {
+			background: rgba(0, 0, 0, 0.5);
+			visibility: visible;
+		}
+	}
 }
 
 .offcanvas-drawer-backdrop {

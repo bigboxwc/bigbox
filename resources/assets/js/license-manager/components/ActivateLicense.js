@@ -66,7 +66,7 @@ class ActivateLicense extends Component {
 	}
 
 	// Deactivate
-	handleDeactivate( event ) {
+	handleDeactivate() {
 		this.props.doDeactivateLicense( this.state.license );
 	}
 

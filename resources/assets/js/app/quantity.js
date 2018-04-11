@@ -1,10 +1,9 @@
-/** global bigbox */
-
+/* global bigbox */
 
 /**
  * Create a generic list of options that can be appended multiple times.
  */
-let   items     = [];
+let items = [];
 const globalMax = bigbox.products.quantitySelector.max;
 
 /**
@@ -24,11 +23,11 @@ const getOptions = ( max: globalMax ) => {
 
 	// Pad with globalMax
 	for ( let i = 0; i <= max; i++ ) {
-		items.push( `<option value=${i}>${i}</option>` );
+		items.push( `<option value=${ i }>${ i }</option>` );
 	}
 
 	return items;
-}
+};
 
 /**
  * Transform quantity input in to a <select> box.
@@ -48,7 +47,7 @@ export const transformInput = function( $qty, variation = false ) {
 
 	// Try to get preset min/max values.
 	const min = variation.min_qty || ( $original.attr( 'min' ) ? parseInt( $original.attr( 'min' ) ) : globalMax );
-	let max   = variation.max_qty || ( $original.attr( 'max' ) ? parseInt( $original.attr( 'max' ) ) : globalMax );
+	let max = variation.max_qty || ( $original.attr( 'max' ) ? parseInt( $original.attr( 'max' ) ) : globalMax );
 
 	// If max (or globalMax) is less than original value reset max with padding.
 	if ( max < selectedValue ) {
@@ -64,6 +63,6 @@ export const transformInput = function( $qty, variation = false ) {
 
 	$select
 		.append( options.slice( min, ( max + 1 ) ).join( '' ) )
-		.find( `option[value=${selectedValue}]` )
+		.find( `option[value=${ selectedValue }]` )
 		.prop( 'selected', true );
 };

@@ -1,15 +1,15 @@
-/** global $ */
+/* global $ */
 
 /**
  * Adjust width of navbar dropdown.
  */
 export const adjustWidth = () => {
 	const $real = $( '#search-dropdown-real' ).find( 'select' );
-	const $fake = $( '#search-dropdown-placeholder' )
+	const $fake = $( '#search-dropdown-placeholder' );
 
-	let selected = $real.find( 'option:selected' ).text();
+	const selected = $real.find( 'option:selected' ).text();
 
-	$fake.find( 'option' ).html( selected.replace( '&nbsp;', ''  ));
+	$fake.find( 'option' ).html( selected.replace( '&nbsp;', '' ) );
 
 	// Adjust width.
 	$real.width( $fake.width() );

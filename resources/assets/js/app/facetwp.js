@@ -1,4 +1,4 @@
-/** global wp */
+/* global wp, FWP */
 
 /**
  * Internal dependencies.
@@ -10,7 +10,7 @@ import { adjustWidth } from './navbar.js';
  *
  * @param {Event} e Submit event.
  */
-$( '#facetwp-primary-search' ).submit( function ( e ) {
+$( '#facetwp-primary-search' ).submit( function( e ) {
 	e.preventDefault();
 
 	FWP.refresh();
@@ -19,10 +19,10 @@ $( '#facetwp-primary-search' ).submit( function ( e ) {
 /**
  * Don't push empty form values forward to help FacetWP load initially.
  */
-$( '#primary-search' ).submit( function () {
+$( '#primary-search' ).submit( function() {
 	$( this )
 		.find( 'input, select' )
-		.filter( function () {
+		.filter( function() {
 			return ! this.value;
 		} )
 		.prop( 'name', '' );
