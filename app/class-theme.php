@@ -59,6 +59,7 @@ final class Theme implements Registerable {
 		}
 
 		require_once get_template_directory() . '/app/customize/customize.php';
+		require_once get_template_directory() . '/app/nux/starter-content.php';
 	}
 
 	/**

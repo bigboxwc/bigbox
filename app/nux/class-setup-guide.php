@@ -5,7 +5,7 @@
  * @since 1.0.0
  *
  * @package BigBox
- * @category Integration
+ * @category NUX
  * @author Spencer Finnell
  */
 

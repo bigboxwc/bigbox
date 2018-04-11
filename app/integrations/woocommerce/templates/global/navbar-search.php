@@ -27,7 +27,7 @@ endif;
 		$selected = isset( $_GET[ $taxonomy->name ] ) ? esc_attr( $_GET[ $taxonomy->name ] ) : null;
 
 		// Translators: %s Header search taxonomy label.
-		$all = esc_html( sprintf( __( 'All %s', 'bigbox' ), strtolower( $taxonomy->labels->name ) ) )
+		$all = esc_html( sprintf( __( 'All %s', 'bigbox' ), strtolower( $taxonomy->labels->name ) ) );
 	?>
 
 	<div id="navbar-search__category" class="navbar-search__category">

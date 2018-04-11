@@ -100,14 +100,6 @@
 .product__preview {
 	max-width: 200px;
 
-	@include media-breakpoint-up(lg) {
-		max-width: 175px;
-	}
-
-	@include media-breakpoint-up(xl) {
-		max-width: 150px;
-	}
-
 	// Shrink on cart and checkout.
 	.product--cart-item & {
 		max-width: 100px;
