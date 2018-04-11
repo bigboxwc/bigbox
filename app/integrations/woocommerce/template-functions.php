@@ -160,6 +160,8 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 	if ( $total > 5 ) {
 		$more_categories = array_slice( $product_categories, 5, $total - 5 );
 	}
+
+	if ( ! empty( $more_categories ) || has_nav_menu( 'product-category-list' ) ) {
 ?>
 
 <li class="product-category product product-category-more">
@@ -193,6 +195,7 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 </li>
 
 <?php
+	}
 
 	wc_get_template( 'loop/loop-end.php' );
 

@@ -15,10 +15,13 @@
 
 // Because .sub-menu items act as panels that look like top level items we
 // can style things a little more liberally here.
+//
+// [1] Because I can't stop this flow.
 .navbar--mobile {
+	max-width: 320px; // [1]
 
 	ul {
-		max-width: 320px;
+		max-width: 320px; // [1]
 
 		@include reset-list();
 
@@ -36,7 +39,7 @@
 	.navbar-menu__items {
 		padding: ($spacer / 2) 0;
 		border-bottom: 1px solid gray("200");
-		max-width: 320px;
+		max-width: 320px; // [1]
 
 		&:last-child {
 			border-bottom: 0;
@@ -56,6 +59,7 @@
 		background: #fff;
 		z-index: 2;
 		padding-top: 1rem;
+		max-width: 320px; // [1]
 
 		&:after {
 			mask-image: url("../images/arrow-left.svg");
