@@ -1,9 +1,4 @@
-/* global BigBoxLicenseManager */
-
-/**
- * External dependencies.
- */
-import axios from 'axios';
+/* global BigBoxLicenseManager, wp, wpApiSettings */
 
 /**
  * Internal dependencies.
@@ -21,13 +16,13 @@ import {
  * @param {string} licenseStatus License status. valid or invalid.
  */
 function saveLicense( license, licenseStatus ) {
-	axios( {
+	wp.ajax.send( 'bigbox-license-request', {
 		url: `${ wpApiSettings.root }${ wpApiSettings.versionString }settings`,
 		method: 'POST',
 		headers: {
 			'X-WP-Nonce': wpApiSettings.nonce,
 		},
-		params: {
+		data: {
 			bigbox_license: license,
 			bigbox_license_status: licenseStatus,
 		},
@@ -47,36 +42,35 @@ export function activateLicense( license = '' ) {
 			license,
 		} );
 
-		axios.get( BigBoxLicenseManager.remote.apiRoot, {
-			params: {
+		wp.ajax.send( 'bigbox-license-request', {
+			data: {
 				edd_action: 'activate_license',
 				license: license,
-				item_name: encodeURIComponent( BigBoxLicenseManager.remote.itemName ),
-				url: BigBoxLicenseManager.local.domain,
+				_wpnonce: BigBoxLicenseManager.nonce,
 			},
-		} )
-			.then( ( response ) => {
+			success: ( response ) => {
 				const args = {
 					type: LICENSE_REQUEST_SUCCESS,
 					license,
 				};
 
-				if ( 'valid' === response.data.license ) {
+				if ( 'valid' === response.license ) {
 					args.validLicense = true;
 				} else {
 					args.validLicense = false;
 				}
 
 				dispatch( args );
-				saveLicense( license, response.data.license );
-			} )
-			.catch( () => {
+				saveLicense( license, response.license );
+			},
+			error: () => {
 				dispatch( {
 					type: LICENSE_REQUEST_FAILURE,
 				} );
 
 				saveLicense( '' );
-			} );
+			}
+		} );
 	};
 }
 
@@ -93,15 +87,13 @@ export function deactivateLicense( license = '' ) {
 			license,
 		} );
 
-		axios.get( BigBoxLicenseManager.remote.apiRoot, {
-			params: {
+		wp.ajax.send( 'bigbox-license-request', {
+			data: {
 				edd_action: 'deactivate_license',
 				license: license,
-				item_name: encodeURIComponent( BigBoxLicenseManager.remote.itemName ),
-				url: BigBoxLicenseManager.local.domain,
+				_wpnonce: BigBoxLicenseManager.nonce,
 			},
-		} )
-			.then( () => {
+			success: () => {
 				const args = {
 					type: LICENSE_REQUEST_FAILURE,
 					license: '',
@@ -111,13 +103,14 @@ export function deactivateLicense( license = '' ) {
 				dispatch( args );
 
 				saveLicense( '', 'deactivated' );
-			} )
-			.catch( () => {
+			},
+			error: () => {
 				dispatch( {
 					type: LICENSE_REQUEST_FAILURE,
 				} );
 
 				saveLicense( '' );
-			} );
+			}
+		} );
 	};
 }
