@@ -21,7 +21,7 @@ endif;
 ?>
 
 <div id="navbar-primary" class="navbar-menu navbar-menu--primary">
-
-	<?php echo $menus; // @codingStandardsIgnoreLine ?>
-
+	<div class="offcanvas-drawer__content">
+		<?php echo $menus; // @codingStandardsIgnoreLine ?>
+	</div>
 </div>

@@ -28,5 +28,7 @@ endif;
 ?>
 
 <div id="secondary" class="site-secondary shop-filters" role="complementary">
-	<?php echo $sidebar; // WPCS: XSS okay. ?>
+	<div class="offcanvas-drawer__content">
+		<?php echo $sidebar; // WPCS: XSS okay. ?>
+	</div>
 </div>

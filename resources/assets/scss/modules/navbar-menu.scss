@@ -73,12 +73,17 @@ $menu-break-point: md;
 .navbar-menu--primary {
 	width: 100%;
 	border-top: 1px solid rgba(255, 255, 255, 0.08);
-	justify-content: space-between;
-	align-items: center;
-	display: none;
+
+	.offcanvas-drawer__content {
+		justify-content: space-between;
+		align-items: center;
+		display: none;
+	}
 
 	@include media-breakpoint-up( $menu-break-point ) {
-		display: flex;
+		.offcanvas-drawer__content {
+			display: flex;
+		}
 	}
 
 	// Top level list.

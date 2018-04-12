@@ -11,6 +11,7 @@ import '../images/*.svg';
 import '../images/icons/*.svg';
 import '../images/nux/*.png';
 
+import './app/offcanvas-drawer.js'
 import './app/facetwp.js';
 import './app/navbar.js';
 import './app/navbar-menu.js';

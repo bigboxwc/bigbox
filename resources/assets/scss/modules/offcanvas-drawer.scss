@@ -16,7 +16,7 @@
 #navbar-mobile,
 #shop-filters-mobile {
 
-	[aria-expanded="true"],
+	&[aria-expanded="true"],
 	&:target {
 		transform: none;
 
