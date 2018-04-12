@@ -50,6 +50,7 @@ function bigbox_enqueue_scripts() {
 	$deps = [
 		'wp-util',
 		'wp-api',
+		'hoverIntent',
 	];
 
 	// Combined application scripts.

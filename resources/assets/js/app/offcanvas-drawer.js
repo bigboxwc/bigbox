@@ -3,6 +3,9 @@
 // Keep track of things we've found before.
 const cache = {};
 
+// Document
+const $document = $( document.body );
+
 /**
  * Swap the source and the target content as defined by the toggle.
  *
@@ -29,6 +32,8 @@ const targetSourceSwap = ( $toggle ) => {
 
 	$target.html( toTransfer );
 	$source.html( '' );
+
+	$document.trigger( 'offCanvasDrawerSwap', [ $toggle, $source, $target, source, target ] );
 };
 
 ( function( $ ) {

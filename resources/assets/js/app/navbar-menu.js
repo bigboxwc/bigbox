@@ -1,18 +1,20 @@
-/* global $ */
+/* global jQuery */
 
-$( () => {
-	const $mobile = $( '#navbar-mobile' );
+const $mobile = $( '#navbar-mobile' );
 
-	// Create a separate clickable area on menu items with children.
+/**
+ * Create a separate clickable area on menu items with children on mobile.
+ */
+export const addChildToggles = () => {
 	$mobile.find( '.menu-item-has-children' ).each( function() {
 		$( this ).append( '<span class="mobile-menu-children-toggle"></span>' );
 	} );
+};
 
-	// Toggle children.
-	$mobile.find( '.mobile-menu-children-toggle' ).on( 'click', function() {
-		$( this ).parent().toggleClass( 'menu-item--opened' );
-	} );
-
+/**
+ * Better hover behavior.
+ */
+const addHoverIntent = () => {
 	const toggleClasses = function( $el ) {
 		$el
 			.toggleClass( 'menu-item-has-children--active' )
@@ -31,4 +33,18 @@ $( () => {
 		sensitivity: 7,
 		interval: 90,
 	} );
-} );
+}
+
+( function( $ ) {
+	addChildToggles();
+	addHoverIntent();
+
+	// Toggle children.
+	$mobile.on( 'click', '.mobile-menu-children-toggle', function() {
+		$( this ).parent().toggleClass( 'menu-item--opened' );
+	} );
+
+	// Add child toggles if needed.
+	$( document.body ).on( 'offCanvasDrawerSwap', addChildToggles );
+
+} )( jQuery );
