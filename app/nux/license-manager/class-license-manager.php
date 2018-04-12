@@ -63,7 +63,7 @@ class License_Manager implements Registerable, Service {
 		$this->item_name      = 'BigBox WooCommerce Theme';
 		$this->version        = bigbox_get_theme_version();
 		$this->theme_slug     = 'bigbox';
-		$this->remote_api_url = 'https://bigbox.dev/';
+		$this->remote_api_url = 'https://bigboxwc.com/';
 
 		// Register automatic updater with args.
 		( new License_Manager\Theme_Updater() )->register(
