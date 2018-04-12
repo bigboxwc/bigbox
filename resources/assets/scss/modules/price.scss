@@ -1,8 +1,11 @@
 .price {
-	font-size: $font-size-lg;
 	color: initial;
 	display: flex;
 	align-items: center;
+
+	@include media-breakpoint-up(xl) {	
+		font-size: $font-size-lg;
+	}
 
 	.woocommerce-Price-currencySymbol,
 	sup {

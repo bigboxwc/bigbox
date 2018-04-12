@@ -74,6 +74,8 @@ return [
 			'.widget-title',
 			'.product-title',
 			'.woocommerce-terms-and-conditions-text',
+			'.product-category-more__inner',
+			'.woocommerce-loop-category__title',
 		],
 		'declarations' => [
 			'font-weight' => $weight_bold,

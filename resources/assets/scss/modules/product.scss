@@ -46,18 +46,14 @@
 	&.columns-3 li.product,
 	&.columns-4 li.product,
 	&.columns-5 li.product {
-
-		@include media-breakpoint-up(sm) {
-
-			@include make-col(6);
-		}
+		@include make-col(6);
 	}
 
 	&.columns-3 li.product,
 	&.columns-4 li.product,
 	&.columns-5 li.product {
 
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(sm) {
 
 			@include make-col(4);
 		}
@@ -66,7 +62,7 @@
 	&.columns-4 li.product,
 	&.columns-5 li.product {
 
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(sm) {
 
 			@include make-col(3);
 		}
@@ -122,9 +118,21 @@
 .woocommerce-loop-category__title,
 .woocommerce-loop-product__title,
 .product__title {
-	font-size: $font-size-base;
+	font-size: $font-size-sm;
 	margin: 0;
 	order: 0;
+
+	@include media-breakpoint-up(xl) {
+		font-size: $font-size-base;
+	}
+
+	// When using 5 columns keep titles small.
+	.columns-5 & {
+
+		@include media-breakpoint-up(xl) {
+			font-size: $font-size-sm;
+		}
+	}
 }
 
 .product__stats {

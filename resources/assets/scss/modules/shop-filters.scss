@@ -5,7 +5,7 @@
 .shop-filters__mobile-toggle {
 	position: absolute;
 	right: 0;
-	bottom: 0;
+	bottom: $spacer;
 
 	@include media-breakpoint-up(md) {
 		display: none;
