@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div id="bigbox-cart-review" class="woocommerce-checkout-review-order-table">
 
-	<ul class="products columns-1">
+	<ul class="products products-main columns-1">
 		<?php do_action( 'woocommerce_review_order_before_cart_contents' ); ?>
 
 		<?php

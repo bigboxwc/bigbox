@@ -28,7 +28,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 	<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
-	<ul class="products columns-1">
+	<ul class="products products-main columns-1">
 
 		<?php
 		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) :
