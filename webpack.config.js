@@ -36,6 +36,10 @@ const nuxCSS = new ExtractTextPlugin( {
 	filename: './public/css/nux.min.css',
 } );
 
+const editorCSS = new ExtractTextPlugin( {
+	filename: './public/css/editor.min.css',
+} );
+
 const config = {
 	entry: {
 		app: './resources/assets/js/app.js',
@@ -90,7 +94,12 @@ const config = {
 				include: /scss/,
 			},
 			{
-				test: /.s?css$/,
+				test: /editor\.scss$/,
+				use: editorCSS.extract( extractConfig ),
+				include: /scss/,
+			},
+			{
+				test: /style\.scss$/,
 				use: themeCSS.extract( extractConfig ),
 				include: /scss/,
 				exclude: /nux\.scss$/,
@@ -104,8 +113,9 @@ const config = {
 		new webpack.DefinePlugin( {
 			'process.env.NODE_ENV': JSON.stringify( process.env.NODE_ENV || 'development' ),
 		} ),
-		nuxCSS,
 		themeCSS,
+		nuxCSS,
+		editorCSS,
 		new SpritePlugin(),
 		new webpack.ProvidePlugin( {
 			$: 'jquery',

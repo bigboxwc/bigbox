@@ -6,6 +6,7 @@
 // @see webpack.config.js
 import '../scss/nux.scss';
 import '../scss/style.scss';
+import '../scss/editor.scss';
 
 import '../images/*.svg';
 import '../images/icons/*.svg';

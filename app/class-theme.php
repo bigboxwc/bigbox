@@ -40,6 +40,9 @@ final class Theme implements Registerable {
 	 * @since 1.0.0
 	 */
 	public function load_helpers() {
+		require_once get_template_directory() . '/app/customize/customize.php';
+		require_once get_template_directory() . '/app/nux/starter-content.php';
+
 		$helpers = [
 			'extras',
 			'views',
@@ -57,9 +60,6 @@ final class Theme implements Registerable {
 		foreach ( $helpers as $file ) {
 			require_once get_template_directory() . '/app/theme/' . $file . '.php';
 		}
-
-		require_once get_template_directory() . '/app/customize/customize.php';
-		require_once get_template_directory() . '/app/nux/starter-content.php';
 	}
 
 	/**

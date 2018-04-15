@@ -39,6 +39,35 @@ function bigbox_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'bigbox_enqueue_styles' );
 
 /**
+ * Editor styles
+ *
+ * @since 1.0.0
+ */
+function bigbox_editor_styles() {
+	$google = bigbox_get_google_fonts_url();
+	$styles = [ 'public/css/editor.min.css' ];
+
+	if ( $google ) {
+		$styles[] = $google;
+	}
+
+	add_editor_style( $styles );
+}
+add_action( 'after_setup_theme', 'bigbox_editor_styles' );
+
+/**
+ * Add type declarations to editor.
+ *
+ * @since 1.0.0
+ */
+function bigbox_editor_inline_styles( $mceInit ) {
+	$mceInit['content_style'] = require_once get_template_directory() . '/app/customize/output/editor.php';
+
+	return $mceInit;
+}
+add_filter( 'tiny_mce_before_init', 'bigbox_editor_inline_styles' );
+
+/**
  * Enqueue scripts.
  *
  * @since 1.0.0

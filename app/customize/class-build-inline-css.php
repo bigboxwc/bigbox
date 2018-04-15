@@ -22,33 +22,34 @@ if ( ! defined( 'ABSPATH' ) ) {
  * of conflicting rules and sorts out what the final CSS should be. The primary function is `add()`. It allows the
  * caller to add a new rule to be generated in the CSS.
  *
- * @since 1.0.0.
+ * @since 1.0.0
  */
 class Build_Inline_CSS {
+
 	/**
 	 * The array for storing added CSS rule data.
 	 *
-	 * @since 1.0.0.
+	 * @since 1.0.0
 	 *
-	 * @var array    Holds the data to be printed out.
+	 * @var array Holds the data to be printed out.
 	 */
 	private $data = array();
 
 	/**
 	 * Optional line ending character for debug mode.
 	 *
-	 * @since 1.0.0.
+	 * @since 1.0.0
 	 *
-	 * @var string    Line ending character used to better style the CSS.
+	 * @var string Line ending character used to better style the CSS.
 	 */
 	private $line_ending = '';
 
 	/**
 	 * Optional tab character for debug mode.
 	 *
-	 * @since 1.0.0.
+	 * @since 1.0.0
 	 *
-	 * @var string    Tab character used to better style the CSS.
+	 * @var string Tab character used to better style the CSS.
 	 */
 	private $tab = '';
 
@@ -60,22 +61,6 @@ class Build_Inline_CSS {
 	 * @var string    Space character used to better style the CSS.
 	 */
 	private $space = '';
-
-	/**
-	 * Initialize the object.
-	 *
-	 * @since  1.0.0.
-	 *
-	 * @return MAKE_Style_CSS
-	 */
-	function __construct() {
-		// Set line ending and tab
-		if ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) {
-			$this->line_ending = "\n";
-			$this->tab         = "\t";
-			$this->space       = ' ';
-		}
-	}
 
 	/**
 	 * Add a new CSS rule to the array.
@@ -97,11 +82,9 @@ class Build_Inline_CSS {
 	 * sanitization concerns, it must be handled at the time of addition, not at the time of output. The theme handles
 	 * this in the the other helper files, i.e., the data is already sanitized when `add()` is called.
 	 *
-	 * @since  1.0.0.
+	 * @since 1.0.0
 	 *
-	 * @param array $data    The selectors and properties to add to the CSS.
-	 *
-	 * @return void
+	 * @param array $data The selectors and properties to add to the CSS.
 	 */
 	public function add( array $data ) {
 		$entry = array();
@@ -162,9 +145,9 @@ class Build_Inline_CSS {
 	/**
 	 * Check if there are any items in the private data property array.
 	 *
-	 * @since 1.7.0.
+	 * @since 1.0.0
 	 *
-	 * @return bool    True if there are items.
+	 * @return bool
 	 */
 	public function has_rules() {
 		return ! empty( $this->data );
@@ -173,9 +156,9 @@ class Build_Inline_CSS {
 	/**
 	 * Compile the data array into standard CSS syntax
 	 *
-	 * @since  1.0.0.
+	 * @since 1.0.0.
 	 *
-	 * @return string    The CSS that is built from the data.
+	 * @return string The CSS that is built from the data.
 	 */
 	public function build() {
 		if ( ! $this->has_rules() ) {
@@ -220,12 +203,12 @@ class Build_Inline_CSS {
 	/**
 	 * Compile the selectors in a rule into a string.
 	 *
-	 * @since  1.0.0.
+	 * @since  1.0.0
 	 *
-	 * @param array  $selectors    Selectors to combine into single selector.
-	 * @param string $tab          Tab character.
+	 * @param array  $selectors Selectors to combine into single selector.
+	 * @param string $tab Tab character.
 	 *
-	 * @return string              Results of the selector combination.
+	 * @return string
 	 */
 	private function parse_selectors( $selectors, $tab = '' ) {
 		/**
@@ -241,12 +224,12 @@ class Build_Inline_CSS {
 	/**
 	 * Compile the declarations in a rule into a string.
 	 *
-	 * @since  1.0.0.
+	 * @since  1.0.0
 	 *
-	 * @param array  $declarations    Declarations for a selector.
-	 * @param string $tab             Tab character.
+	 * @param array  $declarations Declarations for a selector.
+	 * @param string $tab Tab character.
 	 *
-	 * @return string                 The combines declarations.
+	* @return string
 	 */
 	private function parse_declarations( $declarations, $tab = '' ) {
 		$n = $this->line_ending;
