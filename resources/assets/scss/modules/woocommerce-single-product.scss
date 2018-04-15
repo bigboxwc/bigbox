@@ -9,13 +9,8 @@
 
 	.product_title {
 		color: theme-color("dark");
-		font-size: $font-size-lg;
-		margin: 0 0 $spacer;
-
-		@include media-breakpoint-up(lg) {
-			font-size: $font-size-xl;
-			margin: $spacer 0;
-		}
+		font-size: $font-size-xl;
+		margin: $spacer 0;
 	}
 
 	.summary {
