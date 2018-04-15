@@ -7,7 +7,7 @@
 //   md: 2
 // ) );
 //
-@mixin vertical-spacing( $property: "margin", $direction: "both", $grow: () ) {
+@mixin vertical-spacing( $property: "margin", $direction: "both", $grow: ( sm: 2 ) ) {
 
 	@if $direction == "both" or $direction == "up" {
 		#{$property}-top: $spacer;

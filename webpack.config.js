@@ -40,6 +40,10 @@ const editorCSS = new ExtractTextPlugin( {
 	filename: './public/css/editor.min.css',
 } );
 
+const gutenbergCSS = new ExtractTextPlugin( {
+	filename: './public/css/gutenberg.min.css',
+} );
+
 const config = {
 	entry: {
 		app: './resources/assets/js/app.js',
@@ -99,10 +103,14 @@ const config = {
 				include: /scss/,
 			},
 			{
+				test: /gutenberg\.scss$/,
+				use: gutenbergCSS.extract( extractConfig ),
+				include: /scss/,
+			},
+			{
 				test: /style\.scss$/,
 				use: themeCSS.extract( extractConfig ),
 				include: /scss/,
-				exclude: /nux\.scss$/,
 			},
 		],
 	},
@@ -116,6 +124,7 @@ const config = {
 		themeCSS,
 		nuxCSS,
 		editorCSS,
+		gutenbergCSS,
 		new SpritePlugin(),
 		new webpack.ProvidePlugin( {
 			$: 'jquery',

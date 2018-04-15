@@ -48,7 +48,14 @@ function bigbox_add_theme_support() {
 	// Gutenberg support.
 	add_theme_support( 'gutenberg' );
 	add_theme_support( 'align-wide' );
-	add_theme_support( 'editor-color-palette', [] );
+
+	$colors = bigbox_get_theme_colors();
+
+	foreach ( array_merge( $colors['scheme'], $colors['grays'] ) as $color => $data ) {
+		$scheme[] = bigbox_get_theme_color( $color );
+	}
+
+	add_theme_support( 'editor-color-palette', ...$scheme );
 
 	// Cusstom logo support.
 	add_theme_support(

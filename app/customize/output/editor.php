@@ -25,7 +25,7 @@ $size        = get_theme_mod( 'type-font-size', 1 );
 
 $css->add( [
 	'selectors'    => [
-		'html .mce-content-body',
+		'.mce-content-body',
 	],
 	'declarations' => [
 		'color' => esc_attr( $gray700 ),
@@ -34,7 +34,13 @@ $css->add( [
 
 $css->add( [
 	'selectors'    => [
-		'html .mce-content-body a',
+		'.mce-content-body a',
+		'.mce-content-body h1',
+		'.mce-content-body h2',
+		'.mce-content-body h3',
+		'.mce-content-body h4',
+		'.mce-content-body h5',
+		'.mce-content-body h6',
 	],
 	'declarations' => [
 		'color' => esc_attr( $gray800 ),
@@ -52,14 +58,14 @@ if ( $family ) {
 
 $css->add( [
 	'selectors'    => [
-		'html .mce-content-body',
+		'.mce-content-body',
 	],
 	'declarations' => $type,
 ] );
 
 $css->add( [
 	'selectors'    => [
-		'html .mce-content-body strong',
+		'.mce-content-body strong',
 	],
 	'declarations' => [
 		'font-weight' => $weight_bold,

@@ -102,6 +102,13 @@ final class Integrations implements Registerable, Service {
 					defined( 'FACETWP_VERSION' ) && FACETWP_VERSION,
 				],
 			],
+			'gutenberg'   => [
+				'slug'         => 'gutenberg',
+				'class'        => Integration\Gutenberg::class,
+				'dependencies' => [
+					function_exists( 'the_gutenberg_project' ),
+				],
+			],
 		];
 	}
 

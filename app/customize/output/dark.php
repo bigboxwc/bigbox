@@ -31,4 +31,13 @@ return [
 			'color' => esc_attr( $dark ),
 		],
 	],
+	// Solid border-color
+	[
+		'selectors'    => [
+			'.wp-block-quote:not(.is-large)',
+		],
+		'declarations' => [
+			'border-color' => esc_attr( $dark ),
+		],
+	],
 ];

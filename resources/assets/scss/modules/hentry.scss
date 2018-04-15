@@ -28,8 +28,9 @@
 // Gutenberg currently uses <ul>
 // @see https://github.com/WordPress/gutenberg/issues/5890
 .wp-block-gallery {
+	padding: 0;
+	list-style: none;
 
-	@include reset-list();
 	@include vertical-spacing("margin");
 
 	&.alignnone {
@@ -43,16 +44,89 @@
 	max-width: 200px;
 }
 
+.wp-block-button {
+	.wp-block-button__link {
+
+		@include button--primary();
+	}
+}
+
 .wp-block-pullquote {
 
 	@include vertical-spacing("margin");
 }
 
-.wp-caption {
+.wp-block-quote:not(.is-large) {
+	border-left: 4px solid color("dark");
+	margin: 0;
+	padding-left: $spacer;
 
+	@include vertical-spacing("margin");
+}
+
+.gallery {
+
+	@include vertical-spacing("margin");
+	@include make-row();
+}
+
+.gallery-item {
+	text-align: center;
+	margin: 0;
+	padding: $spacer;
+	display: block;
+
+	img,
+	a {
+		display: block;
+	}
+}
+
+.gallery-item a,
+.gallery-item a:hover,
+.gallery-item a:focus {
+	box-shadow: none;
+	background: none;
+	display: block;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
 }
 
 .gallery-caption {
+	display: block;
+}
+
+.wp-caption {
 
 }
 

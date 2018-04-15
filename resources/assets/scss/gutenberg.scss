@@ -1,0 +1,12 @@
+/**
+ * Variables.
+ */
+@import "variables/colors";
+@import "variables/fonts";
+
+.edit-post-visual-editor,
+.edit-post-visual-editor p,
+.editor-post-title .editor-post-title__input {
+	color: $body-color;
+	font-family: $font-family-sans-serif;
+}
