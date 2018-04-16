@@ -49,7 +49,10 @@
 }
 
 .woocommerce-product-details__short-description {
-	font-size: $font-size-sm;
+
+	@include media-breakpoint-up(lg) {
+		font-size: $font-size-sm;
+	}
 }
 
 .woocommerce-product-rating {

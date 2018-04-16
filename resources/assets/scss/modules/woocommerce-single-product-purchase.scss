@@ -4,6 +4,8 @@
 	@include make-col-ready();
 
 	@include media-breakpoint-up(xl) {
+		margin-top: 0;
+		min-width: 325px;
 
 		@include make-col(4);
 	}
@@ -60,8 +62,12 @@
 	.woocommerce-variation--loaded & {
 		border-bottom: 1px solid gray("200");
 
-		@include vertical-spacing("margin", "down");
-		@include vertical-spacing("padding", "down");
+		$map: (
+			sm: 1,
+		);
+
+		@include vertical-spacing("margin", "down", $map);
+		@include vertical-spacing("padding", "down", $map);
 	}
 }
 
