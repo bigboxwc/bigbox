@@ -29,6 +29,8 @@ return [
 			'.wp-block-separator',
 			'.comment',
 			'.comments',
+			'.single_variation_wrap',
+			'.woocommerce-variation--loaded .woocommerce-variation',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray200 ),

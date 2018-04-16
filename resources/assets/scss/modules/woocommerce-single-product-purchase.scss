@@ -42,10 +42,14 @@
 }
 
 .single_variation_wrap {
-	border-top: 1px solid color("light");
+	border-top: 1px solid gray("200");
 
-	@include vertical-spacing("margin", "up");
-	@include vertical-spacing("padding", "up");
+	$map: (
+		sm: 1,
+	);
+
+	@include vertical-spacing("margin", "up", $map);
+	@include vertical-spacing("padding", "up", $map);
 }
 
 .woocommerce-variation {
@@ -54,7 +58,7 @@
 	align-items: center;
 
 	.woocommerce-variation--loaded & {
-		border-bottom: 1px solid color("light");
+		border-bottom: 1px solid gray("200");
 
 		@include vertical-spacing("margin", "down");
 		@include vertical-spacing("padding", "down");
@@ -65,7 +69,11 @@
 .woocommerce-variation-availability,
 .woocommerce-variation-price {
 
-	@include vertical-spacing("margin", "down");
+	$map: (
+		sm: 1,
+	);
+
+	@include vertical-spacing("margin", "down", $map);
 
 	&:last-of-type {
 		margin-bottom: 0;

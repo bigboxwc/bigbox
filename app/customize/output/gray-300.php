@@ -9,8 +9,9 @@
  * @author Spencer Finnell
  */
 
-$gray300    = bigbox_get_theme_color( 'gray-300' );
-$gray300_50 = bigbox_hex_to_rgba( $gray300, 0.50 );
+$gray300 = bigbox_get_theme_color( 'gray-300' );
+$rgba50  = bigbox_hex_to_rgba( $gray300, 0.50 );
+$rgba75  = bigbox_hex_to_rgba( $gray300, 0.75 );
 
 return [
 	// Solid border-color
@@ -36,7 +37,7 @@ return [
 			'.woocommerce-loop-category__title',
 		],
 		'declarations' => [
-			'border-color' => esc_attr( $gray300_50 ),
+			'border-color' => esc_attr( $rgba50 ),
 		],
 	],
 	// RGBA .50 box-shadow
@@ -45,6 +46,25 @@ return [
 		],
 		'declarations' => [
 			'box-shadow' => '0 1px 0 ' . esc_attr( $gray300 ),
+		],
+	],
+
+	// @mixin card
+	[
+		'selectors'    => [
+			'.woocommerce-checkout-review-order',
+			'.woocommerce-message',
+			'.woocommerce-info',
+			'.woocommerce-purchase-form',
+			'.wc_payment_method [type="radio"] label',
+			'.woocommerce-verification-required',
+		],
+		'declarations' => [
+			'box-shadow'       => esc_attr( "{$rgba50} 0 1px 2px" ),
+			'border-color'     => esc_attr( $rgba75 ),
+
+			// To have a unifed mixin.
+			'background-color' => esc_attr( bigbox_hex_to_rgba( bigbox_get_theme_color( 'gray-100' ), 0.15 ) ),
 		],
 	],
 

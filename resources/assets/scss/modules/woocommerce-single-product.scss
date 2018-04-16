@@ -104,5 +104,6 @@
 
 .shop_attributes {
 	width: 100%;
-	margin-top: $spacer;
+
+	@include vertical-spacing("margin", "down");
 }

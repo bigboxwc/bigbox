@@ -36,10 +36,10 @@ return [
 	],
 	'light'     => [
 		'label'   => esc_html__( 'Light', 'bigbox' ),
-		'default' => '#fbfcff',
+		'default' => '#f7f7f7',
 	],
 	'dark'      => [
 		'label'   => esc_html__( 'Dark', 'bigbox' ),
-		'default' => '#3b4257',
+		'default' => '#353535',
 	],
 ];
