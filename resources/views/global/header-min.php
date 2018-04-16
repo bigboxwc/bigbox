@@ -30,13 +30,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<body <?php body_class( 'bigbox-minimal' ); ?>>
 
-		<div class="navbar">
+		<div class="navbar navbar--min">
 
 			<div class="navbar__inner">
-				<?php
-				bigbox_partial( 'navbar-mobile' );
-				bigbox_partial( 'branding' );
-				?>
+				<?php bigbox_partial( 'branding' ); ?>
 			</div>
 
 		</div>

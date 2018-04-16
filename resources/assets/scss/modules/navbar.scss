@@ -24,4 +24,12 @@
 	);
 
 	@include vertical-spacing("padding", "both", $map);
+
+	.navbar--min & {
+		$map: (
+			md: 1.25,
+		);
+
+		@include vertical-spacing("padding", "both", $map);
+	}
 }
