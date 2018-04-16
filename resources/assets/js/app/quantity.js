@@ -14,7 +14,7 @@ const globalMax = bigbox.products.quantitySelector.max;
  *
  * @param {Int} max Number of items to generate.
  */
-const getOptions = ( max: globalMax ) => {
+const getOptions = ( max = globalMax ) => {
 	if ( items.length > 0 && max <= globalMax ) {
 		return items;
 	}
@@ -52,7 +52,7 @@ export const transformInput = function( $qty, variation = false ) {
 	let max = variation.max_qty || ( $original.attr( 'max' ) ? parseInt( $original.attr( 'max' ) ) : globalMax );
 
 	// If max (or globalMax) is less than original value reset max with padding.
-	if ( max < selectedValue ) {
+	if ( max < selectedValue || selectedValue === max ) {
 		max = parseInt( selectedValue + globalMax );
 	}
 

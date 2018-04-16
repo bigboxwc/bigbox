@@ -1,9 +1,26 @@
 /**
  * External dependencies
  */
-const webpack = require( 'webpack' );
-const ExtractTextPlugin = require( 'extract-text-webpack-plugin' ); // CSS loader for styles specific to block editing.
-const SpritePlugin = require( 'svg-sprite-loader/plugin' );
+const webpack           = require( 'webpack' );
+const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+const WebpackRTLPlugin  = require( 'webpack-rtl-plugin' );
+const SpritePlugin      = require( 'svg-sprite-loader/plugin' );
+
+const themeCSS = new ExtractTextPlugin( {
+	filename: './public/css/app.min.css',
+} );
+
+const nuxCSS = new ExtractTextPlugin( {
+	filename: './public/css/nux.min.css',
+} );
+
+const editorCSS = new ExtractTextPlugin( {
+	filename: './public/css/editor.min.css',
+} );
+
+const gutenbergCSS = new ExtractTextPlugin( {
+	filename: './public/css/gutenberg.min.css',
+} );
 
 // Configuration for the ExtractTextPlugin.
 const extractConfig = {
@@ -28,23 +45,8 @@ const extractConfig = {
 	],
 };
 
-const themeCSS = new ExtractTextPlugin( {
-	filename: './public/css/app.min.css',
-} );
-
-const nuxCSS = new ExtractTextPlugin( {
-	filename: './public/css/nux.min.css',
-} );
-
-const editorCSS = new ExtractTextPlugin( {
-	filename: './public/css/editor.min.css',
-} );
-
-const gutenbergCSS = new ExtractTextPlugin( {
-	filename: './public/css/gutenberg.min.css',
-} );
-
 const config = {
+	mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
 	entry: {
 		app: './resources/assets/js/app.js',
 		'license-manager': './resources/assets/js/license-manager',
@@ -116,11 +118,9 @@ const config = {
 	},
 	externals: {
 		jquery: 'jQuery',
+		$: 'jQuery',
 	},
 	plugins: [
-		new webpack.DefinePlugin( {
-			'process.env.NODE_ENV': JSON.stringify( process.env.NODE_ENV || 'development' ),
-		} ),
 		themeCSS,
 		nuxCSS,
 		editorCSS,
@@ -130,19 +130,16 @@ const config = {
 			$: 'jquery',
 			jQuery: 'jquery',
 			'window.jQuery': 'jquery',
-			Popper: [ 'popper.js', 'default' ],
-			Util: 'exports-loader?Util!bootstrap/js/dist/util',
+		} ),
+		new WebpackRTLPlugin( {
+			suffix: '-rtl',
+			minify: process.env.NODE_ENV === 'production' ? { safe: true } : false,
 		} ),
 	],
 };
 
-switch ( process.env.NODE_ENV ) {
-	case 'production':
-		config.plugins.push( new webpack.optimize.UglifyJsPlugin() );
-		break;
-
-	default:
-		config.devtool = 'source-map';
+if ( config.mode !== 'production' ) {
+	config.devtool = process.env.SOURCEMAP || 'source-map';
 }
 
 module.exports = config;
