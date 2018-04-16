@@ -95,6 +95,10 @@
 			background-color: gray("800");
 			width: 6px;
 			height: 11px;
+
+			.rtl & {
+				mask-image: url("../images/arrow-left.svg");
+			}
 		}
 	}
 }

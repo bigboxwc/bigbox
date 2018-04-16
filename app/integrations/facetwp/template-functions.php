@@ -50,11 +50,11 @@ function bigbox_facetwp_pagination_output( $output, $params ) {
 	$next = '';
 
 	if ( $page > 1 ) {
-		$prev = '<a data-page="' . ( $page - 1 ) . '" class="facetwp-page prev">' . bigbox_get_svg( array( 'icon' => 'arrow-left' ) ) . esc_html__( 'Previous Page', 'bigbox' ) . '</a>';
+		$prev = '<a data-page="' . ( $page - 1 ) . '" class="facetwp-page prev">' . bigbox_get_svg( 'arrow-' . ( is_rtl() ? 'right' : 'left' ) ) . esc_html__( 'Previous Page', 'bigbox' ) . '</a>';
 	}
 
 	if ( $page < $total_pages && $total_pages > 1 ) {
-		$next = '<a data-page="' . ( $page + 1 ) . '" class="facetwp-page next">' . esc_html__( 'Next Page', 'bigbox' ) . bigbox_get_svg( array( 'icon' => 'arrow-right' ) ) . '</a>';
+		$next = '<a data-page="' . ( $page + 1 ) . '" class="facetwp-page next">' . esc_html__( 'Next Page', 'bigbox' ) . bigbox_get_svg( 'arrow-' . ( is_rtl() ? 'left' : 'right' ) ) . '</a>';
 	}
 
 	return $prev . $output . $next;

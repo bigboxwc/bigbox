@@ -52,7 +52,10 @@ function bigbox_woocommerce_js_settings( $settings ) {
 	$settings['products'] = [
 		'quantitySelector' => [
 			'zero' => esc_html_x( '0 (remove)', 'quantity selector', 'bigbox' ),
-			'max'  => 30,
+			'max'  => apply_filters(
+				'bigbox_woocommerce_quantity_selector_max',
+				30
+			),
 		],
 	];
 
@@ -403,8 +406,8 @@ function bigbox_woocommerce_breadcrumb_defaults( $args ) {
  * @return array
  */
 function bigbox_woocommerce_pagination_args( $args ) {
-	$args['prev_text'] = bigbox_get_svg( array( 'icon' => 'arrow-left' ) ) . esc_html__( 'Previous Page', 'bigbox' );
-	$args['next_text'] = esc_html__( 'Next Page', 'bigbox' ) . bigbox_get_svg( array( 'icon' => 'arrow-right' ) );
+	$args['prev_text'] = bigbox_get_svg( 'arrow-' . ( is_rtl() ? 'left' : 'right' ) ) . esc_html__( 'Previous Page', 'bigbox' );
+	$args['next_text'] = esc_html__( 'Next Page', 'bigbox' ) . bigbox_get_svg( 'arrow-' . ( is_rtl() ? 'left' : 'right' ) );
 
 	return $args;
 }
@@ -423,14 +426,14 @@ function bigbox_woocommerce_single_product_carousel_options( $args ) {
 	$args['nextText'] = bigbox_get_svg(
 		[
 			'title' => __( 'Next', 'bigbox' ),
-			'icon'  => 'arrow-right',
+			'icon'  => 'arrow-' . ( is_rtl() ? 'left' : 'right' ),
 		]
 	);
 
 	$args['prevText'] = bigbox_get_svg(
 		[
 			'title' => __( 'Previous', 'bigbox' ),
-			'icon'  => 'arrow-left',
+			'icon'  => 'arrow-' . ( is_rtl() ? 'right' : 'left' ),
 		]
 	);
 

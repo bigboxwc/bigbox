@@ -214,6 +214,10 @@ $menu-break-point: md;
 
 			&:after {
 				mask-image: url("../images/arrow-right.svg");
+
+				.rtl & {
+					mask-image: url("../images/arrow-left.svg");
+				}
 			}
 		}
 	}
@@ -242,6 +246,10 @@ $menu-break-point: md;
 				left: 0;
 				right: auto;
 				mask-image: url("../images/arrow-left.svg");
+
+				.rtl & {
+					mask-image: url("../images/arrow-right.svg");
+				}
 			}
 		}
 	}
