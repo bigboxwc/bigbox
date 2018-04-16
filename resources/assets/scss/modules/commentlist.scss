@@ -8,12 +8,6 @@
 	@include reset-list();
 }
 
-.comment {
-	font-size: $font-size-sm;
-	margin: $spacer 0;
-	padding-bottom: $spacer;
-}
-
 .comment-text {
 	display: flex;
 	flex-flow: row wrap;

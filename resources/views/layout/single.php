@@ -28,9 +28,14 @@ while ( have_posts() ) :
 		<?php
 		the_content();
 		wp_link_pages();
-		comments_template( '/resources/views/partials/content-comments.php' );
 		?>
 	</div>
+
+	<?php
+	printf( '<p class="blog-post__meta">' . __( 'Categories: %s', 'bigbox' ) . '</p>', get_the_category_list( ', ' ) );
+	the_tags( '<p class="blog-post__meta">' . __( 'Tags: ', 'bigbox' ), ', ', '</p>' );
+	comments_template( '/resources/views/partials/content-comments.php' );
+	?>
 </div>
 
 <?php

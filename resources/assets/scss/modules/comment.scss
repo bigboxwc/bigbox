@@ -1,0 +1,51 @@
+.comment {
+	font-size: $font-size-sm;
+	margin: $spacer 0;
+	padding-bottom: $spacer;
+	border-bottom: 1px solid gray("200");
+
+	&:last-child {
+		border-bottom: 0;
+	}
+}
+
+.comment-author,
+.comment-body {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	p {
+		width: 100%;
+	}
+}
+
+.comment-author {
+	
+	.fn {
+		font-style: normal;
+		margin: 0 0 0 $spacer;
+	}
+
+	.says {
+		display: none;
+	}
+
+	img {
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+	}
+}
+
+.comment-meta {
+
+	&:before {
+		margin: 0 4px;
+		content: "–";
+	}
+
+	a {
+		text-decoration: none;
+	}
+}

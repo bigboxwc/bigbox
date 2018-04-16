@@ -25,23 +25,26 @@ endif;
 if ( have_comments() ) :
 ?>
 
-<h3 class="commentlist-title ">
-	<?php comments_number( esc_html__( '0 Comments', 'bigbox' ), esc_html__( '1 Comment', 'bigbox' ), esc_html__( '% Comments', 'bigbox' ) ); ?>
-</h3>
+<div class="comments">
+	<h3 class="commentlist-title ">
+		<?php comments_number( esc_html__( '0 Comments', 'bigbox' ), esc_html__( '1 Comment', 'bigbox' ), esc_html__( '% Comments', 'bigbox' ) ); ?>
+	</h3>
+
+	<?php
+	endif;
+
+	if ( have_comments() ) :
+	?>
+
+	<ol class="commentlist">
+		<?php wp_list_comments(); ?>
+	</ol>
+
+	<?php the_comments_pagination(); ?>
+
+</div>
 
 <?php
-endif;
-
-if ( have_comments() ) :
-?>
-
-<ol class="commentlist">
-	<?php wp_list_comments(); ?>
-</ol>
-
-<?php 
-the_comments_pagination();
-
 endif;
 
 if ( comments_open() ) :

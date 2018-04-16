@@ -1,7 +1,5 @@
 .blog-post {
 	text-align: center;
-	margin: 0 0 $spacer;
-	padding: $spacer 0;
 	border-bottom: 1px solid gray("200");
 
 	$map: (
@@ -19,4 +17,13 @@
 	a {
 		text-decoration: none;
 	}
+}
+
+.blog-post__content {
+
+	@include vertical-spacing("margin", "down");
+}
+
+.blog-post__meta {
+	font-size: $font-size-sm;
 }

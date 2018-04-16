@@ -23,3 +23,13 @@
 	border-radius: $border-radius;
 	appearance: none;
 }
+
+@mixin form-label--with-checkbox {
+	font-size: $font-size-sm;
+	display: flex;
+	align-items: center;
+
+	[type="checkbox"] {
+		margin-right: 6px;
+	}
+}

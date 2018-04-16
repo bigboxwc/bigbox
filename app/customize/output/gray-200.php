@@ -27,6 +27,8 @@ return [
 			'.woocommerce-single-product-data__section',
 			'.footer-nav',
 			'.wp-block-separator',
+			'.comment',
+			'.comments',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray200 ),

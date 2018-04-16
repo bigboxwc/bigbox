@@ -1,5 +1,6 @@
 .comment-respond {
 
+	@include vertical-spacing("margin", "both");
 }
 
 .comment-form {
@@ -12,5 +13,13 @@
 	[type="submit"] {
 
 		@include button--primary();
+	}
+}
+
+.comment-form-cookies-consent {
+
+	label {
+
+		@include form-label--with-checkbox();
 	}
 }

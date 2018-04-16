@@ -1,0 +1,6 @@
+.comments {
+	border-top: 1px solid gray("200");
+
+	@include vertical-spacing("margin", "both");
+	@include vertical-spacing("padding", "up");
+}
