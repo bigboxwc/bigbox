@@ -18,4 +18,10 @@
 	padding-top: $spacer;
 	padding-bottom: $spacer;
 	position: relative;
+
+	$map: (
+		md: 0.5,
+	);
+
+	@include vertical-spacing("padding", "both", $map);
 }
