@@ -40,7 +40,7 @@ add_action( 'customize_register', 'bigbox_customize_register_type_sections' );
 function bigbox_customize_register_type_controls( $wp_customize ) {
 	$wp_customize->add_setting(
 		'type-font-family', [
-			'default'           => 'default',
+			'default'           => 'Lato',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
 		]
@@ -82,11 +82,11 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 	$weights = [
 		'base' => [
 			'label'  => esc_html__( 'Base Font Weight', 'bigbox' ),
-			'weight' => 400,
+			'weight' => 'regular',
 		],
 		'bold' => [
 			'label'  => esc_html__( 'Bold Font Weight', 'bigbox' ),
-			'weight' => 500,
+			'weight' => 700,
 		],
 	];
 
@@ -95,7 +95,7 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 
 		$wp_customize->add_setting(
 			$key, [
-				'default'           => 'normal',
+				'default'           => $data['weight'],
 				'transport'         => 'postMessage',
 				'sanitize_callback' => 'sanitize_text_field',
 			]

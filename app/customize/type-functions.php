@@ -17,7 +17,7 @@
  * @return string
  */
 function bigbox_get_theme_font_family() {
-	$family = get_theme_mod( 'type-font-family', 'default' );
+	$family = get_theme_mod( 'type-font-family', 'Lato' );
 
 	if ( 'default' === $family ) {
 		return false;
@@ -35,7 +35,7 @@ function bigbox_get_theme_font_family() {
  * @return string
  */
 function bigbox_get_theme_font_weight( $weight = 'base' ) {
-	$weight = get_theme_mod( "type-font-weight-{$weight}", 'base' === $weight ? 400 : 500 );
+	$weight = get_theme_mod( "type-font-weight-{$weight}", 'base' === $weight ? 400 : 700 );
 
 	if ( 'regular' === $weight ) {
 		return 400;
