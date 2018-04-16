@@ -9,9 +9,127 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2018-03-28T20:54:36+00:00\n"
-"PO-Revision-Date: 2018-03-28T20:54:36+00:00\n"
+"POT-Creation-Date: 2018-04-16T22:13:14+00:00\n"
+"PO-Revision-Date: 2018-04-16T22:13:14+00:00\n"
 "X-Domain: bigbox\n"
+
+#: app/customize/config/colors-grays.php:14
+msgid "Gray 100"
+msgstr ""
+
+#: app/customize/config/colors-grays.php:18
+msgid "Gray 200"
+msgstr ""
+
+#: app/customize/config/colors-grays.php:22
+msgid "Gray 300"
+msgstr ""
+
+#: app/customize/config/colors-grays.php:26
+msgid "Gray 400"
+msgstr ""
+
+#: app/customize/config/colors-grays.php:30
+msgid "Gray 500"
+msgstr ""
+
+#: app/customize/config/colors-grays.php:34
+msgid "Gray 600"
+msgstr ""
+
+#: app/customize/config/colors-grays.php:38
+msgid "Gray 700"
+msgstr ""
+
+#: app/customize/config/colors-grays.php:42
+msgid "Gray 800"
+msgstr ""
+
+#: app/customize/config/colors-scheme.php:14
+#: app/theme/nav-menus.php:23
+msgid "Primary"
+msgstr ""
+
+#: app/customize/config/colors-scheme.php:18
+#: app/theme/nav-menus.php:24
+msgid "Secondary"
+msgstr ""
+
+#: app/customize/config/colors-scheme.php:22
+msgid "Success"
+msgstr ""
+
+#: app/customize/config/colors-scheme.php:26
+msgid "Information"
+msgstr ""
+
+#: app/customize/config/colors-scheme.php:30
+msgid "Warning"
+msgstr ""
+
+#: app/customize/config/colors-scheme.php:34
+msgid "Danger"
+msgstr ""
+
+#: app/customize/config/colors-scheme.php:38
+msgid "Light"
+msgstr ""
+
+#: app/customize/config/colors-scheme.php:42
+msgid "Dark"
+msgstr ""
+
+#: app/customize/controls/colors.php:27
+msgctxt "customizer panel title"
+msgid "Colors"
+msgstr ""
+
+#: app/customize/controls/colors.php:44
+msgctxt "customizer section title (colors)"
+msgid "Scheme"
+msgstr ""
+
+#: app/customize/controls/colors.php:52
+msgctxt "customizer section title (colors)"
+msgid "Grays"
+msgstr ""
+
+#: app/customize/controls/type.php:26
+msgctxt "customizer section title (type)"
+msgid "Typography"
+msgstr ""
+
+#: app/customize/controls/type.php:51
+msgid "Font Family"
+msgstr ""
+
+#: app/customize/controls/type.php:54
+msgid "System Default"
+msgstr ""
+
+#: app/customize/controls/type.php:70
+msgid "Base Font Size"
+msgstr ""
+
+#: app/customize/controls/type.php:71
+msgid "Value is measured in <code>em</code>. 1em = 16px"
+msgstr ""
+
+#: app/customize/controls/type.php:84
+msgid "Base Font Weight"
+msgstr ""
+
+#: app/customize/controls/type.php:88
+msgid "Bold Font Weight"
+msgstr ""
+
+#: app/customize/controls/wordpress.php:30
+msgid "Not output but used for SEO"
+msgstr ""
+
+#: app/customize/controls/wordpress.php:33
+msgid "Display Site Title"
+msgstr ""
 
 #: app/exception/class-invalidintegration.php:37
 msgid "The integration \"%s\" is not recognized and cannot be registered."
@@ -21,89 +139,146 @@ msgstr ""
 msgid "The service \"%s\" is not recognized and cannot be registered."
 msgstr ""
 
-#: app/integrations/facetwp/template-functions.php:42
-#: app/integrations/woocommerce/template-functions.php:309
-msgid "&larr; Previous Page"
+#: app/integrations/facetwp/customize/controls/navbar.php:70
+msgid "Dropdown Facet"
 msgstr ""
 
-#: app/integrations/facetwp/template-functions.php:46
-#: app/integrations/woocommerce/template-functions.php:310
-msgid "Next Page &rarr;"
+#: app/integrations/facetwp/customize/controls/navbar.php:71
+msgid "Choose from one of your Dropdown facets. This facet cannot appear on the Shop page twice."
 msgstr ""
 
-#: app/integrations/facetwp/template-functions.php:73
+#: app/integrations/facetwp/customize/controls/navbar.php:81
+msgid "Keyword Facet"
+msgstr ""
+
+#: app/integrations/facetwp/customize/controls/navbar.php:82
+msgid "Choose from one of your Search facets. This facet cannot appear on the Shop page twice."
+msgstr ""
+
+#: app/integrations/facetwp/template-functions.php:53
+#: app/integrations/woocommerce/template-functions.php:406
+#: resources/views/partials/content-pagination.php:20
+msgid "Previous Page"
+msgstr ""
+
+#: app/integrations/facetwp/template-functions.php:57
+#: app/integrations/woocommerce/template-functions.php:407
+#: resources/views/partials/content-pagination.php:19
+msgid "Next Page"
+msgstr ""
+
+#: app/integrations/facetwp/template-functions.php:84
 #: app/integrations/woocommerce/templates/loop/result-count.php:27
 msgid "Showing the single result"
 msgid_plural "Showing all %d results"
 msgstr[0] ""
 
-#: app/integrations/facetwp/template-functions.php:78
+#: app/integrations/facetwp/template-functions.php:89
 msgid "Showing %1$s&ndash;%2$s of %3$s results"
 msgstr ""
 
-#: app/integrations/woocommerce/checkout.php:43
+#: app/integrations/facetwp/views/partials/navbar-search.php:98
+#: app/integrations/woocommerce/templates/global/navbar-search.php:75
+msgid "Search"
+msgstr ""
+
+#: app/integrations/woocommerce/checkout.php:39
 msgid "2. Billing Details"
 msgstr ""
 
-#: app/integrations/woocommerce/checkout.php:47
+#: app/integrations/woocommerce/checkout.php:43
 msgid "2. Billing &amp; Shipping"
 msgstr ""
 
-#: app/integrations/woocommerce/checkout.php:83
-msgid "Apartment, suite, etc"
+#: app/integrations/woocommerce/customize/controls/navbar.php:53
+msgctxt "customizer section title (header search)"
+msgid "Header Settings"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:149
-msgid "See More Options"
+#: app/integrations/woocommerce/customize/controls/navbar.php:80
+msgid "Dropdown Source"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:185
-msgid "Product description"
+#: app/integrations/woocommerce/customize/controls/navbar.php:99
+msgid "Display account menu item"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:191
-msgid "Product information"
+#: app/integrations/woocommerce/customize/controls/navbar.php:116
+msgid "Display cart menu item"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:196
-msgid "You may also enjoy"
+#: app/integrations/woocommerce/nav-menus.php:29
+msgid "Product Category List"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:202
-msgid "Related products"
+#: app/integrations/woocommerce/template-functions.php:54
+msgctxt "quantity selector"
+msgid "0 (remove)"
+msgstr ""
+
+#: app/integrations/woocommerce/template-functions.php:189
+msgid "More..."
 msgstr ""
 
 #: app/integrations/woocommerce/template-functions.php:226
+msgid "See More Options"
+msgstr ""
+
+#: app/integrations/woocommerce/template-functions.php:262
+msgid "Product description"
+msgstr ""
+
+#: app/integrations/woocommerce/template-functions.php:268
+msgid "Product information"
+msgstr ""
+
+#: app/integrations/woocommerce/template-functions.php:273
+msgid "You may also enjoy"
+msgstr ""
+
+#: app/integrations/woocommerce/template-functions.php:279
+msgid "Related products"
+msgstr ""
+
+#: app/integrations/woocommerce/template-functions.php:323
 msgid "SKU:"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:227
+#: app/integrations/woocommerce/template-functions.php:324
 msgid "N/A"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:234
+#: app/integrations/woocommerce/template-functions.php:331
 msgid "Category:"
 msgid_plural "Categories:"
 msgstr[0] ""
 
-#: app/integrations/woocommerce/template-functions.php:236
+#: app/integrations/woocommerce/template-functions.php:333
 msgid "Tag:"
 msgid_plural "Tags:"
 msgstr[0] ""
 
-#: app/integrations/woocommerce/template-functions.php:256
+#: app/integrations/woocommerce/template-functions.php:353
 msgid "%1$s average rating"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:259
+#: app/integrations/woocommerce/template-functions.php:356
 msgid "%1$s customer ratings"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/cart/cart-item.php:66
+#: app/integrations/woocommerce/template-functions.php:425
+msgid "Next"
+msgstr ""
+
+#: app/integrations/woocommerce/template-functions.php:432
+msgid "Previous"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/cart/cart-item.php:57
 msgid "Available on backorder"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/cart/cart-item.php:77
+#: app/integrations/woocommerce/templates/cart/cart-item.php:69
 msgid "%1$s &times %2$s"
 msgstr ""
 
@@ -137,12 +312,12 @@ msgid "Total"
 msgstr ""
 
 #. Template Name of the theme
-#: resources/views/partials/navbar-primary-menu.php:38
+#: resources/views/partials/navbar-menu-account.php:53
 msgid "Cart"
 msgstr ""
 
 #: app/integrations/woocommerce/templates/cart.php:41
-msgid "Do you have a gift card or promotional code? We'll ask you to enter your claim code when it's time to pay."
+msgid "Do you have a coupon or promotional code? We'll ask you to enter your claim code when it's time to pay."
 msgstr ""
 
 #: app/integrations/woocommerce/templates/checkout/form-checkout.php:27
@@ -181,20 +356,40 @@ msgstr ""
 msgid "Checkout"
 msgstr ""
 
+#: app/integrations/woocommerce/templates/global/navbar-search.php:30
+msgid "All %s"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/global/navbar-search.php:37
+msgid "Choose a %s"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/global/navbar-search.php:70
+msgid "Find a product"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/global/navbar-search.php:71
+msgid "Find a product..."
+msgstr ""
+
 #: app/integrations/woocommerce/templates/global/quantity-input.php:28
-#: app/integrations/woocommerce/templates/global/quantity-input.php:68
+#: app/integrations/woocommerce/templates/global/quantity-input.php:69
 msgid "Quantity"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/global/quantity-input.php:64
+#: app/integrations/woocommerce/templates/global/quantity-input.php:65
 #: app/integrations/woocommerce/templates/single-product/add-to-cart/quantity.php:17
 msgid "%s quantity"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/global/quantity-input.php:79
+#: app/integrations/woocommerce/templates/global/quantity-input.php:80
 #: app/integrations/woocommerce/templates/single-product/add-to-cart/quantity.php:30
 msgctxt "Product quantity input tooltip"
 msgid "Qty"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/loop/no-products-found.php:25
+msgid "No products were found matching your selection."
 msgstr ""
 
 #: app/integrations/woocommerce/templates/loop/result-count.php:32
@@ -211,83 +406,115 @@ msgstr ""
 msgid "Sale!"
 msgstr ""
 
+#: app/integrations/woocommerce/templates/loop/shop-filters-mobile.php:24
+msgid "Filter"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/loop/shop-filters-mobile.php:26
+msgid "Filter Results"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/loop/shop-filters-mobile.php:32
+#: app/integrations/woocommerce/templates/loop/shop-filters-mobile.php:39
+msgid "Close filters"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/loop/shop-filters-mobile.php:33
+#: resources/views/partials/navbar-mobile.php:29
+msgid "Close"
+msgstr ""
+
 #: app/integrations/woocommerce/templates/single-product/add-to-cart/variable.php:31
 msgid "This product is currently out of stock and unavailable."
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product/add-to-cart/variable.php:56
+#: app/integrations/woocommerce/templates/single-product/add-to-cart/variable.php:57
 msgid "Select an option"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/single-product/add-to-cart/variation.php:32
+msgid "Sorry, this product is unavailable. Please choose a different combination."
 msgstr ""
 
 #: app/integrations/woocommerce/templates/single-product/product-image.php:52
 msgid "Awaiting product image"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product-reviews.php:31
-msgid "Product reviews"
+#: app/integrations/woocommerce/templates/single-product/review-breakdown.php:24
+msgid "%1$s out of 5 stars"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product-reviews.php:57
+#: app/integrations/woocommerce/templates/single-product/review-breakdown.php:35
+msgid "%1$d Star"
+msgid_plural "%1$d Stars"
+msgstr[0] ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:34
+msgid "%d customer review"
+msgid_plural "%d customer reviews"
+msgstr[0] ""
+
+#: app/integrations/woocommerce/templates/single-product-reviews.php:60
 msgid "There are no reviews yet."
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product-reviews.php:70
-msgid "Add a review"
+#: app/integrations/woocommerce/templates/single-product-reviews.php:73
+msgid "Write a customer review"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product-reviews.php:71
-msgid "Leave a Reply to %s"
+#: app/integrations/woocommerce/templates/single-product-reviews.php:74
+msgid "Write a customer review for %s"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product-reviews.php:76
+#: app/integrations/woocommerce/templates/single-product-reviews.php:79
 msgid "Name"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product-reviews.php:78
+#: app/integrations/woocommerce/templates/single-product-reviews.php:81
 msgid "Email"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product-reviews.php:81
-msgid "Submit"
+#: app/integrations/woocommerce/templates/single-product-reviews.php:84
+msgid "Submit Review"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product-reviews.php:87
+#: app/integrations/woocommerce/templates/single-product-reviews.php:90
 msgid "You must be <a href=\"%s\">logged in</a> to post a review."
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product-reviews.php:91
+#: app/integrations/woocommerce/templates/single-product-reviews.php:94
 msgid "Your rating"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product-reviews.php:92
+#: app/integrations/woocommerce/templates/single-product-reviews.php:95
 msgid "Rate&hellip;"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product-reviews.php:93
+#: app/integrations/woocommerce/templates/single-product-reviews.php:96
 msgid "Perfect"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product-reviews.php:94
+#: app/integrations/woocommerce/templates/single-product-reviews.php:97
 msgid "Good"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product-reviews.php:95
+#: app/integrations/woocommerce/templates/single-product-reviews.php:98
 msgid "Average"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product-reviews.php:96
+#: app/integrations/woocommerce/templates/single-product-reviews.php:99
 msgid "Not that bad"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product-reviews.php:97
+#: app/integrations/woocommerce/templates/single-product-reviews.php:100
 msgid "Very poor"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product-reviews.php:101
+#: app/integrations/woocommerce/templates/single-product-reviews.php:104
 msgid "Your review"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product-reviews.php:110
+#: app/integrations/woocommerce/templates/single-product-reviews.php:113
 msgid "Only logged in customers who have purchased this product may leave a review."
 msgstr ""
 
@@ -297,6 +524,10 @@ msgstr ""
 
 #: app/integrations/woocommerce/widgets.php:36
 msgid "Shop Sidebar (Right)"
+msgstr ""
+
+#: app/integrations/woocommerce/widgets.php:48
+msgid "Shop Sidebar (Comments)"
 msgstr ""
 
 #: app/nux/class-setup-guide.php:44
@@ -321,24 +552,28 @@ msgstr ""
 msgid "BigBox"
 msgstr ""
 
-#: app/nux/license-manager/class-license-manager.php:118
+#: app/nux/license-manager/class-license-manager.php:116
 msgid "Enter license key..."
 msgstr ""
 
-#: app/nux/license-manager/class-license-manager.php:119
+#: app/nux/license-manager/class-license-manager.php:117
 msgid "Activate License"
 msgstr ""
 
-#: app/nux/license-manager/class-license-manager.php:120
+#: app/nux/license-manager/class-license-manager.php:118
 msgid "License Status"
 msgstr ""
 
-#: app/nux/license-manager/class-license-manager.php:121
+#: app/nux/license-manager/class-license-manager.php:119
 msgid "Valid"
 msgstr ""
 
-#: app/nux/license-manager/class-license-manager.php:122
-msgid "Invalid"
+#: app/nux/license-manager/class-license-manager.php:120
+msgid "Inactive: not receiving automatic updates notifications."
+msgstr ""
+
+#: app/nux/license-manager/class-license-manager.php:121
+msgid "Deactivate"
 msgstr ""
 
 #: app/nux/license-manager/class-theme-updater.php:178
@@ -346,41 +581,28 @@ msgctxt "admin menu item update count"
 msgid "Themes %s"
 msgstr ""
 
-#: app/theme/customize.php:30
-msgid "Not output but used for SEO"
-msgstr ""
-
-#: app/theme/customize.php:33
-msgid "Display Site Title"
-msgstr ""
-
-#: app/theme/nav-menus.php:23
-msgid "Primary Left"
-msgstr ""
-
-#: app/theme/nav-menus.php:24
-msgid "Primary Right"
-msgstr ""
-
 #. Template Name of the theme
 #: app/theme/page-templates.php:29
-msgid "Narrow-width"
+msgid "Narrow (10 columns)"
 msgstr ""
 
-#. Template Name of the theme
 #: app/theme/page-templates.php:30
-msgid "Minimal"
+msgid "Minimal (10 columns)"
 msgstr ""
 
 #: app/theme/page-templates.php:31
-msgid "Minimal (Narrow-width)"
+msgid "Minimal (8 columns)"
+msgstr ""
+
+#: app/theme/page-templates.php:32
+msgid "Minimal (5 columns)"
 msgstr ""
 
 #: app/theme/svg.php:59
 msgid "Please define an SVG icon filename."
 msgstr ""
 
-#: app/theme/widgets.php:29
+#: app/theme/widgets.php:57
 msgid "Footer Navigation Column %d"
 msgstr ""
 
@@ -388,12 +610,40 @@ msgstr ""
 msgid "BigBox requires PHP version <code>%s</code> or above to be active. Please contact your web host to upgrade."
 msgstr ""
 
-#: resources/views/layout/index.php:21
+#: resources/views/layout/404.php:21
+msgid "Page Not Found"
+msgstr ""
+
+#: resources/views/layout/404.php:22
+msgid "Try searching again!"
+msgstr ""
+
+#: resources/views/layout/404.php:23
+msgid "Go Home"
+msgstr ""
+
+#: resources/views/layout/index.php:25
 msgid "Blog"
 msgstr ""
 
 #. Template Name of the theme
-msgid "Minimal (Narrow)"
+msgid "Minimal (5 Columns)"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Minimal (8 Columns)"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Minimal"
+msgstr ""
+
+#: resources/views/layout/single.php:35
+msgid "Categories: %s"
+msgstr ""
+
+#: resources/views/layout/single.php:36
+msgid "Tags: "
 msgstr ""
 
 #: resources/views/nux/admin-page.php:20
@@ -410,6 +660,26 @@ msgstr ""
 
 #: resources/views/nux/admin-page.php:32
 msgid "Contact Support"
+msgstr ""
+
+#: resources/views/nux/steps/customize.php:17
+msgid "Manage the appearance and behavior of various theme components with the live customizer."
+msgstr ""
+
+#: resources/views/nux/steps/customize.php:21
+msgid "Add a custom logo"
+msgstr ""
+
+#: resources/views/nux/steps/customize.php:25
+msgid "Update homepage display"
+msgstr ""
+
+#: resources/views/nux/steps/customize.php:29
+msgid "Choose custom colors"
+msgstr ""
+
+#: resources/views/nux/steps/customize.php:33
+msgid "Choose a new typeface"
 msgstr ""
 
 #: resources/views/nux/steps/install-plugins.php:39
@@ -436,42 +706,33 @@ msgstr ""
 msgid "Unable to load license manager. Please enable Javascript."
 msgstr ""
 
-#: resources/views/partials/navbar-mobile.php:17
-msgid "Open menu"
+#: resources/views/partials/content-comments.php:30
+msgid "0 Comments"
 msgstr ""
 
-#: resources/views/partials/navbar-mobile.php:22
-#: resources/views/partials/navbar-mobile.php:27
-msgid "Close menu"
+#: resources/views/partials/content-comments.php:30
+msgid "1 Comment"
 msgstr ""
 
-#: resources/views/partials/navbar-mobile.php:22
-msgid "Close"
+#: resources/views/partials/content-comments.php:30
+msgid "% Comments"
 msgstr ""
 
-#: resources/views/partials/navbar-primary-menu.php:28
+#: resources/views/partials/content-pagination.php:21
+msgid "Page"
+msgstr ""
+
+#: resources/views/partials/navbar-menu-account.php:39
 msgid "Account"
 msgstr ""
 
-#: resources/views/partials/navbar-search.php:34
-msgid "Choose a category:"
+#: resources/views/partials/navbar-mobile.php:23
+msgid "Open menu"
 msgstr ""
 
-#: resources/views/partials/navbar-search.php:37
-#: resources/views/partials/navbar-search.php:44
-msgid "All Categories"
-msgstr ""
-
-#: resources/views/partials/navbar-search.php:51
-msgid "Find a product:"
-msgstr ""
-
-#: resources/views/partials/navbar-search.php:52
-msgid "Find a product..."
-msgstr ""
-
-#: resources/views/partials/navbar-search.php:56
-msgid "Search"
+#: resources/views/partials/navbar-mobile.php:28
+#: resources/views/partials/navbar-mobile.php:35
+msgid "Close menu"
 msgstr ""
 
 #. Theme URI of the theme
@@ -479,7 +740,7 @@ msgid "https://bigboxwc.com"
 msgstr ""
 
 #. Description of the theme
-msgid "WooCommerce theme for large product catalogs."
+msgid "WooCommerce theme for large stores."
 msgstr ""
 
 #. Author of the theme

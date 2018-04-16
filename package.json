@@ -48,13 +48,9 @@
 		"presets": [
 			"@wordpress/default"
 		],
-		"env": {
-			"default": {
-				"plugins": [
-					"import-glob"
-				]
-			}
-		}
+		"plugins": [
+			"import-glob"
+		]
 	},
 	"scripts": {
 		"build": "cross-env NODE_ENV=production webpack",
