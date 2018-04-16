@@ -15,7 +15,6 @@ return [
 	// Solid color
 	[
 		'selectors'    => [
-			'.footer-widget a',
 			'.product__stock',
 		],
 		'declarations' => [
