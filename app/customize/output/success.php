@@ -19,7 +19,7 @@ return [
 	[
 		'selectors'    => [
 			'.navbar-menu__cart-count',
-			'.product__sale a',
+			'.product__sale',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $success ),
