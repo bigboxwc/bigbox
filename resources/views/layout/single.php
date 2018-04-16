@@ -28,7 +28,7 @@ while ( have_posts() ) :
 		<?php
 		the_content();
 		wp_link_pages();
-		comments_template();
+		comments_template( '/resources/views/partials/content-comments.php' );
 		?>
 	</div>
 </div>

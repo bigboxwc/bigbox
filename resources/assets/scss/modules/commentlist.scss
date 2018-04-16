@@ -1,3 +1,8 @@
+.commentlist-title {
+
+	@include single-product-section-title;
+}
+
 .commentlist {
 
 	@include reset-list();
