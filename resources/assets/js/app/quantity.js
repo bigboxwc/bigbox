@@ -19,10 +19,12 @@ const getOptions = ( max: globalMax ) => {
 		return items;
 	}
 
-	items = [];
+	items = [
+		`<option value="0">${ bigbox.products.quantitySelector.zero }</option>`
+	];
 
 	// Pad with globalMax
-	for ( let i = 0; i <= max; i++ ) {
+	for ( let i = 1; i <= max; i++ ) {
 		items.push( `<option value=${ i }>${ i }</option>` );
 	}
 

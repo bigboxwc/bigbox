@@ -51,7 +51,8 @@ function bigbox_woocommerce_template_path() {
 function bigbox_woocommerce_js_settings( $settings ) {
 	$settings['products'] = [
 		'quantitySelector' => [
-			'max' => 30,
+			'zero' => esc_html_x( '0 (remove)', 'quantity selector', 'bigbox' ),
+			'max'  => 30,
 		],
 	];
 
