@@ -167,6 +167,7 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 <li class="product-category product product-category-more">
 	<div class="product-category-more__inner">
 
+		<?php if ( has_nav_menu( 'product-category-list' ) ) : ?>
 		<div class="product-category-more__menu">
 		<?php
 		wp_nav_menu(
@@ -179,6 +180,7 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 		);
 		?>
 		</div>
+		<?php endif; ?>
 
 		<?php if ( ! empty( $more_categories ) ) : ?>
 		<form id="product-category-selector" action="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" method="GET" class="product-category-more__selector">

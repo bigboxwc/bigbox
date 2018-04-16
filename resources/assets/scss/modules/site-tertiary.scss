@@ -1,8 +1,8 @@
 .site-tertiary {
 
 	@include make-col-ready;
-	margin-top: ( $spacer * 2 );
-	margin-bottom: ( $spacer * 2 );
+	margin-top: ( $grid-gutter-width / 2);
+	margin-bottom: ( $grid-gutter-width / 2);
 	order: 2;
 	display: none;
 

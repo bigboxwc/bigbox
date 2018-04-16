@@ -101,12 +101,15 @@
 
 		@include reset-list();
 	}
+
+	+ .product-category-more__selector {
+		margin-top: $spacer;
+		padding-top: $spacer;
+		border-top: 1px solid rgba(gray("300"), 0.5);
+	}
 }
 
 .product-category-more__selector {
-	margin-top: $spacer;
-	padding-top: $spacer;
-	border-top: 1px solid rgba(gray("300"), 0.5);
 
 	select {
 		max-width: 100%;
