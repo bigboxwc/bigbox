@@ -30,13 +30,13 @@ global $product;
 	</a>
 
 	<?php if ( ! empty( $show_rating ) ) : ?>
-	<div class="product__stats">
+	<div class="product__meta">
 		<?php echo wc_get_rating_html( $product->get_average_rating() ); // @codingStandardsIgnoreLine ?>
 	</div>
 	<?php endif; ?>
 
 	<?php if ( '' !== $product->get_price_html() ) : ?>
-	<span class="product__stats price">
+	<span class="product__meta price">
 		<?php echo wp_kses_post( $product->get_price_html() ); ?>
 	</span>
 	<?php endif; ?>

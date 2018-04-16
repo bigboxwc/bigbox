@@ -48,7 +48,7 @@
 		font-size: $font-size-sm;
 	}
 
-	.product__stats {
+	.product__meta {
 		margin: ($spacer / 2) 0;
 	}
 
@@ -168,9 +168,9 @@
 }
 
 .widget_top_rated_products {
-	
+
 	.price {
-		
+
 		@include screen-reader-text();
 	}
 }

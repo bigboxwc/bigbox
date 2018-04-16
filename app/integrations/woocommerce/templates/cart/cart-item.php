@@ -53,12 +53,12 @@ $product_thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product
 			</h2>
 
 			<?php if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) : ?>
-			<div class="product__stats stock">
+			<div class="product__meta stock">
 				<?php esc_html_e( 'Available on backorder', 'bigbox' ); ?>
 			</div>
 			<?php endif; ?>
 
-			<div class="product__stats price">
+			<div class="product__meta price">
 				<?php echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok. ?>
 
 				<del class="subtotal">
@@ -75,7 +75,9 @@ $product_thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product
 				</del>
 			</div>
 
-			<div class="product__stats">
+			<div class="product__meta quantity">
+				<span class="product__meta-label"><?php esc_html_e( 'Quantity', 'bigbox' ); ?>:</span>
+
 				<?php
 				wc_get_template(
 					'single-product/add-to-cart/quantity.php', [
@@ -97,7 +99,7 @@ $product_thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product
 			$data = wc_get_formatted_cart_item_data( $cart_item );
 			if ( '' !== $data ) :
 			?>
-			<div class="product__stats">
+			<div class="product__meta">
 				<?php echo $data; // PHPCS: XSS ok. ?>
 			</div>
 			<?php endif; ?>

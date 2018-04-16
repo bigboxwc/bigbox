@@ -221,7 +221,7 @@ function bigbox_woocommerce_after_shop_loop_item_title_variations() {
 	}
 ?>
 
-<div class="product__has-variations product__stats">
+<div class="product__has-variations product__meta">
 	<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>">
 		<?php esc_html_e( 'See More Options', 'bigbox' ); ?>
 	</a>

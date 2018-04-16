@@ -139,13 +139,23 @@
 	}
 }
 
-.product__stats {
+.product__meta {
 	line-height: 1;
 	margin: $spacer 0;
 
 	&:last-child {
 		margin-bottom: 0;
 	}
+
+	&.quantity {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.product__meta-label {
+	font-size: $font-size-sm;
+	margin-right: ($spacer / 2);
 }
 
 .product__stock {

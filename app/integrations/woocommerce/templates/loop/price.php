@@ -27,7 +27,7 @@ $price_html = $product->get_price_html()
 
 <?php if ( $price_html ) : ?>
 
-<div class="product__stats">
+<div class="product__meta">
 	<?php woocommerce_show_product_loop_sale_flash(); ?>
 
 	<span class="price">
