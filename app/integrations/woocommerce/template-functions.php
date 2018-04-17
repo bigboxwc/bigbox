@@ -41,6 +41,17 @@ function bigbox_woocommerce_template_path() {
 }
 
 /**
+ * Remove cart fragments on non cart and checkout pages.
+ *
+ * @since 1.0.0
+ */
+function bigbox_woocommerce_wp_enqueue_script() {
+	if ( ! is_cart() || is_checkout() ) {
+		wp_dequeue_script( 'wc-cart-fragments' );
+	}
+}
+
+/**
  * JS settings.
  *
  * @since 1.0.0
