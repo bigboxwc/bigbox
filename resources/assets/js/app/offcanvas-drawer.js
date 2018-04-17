@@ -36,6 +36,15 @@ const targetSourceSwap = ( $toggle ) => {
 	$document.trigger( 'offCanvasDrawerSwap', [ $toggle, $source, $target, source, target ] );
 };
 
+/**
+ * Lock the body from scrolling when a drawer is open.
+ *
+ * @param {Boolean} Toggle on or off.
+ */
+const toggleBodyLock = ( toggle ) => {
+	$document.toggleClass( 'offcanvas-drawer-open', toggle );
+};
+
 ( function( $ ) {
 
 	const $toggle = $( '.offcanvas-drawer-toggle' );
@@ -54,6 +63,7 @@ const targetSourceSwap = ( $toggle ) => {
 	 */
 	$toggle.on( 'click', function( e ) {
 		targetSourceSwap( $( this ) );
+		toggleBodyLock( ! $document.hasClass( 'offcanvas-drawer-open' ) );
 	} );
 
 	/**
@@ -66,6 +76,7 @@ const targetSourceSwap = ( $toggle ) => {
 
 			if ( $maybeToggle.attr( 'href' ) === hash ) {
 				targetSourceSwap( $maybeToggle );
+				toggleBodyLock( true );
 			}
 		} );
 	}

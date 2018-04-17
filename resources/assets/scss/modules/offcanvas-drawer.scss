@@ -1,3 +1,18 @@
+// Lock body.
+.offcanvas-drawer-open {
+	overflow: hidden;
+	position: fixed;
+
+	// Scroll drawer content (keep close fixed).
+	.offcanvas-drawer .offcanvas-drawer__content {
+		position: absolute;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+		width: 100%;
+		height: 100%;
+	}
+}
+
 .offcanvas-drawer {
 	width: calc(100% - 64px);
 	max-width: 320px;
