@@ -1,9 +1,4 @@
-/* global WebFont, jQuery */
-
-/**
- * External dependencies.
- */
-import { filter, forEach, debounce } from 'lodash';
+/* global WebFont, jQuery, _ */
 
 /**
  * Update inline CSS and webfonts.
@@ -35,14 +30,14 @@ const updateCss = () => {
 
 // Wait for Preview ready.
 wp.customize.bind( 'preview-ready', () => {
-	const controls = filter( Object.keys( wp.customize.settings.activeControls ), ( setting ) => {
+	const controls = _.filter( Object.keys( wp.customize.settings.activeControls ), ( setting ) => {
 		return setting.match( /color/i ) || setting.match( /type/i );
 	} );
 	
 	// Refresh CSS when each control changes.
-	forEach( controls, ( settingId ) => {
+	_.each( controls, ( settingId ) => {
 		wp.customize( settingId, ( settingObj ) => {
-			settingObj.bind( debounce( updateCss, wp.customize.settings.timeouts.selectiveRefresh ) );
+			settingObj.bind( _.debounce( updateCss, wp.customize.settings.timeouts.selectiveRefresh ) );
 		} );
 	} );
 } );

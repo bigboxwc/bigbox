@@ -29,7 +29,7 @@ function bigbox_customize_preview_init() {
 	wp_enqueue_script(
 		'bigbox-customize-preview',
 		get_template_directory_uri() . '/public/js/customize-preview.min.js',
-		[ 'customize-preview' ],
+		[ 'customize-preview', 'underscore' ],
 		bigbox_get_theme_version(),
 		true
 	);
