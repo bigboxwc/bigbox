@@ -83,6 +83,7 @@ $menu-break-point: md;
 	@include media-breakpoint-up( $menu-break-point ) {
 		.offcanvas-drawer__content {
 			display: flex;
+			flex-wrap: wrap;
 		}
 	}
 
@@ -227,6 +228,7 @@ $menu-break-point: md;
 // Right menu flys out to the left.
 .navbar-menu__items-secondary {
 	margin-right: -($spacer / 2);
+	margin-left: -($spacer / 2);
 
 	.sub-menu {
 		right: 0;
@@ -261,8 +263,8 @@ $menu-break-point: md;
 	a {
 		text-align: center;
 		line-height: 1;
-		min-width: 80px;
-		padding: 4px 10px;
+		min-width: 70px;
+		padding: 4px;
 		flex-direction: column;
 		border: 1px solid transparent;
 		border-radius: $border-radius;
