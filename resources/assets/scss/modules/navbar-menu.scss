@@ -134,6 +134,7 @@ $menu-break-point: md;
 		position: relative;
 
 		// Show submenu items when intended.
+		&.focus > .sub-menu,
 		&.menu-item-has-children--active > .sub-menu {
 			visibility: visible;
 			opacity: 1;
