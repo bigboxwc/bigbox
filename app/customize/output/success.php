@@ -55,7 +55,7 @@ return [
 			'box-shadow'       => esc_attr( "inset {$rgba10} 0 0 0 3px, {$rgba30} 0 1px 2px" ),
 
 			// Since 90% of the values use $success we are filling out the color here as well for a unified list.
-			'color'            => esc_attr( get_theme_mod( 'color-dark', bigbox_get_theme_default_color( 'dark' ) ) ),
+			'color'            => esc_attr( bigbox_get_theme_color( 'gray-700' ) ),
 		],
 	],
 
