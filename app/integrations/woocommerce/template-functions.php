@@ -372,7 +372,7 @@ function bigbox_woocommerce_get_star_rating_html( $html, $rating, $count ) {
 	ob_start();
 ?>
 
-<span class="star-rating__stars" aria-title="<?php esc_attr( sprintf( $title, $rating ) ); ?>">
+<span class="star-rating__stars" aria-label="<?php esc_attr( sprintf( $title, $rating ) ); ?>">
 	<?php
 	// @codingStandardsIgnoreStart
 	echo str_repeat( bigbox_get_svg( 'star' ), $full_stars );
@@ -384,7 +384,7 @@ function bigbox_woocommerce_get_star_rating_html( $html, $rating, $count ) {
 
 <?php if ( 0 !== $count && ! is_singular( 'product' ) ) : ?>
 
-	<span class="star-rating__count" aria-title="<?php esc_attr( sprintf( $count_title, $count ) ); ?>">
+	<span class="star-rating__count" aria-label="<?php esc_attr( sprintf( $count_title, $count ) ); ?>">
 		<?php echo esc_html( $count ); ?>
 	</span>
 

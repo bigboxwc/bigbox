@@ -44,6 +44,8 @@ export const transformInput = function( $qty, variation = false ) {
 	// Remove any existing.
 	$original.detach();
 
+	const id = $original.attr( 'id' );
+
 	// Find original value.
 	const selectedValue = variation ? 0 : ( $original.val() ? parseInt( $original.val() ) : 0 );
 
@@ -57,7 +59,7 @@ export const transformInput = function( $qty, variation = false ) {
 	}
 
 	// Add <select>
-	const $select = $( `<select class="qty" min="${ min }" max="${ max }" name="${ $original.attr( 'name' ) }" />` );
+	const $select = $( `<select id=${ id } class="qty" min=${ min } max=${ max } name=${ $original.attr( 'name' ) } />` );
 
 	$wrapper.append( $select );
 

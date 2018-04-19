@@ -31,4 +31,17 @@ return [
 			'border-top-color' => esc_attr( $gray600 ),
 		],
 	],
+
+	// @mixin button--pill
+	[
+		'selectors'    => [
+			'.product__has-variations a',
+			'.widget_layered_nav_filters a',
+		],
+		'declarations' => [
+			'color'            => esc_attr( $gray600 ),
+			'background-color' => esc_attr( bigbox_get_theme_color( 'gray-100' ) ),
+			'border-color'     => esc_attr( bigbox_get_theme_color( 'gray-300' ) ),
+		],
+	],
 ];

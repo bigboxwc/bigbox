@@ -39,7 +39,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 	<?php if ( '' !== $product->get_image() ) : ?>
 	<div class="product__preview">
-		<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>">
+		<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>" aria-label="<?php echo esc_attr( $product->get_title() ); ?>">
 			<?php
 			/**
 			 * woocommerce_before_shop_loop_item_title hook.

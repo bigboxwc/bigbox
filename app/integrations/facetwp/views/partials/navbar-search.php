@@ -95,7 +95,7 @@ endif;
 	<?php endif; ?>
 
 	<div class="navbar-search__submit">
-		<button type="submit" aria-title="<?php esc_attr_e( 'Search', 'bigbox' ); ?>">
+		<button type="submit" aria-label="<?php esc_attr_e( 'Search', 'bigbox' ); ?>">
 			<?php bigbox_svg( 'search' ); ?>
 		</button>
 	</div>

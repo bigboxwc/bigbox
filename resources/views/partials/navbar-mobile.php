@@ -32,4 +32,4 @@ endif;
 	<div class="offcanvas-drawer__content"></div>
 </nav>
 
-<a id="navbar-mobile-toggle" href="#navbar-mobile-toggle" class="offcanvas-drawer-backdrop offcanvas-drawer-toggle" tabindex="-1" aria-hidden="true" aria-label="<?php esc_attr_e( 'Close menu', 'bigbox' ); ?>" hidden="true" data-source="#navbar-mobile" data-target="#navbar-primary"></a>
+<a href="#navbar-mobile-toggle" class="offcanvas-drawer-backdrop offcanvas-drawer-toggle" tabindex="-1" aria-hidden="true" aria-label="<?php esc_attr_e( 'Close menu', 'bigbox' ); ?>" hidden="true" data-source="#navbar-mobile" data-target="#navbar-primary"></a>
