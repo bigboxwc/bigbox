@@ -1,4 +1,4 @@
-/* global bigbox */
+/* global bigbox, $ */
 
 /**
  * Create a generic list of options that can be appended multiple times.
@@ -20,7 +20,7 @@ const getOptions = ( max = globalMax ) => {
 	}
 
 	items = [
-		`<option value="0">${ bigbox.products.quantitySelector.zero }</option>`
+		`<option value="0">${ bigbox.products.quantitySelector.zero }</option>`,
 	];
 
 	// Pad with globalMax

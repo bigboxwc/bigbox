@@ -1,4 +1,4 @@
-/** global jQuery, wp, bigboxCustomizeControls, _ */
+/* global jQuery, wp, bigboxCustomizeControls, _ */
 
 const fontList = bigboxCustomizeControls.fonts;
 
@@ -37,29 +37,29 @@ const buildWeightOptionsHtml = ( variants ) => {
 	return options.join( '' );
 };
 
-/**
-	* Update weight fields with available options.
-	*
-	* @param {Array} variants List of variants.
-	*/
-const updateWeightFields = ( variants ) => {
-	_.each( [ 'base', 'bold' ], ( weight ) => {
-		const control = wp.customize.control( `type-font-weight-${ weight }` );
-		const value = control.setting();
-
-		const $select = $( control.container ).find( 'select' );
-
-		// Add HTML and select chosen item.
-		$select
-			.html( buildWeightOptionsHtml( variants ) )
-			.val( value )
-			.find( `[value="${ value }"]` )
-			.attr( 'selected', true );
-	} );
-};
-
 // Wait for Customize ready.
-wp.customize.bind( 'ready', () => {
+wp.customize.bind( 'ready', ( $ ) => {
+	/**
+	 * Update weight fields with available options.
+	 *
+	 * @param {Array} variants List of variants.
+	 */
+	const updateWeightFields = ( variants ) => {
+		_.each( [ 'base', 'bold' ], ( weight ) => {
+			const control = wp.customize.control( `type-font-weight-${ weight }` );
+			const value = control.setting();
+
+			const $select = $( control.container ).find( 'select' );
+
+			// Add HTML and select chosen item.
+			$select
+				.html( buildWeightOptionsHtml( variants ) )
+				.val( value )
+				.find( `[value="${ value }"]` )
+				.attr( 'selected', true );
+		} );
+	};
+
 	const familyControl = wp.customize.control( 'type-font-family' );
 	const familyValue = familyControl.setting();
 	const $familyInput = $( familyControl.container ).find( 'select' );
@@ -80,4 +80,4 @@ wp.customize.bind( 'ready', () => {
 		.attr( 'selected', true )
 		.end()
 		.change();
-} );
+} )( jQuery );
