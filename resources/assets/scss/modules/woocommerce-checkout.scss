@@ -34,7 +34,7 @@ form.woocommerce-checkout {
 .woocommerce-shipping-fields h3,
 .woocommerce-billing-fields h3 {
 
-	@include single-product-section-title();
+	@include section-title();
 }
 
 .woocommerce-form__label-for-checkbox {

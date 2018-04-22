@@ -14,6 +14,7 @@ import { updatePartials, blockPartials } from './cart';
 
 		wp.ajax.send( 'bigbox_update_cart_review', {
 			data: {
+				security: wc_checkout_params.update_order_review_nonce,
 				checkout: $( this ).serialize(),
 			},
 			success( response ) {

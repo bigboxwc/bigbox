@@ -76,6 +76,7 @@ $body.delegate( `${ partials.cart } .qty`, 'change', () => {
 
 	wp.ajax.send( 'bigbox_update_cart', {
 		data: {
+			_wpnonce: $( '#woocommerce-cart-nonce' ).val(),
 			checkout: $( partials.cart ).serialize(),
 		},
 		success( response ) {

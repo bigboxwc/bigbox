@@ -65,10 +65,13 @@ function bigbox_get_cart_review_html() {
 /**
  * Update cart review data via AJAX.
  *
- * @todo check nonce.
  * @since 1.0.0
  */
 function bigbox_update_cart_review() {
+	if ( ! check_ajax_referer( 'update-order-review', 'security', false ) ) {
+		return wp_send_json_error();
+	}
+
 	bigbox_update_cart_and_totals();
 
 	if ( ! defined( 'WOOCOMMERCE_CHECKOUT' ) ) {

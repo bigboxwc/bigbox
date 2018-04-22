@@ -92,7 +92,7 @@
 
 	> h2 {
 
-		@include single-product-section-title;
+		@include section-title();
 	}
 
 	p:last-child {
