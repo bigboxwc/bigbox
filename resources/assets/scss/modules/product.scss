@@ -13,6 +13,18 @@
 	}
 }
 
+@mixin vertical-card {
+	.product__inner {
+		display: block;
+		padding-top: $spacer;
+		padding-bottom: $spacer;
+	}
+
+	.product__preview + .product__description {
+		padding: $spacer 0 0;
+	}
+}
+
 .woocommerce-page ul.products-main,
 .woocommerce ul.products-main {
 
@@ -20,13 +32,33 @@
 
 		@include make-col-ready;
 		@include make-col(12);
+		@include vertical-card();
+	}
+
+	li.product--cart-item {
+
+		@include horizontal-card();
+
+		// Cart only should bump back to vertical when purchase box is 50/50.
+		.woocommerce-cart & {
+
+			@include media-breakpoint-up(sm) {
+
+				@include vertical-card();
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+
+			@include horizontal-card();
+		}
 	}
 
 	&.columns-1 li.product {
 
 		@include media-breakpoint-up(md) {
 
-			@include horizontal-card;
+			@include horizontal-card();
 		}
 
 		&:first-child .product__inner {
@@ -38,7 +70,7 @@
 
 		@include media-breakpoint-up(xl) {
 
-			@include horizontal-card;
+			@include horizontal-card();
 		}
 	}
 
@@ -80,8 +112,6 @@
 .product__inner {
 	width: 100%;
 	height: 100%;
-	padding-top: $spacer;
-	padding-bottom: $spacer;
 	border-bottom: 1px solid gray("200");
 
 	.product:only-child & {
@@ -109,10 +139,6 @@
 .product__description {
 	position: relative;
 	flex: 1;
-}
-
-.product__preview + .product__description {
-	padding: $spacer 0 0;
 }
 
 .woocommerce-loop-category__title,
