@@ -33,6 +33,13 @@ function bigbox_enqueue_styles() {
 	wp_enqueue_style( $stylesheet, get_template_directory_uri() . '/public/css/app.min.css', [], $version );
 	wp_style_add_data( $stylesheet, 'rtl', 'replace' );
 
+	/**
+	 * Filter to toggle the output of CSS generated from the customizer in the page source.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param bool
+	 */
 	if ( apply_filters( 'bigbox_customize_css_inline', true ) ) {
 		wp_add_inline_style( $stylesheet, bigbox_customize_css() );
 	}

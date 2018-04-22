@@ -36,6 +36,14 @@ function bigbox_get_dynamic_sidebar( $sidebar ) {
 	dynamic_sidebar( $sidebar );
 	$content = ob_get_clean();
 
+	/**
+	 * Filters how long dynamic sidebars are stored in the object cache.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param int             The number of seconds to store the output.
+	 * @param string $sidebar The ID of the sidebar being stored.
+	 */
 	wp_cache_set( $sidebar, $content, 'bigbox-sidebar', apply_filters( 'bigbox_dynamic_sidebar_cache', 60 * MINUTE_IN_SECONDS, $sidebar ) );
 
 	return $content;
@@ -75,5 +83,12 @@ add_action( 'widgets_init', 'bigbox_register_sidebars' );
  * @return int
  */
 function bigbox_get_footer_nav_columns() {
+	/**
+	 * Adjust the number of footer widget columns.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param int The number of columns to generate.
+	 */
 	return apply_filters( 'bigbox_footer_widget_columns', 5 );
 }

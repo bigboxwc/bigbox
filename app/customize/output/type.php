@@ -38,7 +38,7 @@ $base = [
 	],
 ];
 
-if ( $family ) {
+if ( 'default' !== $family ) {
 	$base['declarations']['font-family'] = $family;
 }
 

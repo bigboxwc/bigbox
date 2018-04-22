@@ -13,13 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-// Allow these modifications to easily be removed.
-if ( apply_filters( 'bigbox_optimize_checkout', true ) ) {
-
-	// Rearrange review, payment, and totals.
-	remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
-	add_action( 'woocommerce_checkout_before_customer_details', 'woocommerce_checkout_payment', 20 );
-}
+// Rearrange review, payment, and totals.
+remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+add_action( 'woocommerce_checkout_before_customer_details', 'woocommerce_checkout_payment', 20 );
 
 /**
  * Update "Billing details" text string.

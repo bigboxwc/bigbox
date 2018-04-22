@@ -19,11 +19,14 @@
 function bigbox_get_theme_font_family() {
 	$family = get_theme_mod( 'type-font-family', 'Lato' );
 
-	if ( 'default' === $family ) {
-		return false;
-	}
-
-	return $family;
+	/**
+	 * Filters the name of the font family used to generate custom CSS.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $family The name of the font family.
+	 */
+	return apply_filters( 'bigbox_get_theme_font_family', $family );
 }
 
 /**
@@ -31,17 +34,25 @@ function bigbox_get_theme_font_family() {
  *
  * @since 1.0.0
  *
- * @param string $weight Weight to get.
+ * @param string $weight_type Weight to get.
  * @return string
  */
-function bigbox_get_theme_font_weight( $weight = 'base' ) {
-	$weight = get_theme_mod( "type-font-weight-{$weight}", 'base' === $weight ? 400 : 700 );
+function bigbox_get_theme_font_weight( $weight_type = 'base' ) {
+	$weight = get_theme_mod( "type-font-weight-{$weight_type}", 'base' === $weight_type ? 400 : 700 );
 
 	if ( 'regular' === $weight ) {
 		return 400;
 	}
 
-	return $weight;
+	/**
+	 * Filters the font weight used to generate custom CSS.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $family      The name of the font family.
+	 * @param string $weight_type The name of the weight type to get. Either `base` or `bold`.
+	 */
+	return apply_filters( 'bigbox_get_theme_font_weight', $weight, $weight_type );
 }
 
 /**
@@ -54,7 +65,7 @@ function bigbox_get_theme_font_weight( $weight = 'base' ) {
 function bigbox_get_google_font_family_string() {
 	$family = bigbox_get_theme_font_family();
 
-	if ( ! $family || 'default' == $family ) {
+	if ( 'default' == $family ) {
 		return false;
 	}
 

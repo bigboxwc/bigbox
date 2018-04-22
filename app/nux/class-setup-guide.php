@@ -76,6 +76,13 @@ class Setup_Guide implements Registerable, Service {
 	 * @return array
 	 */
 	public function get_steps() {
+		/**
+		 * Filters the NUX setup guide steps.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array Setup guide steps.
+		 */
 		$steps = apply_filters( 'bigbox_setup_guide_steps', $this->steps );
 
 		uasort(

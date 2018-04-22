@@ -24,6 +24,13 @@ function bigbox_register_nav_menus() {
 		'secondary' => esc_html__( 'Secondary', 'bigbox' ),
 	];
 
+	/**
+	 * Filter registered nav menus.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $navs Nav menus to register.
+	 */
 	$navs = apply_filters( 'bigbox_register_nav_menus', $navs );
 
 	register_nav_menus( $navs );
