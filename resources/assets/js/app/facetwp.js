@@ -31,4 +31,4 @@ import { adjustWidth } from './navbar.js';
 
 	// Adjust select widths once loaded.
 	$( document ).on( 'facetwp-loaded', adjustWidth );
-} )( jQuery );
+}( jQuery ) );

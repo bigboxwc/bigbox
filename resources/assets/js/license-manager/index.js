@@ -13,6 +13,11 @@ import { Provider } from 'react-redux';
 import configureStore from './state';
 import ActivateLicense from './components/ActivateLicense.js';
 
+/**
+ * NUX.
+ *
+ * @return {Object} Provider component.
+ */
 const NUX = () => (
 	<Provider store={ configureStore() }>
 		<ActivateLicense

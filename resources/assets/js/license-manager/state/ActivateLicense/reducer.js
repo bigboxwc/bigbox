@@ -13,6 +13,13 @@ export const INITIAL_STATE = {
 	isSubmitting: false,
 };
 
+/**
+ * License reducer.
+ *
+ * @param {Object} state  Current state.
+ * @param {string} action Current action.
+ * @return {Object} State.
+ */
 export function activateLicense( state = {}, action ) {
 	switch ( action.type ) {
 		case LICENSE_REQUEST:

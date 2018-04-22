@@ -3,10 +3,10 @@
 const fontList = bigboxCustomizeControls.fonts;
 
 /**
-	* Build HTML <option>s for font families.
-	*
-	* @return {string}
-	*/
+ * Build HTML <option>s for font families.
+ *
+ * @return {string} String of HTML <option>s.
+ */
 const buildFamilyOptionsHtml = () => {
 	const options = [];
 
@@ -20,11 +20,11 @@ const buildFamilyOptionsHtml = () => {
 };
 
 /**
-	* Build HTML <option>s for weight variants.
-	*
-	* @param  {Array} variants List of variants.
-	* @return {string}
-	*/
+ * Build HTML <option>s for weight variants.
+ *
+ * @param  {Array} variants List of variants.
+ * @return {string} String of HTML <option>s.
+ */
 const buildWeightOptionsHtml = ( variants ) => {
 	const options = [];
 

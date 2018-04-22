@@ -20,7 +20,7 @@ import { transformInput } from './quantity';
 
 	// All.
 	transformInput( $form.find( '.qty' ), false );
-} )( jQuery );
+}( jQuery ) );
 
 /**
  * Submit product category selector.
@@ -32,4 +32,4 @@ import { transformInput } from './quantity';
 	$form.find( 'select' ).on( 'change', () => {
 		$form.submit();
 	} );
-} )( jQuery );
+}( jQuery ) );

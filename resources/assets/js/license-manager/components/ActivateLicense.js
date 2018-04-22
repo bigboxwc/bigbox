@@ -24,7 +24,15 @@ const {
 	licenseDeactivate,
 } = BigBoxLicenseManager.i18n;
 
+/**
+ * ActivateLicense class.
+ */
 class ActivateLicense extends Component {
+	/**
+	 * Bind callbacks.
+	 *
+	 * @param {Object} props Component properties.
+	 */
 	constructor( props ) {
 		super( props );
 
@@ -39,7 +47,9 @@ class ActivateLicense extends Component {
 		this.setState( nextProps );
 	}
 
-	// Check license on page load.
+	/**
+	 * Check license on page load.
+	 */
 	componentDidMount() {
 		const {
 			doActivateLicense,
@@ -49,7 +59,11 @@ class ActivateLicense extends Component {
 		doActivateLicense( license );
 	}
 
-	// License key changed.
+	/**
+	 * License key changed.
+	 *
+	 * @param {Object} event Change event.
+	 */
 	handleChange( event ) {
 		this.setState( {
 			license: event.target.value,
@@ -58,18 +72,29 @@ class ActivateLicense extends Component {
 		} );
 	}
 
-	// Activate site on submit.
+	/**
+	 * Activate site on submit.
+	 *
+	 * @param {Object} event Submit event.
+	 */
 	handleSubmit( event ) {
 		event.preventDefault();
 
 		this.props.doActivateLicense( this.state.license );
 	}
 
-	// Deactivate
+	/**
+	 * Deactivate license.
+	 */
 	handleDeactivate() {
 		this.props.doDeactivateLicense( this.state.license );
 	}
 
+	/**
+	 * Render component.
+	 *
+	 * @return {Object} React Component.
+	 */
 	render() {
 		const {
 			license,
@@ -106,6 +131,13 @@ class ActivateLicense extends Component {
 	}
 }
 
+/**
+ * Map state to props.
+ *
+ * @param {Object} state    Current state.
+ * @param {Object} ownProps Component properties.
+ * @return {Object} Properties.
+ */
 const mapStateToProps = ( state, ownProps ) => {
 	return {
 		license: ( state.license || ownProps.license ) || '',
@@ -114,6 +146,12 @@ const mapStateToProps = ( state, ownProps ) => {
 	};
 };
 
+/**
+ * Map dispatch to props.
+ *
+ * @param {Object} dispatch Dispatch
+ * @return {Object} bindActionCreators.
+ */
 const mapDispatchToProps = ( dispatch ) => {
 	return bindActionCreators( {
 		doActivateLicense: activateLicense,

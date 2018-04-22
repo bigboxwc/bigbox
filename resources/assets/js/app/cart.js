@@ -79,6 +79,11 @@ $body.delegate( `${ partials.cart } .qty`, 'change', () => {
 			_wpnonce: $( '#woocommerce-cart-nonce' ).val(),
 			checkout: $( partials.cart ).serialize(),
 		},
+		/**
+		 * Update cart partials when session has been updated.
+		 *
+		 * @param {Object} response AJAX response object containing cart data.
+		 */
 		success( response ) {
 			updatePartials( response );
 		},

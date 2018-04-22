@@ -41,7 +41,7 @@ const cache = {};
 	/**
  	 * Lock the body from scrolling when a drawer is open.
  	 *
-	 * @param {boolean} Toggle on or off.
+	 * @param {boolean} toggle Toggle on or off.
 	 */
 	const toggleBodyLock = ( toggle ) => {
 		$document.toggleClass( 'offcanvas-drawer-open', toggle );
@@ -61,7 +61,7 @@ const cache = {};
 	 * will house the content between swaps. The toggles that close the drawer should
 	 * reverse the source and target elements.
 	 */
-	$toggle.on( 'click', function( e ) {
+	$toggle.on( 'click', function() {
 		targetSourceSwap( $( this ) );
 		toggleBodyLock( ! $document.hasClass( 'offcanvas-drawer-open' ) );
 	} );
