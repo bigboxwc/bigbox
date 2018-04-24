@@ -46,10 +46,10 @@ if [ "$branch" != 'master' ]; then
 fi
 
 status "
-   ___  _      ___          
+   ___  _      ___
   / _ )(_)__ _/ _ )___ __ __
  / _  / / _ \`/ _  / _ \\ \ /
-/____/_/\_, /____/\___/_\_\ 
+/____/_/\_, /____/\___/_\_\
        /___/ "
 
 # Remove ignored files to reset repository to pristine condition. Previous test
@@ -66,8 +66,9 @@ wp i18n make-pot . resources/languages/bigbox.pot --domain=bigbox
 status "Generating build..."
 npm run build
 
-# Update version in style.css
-sed -i "" "s|BIGBOX_VERSION|${PACKAGE_VERSION}|g" style.css
+# Update version in files.
+sed -i "" "s|%BIGBOX_VERSION%|${PACKAGE_VERSION}|g" style.css
+sed -i "" "s|%BIGBOX_VERSION%|${PACKAGE_VERSION}|g" functions.php
 
 # Remove any existing zip file
 rm -f bigbox*.zip

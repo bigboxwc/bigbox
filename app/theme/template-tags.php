@@ -35,17 +35,11 @@ function bigbox_get_theme_name() {
  * @return string
  */
 function bigbox_get_theme_version() {
-	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG || ! defined( 'BIGBOX_VERSION' ) ) {
 		return time();
 	}
 
-	$version = wp_get_theme()->Version;
-
-	if ( wp_get_theme()->parent() ) {
-		$version = wp_get_theme()->parent()->Version;
-	}
-
-	return $version;
+	return BIGBOX_VERSION;
 }
 
 /**
