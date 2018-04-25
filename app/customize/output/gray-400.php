@@ -17,6 +17,7 @@ return [
 		'selectors'    => [
 			'.wc_payment_method [type="radio"] label:before',
 			'.action-list__item--inset',
+			'.shipping-note',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray400 ),

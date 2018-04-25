@@ -48,8 +48,10 @@
 }
 
 .shipping-note {
-	margin: 0 $spacer $spacer;
+	margin-bottom: $spacer;
+	padding-left: $spacer;
 	font-size: $font-size-sm;
+	border-left: 1px dashed gray("400");
 
 	p {
 		margin: 0;
