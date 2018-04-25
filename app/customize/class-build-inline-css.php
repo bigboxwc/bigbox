@@ -98,31 +98,31 @@ class Build_Inline_CSS {
 		 */
 		$data = apply_filters( 'bigbox_css_add', $data );
 
-		// Bail if the required properties aren't present
+		// Bail if the required properties aren't present.
 		if ( ! isset( $data['selectors'] ) || ! isset( $data['declarations'] ) ) {
 			return;
 		}
 
-		// Sanitize selectors
+		// Sanitize selectors.
 		$entry['selectors'] = array_map( 'trim', (array) $data['selectors'] );
 		$entry['selectors'] = array_unique( $entry['selectors'] );
 
-		// Sanitize declarations
+		// Sanitize declarations.
 		$entry['declarations'] = array_map( 'trim', (array) $data['declarations'] );
 
-		// Check for media query
+		// Check for media query.
 		if ( isset( $data['media'] ) ) {
 			$media = $data['media'];
 		} else {
 			$media = 'all';
 		}
 
-		// Create new media query if it doesn't exist yet
+		// Create new media query if it doesn't exist yet.
 		if ( ! isset( $this->data[ $media ] ) || ! is_array( $this->data[ $media ] ) ) {
 			$this->data[ $media ] = array();
 		}
 
-		// Look for matching selector sets
+		// Look for matching selector sets.
 		$match = false;
 		foreach ( $this->data[ $media ] as $key => $rule ) {
 			$diff1 = array_diff( $rule['selectors'], $entry['selectors'] );
@@ -133,10 +133,10 @@ class Build_Inline_CSS {
 			}
 		}
 
-		// No matching selector set, add a new entry
+		// No matching selector set, add a new entry.
 		if ( false === $match ) {
 			$this->data[ $media ][] = $entry;
-		} // Yes, matching selector set, merge declarations
+		} // Yes, matching selector set, merge declarations.
 		else {
 			$this->data[ $media ][ $match ]['declarations'] = array_merge( $this->data[ $media ][ $match ]['declarations'], $entry['declarations'] );
 		}
@@ -168,7 +168,7 @@ class Build_Inline_CSS {
 		$n = $this->line_ending;
 		$s = $this->space;
 
-		// Make sure the 'all' array is first
+		// Make sure the 'all' array is first.
 		if ( isset( $this->data['all'] ) && count( $this->data ) > 1 ) {
 			$all = array( 'all' => $this->data['all'] );
 			unset( $this->data['all'] );

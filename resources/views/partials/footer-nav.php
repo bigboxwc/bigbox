@@ -35,8 +35,8 @@ endif;
 <div class="footer-nav">
 	<div class="container">
 		<div class="footer-nav__row footer-nav__columns-<?php echo esc_attr( $count ); ?>">
-		
-			<?php echo $widgets; // WPCS: XSS okay; ?>
+
+			<?php echo $widgets; // WPCS: XSS okay. ?>
 
 		</div>
 	</div>

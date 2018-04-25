@@ -32,8 +32,8 @@ while ( have_posts() ) :
 	</div>
 
 	<?php
-	printf( '<p class="blog-post__meta">' . __( 'Categories: %s', 'bigbox' ) . '</p>', get_the_category_list( ', ' ) );
-	the_tags( '<p class="blog-post__meta">' . __( 'Tags: ', 'bigbox' ), ', ', '</p>' );
+	printf( '<p class="blog-post__meta">' . __( 'Categories: %s', 'bigbox' ) . '</p>', get_the_category_list( ', ' ) ); // WPCS: XSS okay.
+	the_tags( '<p class="blog-post__meta">' . __( 'Tags:', 'bigbox' ) . ' ', ', ', '</p>' );
 	comments_template( '/resources/views/partials/content-comments.php' );
 	?>
 </div>

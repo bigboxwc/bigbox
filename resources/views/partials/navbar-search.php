@@ -20,4 +20,4 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @param string
  */
-echo apply_filters( 'bigbox_navbar_search', '' );
+echo apply_filters( 'bigbox_navbar_search', '' ); // WPCS: XSS okay.

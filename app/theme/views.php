@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param string       $path Optional non-default path.
  */
 function bigbox_view( $templates, $args = [], $path = 'resources/views' ) {
-	echo bigbox_get_view( $templates, $args, $path );
+	echo bigbox_get_view( $templates, $args, $path ); // WPCS: XSS okay.
 }
 
 /**

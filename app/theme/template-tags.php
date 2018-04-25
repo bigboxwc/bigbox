@@ -22,7 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @return string
  */
-
 function bigbox_get_theme_name() {
 	return 'bigbox';
 }

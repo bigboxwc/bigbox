@@ -97,7 +97,7 @@ function bigbox_enqueue_scripts() {
 	wp_localize_script(
 		$stylesheet, 'bigbox', apply_filters(
 			'bigboxJsSettings', []
-		)
+		) // WPCS: XSS okay.
 	);
 }
 add_action( 'wp_enqueue_scripts', 'bigbox_enqueue_scripts' );
