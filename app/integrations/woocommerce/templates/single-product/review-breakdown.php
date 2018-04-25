@@ -21,7 +21,7 @@ if ( 0 === $count ) {
 }
 ?>
 
-<h3> <?php echo esc_html( sprintf( __( '%1$s out of 5 stars', 'bigbox' ), number_format( $average, 1 ) ) ); ?></h3>
+<h3><?php echo esc_html( sprintf( __( '%1$s out of 5 stars', 'bigbox' ), str_replace( '.0', '', number_format( $average, 1 ) ) ) ); ?></h3>
 
 <div class="review-breakdown">
 	<?php
