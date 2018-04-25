@@ -87,27 +87,31 @@ class Gutenberg extends Integration implements Registerable, Service {
 		$gray800 = bigbox_get_theme_color( 'gray-800' );
 		$family  = bigbox_get_theme_font_family();
 
-		$css->add( [
-			'selectors'    => [
-				'.edit-post-visual-editor',
-				'.edit-post-visual-editor p',
-				'.editor-post-title .editor-post-title__input',
-			],
-			'declarations' => [
-				'font-family' => esc_attr( $family ),
-				'color'       => esc_attr( $gray700 ),
-			],
-		] );
+		$css->add(
+			[
+				'selectors'    => [
+					'.edit-post-visual-editor',
+					'.edit-post-visual-editor p',
+					'.editor-post-title .editor-post-title__input',
+				],
+				'declarations' => [
+					'font-family' => esc_attr( $family ),
+					'color'       => esc_attr( $gray700 ),
+				],
+			]
+		);
 
-		$css->add( [
-			'selectors'    => [
-				'.blocks-rich-text__tinymce a',
-				'.editor-post-title .editor-post-title__input',
-			],
-			'declarations' => [
-				'color' => esc_attr( $gray800 ),
-			],
-		] );
+		$css->add(
+			[
+				'selectors'    => [
+					'.blocks-rich-text__tinymce a',
+					'.editor-post-title .editor-post-title__input',
+				],
+				'declarations' => [
+					'color' => esc_attr( $gray800 ),
+				],
+			]
+		);
 
 		wp_add_inline_style( $stylesheet . '-gutenberg', $css->build() );
 	}

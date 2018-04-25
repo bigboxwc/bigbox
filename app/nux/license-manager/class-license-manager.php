@@ -108,11 +108,11 @@ class License_Manager implements Registerable, Service {
 
 		wp_localize_script(
 			'bigbox-license-manager', 'BigBoxLicenseManager', [
-				'nonce'  => wp_create_nonce( 'bigbox-license-request' ),
-				'local'  => [
+				'nonce' => wp_create_nonce( 'bigbox-license-request' ),
+				'local' => [
 					'license' => $this->license,
 				],
-				'i18n'   => [
+				'i18n'  => [
 					'licensePlaceholder' => esc_html__( 'Enter license key...', 'bigbox' ),
 					'licenseSubmit'      => esc_html__( 'Activate License', 'bigbox' ),
 					'licenseLabel'       => esc_html__( 'License Status', 'bigbox' ),
@@ -133,11 +133,13 @@ class License_Manager implements Registerable, Service {
 	 * @return array $response decoded JSON response.
 	 */
 	protected function get_api_response( $api_params ) {
-		$response = wp_remote_post( $this->remote_api_url, [
-			'timeout'   => 5,
-			'sslverify' => false,
-			'body'      => $api_params 
-		] );
+		$response = wp_remote_post(
+			$this->remote_api_url, [
+				'timeout'   => 5,
+				'sslverify' => false,
+				'body'      => $api_params,
+			]
+		);
 
 		return $response;
 	}
@@ -154,8 +156,8 @@ class License_Manager implements Registerable, Service {
 			return wp_send_json_error();
 		}
 
-		$license = esc_attr( $_POST[ 'license' ] );
-		$action  = esc_attr( $_POST[ 'edd_action' ] );
+		$license = esc_attr( $_POST['license'] );
+		$action  = esc_attr( $_POST['edd_action'] );
 
 		if ( ! in_array( $action, [ 'activate_license', 'deactivate_license' ], true ) ) {
 			return wp_send_json_error();
@@ -174,9 +176,11 @@ class License_Manager implements Registerable, Service {
 			$license_data = json_decode( wp_remote_retrieve_body( $response ) );
 
 			if ( ! $license_data->error ) {
-				return wp_send_json_success( [
-					'license' => $license_data->license,
-				] );
+				return wp_send_json_success(
+					[
+						'license' => $license_data->license,
+					]
+				);
 			}
 		}
 

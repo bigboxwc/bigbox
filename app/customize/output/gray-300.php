@@ -43,8 +43,7 @@ return [
 	],
 	// RGBA .50 box-shadow
 	[
-		'selectors'    => [
-		],
+		'selectors'    => [],
 		'declarations' => [
 			'box-shadow' => '0 1px 0 ' . esc_attr( $gray300 ),
 		],

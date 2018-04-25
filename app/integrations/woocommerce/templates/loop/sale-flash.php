@@ -31,10 +31,12 @@ if ( $product->is_on_sale() ) :
 	endif;
 ?>
 
-<div class="product__sale"><?php
+<div class="product__sale">
+<?php
 // Translators: %1$s Sale price percentage.
 echo apply_filters( 'woocommerce_sale_flash', $flash, $post, $product );
-?></div>
+?>
+</div>
 
 <?php
 endif;

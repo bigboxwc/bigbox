@@ -229,7 +229,7 @@ class Build_Inline_CSS {
 	 * @param array  $declarations Declarations for a selector.
 	 * @param string $tab Tab character.
 	 *
-	* @return string
+	 * @return string
 	 */
 	private function parse_declarations( $declarations, $tab = '' ) {
 		$n = $this->line_ending;

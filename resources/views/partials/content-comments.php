@@ -33,11 +33,11 @@ if ( have_comments() ) :
 	<?php
 	endif;
 
-	if ( have_comments() ) :
+if ( have_comments() ) :
 	?>
 
 	<ol class="commentlist">
-		<?php wp_list_comments(); ?>
+	<?php wp_list_comments(); ?>
 	</ol>
 
 	<?php the_comments_pagination(); ?>

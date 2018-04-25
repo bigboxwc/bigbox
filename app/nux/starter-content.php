@@ -28,21 +28,21 @@ add_action( 'after_setup_theme', 'bigbox_add_starter_content' );
  */
 function bigbox_get_starter_content() {
 	return [
-		'posts'       => [
+		'posts'     => [
 			'home',
 			'blog',
 		],
 
 		// Default to a static front page and assign the front and posts pages.
-		'options'     => [
+		'options'   => [
 			'show_on_front'  => 'page',
 			'page_on_front'  => '{{home}}',
 			'page_for_posts' => '{{blog}}',
 		],
 
 		// Set up nav menus for each of the two areas registered in the theme.
-		'nav_menus'   => [
-			'primary'    => [
+		'nav_menus' => [
+			'primary' => [
 				'name'  => 'Primary (Left)',
 				'items' => [
 					'link_home',
