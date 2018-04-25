@@ -16,7 +16,7 @@ const globalMax = bigbox.products.quantitySelector.max;
  * @return {Array} List of HTML options.
  */
 const getOptions = ( max = globalMax ) => {
-	if ( items.length > 0 && max <= globalMax ) {
+	if ( items.length > 0 && max <= items.length ) {
 		return items;
 	}
 
@@ -55,8 +55,8 @@ export const transformInput = function( $qty, variation = false ) {
 	const min = variation.min_qty || ( $original.attr( 'min' ) ? parseInt( $original.attr( 'min' ) ) : globalMax );
 	let max = variation.max_qty || ( $original.attr( 'max' ) ? parseInt( $original.attr( 'max' ) ) : globalMax );
 
-	// If max (or globalMax) is less than original value reset max with padding.
-	if ( max < selectedValue || selectedValue === max && max !== 1 ) {
+	// Allow more items to be chosen if available.
+	if ( ( max <= selectedValue && selectedValue !== max && max !== 1 ) || max === globalMax ) {
 		max = parseInt( selectedValue + globalMax );
 	}
 

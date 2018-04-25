@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php echo wp_kses_post( $package_name ); ?>:
 	</div>
 	<div class="action-list__item-value">
-		<?php if ( ! is_checkout() ) : ?>
+		<?php if ( ! is_checkout() && ! empty( $show_shipping_calculator ) ) : ?>
 		<a href="#" class="shipping-calculator-button"><?php echo esc_html__( 'Calculate shipping', 'bigbox' ); ?></a>
 		<?php endif; ?>
 	</div>
