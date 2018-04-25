@@ -60,16 +60,19 @@ class WooCommerce extends Integration implements Registerable, Service {
 
 		add_theme_support(
 			'woocommerce',
-			[
-				'thumbnail_image_width'         => 200,
-				'gallery_thumbnail_image_width' => 75,
-				'single_image_width'            => 400,
-				'product_grid'                  => [
-					'default_columns' => 4,
-					'min_columns'     => 1,
-					'max_columns'     => 5,
-				],
-			]
+			apply_filters(
+				'bigbox_woocommerce_theme_support',
+				[
+					'thumbnail_image_width'         => 200,
+					'gallery_thumbnail_image_width' => 75,
+					'single_image_width'            => 400,
+					'product_grid'                  => [
+						'default_columns' => 4,
+						'min_columns'     => 1,
+						'max_columns'     => 5,
+					],
+				]
+			)
 		);
 	}
 }
