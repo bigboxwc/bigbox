@@ -13,13 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-// Allow these modifications to easily be removed.
-if ( apply_filters( 'bigbox_optimize_checkout', true ) ) {
-
-	// Rearrange review, payment, and totals.
-	remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
-	add_action( 'woocommerce_checkout_before_customer_details', 'woocommerce_checkout_payment', 20 );
-}
+// Rearrange review, payment, and totals.
+remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+add_action( 'woocommerce_checkout_before_customer_details', 'woocommerce_checkout_payment', 20 );
 
 /**
  * Update "Billing details" text string.
@@ -69,10 +65,13 @@ function bigbox_get_cart_review_html() {
 /**
  * Update cart review data via AJAX.
  *
- * @todo check nonce.
  * @since 1.0.0
  */
 function bigbox_update_cart_review() {
+	if ( ! check_ajax_referer( 'update-order-review', 'security', false ) ) {
+		return wp_send_json_error();
+	}
+
 	bigbox_update_cart_and_totals();
 
 	if ( ! defined( 'WOOCOMMERCE_CHECKOUT' ) ) {

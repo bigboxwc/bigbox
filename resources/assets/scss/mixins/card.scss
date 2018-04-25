@@ -9,7 +9,7 @@
 
 	@include card;
 
-	color: theme-color("dark");
+	color: gray("700");
 	border: 1px solid rgba(theme-color("success"), 0.5);
 	background: rgba(theme-color("success"), 0.1);
 	box-shadow: inset rgba(theme-color("success"), 0.1) 0 0 0 3px, rgba(theme-color("success"), 0.3) 0 1px 2px;

@@ -1,4 +1,4 @@
-/* global bigbox */
+/* global bigbox, $ */
 
 /**
  * Create a generic list of options that can be appended multiple times.
@@ -12,7 +12,8 @@ const globalMax = bigbox.products.quantitySelector.max;
  * Only generates new ones if a request comes in larger than the
  * previoius global max.
  *
- * @param {Int} max Number of items to generate.
+ * @param {number} max Number of items to generate.
+ * @return {Array} List of HTML options.
  */
 const getOptions = ( max = globalMax ) => {
 	if ( items.length > 0 && max <= globalMax ) {
@@ -20,7 +21,7 @@ const getOptions = ( max = globalMax ) => {
 	}
 
 	items = [
-		`<option value="0">${ bigbox.products.quantitySelector.zero }</option>`
+		`<option value="0">${ bigbox.products.quantitySelector.zero }</option>`,
 	];
 
 	// Pad with globalMax
@@ -44,8 +45,11 @@ export const transformInput = function( $qty, variation = false ) {
 	// Remove any existing.
 	$original.detach();
 
+	const id = $original.attr( 'id' );
+
 	// Find original value.
-	const selectedValue = variation ? 0 : ( $original.val() ? parseInt( $original.val() ) : 0 );
+	const originalValue = $original.val() ? parseInt( $original.val() ) : 0;
+	const selectedValue = variation ? 0 : ( originalValue );
 
 	// Try to get preset min/max values.
 	const min = variation.min_qty || ( $original.attr( 'min' ) ? parseInt( $original.attr( 'min' ) ) : globalMax );
@@ -57,7 +61,7 @@ export const transformInput = function( $qty, variation = false ) {
 	}
 
 	// Add <select>
-	const $select = $( `<select class="qty" min="${ min }" max="${ max }" name="${ $original.attr( 'name' ) }" />` );
+	const $select = $( `<select id=${ id } class="qty" min=${ min } max=${ max } name=${ $original.attr( 'name' ) } />` );
 
 	$wrapper.append( $select );
 

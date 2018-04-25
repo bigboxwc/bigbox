@@ -23,10 +23,6 @@ wp_enqueue_style( 'bigbox-nux' );
 		<?php echo wp_kses_post( __( 'Use the steps below to finish setting up your new website.', 'bigbox' ) ); ?>
 	</p>
 
-	<div class="wp-badge" style="width: auto; height: auto; background: none; margin: 0; padding: 0;">
-		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/screenshot.png" width="220" alt="" />
-	</div>
-
 	<p class="helpful-links">
 		<a href="https://docs.bigbowc.com/" class="button button-primary" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Search Documentation', 'bigbox' ); ?></a>&nbsp;
 		<a href="https://bigboxwc.com/account/support" class="button button-secondary" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Contact Support', 'bigbox' ); ?></a>
@@ -36,3 +32,5 @@ wp_enqueue_style( 'bigbox-nux' );
 <div id="poststuff" class="wrap bigbox-setup-guide-steps">
 	<?php do_accordion_sections( 'bigbox-setup-steps', 'normal', null ); ?>
 </div>
+
+<script>!function(e,o,n){window.HSCW=o,window.HS=n,n.beacon=n.beacon||{};var t=n.beacon;t.userConfig={},t.readyQueue=[],t.config=function(e){this.userConfig=e},t.ready=function(e){this.readyQueue.push(e)},o.config={docs:{enabled:!0,baseUrl:"https://bigbox.helpscoutdocs.com/"},contact:{enabled:!1,formId:"e015d0b0-45ce-11e8-8d65-0ee9bb0328ce"}};var r=e.getElementsByTagName("script")[0],c=e.createElement("script");c.type="text/javascript",c.async=!0,c.src="https://djtflbt20bdde.cloudfront.net/",r.parentNode.insertBefore(c,r)}(document,window.HSCW||{},window.HS||{});</script>

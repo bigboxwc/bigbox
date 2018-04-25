@@ -38,7 +38,7 @@ $base = [
 	],
 ];
 
-if ( $family ) {
+if ( 'default' !== $family ) {
 	$base['declarations']['font-family'] = $family;
 }
 
@@ -50,6 +50,7 @@ return [
 		'selectors'    => [
 			'.cart_totals #shipping_method label',
 			'.woocommerce-form__label-for-checkbox',
+			'.action-list__item-label .amount',
 		],
 		'declarations' => [
 			'font-weight' => $weight_base,

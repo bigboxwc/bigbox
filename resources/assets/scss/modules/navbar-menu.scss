@@ -45,7 +45,6 @@ $menu-break-point: md;
 .navbar-menu--account {
 	order: 1;
 	margin-left: auto;
-	margin-right: -($spacer);
 
 	@include media-breakpoint-up( $menu-break-point ) {
 		order: 3;

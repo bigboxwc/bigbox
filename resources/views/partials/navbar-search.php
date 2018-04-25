@@ -17,6 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Filters the HTML for the search in the navbar.
  *
  * @since 1.0.0
+ *
+ * @param string
  */
 echo apply_filters( 'bigbox_navbar_search', '' );
-

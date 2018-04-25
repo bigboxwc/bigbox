@@ -3,7 +3,7 @@ $headings: 1, 2, 3, 4, 5, 6;
 @each $heading in $headings {
 
 	h#{$heading} {
-		color: theme-color("dark");
+		color: gray("700");
 		font-weight: $font-weight-bold;
 		margin: $spacer 0;
 	}

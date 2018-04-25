@@ -36,5 +36,5 @@ endif;
 		<div class="offcanvas-drawer__content"></div>
 	</div>
 
-	<a id="shop-filters-mobile" href="#shop-filters-mobile-toggle" class="offcanvas-drawer-backdrop offcanvas-drawer-toggle" tabindex="-1" aria-hidden="true" aria-label="<?php esc_attr_e( 'Close filters', 'bigbox' ); ?>" hidden="true" data-source="#shop-filters-mobile" data-target="#secondary"></a>
+	<a href="#shop-filters-mobile-toggle" class="offcanvas-drawer-backdrop offcanvas-drawer-toggle" tabindex="-1" aria-hidden="true" aria-label="<?php esc_attr_e( 'Close filters', 'bigbox' ); ?>" hidden="true" data-source="#shop-filters-mobile" data-target="#secondary"></a>
 </div>

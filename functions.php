@@ -13,6 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+// Current version -- automatically updated on release.
+define( 'BIGBOX_VERSION', '%BIGBOX_VERSION%' );
+
 /**
  * Do not allow the theme to be active if the PHP version is not met.
  *

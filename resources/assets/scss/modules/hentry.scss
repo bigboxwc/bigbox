@@ -2,20 +2,35 @@
 	line-height: 2em;
 }
 
+$map: (
+	sm: 2,
+	lg: 3,
+);
+
+.gallery,
+.wp-block-cover-image,
+.wp-block-quote,
+.wp-block-gallery,
+.wp-block-separator,
+.wp-block-image,
+.wp-block-embed,
+.wp-block-pullquote {
+
+	@include vertical-spacing("margin", "both", $map);
+}
+
 // Assume most standard pages (full width) will be used with Gutenberg.
 .hentry--page {
 
 	h2 {
 
-		@include single-product-section-title();
+		@include section-title();
 	}
 }
 
 // Gutenberg currently uses <figure>
 // @see https://github.com/WordPress/gutenberg/pull/5706
 .wp-block-image {
-
-	@include vertical-spacing("margin");
 
 	&.aligncenter {
 		display: block;
@@ -31,8 +46,6 @@
 	padding: 0;
 	list-style: none;
 
-	@include vertical-spacing("margin");
-
 	&.alignnone {
 		margin-left: -8px;
 		margin-right: -8px;
@@ -40,7 +53,6 @@
 }
 
 .wp-block-separator {
-	margin: ($spacer * 3) auto;
 	max-width: 200px;
 }
 
@@ -51,22 +63,13 @@
 	}
 }
 
-.wp-block-pullquote {
-
-	@include vertical-spacing("margin");
-}
-
 .wp-block-quote:not(.is-large) {
-	border-left: 4px solid color("dark");
-	margin: 0;
+	border-left: 4px solid gray("700");
 	padding-left: $spacer;
-
-	@include vertical-spacing("margin");
 }
 
 .gallery {
 
-	@include vertical-spacing("margin");
 	@include make-row();
 }
 

@@ -22,6 +22,9 @@ add_filter( 'woocommerce_template_path', 'bigbox_woocommerce_template_path' );
 // Modify global JS settings.
 add_filter( 'bigboxJsSettings', 'bigbox_woocommerce_js_settings' );
 
+// Remove cart fragments on standard shop pages.
+add_filter( 'wp_enqueue_scripts', 'bigbox_woocommerce_wp_enqueue_script', 20 );
+
 /**
  * resources/views/partials/navbar-search.php.
  */
@@ -152,7 +155,7 @@ add_action( 'bigbox_purchase_form', 'woocommerce_template_single_add_to_cart' );
 
 // Adjust sharing position.
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
-add_action( 'bigbox_purchase_form', 'woocommerce_template_single_sharing', 20 );
+add_action( 'bigbox_purchase_form_after', 'woocommerce_template_single_sharing' );
 
 // Remove related and upsells (added back with tabs).
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15, 4 );

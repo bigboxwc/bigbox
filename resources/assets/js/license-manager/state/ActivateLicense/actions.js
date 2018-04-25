@@ -69,7 +69,7 @@ export function activateLicense( license = '' ) {
 				} );
 
 				saveLicense( '' );
-			}
+			},
 		} );
 	};
 }
@@ -110,7 +110,7 @@ export function deactivateLicense( license = '' ) {
 				} );
 
 				saveLicense( '' );
-			}
+			},
 		} );
 	};
 }

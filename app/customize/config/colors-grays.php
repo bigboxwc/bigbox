@@ -32,7 +32,7 @@ return [
 	],
 	'gray-600' => [
 		'label'   => esc_html__( 'Gray 600', 'bigbox' ),
-		'default' => '#777777',
+		'default' => '#717171',
 	],
 	'gray-700' => [
 		'label'   => esc_html__( 'Gray 700', 'bigbox' ),

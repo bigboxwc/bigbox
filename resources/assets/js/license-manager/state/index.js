@@ -9,6 +9,11 @@ import thunkMiddleware from 'redux-thunk';
  */
 import { activateLicense } from './ActivateLicense/reducer';
 
+/**
+ * Configure store.
+ *
+ * @return {Object} Store.
+ */
 const configureStore = () => createStore(
 	activateLicense,
 	applyMiddleware( thunkMiddleware ),

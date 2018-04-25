@@ -14,10 +14,6 @@ return [
 		'label'   => esc_html__( 'Primary', 'bigbox' ),
 		'default' => '#346bcc',
 	],
-	'secondary' => [
-		'label'   => esc_html__( 'Secondary', 'bigbox' ),
-		'default' => '#fd7356',
-	],
 	'success'   => [
 		'label'   => esc_html__( 'Success', 'bigbox' ),
 		'default' => '#8dbc54',
@@ -33,13 +29,5 @@ return [
 	'danger'    => [
 		'label'   => esc_html__( 'Danger', 'bigbox' ),
 		'default' => '#e05f59',
-	],
-	'light'     => [
-		'label'   => esc_html__( 'Light', 'bigbox' ),
-		'default' => '#f7f7f7',
-	],
-	'dark'      => [
-		'label'   => esc_html__( 'Dark', 'bigbox' ),
-		'default' => '#353535',
 	],
 ];

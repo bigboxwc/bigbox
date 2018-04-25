@@ -18,7 +18,6 @@ return [
 			'table td',
 			'table th',
 			'.blog-post',
-			'.facetwp-facetwp .facetwp-slider .noUi-handle',
 			'.navbar-mobile__close',
 			'.page-title',
 			'.product__inner',

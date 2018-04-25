@@ -1,7 +1,4 @@
-/**
- * External dependencies.
- */
-import { forEach } from 'lodash';
+/* global $, _ */
 
 /**
  * Internal dependencies.
@@ -23,7 +20,7 @@ const $body = $( document.body );
  * Can't loop because we don't want to use the cache.
  */
 export const transformQtys = () => {
-	forEach( partials, ( selector ) => {
+	_.forEach( partials, ( selector ) => {
 		$( selector ).find( '.qty' ).each( function() {
 			transformInput( $( this ), false );
 		} );
@@ -34,7 +31,7 @@ export const transformQtys = () => {
  * Block partials when something is changing.
  */
 export const blockPartials = () => {
-	forEach( partials, ( selector ) => {
+	_.forEach( partials, ( selector ) => {
 		$( selector ).addClass( 'processing' ).block( {
 			message: null,
 			overlayCSS: {
@@ -51,7 +48,7 @@ export const blockPartials = () => {
  * @param {Object} response Response fragments to map to partials.
  */
 export const updatePartials = ( response ) => {
-	forEach( partials, ( selector, partial ) => {
+	_.forEach( partials, ( selector, partial ) => {
 		$( selector )
 			.replaceWith( response.data[ partial ] )
 
@@ -74,8 +71,14 @@ $body.delegate( `${ partials.cart } .qty`, 'change', () => {
 
 	wp.ajax.send( 'bigbox_update_cart', {
 		data: {
+			_wpnonce: $( '#woocommerce-cart-nonce' ).val(),
 			checkout: $( partials.cart ).serialize(),
 		},
+		/**
+		 * Update cart partials when session has been updated.
+		 *
+		 * @param {Object} response AJAX response object containing cart data.
+		 */
 		success( response ) {
 			updatePartials( response );
 		},

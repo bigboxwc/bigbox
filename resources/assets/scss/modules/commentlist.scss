@@ -1,6 +1,6 @@
 .commentlist-title {
 
-	@include single-product-section-title;
+	@include section-title();
 }
 
 .commentlist {

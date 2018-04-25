@@ -45,13 +45,9 @@ function bigbox_woocommerce_cart_shipping_method_price( $method ) {
  * @return string
  */
 function bigbox_woocommerce_cart_shipping_method_full_label( $label, $method ) {
-	if ( ! is_cart() ) {
-		return $label;
-	}
-
 	$label = $method->get_label() . ':';
 
-	if ( $method->cost >= 0 && $method->get_method_id() !== 'free_shipping' ) {
+	if ( $method->get_method_id() !== 'free_shipping' ) {
 		$label .= ' <small class="tax_label">' . WC()->countries->ex_tax_or_vat() . '</small>';
 	}
 
@@ -62,7 +58,8 @@ add_filter( 'woocommerce_cart_shipping_method_full_label', 'bigbox_woocommerce_c
 /**
  * Update global cart and totals.
  *
- * @todo Check nonce.
+ * Note: This should not be called directly. It should be inside a previously
+ * secured AJAX request.
  *
  * @since 1.0.0
  */
@@ -126,10 +123,13 @@ function bigbox_get_totals_html() {
 /**
  * Update cart data via AJAX.
  *
- * @todo check nonce.
  * @since 1.0.0
  */
 function bigbox_update_cart() {
+	if ( ! check_ajax_referer( 'woocommerce-cart', '_wpnonce', false ) ) {
+		return wp_send_json_error();
+	}
+
 	bigbox_update_cart_and_totals();
 
 	return wp_send_json_success(

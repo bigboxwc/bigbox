@@ -1,10 +1,10 @@
 /**
  * External dependencies
  */
-const webpack           = require( 'webpack' );
+const webpack = require( 'webpack' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
-const WebpackRTLPlugin  = require( 'webpack-rtl-plugin' );
-const SpritePlugin      = require( 'svg-sprite-loader/plugin' );
+const WebpackRTLPlugin = require( 'webpack-rtl-plugin' );
+const SpritePlugin = require( 'svg-sprite-loader/plugin' );
 
 const themeCSS = new ExtractTextPlugin( {
 	filename: './public/css/app.min.css',
