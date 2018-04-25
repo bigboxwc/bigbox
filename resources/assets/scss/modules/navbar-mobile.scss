@@ -104,8 +104,15 @@
 }
 
 .mobile-menu-children-toggle {
+	cursor: e-resize;
 	display: block;
 	flex: 1;
 	margin-left: 1rem;
 	max-height: 20px;
+	position: relative;
+	z-index: 2;
+
+	.menu-item--opened & {
+		cursor: w-resize;
+	}
 }

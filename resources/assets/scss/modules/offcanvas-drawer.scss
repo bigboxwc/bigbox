@@ -59,6 +59,7 @@
 }
 
 .offcanvas-drawer__close {
+	cursor: w-resize;
 	font-size: $font-size-sm;
 	font-weight: $font-weight-bold;
 	text-decoration: none;
