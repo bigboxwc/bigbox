@@ -74,6 +74,10 @@ function bigbox_woocommerce_adjust_catalog_columns() {
 	$total   = wc_get_loop_prop( 'total' );
 	$columns = wc_get_loop_prop( 'columns' );
 
+	if ( 0 === $total ) {
+		return;
+	}
+
 	// If the total found is fewer than the number of columns show a standard list.
 	if ( $total <= absint( $columns ) ) {
 		return wc_set_loop_prop( 'columns', $total );
