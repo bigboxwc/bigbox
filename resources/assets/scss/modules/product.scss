@@ -14,6 +14,7 @@
 }
 
 @mixin vertical-card {
+
 	.product__inner {
 		display: block;
 		padding-top: $spacer;
@@ -78,6 +79,7 @@
 	&.columns-3 li.product,
 	&.columns-4 li.product,
 	&.columns-5 li.product {
+
 		@include make-col(6);
 	}
 

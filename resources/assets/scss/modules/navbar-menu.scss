@@ -80,6 +80,7 @@ $menu-break-point: md;
 	}
 
 	@include media-breakpoint-up( $menu-break-point ) {
+
 		.offcanvas-drawer__content {
 			display: flex;
 			flex-wrap: wrap;
