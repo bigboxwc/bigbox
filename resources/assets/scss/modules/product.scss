@@ -96,7 +96,7 @@
 	&.columns-4 li.product,
 	&.columns-5 li.product {
 
-		@include media-breakpoint-up(sm) {
+		@include media-breakpoint-up(md) {
 
 			@include make-col(3);
 		}
