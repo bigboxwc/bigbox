@@ -62,12 +62,16 @@
 		max-width: 320px; // [1]
 
 		&:after {
-			mask-image: url("../images/arrow-left.svg");
-			top: 22px;
+			top: 23px;
+			left: ($spacer * 1.5);
+			right: auto;
+			border-left: none;
+			border-right: 4px solid gray("400");
 		}
 
 		> a {
 			font-weight: bold;
+			padding-left: 1rem;
 		}
 
 		> .sub-menu {
@@ -84,20 +88,20 @@
 
 		&:after {
 			content: "";
-			line-height: 1;
 			position: absolute;
-			right: ($spacer * 1.5);
-			top: 15px;
-			mask-image: url("../images/arrow-right.svg");
-			mask-repeat: no-repeat;
-			mask-size: 6px 11px;
-			mask-position: center right;
-			background-color: gray("800");
-			width: 6px;
-			height: 11px;
+			right: 1rem;
+			top: calc(50% - 5px);
+			width: 0;
+			height: 0;
+			border-top: 5px solid transparent;
+			border-bottom: 5px solid transparent;
+			border-left: 4px solid gray("400");
 
 			.rtl & {
-				mask-image: url("../images/arrow-left.svg");
+				border-left: 0;
+				border-right: 4px solid gray("400");
+				left: 1rem;
+				right: auto;
 			}
 		}
 	}
@@ -108,7 +112,6 @@
 	display: block;
 	flex: 1;
 	margin-left: 1rem;
-	max-height: 20px;
 	position: relative;
 	z-index: 2;
 

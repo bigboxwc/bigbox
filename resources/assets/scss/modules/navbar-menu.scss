@@ -159,7 +159,7 @@ $menu-break-point: md;
 		position: absolute;
 		top: 100%;
 		z-index: 10;
-		transition: all 0.15s ease-in-out;
+		transition: all 0.1s ease-in-out;
 		transform-origin: top left;
 
 		a {
@@ -177,15 +177,13 @@ $menu-break-point: md;
 
 			&:after {
 				content: "";
-				mask-repeat: no-repeat;
-				mask-size: 6px 11px;
-				mask-position: center right;
-				background-color: gray("500");
-				width: 6px;
-				height: 11px;
 				position: absolute;
 				right: 0;
-				top: 5px;
+				top: calc(50% - 5px);
+				width: 0;
+				height: 0;
+				border-top: 5px solid transparent;
+				border-bottom: 5px solid transparent;
 			}
 		}
 
@@ -215,10 +213,10 @@ $menu-break-point: md;
 		.menu-item-has-children > a {
 
 			&:after {
-				mask-image: url("../images/arrow-right.svg");
+				border-left: 4px solid gray("400");
 
 				.rtl & {
-					mask-image: url("../images/arrow-left.svg");
+					border-right: 4px solid gray("400");
 				}
 			}
 		}
@@ -248,10 +246,10 @@ $menu-break-point: md;
 			&:after {
 				left: 0;
 				right: auto;
-				mask-image: url("../images/arrow-left.svg");
+				border-right: 4px solid gray("400");
 
 				.rtl & {
-					mask-image: url("../images/arrow-right.svg");
+					border-left: 4px solid gray("400");
 				}
 			}
 		}

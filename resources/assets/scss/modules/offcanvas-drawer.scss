@@ -2,6 +2,7 @@
 .offcanvas-drawer-open {
 	overflow: hidden;
 	position: fixed;
+	width: 100%;
 
 	// Scroll drawer content (keep close fixed).
 	.offcanvas-drawer .offcanvas-drawer__content {

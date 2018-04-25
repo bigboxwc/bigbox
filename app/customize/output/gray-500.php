@@ -12,7 +12,7 @@
 $gray500 = bigbox_get_theme_color( 'gray-500' );
 
 return [
-	// Solid color
+	// Solid color.
 	[
 		'selectors'    => [
 			'.star-rating__count',
@@ -22,15 +22,6 @@ return [
 		],
 		'declarations' => [
 			'color' => esc_attr( $gray500 ),
-		],
-	],
-	// Solid background-color
-	[
-		'selectors'    => [
-			'.navbar-menu__items-secondary .sub-menu .menu-item-has-children > a:after',
-		],
-		'declarations' => [
-			'background-color' => esc_attr( $gray500 ),
 		],
 	],
 ];

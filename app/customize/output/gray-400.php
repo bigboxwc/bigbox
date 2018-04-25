@@ -23,6 +23,29 @@ return [
 			'border-color' => esc_attr( $gray400 ),
 		],
 	],
+	// Solid border-color.
+	[
+		'selectors'    => [
+			'.navbar-menu__items-primary .sub-menu .menu-item-has-children > a:after',
+			'.navbar-menu__items-secondary .sub-menu .menu-item-has-children > a:after',
+			'.navbar--mobile .menu-item-has-children:after',
+		],
+		'declarations' => [
+			'border-left-color' => esc_attr( $gray400 ),
+		],
+	],
+	[
+		'selectors'    => [
+			'.rtl .navbar-menu__items-primary .sub-menu .menu-item-has-children > a:after',
+			'.rtl .navbar-menu__items-secondary .sub-menu .menu-item-has-children > a:after',
+			'.rtl .navbar--mobile .menu-item-has-children:after',
+			'.navbar-menu__items-primary .sub-menu .menu-item-has-children > a:after',
+			'.navbar-menu__items-secondary .sub-menu .menu-item-has-children > a:after',
+		],
+		'declarations' => [
+			'border-right-color' => esc_attr( $gray400 ),
+		],
+	],
 
 	// @mixin button--secondary
 	[
