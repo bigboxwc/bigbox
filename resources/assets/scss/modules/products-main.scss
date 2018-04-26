@@ -15,6 +15,11 @@
 		@include vertical-spacing("margin", "down");
 	}
 
+	// Remove margin when inside a single page.
+	.woocommerce-single-product-data__section ul.products-main {
+		margin-bottom: 0;
+	}
+
 	.no-products-found {
 		margin-left: ($grid-gutter-width / 2);
 		margin-right: ($grid-gutter-width / 2);
