@@ -17,6 +17,8 @@ return [
 	// Solid border-color
 	[
 		'selectors'    => [
+			'table td',
+			'table th',
 			'.navbar-mobile .sub-menu',
 			'.wc-credit-card-form #stripe-card-element',
 			'.navbar-search__category select',
@@ -46,6 +48,15 @@ return [
 		'selectors'    => [],
 		'declarations' => [
 			'box-shadow' => '0 1px 0 ' . esc_attr( $gray300 ),
+		],
+	],
+	// Solid box-shadow
+	[
+		'selectors'    => [
+			'table',
+		],
+		'declarations' => [
+			'box-shadow' => esc_attr( "{$gray300} 0 0 0 1px" ),
 		],
 	],
 

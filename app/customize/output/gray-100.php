@@ -25,8 +25,6 @@ return [
 			'.woocommerce-pagination',
 			'.facetwp-pager',
 			'.navbar-search__category select',
-			'.woocommerce-page ul.products-categories li.product.product-category',
-			'.woocommerce ul.products-categories li.product.product-category',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $gray100 ),

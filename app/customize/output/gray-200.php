@@ -15,8 +15,6 @@ return [
 	// Solid border-color
 	[
 		'selectors'    => [
-			'table td',
-			'table th',
 			'.blog-post',
 			'.navbar-mobile__close',
 			'.page-title',
@@ -35,13 +33,14 @@ return [
 			'border-color' => esc_attr( $gray200 ),
 		],
 	],
-	// Solid box-shadow
+	// Solid background-color
 	[
 		'selectors'    => [
-			'table',
+			'.woocommerce-page ul.products-categories li.product.product-category',
+			'.woocommerce ul.products-categories li.product.product-category',
 		],
 		'declarations' => [
-			'box-shadow' => esc_attr( "{$gray200} 0 0 0 1px" ),
+			'background-color' => esc_attr( $gray200 ),
 		],
 	],
 ];
