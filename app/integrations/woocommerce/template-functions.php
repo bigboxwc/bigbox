@@ -201,7 +201,7 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 		</div>
 		<?php endif; ?>
 
-		<?php if ( ! empty( $more_categories ) ) : ?>
+		<?php if ( ! empty( $more_categories ) && apply_filters( 'bigbox_woocommerce_after_output_product_categories_dropdown', true ) ) : ?>
 		<form id="product-category-selector" action="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" method="GET" class="product-category-more__selector">
 			<select name="product_cat">
 				<option><?php echo esc_html_e( 'More...', 'bigbox' ); ?></option>

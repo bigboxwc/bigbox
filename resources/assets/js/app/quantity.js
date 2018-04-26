@@ -56,7 +56,7 @@ export const transformInput = function( $qty, variation = false ) {
 	let max = variation.max_qty || ( $original.attr( 'max' ) ? parseInt( $original.attr( 'max' ) ) : globalMax );
 
 	// Allow more items to be chosen if available.
-	if ( ( max <= selectedValue && selectedValue !== max && max !== 1 ) || max === globalMax ) {
+	if ( ( max <= selectedValue && selectedValue !== max && max !== 1 ) || ( max === globalMax && selectedValue !== 1 ) ) {
 		max = parseInt( selectedValue + globalMax );
 	}
 
