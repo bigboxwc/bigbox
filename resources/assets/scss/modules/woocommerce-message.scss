@@ -11,7 +11,7 @@
 
 	.woocommerce-Button,
 	.wc-forward {
-		margin-right: $spacer;
+		margin-right: ($spacer / 2);
 		margin-left: -($spacer / 2);
 
 		@include button--success;
