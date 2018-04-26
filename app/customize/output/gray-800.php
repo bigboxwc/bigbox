@@ -17,6 +17,12 @@ return [
 		'selectors'    => [
 			'a',
 			'mark',
+			'h1',
+			'h2',
+			'h3',
+			'h4',
+			'h5',
+			'h6',
 			'.woocommerce-terms-and-conditions-text',
 			'.action-list__item-value',
 		],

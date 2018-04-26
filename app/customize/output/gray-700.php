@@ -16,12 +16,6 @@ return [
 	[
 		'selectors'    => [
 			'body',
-			'h1',
-			'h2',
-			'h3',
-			'h4',
-			'h5',
-			'h6',
 			'[type="email"]',
 			'[type="search"]',
 			'[type="tel"]',
@@ -37,7 +31,6 @@ return [
 			'.woocommerce-breadcrumb a',
 			'.woocommerce-pagination .active',
 			'.woocommerce-pagination .current',
-			'.single-product .product_title',
 		],
 		'declarations' => [
 			'color' => esc_attr( $gray700 ),

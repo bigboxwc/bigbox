@@ -71,6 +71,7 @@ return [
 			'.button',
 			'button',
 			'.woocommerce-form-coupon [name="apply_coupon"]',
+			'.comment-form [type="submit"]',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $primary ),

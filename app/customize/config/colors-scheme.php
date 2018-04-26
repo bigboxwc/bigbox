@@ -12,7 +12,7 @@
 return [
 	'primary' => [
 		'label'   => esc_html__( 'Primary', 'bigbox' ),
-		'default' => '#346bcc',
+		'default' => '#3b89ef',
 	],
 	'success' => [
 		'label'   => esc_html__( 'Success', 'bigbox' ),

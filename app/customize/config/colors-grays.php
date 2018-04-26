@@ -40,6 +40,6 @@ return [
 	],
 	'gray-800' => [
 		'label'   => esc_html__( 'Gray 800', 'bigbox' ),
-		'default' => '#353535',
+		'default' => '#333333',
 	],
 ];
