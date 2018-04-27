@@ -17,6 +17,10 @@
 		flex: 1 0 100%;
 		flex-direction: column;
 
+		@include media-breakpoint-up(lg) {
+			margin: 0 $spacer;
+		}
+
 		@include media-breakpoint-up(md) {
 			flex-basis: 0;
 		}
@@ -24,6 +28,10 @@
 		@include media-breakpoint-up(xl) {
 			flex-direction: row;
 		}
+	}
+
+	.woocommerce-product-gallery + .summary {
+		margin: 0;
 	}
 }
 
