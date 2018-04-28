@@ -1,9 +1,35 @@
 .facetwp-pager {
 
 	@extend .woocommerce-pagination;
+
+	.facetwp-page.last-page,
+	.facetwp-page.first-page {
+		display: none;
+	}
 }
 
 .facetwp-pager-label {
 
 	@extend .screen-reader-text;
+}
+
+// Add ellipses between page jumps.
+.facetwp-page.active + .facetwp-page + .facetwp-page + .facetwp-page:not(.last-page):not(.next) {
+	padding-left: 0;
+
+	&:before {
+		content: '...';
+		margin-right: 6px;
+		padding-right: ($spacer / 2);
+	}
+}
+
+.facetwp-page.first-page + a:not([data-page="1"]) {
+	margin-right: 0;
+
+	&:after {
+		content: '...';
+		margin-left: 6px;
+		padding-left: ($spacer / 2);
+	}
 }

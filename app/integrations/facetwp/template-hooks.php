@@ -38,18 +38,3 @@ add_action( 'woocommerce_before_shop_loop', 'bigbox_facetwp_result_count', 20 );
 add_action( 'woocommerce_before_shop_loop', 'bigbox_facetwp_catalog_ordering', 30 );
 
 add_filter( 'facetwp_result_count', 'bigbox_facetwp_result_count_output', 10, 2 );
-
-// Add a defined template around no results.
-add_action(
-	'woocommerce_no_products_found', function() {
-		wc_set_loop_prop( 'columns', 1 );
-		wc_get_template( 'loop/loop-start.php' );
-	}, 5
-);
-
-
-add_action(
-	'woocommerce_no_products_found', function() {
-		wc_get_template( 'loop/loop-end.php' );
-	}, 15
-);

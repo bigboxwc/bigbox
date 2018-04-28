@@ -68,14 +68,29 @@
 	}
 }
 
-.facetwp-facet.facetwp-type-star_rating {
+.facetwp-facet.facetwp-facet-rating {
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	height: 20px;
 
-	.facetwp-counter {
-		display: none;
+	.facetwp-star {
+		color: gray("300");
+		font-size: $font-size-base;
+		margin-bottom: 0;
+		margin-right: 3px;
 	}
 
-	.star-icon {
-		background-image: url("../images/stars.svg");
+	.facetwp-star:hover,
+	.facetwp-star:hover ~ .facetwp-star,
+	.facetwp-star.selected,
+	.facetwp-star.selected ~ .facetwp-star {
+		color: #f8c144;
+	}
+
+	.facetwp-counter {
+		font-size: $font-size-sm;
+		margin-left: 4px;
 	}
 }
 
