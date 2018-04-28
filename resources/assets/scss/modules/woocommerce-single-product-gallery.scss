@@ -53,6 +53,7 @@
 
 	.flex-control-nav {
 		display: none;
+		max-width: 75px;
 
 		@include reset-list();
 
@@ -78,6 +79,13 @@
 .woocommerce-product-gallery__wrapper {
 	margin: 0;
 	padding: 0;
+}
+
+.woocommerce-product-gallery__image {
+	a,
+	img {
+		display: block;
+	}
 }
 
 // [1] .woocommerce-product-gallery (parent) includes grid gutter spacing.

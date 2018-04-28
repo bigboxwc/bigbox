@@ -38,3 +38,6 @@ add_action( 'woocommerce_before_shop_loop', 'bigbox_facetwp_result_count', 20 );
 add_action( 'woocommerce_before_shop_loop', 'bigbox_facetwp_catalog_ordering', 30 );
 
 add_filter( 'facetwp_result_count', 'bigbox_facetwp_result_count_output', 10, 2 );
+
+// Add custom sort options.
+add_filter( 'facetwp_sort_options', 'bigbox_facetwp_sort_options' );

@@ -101,3 +101,33 @@ function bigbox_facetwp_result_count_output( $output, $params ) {
 function bigbox_facetwp_catalog_ordering() {
 	echo do_shortcode( '[facetwp sort="true"]' );
 }
+
+/**
+ * Custom sort options.
+ *
+ * @since 1.0.0
+ *
+ * @param array $options Current sorting options.
+ * @return array
+ */
+function bigbox_facetwp_sort_options( $options ) {
+	$options['price'] = [
+		'label' => __( 'Price (Lowest)', 'bigbox' ),
+		'query_args' => [
+			'orderby'  => 'meta_value_num',
+			'meta_key' => '_price',
+			'order'    => 'ASC',
+		]
+	];
+
+	$options['price-desc'] = [
+		'label' => __( 'Price (Highest)', 'bigbox' ),
+		'query_args' => [
+			'orderby'  => 'meta_value_num',
+			'meta_key' => '_price',
+			'order'    => 'DESC',
+		]
+	];
+
+	return $options;
+}

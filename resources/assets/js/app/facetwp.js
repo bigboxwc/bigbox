@@ -6,6 +6,8 @@
 import { adjustWidth } from './navbar.js';
 
 ( function( $ ) {
+	const $document = $( document );
+
 	/**
 	 * Refresh FacetWP when on the shop page.
 	 *
@@ -30,5 +32,13 @@ import { adjustWidth } from './navbar.js';
 	} );
 
 	// Adjust select widths once loaded.
-	$( document ).on( 'facetwp-loaded', adjustWidth );
+	$document.on( 'facetwp-loaded', adjustWidth );
+
+	$document.on( 'facetwp-loaded', () => {
+		if ( FWP.loaded ) {
+			$( 'html, body' ).animate( {
+				scrollTop: $( '#main' ).offset().top,
+			}, 250 );
+		}
+	});
 }( jQuery ) );
