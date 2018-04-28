@@ -24,6 +24,9 @@ add_filter( 'bigbox_navbar_search', 'bigbox_facetwp_navbar_search' );
  * woocommerce/templates/archive-product.php.
  */
 
+// Preselect on archives.
+add_filter( 'facetwp_template_use_archive', '__return_true' );
+
 // Add pagination.
 remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination' );
 add_action( 'woocommerce_after_shop_loop', 'bigbox_facetwp_pagination' );

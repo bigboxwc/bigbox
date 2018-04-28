@@ -32,7 +32,7 @@ endif;
 
 	if ( $taxonomy ) :
 		$name = FWP()->helper->get_setting( 'prefix' ) . $dropdown['name'];
-		$all  = esc_html( $dropdown['label_any'] );
+		$all  = esc_html( isset( $dropdown['label_any'] ) ? $dropdown['label_any'] : esc_html__( 'All', 'bigbox' ) );
 	?>
 
 	<div id="navbar-search__category" class="navbar-search__category">
@@ -42,7 +42,7 @@ endif;
 
 		<div id="search-dropdown-real">
 		<?php
-		if ( is_shop() && ! is_customize_preview() ) :
+		if ( ( is_shop() || is_product_taxonomy() ) && ! is_customize_preview() ) :
 			echo facetwp_display( 'facet', $dropdown['name'] );
 		else :
 			wp_dropdown_categories(
