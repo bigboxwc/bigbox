@@ -161,6 +161,9 @@ add_action( 'bigbox_purchase_form_after', 'woocommerce_template_single_sharing' 
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15, 4 );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
+add_filter( 'woocommerce_output_related_products_args', 'bigbox_woocommerce_output_related_products_args' );
+add_filter( 'woocommerce_upsell_display_args', 'bigbox_woocommerce_output_related_products_args' );
+
 // Add product meta to the Additional Information tab.
 add_action( 'woocommerce_product_additional_information', 'bigbox_woocommerce_product_additional_information', 99 );
 

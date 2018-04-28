@@ -78,14 +78,16 @@
 	&.columns-2 li.product,
 	&.columns-3 li.product,
 	&.columns-4 li.product,
-	&.columns-5 li.product {
+	&.columns-5 li.product,
+	&.columns-6 li.product {
 
 		@include make-col(6);
 	}
 
 	&.columns-3 li.product,
 	&.columns-4 li.product,
-	&.columns-5 li.product {
+	&.columns-5 li.product,
+	&.columns-6 li.product {
 
 		@include media-breakpoint-up(sm) {
 
@@ -94,7 +96,8 @@
 	}
 
 	&.columns-4 li.product,
-	&.columns-5 li.product {
+	&.columns-5 li.product,
+	&.columns-6 li.product {
 
 		@include media-breakpoint-up(md) {
 
@@ -102,11 +105,20 @@
 		}
 	}
 
-	&.columns-5 li.product {
+	&.columns-5 li.product,
+	&.columns-6 li.product {
 
 		@include media-breakpoint-up(xl) {
 
 			@include make-col(2.4);
+		}
+	}
+
+	&.columns-6 li.product {
+
+		@include media-breakpoint-up(xl) {
+
+			@include make-col(2);
 		}
 	}
 }

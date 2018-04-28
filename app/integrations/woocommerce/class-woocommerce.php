@@ -69,7 +69,7 @@ class WooCommerce extends Integration implements Registerable, Service {
 					'product_grid'                  => [
 						'default_columns' => 4,
 						'min_columns'     => 1,
-						'max_columns'     => 5,
+						'max_columns'     => 6,
 					],
 				]
 			)

@@ -307,6 +307,22 @@ function bigbox_woocommerce_product_tabs( $tabs ) {
 }
 
 /**
+ * Use set columns for related products and upsells.
+ *
+ * @since 1.0.0
+ *
+ * @param array $args Output arguments.
+ */
+function bigbox_woocommerce_output_related_products_args( $args ) {
+	$columns = wc_get_default_products_per_row();
+
+	$args['posts_per_page'] = $columns;
+	$args['columns']        = $columns;
+
+	return $args;
+}
+
+/**
  * Maybe display shop attributes.
  *
  * WooCommerce always outputs a blank table which doesn't work well
