@@ -2,12 +2,6 @@
 	line-height: 2em;
 }
 
-$map: (
-	sm: 2,
-	lg: 3,
-);
-
-.gallery,
 .wp-block-cover-image,
 .wp-block-quote,
 .wp-block-gallery,
@@ -16,7 +10,10 @@ $map: (
 .wp-block-embed,
 .wp-block-pullquote {
 
-	@include vertical-spacing("margin", "both", $map);
+	@include vertical-spacing("margin", "both", (
+		sm: 2,
+		lg: 3,
+	) );
 }
 
 // Assume most standard pages (full width) will be used with Gutenberg.

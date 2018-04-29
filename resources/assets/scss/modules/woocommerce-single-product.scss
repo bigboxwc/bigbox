@@ -3,6 +3,7 @@
 	.site-primary > .product {
 		display: flex;
 		flex-wrap: wrap;
+		align-items: flex-start;
 
 		@include make-row();
 	}

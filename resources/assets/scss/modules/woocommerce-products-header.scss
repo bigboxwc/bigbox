@@ -10,3 +10,10 @@
 .woocommerce-products-header {
 	position: relative;
 }
+
+.woocommerce-products-header__title {
+
+	.home & {
+		@include screen-reader-text();
+	}
+}

@@ -14,10 +14,10 @@
 }
 
 @mixin vertical-card {
+	margin-bottom: $spacer;
 
 	.product__inner {
 		display: block;
-		padding-top: $spacer;
 		padding-bottom: $spacer;
 	}
 

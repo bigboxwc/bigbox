@@ -114,6 +114,11 @@
 
 .facetwp-facet.facetwp-type-date_range {
 
+	.facetwp-date-max,
+	.facetwp-date-min {
+		font-size: $font-size-sm;
+	}
+
 	.facetwp-date-min {
 		margin-bottom: $spacer;
 	}

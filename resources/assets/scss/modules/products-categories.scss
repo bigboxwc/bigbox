@@ -19,7 +19,9 @@
 		border-radius: $border-radius;
 	}
 	
-	@include vertical-spacing("margin", "down");
+	@include vertical-spacing("margin", "down", (
+		sm: 1,
+	) );
 
 	li.product.product-category {
 		background: gray("100");
@@ -72,7 +74,6 @@
 	font-size: $font-size-sm;
 	font-weight: $font-weight-bold;
 	text-align: center;
-	margin: 4px 0 0;
 	padding: ($spacer / 2) ($spacer / 4);
 	background: #fff;
 	border-radius: $border-radius;
@@ -87,8 +88,12 @@
 	}
 }
 
+// Only add space when an image exists.
+img + .woocommerce-loop-category__title {
+	margin: 4px 0 0;
+}
+
 .product-category-more__inner {
-	margin: 0;
 	padding: $spacer;
 	justify-content: center;
 	flex-wrap: wrap;
