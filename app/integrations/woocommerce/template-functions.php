@@ -293,15 +293,15 @@ function bigbox_woocommerce_product_tabs( $tabs ) {
 		'callback' => 'woocommerce_upsell_display',
 	];
 
+	if ( isset( $tabs['reviews'] ) ) {
+		$tabs['reviews']['priority'] = 30;
+	}
+
 	$tabs['related'] = [
 		'title'    => esc_html__( 'Related products', 'bigbox' ),
-		'priority' => 30,
+		'priority' => 40,
 		'callback' => 'woocommerce_output_related_products',
 	];
-
-	if ( isset( $tabs['reviews'] ) ) {
-		$tabs['reviews']['priority'] = 40;
-	}
 
 	return $tabs;
 }
@@ -316,7 +316,7 @@ function bigbox_woocommerce_product_tabs( $tabs ) {
 function bigbox_woocommerce_output_related_products_args( $args ) {
 	$columns = wc_get_default_products_per_row();
 
-	$args['posts_per_page'] = $columns;
+	$args['posts_per_page'] = ( $columns * 2 );
 	$args['columns']        = $columns;
 
 	return $args;
