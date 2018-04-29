@@ -180,6 +180,14 @@ add_filter( 'woocommerce_single_product_carousel_options', 'bigbox_woocommerce_s
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cart_totals' );
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 
+add_filter( 'woocommerce_cross_sells_total', function() {
+	return wc_get_default_products_per_row() * 2;
+} );
+
+add_filter( 'woocommerce_cross_sells_columns', function() {
+	return wc_get_default_products_per_row();
+} );
+
 /**
  * wc-formatting-functions.php.
  */
@@ -205,3 +213,12 @@ add_action( 'woocommerce_review_meta', 'woocommerce_review_display_gravatar', 5 
 // Move rating output.
 remove_action( 'woocommerce_review_before_comment_meta', 'woocommerce_review_display_rating' );
 add_action( 'woocommerce_review_meta', 'woocommerce_review_display_rating', 15 );
+
+/**
+ * class-wc-widget-cart.php
+ */
+add_filter( 'woocommerce_widget_cart_is_hidden', function( $hidden ) {
+	wp_enqueue_script( 'wc-cart-fragments' );
+
+	return $hidden;
+} );
