@@ -3,9 +3,6 @@
 }
 
 .shop-filters__mobile-toggle {
-	position: absolute;
-	right: 0;
-	bottom: $spacer;
 
 	@include media-breakpoint-up(md) {
 		display: none;
@@ -18,6 +15,7 @@
 	text-decoration: none;
 	display: flex;
 	align-items: center;
+	margin-right: $spacer;
 
 	svg {
 		margin-left: 5px;

@@ -93,7 +93,6 @@
 
 // Shop
 @import "modules/shop-filters";
-@import "modules/facetwp";
 @import "modules/ordering";
 @import "modules/breadcrumbs";
 @import "modules/woocommerce";
@@ -124,6 +123,8 @@
 @import "modules/star-rating";
 
 // FacetWP
+@import "modules/facetwp";
+@import "modules/facetwp-counts";
 @import "modules/facetwp-pager";
 @import "modules/facetwp-sort";
 

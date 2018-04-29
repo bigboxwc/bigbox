@@ -1,0 +1,8 @@
+.facetwp-counts {
+	display: none;
+
+	@include media-breakpoint-up(sm) {
+		margin-right: auto;
+		display: block;
+	}
+}

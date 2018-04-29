@@ -56,7 +56,7 @@ add_filter(
 
 // Wrap result count and ordering.
 add_action( 'woocommerce_before_shop_loop', 'bigbox_woocommerce_before_shop_loop', 15 );
-add_action( 'woocommerce_before_shop_loop', 'bigbox_woocommerce_before_shop_loop_after', 35 );
+add_action( 'woocommerce_before_shop_loop', 'bigbox_woocommerce_before_shop_loop_after', 55 );
 
 // Move breadcrumb under navbar.
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
@@ -66,7 +66,7 @@ add_action( 'bigbox_navbar_after', 'woocommerce_breadcrumb' );
 add_filter( 'woocommerce_pagination_args', 'bigbox_woocommerce_pagination_args' );
 
 // Mobile filters.
-add_action( 'woocommerce_archive_description', 'bigbox_woocommerce_archive_mobile_filters' );
+add_action( 'woocommerce_before_shop_loop', 'bigbox_woocommerce_archive_mobile_filters', 25 );
 
 /**
  * content-product.php.

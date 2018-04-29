@@ -5,6 +5,10 @@
 	justify-content: space-between;
 	align-items: center;
 	position: relative;
+
+	@include media-breakpoint-up(sm) {
+		justify-content: normal;
+	}
 }
 
 .woocommerce-products-header {
