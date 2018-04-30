@@ -55,7 +55,7 @@
 	// Global forms.
 	.input-text {
 
-		@include form-input;
+		@include form-input();
 
 		+ span {
 			color: gray("500");

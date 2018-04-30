@@ -74,7 +74,7 @@ form.woocommerce-checkout {
 		display: none;
 	}
 
-	[type="radio"]:checked + label {
+	[type="radio"]:checked + label[for^="payment_method"] {
 
 		@include card--primary;
 
@@ -91,11 +91,11 @@ form.woocommerce-checkout {
 		}
 	}
 
-	label {
+	label[for^="payment_method"] {
 		color: gray("500");
 		width: 100%;
 		margin: 0;
-		padding: $spacer $spacer $spacer ($spacer * 2.5);
+		padding: $spacer $spacer $spacer ($spacer * 2.5) !important;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -121,6 +121,8 @@ form.woocommerce-checkout {
 	}
 
 	.payment_box p {
+		color: gray("600");
+		line-height: 1.75;
 		font-size: $font-size-sm;
 		margin: $spacer 0 0;
 	}
@@ -134,18 +136,6 @@ form.woocommerce-checkout {
 
 	.about_paypal {
 		font-size: $font-size-sm;
-	}
-}
-
-.wc-credit-card-form {
-	margin: $spacer 0;
-	padding: 0;
-	border: 0;
-
-	#stripe-card-element {
-
-		border: 1px solid gray("300");
-		border-radius: $border-radius !important;
 	}
 }
 
@@ -197,9 +187,9 @@ form.woocommerce-checkout {
 
 	[name="apply_coupon"] {
 
-		@include button;
-		@include button--size-sm;
-		@include button--size-block;
+		@include button();
+		@include button--size-sm();
+		@include button--size-block();
 	}
 }
 
@@ -214,6 +204,25 @@ form.woocommerce-checkout {
 	margin: ($spacer * 2) 0 $spacer;
 }
 
+.wc-payment-form {
+	padding: 0;
+	border: 0;
+
+	@include vertical-spacing("margin", "up");
+}
+
 #ship-to-different-address {
 	font-size: $font-size-base;
+}
+
+#stripe-card-element,
+#stripe-exp-element,
+#stripe-cvc-element {
+
+	@include form-input();
+}
+
+.woocommerce-checkout #payment ul.payment_methods li img.stripe-icon,
+#add_payment_method #payment ul.payment_methods li img.stripe-icon {
+	height: 16px;
 }

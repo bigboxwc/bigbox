@@ -28,7 +28,7 @@ return [
 	// Solid border-color
 	[
 		'selectors'    => [
-			'.wc_payment_method [type="radio"]:checked + label:before',
+			'.wc_payment_method [type="radio"]:checked + label[for^="payment_method"]:before',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $success ),
@@ -47,7 +47,7 @@ return [
 	// @mixin card--primary
 	[
 		'selectors'    => [
-			'.wc_payment_method [type="radio"]:checked + label',
+			'.wc_payment_method [type="radio"]:checked + label[for^="payment_method"]',
 		],
 		'declarations' => [
 			'border-color'     => esc_attr( $rgba50 ),

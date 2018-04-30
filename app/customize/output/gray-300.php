@@ -24,6 +24,12 @@ return [
 			'.navbar-search__category select',
 			'.facetwp-facet.facetwp-type-slider .facetwp-slider .noUi-handle',
 			'div#brands_a_z a.top',
+
+			// .form-input
+			'.woocommerce .input-text',
+			'#stripe-card-element',
+			'#stripe-exp-element',
+			'#stripe-cvc-element',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray300 ),
@@ -68,7 +74,7 @@ return [
 			'.woocommerce-message',
 			'.woocommerce-info',
 			'.woocommerce-purchase-form',
-			'.wc_payment_method [type="radio"] label',
+			'.wc_payment_method [type="radio"] label[for^="payment_method"]',
 			'.woocommerce-verification-required',
 		],
 		'declarations' => [

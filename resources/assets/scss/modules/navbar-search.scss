@@ -90,7 +90,7 @@
 
 	[type="submit"] {
 
-		@include form-input;
+		@include form-input();
 
 		cursor: pointer;
 		font-size: $font-size-sm;

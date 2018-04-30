@@ -15,11 +15,11 @@ return [
 	// Solid color.
 	[
 		'selectors'    => [
+			'.woocommerce-products-header .term-description',
 			'.star-rating__count',
 			'.woocommerce-review-link',
 			'.coupons-next',
-			'.wc_payment_method label',
-			'.woocommerce-products-header .term-description',
+			'.wc_payment_method label[for^="payment_method"]',
 			'.woocommerce .input-text + span',
 		],
 		'declarations' => [

@@ -16,6 +16,7 @@ return [
 	[
 		'selectors'    => [
 			'.product__stock',
+			'.wc_payment_method .payment_box p',
 		],
 		'declarations' => [
 			'color' => esc_attr( $gray600 ),

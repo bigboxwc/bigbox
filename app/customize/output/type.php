@@ -18,6 +18,8 @@ $size        = get_theme_mod( 'type-font-size', 1 );
 $base = [
 	'selectors'    => [
 		'body',
+		'button',
+
 		'[type="email"]',
 		'[type="search"]',
 		'[type="tel"]',
@@ -25,7 +27,12 @@ $base = [
 		'[type="password"]',
 		'[type="text"]',
 		'textarea',
-		'button',
+
+		// .form-input
+		'.woocommerce .input-text',
+		'#stripe-card-element',
+		'#stripe-exp-element',
+		'#stripe-cvc-element',
 
 		'.button',
 		'.navbar-menu--primary .sub-menu li',
