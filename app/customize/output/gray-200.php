@@ -30,6 +30,7 @@ return [
 			'.woocommerce-variation--loaded .woocommerce-variation',
 			'.woocommere-product-brand a',
 			'.woocommerce-privacy-policy-text',
+			'.wc-social-login',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray200 ),

@@ -1,0 +1,6 @@
+.wc-social-login {
+	border-top: 1px solid gray("200");
+
+	@include vertical-spacing();
+	@include vertical-spacing("padding", "up");
+}

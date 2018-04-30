@@ -65,9 +65,6 @@ form.woocommerce-checkout {
 }
 
 .wc_payment_method {
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
 	margin-bottom: $spacer;
 
 	[type="radio"] {
@@ -206,6 +203,7 @@ form.woocommerce-checkout {
 .wc-payment-form {
 	padding: 0;
 	border: 0;
+	width: 100%;
 
 	@include vertical-spacing("margin", "up");
 }
