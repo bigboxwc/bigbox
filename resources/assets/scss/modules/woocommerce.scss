@@ -56,6 +56,15 @@
 	.input-text {
 
 		@include form-input;
+
+		+ span {
+			color: gray("500");
+			font-size: $font-size-sm;
+
+			em {
+				font-style: normal;
+			}
+		}
 	}
 
 	// Let JS toggle .required/.optional.

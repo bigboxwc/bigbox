@@ -44,7 +44,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 					</div>
 		
 					<div class="action-list__item-value">
-						<div>
+						<div class="value">
 							<?php
 							$selected = isset( $_REQUEST[ 'attribute_' . $attribute_name ] ) ? wc_clean( stripslashes( urldecode( $_REQUEST[ 'attribute_' . $attribute_name ] ) ) ) : $product->get_variation_default_attribute( $attribute_name );
 

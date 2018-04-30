@@ -5,6 +5,8 @@
  * This is a javascript-based template for single variations (see https://codex.wordpress.org/Javascript_Reference/wp.template).
  * The values will be dynamically replaced after selecting attributes.
  *
+ * This has been "minified" so CSS :empty selectors work.
+ *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
@@ -14,19 +16,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<script type="text/template" id="tmpl-variation-template">
-  <# if ( data.variation.variation_description ) { #>
-	<div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}</div>
-  <# } #>
-
-  <# if ( data.variation.price_html ) { #>
-	<div class="woocommerce-variation-price">{{{ data.variation.price_html }}}</div>
-  <# } #>
-
-  <# if ( data.variation.availability_html ) { #>
-	<div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}</div>
-  <# } #>
-</script>
+<script type="text/template" id="tmpl-variation-template"><# if ( data.variation.variation_description ) { #><div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}</div><# } #><# if ( data.variation.price_html ) { #><div class="woocommerce-variation-price">{{{ data.variation.price_html }}}</div><# } #><# if ( data.variation.availability_html ) { #><div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}</div><# } #></script>
 
 <script type="text/template" id="tmpl-unavailable-variation-template">
 	<p><?php _e( 'Sorry, this product is unavailable. Please choose a different combination.', 'bigbox' ); ?></p>

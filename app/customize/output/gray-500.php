@@ -20,6 +20,7 @@ return [
 			'.coupons-next',
 			'.wc_payment_method label',
 			'.woocommerce-products-header .term-description',
+			'.woocommerce .input-text + span',
 		],
 		'declarations' => [
 			'color' => esc_attr( $gray500 ),

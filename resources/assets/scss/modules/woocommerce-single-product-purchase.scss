@@ -59,6 +59,11 @@
 	justify-content: space-between;
 	align-items: center;
 
+	&:empty {
+		display: none !important;
+		visibility: hidden;
+	}
+
 	.woocommerce-variation--loaded & {
 		border-bottom: 1px solid gray("200");
 
@@ -110,4 +115,15 @@
 	p {
 		margin: 0;
 	}
+}
+
+.tawcvs-swatches {
+
+	.swatch {
+		color: gray("500");
+	}
+}
+
+.tawcvs-swatches {
+	padding: 0;
 }
