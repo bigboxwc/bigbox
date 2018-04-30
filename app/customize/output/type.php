@@ -78,6 +78,7 @@ return [
 			'.product-category-more__inner',
 			'.woocommerce-loop-category__title',
 			'.wc-layered-nav-term.chosen',
+			'.woocommerce-mini-cart-item a',
 		],
 		'declarations' => [
 			'font-weight' => $weight_bold,

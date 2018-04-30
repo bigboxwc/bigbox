@@ -39,7 +39,10 @@
 	}
 
 	li {
-		margin-bottom: ($spacer * 1.5);
+
+		@include vertical-spacing("margin", "down", (
+			sm: 1.5,
+		) );
 	}
 
 	.product-title {
