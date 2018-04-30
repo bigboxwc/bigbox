@@ -3,17 +3,16 @@
 	@include vertical-spacing("margin", "both", (
 		sm: 1,
 	) );
-}
 
-.sd-content {
+	.sd-content {
 
-	ul {
-		display: flex;
-		justify-content: center;
+		ul {
+			display: flex;
+			justify-content: center;
 
-		li {
-			margin: 0 ($spacer / 2) ($spacer / 2);
-
+			li {
+				margin: 0 ($spacer / 2) ($spacer / 2);
+			}
 		}
 	}
 }
