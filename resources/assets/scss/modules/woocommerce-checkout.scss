@@ -122,7 +122,6 @@ form.woocommerce-checkout {
 
 	.payment_box p {
 		color: gray("600");
-		line-height: 1.75;
 		font-size: $font-size-sm;
 		margin: $spacer 0 0;
 	}
@@ -225,4 +224,10 @@ form.woocommerce-checkout {
 .woocommerce-checkout #payment ul.payment_methods li img.stripe-icon,
 #add_payment_method #payment ul.payment_methods li img.stripe-icon {
 	height: 16px;
+}
+
+.woocommerce-privacy-policy-text {
+	font-size: $font-size-sm;
+	border: 1px solid gray("200");
+	border-width: 1px 0;
 }

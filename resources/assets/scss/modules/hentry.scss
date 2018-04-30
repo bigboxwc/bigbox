@@ -1,5 +1,14 @@
 .hentry {
-	line-height: 2em;
+	line-height: ($line-height-base * 1.15);
+}
+
+.hentry--page {
+	line-height: ($line-height-base * 1.35);
+
+	h2 {
+
+		@include section-title();
+	}
 }
 
 .wp-block-cover-image,
@@ -14,15 +23,6 @@
 		sm: 2,
 		lg: 3,
 	) );
-}
-
-// Assume most standard pages (full width) will be used with Gutenberg.
-.hentry--page {
-
-	h2 {
-
-		@include section-title();
-	}
 }
 
 // Gutenberg currently uses <figure>

@@ -29,6 +29,7 @@ return [
 			'.single_variation_wrap',
 			'.woocommerce-variation--loaded .woocommerce-variation',
 			'.woocommere-product-brand a',
+			'.woocommerce-privacy-policy-text',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray200 ),
