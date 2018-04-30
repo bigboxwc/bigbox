@@ -18,7 +18,7 @@ return [
 		'selectors'    => [
 			'a:hover',
 			'.navbar-menu--primary .sub-menu a:hover',
-			'.wc-layered-nav-term.chosen' ,
+			'.wc-layered-nav-term.chosen',
 			'.wc-layered-nav-term.chosen a',
 		],
 		'declarations' => [

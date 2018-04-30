@@ -18,10 +18,14 @@ function bigbox_woocommerce_single_brand_thumbnail() {
 
 	echo '<div class="woocommerce-product-brand">';
 
-	echo $WC_Brands->output_product_brand( apply_filters( 'bigbox_woocommerce_product_brand_atts', [
-		'post_id' => wc_get_product()->get_id(),
-		'height'  => '35px',
-	] ) );
+	echo $WC_Brands->output_product_brand(
+		apply_filters(
+			'bigbox_woocommerce_product_brand_atts', [
+				'post_id' => wc_get_product()->get_id(),
+				'height'  => '35px',
+			]
+		)
+	);
 
 	echo '</div>';
 }

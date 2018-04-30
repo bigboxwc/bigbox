@@ -28,7 +28,6 @@ function woocommerce_subcategory_thumbnail( $category ) {
 	$image_srcset = false;
 	$image_sizes  = false;
 	// End modification.
-
 	$small_thumbnail_size = apply_filters( 'subcategory_archive_thumbnail_size', 'woocommerce_thumbnail' );
 	$dimensions           = wc_get_image_size( $small_thumbnail_size );
 	$thumbnail_id         = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true );
@@ -79,7 +78,6 @@ function woocommerce_output_product_categories( $args = array() ) {
 		$product_categories = array_slice( $product_categories, 0, 5 );
 	}
 	// End modification.
-
 	if ( ! $product_categories ) {
 		return false;
 	}

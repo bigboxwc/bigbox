@@ -116,30 +116,12 @@ function bigbox_woocommerce_output_content_wrapper() {
 }
 
 /**
- * Adjust closing wrapper tag.
- *
- * @since 1.0.0
- */
-function bigbox_woocommerce_output_content_wrapper_end() {
-	echo '</div>';
-}
-
-/**
  * Shop item loop opening tag.
  *
  * @since 1.0.0
  */
 function bigbox_woocommerce_before_shop_loop_item() {
 	echo '<div class="product__inner">';
-}
-
-/**
- * Shop item loop closing tag.
- *
- * @since 1.0.0
- */
-function bigbox_woocommerce_after_shop_loop_item() {
-	echo '</div>';
 }
 
 /**
@@ -152,11 +134,20 @@ function bigbox_woocommerce_before_shop_loop() {
 }
 
 /**
- * Page count and ordering closing tag.
+ * Wrap single product summary inside.
  *
  * @since 1.0.0
  */
-function bigbox_woocommerce_before_shop_loop_after() {
+function bigbox_woocommerce_single_product_summary_inner() {
+	echo '<div class="summary__inner">';
+}
+
+/**
+ * Close an open div.
+ *
+ * @since 1.0.0
+ */
+function bigbox_woocommerce_template_close_div() {
 	echo '</div>';
 }
 
@@ -231,7 +222,7 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
  *
  * @since 1.0.0
  */
-function bigbox_woocommerce_after_shop_loop_item_title_variations() {
+function bigbox_woocommerce_template_loop_variations() {
 	global $product;
 
 	if ( 'variable' !== $product->get_type() ) {
@@ -246,6 +237,40 @@ function bigbox_woocommerce_after_shop_loop_item_title_variations() {
 </div>
 
 <?php
+}
+
+/**
+ * Add stock count to loop.
+ *
+ * @since 1.0.0
+ */
+function bigbox_woocommerce_template_loop_stock() {
+?>
+
+<div class="product__stock">
+	<?php echo wc_get_stock_html( wc_get_product( get_post() ) ); ?>
+</div>
+
+<?php
+};
+
+/**
+ * Remove tertiary sidebar on inner pages.
+ *
+ * @since 1.0.0
+ */
+function bigbox_woocommerce_template_tertiary() {
+	// Remove (filters) sidebar on single products.
+	if ( is_singular( 'product' ) ) {
+		remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar' );
+		// Add (tertiary) sidebar on archives.
+	} else {
+		add_action(
+			'woocommerce_sidebar', function() {
+				wc_get_template( 'global/sidebar-tertiary.php' );
+			}
+		);
+	}
 }
 
 /**

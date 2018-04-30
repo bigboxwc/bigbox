@@ -112,21 +112,21 @@ function bigbox_facetwp_catalog_ordering() {
  */
 function bigbox_facetwp_sort_options( $options ) {
 	$options['price'] = [
-		'label' => __( 'Price (Lowest)', 'bigbox' ),
+		'label'      => __( 'Price (Lowest)', 'bigbox' ),
 		'query_args' => [
 			'orderby'  => 'meta_value_num',
 			'meta_key' => '_price',
 			'order'    => 'ASC',
-		]
+		],
 	];
 
 	$options['price-desc'] = [
-		'label' => __( 'Price (Highest)', 'bigbox' ),
+		'label'      => __( 'Price (Highest)', 'bigbox' ),
 		'query_args' => [
 			'orderby'  => 'meta_value_num',
 			'meta_key' => '_price',
 			'order'    => 'DESC',
-		]
+		],
 	];
 
 	return $options;

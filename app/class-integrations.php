@@ -88,7 +88,7 @@ final class Integrations implements Registerable, Service {
 	 */
 	public function get_integrations() {
 		return [
-			'woocommerce' => [
+			'woocommerce'        => [
 				'slug'         => 'woocommerce',
 				'class'        => Integration\WooCommerce::class,
 				'dependencies' => [
@@ -102,14 +102,14 @@ final class Integrations implements Registerable, Service {
 					defined( 'WC_BRANDS_VERSION' ) && WC_BRANDS_VERSION,
 				],
 			],
-			'facetwp'     => [
+			'facetwp'            => [
 				'slug'         => 'facetwp',
 				'class'        => Integration\FacetWP::class,
 				'dependencies' => [
 					defined( 'FACETWP_VERSION' ) && FACETWP_VERSION,
 				],
 			],
-			'gutenberg'   => [
+			'gutenberg'          => [
 				'slug'         => 'gutenberg',
 				'class'        => Integration\Gutenberg::class,
 				'dependencies' => [
