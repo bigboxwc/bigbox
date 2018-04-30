@@ -1,16 +1,3 @@
-.woocommerce-products-meta {
-	font-size: $font-size-sm;
-	margin: $spacer 0;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	position: relative;
-
-	@include media-breakpoint-up(sm) {
-		justify-content: normal;
-	}
-}
-
 .woocommerce-products-header {
 	position: relative;
 }
@@ -20,4 +7,8 @@
 	.home & {
 		@include screen-reader-text();
 	}
+}
+
+.woocommerce-products-header .term-description {
+	color: gray("500");
 }

@@ -32,10 +32,8 @@ class WooCommerce_Brands extends Integration implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function register() {
-		global $WC_Brands;
-
-		remove_action( 'woocommerce_product_meta_end', [ $WC_Brands, 'show_brand' ] );
-		add_action( 'woocommerce_product_additional_information', [ $WC_Brands, 'show_brand' ], 99 );
+		include_once $this->get_dir() . '/template-hooks.php';
+		include_once $this->get_dir() . '/template-functions.php';
 	}
 
 }

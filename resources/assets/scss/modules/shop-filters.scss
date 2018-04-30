@@ -184,3 +184,19 @@
 .wc-layered-nav-rating a {
 	display: flex;
 }
+
+.wc-layered-nav-term {
+	&.chosen {
+
+		color: color("primary");
+		
+		a {
+			color: color("primary");
+
+			&:before {
+				content: '\00d7';
+				margin-right: 5px;
+			}
+		}
+	}
+}

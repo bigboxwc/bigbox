@@ -84,6 +84,7 @@
 .woocommerce-single-product-data__section {
 	padding: $spacer;
 	border-bottom: 1px solid gray("200");
+	overflow: hidden;
 
 	&:last-child {
 		border-bottom: 0;

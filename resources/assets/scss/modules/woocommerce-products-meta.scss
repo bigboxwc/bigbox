@@ -1,0 +1,16 @@
+.woocommerce-products-meta {
+	font-size: $font-size-sm;
+	margin: $spacer 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+
+	@include media-breakpoint-up(sm) {
+		justify-content: normal;
+	}
+}
+
+.woocommerce-result-count {
+	margin: 0 auto 0 0;
+}

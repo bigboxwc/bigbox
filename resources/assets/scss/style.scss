@@ -97,6 +97,7 @@
 @import "modules/breadcrumbs";
 @import "modules/woocommerce";
 @import "modules/woocommerce-products-header";
+@import "modules/woocommerce-products-meta";
 @import "modules/woocommerce-message";
 @import "modules/woocommerce-single-product-gallery";
 @import "modules/woocommerce-single-product";
@@ -112,6 +113,8 @@
 @import "modules/woocommerce-form-login";
 @import "modules/woocommerce-pagination";
 @import "modules/woocommerce-store-notice";
+
+@import "modules/woocommerce-brands";
 
 // Products
 @import "modules/product";

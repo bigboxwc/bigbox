@@ -19,6 +19,7 @@ return [
 			'.woocommerce-review-link',
 			'.coupons-next',
 			'.wc_payment_method label',
+			'.woocommerce-products-header .term-description',
 		],
 		'declarations' => [
 			'color' => esc_attr( $gray500 ),

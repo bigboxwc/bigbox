@@ -77,6 +77,7 @@ return [
 			'.woocommerce-terms-and-conditions-text',
 			'.product-category-more__inner',
 			'.woocommerce-loop-category__title',
+			'.wc-layered-nav-term.chosen',
 		],
 		'declarations' => [
 			'font-weight' => $weight_bold,

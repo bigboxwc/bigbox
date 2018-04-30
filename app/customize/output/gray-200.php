@@ -28,6 +28,7 @@ return [
 			'.comments',
 			'.single_variation_wrap',
 			'.woocommerce-variation--loaded .woocommerce-variation',
+			'.woocommere-product-brand a',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray200 ),

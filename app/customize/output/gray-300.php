@@ -23,6 +23,7 @@ return [
 			'.wc-credit-card-form #stripe-card-element',
 			'.navbar-search__category select',
 			'.facetwp-facet.facetwp-type-slider .facetwp-slider .noUi-handle',
+			'div#brands_a_z a.top',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray300 ),
