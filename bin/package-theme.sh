@@ -46,11 +46,13 @@ if [ "$branch" != 'master' ]; then
 fi
 
 status "
-   ___  _      ___
-  / _ )(_)__ _/ _ )___ __ __
- / _  / / _ \`/ _  / _ \\ \ /
-/____/_/\_, /____/\___/_\_\
-       /___/ "
+.______    __    _______ .______     ______   ___   ___
+|   _  \  |  |  /  _____||   _  \   /  __  \  \  \ /  /
+|  |_)  | |  | |  |  __  |  |_)  | |  |  |  |  \  V  / 
+|   _  <  |  | |  | |_ | |   _  <  |  |  |  |   >   <  
+|  |_)  | |  | |  |__| | |  |_)  | |  \`--'  |  /  .  \ 
+|______/  |__|  \______| |______/   \______/  /__/ \__\
+";
 
 # Remove ignored files to reset repository to pristine condition. Previous test
 # ensures that changed files abort the plugin build.
