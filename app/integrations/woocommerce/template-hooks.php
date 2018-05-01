@@ -40,7 +40,7 @@ add_action( 'woocommerce_before_shop_loop', 'bigbox_woocommerce_adjust_catalog_c
 
 // Replace outer content wrapper.
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper' );
-remove_action( 'woocommerce_after_main_content', 'bigbox_woocommerce_template_close_div' );
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end' );
 
 add_action( 'woocommerce_before_main_content', 'bigbox_woocommerce_output_content_wrapper' );
 add_action( 'woocommerce_after_main_content', 'bigbox_woocommerce_template_close_div' );
