@@ -6,7 +6,6 @@
 
 .woocommerce-Reviews {
 
-	@include vertical-spacing("margin", "down");
 	@include make-row();
 }
 
@@ -40,6 +39,10 @@
 	@include card();
 
 	padding: $spacer;
+}
+
+#review_form .comment-respond {
+	margin-bottom: 0;
 }
 
 .review-breakdown {
