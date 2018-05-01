@@ -75,7 +75,7 @@
 
 	.edit {
 
-		@include button--secondary;
+		@include button--gray("400");
 		@include button--size-xs;
 	}
 }

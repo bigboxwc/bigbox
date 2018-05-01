@@ -38,9 +38,9 @@
 
 .single_add_to_cart_button {
 
-	@include button--success;
-	@include button--size-sm;
-	@include button--size-block;
+	@include button--color("success");
+	@include button--size-sm();
+	@include button--size-block();
 }
 
 .single_variation_wrap {

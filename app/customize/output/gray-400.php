@@ -18,6 +18,8 @@ return [
 			'.wc_payment_method [type="radio"] label:before',
 			'.action-list__item--inset',
 			'.shipping-note',
+			'ul.brands_index li a',
+			'ul.brands_index li span',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray400 ),

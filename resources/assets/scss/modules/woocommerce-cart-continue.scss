@@ -67,7 +67,7 @@
 
 .checkout-button {
 
-	@include button--success;
+	@include button--color("success");
 	@include button--size-sm;
 	@include button--size-block;
 }

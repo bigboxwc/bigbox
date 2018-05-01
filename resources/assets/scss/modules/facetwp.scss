@@ -45,8 +45,8 @@
 		margin-top: ($spacer / 2);
 		box-shadow: none;
 
-		@include button--primary;
-		@include button--size-sm;
+		@include button();
+		@include button--size-sm();
 	}
 }
 

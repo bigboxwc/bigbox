@@ -1,6 +1,22 @@
 .button {
 
-	@include button--primary;
+	@include button--color("primary");
+}
+
+@each $name, $hex in $theme-colors {
+
+	.button--#{$name} {
+
+		@include button--color($name);
+	}
+}
+
+@each $name, $hex in $grays {
+
+	.button--gray-#{$name} {
+
+		@include button--gray($name);
+	}
 }
 
 .button--pill {
@@ -13,14 +29,14 @@
 	@include button--blank;
 }
 
-.button--danger {
-
-	@include button--danger;
-}
-
 .button--size-sm {
 
 	@include button--size-sm;
+}
+
+.button--size-xs {
+
+	@include button--size-xs;
 }
 
 .button--size-block {

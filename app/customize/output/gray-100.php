@@ -25,6 +25,20 @@ return [
 			'.woocommerce-pagination',
 			'.facetwp-pager',
 			'.navbar-search__category select',
+
+			// Flatpickr
+			'.flatpickr-calendar .flatpickr-day.inRange',
+			'.flatpickr-calendar .flatpickr-day.prevMonthDay.inRange',
+			'.flatpickr-calendar .flatpickr-day.nextMonthDay.inRange',
+			'.flatpickr-calendar .flatpickr-day.today.inRange',
+			'.flatpickr-calendar .flatpickr-day.prevMonthDay.today.inRange',
+			'.flatpickr-calendar .flatpickr-day.nextMonthDay.today.inRange',
+			'.flatpickr-calendar .flatpickr-day:hover',
+			'.flatpickr-calendar .flatpickr-day.prevMonthDay:hover',
+			'.flatpickr-calendar .flatpickr-day.nextMonthDay:hover',
+			'.flatpickr-calendar .flatpickr-day:focus',
+			'.flatpickr-calendar .flatpickr-day.prevMonthDay:focus',
+			'.flatpickr-calendar .flatpickr-day.nextMonthDay:focus',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $gray100 ),

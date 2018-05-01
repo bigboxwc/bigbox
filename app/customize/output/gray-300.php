@@ -24,12 +24,28 @@ return [
 			'.navbar-search__category select',
 			'.facetwp-facet.facetwp-type-slider .facetwp-slider .noUi-handle',
 			'div#brands_a_z a.top',
+			'ul.brands_index li a',
+			'ul.brands_index li span',
 
 			// .form-input
 			'.woocommerce .input-text',
 			'#stripe-card-element',
 			'#stripe-exp-element',
 			'#stripe-cvc-element',
+
+			// Flatpickr
+			'.flatpickr-calendar .flatpickr-day.inRange',
+			'.flatpickr-calendar .flatpickr-day.prevMonthDay.inRange',
+			'.flatpickr-calendar .flatpickr-day.nextMonthDay.inRange',
+			'.flatpickr-calendar .flatpickr-day.today.inRange',
+			'.flatpickr-calendar .flatpickr-day.prevMonthDay.today.inRange',
+			'.flatpickr-calendar .flatpickr-day.nextMonthDay.today.inRange',
+			'.flatpickr-calendar .flatpickr-day:hover',
+			'.flatpickr-calendar .flatpickr-day.prevMonthDay:hover',
+			'.flatpickr-calendar .flatpickr-day.nextMonthDay:hover',
+			'.flatpickr-calendar .flatpickr-day:focus',
+			'.flatpickr-calendar .flatpickr-day.prevMonthDay:focus',
+			'.flatpickr-calendar .flatpickr-day.nextMonthDay:focus',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray300 ),

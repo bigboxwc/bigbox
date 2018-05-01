@@ -57,7 +57,7 @@
 
 	.wp-block-button__link {
 
-		@include button--primary();
+		@include button();
 	}
 }
 

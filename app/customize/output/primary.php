@@ -32,6 +32,14 @@ return [
 			'.facetwp-facet .facetwp-slider .noUi-connect',
 			'.select2-container--default .select2-results__option--highlighted[data-selected]',
 			'.widget_price_filter .ui-slider .ui-slider-range',
+
+			// Flatpickr
+			'.flatpickr-calendar .flatpickr-day.selected',
+			'.flatpickr-calendar .flatpickr-day.startRange',
+			'.flatpickr-calendar .flatpickr-day.endRange',
+			'.flatpickr-calendar .flatpickr-day.selected.inRange',
+			'.flatpickr-calendar .flatpickr-day.startRange.inRange',
+			'.flatpickr-calendar .flatpickr-day.endRange.inRange',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $primary ),
@@ -52,6 +60,14 @@ return [
 		'selectors'    => [
 			'.widget_price_filter .ui-slider .ui-slider-handle',
 			'.woocommerce-MyAccount-navigation-link.is-active a',
+
+			// Flatpickr
+			'.flatpickr-calendar .flatpickr-day.selected',
+			'.flatpickr-calendar .flatpickr-day.startRange',
+			'.flatpickr-calendar .flatpickr-day.endRange',
+			'.flatpickr-calendar .flatpickr-day.selected.inRange',
+			'.flatpickr-calendar .flatpickr-day.startRange.inRange',
+			'.flatpickr-calendar .flatpickr-day.endRange.inRange',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $primary ),

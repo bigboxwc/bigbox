@@ -1,0 +1,54 @@
+.flatpickr-calendar {
+
+	.flatpickr-months .flatpickr-month,
+	.flatpickr-day {
+		color: gray("800");
+	}
+
+	.flatpickr-months .flatpickr-month {
+		fill: gray("800");
+	}
+
+	.flatpickr-day.today {
+		border-color: theme-color("primary");
+
+		&:hover,
+		&:focus {
+			background-color: theme-color("primary");
+			border-color: theme-color("primary");
+		}
+	}
+
+	.flatpickr-day {
+		border-radius: $border-radius;
+	}
+
+	.flatpickr-day.selected,
+	.flatpickr-day.startRange,
+	.flatpickr-day.endRange,
+	.flatpickr-day.selected.inRange,
+	.flatpickr-day.startRange.inRange,
+	.flatpickr-day.endRange.inRange {
+		background-color: theme-color("primary");
+		border-color: theme-color("primary");
+
+		&:focus,
+		&:hover {
+			background-color: theme-color("primary");
+			border-color: theme-color("primary");
+		}
+	}
+
+	.flatpickr-day.inRange,
+	.flatpickr-day.prevMonthDay.inRange,
+	.flatpickr-day.nextMonthDay.inRange,
+	.flatpickr-day.today.inRange,
+	.flatpickr-day.prevMonthDay.today.inRange,
+	.flatpickr-day.nextMonthDay.today.inRange {
+
+		&:hover {
+			background-color: gray("100");
+			border-color: gray("300");
+		}
+	}
+}

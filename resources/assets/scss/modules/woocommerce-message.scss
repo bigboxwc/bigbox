@@ -14,7 +14,7 @@
 		margin-right: ($spacer / 2);
 		margin-left: -($spacer / 2);
 
-		@include button--success();
+		@include button--color("success");
 		@include button--size-sm();
 	}
 }

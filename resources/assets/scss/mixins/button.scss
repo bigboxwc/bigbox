@@ -42,20 +42,24 @@
 }
 
 // [1] Gutenberg adds their own !important declaration.
-@mixin button--primary {
+@mixin button--color( $color ) {
 
 	@include button;
-	background-color: theme-color("primary");
+	background-color: theme-color( $color );
 
 	&:hover {
 		color: #fff;
 	}
 }
 
-@mixin button--secondary {
+@mixin button--gray( $gray ) {
 
 	@include button;
-	background-color: gray("400");
+	background-color: gray( $gray );
+
+	&:hover {
+		color: #fff;
+	}
 }
 
 // [1] Gutenberg adds their own !important declaration.
@@ -86,18 +90,6 @@
 		text-decoration: none;
 		border: 1px solid gray("400");
 	}
-}
-
-@mixin button--danger {
-
-	@include button--primary;
-	background-color: theme-color("danger");
-}
-
-@mixin button--success {
-
-	@include button--primary;
-	background-color: theme-color("success");
 }
 
 // [1] Override standard sizing growth on larger devices.
