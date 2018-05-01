@@ -18,8 +18,7 @@ status () {
 PACKAGE_VERSION=$(cat package.json \
   | grep version \
   | head -1 \
-  | awk -F: '{ print $2 }' \
-  | sed 's/[",\t ]//g')
+	| awk -F: '{ print $2 }')
 
 # Make sure there are no changes in the working tree.  Release builds should be
 # traceable to a particular commit and reliably reproducible.  (This is not
