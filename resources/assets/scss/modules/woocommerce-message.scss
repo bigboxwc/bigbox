@@ -7,15 +7,15 @@
 	margin: 0 0 $spacer;
 	padding: ($spacer / 2) $spacer;
 
-	@include card;
+	@include card();
 
 	.woocommerce-Button,
 	.wc-forward {
 		margin-right: ($spacer / 2);
 		margin-left: -($spacer / 2);
 
-		@include button--success;
-		@include button--size-sm;
+		@include button--success();
+		@include button--size-sm();
 	}
 }
 
@@ -31,7 +31,7 @@
 
 	li {
 
-		@include card--error;
+		@include card--error();
 
 		padding: $spacer;
 	}

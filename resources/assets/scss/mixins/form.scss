@@ -29,7 +29,12 @@
 	display: flex;
 	align-items: center;
 
+	[type="radio"],
 	[type="checkbox"] {
-		margin-right: 6px;
+		margin-right: 10px;
+	}
+
+	[type="radio"] {
+		margin-top: -3px;
 	}
 }

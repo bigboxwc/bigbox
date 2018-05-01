@@ -67,7 +67,7 @@ form.woocommerce-checkout {
 .wc_payment_method {
 	margin-bottom: $spacer;
 
-	[type="radio"] {
+	[name="payment_method"] {
 		display: none;
 	}
 
@@ -228,4 +228,32 @@ form.woocommerce-checkout {
 	font-size: $font-size-sm;
 	border: 1px solid gray("200");
 	border-width: 1px 0;
+}
+
+.woocommerce-SavedPaymentMethods-new,
+.woocommerce-SavedPaymentMethods-token,
+.woocommerce-SavedPaymentMethods-saveNew {
+
+	@include form-label--with-checkbox();
+
+	label {
+		margin: 0;
+	}
+}
+
+.wc-saved-payment-methods {
+
+	@include reset-list();
+	@include vertical-spacing();
+
+	li {
+
+		@include vertical-spacing("margin", "down", (
+			sm: 1,
+		) );
+	}
+
+	input:checked + label {
+		color: theme-color("success");
+	}
 }
