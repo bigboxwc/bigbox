@@ -1,7 +1,7 @@
 {
 	"name": "bigbox",
 	"title": "BigBox",
-	"version": "0.12.0",
+	"version": "1.0.0-beta",
 	"description": "WooCommerce theme for large stores.",
 	"main": "webpack.config.js",
 	"devDependencies": {
@@ -80,12 +80,12 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/spencerfinnell/bigbox-theme/"
+		"url": "https://github.com/bigboxwc/bigbox-theme/"
 	},
 	"author": "Spencer Finnell",
 	"license": "GPL-3.0",
 	"bugs": {
-		"url": "https://github.com/spencerfinnell/bigbox-theme/issues"
+		"url": "https://github.com/bigboxwc/bigbox-theme/issues"
 	},
 	"homepage": "https://bigboxwc.com"
 }
