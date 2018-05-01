@@ -4,10 +4,10 @@
 .woocommerce-message,
 .woocommerce-error li {
 	overflow: hidden;
-	margin: 0 0 $spacer;
 	padding: ($spacer / 2) $spacer;
 
 	@include card();
+	@include vertical-spacing("margin", "down");
 
 	.woocommerce-Button,
 	.wc-forward {
