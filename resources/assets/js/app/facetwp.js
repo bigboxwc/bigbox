@@ -31,14 +31,23 @@ import { adjustWidth } from './navbar.js';
 			.prop( 'name', '' );
 	} );
 
+	const $htmlbody   = $( 'html, body' );
+	const $categories = $( '.products-categories' );
+
 	// Adjust select widths once loaded.
 	$document.on( 'facetwp-loaded', adjustWidth );
 
 	$document.on( 'facetwp-loaded', () => {
 		if ( FWP.loaded ) {
-			$( 'html, body' ).animate( {
+			$htmlbody.animate( {
 				scrollTop: $( '#main' ).offset().top,
 			}, 250 );
+
+			$categories.hide();
 		}
-	});
+
+		if ( '' !== FWP.build_query_string() ) {
+			$categories.hide();
+		}
+	} );
 }( jQuery ) );
