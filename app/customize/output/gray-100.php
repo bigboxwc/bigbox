@@ -22,8 +22,6 @@ return [
 			'.navbar-mobile__close',
 			'.breadcrumbs',
 			'.woocommerce-breadcrumb',
-			'.woocommerce-pagination',
-			'.facetwp-pager',
 			'.navbar-search__category select',
 
 			// Flatpickr

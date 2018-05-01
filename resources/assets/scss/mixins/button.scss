@@ -64,6 +64,7 @@
 
 // [1] Gutenberg adds their own !important declaration.
 @mixin button--blank {
+	color: inherit;
 	line-height: 1;
 	padding: 0;
 	background: none !important; // [1]
