@@ -32,7 +32,7 @@ $price_html = $product->get_price_html()
 
 	<span class="price">
 		<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>">
-			<?php echo $price_html; ?>
+			<?php echo $price_html; // WPCS: XSS okay. ?>
 		</a>
 	</span>
 </div>

@@ -24,7 +24,7 @@ endif;
 	$taxonomy = get_taxonomy( get_theme_mod( 'navbar-dropdown-source', 'product_cat' ) );
 
 	if ( $taxonomy ) :
-		$selected = isset( $_GET[ $taxonomy->name ] ) ? esc_attr( $_GET[ $taxonomy->name ] ) : null;
+		$selected = isset( $_GET[ $taxonomy->name ] ) ? esc_attr( $_GET[ $taxonomy->name ] ) : null; // @codingStandardsIgnoreLine
 
 		// Translators: %s Header search taxonomy label.
 		$all = esc_html( sprintf( __( 'All %s', 'bigbox' ), strtolower( $taxonomy->labels->name ) ) );

@@ -185,7 +185,7 @@ class Build_Inline_CSS {
 				$t       = $this->tab;
 			}
 
-			// Build each rule
+			// Build each rule.
 			foreach ( $ruleset as $rule ) {
 				$output .= $this->parse_selectors( $rule['selectors'], $t ) . $s . '{' . $n;
 				$output .= $this->parse_declarations( $rule['declarations'], $t );

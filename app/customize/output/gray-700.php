@@ -12,7 +12,7 @@
 $gray700 = bigbox_get_theme_color( 'gray-700' );
 
 return [
-	// Solid color
+	// Solid color.
 	[
 		'selectors'    => [
 			'body',
@@ -36,7 +36,7 @@ return [
 			'color' => esc_attr( $gray700 ),
 		],
 	],
-	// Solid border-color
+	// Solid border-color.
 	[
 		'selectors'    => [
 			'.woocommerce-product-gallery__trigger:before',
@@ -46,7 +46,7 @@ return [
 			'border-color' => esc_attr( $gray700 ),
 		],
 	],
-	// Solid background-color
+	// Solid background-color.
 	[
 		'selectors'    => [
 			'.woocommerce-product-gallery__trigger:after',
@@ -55,7 +55,7 @@ return [
 			'background-color' => esc_attr( $gray700 ),
 		],
 	],
-	// Solid fill
+	// Solid fill.
 	[
 		'selectors'    => [
 			'.bigbox-icon',

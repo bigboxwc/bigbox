@@ -26,13 +26,13 @@ add_filter( 'bigbox_js', 'bigbox_woocommerce_js_settings' );
 add_filter( 'wp_enqueue_scripts', 'bigbox_woocommerce_wp_enqueue_script', 20 );
 
 /**
- * resources/views/partials/navbar-search.php.
+ * File: resources/views/partials/navbar-search.php.
  */
 
 add_filter( 'bigbox_navbar_search', 'bigbox_woocommerce_navbar_search' );
 
 /**
- * archive-product.php.
+ * File: archive-product.php.
  */
 
 // Filter columns depending on how many results are found.
@@ -69,7 +69,7 @@ add_filter( 'woocommerce_pagination_args', 'bigbox_woocommerce_pagination_args' 
 add_action( 'woocommerce_before_shop_loop', 'bigbox_woocommerce_archive_mobile_filters', 25 );
 
 /**
- * content-product.php.
+ * File: content-product.php.
  */
 
 // Add extra markup inside product.
@@ -96,7 +96,7 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop
 add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_template_loop_stock', 15 );
 
 /**
- * content-single-product.php.
+ * File: content-single-product.php.
  */
 
 // Remove sidebar on single product pages.
@@ -142,7 +142,7 @@ add_filter( 'wc_product_enable_dimensions_display', '__return_true' );
 add_filter( 'woocommerce_single_product_carousel_options', 'bigbox_woocommerce_single_product_carousel_options' );
 
 /**
- * templates/cart/cart.php.
+ * File: templates/cart/cart.php.
  */
 
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cart_totals' );
@@ -161,21 +161,21 @@ add_filter(
 );
 
 /**
- * wc-formatting-functions.php.
+ * File: wc-formatting-functions.php.
  */
 
 // Custom rating stars.
 add_filter( 'woocommerce_get_star_rating_html', 'bigbox_woocommerce_get_star_rating_html', 10, 3 );
 
 /**
- * wc-template-functions.php.
+ * File: wc-template-functions.php.
  */
 
 // Custom breadcrum arguments.
 add_filter( 'woocommerce_breadcrumb_defaults', 'bigbox_woocommerce_breadcrumb_defaults' );
 
 /**
- * single-product/review.php
+ * File: single-product/review.php
  */
 
 // Move gravatar position.
@@ -187,7 +187,7 @@ remove_action( 'woocommerce_review_before_comment_meta', 'woocommerce_review_dis
 add_action( 'woocommerce_review_meta', 'woocommerce_review_display_rating', 15 );
 
 /**
- * class-wc-widget-cart.php
+ * File: class-wc-widget-cart.php
  */
 add_filter(
 	'woocommerce_widget_cart_is_hidden', function( $hidden ) {

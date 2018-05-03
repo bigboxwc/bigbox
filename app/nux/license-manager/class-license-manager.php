@@ -151,12 +151,14 @@ class License_Manager implements Registerable, Service {
 	 * @return array
 	 */
 	public function get_license_data() {
+		// @codingStandardsIgnoreStart
 		if ( ! check_ajax_referer( 'bigbox-license-request', $_POST, false ) ) {
 			return wp_send_json_error();
 		}
 
 		$license = esc_attr( $_POST['license'] );
 		$action  = esc_attr( $_POST['edd_action'] );
+	// @codingStandardsIgnoreEnd
 
 		if ( ! in_array( $action, [ 'activate_license', 'deactivate_license' ], true ) ) {
 			return wp_send_json_error();

@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $tabs = apply_filters( 'woocommerce_product_tabs', array() );
 
 if ( ! empty( $tabs ) ) : ?>
-	
+
 	<div class="woocommerce-single-product-data">
 
 	<?php
@@ -46,7 +46,7 @@ if ( ! empty( $tabs ) ) : ?>
 		?>
 
 		<div class="woocommerce-single-product-data__section" id="tab-<?php echo esc_attr( $key ); ?>">
-			<?php echo $content; ?>
+			<?php echo $content; // WPCS: XSS okay. ?>
 		</div>
 
 	<?php

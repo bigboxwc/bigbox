@@ -63,6 +63,7 @@ function bigbox_editor_styles() {
 }
 add_action( 'after_setup_theme', 'bigbox_editor_styles' );
 
+// @codingStandardsIgnoreStart
 /**
  * Add type declarations to editor.
  *
@@ -73,6 +74,7 @@ function bigbox_editor_inline_styles( $mceInit ) {
 
 	return $mceInit;
 }
+// @codingStandardsIgnoreEnd
 add_filter( 'tiny_mce_before_init', 'bigbox_editor_inline_styles' );
 
 /**

@@ -17,7 +17,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 
 global $product;
@@ -31,7 +31,12 @@ endif;
 
 	<div class="woocommerce-reviews__main">
 		<div id="comments">
-			<h2 class="woocommerce-Reviews-title"><?php echo esc_html( sprintf( _n( '%d customer review', '%d customer reviews', $product->get_review_count(), 'bigbox' ), $product->get_review_count() ) ); ?></h2>
+			<h2 class="woocommerce-Reviews-title">
+			<?php
+			// Translators: %d Review count.
+			echo esc_html( sprintf( _n( '%d customer review', '%d customer reviews', $product->get_review_count(), 'bigbox' ), $product->get_review_count() ) );
+			?>
+			</h2>
 
 			<?php if ( have_comments() ) : ?>
 
@@ -41,7 +46,7 @@ endif;
 
 				<?php
 				if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
-					echo '<nav class="woocommerce-pagination">';
+					echo '<nav class="woocommerce-pagination">'; // WPCS: XSS okay.
 					paginate_comments_links(
 						apply_filters(
 							'woocommerce_comment_pagination_args', array(
@@ -51,13 +56,13 @@ endif;
 							)
 						)
 					);
-					echo '</nav>';
+					echo '</nav>'; // WPCS: XSS okay.
 				endif;
 				?>
 
 			<?php else : ?>
 
-				<p class="woocommerce-noreviews"><?php _e( 'There are no reviews yet.', 'bigbox' ); ?></p>
+				<p class="woocommerce-noreviews"><?php esc_html_e( 'There are no reviews yet.', 'bigbox' ); ?></p>
 
 			<?php endif; ?>
 		</div>
@@ -71,22 +76,26 @@ endif;
 
 						$comment_form = array(
 							'title_reply'         => esc_html__( 'Write a customer review', 'bigbox' ),
-							'title_reply_to'      => __( 'Write a customer review for %s', 'bigbox' ),
+							// Translators: %s Product title.
+							'title_reply_to'      => esc_html__( 'Write a customer review for %s', 'bigbox' ),
 							'title_reply_before'  => '<h2 id="reply-title" class="comment-reply-title">',
 							'title_reply_after'   => '</h2>',
 							'comment_notes_after' => '',
 							'fields'              => array(
-								'author' => '<p class="comment-form-author">' . '<label for="author">' . esc_html__( 'Name', 'bigbox' ) . ' <span class="required">*</span></label> ' .
+								'author' => '<p class="comment-form-author"><label for="author">' . esc_html__( 'Name', 'bigbox' ) . ' <span class="required">*</span></label> ' .
 											'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" aria-required="true" required /></p>',
 								'email'  => '<p class="comment-form-email"><label for="email">' . esc_html__( 'Email', 'bigbox' ) . ' <span class="required">*</span></label> ' .
 											'<input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" aria-required="true" required /></p>',
 							),
-							'label_submit'        => __( 'Submit Review', 'bigbox' ),
+							'label_submit'        => esc_html__( 'Submit Review', 'bigbox' ),
 							'logged_in_as'        => '',
 							'comment_field'       => '',
 						);
 
-					if ( $account_page_url = wc_get_page_permalink( 'myaccount' ) ) {
+					$account_page_url = wc_get_page_permalink( 'myaccount' );
+
+					if ( $account_page_url ) {
+						// Translators: %s Account page URL.
 						$comment_form['must_log_in'] = '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a review.', 'bigbox' ), esc_url( $account_page_url ) ) . '</p>';
 					}
 
@@ -110,7 +119,7 @@ endif;
 
 		<?php else : ?>
 
-			<p class="woocommerce-verification-required"><?php _e( 'Only logged in customers who have purchased this product may leave a review.', 'bigbox' ); ?></p>
+			<p class="woocommerce-verification-required"><?php esc_html_e( 'Only logged in customers who have purchased this product may leave a review.', 'bigbox' ); ?></p>
 
 		<?php endif; ?>
 	</div>

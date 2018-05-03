@@ -15,7 +15,7 @@ $rgba30 = bigbox_hex_to_rgba( $danger, 0.30 );
 $rgba50 = bigbox_hex_to_rgba( $danger, 0.50 );
 
 return [
-	// Solid color
+	// Solid color.
 	[
 		'selectors'    => [
 			'.woocommerce-remove-coupon',
@@ -27,7 +27,7 @@ return [
 		],
 	],
 
-	// @mixin card--error
+	// @mixin card--error.
 	[
 		'selectors'    => [
 			'.woocommerce-error li',
@@ -40,7 +40,7 @@ return [
 		],
 	],
 
-	// @mixin button--danger
+	// @mixin button--danger.
 	[
 		'selectors'    => [],
 		'declarations' => [

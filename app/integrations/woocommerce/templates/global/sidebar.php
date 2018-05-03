@@ -17,7 +17,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 
 $sidebar = bigbox_get_dynamic_sidebar( 'shop' );

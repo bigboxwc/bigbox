@@ -65,7 +65,7 @@ function bigbox_get_theme_font_weight( $weight_type = 'base' ) {
 function bigbox_get_google_font_family_string() {
 	$family = bigbox_get_theme_font_family();
 
-	if ( 'default' == $family ) {
+	if ( 'default' === $family ) {
 		return false;
 	}
 
@@ -73,7 +73,7 @@ function bigbox_get_google_font_family_string() {
 	$bold = bigbox_get_theme_font_weight( 'bold' );
 
 	$weights = implode( ',', [ $base, $bold ] );
-	$family  = urlencode( $family );
+	$family  = rawurlencode( $family );
 
 	return $family . ':' . $weights;
 }

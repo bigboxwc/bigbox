@@ -12,7 +12,7 @@
 $gray200 = bigbox_get_theme_color( 'gray-200' );
 
 return [
-	// Solid border-color
+	// Solid border-color.
 	[
 		'selectors'    => [
 			'.blog-post',
@@ -36,7 +36,7 @@ return [
 			'border-color' => esc_attr( $gray200 ),
 		],
 	],
-	// Solid background-color
+	// Solid background-color.
 	[
 		'selectors'    => [
 			'.woocommerce-page ul.products-categories li.product.product-category',

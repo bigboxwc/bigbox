@@ -53,7 +53,7 @@ $wrapper_classes = apply_filters(
 			$html .= '</div>';
 		}
 
-		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );
+		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id ); // WPCS: XSS okay.
 
 		do_action( 'woocommerce_product_thumbnails' );
 		?>

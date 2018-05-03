@@ -95,10 +95,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				<?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : ?>
 					<div class="tax-rate action-list__item">
-						<div id="tax-rate-<?php echo sanitize_title( $code ); ?>" class="action-list__item-label">
+						<div id="tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?>" class="action-list__item-label">
 							<?php echo wp_kses_post( $tax->label . ': ' . $estimated_text ); ?>
 						</div>
-						<div clas="action-list__item-value" labelledby="tax-rate-<?php echo sanitize_title( $code ); ?>">
+						<div clas="action-list__item-value" labelledby="tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
 							<?php echo wp_kses_post( $tax->formatted_amount ); ?>
 						</div>
 					</div>

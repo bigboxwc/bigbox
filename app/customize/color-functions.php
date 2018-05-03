@@ -33,7 +33,7 @@ function bigbox_get_theme_colors() {
  *
  * @since 1.0.0
  *
- * @param string $key Color key
+ * @param string $key Color key.
  * @return mixed String or false on no value.
  */
 function bigbox_get_theme_color( $key ) {

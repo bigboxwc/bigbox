@@ -13,7 +13,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+/**
+ * Output brand thumbnail.
+ *
+ * @since 1.0.0
+ */
 function bigbox_woocommerce_single_brand_thumbnail() {
+	// @codingStandardsIgnoreStart
 	global $WC_Brands;
 
 	echo '<div class="woocommerce-product-brand">';
@@ -28,4 +34,5 @@ function bigbox_woocommerce_single_brand_thumbnail() {
 	);
 
 	echo '</div>';
+	// @codingStandardsIgnoreEnd
 }

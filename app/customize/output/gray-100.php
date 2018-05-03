@@ -12,7 +12,7 @@
 $gray100 = bigbox_get_theme_color( 'gray-100' );
 
 return [
-	// Solid background-color
+	// Solid background-color.
 	[
 		'selectors'    => [
 			'table tbody tr:nth-child(even) th',
@@ -24,7 +24,7 @@ return [
 			'.woocommerce-breadcrumb',
 			'.navbar-search__category select',
 
-			// Flatpickr
+			// Flatpickr.
 			'.flatpickr-calendar .flatpickr-day.inRange',
 			'.flatpickr-calendar .flatpickr-day.prevMonthDay.inRange',
 			'.flatpickr-calendar .flatpickr-day.nextMonthDay.inRange',
@@ -42,7 +42,7 @@ return [
 			'background-color' => esc_attr( $gray100 ),
 		],
 	],
-	// Solid border-color
+	// Solid border-color.
 	[
 		'selectors'    => [
 			'.footer-nav',

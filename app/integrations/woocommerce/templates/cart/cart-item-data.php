@@ -15,10 +15,12 @@
  * @package WooCommerce/Templates
  * @version 2.4.0
  */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
+
 <table class="product__variations">
 	<?php foreach ( $item_data as $data ) : ?>
 		<tr>

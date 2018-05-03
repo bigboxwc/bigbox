@@ -14,7 +14,7 @@ $rgba50  = bigbox_hex_to_rgba( $gray300, 0.50 );
 $rgba75  = bigbox_hex_to_rgba( $gray300, 0.75 );
 
 return [
-	// Solid border-color
+	// Solid border-color.
 	[
 		'selectors'    => [
 			'table td',
@@ -27,13 +27,13 @@ return [
 			'ul.brands_index li a',
 			'ul.brands_index li span',
 
-			// .form-input
+			// .form-input.
 			'.woocommerce .input-text',
 			'#stripe-card-element',
 			'#stripe-exp-element',
 			'#stripe-cvc-element',
 
-			// Flatpickr
+			// Flatpickr.
 			'.flatpickr-calendar .flatpickr-day.inRange',
 			'.flatpickr-calendar .flatpickr-day.prevMonthDay.inRange',
 			'.flatpickr-calendar .flatpickr-day.nextMonthDay.inRange',
@@ -51,7 +51,7 @@ return [
 			'border-color' => esc_attr( $gray300 ),
 		],
 	],
-	// RGBA .50 border-color
+	// RGBA .50 border-color.
 	[
 		'selectors'    => [
 			'.woocommerce-page ul.products-categories li.product.product-category',
@@ -66,14 +66,14 @@ return [
 			'border-color' => esc_attr( $rgba50 ),
 		],
 	],
-	// RGBA .50 box-shadow
+	// RGBA .50 box-shadow.
 	[
 		'selectors'    => [],
 		'declarations' => [
 			'box-shadow' => '0 1px 0 ' . esc_attr( $gray300 ),
 		],
 	],
-	// Solid box-shadow
+	// Solid box-shadow.
 	[
 		'selectors'    => [
 			'table',
@@ -83,7 +83,7 @@ return [
 		],
 	],
 
-	// @mixin card
+	// @mixin card.
 	[
 		'selectors'    => [
 			'.woocommerce-checkout-review-order',

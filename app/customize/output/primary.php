@@ -13,7 +13,7 @@ $primary = bigbox_get_theme_color( 'primary' );
 $rgba20  = bigbox_hex_to_rgba( $primary, 0.20 );
 
 return [
-	// Solid color
+	// Solid color.
 	[
 		'selectors'    => [
 			'a:hover',
@@ -25,7 +25,7 @@ return [
 			'color' => esc_attr( $primary ),
 		],
 	],
-	// Solid background-color
+	// Solid background-color.
 	[
 		'selectors'    => [
 			'.navbar',
@@ -33,7 +33,7 @@ return [
 			'.select2-container--default .select2-results__option--highlighted[data-selected]',
 			'.widget_price_filter .ui-slider .ui-slider-range',
 
-			// Flatpickr
+			// Flatpickr.
 			'.flatpickr-calendar .flatpickr-day.selected',
 			'.flatpickr-calendar .flatpickr-day.startRange',
 			'.flatpickr-calendar .flatpickr-day.endRange',
@@ -45,7 +45,7 @@ return [
 			'background-color' => esc_attr( $primary ),
 		],
 	],
-	// Solid fill
+	// Solid fill.
 	[
 		'selectors'    => [
 			'a:hover .bigbox-icon',
@@ -55,13 +55,13 @@ return [
 			'fill' => esc_attr( $primary ),
 		],
 	],
-	// Solid border-color
+	// Solid border-color.
 	[
 		'selectors'    => [
 			'.widget_price_filter .ui-slider .ui-slider-handle',
 			'.woocommerce-MyAccount-navigation-link.is-active a',
 
-			// Flatpickr
+			// Flatpickr.
 			'.flatpickr-calendar .flatpickr-day.selected',
 			'.flatpickr-calendar .flatpickr-day.startRange',
 			'.flatpickr-calendar .flatpickr-day.endRange',
@@ -73,7 +73,7 @@ return [
 			'border-color' => esc_attr( $primary ),
 		],
 	],
-	// Solid outline-color
+	// Solid outline-color.
 	[
 		'selectors'    => [
 			':focus',
@@ -83,7 +83,7 @@ return [
 		],
 	],
 
-	// @mixin button
+	// @mixin button.
 	[
 		'selectors'    => [
 			'.button',

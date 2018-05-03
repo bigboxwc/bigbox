@@ -12,7 +12,7 @@
 $gray400 = bigbox_get_theme_color( 'gray-400' );
 
 return [
-	// Solid border-color
+	// Solid border-color.
 	[
 		'selectors'    => [
 			'.wc_payment_method [type="radio"] label:before',
@@ -49,7 +49,7 @@ return [
 		],
 	],
 
-	// @mixin button--secondary
+	// @mixin button--secondary.
 	[
 		'selectors'    => [
 			'table .button',

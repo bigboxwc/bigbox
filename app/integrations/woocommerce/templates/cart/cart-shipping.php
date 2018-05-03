@@ -82,13 +82,13 @@ elseif ( 1 === count( $available_methods ) ) :
 // No shipping.
 elseif ( WC()->customer->has_calculated_shipping() ) :
 	echo '<div class="shipping-note">';
-	echo apply_filters( is_cart() ? 'woocommerce_cart_no_shipping_available_html' : 'woocommerce_no_shipping_available_html', wpautop( __( 'There are no shipping methods available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'bigbox' ) ) );
+	echo wp_kses_post( apply_filters( is_cart() ? 'woocommerce_cart_no_shipping_available_html' : 'woocommerce_no_shipping_available_html', wpautop( __( 'There are no shipping methods available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'bigbox' ) ) ) );
 	echo '</div>';
 
 	// Unavailable.
 elseif ( ! is_cart() ) :
 	echo '<div class="shipping-note">';
-	echo wpautop( __( 'Enter your full address to see shipping costs.', 'bigbox' ) );
+	echo wp_kses_post( wpautop( __( 'Enter your full address to see shipping costs.', 'bigbox' ) ) );
 	echo '</div>';
 endif;
 

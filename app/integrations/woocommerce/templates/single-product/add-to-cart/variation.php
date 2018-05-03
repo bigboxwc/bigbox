@@ -19,5 +19,5 @@ defined( 'ABSPATH' ) || exit;
 <script type="text/template" id="tmpl-variation-template"><# if ( data.variation.variation_description ) { #><div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}</div><# } #><# if ( data.variation.price_html ) { #><div class="woocommerce-variation-price">{{{ data.variation.price_html }}}</div><# } #><# if ( data.variation.availability_html ) { #><div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}</div><# } #></script>
 
 <script type="text/template" id="tmpl-unavailable-variation-template">
-	<p><?php _e( 'Sorry, this product is unavailable. Please choose a different combination.', 'bigbox' ); ?></p>
+	<p><?php esc_html_e( 'Sorry, this product is unavailable. Please choose a different combination.', 'bigbox' ); ?></p>
 </script>

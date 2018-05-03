@@ -115,6 +115,7 @@ function bigbox_facetwp_catalog_ordering() {
  * @return array
  */
 function bigbox_facetwp_sort_options( $options ) {
+	// @codingStandardsIgnoreStart
 	$options['price'] = [
 		'label'      => __( 'Price (Lowest)', 'bigbox' ),
 		'query_args' => [
@@ -132,6 +133,7 @@ function bigbox_facetwp_sort_options( $options ) {
 			'order'    => 'DESC',
 		],
 	];
+	// @codingStandardsIgnoreEnd
 
 	return $options;
 }

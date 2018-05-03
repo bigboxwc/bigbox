@@ -12,7 +12,7 @@
 $warning = bigbox_get_theme_color( 'warning' );
 
 return [
-	// Solid background-color
+	// Solid background-color.
 	[
 		'selectors'    => [
 			'.woocommerce-store-notice',

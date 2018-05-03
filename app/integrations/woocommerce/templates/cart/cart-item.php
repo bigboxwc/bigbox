@@ -69,7 +69,7 @@ $product_thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product
 						__( '%1$s &times %2$s', 'bigbox' ),
 						absint( $cart_item['quantity'] ),
 						apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ) // PHPCS: XSS ok.
-					);
+					); // WPCS: XSS okay.
 				endif;
 				?>
 				</del>

@@ -81,7 +81,7 @@ function bigbox_woocommerce_js_settings( $settings ) {
  * @param int $value Option value.
  * @return int
  */
-function bigbox_woocommerce_adjust_catalog_columns() {
+function bigbox_woocommerce_adjust_catalog_columns( $value ) {
 	$total   = wc_get_loop_prop( 'total' );
 	$columns = wc_get_loop_prop( 'columns' );
 
@@ -248,7 +248,7 @@ function bigbox_woocommerce_template_loop_stock() {
 ?>
 
 <div class="product__stock">
-	<?php echo wc_get_stock_html( wc_get_product( get_post() ) ); ?>
+	<?php echo wc_get_stock_html( wc_get_product( get_post() ) ); // WPCS: XSS okay. ?>
 </div>
 
 <?php
@@ -363,7 +363,7 @@ function bigbox_woocommerce_display_product_attributes() {
 	$attributes = ob_get_clean();
 
 	if ( '<tableclass="shop_attributes"></table>' !== trim( preg_replace( '/\s/', '', $attributes ) ) ) {
-		echo $attributes;
+		echo $attributes; // WPCS: XSS okay.
 	}
 }
 

@@ -44,7 +44,7 @@ add_action( 'customize_preview_init', 'bigbox_customize_preview_init', 99 );
  * @return array
  */
 function bigbox_preview_css() {
-	$customized = json_decode( wp_unslash( $_POST['customized'] ), true );
+	$customized = json_decode( wp_unslash( $_POST['customized'] ), true ); // @codingStandardsIgnoreLine
 
 	// Filter `get_theme_mod()` calls for customized settings.
 	foreach ( $customized as $setting_id => $value ) {

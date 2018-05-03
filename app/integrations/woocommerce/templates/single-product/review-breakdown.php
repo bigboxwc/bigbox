@@ -21,7 +21,12 @@ if ( 0 === $count ) {
 }
 ?>
 
-<h3><?php echo esc_html( sprintf( __( '%1$s out of 5 stars', 'bigbox' ), str_replace( '.0', '', number_format( $average, 1 ) ) ) ); ?></h3>
+<h3>
+<?php
+// Translators: %1$s Star count.
+echo esc_html( sprintf( __( '%1$s out of 5 stars', 'bigbox' ), str_replace( '.0', '', number_format( $average, 1 ) ) ) );
+?>
+</h3>
 
 <div class="review-breakdown">
 	<?php
@@ -31,8 +36,8 @@ if ( 0 === $count ) {
 	<div class="review-breakdown__item">
 		<div class="review-breakdown__label">
 		<?php
-		// Translators: %1$d Number of stars
-		printf( _n( '%1$d Star', '%1$d Stars', $i, 'bigbox' ), $i );
+		// Translators: %1$d Number of stars.
+		esc_html( sprintf( _n( '%1$d Star', '%1$d Stars', $i, 'bigbox' ), $i ) );
 		?>
 		</div>
 

@@ -12,7 +12,7 @@
 $gray600 = bigbox_get_theme_color( 'gray-600' );
 
 return [
-	// Solid color
+	// Solid color.
 	[
 		'selectors'    => [
 			'.product__stock',
@@ -23,7 +23,7 @@ return [
 		],
 	],
 
-	// Solid border-top-color
+	// Solid border-top-color.
 	[
 		'selectors'    => [
 			'.navbar-search__category:before',
@@ -33,7 +33,7 @@ return [
 		],
 	],
 
-	// @mixin button--pill
+	// @mixin button--pill.
 	[
 		'selectors'    => [
 			'.product__has-variations a',

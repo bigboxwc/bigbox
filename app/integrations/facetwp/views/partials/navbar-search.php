@@ -43,7 +43,7 @@ endif;
 		<div id="search-dropdown-real">
 		<?php
 		if ( ( is_shop() || is_product_taxonomy() ) && ! is_customize_preview() ) :
-			echo facetwp_display( 'facet', $dropdown['name'] );
+			echo facetwp_display( 'facet', $dropdown['name'] ); // WPCS: XSS okay.
 		else :
 			wp_dropdown_categories(
 				apply_filters(
@@ -85,7 +85,7 @@ endif;
 
 		<?php
 		if ( is_shop() && ! is_customize_preview() ) :
-			echo facetwp_display( 'facet', $search['name'] );
+			echo facetwp_display( 'facet', $search['name'] ); // WPCS: XSS okay.
 		else :
 		?>
 			<input type="search" id="<?php echo esc_attr( $name ); ?>" name="<?php echo esc_attr( $name ); ?>" class="form-input" placeholder="<?php echo esc_attr( $search['placeholder'] ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" />

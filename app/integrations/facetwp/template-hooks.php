@@ -14,14 +14,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * resources/views/partials/navbar-search.php.
+ * File: resources/views/partials/navbar-search.php.
  */
 
 remove_all_filters( 'bigbox_navbar_search' );
 add_filter( 'bigbox_navbar_search', 'bigbox_facetwp_navbar_search' );
 
 /**
- * woocommerce/templates/archive-product.php.
+ * File: woocommerce/templates/archive-product.php.
  */
 
 // Preselect on archives.

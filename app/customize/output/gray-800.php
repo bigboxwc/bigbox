@@ -12,7 +12,7 @@
 $gray800 = bigbox_get_theme_color( 'gray-800' );
 
 return [
-	// Solid color
+	// Solid color.
 	[
 		'selectors'    => [
 			'a',

@@ -15,7 +15,7 @@ $rgba30  = bigbox_hex_to_rgba( $success, 0.30 );
 $rgba50  = bigbox_hex_to_rgba( $success, 0.50 );
 
 return [
-	// Solid background-color
+	// Solid background-color.
 	[
 		'selectors'    => [
 			'.navbar-menu__cart-count',
@@ -25,7 +25,7 @@ return [
 			'background-color' => esc_attr( $success ),
 		],
 	],
-	// Solid border-color
+	// Solid border-color.
 	[
 		'selectors'    => [
 			'.wc_payment_method [type="radio"]:checked + label[for^="payment_method"]:before',
@@ -34,7 +34,7 @@ return [
 			'border-color' => esc_attr( $success ),
 		],
 	],
-	// Solid color
+	// Solid color.
 	[
 		'selectors'    => [
 			'.woocommerce-purchase-form .instock',
@@ -45,7 +45,7 @@ return [
 		],
 	],
 
-	// @mixin card--primary
+	// @mixin card--primary.
 	[
 		'selectors'    => [
 			'.wc_payment_method [type="radio"]:checked + label[for^="payment_method"]',
