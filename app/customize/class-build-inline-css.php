@@ -33,7 +33,7 @@ class Build_Inline_CSS {
 	 *
 	 * @var array Holds the data to be printed out.
 	 */
-	private $data = array();
+	private $data = [];
 
 	/**
 	 * Optional line ending character for debug mode.
@@ -67,13 +67,13 @@ class Build_Inline_CSS {
 	 *
 	 * Accepts data to eventually be turned into CSS. Usage:
 	 *
-	 * $this->add( array(
-	 *     'selectors'    => array( '.site-header-main' ),
-	 *     'declarations' => array(
+	 * $this->add( [
+	 *     'selectors'    => [ '.site-header-main' ],
+	 *     'declarations' => [
 	 *         'background-color' => '#00ff00',
-	 *     ),
+	 *     ],
 	 *     'media' => 'screen and (min-width: 800px)',
-	 * ) );
+	 * ] );
 	 *
 	 * Selectors represent the CSS selectors; declarations are the CSS properties and values with keys being properties
 	 * and values being values. 'media' can also be declared to specify the media query.
@@ -87,7 +87,7 @@ class Build_Inline_CSS {
 	 * @param array $data The selectors and properties to add to the CSS.
 	 */
 	public function add( array $data ) {
-		$entry = array();
+		$entry = [];
 
 		/**
 		 * Filter: Modify CSS rules as they are registered.
@@ -170,7 +170,7 @@ class Build_Inline_CSS {
 
 		// Make sure the 'all' array is first.
 		if ( isset( $this->data['all'] ) && count( $this->data ) > 1 ) {
-			$all = array( 'all' => $this->data['all'] );
+			$all = [ 'all' => $this->data['all'] ];
 			unset( $this->data['all'] );
 			$this->data = array_merge( $all, $this->data );
 		}

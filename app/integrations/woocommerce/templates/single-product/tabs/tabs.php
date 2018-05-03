@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @see woocommerce_default_product_tabs()
  */
-$tabs = apply_filters( 'woocommerce_product_tabs', array() );
+$tabs = apply_filters( 'woocommerce_product_tabs', [] );
 
 if ( ! empty( $tabs ) ) : ?>
 

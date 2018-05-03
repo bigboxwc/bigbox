@@ -41,7 +41,7 @@ endif;
 			<?php if ( have_comments() ) : ?>
 
 				<ol class="commentlist">
-					<?php wp_list_comments( apply_filters( 'woocommerce_product_review_list_args', array( 'callback' => 'woocommerce_comments' ) ) ); ?>
+					<?php wp_list_comments( apply_filters( 'woocommerce_product_review_list_args', [ 'callback' => 'woocommerce_comments' ] ) ); ?>
 				</ol>
 
 				<?php
@@ -49,11 +49,11 @@ endif;
 					echo '<nav class="woocommerce-pagination">'; // WPCS: XSS okay.
 					paginate_comments_links(
 						apply_filters(
-							'woocommerce_comment_pagination_args', array(
+							'woocommerce_comment_pagination_args', [
 								'prev_text' => '&larr;',
 								'next_text' => '&rarr;',
 								'type'      => 'list',
-							)
+							]
 						)
 					);
 					echo '</nav>'; // WPCS: XSS okay.
@@ -72,25 +72,25 @@ endif;
 			<div id="review_form_wrapper">
 				<div id="review_form">
 					<?php
-						$commenter = wp_get_current_commenter();
+					$commenter = wp_get_current_commenter();
 
-						$comment_form = array(
-							'title_reply'         => esc_html__( 'Write a customer review', 'bigbox' ),
-							// Translators: %s Product title.
-							'title_reply_to'      => esc_html__( 'Write a customer review for %s', 'bigbox' ),
-							'title_reply_before'  => '<h2 id="reply-title" class="comment-reply-title">',
-							'title_reply_after'   => '</h2>',
-							'comment_notes_after' => '',
-							'fields'              => array(
-								'author' => '<p class="comment-form-author"><label for="author">' . esc_html__( 'Name', 'bigbox' ) . ' <span class="required">*</span></label> ' .
-											'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" aria-required="true" required /></p>',
-								'email'  => '<p class="comment-form-email"><label for="email">' . esc_html__( 'Email', 'bigbox' ) . ' <span class="required">*</span></label> ' .
-											'<input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" aria-required="true" required /></p>',
-							),
-							'label_submit'        => esc_html__( 'Submit Review', 'bigbox' ),
-							'logged_in_as'        => '',
-							'comment_field'       => '',
-						);
+					$comment_form = [
+						'title_reply'         => esc_html__( 'Write a customer review', 'bigbox' ),
+						// Translators: %s Product title.
+						'title_reply_to'      => esc_html__( 'Write a customer review for %s', 'bigbox' ),
+						'title_reply_before'  => '<h2 id="reply-title" class="comment-reply-title">',
+						'title_reply_after'   => '</h2>',
+						'comment_notes_after' => '',
+						'fields'              => [
+							'author' => '<p class="comment-form-author"><label for="author">' . esc_html__( 'Name', 'bigbox' ) . ' <span class="required">*</span></label> ' .
+										'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" aria-required="true" required /></p>',
+							'email'  => '<p class="comment-form-email"><label for="email">' . esc_html__( 'Email', 'bigbox' ) . ' <span class="required">*</span></label> ' .
+										'<input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" aria-required="true" required /></p>',
+						],
+						'label_submit'        => esc_html__( 'Submit Review', 'bigbox' ),
+						'logged_in_as'        => '',
+						'comment_field'       => '',
+					];
 
 					$account_page_url = wc_get_page_permalink( 'myaccount' );
 

@@ -60,7 +60,7 @@ function bigbox_register_sidebars() {
 	// Footer widgets.
 	for ( $i = 1; $i <= $count; $i++ ) {
 		register_sidebar(
-			array(
+			[
 				// Translators: Widget column number.
 				'name'          => sprintf( __( 'Footer Navigation Column %d', 'bigbox' ), $i ),
 				'id'            => 'footer-' . $i,
@@ -69,7 +69,7 @@ function bigbox_register_sidebars() {
 				'after_widget'  => '</div>',
 				'before_title'  => '<h4 class="widget-title footer-widget__title">',
 				'after_title'   => '</h4>',
-			)
+			]
 		);
 	}
 }

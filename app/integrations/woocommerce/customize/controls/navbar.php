@@ -88,20 +88,20 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 
 	// Toggle account menu item.
 	$wp_customize->add_setting(
-		'nav-item-account', array(
+		'nav-item-account', [
 			'default'           => true,
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'esc_attr',
-		)
+		]
 	);
 
 	$wp_customize->add_control(
-		'nav-item-account', array(
+		'nav-item-account', [
 			// Translators: Customizer control label.
 			'label'   => esc_html__( 'Display account menu item', 'bigbox' ),
 			'type'    => 'checkbox',
 			'section' => 'navbar',
-		)
+		]
 	);
 
 	// Toggle cart menu item.
@@ -114,12 +114,12 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 	);
 
 	$wp_customize->add_control(
-		'nav-item-cart', array(
+		'nav-item-cart', [
 			// Translators: Customizer control label.
 			'label'   => esc_html__( 'Display cart menu item', 'bigbox' ),
 			'type'    => 'checkbox',
 			'section' => 'navbar',
-		)
+		]
 	);
 
 	// Partial refreshes.

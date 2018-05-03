@@ -64,7 +64,7 @@ add_filter( 'woocommerce_cart_shipping_method_full_label', 'bigbox_woocommerce_c
  * @since 1.0.0
  */
 function bigbox_update_cart_and_totals() {
-	$values = array();
+	$values = [];
 
 	parse_str( $_POST['checkout'], $values ); // @codingStandardsIgnoreLine
 

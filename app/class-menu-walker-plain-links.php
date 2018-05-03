@@ -54,7 +54,7 @@ class Menu_Walker_Plain_Links extends Walker {
 	 * @return string
 	 */
 	public function walk( $items, $max_depth ) {
-		$list  = array();
+		$list  = [];
 		$items = array_map( 'wp_setup_nav_menu_item', $items );
 
 		foreach ( $items as $item ) {

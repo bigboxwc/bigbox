@@ -33,12 +33,12 @@ endif;
 
 $columns         = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );
 $wrapper_classes = apply_filters(
-	'woocommerce_single_product_image_gallery_classes', array(
+	'woocommerce_single_product_image_gallery_classes', [
 		'woocommerce-product-gallery',
 		'woocommerce-product-gallery--' . ( has_post_thumbnail() ? 'with-images' : 'without-images' ),
 		'woocommerce-product-gallery--columns-' . absint( $columns ),
 		'images',
-	)
+	]
 );
 ?>
 

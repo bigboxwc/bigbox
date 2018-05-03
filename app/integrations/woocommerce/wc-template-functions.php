@@ -61,13 +61,13 @@ function woocommerce_subcategory_thumbnail( $category ) {
  * @param array $args Arguments.
  * @return boolean
  */
-function woocommerce_output_product_categories( $args = array() ) {
+function woocommerce_output_product_categories( $args = [] ) {
 	$args = wp_parse_args(
-		$args, array(
+		$args, [
 			'before'    => apply_filters( 'woocommerce_before_output_product_categories', '' ),
 			'after'     => apply_filters( 'woocommerce_after_output_product_categories', '' ),
 			'parent_id' => 0,
-		)
+		]
 	);
 
 	$product_categories = woocommerce_get_product_subcategories( $args['parent_id'] );
@@ -86,9 +86,9 @@ function woocommerce_output_product_categories( $args = array() ) {
 
 	foreach ( $product_categories as $category ) {
 		wc_get_template(
-			'content-product_cat.php', array(
+			'content-product_cat.php', [
 				'category' => $category,
-			)
+			]
 		);
 	}
 

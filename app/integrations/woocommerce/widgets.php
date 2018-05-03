@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function bigbox_woocommerce_register_sidebars() {
 	register_sidebar(
-		array(
+		[
 			'name'          => __( 'Shop Sidebar (Left)', 'bigbox' ),
 			'id'            => 'shop',
 			'description'   => '',
@@ -28,11 +28,11 @@ function bigbox_woocommerce_register_sidebars() {
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
-		)
+		]
 	);
 
 	register_sidebar(
-		array(
+		[
 			'name'          => __( 'Shop Sidebar (Right)', 'bigbox' ),
 			'id'            => 'shop-tertiary',
 			'description'   => '',
@@ -40,11 +40,11 @@ function bigbox_woocommerce_register_sidebars() {
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
-		)
+		]
 	);
 
 	register_sidebar(
-		array(
+		[
 			'name'          => __( 'Shop Sidebar (Comments)', 'bigbox' ),
 			'id'            => 'shop-comments',
 			'description'   => '',
@@ -52,7 +52,7 @@ function bigbox_woocommerce_register_sidebars() {
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
-		)
+		]
 	);
 }
 add_action( 'widgets_init', 'bigbox_woocommerce_register_sidebars' );
