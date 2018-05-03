@@ -52,14 +52,6 @@ class Gutenberg extends Integration implements Registerable, Service {
 		}
 
 		add_theme_support( 'editor-color-palette', ...$scheme );
-
-		// Cusstom logo support.
-		add_theme_support(
-			'custom-logo', [
-				'flex-width'  => true,
-				'header-text' => true,
-			]
-		);
 	}
 
 	/**

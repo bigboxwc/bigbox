@@ -31,7 +31,7 @@ import { adjustWidth } from './navbar.js';
 			.prop( 'name', '' );
 	} );
 
-	const $htmlbody   = $( 'html, body' );
+	const $htmlbody = $( 'html, body' );
 	const $categories = $( '.products-categories' );
 
 	// Adjust select widths once loaded.

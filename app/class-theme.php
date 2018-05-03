@@ -44,13 +44,11 @@ final class Theme implements Registerable {
 		require_once get_template_directory() . '/app/nux/starter-content.php';
 
 		$helpers = [
-			'extras',
 			'views',
 			'template-tags',
 			'assets',
 			'svg',
 			'nav-menus',
-			'comments',
 			'page-templates',
 			'theme-support',
 			'widgets',

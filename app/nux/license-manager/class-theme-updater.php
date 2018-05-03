@@ -112,8 +112,8 @@ class Theme_Updater implements Registerable {
 			$response = wp_remote_post(
 				$this->args['remote_api_url'],
 				[
-					'timeout'   => 5,
-					'body'      => [
+					'timeout' => 5,
+					'body'    => [
 						'edd_action' => 'get_version',
 						'license'    => $this->args['license'],
 						'name'       => $this->args['item_name'],
