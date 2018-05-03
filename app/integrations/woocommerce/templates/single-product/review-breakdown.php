@@ -37,7 +37,7 @@ echo esc_html( sprintf( __( '%1$s out of 5 stars', 'bigbox' ), str_replace( '.0'
 		<div class="review-breakdown__label">
 		<?php
 		// Translators: %1$d Number of stars.
-		esc_html( sprintf( _n( '%1$d Star', '%1$d Stars', $i, 'bigbox' ), $i ) );
+		echo esc_html( sprintf( _n( '%1$d Star', '%1$d Stars', $i, 'bigbox' ), $i ) );
 		?>
 		</div>
 
