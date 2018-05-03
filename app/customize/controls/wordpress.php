@@ -34,6 +34,9 @@ function bigbox_customize_register( $wp_customize ) {
 	// Translators: Customizer control label.
 	$wp_customize->get_control( 'header_text' )->label = esc_html__( 'Display Site Title', 'bigbox' );
 
+	// Move background color.
+	$wp_customize->get_control( 'background_color' )->section = 'colors-elements';
+
 	// Update branding partial when Site Title or text changes.
 	foreach ( [ 'blogname', 'header_text' ] as $setting ) {
 		$wp_customize->selective_refresh->add_partial(

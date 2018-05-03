@@ -45,11 +45,18 @@ function bigbox_add_theme_support() {
 	// Allow featured images to be used.
 	add_theme_support( 'post-thumbnails' );
 
-	// Cusstom logo support.
+	// Custom logo support.
 	add_theme_support(
 		'custom-logo', [
 			'flex-width'  => true,
 			'header-text' => true,
+		]
+	);
+
+	// Background.
+	add_theme_support(
+		'custom-background', [
+			'default-color' => '#ffffff',
 		]
 	);
 }

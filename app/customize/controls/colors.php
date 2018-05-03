@@ -57,6 +57,15 @@ function bigbox_customize_register_colors_sections( $wp_customize ) {
 			'priority' => 20,
 		]
 	);
+
+	$wp_customize->add_section(
+		'colors-elements', [
+			// Translators: Customizer section title.
+			'title'    => esc_html__( 'Elements', 'bigbox' ),
+			'panel'    => 'colors',
+			'priority' => 30,
+		]
+	);
 }
 add_action( 'customize_register', 'bigbox_customize_register_colors_sections' );
 
