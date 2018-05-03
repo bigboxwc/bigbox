@@ -189,6 +189,7 @@
 }
 
 .wc-layered-nav-term {
+
 	&.chosen {
 
 		color: color("primary");
@@ -197,7 +198,7 @@
 			color: color("primary");
 
 			&:before {
-				content: '\00d7';
+				content: "\00d7";
 				margin-right: 5px;
 			}
 		}

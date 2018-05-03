@@ -5,6 +5,7 @@
 .woocommerce-products-header__title {
 
 	.home & {
+
 		@include screen-reader-text();
 	}
 }
