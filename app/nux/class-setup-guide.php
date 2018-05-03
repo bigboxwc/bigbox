@@ -49,7 +49,7 @@ class Setup_Guide implements Registerable, Service {
 				'priority' => 30,
 			],
 			'customize'       => [
-				'label'    => __( 'Customize Appearance', 'bigbox' ),
+				'label'    => __( 'Customize Your Website', 'bigbox' ),
 				'priority' => 40,
 			],
 		];

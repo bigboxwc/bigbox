@@ -24,8 +24,8 @@ wp_enqueue_style( 'bigbox-nux' );
 	</p>
 
 	<p class="helpful-links">
-		<a href="https://docs.bigbowc.com/" class="button button-primary" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Search Documentation', 'bigbox' ); ?></a>&nbsp;
-		<a href="https://bigboxwc.com/account/support" class="button button-secondary" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Contact Support', 'bigbox' ); ?></a>
+		<a href="https://docs.bigboxwc.com/" class="button button-primary" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Search Documentation', 'bigbox' ); ?></a>&nbsp;
+		<a href="https://bigboxwc.com/account/support/" class="button button-secondary" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Contact Support', 'bigbox' ); ?></a>
 	</p>
 </div>
 
