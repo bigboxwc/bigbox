@@ -136,7 +136,6 @@ class License_Manager implements Registerable, Service {
 		$response = wp_remote_post(
 			$this->remote_api_url, [
 				'timeout'   => 5,
-				'sslverify' => false,
 				'body'      => $api_params,
 			]
 		);

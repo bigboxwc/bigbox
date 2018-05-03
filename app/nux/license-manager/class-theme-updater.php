@@ -121,7 +121,6 @@ class Theme_Updater implements Registerable {
 						'version'    => $this->args['version'],
 						'beta'       => false,
 					],
-					'sslverify' => false,
 				]
 			);
 
