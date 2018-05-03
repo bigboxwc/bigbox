@@ -20,7 +20,7 @@ add_filter( 'woocommerce_enqueue_styles', 'bigbox_woocommerce_enqueue_styles' );
 add_filter( 'woocommerce_template_path', 'bigbox_woocommerce_template_path' );
 
 // Modify global JS settings.
-add_filter( 'bigboxJsSettings', 'bigbox_woocommerce_js_settings' );
+add_filter( 'bigbox_js', 'bigbox_woocommerce_js_settings' );
 
 // Remove cart fragments on standard shop pages.
 add_filter( 'wp_enqueue_scripts', 'bigbox_woocommerce_wp_enqueue_script', 20 );
