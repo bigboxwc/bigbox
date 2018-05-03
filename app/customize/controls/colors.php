@@ -24,7 +24,8 @@ function bigbox_customize_register_colors_panels( $wp_customize ) {
 	// Create panel.
 	$wp_customize->add_panel(
 		'colors', [
-			'title'    => _x( 'Colors', 'customizer panel title', 'bigbox' ),
+			// Translators: Customizer panel title.
+			'title'    => esc_html__( 'Colors', 'bigbox' ),
 			'priority' => 30,
 		]
 	);
@@ -41,7 +42,8 @@ add_action( 'customize_register', 'bigbox_customize_register_colors_panels' );
 function bigbox_customize_register_colors_sections( $wp_customize ) {
 	$wp_customize->add_section(
 		'colors-scheme', [
-			'title'    => _x( 'Scheme', 'customizer section title (colors)', 'bigbox' ),
+			// Translators: Customizer section title.
+			'title'    => esc_html__( 'Scheme', 'bigbox' ),
 			'panel'    => 'colors',
 			'priority' => 10,
 		]
@@ -49,7 +51,8 @@ function bigbox_customize_register_colors_sections( $wp_customize ) {
 
 	$wp_customize->add_section(
 		'colors-grays', [
-			'title'    => _x( 'Grays', 'customizer section title (colors)', 'bigbox' ),
+			// Translators: Customizer section title.
+			'title'    => esc_html__( 'Grays', 'bigbox' ),
 			'panel'    => 'colors',
 			'priority' => 20,
 		]

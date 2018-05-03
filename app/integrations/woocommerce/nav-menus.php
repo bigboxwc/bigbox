@@ -26,6 +26,7 @@ function bigbox_woocommerce_register_nav_menus() {
 	}
 
 	$navs = [
+		// Translators: Navigation menu name.
 		'product-category-list' => esc_html__( 'Product Category List', 'bigbox' ),
 	];
 

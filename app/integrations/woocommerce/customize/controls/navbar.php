@@ -77,6 +77,7 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 
 	$wp_customize->add_control(
 		'navbar-dropdown-source', [
+			// Translators: Customizer control label.
 			'label'    => esc_html__( 'Dropdown Source', 'bigbox' ),
 			'type'     => 'select',
 			'choices'  => bigbox_woocommerce_customize_get_dropdown_taxonomies(),
@@ -96,6 +97,7 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 
 	$wp_customize->add_control(
 		'nav-item-account', array(
+			// Translators: Customizer control label.
 			'label'   => esc_html__( 'Display account menu item', 'bigbox' ),
 			'type'    => 'checkbox',
 			'section' => 'navbar',
@@ -113,6 +115,7 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 
 	$wp_customize->add_control(
 		'nav-item-cart', array(
+			// Translators: Customizer control label.
 			'label'   => esc_html__( 'Display cart menu item', 'bigbox' ),
 			'type'    => 'checkbox',
 			'section' => 'navbar',

@@ -19,11 +19,14 @@ bigbox_view( 'global/header' );
 
 <div id="main" class="site-primary site-primary--8">
 	<h1 class="page-title page-title--lg">
-		<?php if ( is_archive() ) : ?>
-			<?php the_archive_title(); ?>
-		<?php else : ?>
-			<?php echo get_option( 'page_for_posts' ) ? esc_html( get_the_title( get_option( 'page_for_posts' ) ) ) : esc_html__( 'Blog', 'bigbox' ); ?>
-		<?php endif; ?>
+		<?php
+		if ( is_archive() ) :
+			the_archive_title();
+		else :
+			// Translators: Default blog page title.
+			echo get_option( 'page_for_posts' ) ? esc_html( get_the_title( get_option( 'page_for_posts' ) ) ) : esc_html__( 'Blog', 'bigbox' );
+		endif;
+		?>
 	</h1>
 
 	<?php

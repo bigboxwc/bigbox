@@ -27,9 +27,11 @@ function bigbox_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
 	// Update title of Tagline.
+	// Translators: Customizer control label.
 	$wp_customize->get_control( 'blogdescription' )->description = esc_html__( 'Not output but used for SEO', 'bigbox' );
 
 	// Update label of Header Text
+	// Translators: Customizer control label.
 	$wp_customize->get_control( 'header_text' )->label = esc_html__( 'Display Site Title', 'bigbox' );
 
 	// Update branding partial when Site Title or text changes.

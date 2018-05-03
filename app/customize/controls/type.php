@@ -23,7 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 function bigbox_customize_register_type_sections( $wp_customize ) {
 	$wp_customize->add_section(
 		'type', [
-			'title'    => _x( 'Typography', 'customizer section title (type)', 'bigbox' ),
+			// Translators: Customizer section title.
+			'title'    => esc_html__( 'Typography', 'bigbox' ),
 			'priority' => 20,
 		]
 	);
@@ -48,9 +49,11 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 
 	$wp_customize->add_control(
 		'type-font-family', [
+			// Translators: Customizer control label.
 			'label'   => esc_html__( 'Font Family', 'bigbox' ),
 			'type'    => 'select',
 			'choices' => [
+				// Translators: Customize control value.
 				'default' => esc_html__( 'System Default', 'bigbox' ),
 			],
 			'section' => 'type',
@@ -67,7 +70,9 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 
 	$wp_customize->add_control(
 		'type-font-size', [
+			// Translators: Customizer control label.
 			'label'       => esc_html__( 'Base Font Size', 'bigbox' ),
+			// Translators: Customizer control description.
 			'description' => wp_kses( __( 'Value is measured in <code>em</code>. 1em = 16px', 'bigbox' ), [ 'code' => [] ] ),
 			'type'        => 'number',
 			'input_atts'  => [
@@ -81,10 +86,12 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 
 	$weights = [
 		'base' => [
+			// Translators: Customizer control label.
 			'label'  => esc_html__( 'Base Font Weight', 'bigbox' ),
 			'weight' => 'regular',
 		],
 		'bold' => [
+			// Translators: Customizer control label.
 			'label'  => esc_html__( 'Bold Font Weight', 'bigbox' ),
 			'weight' => 700,
 		],

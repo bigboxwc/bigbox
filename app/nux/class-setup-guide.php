@@ -114,8 +114,8 @@ class Setup_Guide implements Registerable, Service {
 	 */
 	public function add_menu_item() {
 		add_theme_page(
-			esc_html__( 'BigBox', 'bigbox' ),
-			esc_html__( 'BigBox', 'bigbox' ),
+			'BigBox',
+			'BigBox',
 			'edit_theme_options',
 			'bigbox',
 			[ $this, 'output_page' ],

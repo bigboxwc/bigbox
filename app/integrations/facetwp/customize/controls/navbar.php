@@ -67,7 +67,9 @@ function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
 
 	$wp_customize->add_control(
 		'navbar-dropdown-source', [
+			// Translators: Customizer control label.
 			'label'       => esc_html__( 'Dropdown Facet', 'bigbox' ),
+			// Translators: Customizer control description.
 			'description' => esc_html__( 'Choose from one of your Dropdown facets. This facet cannot appear on the Shop page twice.', 'bigbox' ),
 			'type'        => 'select',
 			'choices'     => bigbox_facetwp_customize_get_sources( [ 'dropdown' ] ),
@@ -78,7 +80,9 @@ function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
 
 	$wp_customize->add_control(
 		'navbar-search-source', [
+			// Translators: Customizer control label.
 			'label'       => esc_html__( 'Keyword Facet', 'bigbox' ),
+			// Translators: Customizer control description.
 			'description' => esc_html__( 'Choose from one of your Search facets. This facet cannot appear on the Shop page twice.', 'bigbox' ),
 			'type'        => 'select',
 			'choices'     => bigbox_facetwp_customize_get_sources( [ 'search' ] ),

@@ -2,81 +2,80 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: BigBox BIGBOX_VERSION\n"
+"Project-Id-Version: BigBox %BIGBOX_VERSION%\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/bigbox-theme\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2018-04-16T22:13:14+00:00\n"
-"PO-Revision-Date: 2018-04-16T22:13:14+00:00\n"
+"POT-Creation-Date: 2018-05-03T17:13:35+00:00\n"
+"PO-Revision-Date: 2018-05-03T17:13:35+00:00\n"
 "X-Domain: bigbox\n"
 
 #: app/customize/config/colors-grays.php:14
+msgctxt "customizer control label"
 msgid "Gray 100"
 msgstr ""
 
 #: app/customize/config/colors-grays.php:18
+msgctxt "customizer control label"
 msgid "Gray 200"
 msgstr ""
 
 #: app/customize/config/colors-grays.php:22
+msgctxt "customizer control label"
 msgid "Gray 300"
 msgstr ""
 
 #: app/customize/config/colors-grays.php:26
+msgctxt "customizer control label"
 msgid "Gray 400"
 msgstr ""
 
 #: app/customize/config/colors-grays.php:30
+msgctxt "customizer control label"
 msgid "Gray 500"
 msgstr ""
 
 #: app/customize/config/colors-grays.php:34
+msgctxt "customizer control label"
 msgid "Gray 600"
 msgstr ""
 
 #: app/customize/config/colors-grays.php:38
+msgctxt "customizer control label"
 msgid "Gray 700"
 msgstr ""
 
 #: app/customize/config/colors-grays.php:42
+msgctxt "customizer control label"
 msgid "Gray 800"
 msgstr ""
 
 #: app/customize/config/colors-scheme.php:14
-#: app/theme/nav-menus.php:23
+msgctxt "customizer control label"
 msgid "Primary"
 msgstr ""
 
 #: app/customize/config/colors-scheme.php:18
-#: app/theme/nav-menus.php:24
-msgid "Secondary"
-msgstr ""
-
-#: app/customize/config/colors-scheme.php:22
+msgctxt "customizer control label"
 msgid "Success"
 msgstr ""
 
-#: app/customize/config/colors-scheme.php:26
+#: app/customize/config/colors-scheme.php:22
+msgctxt "customizer control label"
 msgid "Information"
 msgstr ""
 
-#: app/customize/config/colors-scheme.php:30
+#: app/customize/config/colors-scheme.php:26
+msgctxt "customizer control label"
 msgid "Warning"
 msgstr ""
 
-#: app/customize/config/colors-scheme.php:34
+#: app/customize/config/colors-scheme.php:30
+msgctxt "customizer control label"
 msgid "Danger"
-msgstr ""
-
-#: app/customize/config/colors-scheme.php:38
-msgid "Light"
-msgstr ""
-
-#: app/customize/config/colors-scheme.php:42
-msgid "Dark"
 msgstr ""
 
 #: app/customize/controls/colors.php:27
@@ -85,49 +84,57 @@ msgid "Colors"
 msgstr ""
 
 #: app/customize/controls/colors.php:44
-msgctxt "customizer section title (colors)"
+msgctxt "customizer section title"
 msgid "Scheme"
 msgstr ""
 
 #: app/customize/controls/colors.php:52
-msgctxt "customizer section title (colors)"
+msgctxt "customizer section title"
 msgid "Grays"
 msgstr ""
 
 #: app/customize/controls/type.php:26
-msgctxt "customizer section title (type)"
+msgctxt "customizer section title"
 msgid "Typography"
 msgstr ""
 
 #: app/customize/controls/type.php:51
+msgctxt "customizer control label"
 msgid "Font Family"
 msgstr ""
 
 #: app/customize/controls/type.php:54
+msgctxt "customizer type option"
 msgid "System Default"
 msgstr ""
 
 #: app/customize/controls/type.php:70
+msgctxt "customizer control label"
 msgid "Base Font Size"
 msgstr ""
 
 #: app/customize/controls/type.php:71
+msgctxt "customizer control description"
 msgid "Value is measured in <code>em</code>. 1em = 16px"
 msgstr ""
 
 #: app/customize/controls/type.php:84
+msgctxt "customizer control label"
 msgid "Base Font Weight"
 msgstr ""
 
 #: app/customize/controls/type.php:88
+msgctxt "customizer control label"
 msgid "Bold Font Weight"
 msgstr ""
 
 #: app/customize/controls/wordpress.php:30
+msgctxt "customizer control description"
 msgid "Not output but used for SEO"
 msgstr ""
 
 #: app/customize/controls/wordpress.php:33
+msgctxt "customizer control label"
 msgid "Display Site Title"
 msgstr ""
 
@@ -140,41 +147,56 @@ msgid "The service \"%s\" is not recognized and cannot be registered."
 msgstr ""
 
 #: app/integrations/facetwp/customize/controls/navbar.php:70
+msgctxt "customizer control label"
 msgid "Dropdown Facet"
 msgstr ""
 
 #: app/integrations/facetwp/customize/controls/navbar.php:71
+msgctxt "customizer control description"
 msgid "Choose from one of your Dropdown facets. This facet cannot appear on the Shop page twice."
 msgstr ""
 
 #: app/integrations/facetwp/customize/controls/navbar.php:81
+msgctxt "customizer control label"
 msgid "Keyword Facet"
 msgstr ""
 
 #: app/integrations/facetwp/customize/controls/navbar.php:82
+msgctxt "customizer control description"
 msgid "Choose from one of your Search facets. This facet cannot appear on the Shop page twice."
 msgstr ""
 
 #: app/integrations/facetwp/template-functions.php:53
-#: app/integrations/woocommerce/template-functions.php:406
+#: app/integrations/woocommerce/template-functions.php:465
 #: resources/views/partials/content-pagination.php:20
 msgid "Previous Page"
 msgstr ""
 
 #: app/integrations/facetwp/template-functions.php:57
-#: app/integrations/woocommerce/template-functions.php:407
+#: app/integrations/woocommerce/template-functions.php:466
 #: resources/views/partials/content-pagination.php:19
 msgid "Next Page"
 msgstr ""
 
-#: app/integrations/facetwp/template-functions.php:84
-#: app/integrations/woocommerce/templates/loop/result-count.php:27
+#: app/integrations/facetwp/template-functions.php:88
 msgid "Showing the single result"
 msgid_plural "Showing all %d results"
 msgstr[0] ""
 
-#: app/integrations/facetwp/template-functions.php:89
+#: app/integrations/facetwp/template-functions.php:93
 msgid "Showing %1$s&ndash;%2$s of %3$s results"
+msgstr ""
+
+#: app/integrations/facetwp/template-functions.php:119
+msgid "Price (Lowest)"
+msgstr ""
+
+#: app/integrations/facetwp/template-functions.php:128
+msgid "Price (Highest)"
+msgstr ""
+
+#: app/integrations/facetwp/views/partials/navbar-search.php:35
+msgid "All"
 msgstr ""
 
 #: app/integrations/facetwp/views/partials/navbar-search.php:98
@@ -182,95 +204,99 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: app/integrations/woocommerce/checkout.php:39
+#: app/integrations/woocommerce/checkout.php:35
 msgid "2. Billing Details"
 msgstr ""
 
-#: app/integrations/woocommerce/checkout.php:43
+#: app/integrations/woocommerce/checkout.php:39
 msgid "2. Billing &amp; Shipping"
 msgstr ""
 
 #: app/integrations/woocommerce/customize/controls/navbar.php:53
-msgctxt "customizer section title (header search)"
+msgctxt "customizer section title"
 msgid "Header Settings"
 msgstr ""
 
 #: app/integrations/woocommerce/customize/controls/navbar.php:80
+msgctxt "customizer control label"
 msgid "Dropdown Source"
 msgstr ""
 
 #: app/integrations/woocommerce/customize/controls/navbar.php:99
+msgctxt "customizer control label"
 msgid "Display account menu item"
 msgstr ""
 
 #: app/integrations/woocommerce/customize/controls/navbar.php:116
+msgctxt "customizer control label"
 msgid "Display cart menu item"
 msgstr ""
 
 #: app/integrations/woocommerce/nav-menus.php:29
+msgctxt "navigation menu name"
 msgid "Product Category List"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:54
+#: app/integrations/woocommerce/template-functions.php:65
 msgctxt "quantity selector"
 msgid "0 (remove)"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:189
+#: app/integrations/woocommerce/template-functions.php:198
 msgid "More..."
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:226
+#: app/integrations/woocommerce/template-functions.php:235
 msgid "See More Options"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:262
+#: app/integrations/woocommerce/template-functions.php:305
 msgid "Product description"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:268
+#: app/integrations/woocommerce/template-functions.php:311
 msgid "Product information"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:273
+#: app/integrations/woocommerce/template-functions.php:316
 msgid "You may also enjoy"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:279
+#: app/integrations/woocommerce/template-functions.php:326
 msgid "Related products"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:323
+#: app/integrations/woocommerce/template-functions.php:382
 msgid "SKU:"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:324
+#: app/integrations/woocommerce/template-functions.php:383
 msgid "N/A"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:331
+#: app/integrations/woocommerce/template-functions.php:390
 msgid "Category:"
 msgid_plural "Categories:"
 msgstr[0] ""
 
-#: app/integrations/woocommerce/template-functions.php:333
+#: app/integrations/woocommerce/template-functions.php:392
 msgid "Tag:"
 msgid_plural "Tags:"
 msgstr[0] ""
 
-#: app/integrations/woocommerce/template-functions.php:353
+#: app/integrations/woocommerce/template-functions.php:412
 msgid "%1$s average rating"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:356
+#: app/integrations/woocommerce/template-functions.php:415
 msgid "%1$s customer ratings"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:425
+#: app/integrations/woocommerce/template-functions.php:484
 msgid "Next"
 msgstr ""
 
-#: app/integrations/woocommerce/template-functions.php:432
+#: app/integrations/woocommerce/template-functions.php:491
 msgid "Previous"
 msgstr ""
 
@@ -280,6 +306,12 @@ msgstr ""
 
 #: app/integrations/woocommerce/templates/cart/cart-item.php:69
 msgid "%1$s &times %2$s"
+msgstr ""
+
+#: app/integrations/woocommerce/templates/cart/cart-item.php:79
+#: app/integrations/woocommerce/templates/global/quantity-input.php:28
+#: app/integrations/woocommerce/templates/global/quantity-input.php:69
+msgid "Quantity"
 msgstr ""
 
 #: app/integrations/woocommerce/templates/cart/cart-shipping.php:32
@@ -317,7 +349,7 @@ msgid "Cart"
 msgstr ""
 
 #: app/integrations/woocommerce/templates/cart.php:41
-msgid "Do you have a coupon or promotional code? We'll ask you to enter your claim code when it's time to pay."
+msgid "Do you have a coupon code? We'll ask you to enter your claim code when it's time to pay."
 msgstr ""
 
 #: app/integrations/woocommerce/templates/checkout/form-checkout.php:27
@@ -352,10 +384,6 @@ msgstr ""
 msgid "Update totals"
 msgstr ""
 
-#. Template Name of the theme
-msgid "Checkout"
-msgstr ""
-
 #: app/integrations/woocommerce/templates/global/navbar-search.php:30
 msgid "All %s"
 msgstr ""
@@ -372,11 +400,6 @@ msgstr ""
 msgid "Find a product..."
 msgstr ""
 
-#: app/integrations/woocommerce/templates/global/quantity-input.php:28
-#: app/integrations/woocommerce/templates/global/quantity-input.php:69
-msgid "Quantity"
-msgstr ""
-
 #: app/integrations/woocommerce/templates/global/quantity-input.php:65
 #: app/integrations/woocommerce/templates/single-product/add-to-cart/quantity.php:17
 msgid "%s quantity"
@@ -384,19 +407,13 @@ msgstr ""
 
 #: app/integrations/woocommerce/templates/global/quantity-input.php:80
 #: app/integrations/woocommerce/templates/single-product/add-to-cart/quantity.php:30
-msgctxt "Product quantity input tooltip"
+msgctxt "product quantity input tooltip"
 msgid "Qty"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/loop/no-products-found.php:25
+#: app/integrations/woocommerce/templates/loop/no-products-found.php:24
 msgid "No products were found matching your selection."
 msgstr ""
-
-#: app/integrations/woocommerce/templates/loop/result-count.php:32
-msgctxt "with first and last result"
-msgid "Showing the single result"
-msgid_plural "Showing %1$d&ndash;%2$d of %3$d results"
-msgstr[0] ""
 
 #: app/integrations/woocommerce/templates/loop/sale-flash.php:28
 msgid "Save %1$s%%"
@@ -432,7 +449,7 @@ msgstr ""
 msgid "Select an option"
 msgstr ""
 
-#: app/integrations/woocommerce/templates/single-product/add-to-cart/variation.php:32
+#: app/integrations/woocommerce/templates/single-product/add-to-cart/variation.php:22
 msgid "Sorry, this product is unavailable. Please choose a different combination."
 msgstr ""
 
@@ -519,14 +536,17 @@ msgid "Only logged in customers who have purchased this product may leave a revi
 msgstr ""
 
 #: app/integrations/woocommerce/widgets.php:24
+msgctxt "widget area"
 msgid "Shop Sidebar (Left)"
 msgstr ""
 
 #: app/integrations/woocommerce/widgets.php:36
+msgctxt "widget area"
 msgid "Shop Sidebar (Right)"
 msgstr ""
 
 #: app/integrations/woocommerce/widgets.php:48
+msgctxt "widget area"
 msgid "Shop Sidebar (Comments)"
 msgstr ""
 
@@ -539,7 +559,7 @@ msgid "Optimize Your Website"
 msgstr ""
 
 #: app/nux/class-setup-guide.php:52
-msgid "Customize Appearance"
+msgid "Customize Your Website"
 msgstr ""
 
 #: app/nux/class-setup-guide.php:59
@@ -547,8 +567,8 @@ msgid "Install WooCommerce"
 msgstr ""
 
 #. Theme Name of the theme
-#: app/nux/class-setup-guide.php:110
-#: app/nux/class-setup-guide.php:111
+#: app/nux/class-setup-guide.php:117
+#: app/nux/class-setup-guide.php:118
 msgid "BigBox"
 msgstr ""
 
@@ -576,25 +596,36 @@ msgstr ""
 msgid "Deactivate"
 msgstr ""
 
-#: app/nux/license-manager/class-theme-updater.php:178
+#: app/nux/license-manager/class-theme-updater.php:177
 msgctxt "admin menu item update count"
 msgid "Themes %s"
 msgstr ""
 
-#. Template Name of the theme
+#: app/theme/nav-menus.php:23
+msgid "Primary"
+msgstr ""
+
+#: app/theme/nav-menus.php:24
+msgid "Secondary"
+msgstr ""
+
 #: app/theme/page-templates.php:29
+msgctxt "page template name"
 msgid "Narrow (10 columns)"
 msgstr ""
 
 #: app/theme/page-templates.php:30
+msgctxt "page template name"
 msgid "Minimal (10 columns)"
 msgstr ""
 
 #: app/theme/page-templates.php:31
+msgctxt "page template name"
 msgid "Minimal (8 columns)"
 msgstr ""
 
 #: app/theme/page-templates.php:32
+msgctxt "page template name"
 msgid "Minimal (5 columns)"
 msgstr ""
 
@@ -602,11 +633,12 @@ msgstr ""
 msgid "Please define an SVG icon filename."
 msgstr ""
 
-#: app/theme/widgets.php:57
+#: app/theme/widgets.php:65
+msgctxt "widget area"
 msgid "Footer Navigation Column %d"
 msgstr ""
 
-#: functions.php:29
+#: functions.php:32
 msgid "BigBox requires PHP version <code>%s</code> or above to be active. Please contact your web host to upgrade."
 msgstr ""
 
@@ -622,7 +654,7 @@ msgstr ""
 msgid "Go Home"
 msgstr ""
 
-#: resources/views/layout/index.php:25
+#: resources/views/layout/index.php:27
 msgid "Blog"
 msgstr ""
 
@@ -638,12 +670,16 @@ msgstr ""
 msgid "Minimal"
 msgstr ""
 
+#. Template Name of the theme
+msgid "Narrow (10 columns)"
+msgstr ""
+
 #: resources/views/layout/single.php:35
 msgid "Categories: %s"
 msgstr ""
 
 #: resources/views/layout/single.php:36
-msgid "Tags: "
+msgid "Tags:"
 msgstr ""
 
 #: resources/views/nux/admin-page.php:20
@@ -654,11 +690,11 @@ msgstr ""
 msgid "Use the steps below to finish setting up your new website."
 msgstr ""
 
-#: resources/views/nux/admin-page.php:31
+#: resources/views/nux/admin-page.php:27
 msgid "Search Documentation"
 msgstr ""
 
-#: resources/views/nux/admin-page.php:32
+#: resources/views/nux/admin-page.php:28
 msgid "Contact Support"
 msgstr ""
 
