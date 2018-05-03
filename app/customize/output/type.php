@@ -27,6 +27,7 @@ $base = [
 		'[type="password"]',
 		'[type="text"]',
 		'textarea',
+		'select',
 
 		// .form-input
 		'.woocommerce .input-text',
