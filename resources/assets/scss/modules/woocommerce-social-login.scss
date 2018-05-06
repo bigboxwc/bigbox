@@ -3,4 +3,8 @@
 
 	@include vertical-spacing();
 	@include vertical-spacing("padding", "up");
+
+	p:first-child {
+		margin-top: 0;
+	}
 }
