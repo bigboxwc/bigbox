@@ -85,6 +85,7 @@ return [
 			'.woocommerce-purchase-form',
 			'.wc_payment_method [type="radio"] label[for^="payment_method"]',
 			'.woocommerce-verification-required',
+			'table',
 		],
 		'declarations' => [
 			'box-shadow'       => esc_attr( "{$rgba50} 0 1px 2px" ),

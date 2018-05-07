@@ -1,9 +1,9 @@
 table {
 	border-collapse: collapse;
 	border-style: hidden;
-	border-radius: $border-radius;
 	width: 100%;
-	border: 1px solid gray("300");
+
+	@include card();
 
 	tr {
 		border-bottom: 1px solid gray("300");
