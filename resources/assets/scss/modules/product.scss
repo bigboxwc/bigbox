@@ -36,6 +36,7 @@
 		@include vertical-card();
 	}
 
+	li.product--order-item,
 	li.product--cart-item {
 
 		@include horizontal-card();
@@ -145,6 +146,7 @@
 	max-width: 200px;
 
 	// Shrink on cart and checkout.
+	.product--order-item &,
 	.product--cart-item & {
 		max-width: 105px;
 	}

@@ -67,7 +67,7 @@ class WooCommerce extends Integration implements Registerable, Service {
 					'gallery_thumbnail_image_width' => 150,
 					'single_image_width'            => 400,
 					'product_grid'                  => [
-						'default_columns' => 4,
+						'default_columns' => 5,
 						'min_columns'     => 1,
 						'max_columns'     => 6,
 					],
