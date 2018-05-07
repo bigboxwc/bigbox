@@ -35,5 +35,12 @@ function bigbox_customize_controls_enqueue_scripts( $wp_customize ) {
 			'fonts' => json_decode( file_get_contents( get_template_directory() . '/resources/data/google-fonts.json' ) ), // @codingStandardsIgnoreLine
 		]
 	);
+
+	wp_enqueue_style(
+		'bigbox-customize-controls',
+		'',
+		[],
+		bigbox_get_theme_versino()
+	);
 }
 add_action( 'customize_controls_enqueue_scripts', 'bigbox_customize_controls_enqueue_scripts' );

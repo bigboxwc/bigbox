@@ -25,7 +25,7 @@ if ( is_singular( 'product' ) ) :
 <div class="action-list__item">
 
 	<div class="action-list__item-label">
-		<label for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'bigbox' ); ?>:</label>
+		<label for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity:', 'bigbox' ); ?></label>
 	</div>
 
 	<div class="action-list__item-value">

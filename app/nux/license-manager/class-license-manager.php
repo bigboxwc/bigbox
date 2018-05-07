@@ -115,7 +115,7 @@ class License_Manager implements Registerable, Service {
 				'i18n'  => [
 					'licensePlaceholder' => esc_html__( 'Enter license key...', 'bigbox' ),
 					'licenseSubmit'      => esc_html__( 'Activate License', 'bigbox' ),
-					'licenseLabel'       => esc_html__( 'License Status', 'bigbox' ),
+					'licenseLabel'       => esc_html__( 'License Status:', 'bigbox' ),
 					'licenseValid'       => esc_html__( 'Valid', 'bigbox' ),
 					'licenseInvalid'     => esc_html__( 'Inactive: not receiving automatic updates notifications.', 'bigbox' ),
 					'licenseDeactivate'  => esc_html__( 'Deactivate', 'bigbox' ),
@@ -158,7 +158,7 @@ class License_Manager implements Registerable, Service {
 
 		$license = esc_attr( $_POST['license'] );
 		$action  = esc_attr( $_POST['edd_action'] );
-	// @codingStandardsIgnoreEnd
+		// @codingStandardsIgnoreEnd
 
 		if ( ! in_array( $action, [ 'activate_license', 'deactivate_license' ], true ) ) {
 			return wp_send_json_error();

@@ -119,7 +119,7 @@ class ActivateLicense extends Component {
 			</form>,
 
 			<p key="license-status">
-				<strong>{ licenseLabel }:</strong> { isSubmitting ? <span className="spinner is-active" style={ spinnerStyle } /> : <span className={ licenseClass }>{ validLicense ? licenseValid : licenseInvalid }</span> }
+				<strong>{ licenseLabel }</strong> { isSubmitting ? <span className="spinner is-active" style={ spinnerStyle } /> : <span className={ licenseClass }>{ validLicense ? licenseValid : licenseInvalid }</span> }
 			</p>,
 
 			validLicense && (

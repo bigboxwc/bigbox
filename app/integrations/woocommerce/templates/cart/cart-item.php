@@ -76,7 +76,7 @@ $product_thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product
 			</div>
 
 			<div class="product__meta quantity">
-				<span class="product__meta-label"><?php esc_html_e( 'Quantity', 'bigbox' ); ?>:</span>
+				<span class="product__meta-label"><?php esc_html_e( 'Quantity:', 'bigbox' ); ?></span>
 
 				<?php
 				wc_get_template(

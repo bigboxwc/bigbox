@@ -1,4 +1,56 @@
-.woocommerce {
+.woocommerce,
+.woocommerce-page {
+
+	// Responsive tables.
+	table.shop_table_responsive {
+		thead {
+			display: none;
+		}
+
+		tbody {
+			tr:first-child {
+				td:first-child {
+					border-top: 0;
+				}
+			}
+
+			th {
+				display: none;
+			}
+		}
+
+		tr {
+			display: block;
+
+			td {
+				display: block;
+				text-align: right !important; // Important to overwrite order status inline styling
+
+				&.order-actions {
+					text-align: left !important; // This must always align left on handheld
+				}
+
+				&::before {
+					content: attr(data-title) ': ';
+					font-weight: 700;
+					float: left;
+				}
+
+				&.product-remove,
+				&.actions {
+					&::before {
+						display: none;
+					}
+				}
+			}
+
+			&:nth-child( 2n ) {
+				td {
+					background-color: rgba(0, 0, 0, 0.025);
+				}
+			}
+		}
+	}
 
 	// Use Bootstraps grid system on WooCommerce forms.
 	.woocommerce-shipping-fields__field-wrapper,
