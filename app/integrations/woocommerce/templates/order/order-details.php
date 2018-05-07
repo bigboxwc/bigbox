@@ -39,51 +39,55 @@ $show_downloads        = $order->has_downloadable_item() && $order->is_download_
 		endif;
 		?>
 
-		<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
+		<section class="woocommerce-order-details">
+			<h2 class="woocommerce-order-details__title"><?php _e( 'Order details', 'woocommerce' ); ?></h2>
 
-		<ul class="products products-main columns-1">
-		<?php
-		do_action( 'woocommerce_order_details_before_order_table_items', $order );
+			<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
 
-		foreach ( $order_items as $item_id => $item ) {
-			$product = $item->get_product();
+			<ul class="products products-main columns-1">
+			<?php
+			do_action( 'woocommerce_order_details_before_order_table_items', $order );
 
-			wc_get_template( 'order/order-details-item.php', array(
-				'order'			         => $order,
-				'item_id'		         => $item_id,
-				'item'			         => $item,
-				'show_purchase_note' => $show_purchase_note,
-				'purchase_note'	     => $product ? $product->get_purchase_note() : '',
-				'product'	           => $product,
-			) );
-		}
+			foreach ( $order_items as $item_id => $item ) {
+				$product = $item->get_product();
 
-		do_action( 'woocommerce_order_details_after_order_table_items', $order );
-		?>
-		</ul>
+				wc_get_template( 'order/order-details-item.php', array(
+					'order'			         => $order,
+					'item_id'		         => $item_id,
+					'item'			         => $item,
+					'show_purchase_note' => $show_purchase_note,
+					'purchase_note'	     => $product ? $product->get_purchase_note() : '',
+					'product'	           => $product,
+				) );
+			}
 
-		<table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
-			<tfoot>
-				<?php
-					foreach ( $order->get_order_item_totals() as $key => $total ) {
-						?>
+			do_action( 'woocommerce_order_details_after_order_table_items', $order );
+			?>
+			</ul>
+
+			<table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
+				<tfoot>
+					<?php
+						foreach ( $order->get_order_item_totals() as $key => $total ) {
+							?>
+							<tr>
+								<th scope="row"><?php echo $total['label']; ?></th>
+								<td><?php echo $total['value']; ?></td>
+							</tr>
+							<?php
+						}
+					?>
+					<?php if ( $order->get_customer_note() ) : ?>
 						<tr>
-							<th scope="row"><?php echo $total['label']; ?></th>
-							<td><?php echo $total['value']; ?></td>
+							<th><?php _e( 'Note:', 'woocommerce' ); ?></th>
+							<td><?php echo wptexturize( $order->get_customer_note() ); ?></td>
 						</tr>
-						<?php
-					}
-				?>
-				<?php if ( $order->get_customer_note() ) : ?>
-					<tr>
-						<th><?php _e( 'Note:', 'woocommerce' ); ?></th>
-						<td><?php echo wptexturize( $order->get_customer_note() ); ?></td>
-					</tr>
-				<?php endif; ?>
-			</tfoot>
-		</table>
+					<?php endif; ?>
+				</tfoot>
+			</table>
 
-		<?php do_action( 'woocommerce_order_details_after_order_table', $order ); ?>
+			<?php do_action( 'woocommerce_order_details_after_order_table', $order ); ?>
+		</section>
 	</div>
 
 	<?php if ( $show_customer_details ) : ?>

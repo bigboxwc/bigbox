@@ -9,11 +9,14 @@ $headings: 1, 2, 3, 4, 5, 6;
 	}
 }
 
-h1,
-h2 {
+h1 {
 	font-size: $font-size-lg;
 
 	@include media-breakpoint-up(md) {
 		font-size: $font-size-xl;
 	}
+}
+
+h2 {
+	font-size: $font-size-lg;
 }
