@@ -31,6 +31,7 @@ return [
 			'.woocommere-product-brand a',
 			'.woocommerce-privacy-policy-text',
 			'.wc-social-login',
+			'.woocommerce-OrderUpdate',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray200 ),

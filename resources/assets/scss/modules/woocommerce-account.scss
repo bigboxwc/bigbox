@@ -1,6 +1,6 @@
 // [1] Give any potential scrollbar more room so it does not overlap.
 .woocommerce-MyAccount-navigation {
-	margin: -($spacer) 0 ($spacer * 2);
+	margin: -($spacer) 0 $spacer;
 	position: relative;
 
 	@include media-breakpoint-up(sm) {

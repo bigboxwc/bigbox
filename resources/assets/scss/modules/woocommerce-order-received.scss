@@ -15,10 +15,50 @@
 .woocommerce-receipt-wrapper__info {
 	order: 1;
 
-	@include make-col-ready;
+	@include make-col-ready();
 	@include grow-column( (
 		sm: 6,
 		md: 5,
 		lg: 4,
 	) );
+}
+
+.woocommerce-view-order-status {
+	padding: ($spacer / 2) $spacer;
+
+	@include card();
+	@include vertical-spacing("margin", "down");
+}
+
+.woocommerce-OrderUpdates {
+
+	@include reset-list();
+}
+
+.woocommerce-OrderUpdate {
+	$map: (
+		sm: 1
+	);
+
+	border-bottom: 1px solid gray("200");
+
+	@include vertical-spacing("padding", "down", $map);
+	@include vertical-spacing("margin", "down", $map);
+}
+
+.woocommerce-OrderUpdate-meta {
+	color: gray("500");
+	margin: 0;
+	font-size: $font-size-xs;
+}
+
+.woocommerce-OrderUpdate-description {
+
+	p:only-child {
+		margin: 0;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
 }

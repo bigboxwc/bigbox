@@ -21,6 +21,7 @@ return [
 			'.coupons-next',
 			'.wc_payment_method label[for^="payment_method"]',
 			'.woocommerce .input-text + span',
+			'.woocommerce-OrderUpdate-meta',
 		],
 		'declarations' => [
 			'color' => esc_attr( $gray500 ),

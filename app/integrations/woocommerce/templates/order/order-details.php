@@ -41,8 +41,6 @@ $show_downloads        = $order->has_downloadable_item() && $order->is_download_
 
 		<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
 
-		<h2 class="woocommerce-order-details__title"><?php _e( 'Order details', 'woocommerce' ); ?></h2>
-
 		<ul class="products products-main columns-1">
 		<?php
 		do_action( 'woocommerce_order_details_before_order_table_items', $order );
