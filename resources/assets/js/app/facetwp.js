@@ -50,4 +50,21 @@ import { adjustWidth } from './navbar.js';
 			$categories.hide();
 		}
 	} );
+
+	// Add "real" checkboxes and radio.
+	$document.on( 'facetwp-loaded', () => {
+		$( '.facetwp-checkbox' ).each( function() {
+			const $checkbox = $( this );
+
+			$checkbox
+				.prepend( `<input type="checkbox" ${ $checkbox.hasClass( 'checked' ) ? 'checked' : null } />` );
+		} );
+
+		$( '.facetwp-radio' ).each( function() {
+			const $radio = $( this );
+
+			$radio
+				.prepend( `<input type="radio" ${ $radio.hasClass( 'checked' ) ? 'checked' : null } />` );
+		} );
+	} );
 }( jQuery ) );

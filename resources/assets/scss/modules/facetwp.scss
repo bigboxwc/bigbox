@@ -48,6 +48,22 @@
 		@include button();
 		@include button--size-sm();
 	}
+
+	.facetwp-radio,
+	.facetwp-checkbox {
+		background: none;
+		position: relative;
+		padding-left: 0;
+
+		&.checked {
+			background: none;
+		}
+
+		[type="radio"],
+		[type="checkbox"] {
+			margin-right: 8px;
+		}
+	}
 }
 
 .facetwp-facet.facetwp-type-slider {
