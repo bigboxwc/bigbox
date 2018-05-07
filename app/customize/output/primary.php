@@ -90,6 +90,10 @@ return [
 			'button',
 			'.woocommerce-form-coupon [name="apply_coupon"]',
 			'.comment-form [type="submit"]',
+			'table .button',
+			'.woocommerce-column--billing-address .edit',
+			'.woocommerce-column--shipping-address .edit',
+			'.woocommerce-Addresses .edit',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $primary ),

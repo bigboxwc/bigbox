@@ -82,21 +82,27 @@
 }
 
 .woocommerce-column--billing-address,
-.woocommerce-column--shipping-address,
-.woocommerce-Addresses {
+.woocommerce-column--shipping-address {
 
 	h2,
 	header {
 		margin-bottom: $spacer;
 	}
+}
 
-	address {
-		font-style: normal;
-	}
+.woocommerce-table--order-details td,
+.woocommerce-orders-table__header-order-actions {
+	text-align: right;
+}
+
+.woocommerce-Address-title {
+	display: flex;
+	align-items: center;
 
 	.edit {
+		margin-left: $spacer;
 
-		@include button--gray("400");
-		@include button--size-xs;
+		@include button--color("primary");
+		@include button--size-xs();
 	}
 }
