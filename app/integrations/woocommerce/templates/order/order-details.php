@@ -28,62 +28,69 @@ $show_purchase_note    = $order->has_status( apply_filters( 'woocommerce_purchas
 $show_customer_details = is_user_logged_in() && $order->get_user_id() === get_current_user_id();
 $downloads             = $order->get_downloadable_items();
 $show_downloads        = $order->has_downloadable_item() && $order->is_download_permitted();
-
-if ( $show_downloads ) {
-	wc_get_template( 'order/order-downloads.php', array( 'downloads' => $downloads, 'show_title' => true ) );
-}
 ?>
-<section class="woocommerce-order-details">
-	<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
 
-	<h2 class="woocommerce-order-details__title"><?php _e( 'Order details', 'woocommerce' ); ?></h2>
+<div class="woocommerce-receipt-wrapper">
 
-	<ul class="products products-main columns-1">
-	<?php
-	do_action( 'woocommerce_order_details_before_order_table_items', $order );
+	<div class="woocommerce-receipt-wrapper__content">
+		<?php
+		if ( $show_downloads ) :
+			wc_get_template( 'order/order-downloads.php', array( 'downloads' => $downloads, 'show_title' => true ) );
+		endif;
+		?>
 
-	foreach ( $order_items as $item_id => $item ) {
-		$product = $item->get_product();
+		<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
 
-		wc_get_template( 'order/order-details-item.php', array(
-			'order'			         => $order,
-			'item_id'		         => $item_id,
-			'item'			         => $item,
-			'show_purchase_note' => $show_purchase_note,
-			'purchase_note'	     => $product ? $product->get_purchase_note() : '',
-			'product'	           => $product,
-		) );
-	}
+		<h2 class="woocommerce-order-details__title"><?php _e( 'Order details', 'woocommerce' ); ?></h2>
 
-	do_action( 'woocommerce_order_details_after_order_table_items', $order );
-	?>
-	</ul>
+		<ul class="products products-main columns-1">
+		<?php
+		do_action( 'woocommerce_order_details_before_order_table_items', $order );
 
-	<table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
-		<tfoot>
-			<?php
-				foreach ( $order->get_order_item_totals() as $key => $total ) {
-					?>
+		foreach ( $order_items as $item_id => $item ) {
+			$product = $item->get_product();
+
+			wc_get_template( 'order/order-details-item.php', array(
+				'order'			         => $order,
+				'item_id'		         => $item_id,
+				'item'			         => $item,
+				'show_purchase_note' => $show_purchase_note,
+				'purchase_note'	     => $product ? $product->get_purchase_note() : '',
+				'product'	           => $product,
+			) );
+		}
+
+		do_action( 'woocommerce_order_details_after_order_table_items', $order );
+		?>
+		</ul>
+
+		<table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
+			<tfoot>
+				<?php
+					foreach ( $order->get_order_item_totals() as $key => $total ) {
+						?>
+						<tr>
+							<th scope="row"><?php echo $total['label']; ?></th>
+							<td><?php echo $total['value']; ?></td>
+						</tr>
+						<?php
+					}
+				?>
+				<?php if ( $order->get_customer_note() ) : ?>
 					<tr>
-						<th scope="row"><?php echo $total['label']; ?></th>
-						<td><?php echo $total['value']; ?></td>
+						<th><?php _e( 'Note:', 'woocommerce' ); ?></th>
+						<td><?php echo wptexturize( $order->get_customer_note() ); ?></td>
 					</tr>
-					<?php
-				}
-			?>
-			<?php if ( $order->get_customer_note() ) : ?>
-				<tr>
-					<th><?php _e( 'Note:', 'woocommerce' ); ?></th>
-					<td><?php echo wptexturize( $order->get_customer_note() ); ?></td>
-				</tr>
-			<?php endif; ?>
-		</tfoot>
-	</table>
+				<?php endif; ?>
+			</tfoot>
+		</table>
 
-	<?php do_action( 'woocommerce_order_details_after_order_table', $order ); ?>
-</section>
+		<?php do_action( 'woocommerce_order_details_after_order_table', $order ); ?>
+	</div>
 
-<?php
-if ( $show_customer_details ) {
-	wc_get_template( 'order/order-details-customer.php', array( 'order' => $order ) );
-}
+	<?php if ( $show_customer_details ) : ?>
+	<div class="woocommerce-receipt-wrapper__info">
+		<?php wc_get_template( 'order/order-details-customer.php', array( 'order' => $order ) ); ?>
+	</div>
+	<?php endif; ?>
+</div>
