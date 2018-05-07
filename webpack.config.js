@@ -22,6 +22,10 @@ const gutenbergCSS = new ExtractTextPlugin( {
 	filename: './public/css/gutenberg.min.css',
 } );
 
+const customizeControlsCSS = new ExtractTextPlugin( {
+	filename: './public/css/customize-controls.min.css',
+} );
+
 // Configuration for the ExtractTextPlugin.
 const extractConfig = {
 	use: [
@@ -114,6 +118,11 @@ const config = {
 				use: themeCSS.extract( extractConfig ),
 				include: /scss/,
 			},
+			{
+				test: /customize\-controls\.scss$/,
+				use: customizeControlsCSS.extract( extractConfig ),
+				include: /scss/,
+			},
 		],
 	},
 	externals: {
@@ -125,6 +134,7 @@ const config = {
 		nuxCSS,
 		editorCSS,
 		gutenbergCSS,
+		customizeControlsCSS,
 		new SpritePlugin(),
 		new webpack.ProvidePlugin( {
 			$: 'jquery',

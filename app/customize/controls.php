@@ -38,9 +38,9 @@ function bigbox_customize_controls_enqueue_scripts( $wp_customize ) {
 
 	wp_enqueue_style(
 		'bigbox-customize-controls',
-		'',
+		get_template_directory_uri() . '/public/css/customize-controls.min.css',
 		[],
-		bigbox_get_theme_versino()
+		bigbox_get_theme_version()
 	);
 }
 add_action( 'customize_controls_enqueue_scripts', 'bigbox_customize_controls_enqueue_scripts' );
