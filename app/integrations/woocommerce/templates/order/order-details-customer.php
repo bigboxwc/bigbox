@@ -29,7 +29,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<ol class="woocommerce-OrderUpdates">
 		<?php foreach ( $notes as $note ) : ?>
 		<li class="woocommerce-OrderUpdate">
-			<p class="woocommerce-OrderUpdate-meta meta"><?php echo date_i18n( __( 'l jS \o\f F Y, h:ia', 'bigbox' ), strtotime( $note->comment_date ) ); ?></p>
+			<p class="woocommerce-OrderUpdate-meta meta">
+			<?php
+			echo esc_attr( sprintf(
+				// Translators: %1$s: Date, %2$s: Time
+				__( '%1$s at %2$s', 'bigbox' ),
+				date_i18n( get_option( 'date_format' ), strtotime( $note->comment_date ) ),
+				date_i18n( get_option( 'time_format' ), strtotime( $note->comment_date ) )
+			) );
+			?>
+			</p>
 
 			<div class="woocommerce-OrderUpdate-description description">
 				<?php echo wpautop( wptexturize( $note->comment_content ) ); ?>
