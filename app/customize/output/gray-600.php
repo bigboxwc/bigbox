@@ -26,7 +26,7 @@ return [
 	// Solid border-top-color.
 	[
 		'selectors'    => [
-			'.navbar-search__category:before',
+			'.navbar-search__category:after',
 		],
 		'declarations' => [
 			'border-top-color' => esc_attr( $gray600 ),

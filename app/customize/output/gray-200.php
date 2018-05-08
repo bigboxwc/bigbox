@@ -42,6 +42,8 @@ return [
 		'selectors'    => [
 			'.woocommerce-page ul.products-categories li.product.product-category',
 			'.woocommerce ul.products-categories li.product.product-category',
+			'.woocommerce-page ul.products-categories:after',
+			'.woocommerce ul.products-categories:after',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $gray200 ),

@@ -31,6 +31,10 @@ return [
 			'.woocommerce-breadcrumb a',
 			'.woocommerce-pagination .active',
 			'.woocommerce-pagination .current',
+			'.facetwp-pager .active',
+			'.facetwp-pager .current',
+			'.nav-links .active',
+			'.nav-links .current',
 		],
 		'declarations' => [
 			'color' => esc_attr( $gray700 ),

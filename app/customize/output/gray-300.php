@@ -14,6 +14,16 @@ $rgba50  = bigbox_hex_to_rgba( $gray300, 0.50 );
 $rgba75  = bigbox_hex_to_rgba( $gray300, 0.75 );
 
 return [
+	// Solid color.
+	[
+		'selectors'    => [
+			'.facetwp-facet.facetwp-facet-rating .facetwp-star',
+		],
+		'declarations' => [
+			'color' => esc_attr( $gray300 ),
+		],
+	],
+
 	// Solid border-color.
 	[
 		'selectors'    => [
@@ -25,6 +35,10 @@ return [
 			'.wc-credit-card-form #stripe-card-element',
 			'.navbar-search__category select',
 			'.facetwp-facet.facetwp-type-slider .facetwp-slider .noUi-handle',
+
+			'.review-breakdown',
+			'.review-breakdown__item',
+
 			'div#brands_a_z a.top',
 			'ul.brands_index li a',
 			'ul.brands_index li span',
@@ -70,7 +84,10 @@ return [
 	],
 	// RGBA .50 box-shadow.
 	[
-		'selectors'    => [],
+		'selectors'    => [
+			'.product-category-more__inner',
+			'.woocommerce-loop-category__title',
+		],
 		'declarations' => [
 			'box-shadow' => '0 1px 0 ' . esc_attr( $gray300 ),
 		],
