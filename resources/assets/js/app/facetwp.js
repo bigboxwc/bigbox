@@ -7,6 +7,7 @@ import { adjustWidth } from './navbar.js';
 
 ( function( $ ) {
 	const $document = $( document );
+	const $htmlbody = $( 'html, body' );
 
 	/**
 	 * Refresh FacetWP when on the shop page.
@@ -22,20 +23,43 @@ import { adjustWidth } from './navbar.js';
 	/**
 	 * Don't push empty form values forward to help FacetWP load initially.
 	 */
-	$( '#primary-search' ).submit( function() {
-		$( this )
-			.find( 'input, select' )
-			.filter( function() {
-				return ! this.value;
-			} )
-			.prop( 'name', '' );
-	} );
+	const searchForm = document.querySelector( '#primary-search' );
 
-	const $htmlbody = $( 'html, body' );
-	const $categories = $( '.products-categories' );
+	if ( searchForm ) {
+		searchForm.addEventListener( 'submit', function() {
+			// All inputs.
+			const inputs = searchForm.querySelectorAll( 'input, select' );
 
-	// Adjust select widths once loaded.
+			// Inputs with a value.
+			const inputsWithValues = _.filter( inputs, function( node ) {
+				if ( node.options ) {
+					const selected = node.options[ node.selectedIndex ];
+
+					return selected.value !== '' && selected.value !== selected.text;
+				}
+
+				return node.value !== '';
+			} );
+
+			// Inputs with no value.
+			const noValues = _.difference( inputs, inputsWithValues );
+
+			// Remove name from inputs with no value to avoid passing blank form values to FacetWP inital load.
+			_.each( noValues, function( node ) {
+				node.name = '';
+			} );
+		} );
+	}
+
+	/**
+	 * Adjust select widths once loaded.
+	 */
 	$document.on( 'facetwp-loaded', adjustWidth );
+
+	/**
+	 * Hide categories if filtering with facets.
+	 */
+	const categories = document.querySelector( '.products-categories' );
 
 	$document.on( 'facetwp-loaded', () => {
 		if ( FWP.loaded ) {
@@ -43,28 +67,30 @@ import { adjustWidth } from './navbar.js';
 				scrollTop: $( '#main' ).offset().top,
 			}, 250 );
 
-			$categories.hide();
+			categories.style.display = 'none';
 		}
 
 		if ( '' !== FWP.build_query_string() ) {
-			$categories.hide();
+			categories.style.display = 'none';
 		}
 	} );
 
-	// Add "real" checkboxes and radio.
+	/**
+	 * Add "real" checkboxes and radio.
+	 */
 	$document.on( 'facetwp-loaded', () => {
-		$( '.facetwp-checkbox' ).each( function() {
-			const $checkbox = $( this );
+		$( '.facetwp-checkbox, .facetwp-radio' ).each( function() {
+			const $wrapper = $( this );
+			const type = $wrapper.hasClass( 'facetwp-checkbox' ) ? 'checkbox' : 'radio';
 
-			$checkbox
-				.prepend( `<input type="checkbox" ${ $checkbox.hasClass( 'checked' ) ? 'checked' : null } />` );
-		} );
+			$wrapper
+				.prepend( `<input type="${ type }" ${ $wrapper.hasClass( 'checked' ) ? 'checked' : '' } />` );
 
-		$( '.facetwp-radio' ).each( function() {
-			const $radio = $( this );
+			$wrapper.on( 'click', function() {
+				const $input = $( this ).find( 'input' );
 
-			$radio
-				.prepend( `<input type="radio" ${ $radio.hasClass( 'checked' ) ? 'checked' : null } />` );
+				$input.attr( 'checked', ! $input.attr( 'checked' ) );
+			} );
 		} );
 	} );
 }( jQuery ) );
