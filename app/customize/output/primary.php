@@ -20,6 +20,8 @@ return [
 			'.navbar-menu--primary .sub-menu a:hover',
 			'.wc-layered-nav-term.chosen',
 			'.wc-layered-nav-term.chosen a',
+			'.woocommerce-page ul.products-categories li.product.product-category a:hover h2',
+			'.woocommerce ul.products-categories li.product.product-category a:hover h2',
 		],
 		'declarations' => [
 			'color' => esc_attr( $primary ),
@@ -90,7 +92,6 @@ return [
 			'button',
 			'.woocommerce-form-coupon [name="apply_coupon"]',
 			'.comment-form [type="submit"]',
-			'table .button',
 			'.woocommerce-column--billing-address .edit',
 			'.woocommerce-column--shipping-address .edit',
 			'.woocommerce-Addresses .edit',

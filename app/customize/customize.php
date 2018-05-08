@@ -28,7 +28,7 @@ require_once get_template_directory() . '/app/customize/preview.php';
  *
  * @since 1.0.0
  */
-function bigbox_customize_css() {
+function bigbox_customize_inline_css() {
 	$css      = new \BigBox\Customize\Build_Inline_CSS();
 	$colors   = bigbox_get_theme_colors();
 	$controls = array_merge( [ 'type' => [] ], $colors['scheme'], $colors['grays'] );
@@ -41,7 +41,7 @@ function bigbox_customize_css() {
 		}
 
 		$config = apply_filters(
-			'bigbox_customize_css_' . $key,
+			'bigbox_customize_inline_css_' . $key,
 			include $file
 		);
 
@@ -49,6 +49,8 @@ function bigbox_customize_css() {
 			$css->add( $data );
 		}
 	}
+
+	do_action( 'bigbox_customize_inline_css', $css );
 
 	return $css->build();
 }

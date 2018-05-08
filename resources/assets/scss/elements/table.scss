@@ -75,7 +75,6 @@ table {
 			float: right;
 		}
 
-		@include button--gray("400");
 		@include button--size-xs();
 	}
 
