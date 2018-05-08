@@ -61,19 +61,21 @@ import { adjustWidth } from './navbar.js';
 	 */
 	const categories = document.querySelector( '.products-categories' );
 
-	$document.on( 'facetwp-loaded', () => {
-		if ( FWP.loaded ) {
-			$htmlbody.animate( {
-				scrollTop: $( '#main' ).offset().top,
-			}, 250 );
+	if ( categories ) {
+		$document.on( 'facetwp-loaded', () => {
+			if ( FWP.loaded ) {
+				$htmlbody.animate( {
+					scrollTop: $( '#main' ).offset().top,
+				}, 250 );
 
-			categories.style.display = 'none';
-		}
+				categories.style.display = 'none';
+			}
 
-		if ( '' !== FWP.build_query_string() ) {
-			categories.style.display = 'none';
-		}
-	} );
+			if ( '' !== FWP.build_query_string() ) {
+				categories.style.display = 'none';
+			}
+		} );
+	}
 
 	/**
 	 * Add "real" checkboxes and radio.
@@ -81,14 +83,17 @@ import { adjustWidth } from './navbar.js';
 	$document.on( 'facetwp-loaded', () => {
 		$( '.facetwp-checkbox, .facetwp-radio' ).each( function() {
 			const $wrapper = $( this );
+			const $input   = $( this ).find( 'input' );
 			const type = $wrapper.hasClass( 'facetwp-checkbox' ) ? 'checkbox' : 'radio';
+
+			if ( $input.length ) {
+				return;
+			}
 
 			$wrapper
 				.prepend( `<input type="${ type }" ${ $wrapper.hasClass( 'checked' ) ? 'checked' : '' } />` );
 
 			$wrapper.on( 'click', function() {
-				const $input = $( this ).find( 'input' );
-
 				$input.attr( 'checked', ! $input.attr( 'checked' ) );
 			} );
 		} );
