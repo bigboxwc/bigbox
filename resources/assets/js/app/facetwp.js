@@ -94,7 +94,9 @@ import { adjustWidth } from './navbar.js';
 				.prepend( `<input type="${ type }" ${ $wrapper.hasClass( 'checked' ) ? 'checked' : '' } />` );
 
 			$wrapper.on( 'click', function() {
-				$input.attr( 'checked', ! $input.attr( 'checked' ) );
+				const $dynamicInput = $( this ).find( 'input' );
+
+				$dynamicInput.prop( 'checked', ! $dynamicInput.prop( 'checked' ) );
 			} );
 		} );
 	} );
