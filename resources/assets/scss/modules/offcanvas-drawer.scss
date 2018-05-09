@@ -4,13 +4,28 @@
 	position: fixed;
 	width: 100%;
 
+	// [1] A hard limit for now -- might need to be dynamic JS to calculate height of close button.
+	$offset: 52px;
+
 	// Scroll drawer content (keep close fixed).
 	.offcanvas-drawer .offcanvas-drawer__content {
 		position: absolute;
 		overflow-y: scroll;
 		-webkit-overflow-scrolling: touch;
 		width: 100%;
-		height: 100%;
+		height: calc(100% - #{$offset}); // [1]
+
+		&:before {
+
+			@include pseudo-overlay();
+
+			top: $offset; // [1]
+			bottom: auto;
+			position: fixed;
+			background-image: linear-gradient(#fff, transparent);
+			width: 100%;
+			height: 30px;
+		}
 	}
 }
 
