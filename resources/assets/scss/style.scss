@@ -1,43 +1,7 @@
-/**
- * Variables.
- *
- * Defined before Bootstrap to override.
- */
-@import "variables/colors";
-@import "variables/grid";
-@import "variables/box";
-@import "variables/fonts";
-
-/**
- * External dependencies
- */
-
-// Bootstrap
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/mixins/breakpoints";
-@import "~bootstrap/scss/mixins/grid";
-@import "~bootstrap/scss/grid";
-
-/**
- * Internal dependencies
- */
-
-// Mixins
-@import "mixins/complimentary-columns";
-@import "mixins/grow-column";
-@import "mixins/col";
-@import "mixins/button";
-@import "mixins/form";
-@import "mixins/card";
-@import "mixins/vertical-spacing";
-@import "mixins/reset-list";
-@import "mixins/pseudo-overlay";
-
-// Helpers
-@import "helpers/animation-spin";
-@import "helpers/align";
-@import "helpers/screen-reader-text";
-@import "helpers/type";
+//
+// Load global config.
+//
+@import "_config";
 
 // HTML Elements
 @import "elements/html";
@@ -86,7 +50,6 @@
 @import "modules/page-title";
 @import "modules/widget";
 @import "modules/widget-title";
-@import "modules/hentry";
 
 // Footer
 @import "modules/footer-nav";
@@ -135,12 +98,14 @@
 @import "modules/facetwp-sort";
 
 // Blog
+@import "modules/hentry";
 @import "modules/blog-post";
 @import "modules/comments";
 @import "modules/commentlist";
 @import "modules/comment";
 @import "modules/comment-respond";
 @import "modules/nav-links";
+@import "modules/gutenberg";
 
 // Plugins
 @import "modules/sharedaddy.scss";

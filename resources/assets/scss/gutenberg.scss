@@ -1,12 +1,24 @@
-/**
- * Variables.
- */
-@import "variables/colors";
-@import "variables/fonts";
+//
+// Load global config.
+//
+@import "_config";
 
-.edit-post-visual-editor,
-.edit-post-visual-editor p,
-.editor-post-title .editor-post-title__input {
-	color: $body-color;
+$wb: (
+	black: #000000,
+	white: #ffffff,
+);
+
+.edit-post-visual-editor {
+	&,
+	p {
+		color: $body-color;
+		font-family: $font-family-sans-serif;
+	}
+
+	@import "modules/gutenberg";
+}
+
+.editor-post-title__input {
+	color: gray("800");
 	font-family: $font-family-sans-serif;
 }

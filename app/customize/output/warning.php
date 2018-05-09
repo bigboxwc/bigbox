@@ -16,6 +16,7 @@ return [
 	[
 		'selectors'    => [
 			'.woocommerce-store-notice',
+			'.button--warning',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $warning ),

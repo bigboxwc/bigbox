@@ -17,15 +17,7 @@
  * @return array
  */
 function bigbox_get_theme_colors() {
-	$scheme = include get_template_directory() . '/app/customize/config/colors-scheme.php';
-	$grays  = include get_template_directory() . '/app/customize/config/colors-grays.php';
-
-	$defaults = array_merge( $scheme, $grays );
-
-	return [
-		'scheme' => $scheme,
-		'grays'  => $grays,
-	];
+	return include get_template_directory() . '/app/customize/config/colors.php';
 }
 
 /**
@@ -50,10 +42,9 @@ function bigbox_get_theme_color( $key ) {
  */
 function bigbox_get_theme_default_color( $key ) {
 	$colors = bigbox_get_theme_colors();
-	$all    = array_merge( $colors['scheme'], $colors['grays'] );
 
-	if ( isset( $all[ $key ] ) ) {
-		return $all[ $key ]['default'];
+	if ( isset( $colors[ $key ] ) ) {
+		return $colors[ $key ]['color'];
 	}
 
 	return false;

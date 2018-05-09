@@ -11,14 +11,6 @@
 	}
 }
 
-@each $name, $hex in $grays {
-
-	.button--gray-#{$name} {
-
-		@include button--gray($name);
-	}
-}
-
 .button--pill {
 
 	@include button--pill;

@@ -30,10 +30,11 @@ require_once get_template_directory() . '/app/customize/preview.php';
  */
 function bigbox_customize_inline_css() {
 	$css      = new \BigBox\Customize\Build_Inline_CSS();
-	$colors   = bigbox_get_theme_colors();
-	$controls = array_merge( [ 'type' => [] ], $colors['scheme'], $colors['grays'] );
 
-	foreach ( $controls as $key => $data ) {
+	// Sub in a `gutenberg` string to load dynamic Gutenberg output.
+	$colors   = array_merge( bigbox_get_theme_colors(), [ 'gutenberg' => [] ] );
+
+	foreach ( $colors as $key => $data ) {
 		$file = get_template_directory() . '/app/customize/output/' . $key . '.php';
 
 		if ( ! file_exists( $file ) ) {

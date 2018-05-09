@@ -11,4 +11,14 @@
 
 $info = bigbox_get_theme_color( 'info' );
 
-return [];
+return [
+	// Solid background-color.
+	[
+		'selectors'    => [
+			'.button--info',
+		],
+		'declarations' => [
+			'background-color' => esc_attr( $info ),
+		],
+	],
+];

@@ -39,10 +39,10 @@ return [
 			'font-weight'  => esc_attr( bigbox_get_theme_font_weight( 'bold' ) ),
 		],
 	],
-
-	// @mixin button--danger.
 	[
-		'selectors'    => [],
+		'selectors'    => [
+			'.button--danger',
+		],
 		'declarations' => [
 			'background-color' => esc_attr( $danger ),
 		],

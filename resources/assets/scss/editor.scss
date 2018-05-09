@@ -1,36 +1,7 @@
-/**
- * Variables.
- *
- * Defined before Bootstrap to override.
- */
-@import "variables/colors";
-@import "variables/grid";
-@import "variables/box";
-@import "variables/fonts";
-
-/**
- * External dependencies
- */
-
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/mixins/breakpoints";
-@import "~bootstrap/scss/mixins/grid";
-@import "~bootstrap/scss/grid";
-
-/**
- * Internal dependencies
- */
-
-// Mixins
-@import "mixins/complimentary-columns";
-@import "mixins/grow-column";
-@import "mixins/col";
-@import "mixins/button";
-@import "mixins/form";
-@import "mixins/card";
-@import "mixins/vertical-spacing";
-@import "mixins/reset-list";
-@import "mixins/pseudo-overlay";
+//
+// Load global config.
+//
+@import "_config";
 
 // Elements
 

@@ -11,61 +11,6 @@
 	}
 }
 
-.wp-block-cover-image,
-.wp-block-quote,
-.wp-block-gallery,
-.wp-block-separator,
-.wp-block-image,
-.wp-block-embed,
-.wp-block-pullquote {
-
-	@include vertical-spacing("margin", "both", (
-		sm: 2,
-		lg: 3,
-	) );
-}
-
-// Gutenberg currently uses <figure>
-// @see https://github.com/WordPress/gutenberg/pull/5706
-.wp-block-image {
-
-	&.aligncenter {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		text-align: center;
-	}
-}
-
-// Gutenberg currently uses <ul>
-// @see https://github.com/WordPress/gutenberg/issues/5890
-.wp-block-gallery {
-	padding: 0;
-	list-style: none;
-
-	&.alignnone {
-		margin-left: -8px;
-		margin-right: -8px;
-	}
-}
-
-.wp-block-separator {
-	max-width: 200px;
-}
-
-.wp-block-button {
-
-	.wp-block-button__link {
-
-		@include button();
-	}
-}
-
-.wp-block-quote:not(.is-large) {
-	border-left: 4px solid gray("700");
-	padding-left: $spacer;
-}
-
 .gallery {
 
 	@include make-row();

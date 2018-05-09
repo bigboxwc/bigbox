@@ -37,6 +37,39 @@ class Gutenberg extends Integration implements Registerable, Service {
 	}
 
 	/**
+	 * Add a white and black color to standard palette.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
+	public function get_color_palette() {
+		$colors  = bigbox_get_theme_colors();
+		$palette = [];
+
+		foreach ( $colors as $color => $data ) {
+			$palette[ $color ] = [
+				'name'  => $data['name'],
+				'color' => bigbox_get_theme_color( $color ),
+			];
+		}
+
+		$palette[ 'black' ] = [
+			// Translators: Customizer control name.
+			'name'  => esc_html__( 'Black', 'bigbox' ),
+			'color' => '#000000',
+		];
+
+		$palette[ 'white' ] = [
+			// Translators: Customizer control name.
+			'name'  => esc_html__( 'White', 'bigbox' ),
+			'color' => '#ffffff',
+		];
+		
+		return $palette;
+	}
+
+	/**
 	 * Declare view support for Gutenberg.
 	 *
 	 * @since 1.0.0
@@ -45,13 +78,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 		add_theme_support( 'gutenberg' );
 		add_theme_support( 'align-wide' );
 
-		$colors = bigbox_get_theme_colors();
-
-		foreach ( array_merge( $colors['scheme'], $colors['grays'] ) as $color => $data ) {
-			$scheme[] = bigbox_get_theme_color( $color );
-		}
-
-		add_theme_support( 'editor-color-palette', ...$scheme );
+		add_theme_support( 'editor-color-palette', ...array_values( $this->get_color_palette() ) );
 	}
 
 	/**
@@ -72,9 +99,25 @@ class Gutenberg extends Integration implements Registerable, Service {
 
 		wp_enqueue_style( $stylesheet . '-gutenberg', get_template_directory_uri() . '/public/css/gutenberg.min.css', [], $version );
 
-		// Basic dynamic styles.
+		/**
+		 * This filter is documented in app/theme/assets.php
+		 */
+		if ( apply_filters( 'bigbox_customize_css_inline', true ) ) {
+			wp_add_inline_style( $stylesheet . '-gutenberg', $this->inline_css() );
+		}
+	}
+
+	/**
+	 * Build inline CSS string.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string
+	 */
+	function inline_css() {
 		$css = new \BigBox\Customize\Build_Inline_CSS();
 
+		$colors  = $this->get_color_palette();
 		$gray700 = bigbox_get_theme_color( 'gray-700' );
 		$gray800 = bigbox_get_theme_color( 'gray-800' );
 		$family  = bigbox_get_theme_font_family();
@@ -82,9 +125,9 @@ class Gutenberg extends Integration implements Registerable, Service {
 		$css->add(
 			[
 				'selectors'    => [
+					'.editor-post-title .editor-post-title__input',
 					'.edit-post-visual-editor',
 					'.edit-post-visual-editor p',
-					'.editor-post-title .editor-post-title__input',
 				],
 				'declarations' => [
 					'font-family' => esc_attr( $family ),
@@ -96,8 +139,8 @@ class Gutenberg extends Integration implements Registerable, Service {
 		$css->add(
 			[
 				'selectors'    => [
-					'.blocks-rich-text__tinymce a',
 					'.editor-post-title .editor-post-title__input',
+					'.edit-post-visual-editor a',
 				],
 				'declarations' => [
 					'color' => esc_attr( $gray800 ),
@@ -105,7 +148,34 @@ class Gutenberg extends Integration implements Registerable, Service {
 			]
 		);
 
-		wp_add_inline_style( $stylesheet . '-gutenberg', $css->build() );
+		// Dynamic color classes.
+		// @see https://github.com/WordPress/gutenberg/blob/master/docs/extensibility/theme-support.md
+		foreach ( $colors as $color => $data ) {
+			$css->add(
+				[
+					'selectors'    => [
+						".edit-post-visual-editor p.has-{$color}-background-color",
+					],
+					'declarations' => [
+						'background-color' => esc_attr( bigbox_get_theme_color( $color ) ),
+					],
+				]
+			);
+
+			$css->add(
+				[
+					'selectors'    => [
+						".edit-post-visual-editor p.has-{$color}-color",
+						".edit-post-visual-editor p.has-{$color}-color a",
+					],
+					'declarations' => [
+						'color' => esc_attr( bigbox_get_theme_color( $color ) ),
+					],
+				]
+			);
+		}
+
+		return $css->build();
 	}
 
 }

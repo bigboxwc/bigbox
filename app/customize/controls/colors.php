@@ -68,32 +68,32 @@ add_action( 'customize_register', 'bigbox_customize_register_colors_sections' );
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
 function bigbox_customize_register_colors_controls( $wp_customize ) {
-	$controls = bigbox_get_theme_colors();
+	$colors = bigbox_get_theme_colors();
 
-	foreach ( $controls as $section => $colors ) {
+	unset( $colors['black'] );
+	unset( $colors['white'] );
 
-		foreach ( $colors as $theme_color => $color ) {
-			$key = "color-${theme_color}";
+	foreach ( $colors as $theme_color => $color ) {
+		$key = "color-${theme_color}";
 
-			$wp_customize->add_setting(
-				$key, [
-					'default'           => $color['default'],
-					'transport'         => 'postMessage',
-					'sanitize_callback' => 'sanitize_hex_color',
+		$wp_customize->add_setting(
+			$key, [
+				'default'           => $color['color'],
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'sanitize_hex_color',
+			]
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				$key,
+				[
+					'label'   => esc_html( $color['name'] ),
+					'section' => 'colors-palette',
 				]
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Color_Control(
-					$wp_customize,
-					$key,
-					[
-						'label'   => esc_html( $color['label'] ),
-						'section' => 'colors-palette',
-					]
-				)
-			);
-		}
+			)
+		);
 	}
 
 	// Add a link to suggest other control elements.
@@ -108,8 +108,8 @@ function bigbox_customize_register_colors_controls( $wp_customize ) {
 			$wp_customize,
 			'bigbox-colors-element-missing',
 			[
-				'label'    => esc_html__( 'Think something is missing?', 'bigbox' ),
-				'content'  => esc_html__( 'Want specific control over an individual element\'s color?', 'bigbox' ) . '&nbsp;' . '<a href="https://bigboxwc.com/account/support">' . esc_html__( 'Contact us with a suggestion!', 'bigbox' ) . '</a>',
+				'label'    => esc_html__( '⚡ Want to see something else here?', 'bigbox' ),
+				'content'  => '<p>' . esc_html__( 'Want specific control over an individual element\'s color?', 'bigbox' ) . '</p><p>' . '<a href="https://bigboxwc.com/account/support" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Contact us with a suggestion!', 'bigbox' ) . '</a></p>',
 				'priority' => 9999,
 				'section'  => 'colors-elements',
 			]
