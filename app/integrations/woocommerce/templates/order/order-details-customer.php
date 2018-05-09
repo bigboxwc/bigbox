@@ -31,12 +31,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<li class="woocommerce-OrderUpdate">
 			<p class="woocommerce-OrderUpdate-meta meta">
 			<?php
-			echo esc_attr( sprintf(
-				// Translators: %1$s: Date, %2$s: Time
-				__( '%1$s at %2$s', 'bigbox' ),
-				date_i18n( get_option( 'date_format' ), strtotime( $note->comment_date ) ),
-				date_i18n( get_option( 'time_format' ), strtotime( $note->comment_date ) )
-			) );
+			echo esc_attr(
+				sprintf(
+					// Translators: %1$s: Date, %2$s: Time
+					 __( '%1$s at %2$s', 'bigbox' ),
+					date_i18n( get_option( 'date_format' ), strtotime( $note->comment_date ) ),
+					date_i18n( get_option( 'time_format' ), strtotime( $note->comment_date ) )
+				)
+			);
 			?>
 			</p>
 

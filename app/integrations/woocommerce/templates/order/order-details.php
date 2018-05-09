@@ -10,7 +10,7 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	https://docs.woocommerce.com/document/template-structure/
+ * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
  * @version 3.3.0
@@ -35,12 +35,17 @@ $show_downloads        = $order->has_downloadable_item() && $order->is_download_
 	<div class="woocommerce-receipt-wrapper__content">
 		<?php
 		if ( $show_downloads ) :
-			wc_get_template( 'order/order-downloads.php', array( 'downloads' => $downloads, 'show_title' => true ) );
+			wc_get_template(
+				'order/order-downloads.php', array(
+					'downloads'  => $downloads,
+					'show_title' => true,
+				)
+			);
 		endif;
 		?>
 
 		<section class="woocommerce-order-details">
-			<h2 class="woocommerce-order-details__title"><?php _e( 'Order details', 'woocommerce' ); ?></h2>
+			<h2 class="woocommerce-order-details__title"><?php _e( 'Order details', 'bigbox' ); ?></h2>
 
 			<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
 
@@ -51,14 +56,16 @@ $show_downloads        = $order->has_downloadable_item() && $order->is_download_
 			foreach ( $order_items as $item_id => $item ) {
 				$product = $item->get_product();
 
-				wc_get_template( 'order/order-details-item.php', array(
-					'order'			         => $order,
-					'item_id'		         => $item_id,
-					'item'			         => $item,
-					'show_purchase_note' => $show_purchase_note,
-					'purchase_note'	     => $product ? $product->get_purchase_note() : '',
-					'product'	           => $product,
-				) );
+				wc_get_template(
+					'order/order-details-item.php', array(
+						'order'              => $order,
+						'item_id'            => $item_id,
+						'item'               => $item,
+						'show_purchase_note' => $show_purchase_note,
+						'purchase_note'      => $product ? $product->get_purchase_note() : '',
+						'product'            => $product,
+					)
+				);
 			}
 
 			do_action( 'woocommerce_order_details_after_order_table_items', $order );
@@ -68,18 +75,18 @@ $show_downloads        = $order->has_downloadable_item() && $order->is_download_
 			<table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
 				<tfoot>
 					<?php
-						foreach ( $order->get_order_item_totals() as $key => $total ) {
-							?>
-							<tr>
-								<th scope="row"><?php echo $total['label']; ?></th>
-								<td><?php echo $total['value']; ?></td>
+					foreach ( $order->get_order_item_totals() as $key => $total ) {
+						?>
+						<tr>
+							<th scope="row"><?php echo $total['label']; ?></th>
+							<td><?php echo $total['value']; ?></td>
 							</tr>
 							<?php
-						}
+					}
 					?>
 					<?php if ( $order->get_customer_note() ) : ?>
 						<tr>
-							<th><?php _e( 'Note:', 'woocommerce' ); ?></th>
+							<th><?php _e( 'Note:', 'bigbox' ); ?></th>
 							<td><?php echo wptexturize( $order->get_customer_note() ); ?></td>
 						</tr>
 					<?php endif; ?>

@@ -10,7 +10,7 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	https://docs.woocommerce.com/document/template-structure/
+ * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
  * @version 3.0.0
@@ -44,7 +44,7 @@ $product_permalink = apply_filters( 'woocommerce_order_item_permalink', $is_visi
 			</h2>
 
 			<div class="product__meta price">
-				<?php  echo $order->get_formatted_line_subtotal( $item ); ?>
+				<?php echo $order->get_formatted_line_subtotal( $item ); ?>
 
 				<del class="subtotal">
 					<?php echo apply_filters( 'woocommerce_order_item_quantity_html', sprintf( '&times; %s', $item->get_quantity() ), $item ); ?>

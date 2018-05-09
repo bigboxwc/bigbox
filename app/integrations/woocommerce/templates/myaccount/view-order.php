@@ -23,13 +23,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<p class="woocommerce-view-order-status"><?php
+<p class="woocommerce-view-order-status">
+<?php
 	/* translators: 1: order date 2: order status */
 	printf(
 		__( 'Your order placed on %1$s and is currently %2$s.', 'bigbox' ),
 		'<mark class="order-date">' . wc_format_datetime( $order->get_date_created() ) . '</mark>',
 		'<mark class="order-status">' . wc_get_order_status_name( $order->get_status() ) . '</mark>'
 	);
-?></p>
+?>
+</p>
 
 <?php do_action( 'woocommerce_view_order', $order_id ); ?>
