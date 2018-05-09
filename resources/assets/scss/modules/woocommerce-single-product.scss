@@ -32,7 +32,12 @@
 	}
 
 	.woocommerce-product-gallery + .summary {
-		margin: 0;
+
+		@include vertical-spacing("margin", "up");
+
+		@include media-breakpoint-up(lg) {
+			margin: 0;
+		}
 	}
 }
 
