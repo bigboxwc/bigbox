@@ -4,7 +4,9 @@
 	padding-bottom: $spacer;
 	border-bottom: 2px solid gray("200");
 
-	@include vertical-spacing("margin", "down");
+	@include vertical-spacing("margin", "down", (
+		sm: 1,	
+	) );
 
 	&:first-child {
 		margin-top: 0;
