@@ -41,13 +41,13 @@ $base = [
 		'.widget-title',
 	],
 	'declarations' => [
-		'font-weight' => $weight_base,
-		'font-size'   => "{$size}em",
+		'font-weight' => esc_attr( $weight_base ),
+		'font-size'   => esc_attr( "{$size}em" ),
 	],
 ];
 
 if ( 'default' !== $family ) {
-	$base['declarations']['font-family'] = $family;
+	$base['declarations']['font-family'] = '"' . esc_attr( $family ) . '"';
 }
 
 return [
@@ -94,7 +94,7 @@ return [
 			'.shop-filters__mobile-toggle-link',
 		],
 		'declarations' => [
-			'font-weight' => $weight_bold,
+			'font-weight' => esc_attr( $weight_bold ),
 		],
 	],
 ];

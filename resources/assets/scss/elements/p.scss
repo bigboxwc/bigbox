@@ -1,3 +1,6 @@
 p {
-	margin: $spacer 0;
+
+	@if $use-margins {
+		margin: $spacer 0;
+	}
 }

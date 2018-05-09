@@ -1,6 +1,8 @@
-//
-// Load global config.
-//
+/**
+ * Global config.
+ */
+$use-margins: false;
+
 @import "_config";
 
 $wb: (
@@ -13,7 +15,21 @@ $wb: (
 	p {
 		color: $body-color;
 		font-family: $font-family-sans-serif;
+		font-size: #{$font-size-base} * 16px;
 	}
+
+	/**
+	 * Internal dependencies.
+	 */
+	@import "elements/h";
+	@import "elements/a";
+	@import "elements/p";
+	@import "elements/table";
+	@import "elements/img";
+	@import "elements/label";
+	@import "elements/strong";
+	@import "elements/small";
+	@import "elements/mark";
 
 	@import "modules/gutenberg";
 
@@ -25,4 +41,8 @@ $wb: (
 .editor-post-title__input {
 	color: gray("800");
 	font-family: $font-family-sans-serif;
+}
+
+.editor-rich-text__tinymce.mce-content-body {
+	line-height: ($line-height-base * 1.35);
 }

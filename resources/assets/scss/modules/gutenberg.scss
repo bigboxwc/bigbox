@@ -13,10 +13,12 @@ p.has-background {
 .wp-block-embed,
 .wp-block-pullquote {
 
-	@include vertical-spacing("margin", "both", (
-		sm: 2,
-		lg: 3,
-	) );
+	@if ( $use-margins ) {
+		@include vertical-spacing("margin", "both", (
+			sm: 2,
+			lg: 3,
+		) );
+	}
 }
 
 // Gutenberg currently uses <figure>

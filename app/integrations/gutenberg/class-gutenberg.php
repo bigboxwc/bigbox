@@ -117,10 +117,15 @@ class Gutenberg extends Integration implements Registerable, Service {
 	function inline_css() {
 		$css = new \BigBox\Customize\Build_Inline_CSS();
 
-		$colors  = $this->get_color_palette();
+		$colors = $this->get_color_palette();
+
 		$gray700 = bigbox_get_theme_color( 'gray-700' );
 		$gray800 = bigbox_get_theme_color( 'gray-800' );
-		$family  = bigbox_get_theme_font_family();
+
+		$family      = bigbox_get_theme_font_family();
+		$size        = get_theme_mod( 'type-font-size', 1 );
+		$weight_base = bigbox_get_theme_font_weight( 'base' );
+		$weight_bold = bigbox_get_theme_font_weight( 'bold' );
 
 		$css->add(
 			[
@@ -130,8 +135,32 @@ class Gutenberg extends Integration implements Registerable, Service {
 					'.edit-post-visual-editor p',
 				],
 				'declarations' => [
-					'font-family' => esc_attr( $family ),
 					'color'       => esc_attr( $gray700 ),
+					'font-family' => '"' . esc_attr( $family ) . '"',
+					'font-weight' => $weight_base,
+				],
+			]
+		);
+
+		$css->add(
+			[
+				'selectors'    => [
+					'.edit-post-visual-editor',
+					'.edit-post-visual-editor p',
+				],
+				'declarations' => [
+					'font-size' => ( $size * 16 ) . 'px',
+				],
+			]
+		);
+
+		$css->add(
+			[
+				'selectors'    => [
+					'.edit-post-visual-editor strong',
+				],
+				'declarations' => [
+					'font-weight' => esc_attr( $weight_bold ),
 				],
 			]
 		);

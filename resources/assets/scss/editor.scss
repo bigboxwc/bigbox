@@ -1,9 +1,7 @@
-//
-// Load global config.
-//
+/**
+ * Global config.
+ */
 @import "_config";
-
-// Elements
 
 body {
 	color: $body-color;
@@ -12,6 +10,9 @@ body {
 	background: $body-bg;
 }
 
+/**
+ * Internal dependencies.
+ */
 @import "elements/h";
 @import "elements/a";
 @import "elements/p";

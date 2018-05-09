@@ -5,7 +5,10 @@ $headings: 1, 2, 3, 4, 5, 6;
 	h#{$heading} {
 		color: gray("800");
 		font-weight: $font-weight-bold;
-		margin: $spacer 0;
+
+		@if $use-margins {
+			margin: $spacer 0;
+		}
 	}
 }
 
