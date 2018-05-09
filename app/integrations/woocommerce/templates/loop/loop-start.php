@@ -21,5 +21,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<ul class="products products-<?php echo esc_attr( wc_get_loop_prop( 'products-loop', ( 'products' !== woocommerce_get_loop_display_mode() ? 'categories' : 'main' ) ) ); ?> columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?> <?php echo esc_attr( 'products' === woocommerce_get_loop_display_mode() ? 'facetwp-template' : null ); ?>">
+<ul class="products products-<?php echo esc_attr( wc_get_loop_prop( 'products-loop', ( 'products' !== woocommerce_get_loop_display_mode() ? 'categories' : 'main' ) ) ); ?> columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?> <?php echo esc_attr( 'main' === wc_get_loop_prop( 'products-loop' ) ? 'facetwp-template' : null ); ?>">
 <!--fwp-loop-->
