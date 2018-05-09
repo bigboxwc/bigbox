@@ -37,39 +37,6 @@ class Gutenberg extends Integration implements Registerable, Service {
 	}
 
 	/**
-	 * Add a white and black color to standard palette.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return array
-	 */
-	public function get_color_palette() {
-		$colors  = bigbox_get_theme_colors();
-		$palette = [];
-
-		foreach ( $colors as $color => $data ) {
-			$palette[ $color ] = [
-				'name'  => $data['name'],
-				'color' => bigbox_get_theme_color( $color ),
-			];
-		}
-
-		$palette['black'] = [
-			// Translators: Customizer control name.
-			'name'  => esc_html__( 'Black', 'bigbox' ),
-			'color' => '#000000',
-		];
-
-		$palette['white'] = [
-			// Translators: Customizer control name.
-			'name'  => esc_html__( 'White', 'bigbox' ),
-			'color' => '#ffffff',
-		];
-
-		return $palette;
-	}
-
-	/**
 	 * Declare view support for Gutenberg.
 	 *
 	 * @since 1.0.0
@@ -78,7 +45,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 		add_theme_support( 'gutenberg' );
 		add_theme_support( 'align-wide' );
 
-		add_theme_support( 'editor-color-palette', ...array_values( $this->get_color_palette() ) );
+		add_theme_support( 'editor-color-palette', ...array_values( bigbox_get_theme_colors() ) );
 	}
 
 	/**
@@ -117,7 +84,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 	function inline_css() {
 		$css = new \BigBox\Customize\Build_Inline_CSS();
 
-		$colors = $this->get_color_palette();
+		$colors = bigbox_get_theme_colors();
 
 		$gray700 = bigbox_get_theme_color( 'gray-700' );
 		$gray800 = bigbox_get_theme_color( 'gray-800' );
