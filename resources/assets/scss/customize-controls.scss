@@ -1,4 +1,13 @@
-#customize-control-color-primary {
-	padding-bottom: 12px;
-	border-bottom: 1px solid #ddd;
+$padding: 12px;
+$border:  1px solid #ccc;
+
+#customize-control-color-primary,
+#customize-control-color-danger {
+	padding-bottom: $padding;
+	border-bottom: $border;
+}
+
+#customize-control-bigbox-colors-element-missing {
+	padding-top: $padding;
+	border-top: $border;
 }

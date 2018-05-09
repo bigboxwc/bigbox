@@ -20,7 +20,7 @@ return [
 			'.page-title',
 			'.product__inner',
 			'.widget',
-			'.woocommerce-MyAccount-navigation',
+			'.woocommerce-MyAccount-navigation:after',
 			'.woocommerce-single-product-data__section',
 			'.footer-nav',
 			'.wp-block-separator',

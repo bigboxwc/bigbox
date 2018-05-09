@@ -41,20 +41,11 @@ add_action( 'customize_register', 'bigbox_customize_register_colors_panels' );
  */
 function bigbox_customize_register_colors_sections( $wp_customize ) {
 	$wp_customize->add_section(
-		'colors-scheme', [
+		'colors-palette', [
 			// Translators: Customizer section title.
-			'title'    => esc_html__( 'Scheme', 'bigbox' ),
+			'title'    => esc_html__( 'Palette', 'bigbox' ),
 			'panel'    => 'colors',
 			'priority' => 10,
-		]
-	);
-
-	$wp_customize->add_section(
-		'colors-grays', [
-			// Translators: Customizer section title.
-			'title'    => esc_html__( 'Grays', 'bigbox' ),
-			'panel'    => 'colors',
-			'priority' => 20,
 		]
 	);
 
@@ -97,12 +88,32 @@ function bigbox_customize_register_colors_controls( $wp_customize ) {
 					$wp_customize,
 					$key,
 					[
-						'label'   => $color['label'],
-						'section' => 'colors-' . $section,
+						'label'   => esc_html( $color['label'] ),
+						'section' => 'colors-palette',
 					]
 				)
 			);
 		}
 	}
+
+	// Add a link to suggest other control elements.
+	$wp_customize->add_setting(
+		'bigbox-colors-element-missing', [
+			'sanitize_callback' => '__return_false',
+		]
+	);
+
+	$wp_customize->add_control(
+		new BigBox\Customize\WP_Customize_Content_Control(
+			$wp_customize,
+			'bigbox-colors-element-missing',
+			[
+				'label'    => esc_html__( 'Think something is missing?', 'bigbox' ),
+				'content'  => esc_html__( 'Want specific control over an individual element\'s color?', 'bigbox' ) . '&nbsp;' . '<a href="https://bigboxwc.com/account/support">' . esc_html__( 'Contact us with a suggestion!', 'bigbox' ) . '</a>',
+				'priority' => 9999,
+				'section'  => 'colors-elements',
+			]
+		)
+	);
 }
-add_action( 'customize_register', 'bigbox_customize_register_colors_controls' );
+add_action( 'customize_register', 'bigbox_customize_register_colors_controls', 20 );
