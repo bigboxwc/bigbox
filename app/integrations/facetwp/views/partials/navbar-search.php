@@ -20,7 +20,7 @@ endif;
 $dropdown = FWP()->helper->get_facet_by_name( get_theme_mod( 'navbar-dropdown-source', null ) );
 $search   = FWP()->helper->get_facet_by_name( get_theme_mod( 'navbar-search-source', null ) );
 
-if ( ! $search || ! $dropdown ) :
+if ( ! ( $search || $dropdown ) ) :
 	return;
 endif;
 ?>

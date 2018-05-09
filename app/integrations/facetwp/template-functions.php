@@ -14,6 +14,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Setup our own loop tags.
+ *
+ * @since 1.0.0
+ */
+function bigbox_facetwp_loop() {
+	$fwp = FWP();
+
+	remove_action( 'loop_start', array( $fwp->display, 'add_template_tag' ) );
+	remove_action( 'loop_no_results', array( $fwp->display, 'add_template_tag' ) );
+}
+
+/**
  * Load a separate view for the navbar search.
  *
  * @since 1.0.0
@@ -136,4 +148,19 @@ function bigbox_facetwp_sort_options( $options ) {
 	// @codingStandardsIgnoreEnd
 
 	return $options;
+}
+
+/**
+ * Match "No Results Found" with WooCommerce.
+ *
+ * @since 1.0.0
+ */
+function bigbox_facetwp_gettext_no_results( $translated_text, $text, $domain ) {
+	if ( 'No results found' === $text && 'fwp' === $domain ) {
+		ob_start();
+		wc_get_template( 'loop/no-products-found.php' );
+		return ob_get_clean();
+	}
+
+	return $translated_text;
 }

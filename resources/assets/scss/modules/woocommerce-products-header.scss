@@ -1,5 +1,10 @@
 .woocommerce-products-header {
 	position: relative;
+
+	// When FWP is active but a hard refresh is performed the wrapper is gone.
+	+ .woocommerce-info {
+		list-style: none;
+	}
 }
 
 .woocommerce-products-header__title {

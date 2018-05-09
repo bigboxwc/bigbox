@@ -24,6 +24,9 @@ add_filter( 'bigbox_navbar_search', 'bigbox_facetwp_navbar_search' );
  * File: woocommerce/templates/archive-product.php.
  */
 
+// Manually set up our loop tags.
+add_action( 'init', 'bigbox_facetwp_loop' );
+
 // Preselect on archives.
 add_filter( 'facetwp_template_use_archive', '__return_true' );
 
@@ -44,3 +47,6 @@ add_filter( 'facetwp_result_count', 'bigbox_facetwp_result_count_output', 10, 2 
 
 // Add custom sort options.
 add_filter( 'facetwp_sort_options', 'bigbox_facetwp_sort_options' );
+
+// Match "No Results Found" with WooCommerce.
+add_filter( 'gettext', 'bigbox_facetwp_gettext_no_results', 20, 3 );

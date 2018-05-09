@@ -4,6 +4,11 @@
 	ul.products {
 
 		@include reset-list();
+
+		li.woocommerce-info {
+			margin: 0 $spacer;
+			width: 100%;
+		}
 	}
 
 	ul.products-main {

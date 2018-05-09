@@ -19,6 +19,10 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
+$tag = bigbox_is_integration_active( 'facetwp' ) ? 'li' : 'div';
 ?>
 
-<p class="woocommerce-info"><?php esc_html_e( 'No products were found matching your selection.', 'bigbox' ); ?></p>
+<<?php echo $tag; ?> class="woocommerce-info">
+	<?php esc_html_e( 'No products were found matching your selection.', 'bigbox' ); ?>
+</<?php echo $tag; ?>>
