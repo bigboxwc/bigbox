@@ -1,21 +1,5 @@
-$wb: (
-	black: #000000,
-	white: #ffffff,
-);
-
-@each $name, $hex in map-merge(map-merge($theme-colors, $grays), $wb) {
-
-	.has-#{$name}-background-color {
-		background-color: $hex;
-	}
-
-	.has-#{$name}-color {
-		&,
-		a {
-			color: $hex;
-		}
-	}
-}
+// Load separate colors so they can be nested when needed.
+@import "gutenberg-colors";
 
 p.has-background {
 	padding: $spacer;

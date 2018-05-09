@@ -4,7 +4,11 @@
 
 // Import Assets so Webpack can extract.
 // @see webpack.config.js
-import '../scss/*.scss';
+import '../scss/style.scss';
+import '../scss/gutenberg.scss';
+import '../scss/editor.scss';
+import '../scss/customize-controls.scss';
+import '../scss/nux.scss';
 
 import '../images/*.svg';
 import '../images/icons/*.svg';

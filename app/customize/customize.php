@@ -29,10 +29,10 @@ require_once get_template_directory() . '/app/customize/preview.php';
  * @since 1.0.0
  */
 function bigbox_customize_inline_css() {
-	$css      = new \BigBox\Customize\Build_Inline_CSS();
+	$css = new \BigBox\Customize\Build_Inline_CSS();
 
 	// Sub in a `gutenberg` string to load dynamic Gutenberg output.
-	$colors   = array_merge( bigbox_get_theme_colors(), [ 'gutenberg' => [] ] );
+	$colors = array_merge( bigbox_get_theme_colors(), [ 'gutenberg' => [] ] );
 
 	foreach ( $colors as $key => $data ) {
 		$file = get_template_directory() . '/app/customize/output/' . $key . '.php';

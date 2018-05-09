@@ -1,0 +1,45 @@
+//
+// Generate colors for Gutenberg.
+//
+// [1] Merge in black and white that are not defined in SCSS.
+// [2] Link to the potential @import context.
+//
+
+
+// [1]
+$wb: (
+	black: #000000,
+	white: #ffffff,
+);
+
+@each $name, $hex in map-merge($theme-colors, $wb) {
+
+	&.has-#{$name}-background-color, // [2]
+	.has-#{$name}-background-color {
+		background-color: $hex;
+	}
+
+	&.has-#{$name}-color, // [2]
+	.has-#{$name}-color {
+		&,
+		a {
+			color: $hex;
+		}
+	}
+}
+
+@each $name, $hex in $grays {
+
+	&.has-gray-#{$name}-background-color, // [2]
+	.has-gray-#{$name}-background-color {
+		background-color: $hex;
+	}
+
+	&.has-gray-#{$name}-color, // [2]
+	.has-gray-#{$name}-color {
+		&,
+		a {
+			color: $hex;
+		}
+	}
+}

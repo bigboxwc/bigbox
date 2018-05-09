@@ -16,6 +16,7 @@ foreach ( $colors as $color => $data ) {
 	$output[] = [
 		'selectors'    => [
 			".has-{$color}-background-color",
+			".wp-block-button .wp-block-button__link.has-{$color}-background-color",
 		],
 		'declarations' => [
 			'background-color' => esc_attr( bigbox_get_theme_color( $color ) ),
@@ -26,6 +27,7 @@ foreach ( $colors as $color => $data ) {
 		'selectors'    => [
 			".has-{$color}-color",
 			".has-{$color}-color a",
+			".wp-block-button .wp-block-button__link.has-{$color}-color",
 		],
 		'declarations' => [
 			'color' => esc_attr( bigbox_get_theme_color( $color ) ),

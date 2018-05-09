@@ -54,18 +54,18 @@ class Gutenberg extends Integration implements Registerable, Service {
 			];
 		}
 
-		$palette[ 'black' ] = [
+		$palette['black'] = [
 			// Translators: Customizer control name.
 			'name'  => esc_html__( 'Black', 'bigbox' ),
 			'color' => '#000000',
 		];
 
-		$palette[ 'white' ] = [
+		$palette['white'] = [
 			// Translators: Customizer control name.
 			'name'  => esc_html__( 'White', 'bigbox' ),
 			'color' => '#ffffff',
 		];
-		
+
 		return $palette;
 	}
 
@@ -155,6 +155,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 				[
 					'selectors'    => [
 						".edit-post-visual-editor p.has-{$color}-background-color",
+						".edit-post-visual-editor .wp-block-button .wp-block-button__link.has-{$color}-background-color",
 					],
 					'declarations' => [
 						'background-color' => esc_attr( bigbox_get_theme_color( $color ) ),
@@ -167,6 +168,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 					'selectors'    => [
 						".edit-post-visual-editor p.has-{$color}-color",
 						".edit-post-visual-editor p.has-{$color}-color a",
+						".edit-post-visual-editor .wp-block-button .wp-block-button__link.has-{$color}-color",
 					],
 					'declarations' => [
 						'color' => esc_attr( bigbox_get_theme_color( $color ) ),

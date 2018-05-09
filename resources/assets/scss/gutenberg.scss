@@ -16,6 +16,10 @@ $wb: (
 	}
 
 	@import "modules/gutenberg";
+
+	.wp-block-button .wp-block-button__link {
+		@import "modules/gutenberg-colors";
+	}
 }
 
 .editor-post-title__input {
