@@ -22,7 +22,7 @@
 
 		@include reset-list();
 
-		padding: 2px 0 $spacer; // [1]
+		padding: $spacer 0; // [1]
 		display: flex;
 		overflow-x: scroll;
 		overflow-y: hidden;
@@ -53,7 +53,7 @@
 }
 
 .woocommerce-MyAccount-content {
-	
+
 	@include vertical-spacing("margin", "down");
 }
 

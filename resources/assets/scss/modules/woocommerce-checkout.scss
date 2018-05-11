@@ -224,7 +224,7 @@ form.woocommerce-checkout {
 	height: 16px;
 }
 
-.woocommerce-privacy-policy-text {
+.woocommerce-privacy-policy-text:not(:empty) {
 	font-size: $font-size-sm;
 	border: 1px solid gray("200");
 	border-width: 1px 0;
