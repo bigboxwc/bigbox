@@ -113,7 +113,7 @@
 	&.columns-5 li.product,
 	&.columns-6 li.product {
 
-		@include media-breakpoint-up(xl) {
+		@include media-breakpoint-up(lg) {
 
 			@include make-col(2.4);
 		}

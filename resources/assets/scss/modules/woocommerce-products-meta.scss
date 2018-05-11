@@ -13,4 +13,9 @@
 
 .woocommerce-result-count {
 	margin: 0 auto 0 0;
+	display: none;
+
+	@include media-breakpoint-up(sm) {
+		display: block;
+	}
 }
