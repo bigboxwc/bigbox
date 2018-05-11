@@ -3,8 +3,9 @@
 	a {
 		padding: 3px;
 		border: 1px solid gray("200");
-		border-radius: $border-radius;
 		display: inline-block;
+
+		@include border-radius();
 	}
 
 	img {
@@ -39,9 +40,10 @@ ul.brands_index {
 			text-align: center;
 			padding: 5px;
 			border: 1px solid gray("300");
-			border-radius: $border-radius;
 			display: block;
 			float: none;
+
+			@include border-radius();
 		}
 
 		a:hover {

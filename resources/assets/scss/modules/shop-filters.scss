@@ -124,14 +124,16 @@
 		font-size: 0.7em;
 		display: block;
 		border: 0;
-		border-radius: $border-radius;
 		background-color: theme-color("primary");
+
+		@include border-radius();
 	}
 
 	.price_slider_wrapper .ui-widget-content {
-		border-radius: $border-radius;
 		background-color: gray("200");
 		border: 0;
+
+		@include border-radius();
 	}
 
 	.ui-slider-horizontal {

@@ -2,10 +2,11 @@ $spacing: ( $spacer / 2 );
 
 .woocommerce-pagination {
 	text-align: center;
-	border-radius: $border-radius;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	@include border-radius();
 
 	&:not(:empty) {
 		margin: ( $spacer * 2 ) 0 $spacer;

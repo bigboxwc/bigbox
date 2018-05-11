@@ -1,13 +1,14 @@
 @mixin card {
 	background: rgba(gray("100"), 0.15);
-	border-radius: $border-radius;
 	border: 1px solid rgba(gray("300"), 0.75);
 	box-shadow: rgba(gray("300"), 0.5) 0 1px 2px;
+
+	@include border-radius();
 }
 
 @mixin card--primary {
 
-	@include card;
+	@include card();
 
 	color: gray("700");
 	border: 1px solid rgba(theme-color("success"), 0.5);
@@ -17,7 +18,7 @@
 
 @mixin card--error {
 
-	@include card;
+	@include card();
 
 	color: theme-color("danger");
 	border: 1px solid rgba(theme-color("danger"), 0.5);

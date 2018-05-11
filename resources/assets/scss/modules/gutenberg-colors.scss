@@ -17,6 +17,8 @@ $wb: (
 	&.has-#{$name}-background-color, // [2]
 	.has-#{$name}-background-color {
 		background-color: $hex;
+
+		@include border-radius();
 	}
 
 	&.has-#{$name}-color, // [2]

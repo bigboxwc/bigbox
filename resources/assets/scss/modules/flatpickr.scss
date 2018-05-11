@@ -20,7 +20,8 @@
 	}
 
 	.flatpickr-day {
-		border-radius: $border-radius;
+
+		@include border-radius();
 	}
 
 	.flatpickr-day.selected,

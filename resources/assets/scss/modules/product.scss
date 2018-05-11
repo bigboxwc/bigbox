@@ -222,13 +222,14 @@
 	margin: 0 0 $spacer;
 	padding: 5px;
 	background: theme-color("success");
-	border-radius: $border-radius;
+
+	@include border-radius();
 }
 
 .product__has-variations {
 
 	a {
 
-		@include button--pill;
+		@include button--pill();
 	}
 }

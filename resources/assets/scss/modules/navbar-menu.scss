@@ -152,7 +152,6 @@ $menu-break-point: md;
 		opacity: 0;
 		min-width: 250px;
 		background: #fff;
-		border-radius: 0 0 $border-radius $border-radius;
 		border: 1px solid gray("300");
 		border-top: 0;
 		box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px;
@@ -161,6 +160,8 @@ $menu-break-point: md;
 		z-index: 10;
 		transition: all 0.1s ease-in-out;
 		transform-origin: top left;
+
+		@include border-bottom-radius();
 
 		a {
 			color: gray("700");
@@ -265,7 +266,8 @@ $menu-break-point: md;
 		padding: 4px;
 		flex-direction: column;
 		border: 1px solid transparent;
-		border-radius: $border-radius;
+
+		@include border-radius();
 
 		&:hover {
 			opacity: 1;
