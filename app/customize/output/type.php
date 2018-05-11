@@ -39,6 +39,7 @@ $base = [
 		'.navbar-menu--primary .sub-menu li',
 		'.navbar-menu--secondary .sub-menu li',
 		'.widget-title',
+		'#place_order',
 	],
 	'declarations' => [
 		'font-weight' => esc_attr( $weight_base ),
