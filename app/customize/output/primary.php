@@ -22,6 +22,13 @@ return [
 			'.wc-layered-nav-term.chosen a',
 			'.woocommerce-page ul.products-categories li.product.product-category a:hover h2',
 			'.woocommerce ul.products-categories li.product.product-category a:hover h2',
+
+			'.woocommerce-pagination .active',
+			'.woocommerce-pagination .current',
+			'.facetwp-pager .active',
+			'.facetwp-pager .current',
+			'.nav-links .active',
+			'.nav-links .current',
 		],
 		'declarations' => [
 			'color' => esc_attr( $primary ),
@@ -31,9 +38,11 @@ return [
 	[
 		'selectors'    => [
 			'.navbar',
-			'.facetwp-facet .facetwp-slider .noUi-connect',
 			'.select2-container--default .select2-results__option--highlighted[data-selected]',
 			'.widget_price_filter .ui-slider .ui-slider-range',
+
+			'.facetwp-facet .facetwp-slider .noUi-connect',
+			'.facetwp-template__loading:before',
 
 			// Flatpickr.
 			'.flatpickr-calendar .flatpickr-day.selected',

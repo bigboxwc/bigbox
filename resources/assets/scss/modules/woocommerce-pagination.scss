@@ -38,7 +38,7 @@ $spacing: ( $spacer / 2 );
 
 	.active,
 	.current {
-		color: gray("700");
+		color: theme-color("primary");
 	}
 
 	.next {

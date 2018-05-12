@@ -64,10 +64,6 @@ import { adjustWidth } from './navbar.js';
 	if ( categories ) {
 		$document.on( 'facetwp-loaded', () => {
 			if ( FWP.loaded ) {
-				$htmlbody.animate( {
-					scrollTop: $( '#main' ).offset().top,
-				}, 250 );
-
 				categories.style.display = 'none';
 			}
 
@@ -99,5 +95,19 @@ import { adjustWidth } from './navbar.js';
 				$dynamicInput.prop( 'checked', ! $dynamicInput.prop( 'checked' ) );
 			} );
 		} );
+	} );
+
+	/**
+	 * Scroll to top on refresh and show loading indicator.
+	 */
+	$document.on( 'facetwp-refresh', () => {
+		if ( FWP.loaded ) {
+			$htmlbody.animate( {
+				scrollTop: 0,
+			}, 250 );
+
+			$( '.facetwp-template' )
+				.prepend( '<div class="facetwp-template__loading"></div>' );
+		}
 	} );
 }( jQuery ) );

@@ -1,0 +1,14 @@
+.animation-scaleout {
+	animation: 1s scaleout infinite;
+}
+
+@keyframes scaleout {
+	0% { 
+		transform: scale(0);
+	}
+
+	100% {
+		transform: scale(1.0);
+		opacity: 0;
+	}
+}
