@@ -113,7 +113,10 @@
 	overflow: hidden;
 	display: flex;
 	align-items: center;
-	height: 20px;
+
+	&:not(:empty) {
+		height: 20px;
+	}
 
 	.facetwp-star {
 		color: gray("300");
@@ -159,8 +162,8 @@
 		font-size: $font-size-sm;
 	}
 
-	.facetwp-date-min {
-		margin-bottom: $spacer;
+	.facetwp-date-max {
+		margin-top: $spacer;
 	}
 }
 
