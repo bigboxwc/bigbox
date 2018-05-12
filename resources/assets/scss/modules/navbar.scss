@@ -3,12 +3,6 @@
 	position: relative;
 
 	@include make-container();
-
-	&:before {
-		background-image: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
-
-		@include pseudo-overlay();
-	}
 }
 
 .navbar__inner {
