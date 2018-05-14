@@ -86,7 +86,7 @@ zip -r bigbox.zip \
 	style.css \
 	app \
 	bootstrap \
-	resources/languages \
+	resources/languages/*.{po,mo,pot} \
 	resources/views \
 	resources/data \
 	public \
