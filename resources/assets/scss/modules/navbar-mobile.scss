@@ -109,6 +109,7 @@
 
 .mobile-menu-children-toggle {
 	cursor: e-resize;
+	max-height: #{$line-height-base}em;
 	display: block;
 	flex: 1;
 	margin-left: 1rem;

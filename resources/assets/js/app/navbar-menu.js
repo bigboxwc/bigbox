@@ -99,7 +99,7 @@
 
 	// Toggle children.
 	$mobile.on( 'click', '.mobile-menu-children-toggle', function() {
-		$( this ).parent().toggleClass( 'menu-item--opened' );
+		$( this ).parent( '.menu-item-has-children' ).toggleClass( 'menu-item--opened' );
 	} );
 
 	// Add child toggles if needed.
