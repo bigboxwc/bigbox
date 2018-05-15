@@ -37,7 +37,7 @@ $product_thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product
 <li class="product product--cart-item">
 	<div class="product__inner">
 
-		<?php if ( $product_thumbnail ) : ?>
+		<?php if ( '' !== $_product->get_image_id() && '' !== $product_thumbnail ) : ?>
 		<div class="product__preview">
 			<a href="<?php echo esc_url( $product_permalink ); ?>">
 				<?php echo wp_kses_post( $product_thumbnail ); ?>
