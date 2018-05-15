@@ -10,6 +10,7 @@
  */
 
 // Load panels/sections/controls.
+require_once get_template_directory() . '/app/customize/controls/header.php';
 require_once get_template_directory() . '/app/customize/controls/wordpress.php';
 require_once get_template_directory() . '/app/customize/controls/colors.php';
 require_once get_template_directory() . '/app/customize/controls/type.php';
