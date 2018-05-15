@@ -1,4 +1,4 @@
-/* global FWP, jQuery */
+/* global jQuery */
 
 /**
  * Internal dependencies.

@@ -8,7 +8,7 @@
 
 	// Control visibility for controls
 	$.each( {
-		'woocommerce_demo_store': {
+		woocommerce_demo_store: {
 			controls: [
 				'demo-store-notice-position',
 				'demo-store-notice-color',
@@ -20,10 +20,8 @@
 		},
 	}, ( settingId, o ) => {
 		api( settingId, ( setting ) => {
-
 			// Handle multiple toggles.
 			$.each( o.controls, ( i, controlId ) => {
-
 				// Toggle control.
 				api.control( controlId, ( control ) => {
 					const visibility = ( to ) => {
@@ -34,9 +32,7 @@
 
 					setting.bind( visibility );
 				} );
-
 			} );
-
 		} );
 	} );
 }( jQuery ) );

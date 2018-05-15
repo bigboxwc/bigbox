@@ -1,4 +1,4 @@
-/* global FWP, jQuery */
+/* global jQuery */
 
 ( function( $ ) {
 	const $document = $( document );
@@ -9,7 +9,7 @@
 	$document.on( 'facetwp-loaded', () => {
 		$( '.facetwp-checkbox, .facetwp-radio' ).each( function() {
 			const $wrapper = $( this );
-			const $input   = $( this ).find( 'input' );
+			const $input = $( this ).find( 'input' );
 			const type = $wrapper.hasClass( 'facetwp-checkbox' ) ? 'checkbox' : 'radio';
 
 			if ( $input.length ) {
@@ -20,13 +20,11 @@
 				.prepend( `<input type="${ type }" ${ $wrapper.hasClass( 'checked' ) ? 'checked' : '' } />` );
 
 			$wrapper.on( 'click', function() {
-				const $input = $( this );
+				const $dynamicInput = $wrapper.find( 'input' );
 
-				if ( $input.hasClass( 'disabled' ) ) {
+				if ( $wrapper.hasClass( 'disabled' ) ) {
 					return;
 				}
-
-				const $dynamicInput = $input.find( 'input' );
 
 				$dynamicInput.prop( 'checked', ! $dynamicInput.prop( 'checked' ) );
 			} );
