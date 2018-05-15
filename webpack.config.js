@@ -52,10 +52,12 @@ const extractConfig = {
 const config = {
 	mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
 	entry: {
-		app: './resources/assets/js/app.js',
+		app: './resources/assets/js',
+		woocommerce: './resources/assets/js/woocommerce',
+		facetwp: './resources/assets/js/facetwp',
 		'license-manager': './resources/assets/js/license-manager',
-		'customize-preview': './resources/assets/js/customize-preview',
-		'customize-controls': './resources/assets/js/customize-controls',
+		'customize-preview': './resources/assets/js/customize/preview.js',
+		'customize-controls': './resources/assets/js/customize/controls.js',
 	},
 	output: {
 		filename: 'public/js/[name].min.js',

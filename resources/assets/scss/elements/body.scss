@@ -6,12 +6,15 @@ body {
 	padding: 0;
 	min-height: 100vh;
 	background: $body-bg;
-	position: relative;
 	overflow-x: hidden;
 	display: flex;
 	flex-direction: column;
 
 	&.admin-bar {
 		min-height: calc(100vh - 32px);
+
+		@media screen and (max-width: 782px) {
+			min-height: calc(100vh - 46px);
+		}
 	}
 }

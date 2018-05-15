@@ -13,6 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+// Custom scripts.
+add_action( 'wp_enqueue_scripts', 'bigbox_facetwp_wp_enqueue_scripts', 20 );
+
 /**
  * File: resources/views/partials/navbar-search.php.
  */

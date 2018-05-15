@@ -41,11 +41,20 @@ function bigbox_woocommerce_template_path() {
 }
 
 /**
- * Remove cart fragments on non cart and checkout pages.
+ * WooCommerce specific scripts.
  *
  * @since 1.0.0
  */
-function bigbox_woocommerce_wp_enqueue_script() {
+function bigbox_woocommerce_wp_enqueue_scripts() {
+	$version    = bigbox_get_theme_version();
+	$stylesheet = bigbox_get_theme_name();
+
+	$deps = [
+		$stylesheet,
+	];
+
+	wp_enqueue_script( "{$stylesheet}-woocommerce", get_template_directory_uri() . '/public/js/woocommerce.min.js', $deps, $version, true );
+
 	if ( ! is_cart() || is_checkout() ) {
 		wp_dequeue_script( 'wc-cart-fragments' );
 	}
@@ -482,3 +491,15 @@ function bigbox_woocommerce_single_product_carousel_options( $args ) {
 function bigbox_woocommerce_archive_mobile_filters() {
 	wc_get_template( 'loop/shop-filters-mobile.php' );
 }
+
+/**
+ * Adjust demo store notice classes depending on customizer setting.
+ *
+ * @since 1.0.0
+ *
+ * @param string $notice Notice HTML.
+ * @return string
+ */
+function bigbox_woocommerce_demo_store( $notice ) {
+	return str_replace( 'demo_store', 'demo_store woocommerce-store-notice--' . get_theme_mod( 'demo-store-notice-position', 'bottom' ), $notice );
+};

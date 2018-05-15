@@ -23,7 +23,7 @@ add_filter( 'woocommerce_template_path', 'bigbox_woocommerce_template_path' );
 add_filter( 'bigbox_js', 'bigbox_woocommerce_js_settings' );
 
 // Remove cart fragments on standard shop pages.
-add_filter( 'wp_enqueue_scripts', 'bigbox_woocommerce_wp_enqueue_script', 20 );
+add_filter( 'wp_enqueue_scripts', 'bigbox_woocommerce_wp_enqueue_scripts', 20 );
 
 /**
  * File: resources/views/partials/navbar-search.php.
@@ -168,8 +168,11 @@ add_filter( 'woocommerce_get_star_rating_html', 'bigbox_woocommerce_get_star_rat
  * File: wc-template-functions.php.
  */
 
-// Custom breadcrum arguments.
+// Custom breadcrumb arguments.
 add_filter( 'woocommerce_breadcrumb_defaults', 'bigbox_woocommerce_breadcrumb_defaults' );
+
+// Demo store notice.
+add_filter( 'woocommerce_demo_store', 'bigbox_woocommerce_demo_store' );
 
 /**
  * File: single-product/review.php

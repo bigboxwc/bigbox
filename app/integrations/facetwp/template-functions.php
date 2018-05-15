@@ -14,6 +14,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * FacetWP specific scripts.
+ *
+ * @since 1.0.0
+ */
+function bigbox_facetwp_wp_enqueue_scripts() {
+	$version    = bigbox_get_theme_version();
+	$stylesheet = bigbox_get_theme_name();
+
+	$deps = [
+		$stylesheet,
+	];
+
+	wp_enqueue_script( "{$stylesheet}-facetwp", get_template_directory_uri() . '/public/js/facetwp.min.js', $deps, $version, true );
+}
+
+/**
  * Setup our own loop tags.
  *
  * @since 1.0.0
