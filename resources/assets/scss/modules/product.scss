@@ -172,8 +172,10 @@
 		font-size: $font-size-base;
 	}
 
-	// When using 5 columns keep titles small.
-	.columns-5 & {
+	// When using more columns keep titles small.
+	.columns-4 &,
+	.columns-5 &,
+	.columns-6 & {
 
 		@include media-breakpoint-up(xl) {
 			font-size: $font-size-sm;
