@@ -44,26 +44,41 @@ function bigbox_facetwp_customize_get_sources( $whitelist = [] ) {
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
 function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
-	foreach ( [ 'navbar-dropdown-source', 'navbar-search-source' ] as $setting ) {
-		// Choose which facet is used for the search.
-		$wp_customize->add_setting(
-			$setting, [
-				'default'           => null,
-				'transport'         => 'postMessage',
-				'sanitize_callback' => 'sanitize_text_field',
-			]
-		);
+	$wp_customize->add_setting(
+		'navbar-search-source', [
+			'default'           => 'keyword',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_text_field',
+		]
+	);
 
-		$wp_customize->selective_refresh->add_partial(
-			$setting, [
-				'selector'            => '.navbar-search',
-				'container_inclusive' => true,
-				'render_callback'     => function() {
-					bigbox_partial( 'navbar-search' );
-				},
-			]
-		);
-	}
+	$wp_customize->selective_refresh->add_partial(
+		'navbar-search-source', [
+			'selector'            => '.navbar-search',
+			'container_inclusive' => true,
+			'render_callback'     => function() {
+				bigbox_partial( 'navbar-search' );
+			},
+		]
+	);
+
+	$wp_customize->add_setting(
+		'navbar-dropdown-source', [
+			'default'           => 'category',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_text_field',
+		]
+	);
+
+	$wp_customize->selective_refresh->add_partial(
+		'navbar-dropdown-source', [
+			'selector'            => '.navbar-search',
+			'container_inclusive' => true,
+			'render_callback'     => function() {
+				bigbox_partial( 'navbar-search' );
+			},
+		]
+	);
 
 	$wp_customize->add_control(
 		'navbar-dropdown-source', [
