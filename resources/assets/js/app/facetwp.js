@@ -90,7 +90,13 @@ import { adjustWidth } from './navbar.js';
 				.prepend( `<input type="${ type }" ${ $wrapper.hasClass( 'checked' ) ? 'checked' : '' } />` );
 
 			$wrapper.on( 'click', function() {
-				const $dynamicInput = $( this ).find( 'input' );
+				const $input = $( this );
+
+				if ( $input.hasClass( 'disabled' ) ) {
+					return;
+				}
+
+				const $dynamicInput = $input.find( 'input' );
 
 				$dynamicInput.prop( 'checked', ! $dynamicInput.prop( 'checked' ) );
 			} );
