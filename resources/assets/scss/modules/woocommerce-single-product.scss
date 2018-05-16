@@ -26,10 +26,6 @@
 			flex-basis: 0;
 		}
 
-		@include media-breakpoint-up(lg) {
-			margin: 0 $spacer;
-		}
-
 		@include media-breakpoint-up(xl) {
 			flex-direction: row;
 		}
@@ -40,7 +36,7 @@
 		@include vertical-spacing("margin", "up");
 
 		@include media-breakpoint-up(lg) {
-			margin: 0;
+			margin: 0 $spacer;
 		}
 	}
 }
