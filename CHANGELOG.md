@@ -1,3 +1,9 @@
+## [1.0.2] - 2018-04-16
+
+### Fix
+
+- Automatic updater improvements.
+
 ## [1.0.1] - 2018-04-16
 
 ### Fix
