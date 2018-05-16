@@ -6,6 +6,10 @@
 		align-items: flex-start;
 
 		@include make-row();
+
+		@include media-breakpoint-up(sm) {
+			margin: 0;
+		}
 	}
 
 	.product_title {
@@ -18,12 +22,12 @@
 		flex: 1 0 100%;
 		flex-direction: column;
 
-		@include media-breakpoint-up(lg) {
-			margin: 0 $spacer;
-		}
-
 		@include media-breakpoint-up(md) {
 			flex-basis: 0;
+		}
+
+		@include media-breakpoint-up(lg) {
+			margin: 0 $spacer;
 		}
 
 		@include media-breakpoint-up(xl) {
@@ -97,7 +101,7 @@
 	}
 
 	@include media-breakpoint-up(lg) {
-		padding: ($spacer * 2);
+		padding: ($spacer * 2) $spacer;
 	}
 }
 

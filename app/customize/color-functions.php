@@ -69,7 +69,7 @@ function bigbox_hex_to_rgba( $color, $opacity = false ) {
 	} elseif ( 3 === strlen( $color ) ) {
 		$hex = [ $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] ];
 	} else {
-		return $default;
+		return $color;
 	}
 
 	$rgb = array_map( 'hexdec', $hex );
