@@ -18,7 +18,7 @@ if ( ! bigbox_is_integration_active( 'woocommerce' ) ) :
 endif;
 
 $dropdown = FWP()->helper->get_facet_by_name( get_theme_mod( 'navbar-dropdown-source', 'category' ) );
-$search   = FWP()->helper->get_facet_by_name( get_theme_mod( 'navbar-search-source', 'search' ) );
+$search   = FWP()->helper->get_facet_by_name( get_theme_mod( 'navbar-search-source', 'keyword' ) );
 
 if ( ! ( $search || $dropdown ) ) :
 	return;
