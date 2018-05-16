@@ -1,8 +1,6 @@
 .navbar {
 	background: theme-color("primary");
 	position: relative;
-
-	@include make-container();
 }
 
 .navbar__inner {

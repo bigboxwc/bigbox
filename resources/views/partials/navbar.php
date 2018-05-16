@@ -16,16 +16,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="navbar">
 
-	<div class="navbar__inner">
-		<?php
-		bigbox_partial( 'navbar-mobile' );
-		bigbox_partial( 'branding' );
-		bigbox_partial( 'navbar-search' );
-		bigbox_partial( 'navbar-menu-account' );
-		?>
-	</div>
+	<div class="container">
 
-	<?php bigbox_partial( 'navbar-menu-primary' ); ?>
+		<div class="navbar__inner">
+			<?php
+			bigbox_partial( 'navbar-mobile' );
+			bigbox_partial( 'branding' );
+			bigbox_partial( 'navbar-search' );
+			bigbox_partial( 'navbar-menu-account' );
+			?>
+		</div>
+
+		<?php bigbox_partial( 'navbar-menu-primary' ); ?>
+
+	</div>
 
 </div>
 
