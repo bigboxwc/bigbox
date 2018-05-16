@@ -89,7 +89,7 @@ class WooCommerce_ListTable extends \WP_Plugin_Install_List_Table {
 				}
 			}
 
-			set_transient( $key, $items, DAY_IN_SECONDS * 30 );
+			set_site_transient( $key, $items, DAY_IN_SECONDS * 30 );
 		}
 
 		return $items;

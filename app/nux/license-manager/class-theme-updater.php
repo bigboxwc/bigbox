@@ -140,21 +140,21 @@ class Theme_Updater implements Registerable {
 				$update_data              = new \stdClass();
 				$update_data->new_version = $this->args['version'];
 
-				set_transient( $this->response_key, $update_data, strtotime( '+30 minutes', current_time( 'timestamp' ) ) );
+				set_site_transient( $this->response_key, $update_data, strtotime( '+30 minutes', current_time( 'timestamp' ) ) );
 
 				return false;
 			} else {
 				$update_data->sections = maybe_unserialize( $update_data->sections );
 
-				set_transient( $this->response_key, $update_data, strtotime( '+12 hours', current_time( 'timestamp' ) ) );
+				set_site_transient( $this->response_key, $update_data, strtotime( '+12 hours', current_time( 'timestamp' ) ) );
 			}
 		}
 
-		if ( version_compare( $this->args['version'], $update_data->new_version, '>=' ) ) {
-			return false;
+		if ( version_compare( $this->args['version'], $update_data->new_version, '<' ) ) {
+			return (array) $update_data;
 		}
 
-		return (array) $update_data;
+		return false;
 	}
 
 	/**
@@ -165,18 +165,13 @@ class Theme_Updater implements Registerable {
 	public function add_menu_count() {
 		global $submenu;
 
-		$count = '';
+		$count       = '';
+		$update_data = wp_get_update_data();
 
-		if ( ! is_multisite() && current_user_can( 'update_themes' ) ) {
-			if ( ! isset( $update_data ) ) {
-				$update_data = wp_get_update_data();
+		if ( 0 !== $update_data['counts']['themes'] ) {
+			$count = "<span class='update-plugins count-{$update_data['counts']['themes']}'><span class='theme-count'>" . number_format_i18n( $update_data['counts']['themes'] ) . '</span></span>';
 
-				if ( 0 !== $update_data['counts']['themes'] ) {
-					$count = "<span class='update-plugins count-{$update_data['counts']['themes']}'><span class='theme-count'>" . number_format_i18n( $update_data['counts']['themes'] ) . '</span></span>';
-
-					$submenu['themes.php'][5][0] = sprintf( _x( 'Themes %s', 'admin menu item update count', 'bigbox' ), $count ); // @codingStandardsIgnoreLine
-				}
-			}
+			$submenu['themes.php'][5][0] = sprintf( _x( 'Themes %s', 'admin menu item update count', 'bigbox' ), $count ); // @codingStandardsIgnoreLine
 		}
 	}
 
