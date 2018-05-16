@@ -18,6 +18,13 @@
  * @return array
  */
 function bigbox_facetwp_facets( $facets ) {
+	// Remove the default Categories checkbox.
+	foreach ( $facets as $index => $facet ) {
+		if ( 'tax/category' === $facet['source'] && 'checkboxes' === $facet['type'] ) {
+			unset( $facets[ $index ] );
+		}
+	}
+
 	$facets[] = array(
 		'label'         => 'Keywords',
 		'name'          => 'keyword',
@@ -27,11 +34,14 @@ function bigbox_facetwp_facets( $facets ) {
 	);
 
 	$facets[] = array(
-		'label'       => 'Categories',
-		'name'        => 'category',
-		'type'        => 'dropdown',
-		'placeholder' => 'All',
-		'source'      => 'tax/product_category',
+		'label'        => 'Categories',
+		'name'         => 'category',
+		'type'         => 'dropdown',
+		'label_any'    => 'All',
+		'source'       => 'tax/product_cat',
+		'hierarchical' => 'no',
+		'orderby'      => 'count',
+		'count'        => 0,
 	);
 
 	return $facets;
