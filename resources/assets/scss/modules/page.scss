@@ -1,4 +1,5 @@
 .page-flow {
 
 	@include make-row();
+	@include vertical-spacing();
 }
