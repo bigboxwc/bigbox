@@ -50,7 +50,7 @@ function bigbox_woocommerce_customize_get_dropdown_taxonomies() {
 function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) {
 	// Choose which taxonomy appears in the dropdown.
 	$wp_customize->add_setting(
-		'navbar-dropdown-source', [
+		'navbar-source-dropdown', [
 			'default'           => 'product_cat',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
@@ -58,13 +58,16 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 	);
 
 	$wp_customize->add_control(
-		'navbar-dropdown-source', [
+		'navbar-source-dropdown', [
 			// Translators: Customizer control label.
-			'label'    => esc_html__( 'Dropdown Source', 'bigbox' ),
-			'type'     => 'select',
-			'choices'  => bigbox_woocommerce_customize_get_dropdown_taxonomies(),
-			'section'  => 'navbar',
-			'priority' => 20,
+			'label'           => esc_html__( 'Dropdown Source', 'bigbox' ),
+			'type'            => 'select',
+			'choices'         => bigbox_woocommerce_customize_get_dropdown_taxonomies(),
+			'section'         => 'navbar',
+			'priority'        => 20,
+			'active_callback' => function() {
+				return ! bigbox_is_integration_active( 'facetwp' );
+			},
 		]
 	);
 
@@ -80,9 +83,10 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 	$wp_customize->add_control(
 		'nav-item-account', [
 			// Translators: Customizer control label.
-			'label'   => esc_html__( 'Display account menu item', 'bigbox' ),
-			'type'    => 'checkbox',
-			'section' => 'navbar',
+			'label'    => esc_html__( 'Display account menu item', 'bigbox' ),
+			'type'     => 'checkbox',
+			'section'  => 'navbar',
+			'priority' => 10,
 		]
 	);
 
@@ -98,9 +102,10 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 	$wp_customize->add_control(
 		'nav-item-cart', [
 			// Translators: Customizer control label.
-			'label'   => esc_html__( 'Display cart menu item', 'bigbox' ),
-			'type'    => 'checkbox',
-			'section' => 'navbar',
+			'label'    => esc_html__( 'Display cart menu item', 'bigbox' ),
+			'type'     => 'checkbox',
+			'section'  => 'navbar',
+			'priority' => 10,
 		]
 	);
 

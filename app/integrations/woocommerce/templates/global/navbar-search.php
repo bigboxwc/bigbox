@@ -21,7 +21,7 @@ endif;
 <form id="primary-search" action="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" method="GET" class="navbar-search">
 
 	<?php
-	$taxonomy = get_taxonomy( get_theme_mod( 'navbar-dropdown-source', 'product_cat' ) );
+	$taxonomy = get_taxonomy( bigbox_get_navbar_search_source( 'dropdown', 'product_cat' ) );
 
 	if ( $taxonomy ) :
 		$selected = isset( $_GET[ $taxonomy->name ] ) ? esc_attr( $_GET[ $taxonomy->name ] ) : null; // @codingStandardsIgnoreLine

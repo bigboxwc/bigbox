@@ -37,33 +37,30 @@ function bigbox_facetwp_customize_get_sources( $whitelist = [] ) {
 }
 
 /**
- * Navbar controls.
+ * Navbar customize controls.
+ *
+ * Build more dynamic controls to avoid repeat.
  *
  * @since 1.0.0
  *
  * @param WP_Customize_Manager $wp_customize The Customizer object.
+ * @param string               $suffix  Suffix to create unique setting names.
+ * @param array                $setting Extra setting arguments.
+ * @param array                $control Extra control arguments.
  */
-function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
+function bigbox_facetwp_customize_register_navbar_controls_group( $wp_customize, $suffix = false, $setting = [], $control = [] ) {
 	$wp_customize->add_setting(
-		'navbar-search-source', [
-			'default'           => 'keyword',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_text_field',
-		]
-	);
-
-	$wp_customize->selective_refresh->add_partial(
-		'navbar-search-source', [
-			'selector'            => '.navbar-search',
-			'container_inclusive' => true,
-			'render_callback'     => function() {
-				bigbox_partial( 'navbar-search' );
-			},
-		]
+		'navbar-source-search' . $suffix, wp_parse_args(
+			[
+				'default'           => 'keyword',
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'sanitize_text_field',
+			], $setting
+		)
 	);
 
 	$wp_customize->add_setting(
-		'navbar-dropdown-source', [
+		'navbar-source-dropdown' . $suffix, [
 			'default'           => 'category',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
@@ -71,7 +68,17 @@ function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
 	);
 
 	$wp_customize->selective_refresh->add_partial(
-		'navbar-dropdown-source', [
+		'navbar-source-search' . $suffix, [
+			'selector'            => '.navbar-search',
+			'container_inclusive' => true,
+			'render_callback'     => function() {
+				bigbox_partial( 'navbar-search' );
+			},
+		]
+	);
+
+	$wp_customize->selective_refresh->add_partial(
+		'navbar-source-dropdown' . $suffix, [
 			'selector'            => '.navbar-search',
 			'container_inclusive' => true,
 			'render_callback'     => function() {
@@ -81,29 +88,91 @@ function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		'navbar-dropdown-source', [
-			// Translators: Customizer control label.
-			'label'       => esc_html__( 'Dropdown Facet', 'bigbox' ),
-			// Translators: Customizer control description.
-			'description' => esc_html__( 'Choose from one of your Dropdown facets. This facet cannot appear on the Shop page twice.', 'bigbox' ),
-			'type'        => 'select',
-			'choices'     => bigbox_facetwp_customize_get_sources( [ 'dropdown' ] ),
-			'section'     => 'navbar',
-			'priority'    => 20,
+		'navbar-source-dropdown' . $suffix, wp_parse_args(
+			[
+				// Translators: Customizer control label.
+				'label'       => esc_html__( 'Dropdown Facet', 'bigbox' ),
+				// Translators: Customizer control description.
+				'description' => esc_html__( 'Choose from one of your Dropdown facets. This facet cannot appear on the Shop page twice.', 'bigbox' ),
+				'type'        => 'select',
+				'choices'     => bigbox_facetwp_customize_get_sources( [ 'dropdown' ] ),
+				'section'     => 'navbar',
+				'priority'    => 20,
+			], $control
+		)
+	);
+
+	$wp_customize->add_control(
+		'navbar-source-search' . $suffix, wp_parse_args(
+			[
+				// Translators: Customizer control label.
+				'label'       => esc_html__( 'Keyword Facet', 'bigbox' ),
+				// Translators: Customizer control description.
+				'description' => esc_html__( 'Choose from one of your Search facets. This facet cannot appear on the Shop page twice.', 'bigbox' ),
+				'type'        => 'select',
+				'choices'     => bigbox_facetwp_customize_get_sources( [ 'search' ] ),
+				'section'     => 'navbar',
+				'priority'    => 20,
+			], $control
+		)
+	);
+}
+
+/**
+ * Navbar controls.
+ *
+ * @since 1.0.0
+ *
+ * @param WP_Customize_Manager $wp_customize The Customizer object.
+ */
+function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
+	// Explain the dynamic nature.
+	$wp_customize->add_setting(
+		'bigbox-navbar-sources-dynamic', [
+			'sanitize_callback' => '__return_false',
 		]
 	);
 
 	$wp_customize->add_control(
-		'navbar-search-source', [
-			// Translators: Customizer control label.
-			'label'       => esc_html__( 'Keyword Facet', 'bigbox' ),
-			// Translators: Customizer control description.
-			'description' => esc_html__( 'Choose from one of your Search facets. This facet cannot appear on the Shop page twice.', 'bigbox' ),
-			'type'        => 'select',
-			'choices'     => bigbox_facetwp_customize_get_sources( [ 'search' ] ),
-			'section'     => 'navbar',
-			'priority'    => 20,
+		new BigBox\Customize\WP_Customize_Content_Control(
+			$wp_customize,
+			'bigbox-navbar-sources-dynamic',
+			[
+				'label'           => esc_html__( '⚡ These filters are dynamic', 'bigbox' ),
+				'content'         => '<p>' . esc_html__( 'Adjusting these settings will only affect the current page. Navigate to a page not assigned to "Shop" to adjust the global filters.', 'bigbox' ) . '</p><p>' . '<a href="" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Learn more about dynamic shop pages &rarr;', 'bigbox' ) . '</a></p>',
+				'priority'        => 15,
+				'section'         => 'navbar',
+				'active_callback' => function() {
+					return is_page_template( bigbox_woocommerce_dynamic_shop_page_template() );
+				},
+			]
+		)
+	);
+
+	// Global controls.
+	bigbox_facetwp_customize_register_navbar_controls_group(
+		$wp_customize, false, [], [
+			'active_callback' => function() {
+				return ! is_page_template( bigbox_woocommerce_dynamic_shop_page_template() );
+			},
 		]
 	);
+
+	// Dynamic shop pages.
+	$pages = bigbox_woocommerce_get_dynamic_shop_pages();
+
+	if ( empty( $pages ) ) {
+		return;
+	}
+
+	foreach ( $pages as $page ) {
+		bigbox_facetwp_customize_register_navbar_controls_group(
+			$wp_customize, ( '-page-' . $page ), [], [
+				'active_callback' => function() {
+					return is_page( $page );
+				},
+			]
+		);
+	}
 }
 add_action( 'customize_register', 'bigbox_facetwp_customize_register_navbar_controls' );

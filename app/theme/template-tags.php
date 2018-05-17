@@ -77,3 +77,18 @@ function bigbox_is_integration_active( $integration ) {
 
 	return $integration->is_active();
 }
+
+/**
+ * Return the source (mod setting) for the navbar inputs.
+ *
+ * @since 1.0.0
+ *
+ * @param string $source  Source to get.
+ * @param string $default Default source.
+ * @return string
+ */
+function bigbox_get_navbar_search_source( $source, $default ) {
+	$mod = get_theme_mod( ( 'navbar-source-' . $source ), $default );
+
+	return apply_filters( 'navbar_dropdown_seasrch_source', $mod, $source, $default );
+}

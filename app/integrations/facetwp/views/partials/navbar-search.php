@@ -17,8 +17,8 @@ if ( ! bigbox_is_integration_active( 'woocommerce' ) ) :
 	return;
 endif;
 
-$dropdown = FWP()->helper->get_facet_by_name( apply_filters( 'navbar_dropdown_facet_source', get_theme_mod( 'navbar-dropdown-source', 'category' ), get_post() ) );
-$search   = FWP()->helper->get_facet_by_name( apply_filters( 'navbar_search_facet_source', get_theme_mod( 'navbar-search-source', 'keyword' ), get_post() ) );
+$dropdown = FWP()->helper->get_facet_by_name( bigbox_get_navbar_search_source( 'dropdown', 'category' ) );
+$search   = FWP()->helper->get_facet_by_name( bigbox_get_navbar_search_source( 'search', 'keyword' ) );
 
 if ( ! ( $search || $dropdown ) ) :
 	return;
