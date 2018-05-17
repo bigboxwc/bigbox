@@ -83,6 +83,28 @@ function bigbox_woocommerce_js_settings( $settings ) {
 }
 
 /**
+ * Determine if we are on a shop page.
+ *
+ * By default this checks for:
+ *
+ * - WooCommerce shop page.
+ * - Dynamic shop page template.
+ *
+ * @since 1.0.0
+ *
+ * @return bool
+ */
+function bigbox_is_shop() {
+	return apply_filters(
+		'bigbox_is_shop',
+		(
+			( is_shop() || is_product_taxonomy() )
+			|| is_page_template( bigbox_woocommerce_dynamic_shop_page_template() )
+		)
+	);
+}
+
+/**
  * Load a separate view for the navbar search.
  *
  * @since 1.0.0

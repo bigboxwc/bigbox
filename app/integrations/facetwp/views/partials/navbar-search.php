@@ -17,8 +17,8 @@ if ( ! bigbox_is_integration_active( 'woocommerce' ) ) :
 	return;
 endif;
 
-$dropdown = FWP()->helper->get_facet_by_name( get_theme_mod( 'navbar-dropdown-source', 'category' ) );
-$search   = FWP()->helper->get_facet_by_name( get_theme_mod( 'navbar-search-source', 'keyword' ) );
+$dropdown = FWP()->helper->get_facet_by_name( apply_filters( 'navbar_dropdown_facet_source', get_theme_mod( 'navbar-dropdown-source', 'category' ), get_post() ) );
+$search   = FWP()->helper->get_facet_by_name( apply_filters( 'navbar_search_facet_source', get_theme_mod( 'navbar-search-source', 'keyword' ), get_post() ) );
 
 if ( ! ( $search || $dropdown ) ) :
 	return;
@@ -42,7 +42,7 @@ endif;
 
 		<div id="search-dropdown-real">
 		<?php
-		if ( ( is_shop() || is_product_taxonomy() ) && ! is_customize_preview() ) :
+		if ( bigbox_is_shop() && ! is_customize_preview() ) :
 			echo facetwp_display( 'facet', $dropdown['name'] ); // WPCS: XSS okay.
 		else :
 			wp_dropdown_categories(
@@ -84,7 +84,7 @@ endif;
 		</label>
 
 		<?php
-		if ( is_shop() && ! is_customize_preview() ) :
+		if ( bigbox_is_shop() && ! is_customize_preview() ) :
 			echo facetwp_display( 'facet', $search['name'] ); // WPCS: XSS okay.
 		else :
 		?>

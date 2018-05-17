@@ -21,11 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param string $sidebar Sidebar name.
  * @return mixed False for inactive sidebar or string of HTML.
  */
-function bigbox_get_dynamic_sidebar( $sidebar ) {
-	if ( ! is_active_sidebar( 'shop' ) ) {
-		return false;
-	}
-
+function bigbox_get_cached_sidebar( $sidebar ) {
 	$content = wp_cache_get( $sidebar, 'bigbox-sidebar' );
 
 	if ( false !== $content ) {
@@ -61,7 +57,7 @@ function bigbox_register_sidebars() {
 	for ( $i = 1; $i <= $count; $i++ ) {
 		register_sidebar(
 			[
-				// Translators: Widget column number.
+				// Translators: Widget area name. %d: widget column number.
 				'name'          => sprintf( __( 'Footer Navigation Column %d', 'bigbox' ), $i ),
 				'id'            => 'footer-' . $i,
 				'description'   => '',
@@ -73,7 +69,7 @@ function bigbox_register_sidebars() {
 		);
 	}
 }
-add_action( 'widgets_init', 'bigbox_register_sidebars' );
+add_action( 'widgets_init', 'bigbox_register_sidebars', 99 );
 
 /**
  * Get the number of columns for the footer.

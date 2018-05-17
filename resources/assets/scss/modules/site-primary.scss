@@ -13,7 +13,7 @@
 	@include media-breakpoint-up(lg) {
 
 		@include make-col(5);
-		margin: $grid-gutter-width auto;
+		margin: 0 auto;
 	}
 }
 

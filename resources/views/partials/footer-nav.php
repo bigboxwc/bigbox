@@ -18,9 +18,11 @@ $count = bigbox_get_footer_nav_columns();
 ob_start();
 
 for ( $i = 1; $i <= $count; $i++ ) :
-	if ( is_active_sidebar( 'footer-' . $i ) ) :
+	$sidebar = bigbox_get_cached_sidebar( 'footer-' . $i );
+
+	if ( $sidebar ) :
 		echo '<div class="footer-nav__col">';
-			dynamic_sidebar( 'footer-' . $i );
+		echo $sidebar; // WPCS: XSS okay.
 		echo '</div>';
 	endif;
 endfor;

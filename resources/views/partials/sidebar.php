@@ -1,6 +1,6 @@
 <?php
 /**
- * Tertiary sidebar.
+ * Dynamic sidebar.
  *
  * @since 1.0.0
  * @version 1.0.0
@@ -14,13 +14,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$sidebar = bigbox_get_cached_sidebar( 'shop-tertiary' );
+$sidebar = bigbox_get_cached_sidebar( $sidebar_id );
 
-if ( ! $sidebar || is_singular( 'product' ) ) :
+if ( ! $sidebar ) :
 	return;
 endif;
 ?>
 
-<div id="tertiary" class="site-tertiary" role="complementary">
+<div id="secondary" class="site-secondary shop-filters" role="complementary">
+	<div class="offcanvas-drawer__content">
 		<?php echo $sidebar; // WPCS: XSS okay. ?>
+	</div>
 </div>
