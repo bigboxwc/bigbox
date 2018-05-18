@@ -169,7 +169,7 @@ function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
 		bigbox_facetwp_customize_register_navbar_controls_group(
 			$wp_customize, ( '-page-' . $page ), [], [
 				'active_callback' => function() {
-					return is_page( $page );
+					return is_page( $page ) && is_page_template( bigbox_woocommerce_dynamic_shop_page_template() );
 				},
 			]
 		);
