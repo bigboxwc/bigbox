@@ -20,6 +20,10 @@
 function bigbox_facetwp_facets( $facets ) {
 	// Remove the default Categories checkbox.
 	foreach ( $facets as $index => $facet ) {
+		if ( ! isset( $facet['source'] ) ) {
+			continue;
+		}
+
 		if ( 'tax/category' === $facet['source'] && 'checkboxes' === $facet['type'] ) {
 			unset( $facets[ $index ] );
 		}
