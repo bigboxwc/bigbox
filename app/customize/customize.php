@@ -47,7 +47,7 @@ function bigbox_customize_inline_css() {
 			continue;
 		}
 
-		include $file;
+		$config = include $file;
 
 		foreach ( $config as $data ) {
 			$css->add( $data );
