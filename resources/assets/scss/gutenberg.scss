@@ -38,6 +38,19 @@ $wb: (
 	.wp-block-button .wp-block-button__link {
 		@import "modules/gutenberg-colors";
 	}
+
+	.wp-block-table {
+		display: block;
+
+		table {
+			display: table;
+		}
+
+		td,
+		th {
+			border: 0;
+		}
+	}
 }
 
 .editor-post-title__input {

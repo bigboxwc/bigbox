@@ -58,3 +58,7 @@ p.has-background {
 	border-left: 4px solid gray("700");
 	padding-left: $spacer;
 }
+
+.wp-block-table {
+	display: table;
+}
