@@ -85,6 +85,13 @@ function bigbox_woocommerce_js_settings( $settings ) {
 	$settings['products'] = [
 		'quantitySelector' => [
 			'zero' => esc_html_x( '0 (remove)', 'quantity selector', 'bigbox' ),
+			/**
+			 * Filters the maximum number of products that can be added at one time.
+			 *
+			 * @since 1.0.0
+			 *
+			 * @param int $max The maximum number that can be used at one time.
+			 */
 			'max'  => apply_filters(
 				'bigbox_woocommerce_quantity_selector_max',
 				30
@@ -108,6 +115,13 @@ function bigbox_woocommerce_js_settings( $settings ) {
  * @return bool
  */
 function bigbox_is_shop() {
+	/**
+	 * Filters a conditional to determine if the current page is a shop.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param bool $is_shop If the current page should be considered a shop.
+	 */
 	return apply_filters(
 		'bigbox_is_shop',
 		(
@@ -214,7 +228,16 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 		</div>
 		<?php endif; ?>
 
-		<?php if ( ! empty( $more_categories ) && apply_filters( 'bigbox_woocommerce_after_output_product_categories_dropdown', true ) ) : ?>
+		<?php
+		/**
+		 * Filters if the product categories dropdown should be shown.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param bool $show Should the dropdown show?
+		 */
+		if ( ! empty( $more_categories ) && apply_filters( 'bigbox_woocommerce_after_output_product_categories_dropdown', true ) ) :
+		?>
 		<form id="product-category-selector" action="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" method="GET" class="product-category-more__selector">
 			<select name="product_cat">
 				<option><?php echo esc_html_e( 'More...', 'bigbox' ); ?></option>

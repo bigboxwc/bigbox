@@ -63,6 +63,13 @@ add_filter( 'page_template_hierarchy', 'bigbox_woocommerce_assign_page_templates
  * @return string
  */
 function bigbox_woocommerce_dynamic_shop_page_template() {
+	/**
+	 * Filters the name (path) of the template name used for dynamic shop pages.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $name The name (including path from theme root) of the template file.
+	 */
 	return apply_filters(
 		'bigbox_woocommerce_dynamic_shop_page_template',
 		bigbox_woocommerce_template_path() . 'archive-product-page.php'
@@ -150,8 +157,15 @@ function bigbox_woocommerce_dynamic_shop_pages_create_sidebars() {
 
 	foreach ( $pages as $page ) {
 		register_sidebar(
+			/**
+			 * Filters the argument used when registering sidebars for dynamic shop pages.
+			 *
+			 * @since 1.0.0
+			 *
+			 * @param array $args The arguments used in register_sidebar()
+			 */
 			apply_filters(
-				'bigbox_page_templates_pages_with_dynamic_sidebar_widget', array(
+				'bigbox_woocommerce_dynamic_shop_pages_widget_args', [
 					// Translators: %s: Dynamic widget area name.
 					'name'          => sprintf( __( 'Page: %s', 'listify' ), get_the_title( $page ) ),
 					// Translators: %s: Dynamic widget area descrption.
@@ -161,7 +175,7 @@ function bigbox_woocommerce_dynamic_shop_pages_create_sidebars() {
 					'after_widget'  => '</div>',
 					'before_title'  => '<h3 class="widget-title">',
 					'after_title'   => '</h3>',
-				), $page
+				], $page
 			)
 		);
 	}

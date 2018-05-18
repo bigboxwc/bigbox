@@ -27,7 +27,7 @@ function bigbox_register_nav_menus() {
 	];
 
 	/**
-	 * Filter registered nav menus.
+	 * Filter registered nav menus to be passed to `register_nav_menus()`.
 	 *
 	 * @since 1.0.0
 	 *

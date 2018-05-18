@@ -42,6 +42,13 @@ endif;
 		<div id="search-dropdown-real">
 			<?php
 			wp_dropdown_categories(
+				/**
+				 * Filters the output of wp_dropdown_categories() in the navbar.
+				 *
+				 * @since 1.0.0
+				 *
+				 * @param array $args The arguments used in wp_dropdown_categories().
+				 */
 				apply_filters(
 					'bigbox_navbar_search_dropdown', [
 						'show_option_all' => $all,

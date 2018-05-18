@@ -46,6 +46,9 @@ endif;
 			echo facetwp_display( 'facet', $dropdown['name'] ); // WPCS: XSS okay.
 		else :
 			wp_dropdown_categories(
+				/**
+				 * This filter is documented in app/integrations/template/global/navbar-search.php
+				 */
 				apply_filters(
 					'bigbox_navbar_search_dropdown', [
 						'show_option_all'   => false,

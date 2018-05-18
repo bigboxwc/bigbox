@@ -25,6 +25,13 @@ function bigbox_woocommerce_single_brand_thumbnail() {
 	echo '<div class="woocommerce-product-brand">';
 
 	echo $WC_Brands->output_product_brand(
+		/**
+		 * Filters the arguments used to output a brand logo.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $atts Attributes used to output the brand logo.
+		 */
 		apply_filters(
 			'bigbox_woocommerce_product_brand_atts', [
 				'post_id' => wc_get_product()->get_id(),

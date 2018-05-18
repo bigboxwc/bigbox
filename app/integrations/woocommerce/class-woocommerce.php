@@ -61,6 +61,14 @@ class WooCommerce extends Integration implements Registerable, Service {
 
 		add_theme_support(
 			'woocommerce',
+			/**
+			 * Filters WooCommerce theme support arguments.
+			 *
+			 * @see 
+			 * @since 1.0.0
+			 *
+			 * @param array $support The theme's specific settings.
+			 */
 			apply_filters(
 				'bigbox_woocommerce_theme_support',
 				[

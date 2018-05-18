@@ -27,6 +27,13 @@ add_action( 'after_setup_theme', 'bigbox_add_starter_content' );
  * @return array
  */
 function bigbox_get_starter_content() {
+	/**
+	 * Filters starter content used for fresh installs.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $content The base content that does not plugins.
+	 */
 	return apply_filters( 'bigbox_get_starter_content', [
 		'posts'     => [
 			'home' => [],
