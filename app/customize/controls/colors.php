@@ -109,7 +109,7 @@ function bigbox_customize_register_colors_controls( $wp_customize ) {
 			'bigbox-colors-element-missing',
 			[
 				'label'    => esc_html__( '⚡ Want to see something else here?', 'bigbox' ),
-				'content'  => '<p>' . esc_html__( 'Want specific control over an individual element\'s color?', 'bigbox' ) . '</p><p>' . '<a href="https://bigboxwc.com/account/support" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Contact us with a suggestion!', 'bigbox' ) . '</a></p>',
+				'content'  => '<p>' . esc_html__( 'Want specific control over an individual element\'s color?', 'bigbox' ) . '</p><p>' . '<a href="https://bigboxwc.com/account/support" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Contact us with a suggestion &rarr;', 'bigbox' ) . '</a></p>',
 				'priority' => 9999,
 				'section'  => 'colors-elements',
 			]

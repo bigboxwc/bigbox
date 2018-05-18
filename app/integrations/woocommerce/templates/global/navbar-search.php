@@ -26,14 +26,14 @@ endif;
 	if ( $taxonomy ) :
 		$selected = isset( $_GET[ $taxonomy->name ] ) ? esc_attr( $_GET[ $taxonomy->name ] ) : null; // @codingStandardsIgnoreLine
 
-		// Translators: %s Header search taxonomy label.
+		// Translators: %s Header dropdown "All" label.
 		$all = esc_html( sprintf( __( 'All %s', 'bigbox' ), strtolower( $taxonomy->labels->name ) ) );
 	?>
 
 	<div id="navbar-search__category" class="navbar-search__category">
 		<label for="<?php echo esc_attr( $taxonomy->name ); ?>" class="screen-reader-text">
 			<?php
-			// Translators: %s Header search taxonomy name.
+			// Translators: %s Header dropdown taxonomy name.
 			echo esc_html( sprintf( __( 'Choose a %s', 'bigbox' ), strtolower( $taxonomy->labels->singular_name ) ) );
 			?>
 			:
