@@ -90,5 +90,14 @@ function bigbox_is_integration_active( $integration ) {
 function bigbox_get_navbar_search_source( $source, $default ) {
 	$mod = get_theme_mod( ( 'navbar-source-' . $source ), $default );
 
+	/**
+	 * Filters source used for a navbar search input.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $mod     The current mod value.
+	 * @param string $source  Source to get.
+	 * @param string $default Default source.
+	 */
 	return apply_filters( 'navbar_dropdown_search_source', $mod, $source, $default );
 }

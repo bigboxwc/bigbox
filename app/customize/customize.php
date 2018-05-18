@@ -47,10 +47,7 @@ function bigbox_customize_inline_css() {
 			continue;
 		}
 
-		$config = apply_filters(
-			'bigbox_customize_inline_css_' . $key,
-			include $file
-		);
+		include $file;
 
 		foreach ( $config as $data ) {
 			$css->add( $data );

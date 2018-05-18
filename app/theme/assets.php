@@ -97,6 +97,13 @@ function bigbox_enqueue_scripts() {
 
 	// Send information to application scripts.
 	wp_localize_script(
+		/**
+		 * Filter the data sent to the main Javascript script.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $js JS object additions.
+		 */
 		$stylesheet, 'bigbox', apply_filters(
 			'bigbox_js', []
 		)
