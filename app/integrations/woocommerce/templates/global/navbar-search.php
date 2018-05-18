@@ -53,6 +53,7 @@ endif;
 						'show_count'      => true,
 						'orderby'         => 'name',
 						'order'           => 'ASC',
+						'hide_if_empty'   => true,
 					]
 				)
 			);
