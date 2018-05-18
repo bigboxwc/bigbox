@@ -12,6 +12,7 @@ $wb: (
 
 .edit-post-visual-editor {
 	&,
+	.editor-default-block-appender input[type=text].editor-default-block-appender__content,
 	p {
 		color: $body-color;
 		font-family: $font-family-sans-serif;

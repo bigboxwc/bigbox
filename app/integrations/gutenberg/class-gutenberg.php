@@ -114,6 +114,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 				'selectors'    => [
 					'.edit-post-visual-editor',
 					'.edit-post-visual-editor p',
+					'.edit-post-visual-editor .editor-default-block-appender input[type=text].editor-default-block-appender__content',
 				],
 				'declarations' => [
 					'font-size' => ( $size * 16 ) . 'px',
