@@ -61,7 +61,7 @@ function bigbox_facetwp_customize_register_navbar_controls_group( $wp_customize,
 
 	$wp_customize->add_setting(
 		'navbar-source-dropdown' . $suffix, [
-			'default'           => 'category',
+			'default'           => 'categories',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
 		]

@@ -39,11 +39,24 @@ function bigbox_facetwp_facets( $facets ) {
 
 	$facets[] = array(
 		'label'        => 'Categories',
-		'name'         => 'category',
+		'name'         => 'categories',
 		'type'         => 'dropdown',
 		'label_any'    => 'All',
 		'source'       => 'tax/product_cat',
 		'hierarchical' => 'no',
+		'orderby'      => 'count',
+		'count'        => 0,
+	);
+
+	$facets[] = array(
+		'label'        => 'Tags',
+		'name'         => 'tags',
+		'type'         => 'checkboxes',
+		'source'       => 'tax/product_tag',
+		'hierarchical' => 'no',
+		'show-expanded' => 'no',
+		'show-ghosts'   => 'no',
+		'operator'      => 'and',
 		'orderby'      => 'count',
 		'count'        => 0,
 	);

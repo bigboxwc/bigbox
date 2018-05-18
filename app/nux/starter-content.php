@@ -27,10 +27,10 @@ add_action( 'after_setup_theme', 'bigbox_add_starter_content' );
  * @return array
  */
 function bigbox_get_starter_content() {
-	return [
+	return apply_filters( 'bigbox_get_starter_content', [
 		'posts'     => [
-			'home',
-			'blog',
+			'home' => [],
+			'blog' => [],
 		],
 
 		// Default to a static front page and assign the front and posts pages.
@@ -43,12 +43,17 @@ function bigbox_get_starter_content() {
 		// Set up nav menus for each of the two areas registered in the theme.
 		'nav_menus' => [
 			'primary' => [
-				'name'  => 'Primary (Left)',
+				'name'  => 'Primary',
 				'items' => [
-					'link_home',
+					'page_home',
+				],
+			],
+			'secondary' => [
+				'name'  => 'secondary',
+				'items' => [
 					'page_blog',
 				],
 			],
 		],
-	];
+	] );
 }

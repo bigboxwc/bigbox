@@ -54,5 +54,9 @@ add_filter( 'facetwp_sort_options', 'bigbox_facetwp_sort_options' );
 // Match "No Results Found" with WooCommerce.
 add_filter( 'gettext', 'bigbox_facetwp_gettext_no_results', 20, 3 );
 
+/**
+ * General
+ */
+
 // Dynamic shop page filters.
 add_filter( 'navbar_dropdown_search_source', 'bigbox_navbar_dropdown_search_source', 10, 3 );
