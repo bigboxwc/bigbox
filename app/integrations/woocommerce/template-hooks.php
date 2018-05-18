@@ -195,3 +195,10 @@ add_filter( 'woocommerce_widget_cart_is_hidden', 'bigbox_woocommerce_widget_cart
  * File: includes/shortcodes/class-wc-shortcode-products.php.
  */
 add_filter( 'shortcode_atts_products', 'bigbox_shortcode_atts_products' );
+
+/**
+ * File: checkout/form-checkout.php
+ */
+
+// Relocate coupon form. Manaully output.
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );

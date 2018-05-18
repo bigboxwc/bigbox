@@ -40,6 +40,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php do_action( 'woocommerce_review_order_after_cart_contents' ); ?>
 	</ul>
 
+	<?php woocommerce_checkout_coupon_form(); ?>
+
 	<div id="order_review" class="woocommerce-checkout-review-order">
 		<?php wc_get_template( 'cart/cart-totals.php' ); ?>
 		<?php wc_get_template( 'checkout/submit.php' ); ?>
