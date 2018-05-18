@@ -240,6 +240,20 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 }
 
 /**
+ * Order subcategory output by count.
+ *
+ * @since 1.0.0
+ *
+ * @param array $args Args to control output.
+ * @return array
+ */
+function bigbox_woocommerce_product_subcategories_args( $args ) {
+	$args['orderby'] = 'count';
+
+	return $args;
+}
+
+/**
  * Show note for variable products.
  *
  * @since 1.0.0
