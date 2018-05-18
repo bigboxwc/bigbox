@@ -111,7 +111,7 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 
 	// Partial refreshes.
 	$wp_customize->selective_refresh->add_partial(
-		'navbar-dropdown-source', [
+		'navbar-source-dropdown', [
 			'selector'            => '.navbar-search',
 			'container_inclusive' => true,
 			'render_callback'     => function() {

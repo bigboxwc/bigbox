@@ -34,8 +34,6 @@ class WooCommerce extends Integration implements Registerable, Service {
 	public function register() {
 		include_once $this->get_dir() . '/wc-template-functions.php';
 
-		include_once $this->get_dir() . '/template-hooks.php';
-		include_once $this->get_dir() . '/template-functions.php';
 		include_once $this->get_dir() . '/cart.php';
 		include_once $this->get_dir() . '/checkout.php';
 		include_once $this->get_dir() . '/account.php';
@@ -44,6 +42,9 @@ class WooCommerce extends Integration implements Registerable, Service {
 		include_once $this->get_dir() . '/nav-menus.php';
 		include_once $this->get_dir() . '/page-templates.php';
 		include_once $this->get_dir() . '/customize.php';
+
+		include_once $this->get_dir() . '/template-functions.php';
+		include_once $this->get_dir() . '/template-hooks.php';
 
 		add_action( 'after_setup_theme', [ $this, 'add_theme_support' ] );
 	}
