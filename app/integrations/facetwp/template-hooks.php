@@ -54,12 +54,5 @@ add_filter( 'facetwp_sort_options', 'bigbox_facetwp_sort_options' );
 // Match "No Results Found" with WooCommerce.
 add_filter( 'gettext', 'bigbox_facetwp_gettext_no_results', 20, 3 );
 
-add_filter(
-	'navbar_dropdown_seasrch_source', function( $mod, $source, $default ) {
-		if ( is_page_template( bigbox_woocommerce_dynamic_shop_page_template() ) ) {
-			$mod = get_theme_mod( 'navbar-source-' . $source . '-page-' . get_the_ID(), $default );
-		}
-
-		return $mod;
-	}, 10, 3
-);
+// Dynamic shop page filters.
+add_filter( 'navbar_dropdown_search_source', 'bigbox_navbar_dropdown_search_source', 10, 3 );

@@ -61,6 +61,19 @@ function bigbox_woocommerce_wp_enqueue_scripts() {
 }
 
 /**
+ * Ensure cart fragments script is enqueued when cart widget is used.
+ *
+ * @since 1.0.0
+ *
+ * @return bool
+ */
+function bigbox_woocommerce_widget_cart_is_hidden( $hidden ) {
+	wp_enqueue_script( 'wc-cart-fragments' );
+
+	return $hidden;
+}
+
+/**
  * JS settings.
  *
  * @since 1.0.0
@@ -525,3 +538,19 @@ function bigbox_woocommerce_archive_mobile_filters() {
 function bigbox_woocommerce_demo_store( $notice ) {
 	return str_replace( 'demo_store', 'demo_store woocommerce-store-notice--' . get_theme_mod( 'demo-store-notice-position', 'bottom' ), $notice );
 };
+
+/**
+ * Ensure [products] shortcode on dynamic shop pages is not cached.
+ *
+ * @since 1.0.0
+ *
+ * @param array $atts Shortcode attributes.
+ * @return array
+ */
+function bigbox_shortcode_atts_products( $atts ) {
+	if ( is_page_template( bigbox_woocommerce_dynamic_shop_page_template() ) ) {
+		$atts['cache'] = false;
+	}
+
+	return $atts;
+}

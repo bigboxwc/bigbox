@@ -189,10 +189,9 @@ add_action( 'woocommerce_review_meta', 'woocommerce_review_display_rating', 15 )
 /**
  * File: class-wc-widget-cart.php
  */
-add_filter(
-	'woocommerce_widget_cart_is_hidden', function( $hidden ) {
-		wp_enqueue_script( 'wc-cart-fragments' );
+add_filter( 'woocommerce_widget_cart_is_hidden', 'bigbox_woocommerce_widget_cart_is_hidden' );
 
-		return $hidden;
-	}
-);
+/**
+ * File: includes/shortcodes/class-wc-shortcode-products.php.
+ */
+add_filter( 'shortcode_atts_products', 'bigbox_shortcode_atts_products' );

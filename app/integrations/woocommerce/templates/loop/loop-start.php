@@ -19,7 +19,14 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+$classes = [
+	'products',
+	'products-' . wc_get_loop_prop( 'products-loop', ( 'products' !== woocommerce_get_loop_display_mode() ? 'categories' : 'main' ) ),
+	'columns-' . wc_get_loop_prop( 'columns' ),
+	'main' === wc_get_loop_prop( 'products-loop' ) ? 'facetwp-template' : null,
+];
 ?>
 
-<ul class="products products-<?php echo esc_attr( wc_get_loop_prop( 'products-loop', ( 'products' !== woocommerce_get_loop_display_mode() ? 'categories' : 'main' ) ) ); ?> columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?> <?php echo esc_attr( 'main' === wc_get_loop_prop( 'products-loop' ) ? 'facetwp-template' : null ); ?>">
+<ul class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 <!--fwp-loop-->

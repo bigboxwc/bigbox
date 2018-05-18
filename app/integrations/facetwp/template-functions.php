@@ -180,3 +180,21 @@ function bigbox_facetwp_gettext_no_results( $translated_text, $text, $domain ) {
 
 	return $translated_text;
 }
+
+/**
+ * Dynamic navbar facets.
+ *
+ * @since 1.0.0
+ *
+ * @param string $mod     Current theme mod value.
+ * @param string $source  Source type.
+ * @param string $default Current theme mod default.
+ * @return string
+ */
+function bigbox_navbar_dropdown_search_source( $mod, $source, $default ) {
+	if ( is_page_template( bigbox_woocommerce_dynamic_shop_page_template() ) ) {
+		$mod = get_theme_mod( 'navbar-source-' . $source . '-page-' . get_the_ID(), $default );
+	}
+
+	return $mod;
+}

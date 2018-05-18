@@ -90,5 +90,5 @@ function bigbox_is_integration_active( $integration ) {
 function bigbox_get_navbar_search_source( $source, $default ) {
 	$mod = get_theme_mod( ( 'navbar-source-' . $source ), $default );
 
-	return apply_filters( 'navbar_dropdown_seasrch_source', $mod, $source, $default );
+	return apply_filters( 'navbar_dropdown_search_source', $mod, $source, $default );
 }
