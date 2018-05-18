@@ -1,0 +1,10 @@
+//
+// Use WordPress's admin bar breakpoints.
+//
+// Pass a map of desktop and mobile content.
+//
+@mixin admin-bar-mobile() {
+	@media screen and (max-width: 782px) {
+		@content;
+	}
+}

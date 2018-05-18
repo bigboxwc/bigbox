@@ -13,7 +13,7 @@ body {
 	&.admin-bar {
 		min-height: calc(100vh - 32px);
 
-		@media screen and (max-width: 782px) {
+		@include admin-bar-mobile() {
 			min-height: calc(100vh - 46px);
 		}
 	}

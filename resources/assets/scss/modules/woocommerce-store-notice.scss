@@ -23,7 +23,7 @@
 		.admin-bar & {
 			top: 32px;
 
-			@media screen and (max-width: 782px) {
+			@include admin-bar-mobile() {
 				top: 46px;
 			}
 		}
