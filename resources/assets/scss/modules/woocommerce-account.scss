@@ -3,10 +3,6 @@
 	margin: -($spacer) 0 $spacer;
 	position: relative;
 
-	@include media-breakpoint-up(sm) {
-		margin-top: -($spacer * 2);
-	}
-
 	&:after {
 		content: '';
 		border-bottom: 1px solid gray("200");
@@ -22,7 +18,7 @@
 
 		@include reset-list();
 
-		padding: $spacer 0; // [1]
+		padding: 0 0 $spacer; // [1]
 		display: flex;
 		overflow-x: scroll;
 		overflow-y: hidden;
