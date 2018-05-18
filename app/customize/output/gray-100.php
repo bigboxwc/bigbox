@@ -37,6 +37,10 @@ return [
 			'.flatpickr-calendar .flatpickr-day:focus',
 			'.flatpickr-calendar .flatpickr-day.prevMonthDay:focus',
 			'.flatpickr-calendar .flatpickr-day.nextMonthDay:focus',
+
+			// select2
+			'.select2-container--default .select2-results__option[aria-selected=true]',
+			'.select2-container--default .select2-results__option[data-selected=true]',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $gray100 ),
