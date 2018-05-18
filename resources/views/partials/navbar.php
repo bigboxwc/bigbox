@@ -33,4 +33,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 </div>
 
-<?php do_action( 'bigbox_navbar_after' ); ?>
+<?php
+/**
+ * Allow output after the navbar.
+ *
+ * @since 1.0.0
+ */
+do_action( 'bigbox_navbar_after' );

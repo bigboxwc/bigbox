@@ -54,6 +54,13 @@ function bigbox_customize_inline_css() {
 		}
 	}
 
+	/**
+	 * Allow appending more CSS to the inline output.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param BigBox\Customize\Build_Inline_CSS $css CSS object to handle building inline output.
+	 */
 	do_action( 'bigbox_customize_inline_css', $css );
 
 	return $css->build();

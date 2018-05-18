@@ -16,11 +16,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div id="purchase" class="woocommerce-single-product-purchase" role="complementary">
 
-	<?php do_action( 'bigbox_purchase_form_before' ); ?>
+	<?php
+	/**
+	 * Allow output before the custom purchase form.
+	 *
+	 * @since 1.0.0
+	 */
+	do_action( 'bigbox_purchase_form_before' );
+	?>
 
 	<div class="woocommerce-purchase-form">
-		<?php do_action( 'bigbox_purchase_form' ); ?>
+		<?php
+		/**
+		 * Allow output in the custom purchase form.
+		 *
+		 * @since 1.0.0
+		 */
+		do_action( 'bigbox_purchase_form' );
+		?>
 	</div>
 
-	<?php do_action( 'bigbox_purchase_form_after' ); ?>
+	<?php
+	/**
+	 * Allow output after the custom purchase form.
+	 *
+	 * @since 1.0.0
+	 */
+	do_action( 'bigbox_purchase_form_after' );
+	?>
 </div>
