@@ -168,7 +168,7 @@ function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
 	foreach ( $pages as $page ) {
 		bigbox_facetwp_customize_register_navbar_controls_group(
 			$wp_customize, ( '-page-' . $page ), [], [
-				'active_callback' => function() {
+				'active_callback' => function() use ( $page ) {
 					return is_page( $page ) && is_page_template( bigbox_woocommerce_dynamic_shop_page_template() );
 				},
 			]
