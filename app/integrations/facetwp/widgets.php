@@ -22,7 +22,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return string
  */
 function bigbox_facetwp_dynamic_sidebar_shop( $content ) {
+	// Don't fill if not needed.
 	if ( '' !== $content ) {
+		return $content;
+	}
+
+	if ( (bool) get_theme_mod( 'hide-shop-sidebar', false ) ) {
 		return $content;
 	}
 

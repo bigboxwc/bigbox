@@ -33,16 +33,6 @@ function bigbox_get_cached_sidebar( $sidebar ) {
 	$content = ob_get_clean();
 
 	/**
-	 * Filters how long dynamic sidebars are stored in the object cache.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param int             The number of seconds to store the output.
-	 * @param string $sidebar The ID of the sidebar being stored.
-	 */
-	wp_cache_set( $sidebar, $content, 'bigbox-sidebar', apply_filters( 'bigbox_dynamic_sidebar_cache', 60 * MINUTE_IN_SECONDS, $sidebar ) );
-
-	/**
 	 * Filters the output of a dynamic sidebar.
 	 *
 	 * @since 1.0.0
@@ -51,6 +41,16 @@ function bigbox_get_cached_sidebar( $sidebar ) {
 	 * @param string $sidebar The ID of the sidebar being output.
 	 */
 	$content = apply_filters( 'bigbox_dynamic_sidebar_' . $sidebar, $content, $sidebar );
+
+	/**
+	 * Filters how long dynamic sidebars are stored in the object cache.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param int             The number of seconds to store the output.
+	 * @param string $sidebar The ID of the sidebar being stored.
+	 */
+	wp_cache_set( $sidebar, $content, 'bigbox-sidebar', apply_filters( 'bigbox_dynamic_sidebar_cache', 60 * MINUTE_IN_SECONDS, $sidebar ) );
 
 	return $content;
 }

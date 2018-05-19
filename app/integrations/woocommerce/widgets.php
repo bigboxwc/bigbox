@@ -69,7 +69,12 @@ add_action( 'widgets_init', 'bigbox_woocommerce_register_sidebars' );
  * @return string
  */
 function bigbox_woocommerce_dynamic_sidebar_shop( $content ) {
+	// Don't fill if not needed.
 	if ( '' !== $content ) {
+		return $content;
+	}
+
+	if ( (bool) get_theme_mod( 'hide-shop-sidebar', false ) ) {
 		return $content;
 	}
 

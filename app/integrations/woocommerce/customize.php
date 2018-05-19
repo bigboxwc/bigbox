@@ -12,6 +12,7 @@
 // Load panels/sections/controls.
 require_once bigbox_get_integration( 'woocommerce' )->get_dir() . '/customize/controls/navbar.php';
 require_once bigbox_get_integration( 'woocommerce' )->get_dir() . '/customize/controls/store-notice.php';
+require_once bigbox_get_integration( 'woocommerce' )->get_dir() . '/customize/controls/store-layout.php';
 
 // Output
 require_once bigbox_get_integration( 'woocommerce' )->get_dir() . '/customize/output/store-notice.php';

@@ -12,6 +12,13 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
+$sidebar_id = is_page_template( bigbox_woocommerce_dynamic_shop_page_template() ) ? 'page-' . get_the_ID() : 'shop';
+$sidebar    = bigbox_get_cached_sidebar( $sidebar_id );
+
+if ( '' === $sidebar ) :
+	return;
+endif;
 ?>
 
 <div class="shop-filters__mobile-toggle">
