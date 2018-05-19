@@ -42,6 +42,16 @@ function bigbox_get_cached_sidebar( $sidebar ) {
 	 */
 	wp_cache_set( $sidebar, $content, 'bigbox-sidebar', apply_filters( 'bigbox_dynamic_sidebar_cache', 60 * MINUTE_IN_SECONDS, $sidebar ) );
 
+	/**
+	 * Filters the output of a dynamic sidebar.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $content The generated widget HTML.
+	 * @param string $sidebar The ID of the sidebar being output.
+	 */
+	$content = apply_filters( 'bigbox_dynamic_sidebar_' . $sidebar, $content, $sidebar );
+
 	return $content;
 }
 

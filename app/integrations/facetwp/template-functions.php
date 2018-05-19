@@ -196,5 +196,12 @@ function bigbox_navbar_dropdown_search_source( $mod, $source, $default ) {
 		$mod = get_theme_mod( 'navbar-source-' . $source . '-page-' . get_the_ID(), $default );
 	}
 
+	// See if it exists; otherwise fall back to default.
+	$try = FWP()->helper->get_facet_by_name( $mod );
+
+	if ( ! $try ) {
+		return $default;
+	}
+
 	return $mod;
 }

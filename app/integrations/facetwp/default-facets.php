@@ -49,16 +49,14 @@ function bigbox_facetwp_facets( $facets ) {
 	);
 
 	$facets[] = array(
-		'label'        => 'Tags',
-		'name'         => 'tags',
-		'type'         => 'checkboxes',
-		'source'       => 'tax/product_tag',
-		'hierarchical' => 'no',
-		'show-expanded' => 'no',
-		'show-ghosts'   => 'no',
-		'operator'      => 'and',
-		'orderby'      => 'count',
-		'count'        => 0,
+		'label'  => 'Price',
+		'name'   => 'price',
+		'type'   => 'slider',
+		'source' => 'woo/regular_price',
+		'prefix' => get_woocommerce_currency_symbol(),
+		'suffix' => '',
+		'format' => '0,0',
+		'step'   => 1,
 	);
 
 	return $facets;

@@ -64,7 +64,6 @@ class WooCommerce extends Integration implements Registerable, Service {
 			/**
 			 * Filters WooCommerce theme support arguments.
 			 *
-			 * @see 
 			 * @since 1.0.0
 			 *
 			 * @param array $support The theme's specific settings.
