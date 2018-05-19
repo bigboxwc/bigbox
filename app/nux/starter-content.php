@@ -34,33 +34,35 @@ function bigbox_get_starter_content() {
 	 *
 	 * @param array $content The base content that does not plugins.
 	 */
-	return apply_filters( 'bigbox_get_starter_content', [
-		'posts'     => [
-			'home' => [],
-			'blog' => [],
-		],
+	return apply_filters(
+		'bigbox_get_starter_content', [
+			'posts'     => [
+				'home' => [],
+				'blog' => [],
+			],
 
-		// Default to a static front page and assign the front and posts pages.
-		'options'   => [
-			'show_on_front'  => 'page',
-			'page_on_front'  => '{{home}}',
-			'page_for_posts' => '{{blog}}',
-		],
+			// Default to a static front page and assign the front and posts pages.
+			'options'   => [
+				'show_on_front'  => 'page',
+				'page_on_front'  => '{{home}}',
+				'page_for_posts' => '{{blog}}',
+			],
 
-		// Set up nav menus for each of the two areas registered in the theme.
-		'nav_menus' => [
-			'primary' => [
-				'name'  => 'Primary',
-				'items' => [
-					'page_home',
+			// Set up nav menus for each of the two areas registered in the theme.
+			'nav_menus' => [
+				'primary'   => [
+					'name'  => 'Primary',
+					'items' => [
+						'page_home',
+					],
+				],
+				'secondary' => [
+					'name'  => 'secondary',
+					'items' => [
+						'page_blog',
+					],
 				],
 			],
-			'secondary' => [
-				'name'  => 'secondary',
-				'items' => [
-					'page_blog',
-				],
-			],
-		],
-	] );
+		]
+	);
 }
