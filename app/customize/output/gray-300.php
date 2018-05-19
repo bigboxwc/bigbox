@@ -34,7 +34,6 @@ return [
 			'.navbar-mobile .sub-menu',
 			'.wc-credit-card-form #stripe-card-element',
 			'.navbar-search__category select',
-			'.facetwp-facet.facetwp-type-slider .facetwp-slider .noUi-handle',
 			'.widget ul ul',
 
 			'.review-breakdown',

@@ -59,6 +59,19 @@ function bigbox_facetwp_facets( $facets ) {
 		'step'   => 1,
 	);
 
+	$facets[] = array(
+		'label'           => 'Sale',
+		'name'            => 'sale',
+		'type'            => 'checkboxes',
+		'source'          => 'woo/on_sale',
+		'ghosts'          => 'yes',
+		'preserve-ghosts' => 'yes',
+		'operator'        => 'and',
+		'orderby'         => 'count',
+		'count'           => 10,
+		'limit'           => 0,
+	);
+
 	return $facets;
 }
 add_filter( 'facetwp_facets', 'bigbox_facetwp_facets' );

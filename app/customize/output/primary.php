@@ -43,6 +43,9 @@ return [
 
 			'.facetwp-facet .facetwp-slider .noUi-connect',
 			'.facetwp-template__loading:before',
+			'.facetwp-facet .facetwp-submit',
+			'.facetwp-facet .facetwp-autocomplete-update',
+			'.facetwp-facet .facetwp-slider-reset',
 
 			// Flatpickr.
 			'.flatpickr-calendar .flatpickr-day.selected',
@@ -70,6 +73,8 @@ return [
 	[
 		'selectors'    => [
 			'.widget_price_filter .ui-slider .ui-slider-handle',
+			'.facetwp-facet.facetwp-type-slider .facetwp-slider .noUi-handle',
+
 			'.woocommerce-MyAccount-navigation-link.is-active a',
 
 			// Flatpickr.

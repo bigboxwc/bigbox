@@ -70,7 +70,7 @@
 		box-shadow: none;
 
 		@include button();
-		@include button--size-sm();
+		@include button--size-xs();
 	}
 
 	.facetwp-radio,
@@ -93,18 +93,38 @@
 .facetwp-facet.facetwp-type-slider {
 	position: relative;
 
+	.noUi-horizontal .noUi-handle {
+		right: -8px;
+		left: auto;
+	}
+
 	.facetwp-slider {
 		border-color: transparent;
 		box-shadow: none;
-		background-color: gray("100");
+		background-color: gray("200");
+		height: 10px;
+
+		&.noUi-target {
+			padding: 0 6px;
+		}
 
 		.noUi-connect {
 			background-color: theme-color("primary");
 		}
 
 		.noUi-handle {
-			border-color: gray("200");
 			box-shadow: none;
+			border: 2px solid theme-color("primary");
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			cursor: ew-resize;
+			top: -4px;
+
+			&:before,
+			&:after {
+				display: none;
+			}
 		}
 	}
 }

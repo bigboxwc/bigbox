@@ -17,7 +17,6 @@ return [
 		'selectors'    => [
 			'table tbody tr:nth-child(even) th',
 			'table tbody tr:nth-child(even) td',
-			'.facetwp-facet .facetwp-slider',
 			'.footer-copyright',
 			'.navbar-mobile__close',
 			'.breadcrumbs',

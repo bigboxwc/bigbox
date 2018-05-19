@@ -44,6 +44,9 @@ return [
 			'.woocommerce ul.products-categories li.product.product-category',
 			'.woocommerce-page ul.products-categories:after',
 			'.woocommerce ul.products-categories:after',
+
+			'.widget_price_filter .price_slider_wrapper .ui-widget-content',
+			'.facetwp-facet .facetwp-slider',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $gray200 ),

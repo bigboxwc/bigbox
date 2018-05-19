@@ -38,6 +38,16 @@ function bigbox_facetwp_dynamic_sidebar_shop( $content ) {
 		bigbox_woocommerce_shop_sidebar_args()
 	);
 
+	// On sale.
+	the_widget(
+		'WP_Widget_Text',
+		[
+			'title' => 'On sale',
+			'text'  => '[facetwp facet="sale"]',
+		],
+		bigbox_woocommerce_shop_sidebar_args()
+	);
+
 	return ob_get_clean();
 }
 remove_filter( 'bigbox_dynamic_sidebar_shop', 'bigbox_woocommerce_dynamic_sidebar_shop' );
