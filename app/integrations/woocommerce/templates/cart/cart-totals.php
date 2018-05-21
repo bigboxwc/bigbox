@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="action-list__item">
 			<div id="subtotal" class="action-list__item-label">
-				<?php esc_html_e( 'Subtotal', 'bigbox' ); ?>:
+				<?php esc_html_e( 'Subtotal:', 'bigbox' ); ?>
 			</div>
 
 			<div class="action-list__item-value" aria-labelledby="subtotal">
@@ -60,7 +60,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="action-list__item">
 			<div id="shipping" class="shipping action-list__item-label">
-				<?php esc_html_e( 'Shipping', 'bigbox' ); ?>:
+				<?php esc_html_e( 'Shipping:', 'bigbox' ); ?>
 			</div>
 			<div>
 				<a href="#" class="shipping-calculator-button"><?php echo esc_html__( 'Calculate shipping', 'bigbox' ); ?></a>
@@ -122,7 +122,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="action-list__item">
 			<div id="total" class="order-total action-list__item-label">
-				<?php esc_html_e( 'Total', 'bigbox' ); ?>:
+				<?php esc_html_e( 'Total:', 'bigbox' ); ?>
 			</div>
 			<div class="action-list__item-value" labelledby="total">
 				<?php wc_cart_totals_order_total_html(); ?>
