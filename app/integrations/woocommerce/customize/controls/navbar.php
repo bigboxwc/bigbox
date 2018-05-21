@@ -22,7 +22,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function bigbox_woocommerce_customize_get_dropdown_taxonomies() {
 	$taxonomies = get_object_taxonomies( 'product', 'objects' );
-	$choices    = [];
+	$choices    = [
+		// Translators: Customize control label.
+		0 => esc_html__( '-- None --', 'bigbox' ),
+	];
 
 	foreach ( $taxonomies as $taxonomy ) {
 		if ( ! $taxonomy->public ) {

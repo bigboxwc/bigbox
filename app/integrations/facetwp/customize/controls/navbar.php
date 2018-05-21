@@ -23,7 +23,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function bigbox_facetwp_customize_get_sources( $whitelist = [] ) {
 	$facets  = FWP()->helper->get_facets();
-	$choices = [];
+	$choices = [
+		// Translators: Customize control label.
+		0 => esc_html__( '-- None --', 'bigbox' ),
+	];
 
 	foreach ( $facets as $facet ) {
 		if ( ! in_array( $facet['type'], $whitelist, true ) ) {
