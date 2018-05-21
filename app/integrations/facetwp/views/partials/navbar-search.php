@@ -25,7 +25,7 @@ if ( ! ( $search || $dropdown ) ) :
 endif;
 ?>
 
-<form id="<?php echo esc_attr( is_shop() ? 'facetwp-' : '' ); ?>primary-search" action="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" method="GET" class="navbar-search">
+<form id="<?php echo esc_attr( bigbox_is_shop() ? 'facetwp-' : '' ); ?>primary-search" action="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" method="GET" class="navbar-search">
 
 	<?php
 	$taxonomy = get_taxonomy( str_replace( 'tax/', '', $dropdown['source'] ) );
