@@ -244,12 +244,10 @@ function bigbox_woocommerce_shortcode_products_query( $query_args ) {
  * @since 1.0.0
  */
 function bigbox_facetwp_is_main_query( $is_main_query, $wp_query ) {
-	if ( is_page_template( bigbox_woocommerce_dynamic_shop_page_template() ) ) {
-		if ( isset( $wp_query->query['bigbox_dynamic_shop_page'] ) ) {
-			return true;
-		}
-
-		return false;
+	// Standard page query is not main.
+	if ( is_page_template( bigbox_woocommerce_dynamic_shop_page_template() ) && did_action( 'bigbox_navbar_after' ) ) {
+		// Check if our custom flag is set.
+		return isset( $wp_query->query['bigbox_dynamic_shop_page'] );
 	}
 
 	return $is_main_query;
