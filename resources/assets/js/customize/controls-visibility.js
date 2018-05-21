@@ -8,6 +8,7 @@
 
 	// Control visibility for controls
 	$.each( {
+		// Hide WC Store notice controls if notice is disabled.
 		woocommerce_demo_store: {
 			controls: [
 				'demo-store-notice-position',
@@ -16,6 +17,15 @@
 			],
 			callback: function( to ) {
 				return !! to;
+			},
+		},
+		// Hide font fallback if using system default.
+		'type-font-family': {
+			controls: [
+				'type-font-family-fallback',
+			],
+			callback: function( to ) {
+				return 'default' !== to;
 			},
 		},
 	}, ( settingId, o ) => {

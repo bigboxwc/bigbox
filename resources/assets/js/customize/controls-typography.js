@@ -54,10 +54,24 @@ const buildWeightOptionsHtml = ( variants ) => {
 
 				// Add HTML and select chosen item.
 				$select
-					.html( buildWeightOptionsHtml( variants ) )
-					.val( value )
-					.find( `[value="${ value }"]` )
-					.attr( 'selected', true );
+					.html( buildWeightOptionsHtml( variants ) );
+
+				const $selected = $select
+					.find( `[value="${ value }"]` );
+
+				// Select if exists in list.
+				if ( $selected.length > 0 ) {
+					$select
+						.val( value )
+						.attr( 'selected', true )
+						.trigger( 'change' );
+				// Select first item.
+				} else {
+					$select
+						.find( 'option:first-child' )
+						.attr( 'selected', true )
+						.trigger( 'change' );
+				}
 			} );
 		};
 

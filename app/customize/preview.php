@@ -49,7 +49,7 @@ function bigbox_preview_css() {
 	// Filter `get_theme_mod()` calls for customized settings.
 	foreach ( $customized as $setting_id => $value ) {
 		add_filter(
-			'theme_mod_' . sanitize_key( $setting_id ), function( $value ) {
+			'theme_mod_' . sanitize_key( $setting_id ), function( $value ) use ( $setting_id ) {
 				if ( isset( $customized[ $setting_id ] ) ) {
 					return $customized[ $setting_id ];
 				}
