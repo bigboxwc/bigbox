@@ -64,7 +64,7 @@ return [
 			'.flatpickr-calendar .flatpickr-day.nextMonthDay:focus',
 
 
-			// select2
+			// select2.
 			'.select2-container--default .select2-search--dropdown .select2-search__field',
 			'.select2-dropdown',
 		],
