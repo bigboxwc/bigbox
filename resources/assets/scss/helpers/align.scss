@@ -9,6 +9,11 @@
 	img {
 		min-width: 100%;
 	}
+
+	.site-primary--full & {
+		margin-left: 0;
+		margin-right: ($grid-gutter-width / 2);
+	}
 }
 
 @include media-breakpoint-up(xl) {

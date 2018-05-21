@@ -20,7 +20,7 @@ while ( have_posts() ) :
 	the_post();
 ?>
 
-<div id="main" class="site-primary" role="main">
+<div id="main" class="site-primary site-primary--full" role="main">
 	<h1 class="page-title"><?php the_title(); ?></h1>
 
 	<article class="hentry hentry--page">
