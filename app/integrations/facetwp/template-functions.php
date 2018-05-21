@@ -205,3 +205,52 @@ function bigbox_navbar_dropdown_search_source( $mod, $source, $default ) {
 
 	return $mod;
 }
+
+/**
+ * Ensure [products] shortcode on dynamic shop pages is not cached.
+ *
+ * @since 1.0.0
+ *
+ * @param array $atts Shortcode attributes.
+ * @return array
+ */
+function bigbox_woocommerce_shortcode_atts_products( $atts ) {
+	if ( is_page_template( bigbox_woocommerce_dynamic_shop_page_template() ) ) {
+		$atts['cache'] = false;
+	}
+
+	return $atts;
+}
+
+/**
+ * Add a custom query arg so we know the shortcode is used on a shop page.
+ *
+ * @since 1.0.0
+ *
+ * @param array $query_args Query arguments.
+ * @return array
+ */
+function bigbox_woocommerce_shortcode_products_query( $query_args ) {
+	if ( is_page_template( bigbox_woocommerce_dynamic_shop_page_template() ) ) {
+		$query_args['bigbox_dynamic_shop_page'] = true;
+	}
+
+	return $query_args;
+}
+
+/**
+ * Set a dynamic shop [products] shortcode query to main.
+ *
+ * @since 1.0.0
+ */
+function bigbox_facetwp_is_main_query( $is_main_query, $wp_query ) {
+	if ( is_page_template( bigbox_woocommerce_dynamic_shop_page_template() ) ) {
+		if ( isset( $wp_query->query['bigbox_dynamic_shop_page'] ) ) {
+			return true;
+		}
+
+		return false;
+	}
+
+	return $is_main_query;
+}

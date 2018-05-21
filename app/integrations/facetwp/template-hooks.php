@@ -60,3 +60,16 @@ add_filter( 'gettext', 'bigbox_facetwp_gettext_no_results', 20, 3 );
 
 // Dynamic shop page filters.
 add_filter( 'navbar_dropdown_search_source', 'bigbox_navbar_dropdown_search_source', 10, 3 );
+
+/**
+ * [products] shortcode.
+ *
+ * Added here instead of WooCommerce because they only need to be modfied to work with FacetWP.
+ */
+
+/**
+ * File: includes/shortcodes/class-wc-shortcode-products.php.
+ */
+add_filter( 'shortcode_atts_products', 'bigbox_woocommerce_shortcode_atts_products' );
+add_filter( 'woocommerce_shortcode_products_query', 'bigbox_woocommerce_shortcode_products_query' );
+add_filter( 'facetwp_is_main_query', 'bigbox_facetwp_is_main_query', 10, 2 );

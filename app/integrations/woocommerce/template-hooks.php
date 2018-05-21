@@ -189,11 +189,6 @@ add_action( 'woocommerce_review_meta', 'woocommerce_review_display_rating', 15 )
 add_filter( 'woocommerce_widget_cart_is_hidden', 'bigbox_woocommerce_widget_cart_is_hidden' );
 
 /**
- * File: includes/shortcodes/class-wc-shortcode-products.php.
- */
-add_filter( 'shortcode_atts_products', 'bigbox_shortcode_atts_products' );
-
-/**
  * File: checkout/form-checkout.php
  */
 
