@@ -1,18 +1,14 @@
 #!/bin/bash
 
+# Include useful functions
+. "$(dirname "$0")/includes.sh"
+
 # Exit if any command fails
 set -e
 
 # Change to the expected directory
 cd "$(dirname "$0")"
 cd ..
-
-# Enable nicer messaging for build status
-YELLOW_BOLD='\033[1;33m';
-COLOR_RESET='\033[0m';
-status () {
-	echo -e "\n${YELLOW_BOLD}$1${COLOR_RESET}\n"
-}
 
 # Get version number from package.json
 PACKAGE_VERSION=$(cat package.json \
@@ -49,9 +45,9 @@ fi
 status "
 .______    __    _______ .______     ______   ___   ___
 |   _  \  |  |  /  _____||   _  \   /  __  \  \  \ /  /
-|  |_)  | |  | |  |  __  |  |_)  | |  |  |  |  \  V  / 
-|   _  <  |  | |  | |_ | |   _  <  |  |  |  |   >   <  
-|  |_)  | |  | |  |__| | |  |_)  | |  \`--'  |  /  .  \ 
+|  |_)  | |  | |  |  __  |  |_)  | |  |  |  |  \  V  /
+|   _  <  |  | |  | |_ | |   _  <  |  |  |  |   >   <
+|  |_)  | |  | |  |__| | |  |_)  | |  \`--'  |  /  .  \
 |______/  |__|  \______| |______/   \______/  /__/ \__\
 ";
 
