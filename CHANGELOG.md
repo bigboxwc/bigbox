@@ -1,3 +1,15 @@
+## [1.2.0] - 2018-04-22
+
+### New
+
+- Allow a font family fallback when using Google Fonts.
+
+### Fix
+
+- Avoid PHP error in `app/customize/preview.php`.
+- Default to first font weight when the previously set weight no longer exists.
+- Coding standard updates.
+
 ## [1.1.0] - 2018-04-21
 
 ### New
