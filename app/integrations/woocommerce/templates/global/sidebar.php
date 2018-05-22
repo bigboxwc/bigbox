@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $sidebar_id = is_page_template( bigbox_woocommerce_dynamic_shop_page_template() ) ? 'page-' . get_the_ID() : 'shop';
-$sidebar    = bigbox_get_cached_sidebar( $sidebar_id );
+$sidebar    = bigbox_get_cached_sidebar( is_active_sidebar( $sidebar_id ) ? $sidebar_id : 'shop' );
 
 if ( '' === $sidebar ) :
 	return;
