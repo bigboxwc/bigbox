@@ -25,9 +25,7 @@ endif;
 
 global $product;
 
-$post_thumbnail_id = $product->get_image_id();
-
-if ( ! $post_thumbnail_id ) :
+if ( ! bigbox_woocommerce_has_product_image( $product ) ) :
 	return;
 endif;
 
@@ -46,14 +44,14 @@ $wrapper_classes = apply_filters(
 	<figure class="woocommerce-product-gallery__wrapper">
 		<?php
 		if ( has_post_thumbnail() ) {
-			$html = wc_get_gallery_image_html( $post_thumbnail_id, true );
+			$html = wc_get_gallery_image_html( $product->get_image_id(), true );
 		} else {
 			$html  = '<div class="woocommerce-product-gallery__image--placeholder">';
 			$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src() ), esc_html__( 'Awaiting product image', 'bigbox' ) );
 			$html .= '</div>';
 		}
 
-		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id ); // WPCS: XSS okay.
+		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $product->get_image_id() ); // WPCS: XSS okay.
 
 		do_action( 'woocommerce_product_thumbnails' );
 		?>
