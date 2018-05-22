@@ -1,3 +1,9 @@
+## [1.3.0] - 2018-04-XX
+
+### New
+
+- Show WooCommerce image placeholder by default. Add option to disable in Customize > WooCommerce > Product Images
+
 ## [1.2.0] - 2018-04-22
 
 ### New
