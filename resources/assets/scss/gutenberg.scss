@@ -5,11 +5,6 @@ $use-margins: false;
 
 @import "_config";
 
-$wb: (
-	black: #000000,
-	white: #ffffff,
-);
-
 .edit-post-visual-editor {
 	&,
 	.editor-default-block-appender input[type=text].editor-default-block-appender__content,
