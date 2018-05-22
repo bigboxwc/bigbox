@@ -16,16 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Current version -- automatically updated on release.
 define( 'BIGBOX_VERSION', '%BIGBOX_VERSION%' );
 
-/**
- * Do not allow the theme to be active if the PHP version is not met.
- *
- * Revert to the default theme and display a notice in the admin.
- *
- * @since 1.0.0
- */
+// Minimum PHP version.
 define( 'BIGBOX_PHP_VERSION', '7.0.0' );
 
-if ( version_compare( PHP_VERSION, BIGBOX_PHP_VERSION, '<=' ) ) {
+// Do not allow the theme to be active if the PHP version is not met.
+if ( version_compare( PHP_VERSION, BIGBOX_PHP_VERSION, '<' ) ) {
 	add_action(
 		'admin_notices', function() {
 			// Translators: %s Minimum PHP version required for theme to run.
