@@ -95,8 +95,6 @@ add_filter( 'theme_page_templates', 'bigbox_woocommmerce_page_templates' );
  * Delete transient when an object saves.
  *
  * @since 1.0.0
- *
- * @return array
  */
 function bigbox_woocommerce_reset_dynamic_shop_pages() {
 	delete_transient( 'bigbox-dynamic-shop-pages' );
@@ -167,9 +165,9 @@ function bigbox_woocommerce_dynamic_shop_pages_create_sidebars() {
 			apply_filters(
 				'bigbox_woocommerce_dynamic_shop_pages_widget_args', [
 					// Translators: %s: Dynamic widget area name.
-					'name'          => sprintf( __( 'Page: %s', 'listify' ), get_the_title( $page ) ),
+					'name'          => sprintf( __( 'Page: %s', 'bigbox' ), get_the_title( $page ) ),
 					// Translators: %s: Dynamic widget area descrption.
-					'description'   => sprintf( __( 'Widgets that appear on the "%s" page.', 'listify' ), get_the_title( $page ) ),
+					'description'   => sprintf( __( 'Widgets that appear on the "%s" page.', 'bigbox' ), get_the_title( $page ) ),
 					'id'            => 'page-' . $page,
 					'before_widget' => '<div id="%1$s" class="widget %2$s">',
 					'after_widget'  => '</div>',

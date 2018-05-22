@@ -48,7 +48,9 @@ $base = [
 ];
 
 if ( 'default' !== $family ) {
-	$base['declarations']['font-family'] = '"' . esc_attr( $family ) . '"';
+	$fallback = get_theme_mod( 'type-font-family-fallback', 'sans-serif' );
+
+	$base['declarations']['font-family'] = '"' . esc_attr( $family ) . '", ' . esc_attr( $fallback );
 }
 
 return [

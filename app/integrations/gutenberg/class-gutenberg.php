@@ -81,7 +81,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 	 *
 	 * @return string
 	 */
-	function inline_css() {
+	private function inline_css() {
 		$css = new \BigBox\Customize\Build_Inline_CSS();
 
 		$colors = bigbox_get_theme_colors();
@@ -146,7 +146,6 @@ class Gutenberg extends Integration implements Registerable, Service {
 		);
 
 		// Dynamic color classes.
-		// @see https://github.com/WordPress/gutenberg/blob/master/docs/extensibility/theme-support.md
 		foreach ( $colors as $color => $data ) {
 			$css->add(
 				[

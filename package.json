@@ -1,8 +1,10 @@
 {
 	"name": "bigbox",
 	"title": "BigBox",
-	"version": "1.1.0",
+	"author": "Spencer Finnell",
 	"description": "WooCommerce theme for large stores.",
+	"version": "1.2.0",
+	"license": "GPL-2.0-or-later",
 	"main": "webpack.config.js",
 	"devDependencies": {
 		"@wordpress/scripts": "1.1.4",
@@ -73,6 +75,7 @@
 		"lint": "./node_modules/.bin/eslint .; exit 0",
 		"lint:fix": "./node_modules/.bin/eslint . --fix; exit 0",
 		"lint:jsdoc": "eslint . --config eslint/jsdoc-config.js; exit 0",
+		"check-licenses": "./bin/check-npm-licenses.sh; exit 0",
 		"css-lint": "./node_modules/.bin/stylelint resources/**/*.scss --syntax scss; exit 0",
 		"css-lint:fix": "./node_modules/.bin/stylelint resources/**/*.scss --syntax scss --fix; exit 0",
 		"generate-font-list": "ruby bin/generate-google-font-list.rb",
@@ -83,8 +86,6 @@
 		"type": "git",
 		"url": "https://github.com/bigboxwc/bigbox-theme/"
 	},
-	"author": "Spencer Finnell",
-	"license": "GPL-3.0",
 	"bugs": {
 		"url": "https://github.com/bigboxwc/bigbox-theme/issues"
 	},

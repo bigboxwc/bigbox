@@ -170,6 +170,10 @@ function bigbox_facetwp_sort_options( $options ) {
  * Match "No Results Found" with WooCommerce.
  *
  * @since 1.0.0
+ *
+ * @param string $translated_text Text that has been translated.
+ * @param string $text            Text to be translated.
+ * @param string $domain          Text domain.
  */
 function bigbox_facetwp_gettext_no_results( $translated_text, $text, $domain ) {
 	if ( 'No results found' === $text && 'fwp' === $domain ) {
@@ -242,6 +246,9 @@ function bigbox_woocommerce_shortcode_products_query( $query_args ) {
  * Set a dynamic shop [products] shortcode query to main.
  *
  * @since 1.0.0
+ *
+ * @param bool     $is_main_query If FacetWP should treat this as the main query.
+ * @param WP_Query $wp_query WP_Query object.
  */
 function bigbox_facetwp_is_main_query( $is_main_query, $wp_query ) {
 	// Standard page query is not main.

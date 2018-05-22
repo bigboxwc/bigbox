@@ -61,6 +61,36 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
+		'type-font-family-fallback', [
+			'default'           => 'sans-serif',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_text_field',
+		]
+	);
+
+	$wp_customize->add_control(
+		'type-font-family-fallback', [
+			// Translators: Customizer control label.
+			'label'       => esc_html__( 'Fallback Font Family', 'bigbox' ),
+			'description' => esc_html__( 'Used when the Google font is unable to be loaded.', 'bigbox' ),
+			'type'        => 'select',
+			'choices'     => [
+				// Translators: Customize control value.
+				'sans-serif' => esc_html__( 'Sans Serif', 'bigbox' ),
+				// Translators: Customize control value.
+				'serif'      => esc_html__( 'Serif', 'bigbox' ),
+				// Translators: Customize control value.
+				'cursive'    => esc_html__( 'Cursive', 'bigbox' ),
+				// Translators: Customize control value.
+				'fantasy'    => esc_html__( 'Fantasy', 'bigbox' ),
+				// Translators: Customize control value.
+				'monospace'  => esc_html__( 'Monospace', 'bigbox' ),
+			],
+			'section'     => 'type',
+		]
+	);
+
+	$wp_customize->add_setting(
 		'type-font-size', [
 			'default'           => 1,
 			'transport'         => 'postMessage',

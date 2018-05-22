@@ -142,7 +142,7 @@ function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
 			'bigbox-navbar-sources-dynamic',
 			[
 				'label'           => esc_html__( '⚡ These filters are dynamic', 'bigbox' ),
-				'content'         => '<p>' . esc_html__( 'Adjusting these settings will only affect the current page. Navigate to a page not assigned to "Shop" to adjust the global filters.', 'bigbox' ) . '</p><p>' . '<a href="" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Learn more about dynamic shop pages &rarr;', 'bigbox' ) . '</a></p>',
+				'content'         => '<p>' . esc_html__( 'Adjusting these settings will only affect the current page. Navigate to a page not assigned to "Shop" to adjust the global filters.', 'bigbox' ) . '</p><p><a href="" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Learn more about dynamic shop pages &rarr;', 'bigbox' ) . '</a></p>',
 				'priority'        => 15,
 				'section'         => 'navbar',
 				'active_callback' => function() {
