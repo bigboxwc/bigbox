@@ -1,8 +1,9 @@
-## [1.3.0] - 2018-04-XX
+## [1.3.0] - 2018-04-23
 
 ### New
 
 - Show WooCommerce image placeholder by default. Add option to disable in Customize > WooCommerce > Product Images
+- Filter `bigbox_navbar_search_form_url` -- https://docs.bigboxwc.com/article/29-change-the-url-of-the-header-search-form
 
 ## [1.2.0] - 2018-04-22
 
