@@ -133,6 +133,26 @@ function bigbox_is_shop() {
 }
 
 /**
+ * Determine if a WooCommerce thumbnail should display.
+ *
+ * @since 1.0.0
+ *
+ * @param WC_Product $product WooCommerce product. Attempts to find global if null.
+ * @return mixed String of HTML for an image or null.
+ */
+function bigbox_woocommerce_has_product_image( $product = null ) {
+	if ( ! $product ) {
+		global $product;
+	}
+
+	if ( get_theme_mod( 'hide-image-placeholders', false ) ) {
+		return '' !== $product->get_image_id();
+	}
+
+	return '' !== $product->get_image();
+}
+
+/**
  * Load a separate view for the navbar search.
  *
  * @since 1.0.0

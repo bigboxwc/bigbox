@@ -31,7 +31,7 @@ $product_permalink = apply_filters( 'woocommerce_order_item_permalink', $is_visi
 <li class="<?php echo esc_attr( apply_filters( 'woocommerce_order_item_class', 'product product--order-item', $item, $order ) ); ?>">
 	<div class="product__inner">
 
-		<?php if ( '' !== $product->get_image() ) : ?>
+		<?php if ( bigbox_woocommerce_has_product_image( $product ) ) : ?>
 		<div class="product__preview">
 			<?php echo $product_permalink ? sprintf( '<a href="%s">%s</a>', $product_permalink, $product->get_image() ) : $product->get_image(); ?>
 		</div>

@@ -16,9 +16,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! bigbox_is_integration_active( 'woocommerce' ) ) :
 	return;
 endif;
+
+/**
+ * Filters the URL the search form is sent to.
+ *
+ * @since 1.0.0
+ *
+ * @param string $url The URL to send to.
+ */
+$form_url = apply_filters( 'bigbox_navbar_search_form_url', wc_get_page_permalink( 'shop' ) );
 ?>
 
-<form id="primary-search" action="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" method="GET" class="navbar-search">
+<form id="primary-search" action="<?php echo esc_url( $form_url ); ?>" method="GET" class="navbar-search">
 
 	<?php
 	$taxonomy = get_taxonomy( bigbox_get_navbar_search_source( 'dropdown', 'product_cat' ) );
