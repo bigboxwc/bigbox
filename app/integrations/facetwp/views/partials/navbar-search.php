@@ -17,6 +17,15 @@ if ( ! bigbox_is_integration_active( 'woocommerce' ) ) :
 	return;
 endif;
 
+/**
+ * Filters the URL the search form is sent to.
+ *
+ * @since 1.0.0
+ *
+ * @param string $url The URL to send to.
+ */
+$form_url = apply_filters( 'bigbox_navbar_search_form_url', wc_get_page_permalink( 'shop' ) );
+
 $dropdown = FWP()->helper->get_facet_by_name( bigbox_get_navbar_search_source( 'dropdown', 'categories' ) );
 $search   = FWP()->helper->get_facet_by_name( bigbox_get_navbar_search_source( 'search', 'keyword' ) );
 
@@ -25,7 +34,7 @@ if ( ! ( $search || $dropdown ) ) :
 endif;
 ?>
 
-<form id="<?php echo esc_attr( bigbox_is_shop() ? 'facetwp-' : '' ); ?>primary-search" action="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" method="GET" class="navbar-search">
+<form id="<?php echo esc_attr( bigbox_is_shop() ? 'facetwp-' : '' ); ?>primary-search" action="<?php echo esc_url( $form_url ); ?>" method="GET" class="navbar-search">
 
 	<?php
 	$taxonomy = get_taxonomy( str_replace( 'tax/', '', $dropdown['source'] ) );
