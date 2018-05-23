@@ -25,7 +25,11 @@ global $product;
 	<?php do_action( 'woocommerce_widget_product_item_start', $args ); ?>
 
 	<a href="<?php echo esc_url( $product->get_permalink() ); ?>">
-		<?php echo wp_kses_post( $product->get_image() ); ?>
+		<?php
+		if ( bigbox_woocommerce_has_product_image( $product ) ) :
+			echo wp_kses_post( $product->get_image() );
+		endif;
+		?>
 		<span class="product-title"><?php echo esc_html( $product->get_name() ); ?></span>
 	</a>
 

@@ -31,13 +31,15 @@ if (
 endif;
 
 $product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
-$product_thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 ?>
 
 <li class="product product--cart-item">
 	<div class="product__inner">
 
-		<?php if ( '' !== $_product->get_image_id() && '' !== $product_thumbnail ) : ?>
+		<?php
+		if ( bigbox_woocommerce_has_product_image( $_product ) ) :
+		$product_thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+		?>
 		<div class="product__preview">
 			<a href="<?php echo esc_url( $product_permalink ); ?>">
 				<?php echo wp_kses_post( $product_thumbnail ); ?>
