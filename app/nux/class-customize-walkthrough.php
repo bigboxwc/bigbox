@@ -44,7 +44,7 @@ class Customize_Walkthrough implements Registerable, Service {
 	 * @return array
 	 */
 	public function filter_starter_content( $content ) {
-		if ( is_customize_preview() && ! isset( $_GET['starter-content'] ) ) {
+		if ( ! isset( $_GET['starter-content'] ) || 1 !== absint( $_GET['starter-content'] ) ) {
 			$content = null;
 		}
 

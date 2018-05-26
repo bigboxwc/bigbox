@@ -36,7 +36,6 @@ class FacetWP extends Integration implements Registerable, Service {
 		include_once $this->get_dir() . '/template-functions.php';
 		include_once $this->get_dir() . '/default-facets.php';
 		include_once $this->get_dir() . '/customize.php';
-		include_once $this->get_dir() . '/widgets.php';
 	}
 
 }

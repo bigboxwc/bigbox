@@ -28,7 +28,20 @@ function bigbox_woocommerce_get_starter_content( $content ) {
 	$content['posts']       = array_merge( $content['posts'], bigbox_woocommerce_get_starter_content_pages() );
 
 	// Update options
-	$content['options']['page_on_front'] = '{{shop}}';
+	$content['options']['page_on_front']                 = '{{shop}}';
+	$content['options']['woocommerce_shop_page_display'] = 'both';
+
+	// Add widgets.
+	$content['widgets'] = [
+		'shop' => [
+			'woocommerce_product_categories' => [
+				'woocommerce_product_categories',
+				[
+					'title' => esc_html__( 'Categories', 'bigbox' ),
+				],
+			],
+		],
+	];
 
 	return $content;
 }
@@ -332,16 +345,6 @@ function bigbox_woocommerce_starter_content_add_product_tax() {
 									'slug'        => $category['slug'],
 								]
 							);
-
-							if ( ! is_wp_error( $created_category ) ) {
-								$category_ids[] = $created_category['term_id'];
-
-								$category_image = $this->_get_category_image_attachment_id( $category['slug'] );
-
-								if ( $category_image ) {
-									update_term_meta( (int) $created_category['term_id'], 'thumbnail_id', $category_image );
-								}
-							}
 						}
 
 						wp_set_object_terms( $product->ID, $category_ids, $taxonomy );
@@ -350,6 +353,10 @@ function bigbox_woocommerce_starter_content_add_product_tax() {
 			}
 		}
 	}
+
+	add_filter( 'bigbox_navbar_search_dropdown', 'bigbox_woocommerce_starter_content_filter_categories' );
+	add_filter( 'woocommerce_product_subcategories_args', 'bigbox_woocommerce_starter_content_filter_categories' );
+	add_filter( 'woocommerce_product_subcategories_hide_empty', '__return_false' );
 }
 add_action( 'customize_preview_init', 'bigbox_woocommerce_starter_content_add_product_tax' );
 
@@ -418,3 +425,29 @@ function bigbox_woocommerce_starter_content_set_product_data() {
 	}
 }
 add_action( 'customize_preview_init', 'bigbox_woocommerce_starter_content_set_product_data' );
+
+/**
+ * Filter dropdown based on ghost categories.
+ *
+ * @since 1.0.0
+ *
+ * @param array $args Drodpown arguments.
+ * @return array
+ */
+function bigbox_woocommerce_starter_content_filter_categories( $args ) {
+	// Get Categories.
+	$product_cats = get_terms(
+		'product_cat', [
+			'fields'     => 'ids',
+			'hide_empty' => false,
+		]
+	);
+
+	if ( ! empty( $product_cats ) ) {
+		$args['hide_empty'] = false;
+
+		$args['ids'] = implode( $product_cats, ',' );
+	}
+
+	return $args;
+}

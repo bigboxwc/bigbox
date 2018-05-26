@@ -9,6 +9,11 @@
  * @author Spencer Finnell
  */
 
+// Ensure a fresh site when loading starter content.
+if ( isset( $_GET['starter-content'] ) ) {
+	update_option( 'fresh_site', 1 );
+}
+
 /**
  * Starter content.
  *

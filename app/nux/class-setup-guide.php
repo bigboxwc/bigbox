@@ -56,7 +56,8 @@ class Setup_Guide implements Registerable, Service {
 			],
 		];
 
-		if ( is_null( get_option( 'woocommerce_version', null ) ) && is_null( get_option( 'woocommerce_db_version', null ) ) ) {
+		// Dirty check.
+		if ( in_array( 'install', get_option( 'woocommerce_admin_notices' ) ) ) {
 			$this->steps['install-woocommerce'] = [
 				'label'    => __( 'Setup WooCommerce', 'bigbox' ),
 				'priority' => 20,
