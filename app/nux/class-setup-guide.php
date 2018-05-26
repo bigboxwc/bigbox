@@ -64,6 +64,15 @@ class Setup_Guide implements Registerable, Service {
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
 		add_action( 'admin_menu', [ $this, 'add_menu_item' ] );
 		add_action( 'admin_menu', [ $this, 'add_meta_boxes' ], 20 );
+
+		// Redirect on fresh install.
+		if ( defined( 'WP_DEBUG' ) && ! WP_DEBUG ) {
+			add_action( 'after_switch_theme', [ $this, 'redirect_on_activation' ] );
+
+			// Schedule a notice to show in a week if they haven't added their key.
+			wp_schedule_single_event( time() + WEEK_IN_SECONDS, [ $this, 'show_add_license_reminder' ] );
+			add_action( 'wp_ajax_bigbox_notice_dismiss_license_reminder', [ $this, 'dismiss_add_license_reminder' ] );
+		}
 	}
 
 	/**
@@ -167,4 +176,70 @@ class Setup_Guide implements Registerable, Service {
 		);
 	}
 
+	/**
+	 * Redirect on activation.
+	 *
+	 * @since 1.0.0
+	 */
+	public function redirect_on_activation() {
+		$version     = bigbox_get_theme_version();
+		$option_name = bigbox_get_theme_name() . '_version';
+
+		// Just update version if not fresh.
+		if ( get_option( $option_name, false ) ) {
+			update_option( $option_name, $version );
+
+			return;
+		}
+
+		// @codingStandardsIgnoreStart
+		if ( isset( $_GET['action'] ) ) {
+			unset( $_GET['action'] );
+		}
+		// @codingStandardsIgnoreEnd
+
+		update_option( $option_name, $version );
+
+		wp_safe_redirect( esc_url( add_query_arg( 'page', 'bigbox', admin_url( 'themes.php' ) ) ) );
+		exit();
+	}
+
+	/**
+	 * Remind people to enter a license key if they haven't after a week.
+	 *
+	 * @since 1.0.0
+	 */
+	public function show_add_license_reminder() {
+		// Do nothing if dismissed.
+		if ( get_option( 'bigbox_notice_dismiss_license_reminder', false ) ) {
+			return;
+		}
+
+		// Do nothing if already entered.
+		if ( get_option( 'bigbox_license', false ) && 'valid' === get_option( 'bigbox_license_status' ) ) {
+			return;
+		}
+
+		add_action( 'admin_notices', [ $this, 'add_license_reminder' ] );
+	}
+
+	/**
+	 * Add an admin notice to enter a license key.
+	 *
+	 * @since 1.0.0
+	 */
+	public function add_license_reminder() {
+		bigbox_view( 'nux/license-reminder' );
+	}
+
+	/**
+	 * Persist the license reminder notice dismissal.
+	 *
+	 * @since 1.0.0
+	 */
+	public function dismiss_add_license_reminder() {
+		check_ajax_referer( 'bigbox_notice_dismiss_license_reminder', 'security' );
+		add_option( 'bigbox_notice_dismiss_license_reminder', true );
+		wp_send_json_success();
+	}
 }
