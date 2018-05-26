@@ -114,6 +114,7 @@ final class Theme implements Registerable {
 			Integrations::class,
 			NUX\Setup_Guide::class,
 			NUX\License_Manager::class,
+			NUX\Customize_Walkthrough::class,
 		];
 	}
 

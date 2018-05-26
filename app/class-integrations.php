@@ -99,6 +99,7 @@ final class Integrations implements Registerable, Service {
 				'slug'         => 'woocommerce-brands',
 				'class'        => Integration\WooCommerce_Brands::class,
 				'dependencies' => [
+					defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
 					defined( 'WC_BRANDS_VERSION' ) && WC_BRANDS_VERSION,
 				],
 			],
@@ -106,6 +107,7 @@ final class Integrations implements Registerable, Service {
 				'slug'         => 'facetwp',
 				'class'        => Integration\FacetWP::class,
 				'dependencies' => [
+					defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
 					defined( 'FACETWP_VERSION' ) && FACETWP_VERSION,
 				],
 			],

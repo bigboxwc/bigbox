@@ -67,3 +67,10 @@ p.has-background {
 	margin-left: 0;
 	margin-right: 0;
 }
+
+.wp-block-columns {
+
+	&.alignfull {
+		padding: 0 ($spacer * 2);
+	}
+}

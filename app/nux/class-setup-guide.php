@@ -39,24 +39,26 @@ class Setup_Guide implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function register() {
+		require_once get_template_directory() . '/app/nux/utils.php';
+
 		$this->steps = [
 			'license-manager' => [
 				'label'    => __( 'Enable Automatic Updates', 'bigbox' ),
 				'priority' => 10,
 			],
-			'install-plugins' => [
-				'label'    => __( 'Optimize Your Website', 'bigbox' ),
+			'customize'       => [
+				'label'    => __( 'Customize Your Store', 'bigbox' ),
 				'priority' => 30,
 			],
-			'customize'       => [
-				'label'    => __( 'Customize Your Website', 'bigbox' ),
+			'install-plugins' => [
+				'label'    => __( 'Optimize Your Store', 'bigbox' ),
 				'priority' => 40,
 			],
 		];
 
-		if ( ! bigbox_is_integration_active( 'woocommerce' ) ) {
+		if ( is_null( get_option( 'woocommerce_version', null ) ) && is_null( get_option( 'woocommerce_db_version', null ) ) ) {
 			$this->steps['install-woocommerce'] = [
-				'label'    => __( 'Install WooCommerce', 'bigbox' ),
+				'label'    => __( 'Setup WooCommerce', 'bigbox' ),
 				'priority' => 20,
 			];
 		}
@@ -70,8 +72,9 @@ class Setup_Guide implements Registerable, Service {
 			add_action( 'after_switch_theme', [ $this, 'redirect_on_activation' ] );
 
 			// Schedule a notice to show in a week if they haven't added their key.
-			wp_schedule_single_event( time() + WEEK_IN_SECONDS, [ $this, 'show_add_license_reminder' ] );
-			add_action( 'wp_ajax_bigbox_notice_dismiss_license_reminder', [ $this, 'dismiss_add_license_reminder' ] );
+			// wp_clear_scheduled_hook( [ $this, 'show_add_license_reminder' ] );
+			// wp_schedule_single_event( ( time() + WEEK_IN_SECONDS ), [ $this, 'show_add_license_reminder' ] );
+			// add_action( 'wp_ajax_bigbox_notice_dismiss_license_reminder', [ $this, 'dismiss_add_license_reminder' ] );
 		}
 	}
 
@@ -184,6 +187,11 @@ class Setup_Guide implements Registerable, Service {
 	public function redirect_on_activation() {
 		$version     = bigbox_get_theme_version();
 		$option_name = bigbox_get_theme_name() . '_version';
+		// @todo move to the background.
+		bigbox_install_plugin( 'woocommerce', [
+			'slug' => 'woocommerce',
+			'file' => 'woocommerce.php',
+		] );
 
 		// Just update version if not fresh.
 		if ( get_option( $option_name, false ) ) {

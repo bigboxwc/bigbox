@@ -37,8 +37,8 @@ function bigbox_get_starter_content() {
 	return apply_filters(
 		'bigbox_get_starter_content', [
 			'posts'     => [
-				'home' => [],
-				'blog' => [],
+				'home',
+				'blog',
 			],
 
 			// Default to a static front page and assign the front and posts pages.
@@ -53,13 +53,21 @@ function bigbox_get_starter_content() {
 				'primary'   => [
 					'name'  => 'Primary',
 					'items' => [
-						'page_home',
+						'home' => [
+							'type' => 'post_type',
+							'object' => 'page',
+							'object_id' => '{{home}}',
+						],
 					],
 				],
 				'secondary' => [
 					'name'  => 'secondary',
 					'items' => [
-						'page_blog',
+						'blog' => [
+							'type' => 'post_type',
+							'object' => 'page',
+							'object_id' => '{{blog}}',
+						],
 					],
 				],
 			],
