@@ -12,7 +12,7 @@
  * @since 1.0.0
  *
  * @param string $plugin_slug Slug of hosted plugin.
- * @param array $plugin Extra plugin data that may not be able to be derived.
+ * @param array  $plugin Extra plugin data that may not be able to be derived.
  */
 function bigbox_install_plugin( $plugin_slug, $plugin ) {
 	require_once ABSPATH . 'wp-admin/includes/file.php';
@@ -44,9 +44,9 @@ function bigbox_install_plugin( $plugin_slug, $plugin ) {
 		try {
 			$plugin_information = plugins_api(
 				'plugin_information',
-				array(
+				[
 					'slug'   => $plugin_slug,
-					'fields' => array(
+					'fields' => [
 						'short_description' => false,
 						'sections'          => false,
 						'requires'          => false,
@@ -60,8 +60,8 @@ function bigbox_install_plugin( $plugin_slug, $plugin ) {
 						'donate_link'       => false,
 						'author_profile'    => false,
 						'author'            => false,
-					),
-				)
+					],
+				]
 			);
 
 			if ( is_wp_error( $plugin_information ) ) {
@@ -82,17 +82,17 @@ function bigbox_install_plugin( $plugin_slug, $plugin ) {
 			}
 
 			$result = $upgrader->install_package(
-				array(
+				[
 					'source'                      => $working_dir,
 					'destination'                 => WP_PLUGIN_DIR,
 					'clear_destination'           => false,
 					'abort_if_destination_exists' => false,
 					'clear_working'               => true,
-					'hook_extra'                  => array(
+					'hook_extra'                  => [
 						'type'   => 'plugin',
 						'action' => 'install',
-					),
-				)
+					],
+				]
 			);
 
 			if ( is_wp_error( $result ) ) {
@@ -101,7 +101,8 @@ function bigbox_install_plugin( $plugin_slug, $plugin ) {
 
 			$activate = true;
 
-		} catch ( Exception $e ) {}
+		} catch ( Exception $e ) {
+		}
 
 		// Discard feedback.
 		ob_end_clean();
@@ -117,7 +118,8 @@ function bigbox_install_plugin( $plugin_slug, $plugin ) {
 			if ( is_wp_error( $result ) ) {
 				throw new Exception( $result->get_error_message() );
 			}
-		} catch ( Exception $e ) {}
+		} catch ( Exception $e ) {
+		}
 	}
 }
 

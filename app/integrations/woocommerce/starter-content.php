@@ -9,6 +9,10 @@
  * @author Spencer Finnell
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * Filter the starter content.
  *
@@ -18,14 +22,10 @@
  * @return array $content Starter content.
  */
 function bigbox_woocommerce_get_starter_content( $content ) {
-	$products = bigbox_woocommerce_get_starter_content_products();
-	$pages    = bigbox_woocommerce_get_starter_content_pages();
-
-	// Add products.
-	$content['posts'] = array_merge( $content['posts'], $products );
-
-	// Add pages.
-	$content['posts'] = array_merge( $content['posts'], $pages );
+	// Add data.
+	$content['attachments'] = bigbox_woocommerce_get_starter_content_attachments();
+	$content['posts']       = array_merge( $content['posts'], bigbox_woocommerce_get_starter_content_products() );
+	$content['posts']       = array_merge( $content['posts'], bigbox_woocommerce_get_starter_content_pages() );
 
 	// Update options
 	$content['options']['page_on_front'] = '{{shop}}';
@@ -42,30 +42,29 @@ add_filter( 'bigbox_get_starter_content', 'bigbox_woocommerce_get_starter_conten
  * @return array
  */
 function bigbox_woocommerce_get_starter_content_products() {
-	return [
-		'beanie' => array(
-			'post_title'     => esc_attr__( 'Beanie', 'storefront' ),
-			'post_content'   => 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.',
-			'post_type'      => 'product',
-			'comment_status' => 'open',
-			'thumbnail'      => '{{beanie-image}}',
-			'product_data'   => array(
-				'regular_price' => '20',
-				'price'         => '18',
-				'sale_price'    => '18',
-				'featured'      => false,
-			),
-			// 'taxonomy' => array(
-			// 	'product_cat' => array(
-			// 		array(
-			// 			'term'        => $accessories_name,
-			// 			'slug'        => 'accessories',
-			// 			'description' => $accessories_description,
-			// 		),
-			// 	),
-			// ),
-		),
-	];
+	$integration = bigbox_get_integration( 'woocommerce' );
+
+	$products = require $integration->get_dir() . '/starter-content/products.php';
+
+	// Set key as `post_name`
+	foreach ( $products as $key => $product ) {
+		$products[ $key ]['post_name'] = $key;
+	}
+
+	return $products;
+}
+
+/**
+ * Get attachments to add to starter content.
+ *
+ * @since 1.0.0
+ *
+ * @return array
+ */
+function bigbox_woocommerce_get_starter_content_attachments() {
+	$integration = bigbox_get_integration( 'woocommerce' );
+
+	return require $integration->get_dir() . '/starter-content/attachments.php';
 }
 
 /**
@@ -83,7 +82,7 @@ function bigbox_woocommerce_get_starter_content_pages() {
 		'woocommerce_checkout_page_id',
 		'woocommerce_myaccount_page_id',
 		'woocommerce_shop_page_id',
-		'woocommerce_terms_page_id'
+		'woocommerce_terms_page_id',
 	];
 
 	foreach ( $wc_pages_options as $option ) {
@@ -112,7 +111,7 @@ function bigbox_woocommerce_get_starter_content_pages() {
  * @param WP_Query $query WordPress query.
  */
 function bigbox_woocommerce_starter_content_wc_query( $query ) {
-	$post__in = array();
+	$post__in = [];
 
 	// Add existing products.
 	$existing_products = bigbox_woocommerce_starter_get_existing_wc_products();
@@ -151,7 +150,7 @@ if ( is_customize_preview() ) {
  * @return array $args
  */
 function bigbox_woocommerce_starter_content_shortcode_loop_products( $query_args, $atts, $loop_name = null ) {
-	$query_args['post__in'] = array();
+	$query_args['post__in'] = [];
 
 	// Add existing products to query
 	$existing_products = bigbox_woocommerce_starter_get_existing_wc_products();
@@ -241,7 +240,7 @@ function bigbox_woocommerce_starter_content_transition_post_status( $new_status,
 		if ( $post_name && array_key_exists( $post_name, $starter_products ) ) {
 			$update_product = [
 				'ID'         => $post->ID,
-				'post_title' => $starter_products[ $post_name ]['post_title']
+				'post_title' => $starter_products[ $post_name ]['post_title'],
 			];
 
 			wp_update_post( $update_product );
@@ -257,7 +256,7 @@ add_action( 'transition_post_status', 'bigbox_woocommerce_starter_content_transi
  * @since 1.0.0
  *
  * @param string $title Post title.
- * @param int $post_id Post ID.
+ * @param int    $post_id Post ID.
  */
 function bigbox_woocommerce_starter_content_the_title( $title, $post_id = null ) {
 	if ( ! $post_id ) {
@@ -278,4 +277,144 @@ function bigbox_woocommerce_starter_content_the_title( $title, $post_id = null )
 
 	return $title;
 }
-add_filter( 'the_title', 'bigbox_woocommerce_starter_content_the_title', 10, 2 );
+if ( is_customize_preview() ) {
+	add_filter( 'the_title', 'bigbox_woocommerce_starter_content_the_title', 10, 2 );
+}
+
+function bigbox_woocommerce_starter_content_add_product_tax() {
+	$created_products = bigbox_woocommerce_starter_get_created_starter_content_products();
+
+	if ( false === $created_products ) {
+		return;
+	}
+
+	$starter_products = bigbox_woocommerce_get_starter_content_products();
+
+	if ( is_array( $created_products ) ) {
+		foreach ( $created_products as $product ) {
+			$product = get_post( $product );
+
+			if ( ! $product ) {
+				continue;
+			}
+
+			$post_name = get_post_meta( $product->ID, '_customize_draft_post_name', true );
+
+			if ( ! $post_name || ! array_key_exists( $post_name, $starter_products ) ) {
+				continue;
+			}
+
+			$taxonomies = [ 'product_cat', 'product_tag' ];
+
+			foreach ( $taxonomies as $taxonomy ) {
+				if ( array_key_exists( $taxonomy, $starter_products[ $post_name ]['taxonomy'] ) ) {
+					$categories = $starter_products[ $post_name ]['taxonomy'][ $taxonomy ];
+
+					if ( ! empty( $categories ) ) {
+						$category_ids = [];
+
+						foreach ( $categories as $category ) {
+							// Check if the term already exists.
+							$category_exists = term_exists( $category['term'], $taxonomy );
+
+							if ( $category_exists ) {
+								$category_ids[] = (int) $category_exists['term_id'];
+
+								continue;
+							}
+
+							// Create new category.
+							$created_category = wp_insert_term(
+								$category['term'],
+								$taxonomy,
+								[
+									'description' => $category['description'],
+									'slug'        => $category['slug'],
+								]
+							);
+
+							if ( ! is_wp_error( $created_category ) ) {
+								$category_ids[] = $created_category['term_id'];
+
+								$category_image = $this->_get_category_image_attachment_id( $category['slug'] );
+
+								if ( $category_image ) {
+									update_term_meta( (int) $created_category['term_id'], 'thumbnail_id', $category_image );
+								}
+							}
+						}
+
+						wp_set_object_terms( $product->ID, $category_ids, $taxonomy );
+					}
+				}
+			}
+		}
+	}
+}
+add_action( 'customize_preview_init', 'bigbox_woocommerce_starter_content_add_product_tax' );
+
+/**
+ * Add product data to starter products.
+ *
+ * @since 1.0.0
+ */
+function bigbox_woocommerce_starter_content_set_product_data() {
+	$created_products = bigbox_woocommerce_starter_get_created_starter_content_products();
+
+	if ( false === $created_products ) {
+		return;
+	}
+
+	$starter_products = bigbox_woocommerce_get_starter_content_products();
+
+	if ( is_array( $created_products ) ) {
+		foreach ( $created_products as $product ) {
+			$product = wc_get_product( $product );
+
+			if ( ! $product ) {
+				continue;
+			}
+
+			$post_name = get_post_meta( $product->get_id(), '_customize_draft_post_name', true );
+
+			if ( ! $post_name || ! array_key_exists( $post_name, $starter_products ) ) {
+				continue;
+			}
+
+			if ( ! array_key_exists( 'product_data', $starter_products[ $post_name ] ) ) {
+				continue;
+			}
+
+			$product_data = $starter_products[ $post_name ]['product_data'];
+
+			// Set visibility
+			$product->set_catalog_visibility( 'visible' );
+
+			// Set regular price
+			if ( ! empty( $product_data['regular_price'] ) ) {
+				$product->set_regular_price( floatval( $product_data['regular_price'] ) );
+			}
+
+			// Set price
+			if ( ! empty( $product_data['price'] ) ) {
+				$product->set_price( floatval( $product_data['price'] ) );
+			}
+
+			// Set sale price
+			if ( ! empty( $product_data['sale_price'] ) ) {
+				$product->set_sale_price( floatval( $product_data['sale_price'] ) );
+			}
+
+			// Set featured
+			if ( ! empty( $product_data['featured'] ) ) {
+				$product->set_featured( true );
+			} else {
+				$product->set_featured( false );
+			}
+
+			// Save
+			$product->save();
+		}
+	}
+}
+add_action( 'customize_preview_init', 'bigbox_woocommerce_starter_content_set_product_data' );

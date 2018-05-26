@@ -29,15 +29,15 @@ function bigbox_facetwp_facets( $facets ) {
 		}
 	}
 
-	$facets[] = array(
+	$facets[] = [
 		'label'         => 'Keywords',
 		'name'          => 'keyword',
 		'type'          => 'search',
 		'search_engine' => '',
 		'placeholder'   => 'Find a product...',
-	);
+	];
 
-	$facets[] = array(
+	$facets[] = [
 		'label'        => 'Categories',
 		'name'         => 'categories',
 		'type'         => 'dropdown',
@@ -46,9 +46,9 @@ function bigbox_facetwp_facets( $facets ) {
 		'hierarchical' => 'no',
 		'orderby'      => 'count',
 		'count'        => 0,
-	);
+	];
 
-	$facets[] = array(
+	$facets[] = [
 		'label'  => 'Price',
 		'name'   => 'price',
 		'type'   => 'slider',
@@ -57,9 +57,9 @@ function bigbox_facetwp_facets( $facets ) {
 		'suffix' => '',
 		'format' => '0,0',
 		'step'   => 1,
-	);
+	];
 
-	$facets[] = array(
+	$facets[] = [
 		'label'           => 'Sale',
 		'name'            => 'sale',
 		'type'            => 'checkboxes',
@@ -70,7 +70,7 @@ function bigbox_facetwp_facets( $facets ) {
 		'orderby'         => 'count',
 		'count'           => 10,
 		'limit'           => 0,
-	);
+	];
 
 	return $facets;
 }

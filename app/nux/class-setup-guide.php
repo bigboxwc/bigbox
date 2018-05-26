@@ -188,10 +188,12 @@ class Setup_Guide implements Registerable, Service {
 		$version     = bigbox_get_theme_version();
 		$option_name = bigbox_get_theme_name() . '_version';
 		// @todo move to the background.
-		bigbox_install_plugin( 'woocommerce', [
-			'slug' => 'woocommerce',
-			'file' => 'woocommerce.php',
-		] );
+		bigbox_install_plugin(
+			'woocommerce', [
+				'slug' => 'woocommerce',
+				'file' => 'woocommerce.php',
+			]
+		);
 
 		// Just update version if not fresh.
 		if ( get_option( $option_name, false ) ) {

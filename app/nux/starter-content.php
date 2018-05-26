@@ -54,8 +54,8 @@ function bigbox_get_starter_content() {
 					'name'  => 'Primary',
 					'items' => [
 						'home' => [
-							'type' => 'post_type',
-							'object' => 'page',
+							'type'      => 'post_type',
+							'object'    => 'page',
 							'object_id' => '{{home}}',
 						],
 					],
@@ -64,8 +64,8 @@ function bigbox_get_starter_content() {
 					'name'  => 'secondary',
 					'items' => [
 						'blog' => [
-							'type' => 'post_type',
-							'object' => 'page',
+							'type'      => 'post_type',
+							'object'    => 'page',
 							'object_id' => '{{blog}}',
 						],
 					],

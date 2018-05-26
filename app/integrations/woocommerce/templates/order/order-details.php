@@ -24,7 +24,7 @@ if ( ! $order = wc_get_order( $order_id ) ) {
 }
 
 $order_items           = $order->get_items( apply_filters( 'woocommerce_purchase_order_item_types', 'line_item' ) );
-$show_purchase_note    = $order->has_status( apply_filters( 'woocommerce_purchase_note_order_statuses', array( 'completed', 'processing' ) ) );
+$show_purchase_note    = $order->has_status( apply_filters( 'woocommerce_purchase_note_order_statuses', [ 'completed', 'processing' ] ) );
 $show_customer_details = is_user_logged_in() && $order->get_user_id() === get_current_user_id();
 $downloads             = $order->get_downloadable_items();
 $show_downloads        = $order->has_downloadable_item() && $order->is_download_permitted();
@@ -36,10 +36,10 @@ $show_downloads        = $order->has_downloadable_item() && $order->is_download_
 		<?php
 		if ( $show_downloads ) :
 			wc_get_template(
-				'order/order-downloads.php', array(
+				'order/order-downloads.php', [
 					'downloads'  => $downloads,
 					'show_title' => true,
-				)
+				]
 			);
 		endif;
 		?>
@@ -57,14 +57,14 @@ $show_downloads        = $order->has_downloadable_item() && $order->is_download_
 				$product = $item->get_product();
 
 				wc_get_template(
-					'order/order-details-item.php', array(
+					'order/order-details-item.php', [
 						'order'              => $order,
 						'item_id'            => $item_id,
 						'item'               => $item,
 						'show_purchase_note' => $show_purchase_note,
 						'purchase_note'      => $product ? $product->get_purchase_note() : '',
 						'product'            => $product,
-					)
+					]
 				);
 			}
 
@@ -99,7 +99,7 @@ $show_downloads        = $order->has_downloadable_item() && $order->is_download_
 
 	<?php if ( $show_customer_details ) : ?>
 	<div class="woocommerce-receipt-wrapper__info">
-		<?php wc_get_template( 'order/order-details-customer.php', array( 'order' => $order ) ); ?>
+		<?php wc_get_template( 'order/order-details-customer.php', [ 'order' => $order ] ); ?>
 	</div>
 	<?php endif; ?>
 </div>
