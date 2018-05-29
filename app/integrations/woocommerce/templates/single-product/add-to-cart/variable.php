@@ -12,7 +12,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 3.4.0
+ * @version 3.4.1
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -46,14 +46,11 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 					<div class="action-list__item-value">
 						<div class="value">
 							<?php
-							$selected = isset( $_REQUEST[ 'attribute_' . $attribute_name ] ) ? wc_clean( stripslashes( urldecode( $_REQUEST[ 'attribute_' . $attribute_name ] ) ) ) : $product->get_variation_default_attribute( $attribute_name ); // @codingStandardsIgnoreLine
-
 							wc_dropdown_variation_attribute_options(
 								[
 									'options'          => $options,
 									'attribute'        => $attribute_name,
 									'product'          => $product,
-									'selected'         => $selected,
 									'show_option_none' => esc_html__( 'Select an option', 'bigbox' ),
 								]
 							);
