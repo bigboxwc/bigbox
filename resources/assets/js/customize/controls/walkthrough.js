@@ -6,6 +6,8 @@
 import 'bootstrap/js/src/popover';
 
 const pointerDefaults = {
+	container: '#customize-controls',
+	placement: 'left',
 	template: bigboxCustomizeControls.walkthrough.template,
 };
 

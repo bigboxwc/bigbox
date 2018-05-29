@@ -73,9 +73,14 @@ class Customize_Walkthrough implements Registerable, Service {
 	public function bigbox_customize_controls_js( $settings ) {
 		$pointers = [
 			[
-				'el'      => '#customize-info',
+				'el'      => '#customize-header-actions',
 				'title'   => esc_html__( '📦 Welcome to BigBox', 'bigbox' ),
-				'content' => 'hi',
+				'content' => esc_html__( 'Need some help getting started? No problem! I can guide you through the Customization options and get you on your way.', 'bigbox' ),
+			],
+			[
+				'el'      => '#accordion-section-title_tagline',
+				'title'   => esc_html__( '📦 Welcome to BigBox', 'bigbox' ),
+				'content' => esc_html__( 'Need some help getting started? No problem! I can guide you through the Customization options and get you on your way.', 'bigbox' ),
 			],
 		];
 
