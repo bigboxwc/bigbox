@@ -142,6 +142,7 @@ const config = {
 			$: 'jquery',
 			jQuery: 'jquery',
 			'window.jQuery': 'jquery',
+			Popper: [ 'popper.js', 'default' ],
 		} ),
 		new WebpackRTLPlugin( {
 			suffix: '-rtl',

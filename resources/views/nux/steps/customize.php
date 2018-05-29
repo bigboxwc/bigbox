@@ -25,4 +25,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</p>
 
 	<button type="submit" class="button button-primary button-large"><?php esc_html_e( 'Customize Your Store', 'bigbox' ); ?></button>
+	<input type="hidden" name="walkthrough" value="1" />
 </form>
