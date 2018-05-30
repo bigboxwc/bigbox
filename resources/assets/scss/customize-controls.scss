@@ -12,3 +12,31 @@ $border:  1px solid #ccc;
 	padding-top: $padding;
 	border-top: $border;
 }
+
+.wp-pointer.popover {
+	z-index: 500001;
+	width: 280px;
+	left: 281px !important;
+	top: 18px !important;
+
+	.wp-pointer-buttons {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.close {
+		opacity: 0.50;
+
+		&:before {
+			display: none !important;
+		}
+	}
+
+	.next {
+		font-weight: bold;
+	}
+
+	.wp-pointer-content h3:before {
+		content: "\f540";
+	}
+}

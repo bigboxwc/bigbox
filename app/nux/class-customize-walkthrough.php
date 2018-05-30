@@ -73,14 +73,23 @@ class Customize_Walkthrough implements Registerable, Service {
 	public function bigbox_customize_controls_js( $settings ) {
 		$pointers = [
 			[
-				'el'      => '#customize-header-actions',
-				'title'   => esc_html__( '📦 Welcome to BigBox', 'bigbox' ),
+				'el'      => '#customize-info',
+				'title'   => esc_html__( 'Welcome to BigBox', 'bigbox' ),
 				'content' => esc_html__( 'Need some help getting started? No problem! I can guide you through the Customization options and get you on your way.', 'bigbox' ),
 			],
 			[
-				'el'      => '#accordion-section-title_tagline',
-				'title'   => esc_html__( '📦 Welcome to BigBox', 'bigbox' ),
-				'content' => esc_html__( 'Need some help getting started? No problem! I can guide you through the Customization options and get you on your way.', 'bigbox' ),
+				'el'      => '#customize-control-color-primary',
+				'title'   => esc_html__( 'Set Your Colors', 'bigbox' ),
+				'content' => esc_html__( 'Choose the colors used to generate various parts of your website.', 'bigbox' ),
+				'focusType' => 'control',
+				'focus' => 'color-primary'
+			],
+			[
+				'el'      => '#customize-control-type-font-family',
+				'title'   => esc_html__( 'Chose Your Typography', 'bigbox' ),
+				'content' => esc_html__( 'Choose the colors used to generate various parts of your website.', 'bigbox' ),
+				'focusType' => 'section',
+				'focus' => 'type'
 			],
 		];
 

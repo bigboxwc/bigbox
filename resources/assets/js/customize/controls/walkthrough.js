@@ -5,32 +5,78 @@
  */
 import 'bootstrap/js/src/popover';
 
+let activePointer = 0;
+
+const {
+	active,
+	template,
+	pointers,
+} = bigboxCustomizeControls.walkthrough;
+
 const pointerDefaults = {
 	container: '#customize-controls',
-	placement: 'left',
-	template: bigboxCustomizeControls.walkthrough.template,
+	placement: 'right',
+	template: template,
 };
 
-const addPointer = ( pointer ) => {
-	const $el = $( pointer.el );
+const prevPointer = () => {
+	return activePointer - 1 >= 0 ? activePointer - 1 : 0;
+}
+
+const nextPointer = () => {
+	return activePointer + 1 <= pointers.length ? activePointer + 1 : pointers.length;
+}
+
+const hideActivePointer = () => {
+	$( pointers[ activePointer ].el ).popover( 'hide' );
+}
+
+const showPointer = ( pointer ) => {
+	// Hide previous pointer.
+	hideActivePointer();
+
+	// Set current pointer.
+	activePointer = pointer;
+
+	// Display.
+	const pointerObj = pointers[ pointer ];
+	const $el = $( pointerObj.el );
 
 	$el.popover( {
-		...pointer,
+		...pointerObj,
+		...pointerDefaults,
+	} );
+	console.log( {
+		...pointerObj,
 		...pointerDefaults,
 	} );
 
-	$el.popover( 'show' );
-};
+	// Attempt to focus a portion of the UI then show popover.
+	if ( pointerObj.focus ) {
+		const ui = wp.customize[ pointerObj.focusType ]( pointerObj.focus );
 
-const startPointers = () => {
-	_.forEach( bigboxCustomizeControls.walkthrough.pointers, ( pointer ) => addPointer( pointer ) );
+		ui.focus();
+		ui.container.on( 'expanded', function() {
+			$el.popover( 'show' );
+		} );
+	} else {
+		$el.popover( 'show' );
+	}
 };
 
 ( function( $ ) {
-	if ( ! bigboxCustomizeControls.walkthrough.active ) {
+	if ( ! active ) {
 		return;
 	}
 
+	const $customizer = $( '.wp-customizer' );
+
 	// Wait for Customize ready.
-	wp.customize.bind( 'ready', startPointers );
+	wp.customize.bind( 'ready', () => showPointer( 0 ) );
+
+	// Go forward.
+	$customizer.on( 'click', '.popover .next', () => showPointer( nextPointer() ) );
+
+	// Dismiss
+	$customizer.on( 'click', '.popover .close', hideActivePointer );
 }( jQuery ) );
