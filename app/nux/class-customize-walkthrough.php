@@ -74,22 +74,43 @@ class Customize_Walkthrough implements Registerable, Service {
 		$pointers = [
 			[
 				'el'      => '#customize-info',
-				'title'   => esc_html__( 'Welcome to BigBox', 'bigbox' ),
-				'content' => esc_html__( 'Need some help getting started? No problem! I can guide you through the Customization options and get you on your way.', 'bigbox' ),
+				'title'   => esc_html__( '📦 Welcome to BigBox', 'bigbox' ),
+				'content' => wp_kses_post( __( 'Need some help getting started? No problem! I can guide you through the Customization options and get you on your way.', 'bigbox' ) ),
 			],
 			[
-				'el'      => '#customize-control-color-primary',
-				'title'   => esc_html__( 'Set Your Colors', 'bigbox' ),
-				'content' => esc_html__( 'Choose the colors used to generate various parts of your website.', 'bigbox' ),
+				'el'        => '#customize-control-custom_logo',
+				'title'     => esc_html__( 'Add a Custom Logo', 'bigbox' ),
+				'content'   => wp_kses_post( __( 'Update your website\'s identity to reflect your unique brand.', 'bigbox' ) ),
 				'focusType' => 'control',
-				'focus' => 'color-primary'
+				'focus'     => 'custom_logo',
 			],
 			[
-				'el'      => '#customize-control-type-font-family',
-				'title'   => esc_html__( 'Chose Your Typography', 'bigbox' ),
-				'content' => esc_html__( 'Choose the colors used to generate various parts of your website.', 'bigbox' ),
+				'el'        => '#customize-control-color-primary',
+				'title'     => esc_html__( 'Choose Your Color Scheme', 'bigbox' ),
+				'content'   => wp_kses_post( __( 'Select the colors used to generate various parts of your website.', 'bigbox' ) ),
+				'focusType' => 'control',
+				'focus'     => 'color-primary',
+			],
+			[
+				'el'        => '#customize-control-type-font-family',
+				'title'     => esc_html__( 'Chose Your Typography', 'bigbox' ),
+				'content'   => wp_kses_post( __( 'Select the colors used to generate various parts of your website.', 'bigbox' ) ),
 				'focusType' => 'section',
-				'focus' => 'type'
+				'focus'     => 'type',
+			],
+			[
+				'el'        => '#sub-accordion-section-sidebar-widgets-shop li:first-child .customize-section-title',
+				'title'     => esc_html__( 'Adjust Your Widgets', 'bigbox' ),
+				'content'   => wp_kses_post( __( 'Modify the widgets used on your shop page to fit your needs.', 'bigbox' ) ),
+				'focusType' => 'section',
+				'focus'     => 'sidebar-widgets-shop',
+			],
+			[
+				'el'        => '#customize-control-custom_logo',
+				'title'     => esc_html__( 'All Set!', 'bigbox' ),
+				'content'   => wp_kses_post( __( 'Continue customizing your site as much as you would like. You can always come back by visiting Appearance ▸ Customize', 'bigbox' ) ),
+				'focusType' => 'control',
+				'focus'     => 'custom_logo',
 			],
 		];
 

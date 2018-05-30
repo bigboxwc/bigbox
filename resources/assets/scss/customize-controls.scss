@@ -64,3 +64,21 @@ $border:  1px solid #ccc;
 		margin-top: 0;
 	}
 }
+
+.bigbox-pointer__buttons {
+	display: flex;
+	justify-content: space-between;
+
+	a {
+		text-decoration: none;
+	}
+
+	.close {
+		opacity: 0.50;
+		color: firebrick;
+	}
+
+	.next {
+		font-weight: bold;
+	}
+}

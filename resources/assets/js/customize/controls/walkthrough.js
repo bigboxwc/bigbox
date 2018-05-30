@@ -13,27 +13,16 @@ const template = wp.template( 'bigbox-pointer' );
 let activePointer = 0;
 
 /**
- * Determine previous pointer.
- *
- * @return {number}
- */
-const prevPointer = () => {
-	return activePointer - 1 >= 0 ? activePointer - 1 : 0;
-}
-
-/**
  * Determine next pointer.
  *
- * @return {number}
+ * @return {number} Next pointer index.
  */
 const nextPointer = () => {
 	return activePointer + 1 < pointers.length ? activePointer + 1 : pointers.length;
-}
+};
 
 /**
  * Toggle any active pointers.
- *
- * @return {number}
  */
 const hideActivePointer = () => {
 	const $pointer = document.querySelector( '.bigbox-pointer' );
@@ -41,7 +30,7 @@ const hideActivePointer = () => {
 	if ( $pointer !== null ) {
 		$pointer.style.display = 'none';
 	}
-}
+};
 
 /**
  * Calculate the offset positioning for an element.
@@ -49,21 +38,20 @@ const hideActivePointer = () => {
  * Currently all pointers are a fixed X offset (width of customize pane)
  * and only move up and down.
  *
- * @param {Object} elOffset Element offset.
- * @return {Object}
+ * @param {Object} elPosition Element offset.
+ * @return {Object} Offset positioning object. Contains left and top offset numbers.
  */
 const calculateOffset = ( elPosition ) => {
 	return {
 		left: 299 + 10,
-		top: elPosition.y + ( elPosition.height / 2 )
-	}
-}
+		top: elPosition.y + ( elPosition.height / 2 ),
+	};
+};
 
 /**
  * Show a pointer.
  *
  * @param {number} pointer The index of the pointer to show.
- * @return {number}
  */
 const showPointer = ( pointer ) => {
 	// Hide previous pointer.
@@ -87,13 +75,11 @@ const showPointer = ( pointer ) => {
 
 	// Update position.
 	$pointer.style.left = `${ offset.left }px`;
-	$pointer.style.top  = `${ offset.top }px`;
+	$pointer.style.top = `${ offset.top }px`;
 
 	// Attempt to focus a portion of the UI then show popover.
-	if ( pointerObj.focus ) {
-		const ui = wp.customize[ pointerObj.focusType ]( pointerObj.focus );
-
-		ui.focus();
+	if ( pointerObj.focusType && pointerObj.focus ) {
+		wp.customize[ pointerObj.focusType ]( pointerObj.focus ).focus();
 	}
 
 	// Show.

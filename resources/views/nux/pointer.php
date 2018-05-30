@@ -17,7 +17,7 @@
 	<p class="popover-body">{{ data.content }}</p>
 
 	<div class="bigbox-pointer__buttons">
-		<a class="close" href="#"><?php esc_html_e( 'Exit', 'bigbox' ); ?></a>
+		<a class="close" href="#"><?php esc_html_e( 'Exit Guide', 'bigbox' ); ?></a>
 
 		<# if ( ! data.last ) { #>
 			<a class="next" href="#"><?php esc_html_e( 'Next', 'bigbox' ); ?> &rarr;</a>
