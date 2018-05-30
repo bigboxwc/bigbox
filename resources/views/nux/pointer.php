@@ -18,6 +18,9 @@
 
 	<div class="bigbox-pointer__buttons">
 		<a class="close" href="#"><?php esc_html_e( 'Exit', 'bigbox' ); ?></a>
-		<a class="next" href="#"><?php esc_html_e( 'Next', 'bigbox' ); ?> &rarr;</a>
+
+		<# if ( ! data.last ) { #>
+			<a class="next" href="#"><?php esc_html_e( 'Next', 'bigbox' ); ?> &rarr;</a>
+		<# } #>
 	</div>
 </script>

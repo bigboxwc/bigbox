@@ -27,7 +27,7 @@ const prevPointer = () => {
  * @return {number}
  */
 const nextPointer = () => {
-	return activePointer + 1 <= pointers.length ? activePointer + 1 : pointers.length;
+	return activePointer + 1 < pointers.length ? activePointer + 1 : pointers.length;
 }
 
 /**
@@ -80,7 +80,10 @@ const showPointer = ( pointer ) => {
 
 	// Inject
 	const $pointer = document.querySelector( '.bigbox-pointer' );
-	$pointer.innerHTML = template( pointerObj );
+	$pointer.innerHTML = template( {
+		...pointerObj,
+		last: nextPointer() === pointers.length,
+	} );
 
 	// Update position.
 	$pointer.style.left = `${ offset.left }px`;
