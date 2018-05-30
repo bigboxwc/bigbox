@@ -185,14 +185,6 @@ class Setup_Guide implements Registerable, Service {
 		$version     = bigbox_get_theme_version();
 		$option_name = bigbox_get_theme_name() . '_version';
 
-		// @todo move to the background.
-		bigbox_install_plugin(
-			'woocommerce', [
-				'slug' => 'woocommerce',
-				'file' => 'woocommerce.php',
-			]
-		);
-
 		// Just update version if not fresh.
 		if ( get_option( $option_name, false ) ) {
 			update_option( $option_name, $version );
@@ -206,12 +198,23 @@ class Setup_Guide implements Registerable, Service {
 		}
 		// @codingStandardsIgnoreEnd
 
+		// Attempt to install and activate WooCommerce.
+		( new BigBox\NUX\Install_Plugin() )->data( [
+			'slug' => 'woocommerce',
+			'plugin' => [
+				'slug' => 'woocommerce',
+				'file' => 'woocommerce.php',
+			]
+		] )->dispatch();
+
 		// Schedule a notice to show in a week if they haven't added their key.
 		wp_clear_scheduled_hook( 'bigbox_nux_show_add_license_reminder' );
 		wp_schedule_single_event( ( time() + WEEK_IN_SECONDS ), 'bigbox_nux_show_add_license_reminder' );
 
+		// Update version.
 		update_option( $option_name, $version );
 
+		// Redirect.
 		wp_safe_redirect( esc_url( add_query_arg( 'page', 'bigbox', admin_url( 'themes.php' ) ) ) );
 		exit();
 	}

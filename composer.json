@@ -15,5 +15,8 @@
 	"scripts": {
 		"lint": "phpcs",
 		"lint:fix": "phpcbf"
+	},
+	"require": {
+		"a5hleyrich/wp-background-processing": "^1.0"
 	}
 }
