@@ -95,11 +95,11 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 
 	// Toggle cart menu item.
 	$wp_customize->add_setting(
-		'nav-item-cart', array(
+		'nav-item-cart', [
 			'default'           => true,
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'absint',
-		)
+		]
 	);
 
 	$wp_customize->add_control(

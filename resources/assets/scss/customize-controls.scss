@@ -12,3 +12,73 @@ $border:  1px solid #ccc;
 	padding-top: $padding;
 	border-top: $border;
 }
+
+@keyframes growHint {
+	0% {
+		transform: scale(0);
+	}
+
+	50% {
+		transform: scale(0.8);
+	}
+
+	100% {
+		transform: scale(0);
+	}
+}
+
+.bigbox-pointer {
+	z-index: 500001;
+	width: 280px;
+	position: fixed;
+	padding: $padding;
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.075);
+	transform: translate3d(0, -50%, 0);
+
+	&:before,
+	&:after {
+		content: ' ';
+		width: 14px;
+		height: 14px;
+		border-radius: 100%;
+		background: #3c64ff;
+		position: absolute;
+		left: -17px;
+		top: 50%;
+		margin-top: -7px;
+	}
+
+	&:before {
+		opacity: 0.50;
+	}
+
+	&:after {
+		animation: growHint 2s infinite;
+	}
+
+	h3 {
+		line-height: 1.4em;
+		font-size: 14px;
+		margin-top: 0;
+	}
+}
+
+.bigbox-pointer__buttons {
+	display: flex;
+	justify-content: space-between;
+
+	a {
+		text-decoration: none;
+	}
+
+	.close {
+		opacity: 0.50;
+		color: firebrick;
+	}
+
+	.next {
+		font-weight: bold;
+	}
+}

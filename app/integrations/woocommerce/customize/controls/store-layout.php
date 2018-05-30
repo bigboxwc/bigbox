@@ -42,10 +42,10 @@ add_action( 'customize_register', 'bigbox_woocommerce_customize_register_layout_
 function bigbox_woocommerce_customize_register_layout_controls( $wp_customize ) {
 	// Toggle default shop sidebar.
 	$wp_customize->add_setting(
-		'hide-shop-sidebar', array(
+		'hide-shop-sidebar', [
 			'default'           => false,
 			'sanitize_callback' => 'absint',
-		)
+		]
 	);
 
 	$wp_customize->add_control(

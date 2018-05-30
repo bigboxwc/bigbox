@@ -63,13 +63,13 @@ const buildWeightOptionsHtml = ( variants ) => {
 				if ( $selected.length > 0 ) {
 					$select
 						.val( value )
-						.attr( 'selected', true )
+						.prop( 'selected', true )
 						.trigger( 'change' );
 				// Select first item.
 				} else {
 					$select
 						.find( 'option:first-child' )
-						.attr( 'selected', true )
+						.prop( 'selected', true )
 						.trigger( 'change' );
 				}
 			} );
@@ -92,7 +92,7 @@ const buildWeightOptionsHtml = ( variants ) => {
 			.html( buildFamilyOptionsHtml() )
 			.val( familyValue )
 			.find( `[value="${ familyValue }"]` )
-			.attr( 'selected', true )
+			.prop( 'selected', true )
 			.end()
 			.change();
 	} );
