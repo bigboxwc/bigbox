@@ -9,9 +9,16 @@
  * @author Spencer Finnell
  */
 
-// Ensure a fresh site when loading starter content.
-if ( isset( $_GET['starter-content'] ) ) {
+// An annoying hack to ensure we can always importer starter content.
+if ( isset( $_GET['starter-content-redirect'] ) ) {
 	update_option( 'fresh_site', 1 );
+
+	wp_safe_redirect( esc_url_raw( add_query_arg( [
+		'walkthrough' => isset( $_GET['walkthrough'] ),
+		'starter-content' => isset( $_GET['starter-content'] ),
+	], admin_url( 'customize.php' ) ) ) );
+
+	exit();
 }
 
 /**

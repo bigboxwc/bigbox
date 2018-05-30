@@ -5,6 +5,31 @@
  * @since 1.0.0
  */
 
+/**
+ * Remind people to enter a license key if they haven't after a week.
+ *
+ * @since 1.0.0
+ */
+function bigbox_nux_show_add_license_reminder() {
+	// Only show to admins.
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
+	// Do nothing if dismissed.
+	if ( get_option( 'bigbox_notice_dismiss_license_reminder', false ) ) {
+		return;
+	}
+
+	// Do nothing if already entered.
+	if ( get_option( 'bigbox_license', false ) && 'valid' === get_option( 'bigbox_license_status' ) ) {
+		return;
+	}
+
+	add_action( 'admin_notices', function() {
+		bigbox_view( 'nux/license-reminder' );
+	} );
+}
 
 /**
  * Install a plugin from WordPress.org.

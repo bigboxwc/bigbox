@@ -71,10 +71,6 @@ class Setup_Guide implements Registerable, Service {
 		// Redirect on fresh install.
 		if ( defined( 'WP_DEBUG' ) && ! WP_DEBUG ) {
 			add_action( 'after_switch_theme', [ $this, 'redirect_on_activation' ] );
-
-			// Schedule a notice to show in a week if they haven't added their key.
-			wp_clear_scheduled_hook( [ $this, 'show_add_license_reminder' ] );
-			wp_schedule_single_event( ( time() + WEEK_IN_SECONDS ), [ $this, 'show_add_license_reminder' ] );
 			add_action( 'wp_ajax_bigbox_notice_dismiss_license_reminder', [ $this, 'dismiss_add_license_reminder' ] );
 		}
 	}
@@ -188,6 +184,7 @@ class Setup_Guide implements Registerable, Service {
 	public function redirect_on_activation() {
 		$version     = bigbox_get_theme_version();
 		$option_name = bigbox_get_theme_name() . '_version';
+
 		// @todo move to the background.
 		bigbox_install_plugin(
 			'woocommerce', [
@@ -209,43 +206,14 @@ class Setup_Guide implements Registerable, Service {
 		}
 		// @codingStandardsIgnoreEnd
 
+		// Schedule a notice to show in a week if they haven't added their key.
+		wp_clear_scheduled_hook( 'bigbox_nux_show_add_license_reminder' );
+		wp_schedule_single_event( ( time() + WEEK_IN_SECONDS ), 'bigbox_nux_show_add_license_reminder' );
+
 		update_option( $option_name, $version );
 
 		wp_safe_redirect( esc_url( add_query_arg( 'page', 'bigbox', admin_url( 'themes.php' ) ) ) );
 		exit();
-	}
-
-	/**
-	 * Remind people to enter a license key if they haven't after a week.
-	 *
-	 * @since 1.0.0
-	 */
-	public function show_add_license_reminder() {
-		// Only show to admins.
-		if ( ! current_user_can( 'manage_options' ) ) {
-			return;
-		}
-
-		// Do nothing if dismissed.
-		if ( get_option( 'bigbox_notice_dismiss_license_reminder', false ) ) {
-			return;
-		}
-
-		// Do nothing if already entered.
-		if ( get_option( 'bigbox_license', false ) && 'valid' === get_option( 'bigbox_license_status' ) ) {
-			return;
-		}
-
-		add_action( 'admin_notices', [ $this, 'add_license_reminder' ] );
-	}
-
-	/**
-	 * Add an admin notice to enter a license key.
-	 *
-	 * @since 1.0.0
-	 */
-	public function add_license_reminder() {
-		bigbox_view( 'nux/license-reminder' );
 	}
 
 	/**
