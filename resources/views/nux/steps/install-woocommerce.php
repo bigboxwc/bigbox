@@ -18,6 +18,10 @@ $plugin->prepare_items();
 $plugin->display();
 
 add_thickbox();
+
+if ( ! bigbox_is_integration_active( 'woocommerce' ) ) :
+	return;
+endif;
 ?>
 
 <p>

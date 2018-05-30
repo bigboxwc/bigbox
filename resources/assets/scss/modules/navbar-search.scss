@@ -11,6 +11,7 @@
 	position: relative;
 
 	@include border-radius();
+
 	@include media-breakpoint-up(md) {
 		order: 2;
 		margin: 0 $spacer;
@@ -57,6 +58,7 @@
 	}
 
 	+ .navbar-search__keywordss {
+
 		[type="text"],
 		[type="search"] {
 			border-radius: 0;

@@ -8,8 +8,8 @@
 
 // [1]
 $wb: (
-	black: #000000,
-	white: #ffffff,
+	black: #000,
+	white: #fff,
 );
 
 @each $name, $hex in map-merge($theme-colors, $wb) {
@@ -23,6 +23,7 @@ $wb: (
 
 	&.has-#{$name}-color, // [2]
 	.has-#{$name}-color {
+
 		&,
 		a {
 			color: $hex;
@@ -39,6 +40,7 @@ $wb: (
 
 	&.has-gray-#{$name}-color, // [2]
 	.has-gray-#{$name}-color {
+
 		&,
 		a {
 			color: $hex;

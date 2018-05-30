@@ -26,9 +26,11 @@ function bigbox_nux_show_add_license_reminder() {
 		return;
 	}
 
-	add_action( 'admin_notices', function() {
-		bigbox_view( 'nux/license-reminder' );
-	} );
+	add_action(
+		'admin_notices', function() {
+			bigbox_view( 'nux/license-reminder' );
+		}
+	);
 }
 
 /**
@@ -126,7 +128,8 @@ function bigbox_install_plugin( $plugin_slug, $plugin ) {
 
 			$activate = true;
 
-		} catch ( Exception $e ) {}
+		} catch ( Exception $e ) {
+		}
 
 		// Discard feedback.
 		ob_end_clean();
@@ -142,7 +145,8 @@ function bigbox_install_plugin( $plugin_slug, $plugin ) {
 			if ( is_wp_error( $result ) ) {
 				throw new Exception( $result->get_error_message() );
 			}
-		} catch ( Exception $e ) {}
+		} catch ( Exception $e ) {
+		}
 	}
 }
 

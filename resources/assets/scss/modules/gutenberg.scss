@@ -11,6 +11,7 @@ p.has-background {
 .wp-block-pullquote {
 
 	@if ( $use-margins ) {
+
 		@include vertical-spacing("margin", "both", (
 			sm: 2,
 			lg: 3,

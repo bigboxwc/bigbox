@@ -57,7 +57,11 @@ class Setup_Guide implements Registerable, Service {
 		];
 
 		// Dirty check.
-		if ( in_array( 'install', get_option( 'woocommerce_admin_notices', [] ) ) ) {
+		if (
+			in_array( 'install', get_option( 'woocommerce_admin_notices', [] ) )
+			|| ! bigbox_is_integration_active( 'woocommerce' )
+			|| ! get_option( 'woocommerce_shop_page_id', false )
+		) {
 			$this->steps['install-woocommerce'] = [
 				'label'    => __( 'Setup WooCommerce', 'bigbox' ),
 				'priority' => 20,
@@ -199,13 +203,15 @@ class Setup_Guide implements Registerable, Service {
 		// @codingStandardsIgnoreEnd
 
 		// Attempt to install and activate WooCommerce.
-		( new BigBox\NUX\Install_Plugin() )->data( [
-			'slug' => 'woocommerce',
-			'plugin' => [
-				'slug' => 'woocommerce',
-				'file' => 'woocommerce.php',
+		( new BigBox\NUX\Install_Plugin() )->data(
+			[
+				'slug'   => 'woocommerce',
+				'plugin' => [
+					'slug' => 'woocommerce',
+					'file' => 'woocommerce.php',
+				],
 			]
-		] )->dispatch();
+		)->dispatch();
 
 		// Schedule a notice to show in a week if they haven't added their key.
 		wp_clear_scheduled_hook( 'bigbox_nux_show_add_license_reminder' );

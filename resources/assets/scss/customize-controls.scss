@@ -14,6 +14,7 @@ $border:  1px solid #ccc;
 }
 
 @keyframes growHint {
+
 	0% {
 		transform: scale(0);
 	}
@@ -39,7 +40,7 @@ $border:  1px solid #ccc;
 
 	&:before,
 	&:after {
-		content: ' ';
+		content: " ";
 		width: 14px;
 		height: 14px;
 		border-radius: 100%;
@@ -51,7 +52,7 @@ $border:  1px solid #ccc;
 	}
 
 	&:before {
-		opacity: 0.50;
+		opacity: 0.5;
 	}
 
 	&:after {
@@ -74,7 +75,7 @@ $border:  1px solid #ccc;
 	}
 
 	.close {
-		opacity: 0.50;
+		opacity: 0.5;
 		color: firebrick;
 	}
 
