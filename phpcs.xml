@@ -22,9 +22,12 @@
 		<exclude name="WordPress.VIP.RestrictedVariables.user_meta__wpdb__usermeta" />
 		<exclude name="WordPress.VIP.PostsPerPage.posts_per_page_posts_per_page" />
 	</rule>
+
 	<rule ref="WordPress.WP.I18n">
 		<properties>
 			<property name="text_domain" type="array" value="bigbox" />
 		</properties>
 	</rule>
+
+	<rule ref="Generic.Arrays.DisallowLongArraySyntax" />
 </ruleset>

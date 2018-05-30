@@ -54,13 +54,13 @@
 
 #poststuff .install-woocommerce {
 
-	.accordion-section-content {
-		padding: 0;
+	.plugin-card-bottom {
+		display: none;
 	}
 
 	.plugin-card {
 		float: none;
-		margin: 0;
+		margin: -10px -20px 0;
 		border: 0;
 		width: 100%;
 	}

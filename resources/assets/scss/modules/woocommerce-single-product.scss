@@ -33,8 +33,6 @@
 
 	.woocommerce-product-gallery + .summary {
 
-		@include vertical-spacing("margin", "up");
-
 		@include media-breakpoint-up(lg) {
 			margin: 0 $spacer;
 		}

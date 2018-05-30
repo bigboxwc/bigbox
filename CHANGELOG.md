@@ -1,8 +1,23 @@
+## [1.4.0] - 2018-04-30
+
+### New
+
+- WooCommerce 3.4.1 compatibility.
+- Add interactive Customization walkthrough with the ability to importer starter content.
+- Attempt to automatically install WooCommerce on activation to allow for easy configuration.
+- Show WooCommerce image placeholder by default. Add option to disable in Customize > WooCommerce > Product Images.
+- Add reminder to enter a license key after 1 week of use.
+- Filter `bigbox_navbar_search_form_url` -- https://docs.bigboxwc.com/article/29-change-the-url-of-the-header-search-form
+
+### Fix
+
+- Avoid running extraneous HTTP requests in dashboard when checking for updates.
+
 ## [1.3.0] - 2018-04-23
 
 ### New
 
-- Show WooCommerce image placeholder by default. Add option to disable in Customize > WooCommerce > Product Images
+- Show WooCommerce image placeholder by default. Add option to disable in Customize > WooCommerce > Product Images.
 - Filter `bigbox_navbar_search_form_url` -- https://docs.bigboxwc.com/article/29-change-the-url-of-the-header-search-form
 
 ## [1.2.0] - 2018-04-22

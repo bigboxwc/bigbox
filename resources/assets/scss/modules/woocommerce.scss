@@ -3,13 +3,17 @@
 
 	// Responsive tables.
 	@include media-breakpoint-down(sm) {
+
 		table.shop_table_responsive {
+
 			thead {
 				display: none;
 			}
 
 			tbody {
+
 				tr:first-child {
+
 					td:first-child {
 						border-top: 0;
 					}
@@ -32,7 +36,7 @@
 					}
 
 					&::before {
-						content: attr(data-title) ': ';
+						content: attr(data-title) ": ";
 						float: left;
 						color: initial;
 						text-align: left;
@@ -43,6 +47,7 @@
 
 					&.product-remove,
 					&.actions {
+
 						&::before {
 							display: none;
 						}

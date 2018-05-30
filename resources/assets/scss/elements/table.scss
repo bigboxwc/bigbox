@@ -42,6 +42,7 @@ table {
 		}
 
 		@include media-breakpoint-up(md) {
+
 			tr:first-child,
 			tr:only-child {
 
@@ -80,6 +81,7 @@ table {
 
 	// Trailing button (usually to add a new row).
 	+ .button {
+
 		@include vertical-spacing("margin", "up");
 		@include button--size-sm();
 	}

@@ -14,6 +14,7 @@
 	z-index: 2;
 
 	@include border-radius();
+
 	@include media-breakpoint-up(md) {
 		padding: 17px 35px;
 	}

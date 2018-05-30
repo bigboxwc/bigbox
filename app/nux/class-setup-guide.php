@@ -39,24 +39,31 @@ class Setup_Guide implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function register() {
+		require_once get_template_directory() . '/app/nux/utils.php';
+
 		$this->steps = [
 			'license-manager' => [
 				'label'    => __( 'Enable Automatic Updates', 'bigbox' ),
 				'priority' => 10,
 			],
-			'install-plugins' => [
-				'label'    => __( 'Optimize Your Website', 'bigbox' ),
+			'customize'       => [
+				'label'    => __( 'Customize Your Store', 'bigbox' ),
 				'priority' => 30,
 			],
-			'customize'       => [
-				'label'    => __( 'Customize Your Website', 'bigbox' ),
+			'install-plugins' => [
+				'label'    => __( 'Optimize Your Store', 'bigbox' ),
 				'priority' => 40,
 			],
 		];
 
-		if ( ! bigbox_is_integration_active( 'woocommerce' ) ) {
+		// Dirty check.
+		if (
+			in_array( 'install', get_option( 'woocommerce_admin_notices', [] ) )
+			|| ! bigbox_is_integration_active( 'woocommerce' )
+			|| ! get_option( 'woocommerce_shop_page_id', false )
+		) {
 			$this->steps['install-woocommerce'] = [
-				'label'    => __( 'Install WooCommerce', 'bigbox' ),
+				'label'    => __( 'Setup WooCommerce', 'bigbox' ),
 				'priority' => 20,
 			];
 		}
@@ -64,6 +71,12 @@ class Setup_Guide implements Registerable, Service {
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
 		add_action( 'admin_menu', [ $this, 'add_menu_item' ] );
 		add_action( 'admin_menu', [ $this, 'add_meta_boxes' ], 20 );
+
+		// Redirect on fresh install.
+		if ( defined( 'WP_DEBUG' ) && ! WP_DEBUG ) {
+			add_action( 'after_switch_theme', [ $this, 'redirect_on_activation' ] );
+			add_action( 'wp_ajax_bigbox_notice_dismiss_license_reminder', [ $this, 'dismiss_add_license_reminder' ] );
+		}
 	}
 
 	/**
@@ -167,4 +180,59 @@ class Setup_Guide implements Registerable, Service {
 		);
 	}
 
+	/**
+	 * Redirect on activation.
+	 *
+	 * @since 1.0.0
+	 */
+	public function redirect_on_activation() {
+		$version     = bigbox_get_theme_version();
+		$option_name = bigbox_get_theme_name() . '_version';
+
+		// Just update version if not fresh.
+		if ( get_option( $option_name, false ) ) {
+			update_option( $option_name, $version );
+
+			return;
+		}
+
+		// @codingStandardsIgnoreStart
+		if ( isset( $_GET['action'] ) ) {
+			unset( $_GET['action'] );
+		}
+		// @codingStandardsIgnoreEnd
+
+		// Attempt to install and activate WooCommerce.
+		( new BigBox\NUX\Install_Plugin() )->data(
+			[
+				'slug'   => 'woocommerce',
+				'plugin' => [
+					'slug' => 'woocommerce',
+					'file' => 'woocommerce.php',
+				],
+			]
+		)->dispatch();
+
+		// Schedule a notice to show in a week if they haven't added their key.
+		wp_clear_scheduled_hook( 'bigbox_nux_show_add_license_reminder' );
+		wp_schedule_single_event( ( time() + WEEK_IN_SECONDS ), 'bigbox_nux_show_add_license_reminder' );
+
+		// Update version.
+		update_option( $option_name, $version );
+
+		// Redirect.
+		wp_safe_redirect( esc_url( add_query_arg( 'page', 'bigbox', admin_url( 'themes.php' ) ) ) );
+		exit();
+	}
+
+	/**
+	 * Persist the license reminder notice dismissal.
+	 *
+	 * @since 1.0.0
+	 */
+	public function dismiss_add_license_reminder() {
+		check_ajax_referer( 'bigbox_notice_dismiss_license_reminder', 'security' );
+		add_option( 'bigbox_notice_dismiss_license_reminder', true );
+		wp_send_json_success();
+	}
 }
