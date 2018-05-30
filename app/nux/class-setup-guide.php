@@ -73,9 +73,9 @@ class Setup_Guide implements Registerable, Service {
 			add_action( 'after_switch_theme', [ $this, 'redirect_on_activation' ] );
 
 			// Schedule a notice to show in a week if they haven't added their key.
-			// wp_clear_scheduled_hook( [ $this, 'show_add_license_reminder' ] );
-			// wp_schedule_single_event( ( time() + WEEK_IN_SECONDS ), [ $this, 'show_add_license_reminder' ] );
-			// add_action( 'wp_ajax_bigbox_notice_dismiss_license_reminder', [ $this, 'dismiss_add_license_reminder' ] );
+			wp_clear_scheduled_hook( [ $this, 'show_add_license_reminder' ] );
+			wp_schedule_single_event( ( time() + WEEK_IN_SECONDS ), [ $this, 'show_add_license_reminder' ] );
+			add_action( 'wp_ajax_bigbox_notice_dismiss_license_reminder', [ $this, 'dismiss_add_license_reminder' ] );
 		}
 	}
 
@@ -221,6 +221,11 @@ class Setup_Guide implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function show_add_license_reminder() {
+		// Only show to admins.
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
 		// Do nothing if dismissed.
 		if ( get_option( 'bigbox_notice_dismiss_license_reminder', false ) ) {
 			return;
