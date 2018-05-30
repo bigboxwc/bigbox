@@ -26,7 +26,7 @@ function bigbox_customize_controls_enqueue_scripts( $wp_customize ) {
 	wp_enqueue_script(
 		'bigbox-customize-controls',
 		get_template_directory_uri() . '/public/js/customize-controls.min.js',
-		[ 'customize-controls', 'underscore' ],
+		[ 'customize-controls', 'underscore', 'wp-util' ],
 		bigbox_get_theme_version(),
 		true
 	);

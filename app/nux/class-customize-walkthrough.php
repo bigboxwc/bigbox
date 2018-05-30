@@ -33,7 +33,7 @@ class Customize_Walkthrough implements Registerable, Service {
 	 */
 	public function register() {
 		add_filter( 'bigbox_get_starter_content', [ $this, 'filter_starter_content' ], 99 );
-		add_action( 'customize_controls_print_scripts', [ $this, 'customize_controls_print_scripts' ] );
+		add_action( 'customize_controls_print_footer_scripts', [ $this, 'customize_controls_print_footer_scripts' ] );
 		add_filter( 'bigbox_customize_controls_js', [ $this, 'bigbox_customize_controls_js' ] );
 	}
 
@@ -54,12 +54,12 @@ class Customize_Walkthrough implements Registerable, Service {
 	}
 
 	/**
-	 * Output walkthrough pointers.
+	 * Output pointer template.
 	 *
 	 * @since 1.0.0
 	 */
-	public function customize_controls_print_scripts() {
-		wp_enqueue_style( 'wp-pointer' );
+	public function customize_controls_print_footer_scripts() {
+		bigbox_view( 'nux/pointer' );
 	}
 
 	/**
@@ -95,7 +95,6 @@ class Customize_Walkthrough implements Registerable, Service {
 
 		$settings['walkthrough'] = [
 			'active'   => isset( $_GET['walkthrough'] ),
-			'template' => bigbox_get_view( 'nux/pointer' ),
 			'pointers' => $pointers,
 		];
 

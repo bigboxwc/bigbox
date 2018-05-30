@@ -10,17 +10,14 @@
  */
 ?>
 
-<div class="popover wp-pointer wp-pointer-left">
-  <div class="wp-pointer-content">
-		<h3 class="popover-header"></h3>
-		<p class="popover-body"></p>
-		<div class="wp-pointer-buttons">
-			<a class="close" href="#"><?php esc_html_e( 'Exit', 'bigbox' ); ?></a>
-			<a class="next" href="#"><?php esc_html_e( 'Next', 'bigbox' ); ?> &rarr;</a>
-		</div>
-  </div>
+<div aria-hidden class="bigbox-pointer"></div>
 
-  <div class="wp-pointer-arrow">
-	<div class="wp-pointer-arrow-inner"></div>
-  </div>
-</div>
+<script type="text/html" id="tmpl-bigbox-pointer">
+	<h3>{{ data.title }}</h3>
+	<p class="popover-body">{{ data.content }}</p>
+
+	<div class="bigbox-pointer__buttons">
+		<a class="close" href="#"><?php esc_html_e( 'Exit', 'bigbox' ); ?></a>
+		<a class="next" href="#"><?php esc_html_e( 'Next', 'bigbox' ); ?> &rarr;</a>
+	</div>
+</script>

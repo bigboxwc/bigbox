@@ -13,30 +13,54 @@ $border:  1px solid #ccc;
 	border-top: $border;
 }
 
-.wp-pointer.popover {
+@keyframes growHint {
+	0% {
+		transform: scale(0);
+	}
+
+	50% {
+		transform: scale(0.8);
+	}
+
+	100% {
+		transform: scale(0);
+	}
+}
+
+.bigbox-pointer {
 	z-index: 500001;
 	width: 280px;
-	left: 281px !important;
-	top: 18px !important;
+	position: fixed;
+	padding: $padding;
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.075);
+	transform: translate3d(0, -50%, 0);
 
-	.wp-pointer-buttons {
-		display: flex;
-		justify-content: space-between;
+	&:before,
+	&:after {
+		content: ' ';
+		width: 14px;
+		height: 14px;
+		border-radius: 100%;
+		background: #3c64ff;
+		position: absolute;
+		left: -17px;
+		top: 50%;
+		margin-top: -7px;
 	}
 
-	.close {
+	&:before {
 		opacity: 0.50;
-
-		&:before {
-			display: none !important;
-		}
 	}
 
-	.next {
-		font-weight: bold;
+	&:after {
+		animation: growHint 2s infinite;
 	}
 
-	.wp-pointer-content h3:before {
-		content: "\f540";
+	h3 {
+		line-height: 1.4em;
+		font-size: 14px;
+		margin-top: 0;
 	}
 }
