@@ -33,8 +33,11 @@ class Customize_Walkthrough implements Registerable, Service {
 	 */
 	public function register() {
 		add_filter( 'bigbox_get_starter_content', [ $this, 'filter_starter_content' ], 99 );
-		add_action( 'customize_controls_print_footer_scripts', [ $this, 'customize_controls_print_footer_scripts' ] );
-		add_filter( 'bigbox_customize_controls_js', [ $this, 'bigbox_customize_controls_js' ] );
+
+		if ( isset( $_GET['walkthrough'] ) ) { // @codingStandardsIgnoreLine
+			add_action( 'customize_controls_print_footer_scripts', [ $this, 'customize_controls_print_footer_scripts' ] );
+			add_filter( 'bigbox_customize_controls_js', [ $this, 'bigbox_customize_controls_js' ] );
+		}
 	}
 
 	/**

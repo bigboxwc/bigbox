@@ -1,3 +1,9 @@
+## [1.4.1] - 2018-04-31
+
+### Fix
+
+- Do not show Walkthrough pointer until needed.
+
 ## [1.4.0] - 2018-04-30
 
 ### New
