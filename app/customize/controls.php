@@ -33,9 +33,7 @@ function bigbox_customize_controls_enqueue_scripts( $wp_customize ) {
 
 	wp_localize_script(
 		'bigbox-customize-controls', 'bigboxCustomizeControls', apply_filters(
-			'bigbox_customize_controls_js', [
-			'fonts' => json_decode( file_get_contents( get_template_directory() . '/resources/data/google-fonts.json' ) ), // @codingStandardsIgnoreLine
-			]
+			'bigbox_customize_controls_js', []
 		)
 	);
 
