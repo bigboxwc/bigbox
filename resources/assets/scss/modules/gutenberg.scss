@@ -49,9 +49,13 @@ p.has-background {
 
 .wp-block-button {
 
-	.wp-block-button__link {
+	& .wp-block-button__link {
 
 		@include button();
+
+		&.editor-rich-text__tinymce[data-is-placeholder-visible=true] {
+			position: absolute;
+		}
 	}
 }
 
