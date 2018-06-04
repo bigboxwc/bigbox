@@ -80,21 +80,21 @@ class Customize_Walkthrough implements Registerable, Service {
 				'title'   => esc_html__( '📦 Welcome to BigBox', 'bigbox' ),
 				'content' => wp_kses_post( __( 'Need some help getting started? No problem! I can guide you through the Customization options and get you on your way.', 'bigbox' ) ),
 			],
-			'logo' => [
+			'logo'    => [
 				'el'        => '#customize-control-custom_logo',
 				'title'     => esc_html__( 'Add a Custom Logo', 'bigbox' ),
 				'content'   => wp_kses_post( __( 'Update your website\'s identity to reflect your unique brand.', 'bigbox' ) ),
 				'focusType' => 'control',
 				'focus'     => 'custom_logo',
 			],
-			'colors' => [
+			'colors'  => [
 				'el'        => '#customize-control-color-primary',
 				'title'     => esc_html__( 'Choose Your Color Scheme', 'bigbox' ),
 				'content'   => wp_kses_post( __( 'Select the colors used to generate various parts of your website.', 'bigbox' ) ),
 				'focusType' => 'control',
 				'focus'     => 'color-primary',
 			],
-			'type' => [
+			'type'    => [
 				'el'        => '#customize-control-type-font-family',
 				'title'     => esc_html__( 'Chose Your Typography', 'bigbox' ),
 				'content'   => wp_kses_post( __( 'Select the colors used to generate various parts of your website.', 'bigbox' ) ),
@@ -108,7 +108,7 @@ class Customize_Walkthrough implements Registerable, Service {
 				'focusType' => 'section',
 				'focus'     => 'sidebar-widgets-shop',
 			],
-			'end' => [
+			'end'     => [
 				'el'        => '#customize-control-custom_logo',
 				'title'     => esc_html__( 'All Set!', 'bigbox' ),
 				'content'   => wp_kses_post( __( 'Continue customizing your site as much as you would like. You can always come back by visiting Appearance ▸ Customize', 'bigbox' ) ),

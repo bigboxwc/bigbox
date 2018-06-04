@@ -1,4 +1,4 @@
-/* global jQuery, wp, bigboxCustomizeControls, _ */
+/* global jQuery, $, wp, bigboxCustomizeControls, _ */
 
 const fontList = bigboxCustomizeControls.fonts;
 
@@ -12,7 +12,7 @@ const buildFamilyOptionsHtml = () => {
 
 	options.push( '<option value="default" data-variants="100,200,300,400,500,600,700,800">System Default</option>' );
 
-	_.each( fontList, ( data, family ) => {
+	_.each( fontList, ( data ) => {
 		options.push( `<option value="${ data.family }" data-category="${ data.category }" data-variants="${ data.variants.join( ',' ) }">${ data.family }</option>` );
 	} );
 
