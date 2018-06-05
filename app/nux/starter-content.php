@@ -9,6 +9,24 @@
  * @author Spencer Finnell
  */
 
+// An annoying hack to ensure we can always importer starter content.
+if ( isset( $_GET['starter-content-redirect'] ) ) {
+	update_option( 'fresh_site', 1 );
+
+	wp_safe_redirect(
+		esc_url_raw(
+			add_query_arg(
+				[
+					'walkthrough'     => isset( $_GET['walkthrough'] ),
+					'starter-content' => isset( $_GET['starter-content'] ),
+				], admin_url( 'customize.php' )
+			)
+		)
+	);
+
+	exit();
+}
+
 /**
  * Starter content.
  *
@@ -37,8 +55,8 @@ function bigbox_get_starter_content() {
 	return apply_filters(
 		'bigbox_get_starter_content', [
 			'posts'     => [
-				'home' => [],
-				'blog' => [],
+				'home',
+				'blog',
 			],
 
 			// Default to a static front page and assign the front and posts pages.
@@ -53,13 +71,21 @@ function bigbox_get_starter_content() {
 				'primary'   => [
 					'name'  => 'Primary',
 					'items' => [
-						'page_home',
+						'home' => [
+							'type'      => 'post_type',
+							'object'    => 'page',
+							'object_id' => '{{home}}',
+						],
 					],
 				],
 				'secondary' => [
 					'name'  => 'secondary',
 					'items' => [
-						'page_blog',
+						'blog' => [
+							'type'      => 'post_type',
+							'object'    => 'page',
+							'object_id' => '{{blog}}',
+						],
 					],
 				],
 			],

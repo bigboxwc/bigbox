@@ -119,7 +119,7 @@ class Build_Inline_CSS {
 
 		// Create new media query if it doesn't exist yet.
 		if ( ! isset( $this->data[ $media ] ) || ! is_array( $this->data[ $media ] ) ) {
-			$this->data[ $media ] = array();
+			$this->data[ $media ] = [];
 		}
 
 		// Look for matching selector sets.

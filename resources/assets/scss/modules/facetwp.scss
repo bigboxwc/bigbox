@@ -2,13 +2,14 @@
 	position: relative;
 
 	&__loading {
+
 		@include pseudo-overlay();
 
 		background: rgba(255, 255, 255, 0.75);
 		z-index: 2;
 
 		&:before {
-			content: '';
+			content: "";
 			position: absolute;
 			top: 75px;
 			left: 50%;
@@ -17,7 +18,7 @@
 			margin-left: -20px;
 			background-color: theme-color("primary");
 			border-radius: 100%;
-			animation: scaleout 1.0s infinite ease-in-out;
+			animation: scaleout 1s infinite ease-in-out;
 		}
 	}
 }

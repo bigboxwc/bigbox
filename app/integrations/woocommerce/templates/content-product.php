@@ -57,7 +57,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 		<h2 class="product__title">
 			<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>">
-				<?php echo esc_html( $product->get_title() ); ?>
+				<?php echo esc_html( get_the_title( $product->get_id() ) ); ?>
 			</a>
 		</h2>
 

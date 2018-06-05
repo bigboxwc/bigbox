@@ -48,7 +48,7 @@ class Theme_Updater implements Registerable {
 	public function register( $args = [] ) {
 		// Disable on debug.
 		if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
-			return true;
+			return;
 		}
 
 		$this->response_key = 'bigbox-update-response';
@@ -104,7 +104,7 @@ class Theme_Updater implements Registerable {
 	 *                        the request fails returns false.
 	 */
 	public function check_for_update() {
-		$update_data = get_transient( $this->response_key );
+		$update_data = get_site_transient( $this->response_key );
 
 		if ( false === $update_data ) {
 			$failed = false;

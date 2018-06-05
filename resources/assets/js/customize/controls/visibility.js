@@ -19,15 +19,6 @@
 				return !! to;
 			},
 		},
-		// Hide font fallback if using system default.
-		'type-font-family': {
-			controls: [
-				'type-font-family-fallback',
-			],
-			callback: function( to ) {
-				return 'default' !== to;
-			},
-		},
 	}, ( settingId, o ) => {
 		api( settingId, ( setting ) => {
 			// Handle multiple toggles.

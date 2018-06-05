@@ -37,8 +37,8 @@ function bigbox_facetwp_wp_enqueue_scripts() {
 function bigbox_facetwp_loop() {
 	$fwp = FWP();
 
-	remove_action( 'loop_start', array( $fwp->display, 'add_template_tag' ) );
-	remove_action( 'loop_no_results', array( $fwp->display, 'add_template_tag' ) );
+	remove_action( 'loop_start', [ $fwp->display, 'add_template_tag' ] );
+	remove_action( 'loop_no_results', [ $fwp->display, 'add_template_tag' ] );
 }
 
 /**

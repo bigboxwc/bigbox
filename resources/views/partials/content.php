@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div class="blog-post">
+<div id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post' ); ?>>
 	<?php if ( has_post_thumbnail() ) : ?>
 	<div class="alignwide">
 		<a href="<?php the_permalink(); ?>">

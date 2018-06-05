@@ -1,5 +1,7 @@
 p.has-background {
 	padding: $spacer;
+
+	@include border-radius();
 }
 
 .wp-block-cover-image,
@@ -11,6 +13,7 @@ p.has-background {
 .wp-block-pullquote {
 
 	@if ( $use-margins ) {
+
 		@include vertical-spacing("margin", "both", (
 			sm: 2,
 			lg: 3,
@@ -48,9 +51,13 @@ p.has-background {
 
 .wp-block-button {
 
-	.wp-block-button__link {
+	& .wp-block-button__link {
 
 		@include button();
+
+		&.editor-rich-text__tinymce[data-is-placeholder-visible=true] {
+			position: absolute;
+		}
 	}
 }
 
@@ -66,4 +73,9 @@ p.has-background {
 .wp-block-quote {
 	margin-left: 0;
 	margin-right: 0;
+}
+
+.wp-block-subhead {
+	margin-top: -($spacer);
+	margin-bottom: ($spacer * 2);
 }

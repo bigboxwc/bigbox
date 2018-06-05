@@ -14,22 +14,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<p><?php esc_html_e( 'Manage the appearance and behavior of various theme components with the live customizer.', 'bigbox' ); ?></p>
+<p><?php esc_html_e( 'Need a quick and easy setup to demo your store? Let us help you design your store by walking you through the customization process.', 'bigbox' ); ?></p>
 
-<ul>
-	<li><a href="<?php echo esc_url_raw( admin_url( 'customize.php?autofocus[section]=title_tagline' ) ); ?>">
-		<?php esc_html_e( 'Add a custom logo', 'bigbox' ); ?>
-	</a></li>
+<form action="<?php echo esc_url( admin_url( 'themes.php' ) ); ?>" method="GET">
+	<p>
+		<label for="starter-content">
+				<input type="checkbox" name="starter-content" id="starter-content" value="1" />
+				<?php esc_html_e( 'Import starter content', 'bigbox' ); ?>
+		</label>
+	</p>
 
-	<li><a href="<?php echo esc_url_raw( admin_url( 'customize.php?autofocus[section]=static_front_page' ) ); ?>">
-		<?php esc_html_e( 'Update homepage display', 'bigbox' ); ?>
-	</a></li>
+	<button type="submit" class="button button-primary button-large"><?php esc_html_e( 'Customize Your Store', 'bigbox' ); ?></button>
 
-	<li><a href="<?php echo esc_url_raw( admin_url( 'customize.php?autofocus[panel]=colors' ) ); ?>">
-		<?php esc_html_e( 'Choose custom colors', 'bigbox' ); ?>
-	</a></li>
-
-	<li><a href="<?php echo esc_url_raw( admin_url( 'customize.php?autofocus[section]=type' ) ); ?>">
-		<?php esc_html_e( 'Choose a new typeface', 'bigbox' ); ?>
-	</a></li>
-</ul>
+	<input type="hidden" name="page" value="bigbox" />
+	<input type="hidden" name="walkthrough" value="1" />
+	<input type="hidden" name="starter-content-redirect" value="1" />
+</form>

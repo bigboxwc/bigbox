@@ -44,8 +44,19 @@ class Gutenberg extends Integration implements Registerable, Service {
 	public function add_theme_support() {
 		add_theme_support( 'gutenberg' );
 		add_theme_support( 'align-wide' );
+		add_theme_support( 'wp-block-styles' );
 
-		add_theme_support( 'editor-color-palette', ...array_values( bigbox_get_theme_colors() ) );
+		$palette = [];
+		$colors  = bigbox_get_theme_colors();
+
+		foreach ( $colors as $mod => $color ) {
+			$palette[] = [
+				'name'  => $color['name'],
+				'color' => bigbox_get_theme_color( $mod ),
+			];
+		}
+
+		add_theme_support( 'editor-color-palette', ...$palette );
 	}
 
 	/**

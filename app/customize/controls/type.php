@@ -14,6 +14,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Add a list of Google Fonts to the JS settings.
+ *
+ * @since 1.5.0
+ *
+ * @param array $settings JS Settings.
+ * @return array
+ */
+function bigbox_customize_controls_js_fonts( $settings ) {
+	$settings['fonts'] = json_decode( file_get_contents( get_template_directory() . '/resources/data/google-fonts.json' ) ); // @codingStandardsIgnoreLine
+
+	return $settings;
+}
+add_filter( 'bigbox_customize_controls_js', 'bigbox_customize_controls_js_fonts' );
+
+/**
  * Type sections.
  *
  * @since 1.0.0
@@ -70,23 +85,21 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 
 	$wp_customize->add_control(
 		'type-font-family-fallback', [
-			// Translators: Customizer control label.
-			'label'       => esc_html__( 'Fallback Font Family', 'bigbox' ),
-			'description' => esc_html__( 'Used when the Google font is unable to be loaded.', 'bigbox' ),
-			'type'        => 'select',
-			'choices'     => [
-				// Translators: Customize control value.
-				'sans-serif' => esc_html__( 'Sans Serif', 'bigbox' ),
+			'active_callback' => '__return_false',
+			'type'            => 'select',
+			'choices'         => [
 				// Translators: Customize control value.
 				'serif'      => esc_html__( 'Serif', 'bigbox' ),
 				// Translators: Customize control value.
-				'cursive'    => esc_html__( 'Cursive', 'bigbox' ),
+				'sans-serif' => esc_html__( 'Sans Serif', 'bigbox' ),
 				// Translators: Customize control value.
-				'fantasy'    => esc_html__( 'Fantasy', 'bigbox' ),
+				'display'    => esc_html__( 'Display', 'bigbox' ),
+				// Translators: Customize control value.
+				'cursive'    => esc_html__( 'Handwriting', 'bigbox' ),
 				// Translators: Customize control value.
 				'monospace'  => esc_html__( 'Monospace', 'bigbox' ),
 			],
-			'section'     => 'type',
+			'section'         => 'type',
 		]
 	);
 

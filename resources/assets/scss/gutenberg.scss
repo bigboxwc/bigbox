@@ -6,6 +6,7 @@ $use-margins: false;
 @import "_config";
 
 .edit-post-visual-editor {
+
 	&,
 	.editor-default-block-appender input[type=text].editor-default-block-appender__content,
 	p {
@@ -26,12 +27,15 @@ $use-margins: false;
 	@import "elements/strong";
 	@import "elements/small";
 	@import "elements/mark";
-
 	@import "modules/gutenberg-colors";
 	@import "modules/gutenberg";
 
-	.wp-block-button .wp-block-button__link {
-		@import "modules/gutenberg-colors";
+	.wp-block-button {
+
+		& .wp-block-button__link {
+
+			@import "modules/gutenberg-colors";
+		}
 	}
 
 	.wp-block-table {
