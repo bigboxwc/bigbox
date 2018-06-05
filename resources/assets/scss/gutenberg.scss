@@ -30,9 +30,12 @@ $use-margins: false;
 	@import "modules/gutenberg-colors";
 	@import "modules/gutenberg";
 
-	.wp-block-button .wp-block-button__link {
+	.wp-block-button {
 
-		@import "modules/gutenberg-colors";
+		& .wp-block-button__link {
+
+			@import "modules/gutenberg-colors";
+		}
 	}
 
 	.wp-block-table {

@@ -6,7 +6,7 @@
 const {
 	active,
 	pointers,
-} = bigboxCustomizeControls.walkthrough;
+} = bigboxCustomizeControls.walkthrough || {};
 
 const template = wp.template( 'bigbox-pointer' );
 

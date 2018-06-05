@@ -13,25 +13,25 @@
 
 .button--pill {
 
-	@include button--pill;
+	@include button--pill();
 }
 
 .button--blank {
 
-	@include button--blank;
+	@include button--blank();
 }
 
 .button--size-sm {
 
-	@include button--size-sm;
+	@include button--size-sm();
 }
 
 .button--size-xs {
 
-	@include button--size-xs;
+	@include button--size-xs();
 }
 
 .button--size-block {
 
-	@include button--size-block;
+	@include button--size-block();
 }

@@ -1,5 +1,7 @@
 p.has-background {
 	padding: $spacer;
+
+	@include border-radius();
 }
 
 .wp-block-cover-image,
@@ -49,9 +51,13 @@ p.has-background {
 
 .wp-block-button {
 
-	.wp-block-button__link {
+	& .wp-block-button__link {
 
 		@include button();
+
+		&.editor-rich-text__tinymce[data-is-placeholder-visible=true] {
+			position: absolute;
+		}
 	}
 }
 
@@ -69,9 +75,7 @@ p.has-background {
 	margin-right: 0;
 }
 
-.wp-block-columns {
-
-	&.alignfull {
-		padding: 0 ($spacer * 2);
-	}
+.wp-block-subhead {
+	margin-top: -($spacer);
+	margin-bottom: ($spacer * 2);
 }

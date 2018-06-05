@@ -1,3 +1,16 @@
+## [1.5.0] - 2018-05-05
+
+### New
+
+- Automatically use Google's suggested fallback font category.
+
+### Fix
+
+- Remove unused starter content images.
+- Remove unused walkthrough step when not needed.
+- Gutenberg 3.0 compatibility.
+- Remove unused string translation.
+
 ## [1.4.1] - 2018-04-31
 
 ### Fix
