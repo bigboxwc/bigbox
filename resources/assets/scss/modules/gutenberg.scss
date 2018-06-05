@@ -75,7 +75,6 @@ p.has-background {
 	margin-right: 0;
 }
 
-.wp-block-subhead {
-	margin-top: -($spacer);
-	margin-bottom: ($spacer * 2);
+.wp-block-cover-image-text {
+	font-weight: $font-weight-bold;
 }

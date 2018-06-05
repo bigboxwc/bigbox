@@ -15,17 +15,26 @@
 	}
 }
 
-@include media-breakpoint-up(xl) {
+@include media-breakpoint-up("xl", $container-max-widths) {
 
 	.alignwide {
 
-		&,
 		.site-primary--full & {
 			margin-left: -($grid-gutter-width * 2);
 			margin-right: -($grid-gutter-width * 2);
 			max-width: calc(100% + #{$grid-gutter-width * 4});
 			width: auto;
 		}
+	}
+}
+
+@include media-breakpoint-up("xl", $grid-breakpoints) {
+
+	.alignwide {
+		margin-left: -($grid-gutter-width * 2);
+		margin-right: -($grid-gutter-width * 2);
+		max-width: calc(100% + #{$grid-gutter-width * 4});
+		width: auto;
 	}
 }
 

@@ -34,10 +34,4 @@
 @import "mixins/pseudo-overlay";
 @import "mixins/border-radius";
 @import "mixins/admin-bar-mobile";
-
-// Helpers
-@import "helpers/animation-spin";
-@import "helpers/animation-scaleout";
-@import "helpers/align";
-@import "helpers/screen-reader-text";
-@import "helpers/type";
+@import "mixins/type";

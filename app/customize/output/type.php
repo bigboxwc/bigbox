@@ -95,6 +95,7 @@ return [
 			'.woocommerce-mini-cart-item a',
 			'.woocommerce-MyAccount-navigation-link a',
 			'.shop-filters__mobile-toggle-link',
+			'.wp-block-cover-image-text',
 		],
 		'declarations' => [
 			'font-weight' => esc_attr( $weight_bold ),
