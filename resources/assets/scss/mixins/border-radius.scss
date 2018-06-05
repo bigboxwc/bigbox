@@ -1,31 +1,43 @@
 @mixin border-radius( $radius: $border-radius ) {
+	border-radius: 0;
 
 	@if $is-rounded {
 
-		border-radius: $radius;
+		.is-rounded & {
+			border-radius: $radius;
+		}
 	}
 }
 
 @mixin border-bottom-radius( $radius: $border-radius ) {
+	border-radius: 0;
 
 	@if $is-rounded {
 
-		border-radius: 0 0 $border-radius $border-radius;
+		.is-rounded & {
+			border-radius: 0 0 $border-radius $border-radius;
+		}
 	}
 }
 
 @mixin border-left-radius( $radius: $border-radius ) {
+	border-radius: 0;
 
 	@if $is-rounded {
 
-		border-radius: $border-radius 0 0 $border-radius;
+		.is-rounded & {
+			border-radius: $border-radius 0 0 $border-radius;
+		}
 	}
 }
 
 @mixin border-right-radius( $radius: $border-radius ) {
+	border-radius: 0;
 
 	@if $is-rounded {
 
-		border-radius: 0 $border-radius $border-radius 0;
+		.is-rounded & {
+			border-radius: 0 $border-radius $border-radius 0;
+		}
 	}
 }

@@ -27,3 +27,19 @@ add_filter(
 		return bigbox_get_partial( 'searchform' );
 	}
 );
+
+/**
+ * Add rounded corners to body by default.
+ *
+ * @since 1.0.0
+ *
+ * @param array $classes Body classes.
+ * @return array
+ */
+add_filter(
+	'body_class', function( $classes ) {
+		$classes[] = 'is-rounded';
+
+		return $classes;
+	}
+);

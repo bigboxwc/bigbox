@@ -22,7 +22,7 @@ select {
 
 button {
 
-	@include button;
+	@include button();
 }
 
 [type="radio"],

@@ -9,11 +9,6 @@
 	img {
 		min-width: 100%;
 	}
-
-	.site-primary--full & {
-		margin-left: 0;
-		margin-right: ($grid-gutter-width / 2);
-	}
 }
 
 @include media-breakpoint-up(xl) {
@@ -21,7 +16,7 @@
 	.alignwide {
 		margin-left: -10%;
 		margin-right: -10%;
-		width: 120%;
+		max-width: 120%;
 	}
 }
 

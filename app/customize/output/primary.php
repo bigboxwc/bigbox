@@ -46,6 +46,7 @@ return [
 			'.facetwp-facet .facetwp-submit',
 			'.facetwp-facet .facetwp-autocomplete-update',
 			'.facetwp-facet .facetwp-slider-reset',
+			'.facetwp-facet.facetwp-type-slider .facetwp-slider .noUi-connect',
 
 			// Flatpickr.
 			'.flatpickr-calendar .flatpickr-day.selected',
