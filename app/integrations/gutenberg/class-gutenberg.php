@@ -47,7 +47,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 		add_theme_support( 'wp-block-styles' );
 
 		$palette = [];
-		$colors = bigbox_get_theme_colors();
+		$colors  = bigbox_get_theme_colors();
 
 		foreach ( $colors as $mod => $color ) {
 			$palette[] = [

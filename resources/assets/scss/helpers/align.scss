@@ -2,6 +2,7 @@
 .alignwide {
 
 	@include media-breakpoint-up(xl) {
+
 		&,
 		.site-primary--full & {
 			margin-left: calc(-100vw / 2 + 100% / 2);
@@ -20,6 +21,7 @@
 @include media-breakpoint-up(xl) {
 
 	.alignwide {
+
 		&,
 		.site-primary--full & {
 			margin-left: -($grid-gutter-width * 2);
