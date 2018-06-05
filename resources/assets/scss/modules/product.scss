@@ -153,6 +153,8 @@
 
 	img {
 		display: block;
+
+		@include border-radius();
 	}
 }
 
