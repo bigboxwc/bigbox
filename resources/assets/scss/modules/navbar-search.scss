@@ -80,6 +80,7 @@
 	[type="text"],
 	[type="search"] {
 		border: 0;
+		height: 100%;
 
 		@include border-left-radius();
 	}
