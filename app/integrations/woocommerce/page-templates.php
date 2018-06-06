@@ -113,23 +113,26 @@ function bigbox_woocommerce_get_dynamic_shop_pages() {
 
 	if ( false === $pages ) {
 		$pages = [];
-
-		$query = new WP_Query(
-			[
-				'fields'                 => 'ids',
-				'nopaging'               => true,
-				'post_type'              => 'page',
-				'update_post_meta_cache' => false,
-				'update_term_meta_cache' => false,
-				'meta_query'             => [
-					[
-						'key'     => '_wp_page_template',
-						'value'   => bigbox_woocommerce_template_path() . 'archive-product-page.php',
-						'compare' => '=',
-					],
+		$args  = [
+			'fields'                 => 'ids',
+			'nopaging'               => true,
+			'post_type'              => 'page',
+			'update_post_meta_cache' => false,
+			'update_term_meta_cache' => false,
+			'meta_query'             => [
+				[
+					'key'     => '_wp_page_template',
+					'value'   => bigbox_woocommerce_template_path() . 'archive-product-page.php',
+					'compare' => '=',
 				],
-			]
-		);
+			],
+		];
+
+		if ( function_exists( 'pll_default_language' ) ) {
+			$args['lang'] = pll_default_language();
+		}
+
+		$query = new WP_Query( $args );
 
 		if ( ! empty( $query->posts ) ) {
 			$pages = $query->posts;
