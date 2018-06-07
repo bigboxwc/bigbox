@@ -136,7 +136,17 @@ class Gutenberg extends Integration implements Registerable, Service {
 		$css->add(
 			[
 				'selectors'    => [
+					'.edit-post-visual-editor h1',
+					'.edit-post-visual-editor h2',
+					'.edit-post-visual-editor h3',
+					'.edit-post-visual-editor h4',
+					'.edit-post-visual-editor h5',
+					'.edit-post-visual-editor h6',
+					'.edit-post-visual-editor label',
+					'.edit-post-visual-editor mark',
+					'.edit-post-visual-editor table tfoot td',
 					'.edit-post-visual-editor strong',
+					'.edit-post-visual-editor .wp-block-cover-image-text',
 				],
 				'declarations' => [
 					'font-weight' => esc_attr( $weight_bold ),
