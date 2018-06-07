@@ -18,3 +18,11 @@ h2 {
 		font-size: $font-size-xl;
 	}
 }
+
+h3 {
+	font-size: calc(#{$font-size-base} * 1.425);
+}
+
+h4 {
+	font-size: calc(#{$font-size-base} * 1.25);
+}

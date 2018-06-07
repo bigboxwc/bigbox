@@ -1,7 +1,7 @@
 .footer-nav {
-	margin-top: auto;
 	border-top: 1px solid gray("100");
 
+	@include vertical-spacing("margin", "up");
 	@include vertical-spacing("padding", "both", (
 		sm: 2,
 	) );

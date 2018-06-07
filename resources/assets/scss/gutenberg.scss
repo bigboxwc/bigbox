@@ -54,6 +54,13 @@ $use-margins: false;
 			border: 0;
 		}
 	}
+
+	.wp-block-cover-image {
+
+		.wp-block-cover-image-text {
+			line-height: $line-height-base;
+		}
+	}
 }
 
 .editor-post-title__input {
