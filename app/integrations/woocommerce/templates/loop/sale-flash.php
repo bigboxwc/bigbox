@@ -28,7 +28,7 @@ if ( $product->is_on_sale() ) :
 		// Translators: %1$s Sale savings amount.
 		$flash = sprintf( __( 'Save %1$s%%', 'bigbox' ), $percentage );
 	else :
-		$flash = __( 'Sale!', 'bigbox' );
+		$flash = __( 'Sale', 'bigbox' );
 	endif;
 ?>
 
