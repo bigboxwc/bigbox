@@ -44,11 +44,13 @@ import { transformInput } from './quantity';
  * Set width of flexSlider.
  */
 ( function( $ ) {
-	if ( ! wc_single_product_params.flexslider ) {
+	const params = wc_single_product_params || {};
+
+	if ( ! params.flexslider ) {
 		return;
 	}
 
 	$( '.woocommerce-product-gallery__wrapper .woocommerce-product-gallery__image:eq(0) .wp-post-image' ).on( 'load', () => {
-		$( '.woocommerce-product-gallery--with-images .flex-viewport' ).css( 'maxWidth', `${ wc_single_product_params.flexslider.itemWidth }px` );
+		$( '.woocommerce-product-gallery--with-images .flex-viewport' ).css( 'maxWidth', `${ params.flexslider.itemWidth }px` );
 	} );
 }( jQuery ) );
