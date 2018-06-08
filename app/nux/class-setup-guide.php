@@ -203,7 +203,7 @@ class Setup_Guide implements Registerable, Service {
 		// @codingStandardsIgnoreEnd
 
 		// Attempt to install and activate WooCommerce.
-		( new BigBox\NUX\Install_Plugin() )->data(
+		( new Install_Plugin() )->data(
 			[
 				'slug'   => 'woocommerce',
 				'plugin' => [

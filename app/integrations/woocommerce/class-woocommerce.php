@@ -72,9 +72,7 @@ class WooCommerce extends Integration implements Registerable, Service {
 			apply_filters(
 				'bigbox_woocommerce_theme_support',
 				[
-					'thumbnail_image_width'         => 400,
 					'gallery_thumbnail_image_width' => 150,
-					'single_image_width'            => 400,
 					'product_grid'                  => [
 						'default_columns' => 5,
 						'min_columns'     => 1,

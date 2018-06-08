@@ -1,3 +1,9 @@
+## [1.5.1] - 2018-05-07
+
+### Fix
+
+- More Gutenberg compatibility.
+
 ## [1.5.0] - 2018-05-05
 
 ### New

@@ -7,14 +7,6 @@ $use-margins: false;
 
 .edit-post-visual-editor {
 
-	&,
-	.editor-default-block-appender input[type=text].editor-default-block-appender__content,
-	p {
-		color: $body-color;
-		font-family: $font-family-sans-serif;
-		font-size: #{$font-size-base} * 16px;
-	}
-
 	/**
 	 * Internal dependencies.
 	 */
@@ -29,6 +21,18 @@ $use-margins: false;
 	@import "elements/mark";
 	@import "modules/gutenberg-colors";
 	@import "modules/gutenberg";
+
+	&,
+	.editor-default-block-appender input[type=text].editor-default-block-appender__content,
+	p {
+		color: $body-color;
+		font-family: $font-family-sans-serif;
+		font-size: #{$font-size-base} * 16px;
+	}
+
+	p.wp-block-subhead {
+		color: inherit;
+	}
 
 	.wp-block-button {
 
@@ -48,6 +52,13 @@ $use-margins: false;
 		td,
 		th {
 			border: 0;
+		}
+	}
+
+	.wp-block-cover-image {
+
+		.wp-block-cover-image-text {
+			line-height: $line-height-base;
 		}
 	}
 }

@@ -25,7 +25,7 @@
 		top: 50%;
 		left: $spacer + ( $grid-gutter-width / 2 ); // [1]
 		right: $spacer + ( $grid-gutter-width / 2 ); // [1]
-		margin-top: -18px;
+		transform: translate3d(0, -50%, 0);
 		display: flex;
 		justify-content: space-between;
 
@@ -73,6 +73,23 @@
 
 		img {
 			display: block;
+		}
+	}
+}
+
+.single-product {
+	.woocommerce-product-gallery--default + .summary {
+
+		@include media-breakpoint-up(md) {
+			flex-basis: 0;
+		}
+	}
+
+	.woocommerce-product-gallery--wide + .summary {
+		flex-wrap: wrap;
+
+		@include media-breakpoint-up(lg) {
+			flex-basis: 0;
 		}
 	}
 }

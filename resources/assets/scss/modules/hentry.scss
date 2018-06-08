@@ -4,11 +4,6 @@
 
 .hentry--page {
 	line-height: ($line-height-base * 1.35);
-
-	h2 {
-
-		@include section-title();
-	}
 }
 
 .gallery {
