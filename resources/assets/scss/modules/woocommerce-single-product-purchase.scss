@@ -3,10 +3,12 @@
 	@include make-col-ready();
 
 	@include media-breakpoint-up(xl) {
-		margin-top: 0;
-		min-width: 325px;
+		.woocommerce-product-gallery--default + .summary & {
+			margin-top: 0;
+			min-width: 325px;
 
-		@include make-col(4);
+			@include make-col(4);
+		}
 	}
 }
 
