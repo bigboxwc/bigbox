@@ -43,3 +43,19 @@ add_filter(
 		return $classes;
 	}
 );
+
+/**
+ * Add rounded corners to admin body by default.
+ *
+ * @since 1.0.0
+ *
+ * @param string $classes Body classes.
+ * @return string
+ */
+add_filter(
+	'admin_body_class', function( $classes ) {
+		$classes = $classes . ' is-rounded ';
+
+		return $classes;
+	}
+);
