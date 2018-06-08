@@ -35,6 +35,7 @@ $wrapper_classes = apply_filters(
 		'woocommerce-product-gallery',
 		'woocommerce-product-gallery--' . ( has_post_thumbnail() ? 'with-images' : 'without-images' ),
 		'woocommerce-product-gallery--columns-' . absint( $columns ),
+		'woocommerce-product-gallery--' . ( absint( wc_get_theme_support( 'single_image_width', get_option( 'woocommerce_single_image_width', 600 ) ) ) >= 600 ? 'wide' : 'default' ),
 		'images',
 	]
 );
