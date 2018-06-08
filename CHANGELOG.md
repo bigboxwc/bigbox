@@ -1,8 +1,13 @@
-## [1.5.1] - 2018-05-07
+## [1.6.0] - 2018-05-09
+
+### New
+
+- Allow catalog image sizes to be dynamically set in the Customizer.
 
 ### Fix
 
 - More Gutenberg compatibility.
+- Avoid PHP error on activation.
 
 ## [1.5.0] - 2018-05-05
 
