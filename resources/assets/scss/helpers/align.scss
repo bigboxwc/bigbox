@@ -5,8 +5,7 @@
 	.site-primary--full & {
 		margin-left: calc(-100vw / 2 + 100% / 2);
 		margin-right: calc(-100vw / 2 + 100% / 2);
-		max-width: 100vw;
-		width: auto;
+		width: 100vw;
 	}
 
 	iframe,
@@ -22,8 +21,8 @@
 		.site-primary--full & {
 			margin-left: -($grid-gutter-width * 2);
 			margin-right: -($grid-gutter-width * 2);
-			max-width: calc(100% + #{$grid-gutter-width * 4});
-			width: auto;
+			width: calc(100% + #{$grid-gutter-width * 4});
+			transform: none;
 		}
 	}
 }
@@ -31,10 +30,9 @@
 @include media-breakpoint-up("xl", $grid-breakpoints) {
 
 	.alignwide {
-		margin-left: -($grid-gutter-width * 2);
-		margin-right: -($grid-gutter-width * 2);
-		max-width: calc(100% + #{$grid-gutter-width * 4});
-		width: auto;
+		margin-left: 50%;
+		width: 75vw;
+		transform: translate3d(-50%, 0, 0);
 	}
 }
 
