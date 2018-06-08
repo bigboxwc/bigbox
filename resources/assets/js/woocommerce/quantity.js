@@ -35,6 +35,8 @@ const getOptions = ( max = globalMax ) => {
 /**
  * Transform quantity input in to a <select> box.
  *
+ * Preserve as many as the original attributes as possible.
+ *
  * @param {Object} $qty DOM element.
  * @param {boolean|Object} variation Variation data.
  */

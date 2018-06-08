@@ -1,12 +1,6 @@
 /* global jQuery, wc_single_product_params */
 
 /**
- * Transform a <input type="number"> element in to a <select> element.
- *
- * Preserve as many as the original attributes as possible.
- */
-
-/**
  * Internal dependencies.
  */
 import { transformInput } from './quantity';
