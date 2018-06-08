@@ -558,6 +558,7 @@ function bigbox_woocommerce_pagination_args( $args ) {
  */
 function bigbox_woocommerce_single_product_carousel_options( $args ) {
 	$args['directionNav'] = true;
+	$args['itemWidth'] = absint( wc_get_theme_support( 'single_image_width', get_option( 'woocommerce_single_image_width', 600 ) ) );
 
 	$args['nextText'] = bigbox_get_svg(
 		[

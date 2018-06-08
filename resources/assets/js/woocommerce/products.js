@@ -1,4 +1,4 @@
-/* global jQuery */
+/* global jQuery, wc_single_product_params */
 
 /**
  * Transform a <input type="number"> element in to a <select> element.
@@ -37,5 +37,18 @@ import { transformInput } from './quantity';
 	// Variation update.
 	$form.find( 'select' ).on( 'change', () => {
 		$form.submit();
+	} );
+}( jQuery ) );
+
+/**
+ * Set width of flexSlider.
+ */
+( function( $ ) {
+	if ( ! wc_single_product_params.flexslider ) {
+		return;
+	}
+
+	$( '.woocommerce-product-gallery__wrapper .woocommerce-product-gallery__image:eq(0) .wp-post-image' ).on( 'load', () => {
+		$( '.woocommerce-product-gallery--with-images .flex-viewport' ).css( 'maxWidth', `${ wc_single_product_params.flexslider.itemWidth }px` );
 	} );
 }( jQuery ) );
