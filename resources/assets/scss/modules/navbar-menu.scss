@@ -49,6 +49,7 @@ $menu-break-point: md;
 	@include media-breakpoint-up( $menu-break-point ) {
 		order: 3;
 		margin-right: 0;
+		margin-left: $spacer;
 	}
 
 	// Always list in a line.
