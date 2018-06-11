@@ -536,7 +536,7 @@ function bigbox_woocommerce_breadcrumb_defaults( $args ) {
  * @return array
  */
 function bigbox_woocommerce_pagination_args( $args ) {
-	$args['prev_text'] = bigbox_get_svg( 'arrow-' . ( is_rtl() ? 'left' : 'right' ) ) . esc_html__( 'Previous Page', 'bigbox' );
+	$args['prev_text'] = bigbox_get_svg( 'arrow-' . ( is_rtl() ? 'right' : 'left' ) ) . esc_html__( 'Previous Page', 'bigbox' );
 	$args['next_text'] = esc_html__( 'Next Page', 'bigbox' ) . bigbox_get_svg( 'arrow-' . ( is_rtl() ? 'left' : 'right' ) );
 
 	return $args;
