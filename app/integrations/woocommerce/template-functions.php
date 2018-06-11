@@ -359,12 +359,6 @@ function bigbox_woocommerce_template_tertiary() {
  * @since 1.0.0
  */
 function bigbox_purchase_form() {
-	$product = wc_get_product( get_post() );
-
-	if ( ! is_singular( 'product' ) || ! $product->is_purchasable() ) {
-		return;
-	}
-
 	wc_get_template( 'single-product/add-to-cart/purchase-form.php' );
 }
 
