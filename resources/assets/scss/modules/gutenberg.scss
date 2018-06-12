@@ -92,7 +92,7 @@ p.wp-block-subhead {
 
 .wp-block-columns {
 	grid-column-gap: ($spacer * 2);
-	grid-auto-columns: auto;
+	grid-auto-columns: auto !important;
 
 	&.wp-block-flush-columns {
 		grid-column-gap: 0;
