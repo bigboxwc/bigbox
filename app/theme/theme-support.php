@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function bigbox_add_theme_support() {
 	// Set the default content width.
-	$GLOBALS['content_width'] = 1000;
+	$GLOBALS['content_width'] = 801;
 
 	// Add gettext support.
 	load_theme_textdomain( 'bigbox', get_template_directory() . '/resources/languages' );

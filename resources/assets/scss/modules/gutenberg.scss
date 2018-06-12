@@ -103,3 +103,16 @@ p.wp-block-subhead {
 		grid-column-gap: 0;
 	}
 }
+
+.wp-block-embed {
+
+	&.alignnone {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	iframe,
+	object {
+		width: 100%;
+	}
+}

@@ -27,6 +27,7 @@
 		"exports-loader": "^0.7.0",
 		"extract-text-webpack-plugin": "4.0.0-beta.0",
 		"file-loader": "^1.1.11",
+		"fitvids": "^2.0.0",
 		"node-sass": "^4.9.0",
 		"postcss-loader": "^2.1.5",
 		"prop-types": "^15.6.1",
