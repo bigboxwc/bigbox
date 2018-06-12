@@ -152,7 +152,7 @@ class License_Manager implements Registerable, Service {
 	 */
 	public function get_license_data() {
 		// @codingStandardsIgnoreStart
-		if ( ! check_ajax_referer( 'bigbox-license-request', $_POST, false ) ) {
+		if ( ! check_ajax_referer( 'bigbox-license-request', '_wpnonce', false ) ) {
 			return wp_send_json_error();
 		}
 
