@@ -176,7 +176,7 @@ class License_Manager implements Registerable, Service {
 		if ( ! is_wp_error( $response ) && 200 === wp_remote_retrieve_response_code( $response ) ) {
 			$license_data = json_decode( wp_remote_retrieve_body( $response ) );
 
-			if ( ! $license_data->error ) {
+			if ( ! isset( $license_data->error ) ) {
 				return wp_send_json_success(
 					[
 						'license' => $license_data->license,
