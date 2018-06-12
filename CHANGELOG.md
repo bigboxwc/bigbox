@@ -8,6 +8,9 @@
 
 - More Gutenberg compatibility.
 - Avoid PHP error on activation.
+- Ensure header search spacing is equal when header account menu items are hidden.
+- Add specific CSS class (`.product__meta--price`) to loop price output.
+- WooCommerce pagination previous arrow direction.
 
 ## [1.5.0] - 2018-05-05
 
