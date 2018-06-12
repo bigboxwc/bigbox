@@ -92,7 +92,12 @@ p.wp-block-subhead {
 
 .wp-block-columns {
 	grid-column-gap: ($spacer * 2);
-	grid-auto-columns: auto !important;
+
+	@for $i from 2 through 6 {
+		&.has-#{ $i }-columns {
+			grid-template-columns: repeat(#{ $i }, 1fr);
+		}
+	}
 
 	&.wp-block-flush-columns {
 		grid-column-gap: 0;
