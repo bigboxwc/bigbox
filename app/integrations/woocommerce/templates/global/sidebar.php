@@ -20,8 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$page_id    = function_exists( 'pll_get_post' ) ? pll_get_post( get_the_ID(), pll_default_language( 'locale' ) ) : get_the_ID();
-$sidebar_id = is_page_template( bigbox_woocommerce_dynamic_shop_page_template() ) ? 'page-' . $page_id : 'shop';
+$sidebar_id = is_page_template( bigbox_woocommerce_dynamic_shop_page_template() ) ? 'page-' . get_the_ID() : 'shop';
 $sidebar    = bigbox_get_cached_sidebar( is_active_sidebar( $sidebar_id ) ? $sidebar_id : 'shop' );
 
 if ( '' === $sidebar ) :
