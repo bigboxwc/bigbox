@@ -38,7 +38,7 @@ import { transformInput } from './quantity';
  * Set width of flexSlider.
  */
 ( function( $ ) {
-	if ( typeof wc_single_product_params !== 'undefined' ) {
+	if ( typeof wc_single_product_params === 'undefined' ) {
 		return;
 	}
 
