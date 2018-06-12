@@ -89,3 +89,12 @@ p.wp-block-subhead {
 .wp-block-cover-image-text {
 	font-weight: $font-weight-bold;
 }
+
+.wp-block-columns {
+	grid-column-gap: ($spacer * 2);
+	grid-auto-columns: auto;
+
+	&.wp-block-flush-columns {
+		grid-column-gap: 0;
+	}
+}
