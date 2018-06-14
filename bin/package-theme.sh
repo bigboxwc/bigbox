@@ -48,8 +48,7 @@ status "
 |  |_)  | |  | |  |  __  |  |_)  | |  |  |  |  \  V  /
 |   _  <  |  | |  | |_ | |   _  <  |  |  |  |   >   <
 |  |_)  | |  | |  |__| | |  |_)  | |  \`--'  |  /  .  \
-|______/  |__|  \______| |______/   \______/  /__/ \__\
-";
+|______/  |__|  \______| |______/   \______/  /__/ \__\\";
 
 # Remove ignored files to reset repository to pristine condition. Previous test
 # ensures that changed files abort the plugin build.
