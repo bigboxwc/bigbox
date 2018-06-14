@@ -38,7 +38,7 @@ return [
 	// Solid color.
 	[
 		'selectors'    => [
-			'.woocommerce-purchase-form .instock',
+			'.woocommerce-purchase-form p.instock',
 			'.wc-saved-payment-methods input:checked + label',
 		],
 		'declarations' => [

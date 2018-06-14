@@ -29,13 +29,14 @@ if ( ! bigbox_woocommerce_has_product_image( $product ) ) :
 	return;
 endif;
 
+$width           = absint( wc_get_theme_support( 'single_image_width', get_option( 'woocommerce_single_image_width', 600 ) ) );
 $columns         = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );
 $wrapper_classes = apply_filters(
 	'woocommerce_single_product_image_gallery_classes', [
 		'woocommerce-product-gallery',
 		'woocommerce-product-gallery--' . ( has_post_thumbnail() ? 'with-images' : 'without-images' ),
 		'woocommerce-product-gallery--columns-' . absint( $columns ),
-		'woocommerce-product-gallery--' . ( absint( wc_get_theme_support( 'single_image_width', get_option( 'woocommerce_single_image_width', 600 ) ) ) >= 600 ? 'wide' : 'default' ),
+		'woocommerce-product-gallery--' . ( ( $width >= 600 || 'grouped' === $product->get_type() ) ? 'wide' : 'default' ),
 		'images',
 	]
 );

@@ -104,7 +104,7 @@ return [
 			'.woocommerce-checkout-review-order',
 			'.woocommerce-message',
 			'.woocommerce-info',
-			'.woocommerce-purchase-form',
+			'.woocommerce-purchase-form:not(.woocommerce-purchase-form--grouped)',
 			'.wc_payment_method [type="radio"] label[for^="payment_method"]',
 			'.woocommerce-verification-required',
 			'table',

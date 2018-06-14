@@ -15,10 +15,13 @@
 
 .woocommerce-purchase-form {
 
-	@include card;
+	&:not(.woocommerce-purchase-form--grouped) {
 
-	max-width: 400px;
-	padding: $spacer;
+		@include card;
+
+		max-width: 400px;
+		padding: $spacer;
+	}
 
 	.stock {
 		font-size: $font-size-sm;
@@ -36,6 +39,32 @@
 	p:only-child {
 		margin: 0;
 	}
+}
+
+.woocommerce-grouped-product-list {
+	margin-bottom: $spacer;
+
+	@include vertical-spacing("margin", "up");
+}
+
+.woocommerce-grouped-product-list-item {
+
+	p,
+	label {
+		margin-bottom: 0;
+	}
+}
+
+.woocommerce-grouped-product-list-item__quantity {
+	width: 40%;
+
+	.action-list__item {
+		margin-bottom: 0;
+	}
+}
+
+.woocommerce-grouped-product-list-item__price {
+	font-size: $font-size-sm;
 }
 
 .single_add_to_cart_button {
