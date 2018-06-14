@@ -81,7 +81,7 @@
 		"css-lint:fix": "./node_modules/.bin/stylelint resources/**/*.scss --syntax scss --fix; exit 0",
 		"generate-font-list": "./bin/generate-google-font-list.sh",
 		"package-theme": "./bin/package-theme.sh",
-		"setup-theme": "npm install && composer install && npm run dev"
+		"setup-theme": "npm install && composer install && npm run generate-font-list && npm run dev"
 	},
 	"repository": {
 		"type": "git",
