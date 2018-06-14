@@ -60,8 +60,13 @@ git clean -xdf
 status "Installing dependencies..."
 npm install
 composer install
+
 status "Creating language files..."
 wp i18n make-pot . resources/languages/bigbox.pot --domain=bigbox
+
+status "Updating Google Fonts..."
+npm run generate-font-list
+
 status "Generating build..."
 npm run build
 
