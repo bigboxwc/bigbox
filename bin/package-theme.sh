@@ -19,8 +19,7 @@ PACKAGE_VERSION=$(cat package.json \
   | tr -d '[[:space:]]')
 
 # Make sure there are no changes in the working tree.  Release builds should be
-# traceable to a particular commit and reliably reproducible.  (This is not
-# totally true at the moment because we download nightly vendor scripts).
+# traceable to a particular commit and reliably reproducible.
 changed=
 if ! git diff --exit-code > /dev/null; then
 	changed="file(s) modified"
@@ -42,8 +41,8 @@ if [ "$branch" != 'master' ]; then
 	sleep 2
 fi
 
-# Remove ignored files to reset repository to pristine condition. Previous test
-# ensures that changed files abort the plugin build.
+# Remove ignored files to reset repository to pristine condition.
+# Previous test ensures that changed files abort the theme build.
 status "Cleaning working directory..."
 git clean -xdf
 
@@ -68,7 +67,7 @@ sed -i "" "s|%BIGBOX_VERSION%|${PACKAGE_VERSION}|g" functions.php
 # Remove any existing zip file
 rm -f bigbox*.zip
 
-# Generate the plugin zip file
+# Generate the theme zip file
 status "Creating archive..."
 zip -r bigbox.zip \
 	functions.php \
