@@ -79,8 +79,6 @@
 		background: none;
 		position: relative;
 		padding-left: 0;
-		display: flex;
-		align-items: center;
 
 		&.checked {
 			background: none;
@@ -88,7 +86,8 @@
 
 		[type="radio"],
 		[type="checkbox"] {
-			margin-right: 8px;
+			margin: -2px 8px 0 0;
+			vertical-align: middle;
 		}
 	}
 }
