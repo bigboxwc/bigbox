@@ -42,14 +42,6 @@ if [ "$branch" != 'master' ]; then
 	sleep 2
 fi
 
-status "
-.______    __    _______ .______     ______   ___   ___
-|   _  \  |  |  /  _____||   _  \   /  __  \  \  \ /  /
-|  |_)  | |  | |  |  __  |  |_)  | |  |  |  |  \  V  /
-|   _  <  |  | |  | |_ | |   _  <  |  |  |  |   >   <
-|  |_)  | |  | |  |__| | |  |_)  | |  \`--'  |  /  .  \
-|______/  |__|  \______| |______/   \______/  /__/ \__\\";
-
 # Remove ignored files to reset repository to pristine condition. Previous test
 # ensures that changed files abort the plugin build.
 status "Cleaning working directory..."
