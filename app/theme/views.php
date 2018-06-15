@@ -20,10 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @param string|array $templates The name of the template.
  * @param array        $args Variables to pass to partial.
- * @param string       $path Optional non-default path.
  */
-function bigbox_view( $templates, $args = [], $path = 'resources/views' ) {
-	echo bigbox_get_view( $templates, $args, $path ); // WPCS: XSS okay.
+function bigbox_view( $templates, $args = [] ) {
+	\BigBoxWC\WP_Template_Loader\Loader::view( $templates, $args );
 }
 
 /**
@@ -33,34 +32,9 @@ function bigbox_view( $templates, $args = [], $path = 'resources/views' ) {
  *
  * @param string|array $templates The name of the template.
  * @param array        $args Variables to pass to partial.
- * @param string       $path Optional non-default path.
  */
-function bigbox_get_view( $templates, $args = [], $path = 'resources/views' ) {
-	if ( ! is_array( $templates ) ) {
-		$templates = [ $templates ];
-	}
-
-	// Extract variable to use in template file.
-	if ( ! empty( $args ) && is_array( $args ) ) {
-		extract( $args ); // @codingStandardsIgnoreLine
-	}
-
-	$_templates = [];
-
-	foreach ( $templates as $key => $template_name ) {
-		$_templates[] = $template_name . '.php';
-		$_templates[] = trailingslashit( $path ) . $template_name . '.php';
-	}
-
-	$template = locate_template( $_templates );
-
-	ob_start();
-
-	if ( $template ) {
-		include $template;
-	}
-
-	return ob_get_clean();
+function bigbox_get_view( $templates, $args = [] ) {
+	return \BigBoxWC\WP_Template_Loader\Loader::get_view( $templates, $args );
 }
 
 /**
@@ -72,7 +46,7 @@ function bigbox_get_view( $templates, $args = [], $path = 'resources/views' ) {
  * @param array  $args Variables to pass to partial.
  */
 function bigbox_partial( $partial, $args = [] ) {
-	echo bigbox_get_partial( $partial, $args ); // XSS: ok.
+	\BigBoxWC\WP_Template_Loader\Loader::partial( $partial, $args ); // XSS: ok.
 }
 
 /**
@@ -88,9 +62,5 @@ function bigbox_partial( $partial, $args = [] ) {
  * @return string
  */
 function bigbox_get_partial( $partial, $args = [] ) {
-	ob_start();
-
-	bigbox_view( 'partials/' . $partial, $args );
-
-	return ob_get_clean();
+	return \BigBoxWC\WP_Template_Loader\Loader::get_partial( $partial, $args );
 }
