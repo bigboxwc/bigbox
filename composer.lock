@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a9cd5c50112cb9850a9e8db722fb2de9",
+    "content-hash": "703adb89d33b294d0e46aacbb95e9e42",
     "packages": [
         {
             "name": "a5hleyrich/wp-background-processing",
@@ -44,16 +44,16 @@
         },
         {
             "name": "bigboxwc/wp-template-loader",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bigboxwc/wp-template-loader.git",
-                "reference": "6c11b8bece3031cdd095ad495b1ceddfd0844f75"
+                "reference": "621d19bde98d191096be4d50b28c55a7cd885f31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bigboxwc/wp-template-loader/zipball/6c11b8bece3031cdd095ad495b1ceddfd0844f75",
-                "reference": "6c11b8bece3031cdd095ad495b1ceddfd0844f75",
+                "url": "https://api.github.com/repos/bigboxwc/wp-template-loader/zipball/621d19bde98d191096be4d50b28c55a7cd885f31",
+                "reference": "621d19bde98d191096be4d50b28c55a7cd885f31",
                 "shasum": ""
             },
             "type": "library",
@@ -73,7 +73,7 @@
                 }
             ],
             "description": "WordPress view/template loading helpers.",
-            "time": "2018-06-15T18:37:13+00:00"
+            "time": "2018-06-15T19:38:26+00:00"
         }
     ],
     "packages-dev": [],
