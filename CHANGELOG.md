@@ -1,3 +1,18 @@
+## [1.7.0] - 2018-06-15
+
+### New
+
+- Better Grouped product support in WooCommerce.
+
+### Fix
+
+- Cart and Order Review product title size.
+- Ensure "Minimal" templates keep branding centered on mobile devices.
+
+### Tweaks
+
+- Various project management items.
+
 ## [1.6.0] - 2018-06-12
 
 ### New
