@@ -18,11 +18,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  *
- * @param string|array $templates The name of the template.
- * @param array        $args Variables to pass to partial.
+ * @param string|array   $templates The name of the template.
+ * @param array          $args Variables to pass to partial.
+ * @param (false|string) $path Optional view base path.
  */
-function bigbox_view( $templates, $args = [] ) {
-	\BigBoxWC\WP_Template_Loader\Loader::view( $templates, $args );
+function bigbox_view( $templates, $args = [], $path = false ) {
+	\BigBoxWC\WP_Template_Loader\Loader::view( $templates, $args, $path );
 }
 
 /**
@@ -30,11 +31,12 @@ function bigbox_view( $templates, $args = [] ) {
  *
  * @since 1.0.0
  *
- * @param string|array $templates The name of the template.
- * @param array        $args Variables to pass to partial.
+ * @param string|array   $templates The name of the template.
+ * @param array          $args Variables to pass to partial.
+ * @param (false|string) $path Optional view base path.
  */
-function bigbox_get_view( $templates, $args = [] ) {
-	return \BigBoxWC\WP_Template_Loader\Loader::get_view( $templates, $args );
+function bigbox_get_view( $templates, $args = [], $path = false ) {
+	return \BigBoxWC\WP_Template_Loader\Loader::get_view( $templates, $args, $path );
 }
 
 /**
