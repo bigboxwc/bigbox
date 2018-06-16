@@ -1,8 +1,9 @@
-## [1.7.0] - 2018-06-15
+## [1.7.0] - 2018-06-16
 
 ### New
 
 - Better Grouped product support in WooCommerce.
+- Lazyload images.
 
 ### Fix
 
