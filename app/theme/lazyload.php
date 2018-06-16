@@ -114,6 +114,7 @@ function bigbox_add_image_placeholders( $content ) {
 	if ( is_feed() || is_preview() ) {
 		return $content;
 	}
+
 	// Don't lazy-load if the content has already been run through previously.
 	if ( false !== strpos( $content, 'data-src' ) ) {
 		return $content;
@@ -122,7 +123,6 @@ function bigbox_add_image_placeholders( $content ) {
 	// Find all <img> elements via regex, add lazy-load attributes.
 	$content = preg_replace_callback( '#<(img)([^>]+?)(>(.*?)</\\1>|[\/]?>)#si', 'bigbox_process_image', $content );
 	return $content;
-
 }
 
 /**
@@ -190,6 +190,7 @@ function bigbox_process_image_attributes( $attributes ) {
 	if ( empty( $attributes['src'] ) ) {
 		return $attributes;
 	}
+
 	if ( ! empty( $attributes['class'] ) && bigbox_should_skip_image_with_blacklisted_class( $attributes['class'] ) ) {
 		return $attributes;
 	}
@@ -210,6 +211,7 @@ function bigbox_process_image_attributes( $attributes ) {
 		$attributes['data-srcset'] = $old_attributes['srcset'];
 		unset( $attributes['srcset'] );
 	}
+
 	// Process `sizes` attribute.
 	if ( ! empty( $attributes['sizes'] ) ) {
 		$attributes['data-sizes'] = $old_attributes['sizes'];
@@ -246,7 +248,7 @@ function bigbox_set_lazy_class( $attributes ) {
  * @return string The URL to the placeholder image.
  */
 function bigbox_get_placeholder_image() {
-	return apply_filters( 'bigbox_get_placeholder_image', 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==' );
+	return apply_filters( 'bigbox_get_placeholder_image', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkEAQAABcAEzAsq6cAAAAASUVORK5CYII=' );
 }
 
 /**
@@ -259,9 +261,11 @@ function bigbox_get_placeholder_image() {
  */
 function bigbox_flatten_kses_hair_data( $attributes ) {
 	$flattened_attributes = [];
+
 	foreach ( $attributes as $name => $attribute ) {
 		$flattened_attributes[ $name ] = $attribute['value'];
 	}
+
 	return $flattened_attributes;
 }
 
