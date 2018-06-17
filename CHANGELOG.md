@@ -1,3 +1,9 @@
+## [1.7.1] - 2018-06-17
+
+### Fix
+
+- Ensure images are lazy loaded again once FacetWP refreshes.
+
 ## [1.7.0] - 2018-06-17
 
 ### New

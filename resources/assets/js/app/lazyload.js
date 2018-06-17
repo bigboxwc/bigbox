@@ -1,11 +1,9 @@
 /* global IntersectionObserver, getComputedStyle */
 
 /**
- * Lazy-load images script.
- *
- * @link https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/
+ * Initialize lazy load of images.
  */
-document.addEventListener( 'DOMContentLoaded', () => {
+export const initLazyLoad = () => {
 	let lazyImages = [].slice.call( document.querySelectorAll( 'img.lazy' ) );
 
 	if ( 'IntersectionObserver' in window ) {
@@ -13,8 +11,6 @@ document.addEventListener( 'DOMContentLoaded', () => {
 			entries.forEach( function( entry ) {
 				if ( entry.isIntersecting ) {
 					const lazyImage = entry.target;
-
-					lazyImage.src = lazyImage.dataset.src;
 
 					if ( lazyImage.dataset.srcset ) {
 						lazyImage.srcset = lazyImage.dataset.srcset;
@@ -78,4 +74,11 @@ document.addEventListener( 'DOMContentLoaded', () => {
 		window.addEventListener( 'resize', lazyLoad );
 		window.addEventListener( 'orientationchange', lazyLoad );
 	}
-} );
+};
+
+/**
+ * Lazy-load images script.
+ *
+ * @link https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/
+ */
+document.addEventListener( 'DOMContentLoaded', initLazyLoad );
