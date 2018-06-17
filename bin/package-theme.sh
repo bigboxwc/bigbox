@@ -79,7 +79,7 @@ zip -r bigbox.zip \
 	bootstrap \
 	resources/languages/*.{po,mo,pot} \
 	resources/views \
-	resources/data/*.{json} \
+	resources/data/*.json \
 	public \
 	vendor \
 	LICENSE \
