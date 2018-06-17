@@ -6,3 +6,4 @@ node_modules
 public
 vendor
 resources/languages/*.pot
+resources/data/*.json

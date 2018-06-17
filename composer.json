@@ -17,6 +17,7 @@
 		"lint:fix": "phpcbf"
 	},
 	"require": {
-		"a5hleyrich/wp-background-processing": "^1.0"
+		"a5hleyrich/wp-background-processing": "^1.0",
+		"bigboxwc/wp-template-loader": "1.0.2"
 	}
 }

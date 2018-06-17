@@ -19,8 +19,7 @@ PACKAGE_VERSION=$(cat package.json \
   | tr -d '[[:space:]]')
 
 # Make sure there are no changes in the working tree.  Release builds should be
-# traceable to a particular commit and reliably reproducible.  (This is not
-# totally true at the moment because we download nightly vendor scripts).
+# traceable to a particular commit and reliably reproducible.
 changed=
 if ! git diff --exit-code > /dev/null; then
 	changed="file(s) modified"
@@ -42,17 +41,8 @@ if [ "$branch" != 'master' ]; then
 	sleep 2
 fi
 
-status "
-.______    __    _______ .______     ______   ___   ___
-|   _  \  |  |  /  _____||   _  \   /  __  \  \  \ /  /
-|  |_)  | |  | |  |  __  |  |_)  | |  |  |  |  \  V  /
-|   _  <  |  | |  | |_ | |   _  <  |  |  |  |   >   <
-|  |_)  | |  | |  |__| | |  |_)  | |  \`--'  |  /  .  \
-|______/  |__|  \______| |______/   \______/  /__/ \__\
-";
-
-# Remove ignored files to reset repository to pristine condition. Previous test
-# ensures that changed files abort the plugin build.
+# Remove ignored files to reset repository to pristine condition.
+# Previous test ensures that changed files abort the theme build.
 status "Cleaning working directory..."
 git clean -xdf
 
@@ -60,8 +50,13 @@ git clean -xdf
 status "Installing dependencies..."
 npm install
 composer install
+
 status "Creating language files..."
 wp i18n make-pot . resources/languages/bigbox.pot --domain=bigbox
+
+status "Updating Google Fonts..."
+npm run generate-font-list
+
 status "Generating build..."
 npm run build
 
@@ -72,7 +67,7 @@ sed -i "" "s|%BIGBOX_VERSION%|${PACKAGE_VERSION}|g" functions.php
 # Remove any existing zip file
 rm -f bigbox*.zip
 
-# Generate the plugin zip file
+# Generate the theme zip file
 status "Creating archive..."
 zip -r bigbox.zip \
 	functions.php \
@@ -84,7 +79,7 @@ zip -r bigbox.zip \
 	bootstrap \
 	resources/languages/*.{po,mo,pot} \
 	resources/views \
-	resources/data \
+	resources/data/*.{json} \
 	public \
 	vendor \
 	LICENSE \

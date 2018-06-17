@@ -53,6 +53,7 @@ final class Theme implements Registerable {
 			'theme-support',
 			'widgets',
 			'wordpress',
+			'lazyload',
 		];
 
 		foreach ( $helpers as $file ) {

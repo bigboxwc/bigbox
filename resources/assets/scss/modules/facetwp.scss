@@ -86,7 +86,8 @@
 
 		[type="radio"],
 		[type="checkbox"] {
-			margin-right: 8px;
+			margin: -2px 8px 0 0;
+			vertical-align: middle;
 		}
 	}
 }

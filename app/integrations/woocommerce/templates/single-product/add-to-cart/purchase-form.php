@@ -12,6 +12,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
+$product = wc_get_product( get_the_ID() );
 ?>
 
 <div id="purchase" class="woocommerce-single-product-purchase" role="complementary">
@@ -25,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	do_action( 'bigbox_purchase_form_before' );
 	?>
 
-	<div class="woocommerce-purchase-form">
+	<div class="woocommerce-purchase-form woocommerce-purchase-form--<?php echo esc_attr( $product->get_type() ); ?>">
 		<?php
 		/**
 		 * Allow output in the custom purchase form.

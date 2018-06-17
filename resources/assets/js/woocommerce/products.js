@@ -19,7 +19,9 @@ import { transformInput } from './quantity';
 	} );
 
 	// All.
-	transformInput( $form.find( '.qty' ), false );
+	$form.find( '.qty' ).each( function() {
+		transformInput( $( this ), false );
+	} );
 }( jQuery ) );
 
 /**

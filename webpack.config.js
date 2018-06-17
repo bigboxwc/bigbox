@@ -53,6 +53,7 @@ const config = {
 	mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
 	entry: {
 		app: './resources/assets/js',
+		lazyload: './resources/assets/js/app/lazyload.js', // Separate because it can be removed.
 		woocommerce: './resources/assets/js/woocommerce',
 		facetwp: './resources/assets/js/facetwp',
 		'license-manager': './resources/assets/js/license-manager',

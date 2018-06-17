@@ -18,6 +18,8 @@
 	@include vertical-spacing("padding", "both", $map);
 
 	.navbar--min & {
+		justify-content: center;
+
 		$map: (
 			md: 1.25,
 		);

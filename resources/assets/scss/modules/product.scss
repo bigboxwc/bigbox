@@ -185,6 +185,18 @@
 		}
 	}
 
+	// Shrink on cart and checkout.
+	.product--order-item &,
+	.product--cart-item & {
+
+		@each $bp in ("lg", "xl") {
+
+			@include media-breakpoint-up( $bp ) {
+				font-size: $font-size-sm;
+			}
+		}
+	}
+
 	a {
 		display: block;
 	}
