@@ -42,7 +42,6 @@ class Gutenberg extends Integration implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function add_theme_support() {
-		add_theme_support( 'gutenberg' );
 		add_theme_support( 'align-wide' );
 		add_theme_support( 'wp-block-styles' );
 

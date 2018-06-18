@@ -112,7 +112,7 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 add_action( 'woocommerce_single_product_summary', 'bigbox_woocommerce_single_product_summary_inner', -1 );
 add_action( 'woocommerce_single_product_summary', 'bigbox_woocommerce_template_close_div', 499 );
 
-add_action( 'woocommerce_single_product_summary', 'bigbox_purchase_form', 500 );
+add_action( 'woocommerce_single_product_summary', 'bigbox_add_to_cart', 500 );
 add_action( 'bigbox_purchase_form', 'woocommerce_template_single_add_to_cart' );
 
 // Adjust sharing position.
