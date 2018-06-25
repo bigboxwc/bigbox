@@ -1,8 +1,9 @@
-## [1.7.1] - 2018-06-17
+## [1.7.1] - 2018-06-25
 
 ### Fix
 
 - Ensure images are lazy loaded again once FacetWP refreshes.
+- Match Gutenberg title block to frontend.
 
 ## [1.7.0] - 2018-06-17
 
