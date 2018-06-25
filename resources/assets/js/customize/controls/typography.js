@@ -1,4 +1,9 @@
-/* global jQuery, $, wp, bigboxCustomizeControls, _ */
+/* global $, wp, bigboxCustomizeControls, _ */
+
+/**
+ * External dependencies.
+ */
+import domReady from '@wordpress/dom-ready';
 
 const fontList = bigboxCustomizeControls.fonts;
 
@@ -87,30 +92,28 @@ const updateCategoryField = ( category ) => {
 	} );
 };
 
-( function( $ ) {
-	// Wait for Customize ready.
-	wp.customize.bind( 'ready', () => {
-		const familyControl = wp.customize.control( 'type-font-family' );
-		const familyValue = familyControl.setting();
-		const $familyInput = $( familyControl.container ).find( 'select' );
+// Wait for Customize ready.
+wp.customize.bind( 'ready', () => {
+	const familyControl = wp.customize.control( 'type-font-family' );
+	const familyValue = familyControl.setting();
+	const $familyInput = $( familyControl.container ).find( 'select' );
 
-		// Update available weights when changing family.
-		$familyInput.on( 'change', function() {
-			const selected = $( this ).find( 'option:selected' );
-			const variants = selected.data( 'variants' ) ? selected.data( 'variants' ).split( ',' ) : [ 400, 500 ];
-			const category = selected.data( 'category' ) ? selected.data( 'category' ) : 'sans-serif';
+	// Update available weights when changing family.
+	$familyInput.on( 'change', function() {
+		const selected = $( this ).find( 'option:selected' );
+		const variants = selected.data( 'variants' ) ? selected.data( 'variants' ).split( ',' ) : [ 400, 500 ];
+		const category = selected.data( 'category' ) ? selected.data( 'category' ) : 'sans-serif';
 
-			updateWeightFields( variants );
-			updateCategoryField( category );
-		} );
-
-		// Build list of font families.
-		$familyInput
-			.html( buildFamilyOptionsHtml() )
-			.val( familyValue )
-			.find( `[value="${ familyValue }"]` )
-			.prop( 'selected', true )
-			.end()
-			.change();
+		updateWeightFields( variants );
+		updateCategoryField( category );
 	} );
-}( jQuery ) );
+
+	// Build list of font families.
+	$familyInput
+		.html( buildFamilyOptionsHtml() )
+		.val( familyValue )
+		.find( `[value="${ familyValue }"]` )
+		.prop( 'selected', true )
+		.end()
+		.change();
+} );

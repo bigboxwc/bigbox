@@ -1,11 +1,16 @@
-/* global jQuery, wc_checkout_params */
+/* global $, wc_checkout_params */
+
+/**
+ * External dependencies.
+ */
+import domReady from '@wordpress/dom-ready';
 
 /**
  * Internal dependencies.
  */
 import { updatePartials, blockPartials } from './cart';
 
-( function( $ ) {
+domReady( function() {
 	/**
 	 * Update cart contents when quantity changes.
 	 */
@@ -27,4 +32,4 @@ import { updatePartials, blockPartials } from './cart';
 			},
 		} );
 	} );
-}( jQuery ) );
+} );

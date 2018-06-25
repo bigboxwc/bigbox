@@ -1,6 +1,11 @@
 /* global $ */
 
 /**
+ * External dependencies.
+ */
+import domReady from '@wordpress/dom-ready';
+
+/**
  * Adjust width of navbar dropdown.
  */
 export const adjustWidth = () => {
@@ -19,6 +24,6 @@ export const adjustWidth = () => {
 };
 
 // Adjust on load.
-$( () => {
+domReady( function() {
 	adjustWidth();
 } );

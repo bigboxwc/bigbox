@@ -1,4 +1,9 @@
-/* global jQuery, wp, bigboxCustomizeControls, _ */
+/* global $, wp, bigboxCustomizeControls, _ */
+
+/**
+ * External dependencies.
+ */
+import domReady from '@wordpress/dom-ready';
 
 /**
  * Internal dependencies.
@@ -86,7 +91,7 @@ const showPointer = ( pointer ) => {
 	$pointer.style.display = 'block';
 };
 
-( function( $ ) {
+domReady( function() {
 	if ( ! active ) {
 		return;
 	}
@@ -101,4 +106,4 @@ const showPointer = ( pointer ) => {
 
 	// Dismiss
 	$customizer.on( 'click', '.bigbox-pointer .close', hideActivePointer );
-}( jQuery ) );
+} );

@@ -1,6 +1,11 @@
-/* global jQuery */
+/* global $ */
 
-( function( $ ) {
+/**
+ * External dependencies.
+ */
+import domReady from '@wordpress/dom-ready';
+
+domReady( function() {
 	const $document = $( document );
 
 	/**
@@ -30,4 +35,4 @@
 			} );
 		} );
 	} );
-}( jQuery ) );
+} );

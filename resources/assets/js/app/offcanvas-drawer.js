@@ -1,9 +1,14 @@
-/* global jQuery */
+/* global $ */
+
+/**
+ * External dependencies.
+ */
+import domReady from '@wordpress/dom-ready';
 
 // Keep track of things we've found before.
 const cache = {};
 
-( function( $ ) {
+domReady( function() {
 	// Document
 	const $document = $( document.body );
 
@@ -80,4 +85,4 @@ const cache = {};
 			}
 		} );
 	}
-}( jQuery ) );
+} );
