@@ -358,7 +358,7 @@ function bigbox_woocommerce_template_tertiary() {
  *
  * @since 1.0.0
  */
-function bigbox_purchase_form() {
+function bigbox_add_to_cart() {
 	wc_get_template( 'single-product/add-to-cart/purchase-form.php' );
 }
 

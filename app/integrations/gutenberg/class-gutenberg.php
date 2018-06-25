@@ -42,7 +42,6 @@ class Gutenberg extends Integration implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function add_theme_support() {
-		add_theme_support( 'gutenberg' );
 		add_theme_support( 'align-wide' );
 		add_theme_support( 'wp-block-styles' );
 
@@ -97,6 +96,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 
 		$colors = bigbox_get_theme_colors();
 
+		$gray200 = bigbox_get_theme_color( 'gray-200' );
 		$gray700 = bigbox_get_theme_color( 'gray-700' );
 		$gray800 = bigbox_get_theme_color( 'gray-800' );
 
@@ -116,6 +116,28 @@ class Gutenberg extends Integration implements Registerable, Service {
 					'color'       => esc_attr( $gray700 ),
 					'font-family' => '"' . esc_attr( $family ) . '"',
 					'font-weight' => $weight_base,
+				],
+			]
+		);
+
+		$css->add(
+			[
+				'selectors'    => [
+					'.editor-post-title .editor-post-title__input',
+				],
+				'declarations' => [
+					'font-weight' => $weight_bold,
+				],
+			]
+		);
+
+		$css->add(
+			[
+				'selectors'    => [
+					'.editor-post-title__block > div',
+				],
+				'declarations' => [
+					'border-bottom' => '2px solid ' . esc_attr( $gray200 ),
 				],
 			]
 		);

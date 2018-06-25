@@ -9,6 +9,7 @@ import './navbar-search.js';
 import './scroll.js';
 
 import { adjustWidth } from './../app/navbar.js';
+import { initLazyLoad } from './../app/lazyload.js';
 
 ( function( $ ) {
 	const $document = $( document );
@@ -17,4 +18,9 @@ import { adjustWidth } from './../app/navbar.js';
 	 * Adjust select widths once loaded.
 	 */
 	$document.on( 'facetwp-loaded', adjustWidth );
+
+	/**
+	 * Reinit lazy load once loaded.
+	 */
+	$document.on( 'facetwp-loaded', initLazyLoad );
 }( jQuery ) );
