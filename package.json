@@ -19,6 +19,7 @@
 		"babel-loader": "7.1.4",
 		"babel-plugin-import-glob": "^2.0.0",
 		"babel-plugin-transform-async-generator-functions": "6.24.1",
+		"babel-plugin-transform-react-jsx": "^6.24.1",
 		"bootstrap": "^4.1.1",
 		"classnames": "^2.2.5",
 		"cross-env": "^5.1.4",
@@ -54,7 +55,8 @@
 			"@wordpress/default",
 			{
 				"plugins": [
-					"import-glob"
+					"import-glob",
+					"transform-react-jsx"
 				]
 			}
 		]
