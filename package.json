@@ -51,15 +51,13 @@
 	},
 	"babel": {
 		"presets": [
-			"@wordpress/default"
-		],
-		"env": {
-			"default": {
+			"@wordpress/default",
+			{
 				"plugins": [
 					"import-glob"
 				]
 			}
-		}
+		]
 	},
 	"scripts": {
 		"build": "cross-env NODE_ENV=production webpack",
