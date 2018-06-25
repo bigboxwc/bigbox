@@ -14,7 +14,6 @@ const {
 } = bigboxCustomizeControls.walkthrough || {};
 
 const template = wp.template( 'bigbox-pointer' );
-
 let activePointer = 0;
 
 /**
@@ -91,11 +90,8 @@ const showPointer = ( pointer ) => {
 	$pointer.style.display = 'block';
 };
 
-domReady( function() {
-	if ( ! active ) {
-		return;
-	}
-
+// Only enable if active.
+if ( active ) {
 	const $customizer = $( '.wp-customizer' );
 
 	// Wait for Customize ready.
@@ -106,4 +102,4 @@ domReady( function() {
 
 	// Dismiss
 	$customizer.on( 'click', '.bigbox-pointer .close', hideActivePointer );
-} );
+}
