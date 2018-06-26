@@ -1,3 +1,9 @@
+## [1.8.0] - 2018-07-01
+
+### New
+
+- Update Node package project requirements.
+
 ## [1.7.1] - 2018-06-25
 
 ### Fix
