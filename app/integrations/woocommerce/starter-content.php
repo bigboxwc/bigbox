@@ -218,14 +218,15 @@ function bigbox_woocommerce_starter_get_created_starter_content_products() {
  * @return array $query Array of product ids.
  */
 function bigbox_woocommerce_starter_get_existing_wc_products() {
-	$query_args = [
-		'post_type'      => 'product',
-		'post_status'    => 'publish',
-		'fields'         => 'ids',
-		'posts_per_page' => -1, // @codingStandardsIgnoreLine
-	];
-
-	$products = get_posts( $query_args );
+	// @codingStandardsIgnoreStart
+	$products = get_posts( [
+		'post_type'        => 'product',
+		'post_status'      => 'publish',
+		'fields'           => 'ids',
+		'posts_per_page'   => -1,
+		'suppress_filters' => false,
+	] );
+	// @codingStandardsIgnoreEnd
 
 	if ( $products && ! empty( $products ) ) {
 		return $products;
@@ -333,7 +334,7 @@ function bigbox_woocommerce_starter_content_add_product_tax() {
 
 						foreach ( $categories as $category ) {
 							// Check if the term already exists.
-							$category_exists = term_exists( $category['term'], $taxonomy );
+							$category_exists = term_exists( $category['term'], $taxonomy ); // @codingStandardsIgnoreLine
 
 							if ( $category_exists ) {
 								$category_ids[] = (int) $category_exists['term_id'];
