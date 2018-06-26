@@ -1,11 +1,6 @@
 /* global $, wp, bigboxCustomizeControls, _ */
 
 /**
- * External dependencies.
- */
-import domReady from '@wordpress/dom-ready';
-
-/**
  * Internal dependencies.
  */
 const {

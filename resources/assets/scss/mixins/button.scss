@@ -19,7 +19,7 @@
 		padding: 17px 35px;
 	}
 
-	&:after {
+	&::after {
 
 		@include border-radius();
 		@include pseudo-overlay();
@@ -32,7 +32,7 @@
 		border: 0;
 		text-decoration: none;
 
-		&:after {
+		&::after {
 			background-color: rgba(0, 0, 0, 0.05);
 		}
 	}

@@ -20,7 +20,7 @@ wp_enqueue_script( 'wp-utils' );
 <div id="bigbox-license-reminder-notice" class="notice notice-error is-dismissible">
 	<p>
 	<?php
-		echo wp_kses_post( __( '<strong>You have not entered your BigBox license key!</strong> You will not be able to automatically update your BigBox theme.', 'bigbox' ) . ' ' . '<a href="' . esc_url( add_query_arg( 'page', 'bigbox', admin_url( 'themes.php' ) ) ) . '">' . __( 'Add your license key now &rarr;', 'bigbox' ) . '</a>' );
+		echo wp_kses_post( __( '<strong>You have not entered your BigBox license key!</strong> You will not be able to automatically update your BigBox theme.', 'bigbox' ) . ' <a href="' . esc_url( add_query_arg( 'page', 'bigbox', admin_url( 'themes.php' ) ) ) . '">' . __( 'Add your license key now &rarr;', 'bigbox' ) . '</a>' );
 	?>
 	</p>
 </div>

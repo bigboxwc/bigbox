@@ -19,12 +19,14 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+$notes = $order->get_customer_order_notes();
 ?>
 
-<?php if ( $notes = $order->get_customer_order_notes() ) : ?>
+<?php if ( $notes ) : ?>
 <section class="woocommerce-order-notes">
 
-	<h3 class="widget-title"><?php _e( 'Order Updates', 'bigbox' ); ?></h3>
+	<h3 class="widget-title"><?php esc_html_e( 'Order Updates', 'bigbox' ); ?></h3>
 
 	<ol class="woocommerce-OrderUpdates">
 		<?php foreach ( $notes as $note ) : ?>
@@ -33,8 +35,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php
 			echo esc_attr(
 				sprintf(
-					// Translators: %1$s: Date, %2$s: Time
-					 __( '%1$s at %2$s', 'bigbox' ),
+					/* translators: %1$s: Date, %2$s: Time. */
+					__( '%1$s at %2$s', 'bigbox' ),
 					date_i18n( get_option( 'date_format' ), strtotime( $note->comment_date ) ),
 					date_i18n( get_option( 'time_format' ), strtotime( $note->comment_date ) )
 				)
@@ -43,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</p>
 
 			<div class="woocommerce-OrderUpdate-description description">
-				<?php echo wpautop( wptexturize( $note->comment_content ) ); ?>
+				<?php echo wp_kses_post( wpautop( wptexturize( $note->comment_content ) ) ); ?>
 			</div>
 		</li>
 		<?php endforeach; ?>
@@ -54,7 +56,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <section class="woocommerce-customer-details">
 
-	<h3 class="widget-title"><?php _e( 'Billing Address', 'bigbox' ); ?></h3>
+	<h3 class="widget-title"><?php esc_html_e( 'Billing Address', 'bigbox' ); ?></h3>
 
 	<address>
 		<?php echo wp_kses_post( $order->get_formatted_billing_address( __( 'N/A', 'bigbox' ) ) ); ?>
@@ -68,7 +70,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php endif; ?>
 	</address>
 
-	<h2 class="widget-title"><?php _e( 'Shipping Address', 'bigbox' ); ?></h2>
+	<h2 class="widget-title"><?php esc_html_e( 'Shipping Address', 'bigbox' ); ?></h2>
 
 	<address>
 		<?php echo wp_kses_post( $order->get_formatted_shipping_address( __( 'N/A', 'bigbox' ) ) ); ?>

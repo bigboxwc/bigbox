@@ -3,7 +3,7 @@
 	margin: -($spacer) 0 $spacer;
 	position: relative;
 
-	&:after {
+	&::after {
 		content: "";
 		border-bottom: 1px solid gray("200");
 		width: 100%;

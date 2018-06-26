@@ -1,10 +1,5 @@
 /* global $, wp, bigboxCustomizeControls, _ */
 
-/**
- * External dependencies.
- */
-import domReady from '@wordpress/dom-ready';
-
 const fontList = bigboxCustomizeControls.fonts;
 
 /**

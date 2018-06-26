@@ -46,7 +46,7 @@
 		@include border-left-radius();
 	}
 
-	&:after {
+	&::after {
 		content: "";
 		position: absolute;
 		right: 15px;

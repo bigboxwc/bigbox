@@ -114,10 +114,11 @@ function bigbox_woocommerce_get_dynamic_shop_pages() {
 	if ( false === $pages ) {
 		$pages = [];
 
+		// @codingStandardsIgnoreStart
 		$query = new WP_Query(
 			[
 				'fields'                 => 'ids',
-				'nopaging'               => true,
+				'nopaging'               => true, 
 				'post_type'              => 'page',
 				'update_post_meta_cache' => false,
 				'update_term_meta_cache' => false,
@@ -130,6 +131,7 @@ function bigbox_woocommerce_get_dynamic_shop_pages() {
 				],
 			]
 		);
+		// @codingStandardsIgnoreEnd
 
 		if ( ! empty( $query->posts ) ) {
 			$pages = $query->posts;

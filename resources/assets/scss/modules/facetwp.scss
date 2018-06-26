@@ -8,7 +8,7 @@
 		background: rgba(255, 255, 255, 0.75);
 		z-index: 2;
 
-		&:before {
+		&::before {
 			content: "";
 			position: absolute;
 			top: 75px;
@@ -124,8 +124,8 @@
 			cursor: ew-resize;
 			top: -4px;
 
-			&:before,
-			&:after {
+			&::before,
+			&::after {
 				display: none;
 			}
 		}
@@ -171,7 +171,7 @@
 		top: 9px;
 		right: 9px;
 
-		&:before {
+		&::before {
 			background-size: 19px;
 			background-position: center center;
 		}

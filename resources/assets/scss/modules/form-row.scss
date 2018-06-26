@@ -13,8 +13,8 @@
 
 	.form-row {
 
-		&:before,
-		&:after {
+		&::before,
+		&::after {
 			display: none;
 		}
 	}

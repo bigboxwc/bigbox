@@ -120,7 +120,7 @@
 	border-radius: 100%;
 	box-sizing: content-box;
 
-	&:before {
+	&::before {
 		content: "";
 		display: block;
 		width: 12px;
@@ -133,7 +133,7 @@
 		box-sizing: content-box;
 	}
 
-	&:after {
+	&::after {
 		content: "";
 		display: block;
 		width: 2px;

@@ -116,7 +116,7 @@ $menu-break-point: md;
 				position: relative;
 				padding-right: ($spacer * 1.5);
 
-				&:after {
+				&::after {
 					content: "";
 					position: absolute;
 					right: 7px;
@@ -177,7 +177,7 @@ $menu-break-point: md;
 		.menu-item-has-children > a {
 			position: relative;
 
-			&:after {
+			&::after {
 				content: "";
 				position: absolute;
 				right: 0;
@@ -214,7 +214,7 @@ $menu-break-point: md;
 
 		.menu-item-has-children > a {
 
-			&:after {
+			&::after {
 				border-left: 4px solid gray("400");
 
 				.rtl & {
@@ -245,7 +245,7 @@ $menu-break-point: md;
 		.menu-item-has-children > a {
 			padding-left: 1rem;
 
-			&:after {
+			&::after {
 				left: 0;
 				right: auto;
 				border-right: 4px solid gray("400");

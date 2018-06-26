@@ -65,7 +65,7 @@ function bigbox_woocommerce_wp_enqueue_scripts() {
  *
  * @since 1.0.0
  *
- * @param bool $hidden Is the cart widget hidden?
+ * @param bool $hidden Is the cart widget hidden.
  * @return bool
  */
 function bigbox_woocommerce_widget_cart_is_hidden( $hidden ) {

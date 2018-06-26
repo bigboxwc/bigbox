@@ -49,7 +49,7 @@ class Customize_Walkthrough implements Registerable, Service {
 	 * @return array
 	 */
 	public function filter_starter_content( $content ) {
-		if ( ! isset( $_GET['starter-content'] ) || 1 !== absint( $_GET['starter-content'] ) ) {
+		if ( ! isset( $_GET['starter-content'] ) || 1 !== absint( $_GET['starter-content'] ) ) { // @codingStandardsIgnoreLine
 			$content = null;
 		}
 
@@ -70,7 +70,7 @@ class Customize_Walkthrough implements Registerable, Service {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $settings Settings
+	 * @param array $settings Settings.
 	 * @return array
 	 */
 	public function bigbox_customize_controls_js( $settings ) {
@@ -117,7 +117,7 @@ class Customize_Walkthrough implements Registerable, Service {
 			],
 		];
 
-		if ( ! isset( $_GET['starter-content'] ) ) {
+		if ( ! isset( $_GET['starter-content'] ) ) { // @codingStandardsIgnoreLine
 			unset( $pointers['widgets'] );
 		}
 
@@ -132,7 +132,7 @@ class Customize_Walkthrough implements Registerable, Service {
 		$pointers = apply_filters( 'bigbox_customize_walkthrough_pointers', $pointers );
 
 		$settings['walkthrough'] = [
-			'active'   => isset( $_GET['walkthrough'] ),
+			'active'   => isset( $_GET['walkthrough'] ), // @codingStandardsIgnoreLine
 			'pointers' => array_values( $pointers ),
 		];
 
