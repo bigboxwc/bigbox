@@ -3,6 +3,7 @@
 ### New
 
 - Update Node package project requirements.
+- Project coding standard updates.
 
 ## [1.7.1] - 2018-06-25
 
