@@ -64,6 +64,9 @@ npm run build
 sed -i "" "s|%BIGBOX_VERSION%|${PACKAGE_VERSION}|g" style.css
 sed -i "" "s|%BIGBOX_VERSION%|${PACKAGE_VERSION}|g" functions.php
 
+# Update distribution source.
+sed -i "" "s|%BIGBOX_SOURCE%|${1}|g" functions.php
+
 # Remove any existing zip file
 rm -f bigbox*.zip
 

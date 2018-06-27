@@ -68,6 +68,11 @@ class Setup_Guide implements Registerable, Service {
 			];
 		}
 
+		// Remove automatic updates for ThemeForest
+		if ( 'themeforest' === BIGBOX_SOURCE ) {
+			unset( $this->steps['license-manager'] );
+		}
+
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
 		add_action( 'admin_menu', [ $this, 'add_menu_item' ] );
 		add_action( 'admin_menu', [ $this, 'add_meta_boxes' ], 20 );
