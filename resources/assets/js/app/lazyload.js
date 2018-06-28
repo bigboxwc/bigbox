@@ -18,6 +18,8 @@ export const initLazyLoad = () => {
 
 					if ( lazyImage.dataset.sizes ) {
 						lazyImage.sizes = lazyImage.dataset.sizes;
+					} else {
+						lazyImage.src = lazyImage.dataset.src;
 					}
 
 					lazyImage.classList.remove( 'lazy' );
