@@ -16,9 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Current version -- automatically updated on release.
 define( 'BIGBOX_VERSION', '%BIGBOX_VERSION%' );
 
-// Where the theme was sold.
-define( 'BIGBOX_SOURCE', '%BIGBOX_SOURCE%' );
-
 // Minimum PHP version.
 define( 'BIGBOX_PHP_VERSION', '7.0.0' );
 

@@ -67,11 +67,6 @@ class Setup_Guide implements Registerable, Service {
 			];
 		}
 
-		// Remove automatic updates for ThemeForest
-		if ( 'themeforest' === BIGBOX_SOURCE ) {
-			unset( $this->steps['license-manager'] );
-		}
-
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
 		add_action( 'admin_menu', [ $this, 'add_menu_item' ] );
 		add_action( 'admin_menu', [ $this, 'add_meta_boxes' ], 20 );
@@ -206,22 +201,20 @@ class Setup_Guide implements Registerable, Service {
 		}
 		// @codingStandardsIgnoreEnd
 
-		// Attempt to install and activate WooCommerce (if not from ThemeForest)
-		if ( 'themeforest' !== BIGBOX_SOURCE ) {
-			( new Install_Plugin() )->data(
-				[
-					'slug'   => 'woocommerce',
-					'plugin' => [
-						'slug' => 'woocommerce',
-						'file' => 'woocommerce.php',
-					],
-				]
-			)->dispatch();
+		// Attempt to install and activate WooCommerce.
+		( new Install_Plugin() )->data(
+			[
+				'slug'   => 'woocommerce',
+				'plugin' => [
+					'slug' => 'woocommerce',
+					'file' => 'woocommerce.php',
+				],
+			]
+		)->dispatch();
 
-			// Schedule a notice to show in a week if they haven't added their key.
-			wp_clear_scheduled_hook( 'bigbox_nux_show_add_license_reminder' );
-			wp_schedule_single_event( ( time() + WEEK_IN_SECONDS ), 'bigbox_nux_show_add_license_reminder' );
-		}
+		// Schedule a notice to show in a week if they haven't added their key.
+		wp_clear_scheduled_hook( 'bigbox_nux_show_add_license_reminder' );
+		wp_schedule_single_event( ( time() + WEEK_IN_SECONDS ), 'bigbox_nux_show_add_license_reminder' );
 
 		// Update version.
 		update_option( $option_name, $version );
