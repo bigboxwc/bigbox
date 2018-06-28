@@ -73,6 +73,8 @@ function bigbox_customize_register_colors_controls( $wp_customize ) {
 	unset( $colors['black'] );
 	unset( $colors['white'] );
 
+	$wp_customize->register_control_type( 'BigBox\Customize\WP_Customize_Color_Control' );
+
 	foreach ( $colors as $theme_color => $color ) {
 		$key = "color-${theme_color}";
 
@@ -85,7 +87,7 @@ function bigbox_customize_register_colors_controls( $wp_customize ) {
 		);
 
 		$wp_customize->add_control(
-			new WP_Customize_Color_Control(
+			new BigBox\Customize\WP_Customize_Color_Control(
 				$wp_customize,
 				$key,
 				[
