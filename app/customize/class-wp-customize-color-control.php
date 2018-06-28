@@ -55,6 +55,7 @@ class WP_Customize_Color_Control extends \WP_Customize_Color_Control {
 
 		$palettes = array_slice( $palettes, 0, 5 );
 
+		$palettes[] = bigbox_get_theme_color( 'gray-200' );
 		$palettes[] = bigbox_get_theme_color( 'gray-400' );
 		$palettes[] = bigbox_get_theme_color( 'gray-700' );
 
