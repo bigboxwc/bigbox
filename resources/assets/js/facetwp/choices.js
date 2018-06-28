@@ -1,38 +1,31 @@
 /* global $ */
 
+const $document = $( document );
+
 /**
- * External dependencies.
+ * Add "real" checkboxes and radio.
  */
-import domReady from '@wordpress/dom-ready';
+$document.on( 'facetwp-loaded', () => {
+	$( '.facetwp-checkbox, .facetwp-radio' ).each( function() {
+		const $wrapper = $( this );
+		const $input = $( this ).find( 'input' );
+		const type = $wrapper.hasClass( 'facetwp-checkbox' ) ? 'checkbox' : 'radio';
 
-domReady( function() {
-	const $document = $( document );
+		if ( $input.length ) {
+			return;
+		}
 
-	/**
-	 * Add "real" checkboxes and radio.
-	 */
-	$document.on( 'facetwp-loaded', () => {
-		$( '.facetwp-checkbox, .facetwp-radio' ).each( function() {
-			const $wrapper = $( this );
-			const $input = $( this ).find( 'input' );
-			const type = $wrapper.hasClass( 'facetwp-checkbox' ) ? 'checkbox' : 'radio';
+		$wrapper
+			.prepend( `<input type="${ type }" ${ $wrapper.hasClass( 'checked' ) ? 'checked' : '' } />` );
 
-			if ( $input.length ) {
+		$wrapper.on( 'click', function() {
+			const $dynamicInput = $wrapper.find( 'input' );
+
+			if ( $wrapper.hasClass( 'disabled' ) ) {
 				return;
 			}
 
-			$wrapper
-				.prepend( `<input type="${ type }" ${ $wrapper.hasClass( 'checked' ) ? 'checked' : '' } />` );
-
-			$wrapper.on( 'click', function() {
-				const $dynamicInput = $wrapper.find( 'input' );
-
-				if ( $wrapper.hasClass( 'disabled' ) ) {
-					return;
-				}
-
-				$dynamicInput.prop( 'checked', ! $dynamicInput.prop( 'checked' ) );
-			} );
+			$dynamicInput.prop( 'checked', ! $dynamicInput.prop( 'checked' ) );
 		} );
 	} );
 } );
