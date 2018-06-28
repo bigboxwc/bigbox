@@ -28,7 +28,7 @@ class WP_Customize_Color_Control extends \WP_Customize_Color_Control {
 	 * @since 1.8.0
 	 * @var string
 	 */
-	public $type = 'color-themed';
+	public $type = 'color-better-palettes';
 
 	/**
 	 * Color palettes.

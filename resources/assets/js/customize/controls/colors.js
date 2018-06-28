@@ -2,13 +2,15 @@
 
 const { customize } = wp;
 
-customize.controlConstructor[ 'color-themed' ] = customize.ColorControl.extend( {
+customize.controlConstructor[ 'color-better-palettes' ] = customize.ColorControl.extend( {
 	/**
 	 * Control is ready.
 	 */
 	ready: function() {
 		const control = this;
-		const isHueSlider = this.params.mode === 'hue';
+		const { mode, palettes } = control.params;
+		const isHueSlider = mode === 'hue';
+
 		let updating = false;
 		let picker;
 
@@ -16,7 +18,7 @@ customize.controlConstructor[ 'color-themed' ] = customize.ColorControl.extend( 
 			picker = control.container.find( '.color-picker-hue' );
 
 			picker.val( control.setting() ).wpColorPicker( {
-				palettes: control.params.palettes,
+				palettes: palettes,
 
 				/**
 				 * Change event.
@@ -34,7 +36,7 @@ customize.controlConstructor[ 'color-themed' ] = customize.ColorControl.extend( 
 			picker = control.container.find( '.color-picker-hex' );
 
 			picker.val( control.setting() ).wpColorPicker( {
-				palettes: control.params.palettes,
+				palettes: palettes,
 
 				/**
 				 * Change event.
