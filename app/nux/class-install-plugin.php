@@ -23,6 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Install_Plugin extends \WP_Async_Request {
 
 	/**
+	 * Background process action.
+	 *
 	 * @var string
 	 */
 	protected $action = 'install-plugin';

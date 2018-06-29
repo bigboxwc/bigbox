@@ -17,7 +17,7 @@
 .facetwp-page.active + .facetwp-page + .facetwp-page + .facetwp-page:not(.last-page):not(.next) {
 	padding-left: 0;
 
-	&:before {
+	&::before {
 		content: "...";
 		margin-right: 6px;
 		padding-right: ($spacer / 2);
@@ -27,7 +27,7 @@
 .facetwp-page.first-page + a:not([data-page="1"]) {
 	margin-right: 0;
 
-	&:after {
+	&::after {
 		content: "...";
 		margin-left: 6px;
 		padding-left: ($spacer / 2);

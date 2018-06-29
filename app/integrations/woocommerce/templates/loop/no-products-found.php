@@ -23,6 +23,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 $tag = bigbox_is_integration_active( 'facetwp' ) ? 'li' : 'div';
 ?>
 
-<<?php echo $tag; ?> class="woocommerce-info">
+<<?php echo esc_attr( $tag ); ?> class="woocommerce-info">
 	<?php esc_html_e( 'No products were found matching your selection.', 'bigbox' ); ?>
-</<?php echo $tag; ?>>
+</<?php echo esc_attr( $tag ); ?>>

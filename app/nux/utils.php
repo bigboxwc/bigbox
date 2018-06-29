@@ -3,7 +3,15 @@
  * NUX utilities.
  *
  * @since 1.0.0
+ *
+ * @package BigBox
+ * @category NUX
+ * @author Spencer Finnell
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
 
 /**
  * Remind people to enter a license key if they haven't after a week.
@@ -37,6 +45,8 @@ function bigbox_nux_show_add_license_reminder() {
  * Install a plugin from WordPress.org.
  *
  * @since 1.0.0
+ *
+ * @throws Exception If API cannot be reached or plugin cannot be installed.
  *
  * @param string $plugin_slug Slug of hosted plugin.
  * @param array  $plugin Extra plugin data that may not be able to be derived.
@@ -129,6 +139,7 @@ function bigbox_install_plugin( $plugin_slug, $plugin ) {
 			$activate = true;
 
 		} catch ( Exception $e ) {
+			return $e->get_error_message();
 		}
 
 		// Discard feedback.
@@ -146,6 +157,7 @@ function bigbox_install_plugin( $plugin_slug, $plugin ) {
 				throw new Exception( $result->get_error_message() );
 			}
 		} catch ( Exception $e ) {
+			return $e->get_error_message();
 		}
 	}
 }

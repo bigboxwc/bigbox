@@ -33,21 +33,27 @@ $product_permalink = apply_filters( 'woocommerce_order_item_permalink', $is_visi
 
 		<?php if ( bigbox_woocommerce_has_product_image( $product ) ) : ?>
 		<div class="product__preview">
-			<?php echo $product_permalink ? sprintf( '<a href="%s">%s</a>', $product_permalink, $product->get_image() ) : $product->get_image(); ?>
+			<?php
+			if ( $product_permalink ) :
+				echo wp_kses_post( sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $product->get_image() ) );
+			else :
+				echo wp_kses_post( $product->get_image() );
+			endif;
+			?>
 		</div>
 		<?php endif; ?>
 
 		<div class="product__description">
 
 			<h2 class="product__title">
-				<?php echo apply_filters( 'woocommerce_order_item_name', $product_permalink ? sprintf( '<a href="%s">%s</a>', $product_permalink, $item->get_name() ) : $item->get_name(), $item, $is_visible ); ?>
+				<?php echo wp_kses_post( apply_filters( 'woocommerce_order_item_name', $product_permalink ? sprintf( '<a href="%s">%s</a>', $product_permalink, $item->get_name() ) : $item->get_name(), $item, $is_visible ) ); ?>
 			</h2>
 
 			<div class="product__meta price">
-				<?php echo $order->get_formatted_line_subtotal( $item ); ?>
+				<?php echo wp_kses_post( $order->get_formatted_line_subtotal( $item ) ); ?>
 
 				<del class="subtotal">
-					<?php echo apply_filters( 'woocommerce_order_item_quantity_html', sprintf( '&times; %s', $item->get_quantity() ), $item ); ?>
+					<?php echo wp_kses_post( apply_filters( 'woocommerce_order_item_quantity_html', sprintf( '&times; %s', $item->get_quantity() ), $item ) ); ?>
 				</del>
 			</div>
 
@@ -57,7 +63,7 @@ $product_permalink = apply_filters( 'woocommerce_order_item_permalink', $is_visi
 			wc_display_item_meta( $item );
 
 			if ( $show_purchase_note && $purchase_note ) :
-				echo wpautop( do_shortcode( wp_kses_post( $purchase_note ) ) );
+				echo wp_kses_post( wpautop( do_shortcode( $purchase_note ) ) );
 			endif;
 
 			do_action( 'woocommerce_order_item_meta_end', $item_id, $item, $order, false );

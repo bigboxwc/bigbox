@@ -47,6 +47,10 @@ return [
 
 			'.widget_price_filter .price_slider_wrapper .ui-widget-content',
 			'.facetwp-facet .facetwp-slider',
+
+			// select2.
+			'.select2-container--default .select2-results__option[aria-selected=true]',
+			'.select2-container--default .select2-results__option[data-selected=true]',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $gray200 ),

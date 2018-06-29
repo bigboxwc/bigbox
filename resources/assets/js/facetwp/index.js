@@ -1,4 +1,9 @@
-/* global jQuery */
+/* global $ */
+
+/**
+ * External dependencies.
+ */
+import domReady from '@wordpress/dom-ready';
 
 /**
  * Internal dependencies.
@@ -11,7 +16,7 @@ import './scroll.js';
 import { adjustWidth } from './../app/navbar.js';
 import { initLazyLoad } from './../app/lazyload.js';
 
-( function( $ ) {
+domReady( function() {
 	const $document = $( document );
 
 	/**
@@ -23,4 +28,4 @@ import { initLazyLoad } from './../app/lazyload.js';
 	 * Reinit lazy load once loaded.
 	 */
 	$document.on( 'facetwp-loaded', initLazyLoad );
-}( jQuery ) );
+} );

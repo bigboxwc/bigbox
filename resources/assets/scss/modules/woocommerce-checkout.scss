@@ -75,7 +75,7 @@ form.woocommerce-checkout {
 
 		@include card--primary;
 
-		&:before {
+		&::before {
 			width: 7px;
 			height: 11px;
 			border-color: theme-color("success");
@@ -100,7 +100,7 @@ form.woocommerce-checkout {
 
 		@include card;
 
-		&:before {
+		&::before {
 			content: "";
 			position: absolute;
 			left: $spacer;

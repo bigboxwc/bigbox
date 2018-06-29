@@ -82,7 +82,7 @@
 		padding-left: 20px;
 		position: relative;
 
-		&:before {
+		&::before {
 			font-size: 21px;
 			content: "\00d7";
 			margin-right: 5px;
@@ -199,7 +199,7 @@
 		a {
 			color: color("primary");
 
-			&:before {
+			&::before {
 				content: "\00d7";
 				margin-right: 5px;
 			}

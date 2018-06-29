@@ -1,6 +1,11 @@
-/* global jQuery */
+/* global $ */
 
-( function( $ ) {
+/**
+ * External dependencies.
+ */
+import domReady from '@wordpress/dom-ready';
+
+domReady( function() {
 	/**
 	 * Better hover behavior.
 	 */
@@ -100,4 +105,4 @@
 	addMobilePanels();
 
 	$( document.body ).on( 'offCanvasDrawerSwap', addMobilePanels );
-}( jQuery ) );
+} );

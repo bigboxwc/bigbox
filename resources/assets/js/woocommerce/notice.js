@@ -1,6 +1,11 @@
-/* global jQuery */
+/* global $ */
 
-( function( $ ) {
+/**
+ * External dependencies.
+ */
+import domReady from '@wordpress/dom-ready';
+
+domReady( function() {
 	const $body = $( 'body' );
 	const $window = $( window );
 
@@ -26,4 +31,4 @@
 			$( '.woocommerce-store-notice__dismiss-link' ).on( 'click', resizeOffset );
 		}, 200 );
 	}
-}( jQuery ) );
+} );

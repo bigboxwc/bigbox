@@ -1,6 +1,11 @@
-/* global FWP, jQuery */
+/* global FWP, $ */
 
-( function( $ ) {
+/**
+ * External dependencies.
+ */
+import domReady from '@wordpress/dom-ready';
+
+domReady( function() {
 	/**
 	 * Refresh FacetWP when on the shop page.
 	 *
@@ -42,4 +47,4 @@
 			} );
 		} );
 	}
-}( jQuery ) );
+} );

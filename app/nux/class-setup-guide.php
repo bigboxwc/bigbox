@@ -58,9 +58,8 @@ class Setup_Guide implements Registerable, Service {
 
 		// Dirty check.
 		if (
-			in_array( 'install', get_option( 'woocommerce_admin_notices', [] ) )
-			|| ! bigbox_is_integration_active( 'woocommerce' )
-			|| ! get_option( 'woocommerce_shop_page_id', false )
+			! bigbox_is_integration_active( 'woocommerce' ) ||
+			! get_option( 'woocommerce_shop_page_id', false )
 		) {
 			$this->steps['install-woocommerce'] = [
 				'label'    => __( 'Setup WooCommerce', 'bigbox' ),

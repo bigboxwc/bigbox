@@ -27,7 +27,7 @@ function bigbox_woocommerce_get_starter_content( $content ) {
 	$content['posts']       = array_merge( $content['posts'], bigbox_woocommerce_get_starter_content_products() );
 	$content['posts']       = array_merge( $content['posts'], bigbox_woocommerce_get_starter_content_pages() );
 
-	// Update options
+	// Update options.
 	$content['options']['page_on_front']                 = '{{shop}}';
 	$content['options']['woocommerce_shop_page_display'] = 'both';
 
@@ -59,7 +59,7 @@ function bigbox_woocommerce_get_starter_content_products() {
 
 	$products = require $integration->get_dir() . '/starter-content/products.php';
 
-	// Set key as `post_name`
+	// Set key as `post_name`.
 	foreach ( $products as $key => $product ) {
 		$products[ $key ]['post_name'] = $key;
 	}
@@ -165,14 +165,14 @@ if ( is_customize_preview() ) {
 function bigbox_woocommerce_starter_content_shortcode_loop_products( $query_args, $atts, $loop_name = null ) {
 	$query_args['post__in'] = [];
 
-	// Add existing products to query
+	// Add existing products to query.
 	$existing_products = bigbox_woocommerce_starter_get_existing_wc_products();
 
 	if ( ! empty( $existing_products ) ) {
 		$query_args['post__in'] = array_merge( $query_args['post__in'], $existing_products );
 	}
 
-	// Add starter content to query
+	// Add starter content to query.
 	$created_products = bigbox_woocommerce_starter_get_created_starter_content_products();
 
 	if ( false !== $created_products ) {
@@ -218,14 +218,15 @@ function bigbox_woocommerce_starter_get_created_starter_content_products() {
  * @return array $query Array of product ids.
  */
 function bigbox_woocommerce_starter_get_existing_wc_products() {
-	$query_args = [
-		'post_type'      => 'product',
-		'post_status'    => 'publish',
-		'fields'         => 'ids',
-		'posts_per_page' => -1,
-	];
-
-	$products = get_posts( $query_args );
+	// @codingStandardsIgnoreStart
+	$products = get_posts( [
+		'post_type'        => 'product',
+		'post_status'      => 'publish',
+		'fields'           => 'ids',
+		'posts_per_page'   => -1,
+		'suppress_filters' => false,
+	] );
+	// @codingStandardsIgnoreEnd
 
 	if ( $products && ! empty( $products ) ) {
 		return $products;
@@ -242,10 +243,10 @@ function bigbox_woocommerce_starter_get_existing_wc_products() {
  *
  * @param string $new_status New status.
  * @param string $old_status Old status.
- * @param object $post
+ * @param object $post Post object.
  */
 function bigbox_woocommerce_starter_content_transition_post_status( $new_status, $old_status, $post ) {
-	if ( 'publish' === $new_status && 'auto-draft' === $old_status && in_array( $post->post_type, [ 'product' ] ) ) {
+	if ( 'publish' === $new_status && 'auto-draft' === $old_status && in_array( $post->post_type, [ 'product' ], true ) ) {
 		$post_name = get_post_meta( $post->ID, '_customize_draft_post_name', true );
 
 		$starter_products = bigbox_woocommerce_get_starter_content_products();
@@ -278,7 +279,7 @@ function bigbox_woocommerce_starter_content_the_title( $title, $post_id = null )
 
 	$post = get_post( $post_id );
 
-	if ( $post && 'auto-draft' === $post->post_status && in_array( $post->post_type, [ 'product' ] ) && 'AUTO-DRAFT' === $post->post_title ) {
+	if ( $post && 'auto-draft' === $post->post_status && in_array( $post->post_type, [ 'product' ], true ) && 'AUTO-DRAFT' === $post->post_title ) {
 		$post_name = get_post_meta( $post->ID, '_customize_draft_post_name', true );
 
 		$starter_products = bigbox_woocommerce_get_starter_content_products();
@@ -294,6 +295,11 @@ if ( is_customize_preview() ) {
 	add_filter( 'the_title', 'bigbox_woocommerce_starter_content_the_title', 10, 2 );
 }
 
+/**
+ * Add a taxonomy (category, tag) to a product.
+ *
+ * @since 1.0.0
+ */
 function bigbox_woocommerce_starter_content_add_product_tax() {
 	$created_products = bigbox_woocommerce_starter_get_created_starter_content_products();
 
@@ -328,7 +334,7 @@ function bigbox_woocommerce_starter_content_add_product_tax() {
 
 						foreach ( $categories as $category ) {
 							// Check if the term already exists.
-							$category_exists = term_exists( $category['term'], $taxonomy );
+							$category_exists = term_exists( $category['term'], $taxonomy ); // @codingStandardsIgnoreLine
 
 							if ( $category_exists ) {
 								$category_ids[] = (int) $category_exists['term_id'];
@@ -394,32 +400,32 @@ function bigbox_woocommerce_starter_content_set_product_data() {
 
 			$product_data = $starter_products[ $post_name ]['product_data'];
 
-			// Set visibility
+			// Set visibility.
 			$product->set_catalog_visibility( 'visible' );
 
-			// Set regular price
+			// Set regular price.
 			if ( ! empty( $product_data['regular_price'] ) ) {
 				$product->set_regular_price( floatval( $product_data['regular_price'] ) );
 			}
 
-			// Set price
+			// Set price.
 			if ( ! empty( $product_data['price'] ) ) {
 				$product->set_price( floatval( $product_data['price'] ) );
 			}
 
-			// Set sale price
+			// Set sale price.
 			if ( ! empty( $product_data['sale_price'] ) ) {
 				$product->set_sale_price( floatval( $product_data['sale_price'] ) );
 			}
 
-			// Set featured
+			// Set featured.
 			if ( ! empty( $product_data['featured'] ) ) {
 				$product->set_featured( true );
 			} else {
 				$product->set_featured( false );
 			}
 
-			// Save
+			// Save.
 			$product->save();
 		}
 	}

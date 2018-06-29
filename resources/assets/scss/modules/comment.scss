@@ -41,7 +41,7 @@
 
 .comment-meta {
 
-	&:before {
+	&::before {
 		margin: 0 4px;
 		content: "–";
 	}

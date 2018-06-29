@@ -1,3 +1,16 @@
+## [1.8.0] - 2018-06-29
+
+### New
+
+- Update Node package project requirements.
+- Project coding standard updates.
+- Add more helpful color palette controls.
+
+### Fix
+
+- Ensure LazyLoad falls back when a full `srcset` is unavailable.
+- Ensure FacetWP checkboxes and radio inputs load.
+
 ## [1.7.1] - 2018-06-25
 
 ### Fix

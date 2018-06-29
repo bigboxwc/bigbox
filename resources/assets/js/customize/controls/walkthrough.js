@@ -1,4 +1,4 @@
-/* global jQuery, wp, bigboxCustomizeControls, _ */
+/* global $, wp, bigboxCustomizeControls, _ */
 
 /**
  * Internal dependencies.
@@ -9,7 +9,6 @@ const {
 } = bigboxCustomizeControls.walkthrough || {};
 
 const template = wp.template( 'bigbox-pointer' );
-
 let activePointer = 0;
 
 /**
@@ -86,11 +85,8 @@ const showPointer = ( pointer ) => {
 	$pointer.style.display = 'block';
 };
 
-( function( $ ) {
-	if ( ! active ) {
-		return;
-	}
-
+// Only enable if active.
+if ( active ) {
 	const $customizer = $( '.wp-customizer' );
 
 	// Wait for Customize ready.
@@ -101,4 +97,4 @@ const showPointer = ( pointer ) => {
 
 	// Dismiss
 	$customizer.on( 'click', '.bigbox-pointer .close', hideActivePointer );
-}( jQuery ) );
+}

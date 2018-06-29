@@ -1,9 +1,14 @@
-/* global wp, jQuery */
+/* global wp, $ */
+
+/**
+ * External dependencies.
+ */
+import domReady from '@wordpress/dom-ready';
 
 /**
  * Toggle other control's visibility based on another.
  */
-( function( $ ) {
+domReady( function() {
 	const api = wp.customize;
 
 	// Control visibility for controls
@@ -36,4 +41,4 @@
 			} );
 		} );
 	} );
-}( jQuery ) );
+} );

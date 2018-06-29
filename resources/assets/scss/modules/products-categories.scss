@@ -9,7 +9,7 @@
 	padding-left: 2px;
 	padding-right: 2px;
 
-	&:after {
+	&::after {
 		background: gray("200");
 
 		@include border-radius();

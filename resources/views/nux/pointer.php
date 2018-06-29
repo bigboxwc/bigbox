@@ -8,6 +8,10 @@
  * @category NUX
  * @author Spencer Finnell
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
 ?>
 
 <div aria-hidden class="bigbox-pointer"></div>

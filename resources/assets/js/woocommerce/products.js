@@ -1,4 +1,9 @@
-/* global jQuery, wc_single_product_params */
+/* global $, wc_single_product_params */
+
+/**
+ * External dependencies.
+ */
+import domReady from '@wordpress/dom-ready';
 
 /**
  * Internal dependencies.
@@ -8,7 +13,7 @@ import { transformInput } from './quantity';
 /**
  * Transform purchase form quantities.
  */
-( function( $ ) {
+domReady( function() {
 	// Can't cache the .qty input because it gets replaced.
 	const $form = $( 'form.cart' );
 
@@ -22,29 +27,29 @@ import { transformInput } from './quantity';
 	$form.find( '.qty' ).each( function() {
 		transformInput( $( this ), false );
 	} );
-}( jQuery ) );
+} );
 
 /**
  * Submit product category selector.
  */
-( function( $ ) {
+domReady( function() {
 	const $form = $( '#product-category-selector' );
 
 	// Variation update.
 	$form.find( 'select' ).on( 'change', () => {
 		$form.submit();
 	} );
-}( jQuery ) );
+} );
 
 /**
  * Set width of flexSlider.
  */
-( function( $ ) {
-	if ( typeof wc_single_product_params === 'undefined' ) {
+domReady( function() {
+	if ( typeof wc_single_product_params === 'undefined' ) { // eslint-disable-line camelcase
 		return;
 	}
 
-	const params = wc_single_product_params || {};
+	const params = wc_single_product_params || {}; // eslint-disable-line camelcase
 
 	if ( ! params.flexslider ) {
 		return;
@@ -53,4 +58,4 @@ import { transformInput } from './quantity';
 	$( '.woocommerce-product-gallery__wrapper .woocommerce-product-gallery__image:eq(0) .wp-post-image' ).on( 'load', () => {
 		$( '.woocommerce-product-gallery--with-images .flex-viewport' ).css( 'maxWidth', `${ params.flexslider.itemWidth }px` );
 	} );
-}( jQuery ) );
+} );

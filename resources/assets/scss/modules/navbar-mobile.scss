@@ -63,7 +63,7 @@
 		display: flex;
 		align-items: flex-start;
 
-		&:after {
+		&::after {
 			top: 23px;
 			left: ($spacer * 1.5);
 			right: auto;
@@ -88,7 +88,7 @@
 	.menu-item-has-children {
 		position: relative;
 
-		&:after {
+		&::after {
 			content: "";
 			position: absolute;
 			right: 1rem;

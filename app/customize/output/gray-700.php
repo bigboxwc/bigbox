@@ -26,9 +26,13 @@ return [
 			'select',
 			'.navbar-menu--primary .sub-menu a',
 			'.navbar-menu--secondary .sub-menu a',
-			'.select2-container--default .select2-selection--single .select2-selection__rendered',
 			'.breadcrumbs a',
 			'.woocommerce-breadcrumb a',
+
+			// select2.
+			'.select2-container--default .select2-results__option[aria-selected=true]',
+			'.select2-container--default .select2-results__option[data-selected=true]',
+			'.select2-container--default .select2-selection--single .select2-selection__rendered',
 		],
 		'declarations' => [
 			'color' => esc_attr( $gray700 ),

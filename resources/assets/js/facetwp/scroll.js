@@ -1,6 +1,11 @@
-/* global FWP, jQuery */
+/* global FWP, $ */
 
-( function( $ ) {
+/**
+ * External dependencies.
+ */
+import domReady from '@wordpress/dom-ready';
+
+domReady( function() {
 	const $document = $( document );
 	const $htmlbody = $( 'html, body' );
 
@@ -17,4 +22,4 @@
 				.prepend( '<div class="facetwp-template__loading"></div>' );
 		}
 	} );
-}( jQuery ) );
+} );

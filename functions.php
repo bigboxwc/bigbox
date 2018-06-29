@@ -28,7 +28,9 @@ if ( version_compare( PHP_VERSION, BIGBOX_PHP_VERSION, '<' ) ) {
 		}
 	);
 
-	switch_theme( WP_DEFAULT_THEME );
+	if ( current_user_can( 'switch_themes' ) ) {
+		switch_theme( WP_DEFAULT_THEME );
+	}
 
 	return;
 }
