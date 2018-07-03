@@ -8,7 +8,7 @@ import domReady from '@wordpress/dom-ready';
 /**
  * Toggle other control's visibility based on another.
  */
-domReady( function() {
+domReady( () => {
 	const api = wp.customize;
 
 	// Control visibility for controls

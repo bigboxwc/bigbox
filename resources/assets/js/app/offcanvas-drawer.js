@@ -8,7 +8,7 @@ import domReady from '@wordpress/dom-ready';
 // Keep track of things we've found before.
 const cache = {};
 
-domReady( function() {
+domReady( () => {
 	// Document
 	const $document = $( document.body );
 

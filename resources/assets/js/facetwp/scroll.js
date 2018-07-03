@@ -5,7 +5,7 @@
  */
 import domReady from '@wordpress/dom-ready';
 
-domReady( function() {
+domReady( () => {
 	const $document = $( document );
 	const $htmlbody = $( 'html, body' );
 

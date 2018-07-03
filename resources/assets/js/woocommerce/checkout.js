@@ -10,7 +10,7 @@ import domReady from '@wordpress/dom-ready';
  */
 import { updatePartials, blockPartials } from './cart';
 
-domReady( function() {
+domReady( () => {
 	/**
 	 * Update cart contents when quantity changes.
 	 */

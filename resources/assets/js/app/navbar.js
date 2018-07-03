@@ -24,6 +24,4 @@ export const adjustWidth = () => {
 };
 
 // Adjust on load.
-domReady( function() {
-	adjustWidth();
-} );
+domReady( adjustWidth );

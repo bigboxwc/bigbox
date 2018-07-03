@@ -16,7 +16,7 @@ import './scroll.js';
 import { adjustWidth } from './../app/navbar.js';
 import { initLazyLoad } from './../app/lazyload.js';
 
-domReady( function() {
+domReady( () => {
 	const $document = $( document );
 
 	/**

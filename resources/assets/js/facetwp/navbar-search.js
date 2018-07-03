@@ -5,7 +5,7 @@
  */
 import domReady from '@wordpress/dom-ready';
 
-domReady( function() {
+domReady( () => {
 	/**
 	 * Refresh FacetWP when on the shop page.
 	 *

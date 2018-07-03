@@ -13,7 +13,7 @@ import { transformInput } from './quantity';
 /**
  * Transform purchase form quantities.
  */
-domReady( function() {
+domReady( () => {
 	// Can't cache the .qty input because it gets replaced.
 	const $form = $( 'form.cart' );
 
@@ -32,7 +32,7 @@ domReady( function() {
 /**
  * Submit product category selector.
  */
-domReady( function() {
+domReady( () => {
 	const $form = $( '#product-category-selector' );
 
 	// Variation update.
@@ -44,7 +44,7 @@ domReady( function() {
 /**
  * Set width of flexSlider.
  */
-domReady( function() {
+domReady( () => {
 	if ( typeof wc_single_product_params === 'undefined' ) { // eslint-disable-line camelcase
 		return;
 	}
