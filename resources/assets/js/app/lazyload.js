@@ -12,14 +12,14 @@ export const initLazyLoad = () => {
 				if ( entry.isIntersecting ) {
 					const lazyImage = entry.target;
 
+					lazyImage.src = lazyImage.dataset.src;
+
 					if ( lazyImage.dataset.srcset ) {
 						lazyImage.srcset = lazyImage.dataset.srcset;
 					}
 
 					if ( lazyImage.dataset.sizes ) {
 						lazyImage.sizes = lazyImage.dataset.sizes;
-					} else {
-						lazyImage.src = lazyImage.dataset.src;
 					}
 
 					lazyImage.classList.remove( 'lazy' );
