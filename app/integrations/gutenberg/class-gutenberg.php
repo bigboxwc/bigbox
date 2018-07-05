@@ -51,11 +51,12 @@ class Gutenberg extends Integration implements Registerable, Service {
 		foreach ( $colors as $mod => $color ) {
 			$palette[] = [
 				'name'  => $color['name'],
+				'slug'  => $mod,
 				'color' => bigbox_get_theme_color( $mod ),
 			];
 		}
 
-		add_theme_support( 'editor-color-palette', ...$palette );
+		add_theme_support( 'editor-color-palette', $palette );
 	}
 
 	/**
