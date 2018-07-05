@@ -87,8 +87,6 @@ function bigbox_enqueue_scripts() {
 	$stylesheet = bigbox_get_theme_name();
 
 	$deps = [
-		'wp-util',
-		'wp-api',
 		'hoverIntent',
 	];
 

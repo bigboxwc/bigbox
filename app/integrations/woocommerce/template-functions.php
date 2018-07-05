@@ -51,6 +51,7 @@ function bigbox_woocommerce_wp_enqueue_scripts() {
 
 	$deps = [
 		$stylesheet,
+		'underscore',
 	];
 
 	wp_enqueue_script( "{$stylesheet}-woocommerce", get_template_directory_uri() . '/public/js/woocommerce.min.js', $deps, $version, true );
