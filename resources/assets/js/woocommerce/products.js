@@ -19,13 +19,13 @@ domReady( () => {
 
 	// Variation update.
 	$form.on( 'show_variation', ( e, variation ) => {
-		transformInput( $form.find( '.qty' ), variation );
+		transformInput( document.querySelector( 'form.count .qty' ), variation );
 		$form.addClass( 'woocommerce-variation--loaded' );
 	} );
 
 	// All.
 	$form.find( '.qty' ).each( function() {
-		transformInput( $( this ), false );
+		transformInput( this, false );
 	} );
 } );
 

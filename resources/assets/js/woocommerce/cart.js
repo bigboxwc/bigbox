@@ -22,7 +22,7 @@ const $body = $( document.body );
 export const transformQtys = () => {
 	_.forEach( partials, ( selector ) => {
 		$( selector ).find( '.qty' ).each( function() {
-			transformInput( $( this ), false );
+			transformInput( this, false );
 		} );
 	} );
 };
