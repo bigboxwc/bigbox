@@ -16,7 +16,7 @@ const cache = {};
  *
  * @param {Object} toggle Toggle element.
  */
-const targetSourceSwap = ( toggle ) => {
+const targetSourceSwap = toggle => {
 	const target = toggle.dataset.target;
 	const source = toggle.dataset.source;
 
@@ -48,7 +48,7 @@ const targetSourceSwap = ( toggle ) => {
  *
  * @param {boolean} toggle Toggle on or off.
  */
-const toggleBodyLock = ( toggle ) => document.body.classList.toggle( 'offcanvas-drawer-open', toggle );
+const toggleBodyLock = toggle => document.body.classList.toggle( 'offcanvas-drawer-open', toggle );
 
 domReady( () => {
 	const toggles = document.querySelectorAll( '.offcanvas-drawer-toggle' );
@@ -65,7 +65,7 @@ domReady( () => {
 	 * will house the content between swaps. The toggles that close the drawer should
 	 * reverse the source and target elements.
 	 */
-	toggles.forEach( ( toggle ) => {
+	toggles.forEach( toggle => {
 		toggle.addEventListener( 'click', () => {
 			targetSourceSwap( toggle );
 			toggleBodyLock( ! hasClass( document, 'offcanvas-drawer-open' ) );

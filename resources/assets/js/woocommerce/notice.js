@@ -1,34 +1,34 @@
-/* global $ */
-
 /**
  * External dependencies.
  */
 import domReady from '@wordpress/dom-ready';
 
+/**
+ * Internal dependencies.
+ */
+import { hasClass } from './../utils.js';
+
 domReady( () => {
-	const $body = $( 'body' );
-	const $window = $( window );
+
+	if ( ! hasClass( document.body, 'woocommerce-demo-store' ) ) {
+		return;
+	}
+
+	const notice = document.querySelector( '.woocommerce-store-notice--top' );
+
+	if ( ! notice ) {
+		return;
+	}
 
 	/**
 	 * If we are on a demo store and top position adjust the body offset.
 	 */
-	if ( $body.hasClass( 'woocommerce-demo-store' ) ) {
-		// Don't want to set full bundle as dependency so wait until WooCommerce adjusts.
-		setTimeout( () => {
-			const $notice = $( '.woocommerce-store-notice--top:visible' );
+	const resizeOffset = () => document.body.style.paddingTop = `${ notice.offsetHeight }px`;
 
-			if ( 0 === $notice.length ) {
-				return;
-			}
+	// Toggle adjustments.
+	resizeOffset();
 
-			const resizeOffset = () => {
-				$body.css( 'padding-top', $notice.outerHeight() );
-			};
+	window.addEventListener( 'resize', resizeOffset );
 
-			// Toggle adjustments.
-			resizeOffset();
-			$window.on( 'resize', resizeOffset );
-			$( '.woocommerce-store-notice__dismiss-link' ).on( 'click', resizeOffset );
-		}, 200 );
-	}
+	document.querySelector( '.woocommerce-store-notice__dismiss-link' ).addEventListener( 'click', resizeOffset );
 } );
