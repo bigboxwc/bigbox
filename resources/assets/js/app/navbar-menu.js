@@ -122,5 +122,5 @@ domReady( () => {
 	addMobilePanels();
 } );
 
-// @todo addEventListener
-$( document.body ).on( 'offCanvasDrawerSwap', addMobilePanels );
+// Add Mobile Panels again when drawers swap.
+document.addEventListener( 'offCanvasDrawerSwap', addMobilePanels );

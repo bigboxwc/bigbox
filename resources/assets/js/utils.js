@@ -9,7 +9,7 @@ export const hasClass = ( el, className ) => {
     return el.classList.contains( className );
   }
 
-  return new RegExp('(^| )' + str + '( |$)', 'gi').test( el.className );
+  return new RegExp('(^| )' + className + '( |$)', 'gi').test( el.className );
 }
 
 /**
