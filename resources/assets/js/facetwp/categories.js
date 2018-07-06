@@ -1,7 +1,12 @@
-/* global FWP, jQuery */
+/* global FWP, $ */
 
-( function( $ ) {
-	const $document = $( document );
+/**
+ * External dependencies.
+ */
+import domReady from '@wordpress/dom-ready';
+
+domReady( () => {
+	const $document = $( document.body );
 
 	/**
 	 * Hide categories if filtering with facets.
@@ -19,4 +24,4 @@
 			}
 		} );
 	}
-}( jQuery ) );
+} );

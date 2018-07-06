@@ -1,31 +1,34 @@
 /* global $ */
 
-const $document = $( document );
+/**
+ * Internal dependencies.
+ */
+import { hasClass } from './../utils';
+
+const $document = $( document.body );
 
 /**
  * Add "real" checkboxes and radio.
  */
 $document.on( 'facetwp-loaded', () => {
-	$( '.facetwp-checkbox, .facetwp-radio' ).each( function() {
-		const $wrapper = $( this );
-		const $input = $( this ).find( 'input' );
-		const type = $wrapper.hasClass( 'facetwp-checkbox' ) ? 'checkbox' : 'radio';
+	// Add a checkbox on load.
+	document.querySelectorAll( '.facetwp-checkbox, .facetwp-radio' ).forEach( ( wrapper ) => {
+		// Create an input.
+		const input = document.createElement( 'input' );
 
-		if ( $input.length ) {
-			return;
-		}
+		input.type    = hasClass( wrapper, 'facetwp-checkbox' ) ? 'checkbox' : 'radio';
+		input.checked = hasClass( wrapper, 'checked' );
 
-		$wrapper
-			.prepend( `<input type="${ type }" ${ $wrapper.hasClass( 'checked' ) ? 'checked' : '' } />` );
+		// Add to item.
+		wrapper.prepend( input );
 
-		$wrapper.on( 'click', function() {
-			const $dynamicInput = $wrapper.find( 'input' );
-
-			if ( $wrapper.hasClass( 'disabled' ) ) {
+		// Better visual feedback (automatically check when clicked.)
+		wrapper.addEventListener( 'click', () => {
+			if ( hasClass( wrapper, 'disabled' ) ) {
 				return;
 			}
 
-			$dynamicInput.prop( 'checked', ! $dynamicInput.prop( 'checked' ) );
+			input.checked = ! input.getAttribute( 'checked' );
 		} );
 	} );
 } );
