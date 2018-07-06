@@ -1,6 +1,6 @@
-/* global $, wp, bigboxCustomizeControls, _ */
+/* global wp, bigboxCustomizeControls, _, Event */
 
-const { defaultText, fontList } = bigboxCustomizeControls.typography;
+const { fontList } = bigboxCustomizeControls.typography;
 
 /**
  * Build HTML <option>s for font families.
@@ -13,8 +13,8 @@ const getFamilyOptions = () => {
 	_.each( fontList, ( data ) => {
 		const familyOption = document.createElement( 'option' );
 
-		familyOption.value            = data.family;
-		familyOption.text             = data.family;
+		familyOption.value = data.family;
+		familyOption.text = data.family;
 		familyOption.dataset.variants = data.variants.join( ',' );
 		familyOption.dataset.category = data.category;
 
@@ -38,7 +38,7 @@ const getWeightOptions = ( variants ) => {
 			const weightOption = document.createElement( 'option' );
 
 			weightOption.value = variant;
-			weightOption.text  = variant;
+			weightOption.text = variant;
 
 			options.push( weightOption );
 		}
@@ -58,12 +58,12 @@ const updateWeightFields = ( variants ) => {
 		const value = control.setting();
 
 		// Bring back to standard DOM element.
-		const selectEl = control.container.find( 'select' ).get(0);
+		const selectEl = control.container.find( 'select' ).get( 0 );
 
 		selectEl.innerHTML = '';
 
 		// Add HTML and select chosen item.
-		getWeightOptions( variants ).forEach( weight => selectEl.options.add( weight ) );
+		getWeightOptions( variants ).forEach( ( familyWeight ) => selectEl.options.add( familyWeight ) );
 
 		// Determine if the previous value can be carried over.
 
@@ -71,16 +71,16 @@ const updateWeightFields = ( variants ) => {
 		if ( variants[ value ] ) {
 			selectEl.value = value;
 		} else {
-			const first = selectEl.options[0];
-			const last  = selectEl.options[ selectEl.options.length - 1 ];
+			const first = selectEl.options[ 0 ];
+			const last = selectEl.options[ selectEl.options.length - 1 ];
 
 			// Select first if no previous item remains.
 			if ( 'base' === weight ) {
-				selectEl.value         = first;
+				selectEl.value = first;
 				selectEl.selectedIndex = 0;
 			// Select last if no previous item remains for bold.
 			} else {
-				selectEl.value         = last;
+				selectEl.value = last;
 				selectEl.selectedIndex = selectEl.options.length - 1;
 			}
 
@@ -100,16 +100,16 @@ const updateCategoryField = ( category ) => {
 		category = 'cursive';
 	}
 
-	wp.customize.control( 'type-font-family-fallback', control => control.setting.set( category ) );
+	wp.customize.control( 'type-font-family-fallback', ( control ) => control.setting.set( category ) );
 };
 
 // Wait for Customize ready.
 wp.customize.bind( 'ready', () => {
 	const familyControl = wp.customize.control( 'type-font-family' );
-	const familyInput   = familyControl.container.find( 'select' ).get(0);
+	const familyInput = familyControl.container.find( 'select' ).get( 0 );
 
 	// Update available weights when changing family.
-	familyInput.addEventListener( 'change', e => {
+	familyInput.addEventListener( 'change', ( e ) => {
 		const selected = e.target.options[ e.target.options.selectedIndex ];
 		const variants = selected.dataset.variants ? selected.dataset.variants.split( ',' ) : [ 400, 500 ];
 		const category = selected.dataset.category || 'sans-serif';
@@ -118,7 +118,7 @@ wp.customize.bind( 'ready', () => {
 		updateCategoryField( category );
 	} );
 
-	getFamilyOptions().forEach( family => familyInput.add( family ) );
+	getFamilyOptions().forEach( ( family ) => familyInput.add( family ) );
 
 	familyInput.value = familyControl.setting();
 

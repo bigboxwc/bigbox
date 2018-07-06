@@ -13,7 +13,7 @@ domReady( () => {
 	 */
 	$document.on( 'facetwp-refresh', () => {
 		if ( FWP.loaded ) {
-			window.scrollTo(0, 0);
+			window.scrollTo( 0, 0 );
 
 			// Add loading indicator.
 			const loading = document.createElement( 'div' );

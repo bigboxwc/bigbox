@@ -1,4 +1,4 @@
-/* global $, wp, bigboxCustomizeControls, _ */
+/* global wp, bigboxCustomizeControls, _ */
 
 /**
  * Internal dependencies.
@@ -50,7 +50,7 @@ const calculateOffset = ( elPosition ) => {
 /**
  * Show a pointer.
  *
- * @param {number} pointer The index of the pointer to show.
+ * @param {number} pointerIndex The index of the pointer to show.
  */
 const showPointer = ( pointerIndex ) => {
 	// Hide previous pointer.
@@ -93,8 +93,8 @@ const showPointer = ( pointerIndex ) => {
  * Bind Next and Close buttons.
  */
 const addListeners = () => {
-	const next  = document.querySelector( '.wp-customizer .bigbox-pointer .next' );
-	const close = document.querySelector( '.wp-customizer .bigbox-pointer .close' )
+	const next = document.querySelector( '.wp-customizer .bigbox-pointer .next' );
+	const close = document.querySelector( '.wp-customizer .bigbox-pointer .close' );
 
 	if ( next ) {
 		next.addEventListener( 'click', () => showPointer( nextPointer() ) );
@@ -103,12 +103,10 @@ const addListeners = () => {
 	if ( close ) {
 		close.addEventListener( 'click', hideActivePointer );
 	}
-}
-
+};
 
 // Only enable if active.
 if ( active ) {
-
 	// Wait for Customize ready.
 	wp.customize.bind( 'ready', () => {
 		showPointer( 0 );

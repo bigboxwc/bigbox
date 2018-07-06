@@ -18,7 +18,7 @@ export const adjustWidth = () => {
 	const selectedText = realSelect.options[ realSelect.selectedIndex ].text;
 
 	// Set hidden <select> to have only one value (of currently selected).
-	fakeSelect.innerHTML = `<option>${ selectedText.replace( '&nbsp;', '' ) }</option>`
+	fakeSelect.innerHTML = `<option>${ selectedText.replace( '&nbsp;', '' ) }</option>`;
 
 	// Set visible <select> to have width of hidden.
 	realSelect.style.width = `${ fakeSelect.offsetWidth }px`;

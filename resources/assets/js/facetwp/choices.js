@@ -16,7 +16,7 @@ $document.on( 'facetwp-loaded', () => {
 		// Create an input.
 		const input = document.createElement( 'input' );
 
-		input.type    = hasClass( wrapper, 'facetwp-checkbox' ) ? 'checkbox' : 'radio';
+		input.type = hasClass( wrapper, 'facetwp-checkbox' ) ? 'checkbox' : 'radio';
 		input.checked = hasClass( wrapper, 'checked' );
 
 		// Add to item.

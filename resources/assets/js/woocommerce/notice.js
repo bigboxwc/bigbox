@@ -9,7 +9,6 @@ import domReady from '@wordpress/dom-ready';
 import { hasClass } from './../utils';
 
 domReady( () => {
-
 	if ( ! hasClass( document.body, 'woocommerce-demo-store' ) ) {
 		return;
 	}
@@ -22,6 +21,8 @@ domReady( () => {
 
 	/**
 	 * If we are on a demo store and top position adjust the body offset.
+	 *
+	 * @return {undefined}
 	 */
 	const resizeOffset = () => document.body.style.paddingTop = `${ notice.offsetHeight }px`;
 

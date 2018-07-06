@@ -73,7 +73,7 @@ export const transformInput = function( qty, variation = false ) {
 
 	// Append options.
 	const options = getOptions().slice( min, ( max + 1 ) );
-	options.forEach( option => selectEl.options.add( option ) );
+	options.forEach( ( option ) => selectEl.options.add( option ) );
 
 	// Set value now that options are present.
 	selectEl.value = originalValue;
@@ -88,9 +88,9 @@ export const transformInput = function( qty, variation = false ) {
  * @param {Array} partials List of selectors to look for inputs in.
  */
 export const transformQtys = ( partials ) => {
-	_.each( partials, selector => {
-		document.querySelectorAll( `${ selector } .qty` ).forEach( qty => {
-			transformInput( qty, false )
+	_.each( partials, ( selector ) => {
+		document.querySelectorAll( `${ selector } .qty` ).forEach( ( qty ) => {
+			transformInput( qty, false );
 		} );
 	} );
 };
@@ -102,9 +102,9 @@ export const transformQtys = ( partials ) => {
  * @param {Function} cb Function to call when a quantity is updated inside a partial.
  */
 export const bindQtyChangeEvents = ( partials, cb ) => {
-	_.each( partials, selector => {
-		document.querySelectorAll( `${ selector } .qty` ).forEach( qty => {
+	_.each( partials, ( selector ) => {
+		document.querySelectorAll( `${ selector } .qty` ).forEach( ( qty ) => {
 			qty.addEventListener( 'change', cb );
 		} );
 	} );
-}
+};

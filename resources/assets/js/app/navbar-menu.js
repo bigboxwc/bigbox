@@ -75,7 +75,7 @@ const addTabletSupport = () => {
 			// Focus item.
 			el.classList.toggle( 'focus' );
 		}
-	}
+	};
 
 	/**
 	 * Apply touch events to menu items.
@@ -94,7 +94,7 @@ const addTabletSupport = () => {
 		} else {
 			toggles.forEach( ( toggle ) => toggle.removeEventListener( 'touchstart', handleTouch ) );
 		}
-	}
+	};
 
 	// Add touch events.
 	if ( 'ontouchstart' in window ) {

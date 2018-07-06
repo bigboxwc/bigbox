@@ -7,23 +7,24 @@ const partialCache = {};
  *
  * Stored in a cache because finding can happen multiple times on a page.
  *
- * @param {String} selector Partial selector.
+ * @param {string} selector Partial selector.
+ * @return {Object} DOM element.
  */
-export const getPartial = selector => {
+export const getPartial = ( selector ) => {
 	if ( partialCache.selector ) {
 		return partialCache.selector;
 	}
 
 	return partialCache[ selector ] = document.querySelector( selector );
-}
+};
 
 /**
  * Block partials when something is changing.
  *
  * @param {Array} partials List of partial selectors
  */
-export const blockPartials = partials => {
-	_.each( partials, selector => {
+export const blockPartials = ( partials ) => {
+	_.each( partials, ( selector ) => {
 		const partial = getPartial( selector );
 
 		if ( ! partial ) {
@@ -48,7 +49,7 @@ export const blockPartials = partials => {
  * @param {Array} partials List of partial selectors
  */
 export const unblockPartials = ( partials ) => {
-	_.each( partials, selector => {
+	_.each( partials, ( selector ) => {
 		const partial = getPartial( selector );
 
 		if ( ! partial ) {
@@ -88,4 +89,4 @@ export const updatePartialsWithResponse = ( response, partials ) => {
 
 		partial.innerHTML = response.data[ partialSlug ];
 	} );
-}
+};

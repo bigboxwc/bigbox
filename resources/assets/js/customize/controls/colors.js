@@ -1,4 +1,4 @@
-/* global wp, wpColorPicker */
+/* global wp */
 
 const { customize } = wp;
 

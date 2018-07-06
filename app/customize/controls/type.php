@@ -24,7 +24,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 function bigbox_customize_controls_js_fonts( $settings ) {
 	$settings['typography'] = [
 		'fontList' => json_decode( file_get_contents( get_template_directory() . '/resources/data/google-fonts.json' ) ), // @codingStandardsIgnoreLine
-		'defaultText' => esc_html__( 'System Default', 'bigbox' ),
 	];
 
 	return $settings;

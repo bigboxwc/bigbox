@@ -32,7 +32,7 @@ domReady( () => {
 			const inputs = searchForm.querySelectorAll( 'input, select' );
 
 			// Inputs with a value.
-			const inputsWithValues = _.filter( inputs, node => {
+			const inputsWithValues = _.filter( inputs, ( node ) => {
 				if ( node.options ) {
 					const selected = node.options[ node.selectedIndex ];
 
@@ -46,7 +46,7 @@ domReady( () => {
 			const noValues = _.difference( inputs, inputsWithValues );
 
 			// Remove name from inputs with no value to avoid passing blank form values to FacetWP inital load.
-			_.each( noValues, node => node.name = '' );
+			_.each( noValues, ( node ) => node.name = '' );
 		} );
 	}
 } );

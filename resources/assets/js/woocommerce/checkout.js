@@ -1,15 +1,10 @@
-/* global $, wc_checkout_params */
-
-/**
- * External dependencies.
- */
-import domReady from '@wordpress/dom-ready';
+/* global $, wc_checkout_params, URLSearchParams, FormData */
 
 /**
  * Internal dependencies.
  */
 import { transformQtys, bindQtyChangeEvents } from './quantity';
-import { getPartial, blockPartials, unblockPartials, updatePartialsWithResponse } from './../utils/partials.js';
+import { blockPartials, unblockPartials, updatePartialsWithResponse } from './../utils/partials.js';
 
 // WooCommerce uses jQuery to send out triggers.
 const $body = $( document.body );
@@ -35,10 +30,10 @@ const refreshCheckout = () => {
 		 *
 		 * @param {Object} response AJAX response object containing cart data.
 		 */
-		success: response => {
+		success: ( response ) => {
 			// Inject response.
 			updatePartialsWithResponse( response, partials );
-			
+
 			$body.trigger( 'update_checkout' );
 
 			// Rebind quantities.
@@ -46,9 +41,9 @@ const refreshCheckout = () => {
 
 			// Unblock.
 			unblockPartials( Object.values( partials ) );
-		}
+		},
 	} );
-}
+};
 
 /**
  * Helper to transform quantities and bind changes.
@@ -56,7 +51,7 @@ const refreshCheckout = () => {
 const doQty = () => {
 	transformQtys( partials );
 	bindQtyChangeEvents( partials, refreshCheckout );
-}
+};
 
 /**
  * List of WooCommerce triggers that require quantities to be rebuilt.
@@ -67,4 +62,4 @@ const triggers = [
 	'updated_shipping_method',
 ];
 
-triggers.forEach( trigger => $body.on( trigger, doQty ) );
+triggers.forEach( ( trigger ) => $body.on( trigger, doQty ) );

@@ -1,4 +1,4 @@
-/* global $, bigbox */
+/* global $, bigbox, URLSearchParams, FormData */
 
 /**
  * External dependencies.
@@ -33,7 +33,7 @@ const refreshCart = () => {
 		 *
 		 * @param {Object} response AJAX response object containing cart data.
 		 */
-		success: response => {
+		success: ( response ) => {
 			// Inject response.
 			updatePartialsWithResponse( response, partials );
 
@@ -42,9 +42,9 @@ const refreshCart = () => {
 
 			// Unblock.
 			unblockPartials( Object.values( partials ) );
-		}
+		},
 	} );
-}
+};
 
 /**
  * Helper to transform quantities and bind changes.
@@ -52,7 +52,7 @@ const refreshCart = () => {
 const doQty = () => {
 	transformQtys( partials );
 	bindQtyChangeEvents( partials, refreshCart );
-}
+};
 
 // Cart page doesn't trigger anything on load.
 domReady( doQty );
@@ -69,4 +69,4 @@ const triggers = [
 // WooCommerce uses jQuery to send out triggers.
 const $body = $( document.body );
 
-triggers.forEach( trigger => $body.on( trigger, doQty ) );
+triggers.forEach( ( trigger ) => $body.on( trigger, doQty ) );

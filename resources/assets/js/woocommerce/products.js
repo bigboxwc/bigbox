@@ -29,7 +29,7 @@ domReady( () => {
  * Submit product category selector.
  */
 domReady( () => {
-	const form   = document.getElementById( 'product-category-selector' );
+	const form = document.getElementById( 'product-category-selector' );
 	const select = document.querySelector( '#product-category-selector select' );
 
 	if ( ! select || ! form ) {
@@ -53,7 +53,7 @@ domReady( () => {
 		return;
 	}
 
-	const img  = document.querySelector( '.woocommerce-product-gallery__wrapper .woocommerce-product-gallery__image .wp-post-image' );
+	const img = document.querySelector( '.woocommerce-product-gallery__wrapper .woocommerce-product-gallery__image .wp-post-image' );
 	const flex = document.querySelector( '.woocommerce-product-gallery--with-images .flex-viewport' );
 
 	if ( ! img || ! flex ) {
