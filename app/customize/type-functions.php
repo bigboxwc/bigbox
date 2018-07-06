@@ -38,11 +38,7 @@ function bigbox_get_theme_font_family() {
  * @return string
  */
 function bigbox_get_theme_font_weight( $weight_type = 'base' ) {
-	$weight = get_theme_mod( "type-font-weight-{$weight_type}", 'base' === $weight_type ? 400 : 700 );
-
-	if ( 'regular' === $weight ) {
-		return 400;
-	}
+	$weight = get_theme_mod( "type-font-weight-{$weight_type}", 'base' === $weight_type ? 'normal' : 'bold' );
 
 	/**
 	 * Filters the font weight used to generate custom CSS.

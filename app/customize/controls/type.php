@@ -22,7 +22,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return array
  */
 function bigbox_customize_controls_js_fonts( $settings ) {
-	$settings['fonts'] = json_decode( file_get_contents( get_template_directory() . '/resources/data/google-fonts.json' ) ); // @codingStandardsIgnoreLine
+	$settings['typography'] = [
+		'fontList' => json_decode( file_get_contents( get_template_directory() . '/resources/data/google-fonts.json' ) ), // @codingStandardsIgnoreLine
+		'defaultText' => esc_html__( 'System Default', 'bigbox' ),
+	];
 
 	return $settings;
 }
@@ -130,13 +133,15 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 	$weights = [
 		'base' => [
 			// Translators: Customizer control label.
-			'label'  => esc_html__( 'Base Font Weight', 'bigbox' ),
-			'weight' => 'regular',
+			'label'       => esc_html__( 'Base Font Weight', 'bigbox' ),
+			'description' => '',
+			'weight'      => 'regular',
 		],
 		'bold' => [
 			// Translators: Customizer control label.
-			'label'  => esc_html__( 'Bold Font Weight', 'bigbox' ),
-			'weight' => 700,
+			'label'       => esc_html__( 'Bold Font Weight', 'bigbox' ),
+			'description' => esc_html__( 'If no alternate weight is offered it will be faux-bolded by the web browser.', 'bigbox' ),
+			'weight'      => 700,
 		],
 	];
 
@@ -153,9 +158,10 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 
 		$wp_customize->add_control(
 			$key, [
-				'label'   => $data['label'],
-				'type'    => 'select',
-				'choices' => [
+				'label'       => $data['label'],
+				'description' => $data['description'],
+				'type'        => 'select',
+				'choices'     => [
 					100 => 100,
 					200 => 200,
 					300 => 300,
@@ -165,7 +171,7 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 					700 => 700,
 					800 => 800,
 				],
-				'section' => 'type',
+				'section'     => 'type',
 			]
 		);
 
