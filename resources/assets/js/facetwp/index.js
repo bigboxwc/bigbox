@@ -17,7 +17,7 @@ import { adjustWidth } from './../app/navbar.js';
 import { initLazyLoad } from './../app/lazyload.js';
 
 domReady( () => {
-	const $document = $( document.body );
+	const $document = $( document );
 
 	/**
 	 * Adjust select widths once loaded.

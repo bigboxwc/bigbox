@@ -5,7 +5,7 @@
  */
 import { hasClass } from './../utils';
 
-const $document = $( document.body );
+const $document = $( document );
 
 /**
  * Add "real" checkboxes and radio.

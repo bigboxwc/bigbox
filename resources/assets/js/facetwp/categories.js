@@ -6,7 +6,7 @@
 import domReady from '@wordpress/dom-ready';
 
 domReady( () => {
-	const $document = $( document.body );
+	const $document = $( document );
 
 	/**
 	 * Hide categories if filtering with facets.
