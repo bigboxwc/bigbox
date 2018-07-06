@@ -24,7 +24,7 @@ const partialCache = {};
  *
  * @param {String} selector Partial selector.
  */
-const getPartial = ( selector ) => {
+const getPartial = selector => {
 	if ( partialCache.selector ) {
 		return partialCache.selector;
 	}
@@ -49,7 +49,7 @@ export const transformQtys = () => {
  * Block partials when something is changing.
  */
 export const blockPartials = () => {
-	_.each( partials, ( selector ) => {
+	_.each( partials, selector => {
 		const partial = getPartial( selector );
 
 		if ( ! partial ) {
@@ -115,7 +115,7 @@ const refreshPartialsOnChange = () => {
  * Update cart contents when quantity changes.
  */
 const bindQtyChangeEvents = () => {
-	document.querySelectorAll( `${ partials.cart } .qty` ).forEach( ( qty ) => {
+	document.querySelectorAll( `${ partials.cart } .qty` ).forEach( qty => {
 		qty.addEventListener( 'change', refreshPartialsOnChange );
 	} );
 }

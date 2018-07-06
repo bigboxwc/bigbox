@@ -1,9 +1,5 @@
 /* global bigbox */
 
-/**
- * Create a generic list of options that can be appended multiple times.
- */
-let items = [];
 const { globalMax } = bigbox.woocommerce.products.quantitySelector;
 
 /**
@@ -16,9 +12,7 @@ const { globalMax } = bigbox.woocommerce.products.quantitySelector;
  * @return {Array} List of HTML options.
  */
 const getOptions = ( max = globalMax ) => {
-	if ( items.length > 0 && max <= items.length ) {
-		return items;
-	}
+	let items = [];
 
 	const zero = document.createElement( 'option' );
 	zero.text = bigbox.woocommerce.products.quantitySelector.zero;
@@ -86,5 +80,4 @@ export const transformInput = function( qty, variation = false ) {
 
 	// Show.
 	wrapperEl.appendChild( selectEl );
-	console.log(selectEl.options);
 };
