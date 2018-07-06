@@ -103,7 +103,9 @@ function bigbox_enqueue_scripts() {
 		 * @param array $js JS object additions.
 		 */
 		$stylesheet, 'bigbox', apply_filters(
-			'bigbox_js', []
+			'bigbox_js', [
+				'backgroundColor' => sanitize_hex_color( get_background_color() ),
+			]
 		)
 	);
 }

@@ -1,9 +1,12 @@
-/* global $, _ */
+/* global $, _, bigbox */
 
 /**
  * Internal dependencies.
  */
 import { transformInput } from './quantity';
+
+// WooCommerce uses jQuery to send out triggers.
+const $body = $( document.body );
 
 // Partials to update.
 export const partials = {
@@ -12,7 +15,22 @@ export const partials = {
 	review: '#bigbox-cart-review',
 };
 
-const $body = $( document.body );
+const partialCache = {};
+
+/**
+ * Retreive a partial from the page.
+ *
+ * Stored in a cache because finding can happen multiple times on a page.
+ *
+ * @param {String} selector Partial selector.
+ */
+const getPartial = ( selector ) => {
+	if ( partialCache.selector ) {
+		return partialCache.selector;
+	}
+
+	return partialCache[ selector ] = document.querySelector( selector );
+}
 
 /**
  * Collect all quantity inputs and update to selects.
@@ -20,9 +38,9 @@ const $body = $( document.body );
  * Can't loop because we don't want to use the cache.
  */
 export const transformQtys = () => {
-	_.forEach( partials, ( selector ) => {
-		$( selector ).find( '.qty' ).each( function() {
-			transformInput( this, false );
+	_.each( partials, selector => {
+		document.querySelectorAll( `${ selector } .qty` ).forEach( qty => {
+			transformInput( qty, false )
 		} );
 	} );
 };
@@ -31,11 +49,19 @@ export const transformQtys = () => {
  * Block partials when something is changing.
  */
 export const blockPartials = () => {
-	_.forEach( partials, ( selector ) => {
-		$( selector ).addClass( 'processing' ).block( {
+	_.each( partials, ( selector ) => {
+		const partial = getPartial( selector );
+
+		if ( ! partial ) {
+			return;
+		}
+
+		partial.classList.add( 'processing' );
+
+		$( selector ).block( {
 			message: null,
 			overlayCSS: {
-				background: '#fff',
+				background: bigbox.backgroundColor,
 				opacity: 0.6,
 			},
 		} );
@@ -48,47 +74,55 @@ export const blockPartials = () => {
  * @param {Object} response Response fragments to map to partials.
  */
 export const updatePartials = ( response ) => {
-	_.forEach( partials, ( selector, partial ) => {
-		$( selector )
-			.replaceWith( response.data[ partial ] )
+	_.each( partials, ( selector, partialSlug ) => {
+		const partial = getPartial( selector );
 
-			// Unblock
-			.removeClass( 'processing' )
-			.unblock();
+		if ( ! partial ) {
+			return;
+		}
+
+		partial.innerHTML = response.data[ partialSlug ];
+		partial.classList.remove( 'processing' );
+
+		$( selector ).unblock();
 	} );
 
 	transformQtys();
+	bindQtyChangeEvents();
 };
 
 /**
- * Update cart contents when quantity changes.
- *
- * For some reason this doesn't work as well as the one in `checkout.js`
- * that targets the form directly.
+ * Refresh partials when a quantity item changes.
  */
-$body.delegate( `${ partials.cart } .qty`, 'change', () => {
+const refreshPartialsOnChange = () => {
 	blockPartials();
 
 	wp.ajax.send( 'bigbox_update_cart', {
 		data: {
-			_wpnonce: $( '#woocommerce-cart-nonce' ).val(),
-			checkout: $( partials.cart ).serialize(),
+			_wpnonce: document.getElementById( 'woocommerce-cart-nonce' ).value,
+			checkout: new URLSearchParams( new FormData( getPartial( partials.cart ) ) ).toString(),
 		},
 		/**
 		 * Update cart partials when session has been updated.
 		 *
 		 * @param {Object} response AJAX response object containing cart data.
 		 */
-		success( response ) {
-			updatePartials( response );
-		},
+		success: response => updatePartials( response ),
 	} );
-} );
+}
 
 /**
- * Transform quantity fields.
+ * Update cart contents when quantity changes.
  */
+const bindQtyChangeEvents = () => {
+	document.querySelectorAll( `${ partials.cart } .qty` ).forEach( ( qty ) => {
+		qty.addEventListener( 'change', refreshPartialsOnChange );
+	} );
+}
+
+// Init.
 transformQtys();
+bindQtyChangeEvents();
 
 const triggers = [
 	'init_checkout',
@@ -99,6 +133,4 @@ const triggers = [
 	'updated_shipping_method',
 ];
 
-triggers.forEach( ( trigger ) => {
-	$body.on( trigger, transformQtys );
-} );
+triggers.forEach( trigger => $body.on( trigger, transformQtys ) );

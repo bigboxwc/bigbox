@@ -51,7 +51,8 @@ function bigbox_woocommerce_wp_enqueue_scripts() {
 
 	$deps = [
 		$stylesheet,
-		'underscore',
+		'wp-util',
+		'jquery-blockui',
 	];
 
 	wp_enqueue_script( "{$stylesheet}-woocommerce", get_template_directory_uri() . '/public/js/woocommerce.min.js', $deps, $version, true );
@@ -84,7 +85,7 @@ function bigbox_woocommerce_widget_cart_is_hidden( $hidden ) {
  * @return array
  */
 function bigbox_woocommerce_js_settings( $settings ) {
-	$settings['products'] = [
+	$settings['woocommerce']['products'] = [
 		'quantitySelector' => [
 			'zero' => trim( 0 . ' ' . ( ! is_singular( 'product' ) ? esc_html__( '(remove)', 'bigbox' ) : null ) ),
 			/**
@@ -94,7 +95,7 @@ function bigbox_woocommerce_js_settings( $settings ) {
 			 *
 			 * @param int $max The maximum number that can be used at one time.
 			 */
-			'max'  => apply_filters(
+			'globalMax'  => apply_filters(
 				'bigbox_woocommerce_quantity_selector_max',
 				30
 			),
