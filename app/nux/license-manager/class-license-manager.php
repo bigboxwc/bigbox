@@ -60,6 +60,8 @@ class License_Manager implements Registerable, Service {
 	 */
 	public function register() {
 		$this->license        = get_option( 'bigbox_license', '' );
+		$this->license_status = get_option( 'bigbox_license_status', 'invalid' );
+
 		$this->item_name      = 'BigBox WooCommerce Theme';
 		$this->version        = bigbox_get_theme_version();
 		$this->theme_slug     = 'bigbox';
@@ -77,7 +79,7 @@ class License_Manager implements Registerable, Service {
 		);
 
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
-		add_action( 'wp_ajax_bigbox-license-request', [ $this, 'get_license_data' ] );
+		add_action( 'wp_ajax_bigbox-license-request', [ $this, 'activate_or_deactivate_license' ] );
 
 		register_setting(
 			'general', 'bigbox_license', [
@@ -111,15 +113,11 @@ class License_Manager implements Registerable, Service {
 				'nonce' => wp_create_nonce( 'bigbox-license-request' ),
 				'local' => [
 					'license' => $this->license,
-					'valid'   => false,
+					'isValid' => 'valid' === $this->license_status,
 				],
 				'i18n'  => [
-					'licensePlaceholder' => esc_html__( 'Enter license key...', 'bigbox' ),
-					'licenseSubmit'      => esc_html__( 'Activate License', 'bigbox' ),
-					'licenseLabel'       => esc_html__( 'License Status:', 'bigbox' ),
-					'licenseValid'       => esc_html__( 'Valid', 'bigbox' ),
-					'licenseInvalid'     => esc_html__( 'Inactive: not receiving automatic updates notifications.', 'bigbox' ),
-					'licenseDeactivate'  => esc_html__( 'Deactivate', 'bigbox' ),
+					'licenseValid'   => esc_html__( 'Valid', 'bigbox' ),
+					'licenseInvalid' => esc_html__( 'Inactive: not receiving automatic updates notifications.', 'bigbox' ),
 				],
 			]
 		);
@@ -151,7 +149,7 @@ class License_Manager implements Registerable, Service {
 	 *
 	 * @return array
 	 */
-	public function get_license_data() {
+	public function activate_or_deactivate_license() {
 		// @codingStandardsIgnoreStart
 		if ( ! check_ajax_referer( 'bigbox-license-request', '_wpnonce', false ) ) {
 			return wp_send_json_error();
@@ -177,10 +175,28 @@ class License_Manager implements Registerable, Service {
 		if ( ! is_wp_error( $response ) && 200 === wp_remote_retrieve_response_code( $response ) ) {
 			$license_data = json_decode( wp_remote_retrieve_body( $response ) );
 
-			if ( ! isset( $license_data->error ) ) {
+			// Store license information.
+			if ( 'activate_license' === $action ) {
+				$valid = ! isset( $license_data->error );
+
+				update_option( 'bigbox_license', $license );
+				update_option( 'bigbox_license_status', $valid ? 'valid' : 'invalid' );
+
 				return wp_send_json_success(
 					[
-						'license' => $license_data->license,
+						'isValid' => $valid,
+						'license' => $license,
+					]
+				);
+				// Clear license information.
+			} else {
+				update_option( 'bigbox_license', '' );
+				update_option( 'bigbox_license_status', 'invalid' );
+
+				return wp_send_json_success(
+					[
+						'isValid' => false,
+						'license' => '',
 					]
 				);
 			}
