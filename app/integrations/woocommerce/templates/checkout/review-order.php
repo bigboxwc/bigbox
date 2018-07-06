@@ -21,24 +21,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div id="bigbox-cart-review" class="woocommerce-checkout-review-order-table">
+<div class="woocommerce-checkout-review-order-table">
 
-	<ul class="products products-main columns-1">
-		<?php do_action( 'woocommerce_review_order_before_cart_contents' ); ?>
-
-		<?php
-		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) :
-			wc_get_template(
-				'cart/cart-item.php', [
-					'cart_item_key' => $cart_item_key,
-					'cart_item'     => $cart_item,
-				]
-			);
-		endforeach;
-		?>
-
-		<?php do_action( 'woocommerce_review_order_after_cart_contents' ); ?>
-	</ul>
+	<div id="bigbox-cart-review">
+		<?php wc_get_template( 'checkout/cart.php' ); ?>
+	</div>
 
 	<?php woocommerce_checkout_coupon_form(); ?>
 

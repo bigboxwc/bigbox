@@ -6,7 +6,7 @@ import domReady from '@wordpress/dom-ready';
 /**
  * Internal dependencies.
  */
-import { hasClass } from './../utils.js';
+import { hasClass } from './../utils';
 
 domReady( () => {
 

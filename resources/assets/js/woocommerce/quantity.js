@@ -81,3 +81,30 @@ export const transformInput = function( qty, variation = false ) {
 	// Show.
 	wrapperEl.appendChild( selectEl );
 };
+
+/**
+ * Collect all quantity <input> and update to <selects>
+ *
+ * @param {Array} partials List of selectors to look for inputs in.
+ */
+export const transformQtys = ( partials ) => {
+	_.each( partials, selector => {
+		document.querySelectorAll( `${ selector } .qty` ).forEach( qty => {
+			transformInput( qty, false )
+		} );
+	} );
+};
+
+/**
+ * Bind a change event to all .qty selectors in a set of partials.
+ *
+ * @param {Array} partials List of selectors to look for inputs in.
+ * @param {Function} cb Function to call when a quantity is updated inside a partial.
+ */
+export const bindQtyChangeEvents = ( partials, cb ) => {
+	_.each( partials, selector => {
+		document.querySelectorAll( `${ selector } .qty` ).forEach( qty => {
+			qty.addEventListener( 'change', cb );
+		} );
+	} );
+}

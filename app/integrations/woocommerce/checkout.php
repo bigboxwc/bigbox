@@ -56,7 +56,7 @@ function bigbox_get_cart_review_html() {
 	if ( WC()->cart->is_empty() ) {
 		wc_get_template( 'cart/cart-empty.php' );
 	} else {
-		wc_get_template( 'checkout/review-order.php' );
+		wc_get_template( 'checkout/cart.php' );
 	}
 
 	return ob_get_clean();

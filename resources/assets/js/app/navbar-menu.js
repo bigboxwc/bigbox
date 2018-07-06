@@ -8,7 +8,7 @@ import domReady from '@wordpress/dom-ready';
 /**
  * Internal dependencies.
  */
-import { hasClass, isHidden } from './../utils.js';
+import { hasClass, isHidden } from './../utils';
 
 /**
  * Better hover behavior.
