@@ -23,4 +23,22 @@ echo wp_kses_post( sprintf( __( 'Please enter the license key received with your
 ?>
 </p>
 
-<div id="bigbox-license-manager"><?php esc_html_e( 'Unable to load license manager. Please enable Javascript.', 'bigbox' ); ?></div>
+<div id="bigbox-license-manager">
+
+</div>
+
+<script type="text/html" id="tmpl-bigbox-license-manager-form">
+	<form class="bigbox-activate-license">
+		<input type="text" name="license" value="{{ data.key }}" class="{{ data.className }}">
+		<input type="submit" name="submit" class="button button-large button-primary">
+	</form>
+</script>
+
+<script type="text/html" id="tmpl-bigbox-license-manager-status">
+	<strong><?php esc_html_e( 'License Status:', 'bigbox' ); ?></strong>
+	<# if ( data.isPending ) { #>
+		<span class="spinner is-active"></span>
+	<# } else { #>
+		<span class="{{ data.className }">{{ data.status }}</span>
+	<# } #>
+</script>

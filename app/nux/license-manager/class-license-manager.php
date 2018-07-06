@@ -104,13 +104,14 @@ class License_Manager implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function admin_enqueue_scripts() {
-		wp_register_script( 'bigbox-license-manager', get_template_directory_uri() . '/public/js/license-manager.min.js', [ 'wp-api', 'wp-util' ] );
+		wp_register_script( 'bigbox-license-manager', get_template_directory_uri() . '/public/js/license-manager.min.js', [ 'wp-api', 'wp-util', 'wp-backbone' ] );
 
 		wp_localize_script(
 			'bigbox-license-manager', 'BigBoxLicenseManager', [
 				'nonce' => wp_create_nonce( 'bigbox-license-request' ),
 				'local' => [
 					'license' => $this->license,
+					'valid'   => false,
 				],
 				'i18n'  => [
 					'licensePlaceholder' => esc_html__( 'Enter license key...', 'bigbox' ),
