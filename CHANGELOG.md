@@ -1,3 +1,11 @@
+## [1.9.0] - 2018-07-07
+
+### New
+
+- WooCommerce 3.5.x support.
+- Helpful customizer color control suggestions.
+- Remove jQuery dependencies and optimize all Javascript (reducing file sizes).
+
 ## [1.8.0] - 2018-06-29
 
 ### New
