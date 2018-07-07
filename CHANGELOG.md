@@ -2,7 +2,9 @@
 
 ### New
 
-- WooCommerce 3.5.x support.
+- Better font weight fallbacks when no alternatives are available.
+- Gutenberg 3.2 support.
+- WooCommerce 3.5 support.
 - Helpful customizer color control suggestions.
 - Remove jQuery dependencies and optimize all Javascript (reducing file sizes).
 
