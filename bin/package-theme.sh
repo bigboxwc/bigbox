@@ -106,4 +106,4 @@ rm -rf bigbox && rm -f bigbox.zip
 # Reset generated files.
 git reset head --hard
 
-success "📦 Version v$PACKAGE_VERSION build complete."
+success "📦  Version $PACKAGE_VERSION build complete."
