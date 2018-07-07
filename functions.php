@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Current version -- automatically updated on release.
-define( 'BIGBOX_VERSION', '1.8.0' );
+define( 'BIGBOX_VERSION', '%BIGBOX_VERSION%' );
 
 // Minimum PHP version.
 define( 'BIGBOX_PHP_VERSION', '7.0.0' );
