@@ -1,6 +1,11 @@
-/* global FWP, jQuery */
+/* global FWP, $ */
 
-( function( $ ) {
+/**
+ * External dependencies.
+ */
+import domReady from '@wordpress/dom-ready';
+
+domReady( () => {
 	const $document = $( document );
 
 	/**
@@ -19,4 +24,4 @@
 			}
 		} );
 	}
-}( jQuery ) );
+} );

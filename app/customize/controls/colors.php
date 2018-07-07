@@ -91,8 +91,9 @@ function bigbox_customize_register_colors_controls( $wp_customize ) {
 				$wp_customize,
 				$key,
 				[
-					'label'   => esc_html( $color['name'] ),
-					'section' => 'colors-palette',
+					'label'    => esc_html( $color['name'] ),
+					'section'  => 'colors-palette',
+					'palettes' => bigbox_customize_controls_color_palettes(),
 				]
 			)
 		);
@@ -119,3 +120,27 @@ function bigbox_customize_register_colors_controls( $wp_customize ) {
 	);
 }
 add_action( 'customize_register', 'bigbox_customize_register_colors_controls', 20 );
+
+/**
+ * Get color palettes for custom controls.
+ *
+ * @since 1.9.0
+ *
+ * @return array
+ */
+function bigbox_customize_controls_color_palettes() {
+	$palettes = [];
+	$colors   = bigbox_get_theme_colors();
+
+	foreach ( $colors as $theme_color => $color ) {
+		$palettes[] = bigbox_get_theme_color( $theme_color );
+	}
+
+	$palettes = array_slice( $palettes, 0, 5 );
+
+	$palettes[] = bigbox_get_theme_color( 'gray-200' );
+	$palettes[] = bigbox_get_theme_color( 'gray-400' );
+	$palettes[] = bigbox_get_theme_color( 'gray-700' );
+
+	return $palettes;
+}

@@ -41,10 +41,22 @@ if [ "$branch" != 'master' ]; then
 	sleep 2
 fi
 
-# Remove ignored files to reset repository to pristine condition.
-# Previous test ensures that changed files abort the theme build.
-status "Cleaning working directory..."
-git clean -xdf
+# Do a dry run of the repository reset. Prompting the user for a list of all
+# files that will be removed should prevent them from losing important files!
+status "Resetting the repository to pristine condition."
+git clean -xdf --dry-run
+warning "About to delete everything above! Is this okay?"
+echo -n "[Y]es/[N]o: "
+read answer
+if [ "$answer" != "${answer#[Yy]}" ]; then
+	# Remove ignored files to reset repository to pristine condition. Previous
+	# test ensures that changed files abort the plugin build.
+	status "Cleaning working directory..."
+	git clean -xdf
+else
+	error "Aborting."
+	exit 1
+fi
 
 # Run the build
 status "Installing dependencies..."
@@ -81,16 +93,17 @@ zip -r bigbox.zip \
 	resources/views \
 	resources/data/*.json \
 	public \
-	vendor \
+	vendor/ \
 	LICENSE \
 	CHANGELOG.md \
-	screenshot.png
+	screenshot.png \
+	-x *.git*
 
 # Rename and cleanup.
 unzip bigbox.zip -d bigbox && zip -r "bigbox-$PACKAGE_VERSION.zip" bigbox
 rm -rf bigbox && rm -f bigbox.zip
 
-# Reset style.css -- kinda ghetto.
+# Reset generated files.
 git reset head --hard
 
-status "Done. Version v$PACKAGE_VERSION build complete."
+success "📦  Version $PACKAGE_VERSION build complete."

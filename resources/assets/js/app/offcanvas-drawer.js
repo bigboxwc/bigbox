@@ -1,58 +1,58 @@
-/* global $ */
+/* global CustomEvent */
 
 /**
  * External dependencies.
  */
 import domReady from '@wordpress/dom-ready';
 
+/**
+ * Internal dependencies.
+ */
+import { hasClass } from './../utils';
+
 // Keep track of things we've found before.
 const cache = {};
 
-domReady( function() {
-	// Document
-	const $document = $( document.body );
+/**
+ * Swap the source and the target content as defined by the toggle.
+ *
+ * @param {Object} toggle Toggle element.
+ */
+const targetSourceSwap = ( toggle ) => {
+	const target = toggle.dataset.target;
+	const source = toggle.dataset.source;
 
-	/**
-	 * Swap the source and the target content as defined by the toggle.
-	 *
-	 * @param {Object} $toggle Toggle element.
-	 */
-	const targetSourceSwap = ( $toggle ) => {
-		const target = $toggle.data( 'target' );
-		const source = $toggle.data( 'source' );
+	let targetEl, sourceEl;
 
-		let $source = null;
-		let $target = null;
+	if ( ! cache.source || ! cache.target ) {
+		sourceEl = document.querySelector( `${ source } .offcanvas-drawer__content` );
+		targetEl = document.querySelector( `${ target } .offcanvas-drawer__content` );
 
-		if ( ! cache.source || ! cache.target ) {
-			$source = $( source ).find( '.offcanvas-drawer__content' );
-			$target = $( target ).find( '.offcanvas-drawer__content' );
+		cache[ source ] = sourceEl;
+		cache[ target ] = targetEl;
+	} else {
+		sourceEl = cache.source;
+		targetEl = cache.target;
+	}
 
-			cache[ source ] = $source;
-			cache[ target ] = $target;
-		} else {
-			$source = cache.source;
-			$target = cache.target;
-		}
+	targetEl.innerHTML = sourceEl.innerHTML;
+	sourceEl.innerHTML = '';
 
-		const toTransfer = $source.html();
+	document.dispatchEvent( new CustomEvent( 'offCanvasDrawerSwap' ), {
+		detail: { toggle, sourceEl, targetEl, source, target },
+	} );
+};
 
-		$target.html( toTransfer );
-		$source.html( '' );
+/**
+ * Lock the body from scrolling when a drawer is open.
+ *
+ * @param {boolean} toggle Toggle on or off.
+ * @return {undefined}
+ */
+const toggleBodyLock = ( toggle ) => document.body.classList.toggle( 'offcanvas-drawer-open', toggle );
 
-		$document.trigger( 'offCanvasDrawerSwap', [ $toggle, $source, $target, source, target ] );
-	};
-
-	/**
- 	 * Lock the body from scrolling when a drawer is open.
- 	 *
-	 * @param {boolean} toggle Toggle on or off.
-	 */
-	const toggleBodyLock = ( toggle ) => {
-		$document.toggleClass( 'offcanvas-drawer-open', toggle );
-	};
-
-	const $toggle = $( '.offcanvas-drawer-toggle' );
+domReady( () => {
+	const toggles = document.querySelectorAll( '.offcanvas-drawer-toggle' );
 	const hash = window.location.hash;
 
 	/**
@@ -66,23 +66,25 @@ domReady( function() {
 	 * will house the content between swaps. The toggles that close the drawer should
 	 * reverse the source and target elements.
 	 */
-	$toggle.on( 'click', function() {
-		targetSourceSwap( $( this ) );
-		toggleBodyLock( ! $document.hasClass( 'offcanvas-drawer-open' ) );
+	toggles.forEach( ( toggle ) => {
+		toggle.addEventListener( 'click', () => {
+			targetSourceSwap( toggle );
+			toggleBodyLock( ! hasClass( document, 'offcanvas-drawer-open' ) );
+		} );
 	} );
 
 	/**
 	 * If there is a hash find the toggles on the page that share the hash
 	 * and swap the elements on load.
+	 *
+	 * If the hash is prefixed with `toggle` then do not open again (closed state).
 	 */
 	if ( '' !== hash && ! hash.match( /toggle/i ) ) {
-		$toggle.each( function() {
-			const $maybeToggle = $( this );
+		const findToggle = document.querySelector( `a[href="${ hash }"]` );
 
-			if ( $maybeToggle.attr( 'href' ) === hash ) {
-				targetSourceSwap( $maybeToggle );
-				toggleBodyLock( true );
-			}
-		} );
+		if ( findToggle ) {
+			targetSourceSwap( findToggle );
+			toggleBodyLock( true );
+		}
 	}
 } );

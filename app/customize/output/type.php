@@ -11,8 +11,14 @@
 
 $family      = bigbox_get_theme_font_family();
 $weight_base = bigbox_get_theme_font_weight( 'base' );
-$weight_bold = bigbox_get_theme_font_weight( 'bold' );
 $size        = get_theme_mod( 'type-font-size', 1 );
+
+$weight_bold = bigbox_get_theme_font_weight( 'bold' );
+
+// Force a browser-rendered bold weight.
+if ( 'regular' == $weight_bold ) {
+	$weight_bold = 'bold';
+}
 
 // Separate out so we can add family only if needed.
 $base = [

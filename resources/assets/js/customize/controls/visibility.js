@@ -1,4 +1,4 @@
-/* global wp, $ */
+/* global wp, _ */
 
 /**
  * External dependencies.
@@ -8,11 +8,11 @@ import domReady from '@wordpress/dom-ready';
 /**
  * Toggle other control's visibility based on another.
  */
-domReady( function() {
+domReady( () => {
 	const api = wp.customize;
 
 	// Control visibility for controls
-	$.each( {
+	_.each( {
 		// Hide WC Store notice controls if notice is disabled.
 		woocommerce_demo_store: {
 			controls: [
@@ -24,10 +24,10 @@ domReady( function() {
 				return !! to;
 			},
 		},
-	}, ( settingId, o ) => {
+	}, ( o, settingId ) => {
 		api( settingId, ( setting ) => {
 			// Handle multiple toggles.
-			$.each( o.controls, ( i, controlId ) => {
+			_.each( o.controls, ( controlId ) => {
 				// Toggle control.
 				api.control( controlId, ( control ) => {
 					const visibility = ( to ) => {

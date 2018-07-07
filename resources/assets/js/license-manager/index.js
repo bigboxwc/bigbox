@@ -1,32 +1,14 @@
-/* global BigBoxLicenseManager */
-
-/**
- * External dependencies.
- */
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+/* global wp, BigBoxLicenseManager, Backbone */
 
 /**
  * Internal dependencies.
  */
-import configureStore from './state';
-import ActivateLicense from './components/ActivateLicense.js';
+import License from './models/license.js';
+import LicenseManager from './views/manager.js';
 
-/**
- * NUX.
- *
- * @return {Object} Provider component.
- */
-const NUX = () => (
-	<Provider store={ configureStore() }>
-		<ActivateLicense
-			license={ BigBoxLicenseManager.local.license }
-		/>
-	</Provider>
-);
+// Init manager.
+const licenseManager = new LicenseManager( {
+	model: new License( BigBoxLicenseManager.local ),
+} );
 
-ReactDOM.render(
-	<NUX />,
-	document.getElementById( 'bigbox-license-manager' )
-);
+licenseManager.render();

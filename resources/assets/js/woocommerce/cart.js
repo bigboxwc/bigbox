@@ -1,104 +1,70 @@
-/* global $, _ */
+/* global $, bigbox, URLSearchParams, FormData */
+
+/**
+ * External dependencies.
+ */
+import domReady from '@wordpress/dom-ready';
 
 /**
  * Internal dependencies.
  */
-import { transformInput } from './quantity';
+import { transformQtys, bindQtyChangeEvents } from './quantity';
+import { getPartial, blockPartials, unblockPartials, updatePartialsWithResponse } from './../utils/partials.js';
 
-// Partials to update.
-export const partials = {
-	cart: '#bigbox-cart',
-	totals: '#bigbox-cart-totals',
-	review: '#bigbox-cart-review',
-};
-
+// WooCommerce uses jQuery to send out triggers.
 const $body = $( document.body );
 
-/**
- * Collect all quantity inputs and update to selects.
- *
- * Can't loop because we don't want to use the cache.
- */
-export const transformQtys = () => {
-	_.forEach( partials, ( selector ) => {
-		$( selector ).find( '.qty' ).each( function() {
-			transformInput( $( this ), false );
-		} );
-	} );
+// Partials to update.
+const partials = {
+	cart: '#bigbox-cart',
+	totals: '#bigbox-cart-totals',
 };
 
 /**
- * Block partials when something is changing.
+ * Refresh cart when a quantity item changes.
  */
-export const blockPartials = () => {
-	_.forEach( partials, ( selector ) => {
-		$( selector ).addClass( 'processing' ).block( {
-			message: null,
-			overlayCSS: {
-				background: '#fff',
-				opacity: 0.6,
-			},
-		} );
-	} );
-};
-
-/**
- * Update partials with response data.
- *
- * @param {Object} response Response fragments to map to partials.
- */
-export const updatePartials = ( response ) => {
-	_.forEach( partials, ( selector, partial ) => {
-		$( selector )
-			.replaceWith( response.data[ partial ] )
-
-			// Unblock
-			.removeClass( 'processing' )
-			.unblock();
-	} );
-
-	transformQtys();
-};
-
-/**
- * Update cart contents when quantity changes.
- *
- * For some reason this doesn't work as well as the one in `checkout.js`
- * that targets the form directly.
- */
-$body.delegate( `${ partials.cart } .qty`, 'change', () => {
-	blockPartials();
+const refreshCart = () => {
+	blockPartials( Object.values( partials ) );
 
 	wp.ajax.send( 'bigbox_update_cart', {
 		data: {
-			_wpnonce: $( '#woocommerce-cart-nonce' ).val(),
-			checkout: $( partials.cart ).serialize(),
+			_wpnonce: document.getElementById( 'woocommerce-cart-nonce' ).value,
+			checkout: new URLSearchParams( new FormData( getPartial( partials.cart ) ) ).toString(),
 		},
 		/**
 		 * Update cart partials when session has been updated.
 		 *
 		 * @param {Object} response AJAX response object containing cart data.
 		 */
-		success( response ) {
-			updatePartials( response );
+		success: ( response ) => {
+			// Inject response.
+			updatePartialsWithResponse( response, partials );
+
+			// Rebind quantities.
+			doQty();
+
+			// Unblock.
+			unblockPartials( Object.values( partials ) );
 		},
 	} );
-} );
+};
 
 /**
- * Transform quantity fields.
+ * Helper to transform quantities and bind changes.
  */
-transformQtys();
+const doQty = () => {
+	transformQtys( partials );
+	bindQtyChangeEvents( partials, refreshCart );
+};
 
+// Cart page doesn't trigger anything on load.
+domReady( doQty );
+
+/**
+ * List of WooCommerce triggers that require quantities to be rebuilt.
+ */
 const triggers = [
-	'init_checkout',
-	'payment_method_selected',
-	'updated_checkout',
 	'updated_wc_div',
-	'updated_cart_totals',
-	'updated_shipping_method',
 ];
 
-triggers.forEach( ( trigger ) => {
-	$body.on( trigger, transformQtys );
-} );
+triggers.forEach( ( trigger ) => $body.on( trigger, doQty ) );

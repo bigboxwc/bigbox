@@ -1,10 +1,6 @@
-/* global bigbox, $ */
+/* global bigbox */
 
-/**
- * Create a generic list of options that can be appended multiple times.
- */
-let items = [];
-const globalMax = bigbox.products.quantitySelector.max;
+const { globalMax } = bigbox.woocommerce.products.quantitySelector;
 
 /**
  * Generate HTML <option>s.
@@ -16,17 +12,21 @@ const globalMax = bigbox.products.quantitySelector.max;
  * @return {Array} List of HTML options.
  */
 const getOptions = ( max = globalMax ) => {
-	if ( items.length > 0 && max <= items.length ) {
-		return items;
-	}
+	let items = [];
 
-	items = [
-		`<option value="0">${ bigbox.products.quantitySelector.zero }</option>`,
-	];
+	const zero = document.createElement( 'option' );
+	zero.text = bigbox.woocommerce.products.quantitySelector.zero;
+	zero.value = 0;
+
+	// Build list.
+	items = [ zero ];
 
 	// Pad with globalMax
 	for ( let i = 1; i <= max; i++ ) {
-		items.push( `<option value=${ i }>${ i }</option>` );
+		const opt = document.createElement( 'option' );
+		opt.text = opt.value = i;
+
+		items.push( opt );
 	}
 
 	return items;
@@ -37,25 +37,25 @@ const getOptions = ( max = globalMax ) => {
  *
  * Preserve as many as the original attributes as possible.
  *
- * @param {Object} $qty DOM element.
+ * @param {Object} qty DOM element.
  * @param {boolean|Object} variation Variation data.
  */
-export const transformInput = function( $qty, variation = false ) {
-	const $wrapper = $qty.parent();
-	const $original = $qty;
+export const transformInput = function( qty, variation = false ) {
+	const wrapperEl = qty.parentElement;
+	const original = qty;
 
 	// Remove any existing.
-	$original.detach();
+	original.remove();
 
-	const id = $original.attr( 'id' );
+	const id = original.getAttribute( 'id' );
 
 	// Find original value.
-	const originalValue = $original.val() ? parseInt( $original.val() ) : 0;
+	const originalValue = original.value ? parseInt( original.value ) : 0;
 	const selectedValue = variation ? 0 : ( originalValue );
 
 	// Try to get preset min/max values.
-	const min = variation.min_qty || ( $original.attr( 'min' ) ? parseInt( $original.attr( 'min' ) ) : globalMax );
-	let max = variation.max_qty || ( $original.attr( 'max' ) ? parseInt( $original.attr( 'max' ) ) : globalMax );
+	const min = variation.min_qty || ( original.getAttribute( 'min' ) || globalMax );
+	let max = variation.max_qty || ( original.getAttribute( 'max' ) || globalMax );
 
 	// Allow more items to be chosen if available.
 	if ( ( max <= selectedValue && selectedValue !== max && max !== 1 ) || ( max === globalMax && selectedValue !== 1 ) ) {
@@ -63,14 +63,48 @@ export const transformInput = function( $qty, variation = false ) {
 	}
 
 	// Add <select>
-	const $select = $( `<select id=${ id } class="qty" min=${ min } max=${ max } name=${ $original.attr( 'name' ) } />` );
+	const selectEl = document.createElement( 'select' );
 
-	$wrapper.append( $select );
+	selectEl.className = 'qty';
+	selectEl.setAttribute( 'id', id );
+	selectEl.setAttribute( 'min', min );
+	selectEl.setAttribute( 'max', max );
+	selectEl.setAttribute( 'name', original.getAttribute( 'name' ) );
 
-	const options = getOptions( max );
+	// Append options.
+	const options = getOptions().slice( min, ( max + 1 ) );
+	options.forEach( ( option ) => selectEl.options.add( option ) );
 
-	$select
-		.append( options.slice( min, ( max + 1 ) ).join( '' ) )
-		.find( `option[value=${ selectedValue }]` )
-		.prop( 'selected', true );
+	// Set value now that options are present.
+	selectEl.value = originalValue;
+
+	// Show.
+	wrapperEl.appendChild( selectEl );
+};
+
+/**
+ * Collect all quantity <input> and update to <selects>
+ *
+ * @param {Array} partials List of selectors to look for inputs in.
+ */
+export const transformQtys = ( partials ) => {
+	_.each( partials, ( selector ) => {
+		document.querySelectorAll( `${ selector } .qty` ).forEach( ( qty ) => {
+			transformInput( qty, false );
+		} );
+	} );
+};
+
+/**
+ * Bind a change event to all .qty selectors in a set of partials.
+ *
+ * @param {Array} partials List of selectors to look for inputs in.
+ * @param {Function} cb Function to call when a quantity is updated inside a partial.
+ */
+export const bindQtyChangeEvents = ( partials, cb ) => {
+	_.each( partials, ( selector ) => {
+		document.querySelectorAll( `${ selector } .qty` ).forEach( ( qty ) => {
+			qty.addEventListener( 'change', cb );
+		} );
+	} );
 };

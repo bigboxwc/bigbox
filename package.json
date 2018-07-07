@@ -3,7 +3,7 @@
 	"title": "BigBox",
 	"author": "Spencer Finnell",
 	"description": "WooCommerce theme for large stores.",
-	"version": "1.8.0",
+	"version": "1.9.0",
 	"license": "GPL-2.0-or-later",
 	"main": "webpack.config.js",
 	"engines": {
@@ -18,7 +18,6 @@
 		"babel-eslint": "8.2.5",
 		"babel-loader": "7.1.4",
 		"babel-plugin-import-glob": "^2.0.0",
-		"babel-plugin-transform-async-generator-functions": "6.24.1",
 		"babel-plugin-transform-react-jsx": "^6.24.1",
 		"bootstrap": "^4.1.1",
 		"classnames": "^2.2.5",

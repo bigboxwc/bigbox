@@ -1,5 +1,3 @@
-/* global $ */
-
 /**
  * External dependencies.
  */
@@ -9,21 +7,25 @@ import domReady from '@wordpress/dom-ready';
  * Adjust width of navbar dropdown.
  */
 export const adjustWidth = () => {
-	const $real = $( '#search-dropdown-real' ).find( 'select' );
-	const $fake = $( '#search-dropdown-placeholder' );
+	const realSelect = document.querySelector( '#search-dropdown-real select' );
+	const fakeSelect = document.getElementById( 'search-dropdown-placeholder' );
 
-	const selected = $real.find( 'option:selected' ).text();
+	if ( ! realSelect || ! fakeSelect ) {
+		return;
+	}
 
-	$fake.find( 'option' ).html( selected.replace( '&nbsp;', '' ) );
+	// Find visible option.
+	const selectedText = realSelect.options[ realSelect.selectedIndex ].text;
 
-	// Adjust width.
-	$real.width( $fake.width() );
+	// Set hidden <select> to have only one value (of currently selected).
+	fakeSelect.innerHTML = `<option>${ selectedText.replace( '&nbsp;', '' ) }</option>`;
+
+	// Set visible <select> to have width of hidden.
+	realSelect.style.width = `${ fakeSelect.offsetWidth }px`;
 
 	// Trigger again on change.
-	$real.change( adjustWidth );
+	realSelect.onchange = adjustWidth;
 };
 
 // Adjust on load.
-domReady( function() {
-	adjustWidth();
-} );
+domReady( adjustWidth );

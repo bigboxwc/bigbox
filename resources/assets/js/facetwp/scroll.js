@@ -5,21 +5,21 @@
  */
 import domReady from '@wordpress/dom-ready';
 
-domReady( function() {
+domReady( () => {
 	const $document = $( document );
-	const $htmlbody = $( 'html, body' );
 
 	/**
 	 * Scroll to top on refresh and show loading indicator.
 	 */
 	$document.on( 'facetwp-refresh', () => {
 		if ( FWP.loaded ) {
-			$htmlbody.animate( {
-				scrollTop: 0,
-			}, 250 );
+			window.scrollTo( 0, 0 );
 
-			$( '.facetwp-template' )
-				.prepend( '<div class="facetwp-template__loading"></div>' );
+			// Add loading indicator.
+			const loading = document.createElement( 'div' );
+			loading.classList.add( 'facetwp-template__loading' );
+
+			document.querySelector( '.facetwp-template' ).prepend( loading );
 		}
 	} );
 } );

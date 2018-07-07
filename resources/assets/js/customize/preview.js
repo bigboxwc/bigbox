@@ -1,4 +1,4 @@
-/* global WebFont, $, _ */
+/* global WebFont, _ */
 
 // Wait for Preview ready.
 wp.customize.bind( 'preview-ready', () => {
@@ -8,15 +8,18 @@ wp.customize.bind( 'preview-ready', () => {
 	const updateCss = () => {
 		wp.ajax.send( 'bigbox-preview-css', {
 			success: ( response ) => {
-				// Update inline CSS.
 				const selector = 'bigbox-inline-css';
 
-				$( `#${ selector }` ).remove();
+				// Remove old.
+				document.getElementById( selector ).remove();
 
-				$( '<div>', {
-					id: selector,
-					html: '&shy;<style>' + response.css + '</style>',
-				} ).appendTo( 'body' );
+				// Create new and append.
+				const newStyle = document.createElement( 'div' );
+
+				newStyle.setAttribute( 'id', selector );
+				newStyle.innerHTML = '&shy;<style>' + response.css + '</style>';
+
+				document.body.append( newStyle );
 
 				// Update web fonts.
 				if ( response.fontFamily ) {

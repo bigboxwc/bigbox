@@ -1,4 +1,4 @@
-/* global $, wp, bigboxCustomizeControls, _ */
+/* global wp, bigboxCustomizeControls, _ */
 
 /**
  * Internal dependencies.
@@ -24,10 +24,10 @@ const nextPointer = () => {
  * Toggle any active pointers.
  */
 const hideActivePointer = () => {
-	const $pointer = document.querySelector( '.bigbox-pointer' );
+	const pointer = document.querySelector( '.bigbox-pointer' );
 
-	if ( $pointer !== null ) {
-		$pointer.style.display = 'none';
+	if ( pointer !== null ) {
+		pointer.style.display = 'none';
 	}
 };
 
@@ -50,31 +50,32 @@ const calculateOffset = ( elPosition ) => {
 /**
  * Show a pointer.
  *
- * @param {number} pointer The index of the pointer to show.
+ * @param {number} pointerIndex The index of the pointer to show.
  */
-const showPointer = ( pointer ) => {
+const showPointer = ( pointerIndex ) => {
 	// Hide previous pointer.
 	hideActivePointer();
 
 	// Set current pointer.
-	activePointer = pointer;
+	activePointer = pointerIndex;
 
 	// Display.
-	const pointerObj = pointers[ pointer ];
+	const pointerObj = pointers[ pointerIndex ];
 
-	const $el = document.querySelector( pointerObj.el );
-	const offset = calculateOffset( $el.getBoundingClientRect() );
+	const el = document.querySelector( pointerObj.el );
+	const offset = calculateOffset( el.getBoundingClientRect() );
 
-	// Inject
-	const $pointer = document.querySelector( '.bigbox-pointer' );
-	$pointer.innerHTML = template( {
+	// Inject.
+	const pointer = document.querySelector( '.bigbox-pointer' );
+
+	pointer.innerHTML = template( {
 		...pointerObj,
 		last: nextPointer() === pointers.length,
 	} );
 
 	// Update position.
-	$pointer.style.left = `${ offset.left }px`;
-	$pointer.style.top = `${ offset.top }px`;
+	pointer.style.left = `${ offset.left }px`;
+	pointer.style.top = `${ offset.top }px`;
 
 	// Attempt to focus a portion of the UI then show popover.
 	if ( pointerObj.focusType && pointerObj.focus ) {
@@ -82,19 +83,33 @@ const showPointer = ( pointer ) => {
 	}
 
 	// Show.
-	$pointer.style.display = 'block';
+	pointer.style.display = 'block';
+
+	// Rebind
+	addListeners();
+};
+
+/**
+ * Bind Next and Close buttons.
+ */
+const addListeners = () => {
+	const next = document.querySelector( '.wp-customizer .bigbox-pointer .next' );
+	const close = document.querySelector( '.wp-customizer .bigbox-pointer .close' );
+
+	if ( next ) {
+		next.addEventListener( 'click', () => showPointer( nextPointer() ) );
+	}
+
+	if ( close ) {
+		close.addEventListener( 'click', hideActivePointer );
+	}
 };
 
 // Only enable if active.
 if ( active ) {
-	const $customizer = $( '.wp-customizer' );
-
 	// Wait for Customize ready.
-	wp.customize.bind( 'ready', () => showPointer( 0 ) );
-
-	// Go forward.
-	$customizer.on( 'click', '.bigbox-pointer .next', () => showPointer( nextPointer() ) );
-
-	// Dismiss
-	$customizer.on( 'click', '.bigbox-pointer .close', hideActivePointer );
+	wp.customize.bind( 'ready', () => {
+		showPointer( 0 );
+		addListeners();
+	} );
 }

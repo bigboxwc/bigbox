@@ -1,3 +1,13 @@
+## [1.9.0] - 2018-07-07
+
+### New
+
+- Better font weight fallbacks when no alternatives are available.
+- Gutenberg 3.2 support.
+- WooCommerce 3.5 support.
+- Helpful customizer color control suggestions.
+- Remove jQuery dependencies and optimize all Javascript (reducing file sizes).
+
 ## [1.8.0] - 2018-06-29
 
 ### New

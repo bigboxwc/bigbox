@@ -1,22 +1,27 @@
-/* global $, wp, bigboxCustomizeControls, _ */
+/* global wp, bigboxCustomizeControls, _, Event */
 
-const fontList = bigboxCustomizeControls.fonts;
+const { fontList } = bigboxCustomizeControls.typography;
 
 /**
  * Build HTML <option>s for font families.
  *
  * @return {string} String of HTML <option>s.
  */
-const buildFamilyOptionsHtml = () => {
+const getFamilyOptions = () => {
 	const options = [];
 
-	options.push( '<option value="default" data-variants="100,200,300,400,500,600,700,800">System Default</option>' );
-
 	_.each( fontList, ( data ) => {
-		options.push( `<option value="${ data.family }" data-category="${ data.category }" data-variants="${ data.variants.join( ',' ) }">${ data.family }</option>` );
+		const familyOption = document.createElement( 'option' );
+
+		familyOption.value = data.family;
+		familyOption.text = data.family;
+		familyOption.dataset.variants = data.variants.join( ',' );
+		familyOption.dataset.category = data.category;
+
+		options.push( familyOption );
 	} );
 
-	return options.join( '' );
+	return options;
 };
 
 /**
@@ -25,16 +30,21 @@ const buildFamilyOptionsHtml = () => {
  * @param  {Array} variants List of variants.
  * @return {string} String of HTML <option>s.
  */
-const buildWeightOptionsHtml = ( variants ) => {
+const getWeightOptions = ( variants ) => {
 	const options = [];
 
 	_.each( variants, ( variant ) => {
 		if ( ! isNaN( variant ) || 'regular' === variant ) {
-			options.push( `<option value="${ variant }">${ variant }</option>` );
+			const weightOption = document.createElement( 'option' );
+
+			weightOption.value = variant;
+			weightOption.text = variant;
+
+			options.push( weightOption );
 		}
 	} );
 
-	return options.join( '' );
+	return options;
 };
 
 /**
@@ -47,27 +57,35 @@ const updateWeightFields = ( variants ) => {
 		const control = wp.customize.control( `type-font-weight-${ weight }` );
 		const value = control.setting();
 
-		const $select = $( control.container ).find( 'select' );
+		// Bring back to standard DOM element.
+		const selectEl = control.container.find( 'select' ).get( 0 );
+
+		selectEl.innerHTML = '';
 
 		// Add HTML and select chosen item.
-		$select
-			.html( buildWeightOptionsHtml( variants ) );
+		getWeightOptions( variants ).forEach( ( familyWeight ) => selectEl.options.add( familyWeight ) );
 
-		const $selected = $select
-			.find( `[value="${ value }"]` );
+		// Determine if the previous value can be carried over.
 
-		// Select if exists in list.
-		if ( $selected.length > 0 ) {
-			$select
-				.val( value )
-				.prop( 'selected', true )
-				.trigger( 'change' );
-			// Select first item.
+		// Value still exists.
+		if ( variants[ value ] ) {
+			selectEl.value = value;
 		} else {
-			$select
-				.find( 'option:first-child' )
-				.prop( 'selected', true )
-				.trigger( 'change' );
+			const first = selectEl.options[ 0 ];
+			const last = selectEl.options[ selectEl.options.length - 1 ];
+
+			// Select first if no previous item remains.
+			if ( 'base' === weight ) {
+				selectEl.value = first;
+				selectEl.selectedIndex = 0;
+			// Select last if no previous item remains for bold.
+			} else {
+				selectEl.value = last;
+				selectEl.selectedIndex = selectEl.options.length - 1;
+			}
+
+			// Manually updated setting value.
+			control.setting.bind( selectEl.value );
 		}
 	} );
 };
@@ -82,33 +100,29 @@ const updateCategoryField = ( category ) => {
 		category = 'cursive';
 	}
 
-	wp.customize.control( 'type-font-family-fallback', ( control ) => {
-		control.setting.set( category );
-	} );
+	wp.customize.control( 'type-font-family-fallback', ( control ) => control.setting.set( category ) );
 };
 
 // Wait for Customize ready.
 wp.customize.bind( 'ready', () => {
 	const familyControl = wp.customize.control( 'type-font-family' );
-	const familyValue = familyControl.setting();
-	const $familyInput = $( familyControl.container ).find( 'select' );
+	const familyInput = familyControl.container.find( 'select' ).get( 0 );
 
 	// Update available weights when changing family.
-	$familyInput.on( 'change', function() {
-		const selected = $( this ).find( 'option:selected' );
-		const variants = selected.data( 'variants' ) ? selected.data( 'variants' ).split( ',' ) : [ 400, 500 ];
-		const category = selected.data( 'category' ) ? selected.data( 'category' ) : 'sans-serif';
+	familyInput.addEventListener( 'change', ( e ) => {
+		const selected = e.target.options[ e.target.options.selectedIndex ];
+		const variants = selected.dataset.variants ? selected.dataset.variants.split( ',' ) : [ 400, 500 ];
+		const category = selected.dataset.category || 'sans-serif';
 
 		updateWeightFields( variants );
 		updateCategoryField( category );
 	} );
 
-	// Build list of font families.
-	$familyInput
-		.html( buildFamilyOptionsHtml() )
-		.val( familyValue )
-		.find( `[value="${ familyValue }"]` )
-		.prop( 'selected', true )
-		.end()
-		.change();
+	getFamilyOptions().forEach( ( family ) => familyInput.add( family ) );
+
+	familyInput.value = familyControl.setting();
+
+	// Trigger change on load to populate other fields.
+	const event = new Event( 'change' );
+	familyInput.dispatchEvent( event );
 } );
