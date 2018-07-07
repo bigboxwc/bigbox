@@ -23,4 +23,10 @@ echo wp_kses_post( sprintf( __( 'Please enter the license key received with your
 ?>
 </p>
 
-<div id="bigbox-license-manager"><?php esc_html_e( 'Unable to load license manager. Please enable Javascript.', 'bigbox' ); ?></div>
+<div id="bigbox-license-manager"></div>
+
+<?php foreach ( [ 'form', 'status', 'deactivate' ] as $view ) : ?>
+<script type="text/html" id="tmpl-bigbox-license-manager-<?php echo esc_attr( $view ); ?>">
+	<?php bigbox_view( 'nux/steps/license-manager/' . $view ); ?>
+</script>
+<?php endforeach; ?>

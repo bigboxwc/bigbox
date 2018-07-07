@@ -87,7 +87,7 @@ function bigbox_woocommerce_widget_cart_is_hidden( $hidden ) {
 function bigbox_woocommerce_js_settings( $settings ) {
 	$settings['woocommerce']['products'] = [
 		'quantitySelector' => [
-			'zero' => trim( 0 . ' ' . ( ! is_singular( 'product' ) ? esc_html__( '(remove)', 'bigbox' ) : null ) ),
+			'zero'      => trim( 0 . ' ' . ( ! is_singular( 'product' ) ? esc_html__( '(remove)', 'bigbox' ) : null ) ),
 			/**
 			 * Filters the maximum number of products that can be added at one time.
 			 *
@@ -95,7 +95,7 @@ function bigbox_woocommerce_js_settings( $settings ) {
 			 *
 			 * @param int $max The maximum number that can be used at one time.
 			 */
-			'globalMax'  => apply_filters(
+			'globalMax' => apply_filters(
 				'bigbox_woocommerce_quantity_selector_max',
 				30
 			),
