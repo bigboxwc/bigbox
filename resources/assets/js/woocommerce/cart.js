@@ -1,4 +1,4 @@
-/* global $, bigbox, URLSearchParams, FormData */
+/* global bigbox, URLSearchParams, FormData */
 
 /**
  * External dependencies.
@@ -56,17 +56,3 @@ const doQty = () => {
 
 // Cart page doesn't trigger anything on load.
 domReady( doQty );
-
-/**
- * List of WooCommerce triggers that require quantities to be rebuilt.
- */
-const triggers = [
-	'updated_wc_div',
-	'updated_cart_totals',
-	'updated_shipping_method',
-];
-
-// WooCommerce uses jQuery to send out triggers.
-const $body = $( document.body );
-
-triggers.forEach( ( trigger ) => $body.on( trigger, doQty ) );

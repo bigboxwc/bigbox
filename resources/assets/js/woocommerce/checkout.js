@@ -57,9 +57,7 @@ const doQty = () => {
  * List of WooCommerce triggers that require quantities to be rebuilt.
  */
 const triggers = [
-	'payment_method_selected',
 	'updated_checkout',
-	'updated_shipping_method',
 ];
 
 triggers.forEach( ( trigger ) => $body.on( trigger, doQty ) );
