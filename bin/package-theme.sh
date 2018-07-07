@@ -81,7 +81,7 @@ rm -f bigbox*.zip
 
 # Generate the theme zip file
 status "Creating archive..."
-zip -r -x *.git* bigbox.zip \
+zip -r bigbox.zip \
 	functions.php \
 	footer.php \
 	header.php \
@@ -96,7 +96,8 @@ zip -r -x *.git* bigbox.zip \
 	vendor/ \
 	LICENSE \
 	CHANGELOG.md \
-	screenshot.png
+	screenshot.png \
+	-x *.git*
 
 # Rename and cleanup.
 unzip bigbox.zip -d bigbox && zip -r "bigbox-$PACKAGE_VERSION.zip" bigbox
