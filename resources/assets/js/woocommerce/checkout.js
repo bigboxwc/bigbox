@@ -57,6 +57,7 @@ const doQty = () => {
  * List of WooCommerce triggers that require quantities to be rebuilt.
  */
 const triggers = [
+	'updated_wc_div',
 	'updated_checkout',
 ];
 

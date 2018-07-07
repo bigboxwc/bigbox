@@ -1,4 +1,4 @@
-/* global bigbox, URLSearchParams, FormData */
+/* global $, bigbox, URLSearchParams, FormData */
 
 /**
  * External dependencies.
@@ -10,6 +10,9 @@ import domReady from '@wordpress/dom-ready';
  */
 import { transformQtys, bindQtyChangeEvents } from './quantity';
 import { getPartial, blockPartials, unblockPartials, updatePartialsWithResponse } from './../utils/partials.js';
+
+// WooCommerce uses jQuery to send out triggers.
+const $body = $( document.body );
 
 // Partials to update.
 const partials = {
@@ -56,3 +59,12 @@ const doQty = () => {
 
 // Cart page doesn't trigger anything on load.
 domReady( doQty );
+
+/**
+ * List of WooCommerce triggers that require quantities to be rebuilt.
+ */
+const triggers = [
+	'updated_wc_div',
+];
+
+triggers.forEach( ( trigger ) => $body.on( trigger, doQty ) );
