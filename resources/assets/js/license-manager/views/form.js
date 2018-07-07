@@ -67,7 +67,7 @@ const LicenseForm = Base.extend( {
 				this.model.set( 'isPending', false );
 			},
 		} );
-	}
+	},
 } );
 
 export default LicenseForm;
