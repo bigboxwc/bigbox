@@ -16,7 +16,7 @@ $size        = get_theme_mod( 'type-font-size', 1 );
 $weight_bold = bigbox_get_theme_font_weight( 'bold' );
 
 // Force a browser-rendered bold weight.
-if ( 'regular' == $weight_bold ) {
+if ( 'regular' === $weight_bold ) {
 	$weight_bold = 'bold';
 }
 
