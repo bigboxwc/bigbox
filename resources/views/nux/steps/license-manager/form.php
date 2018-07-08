@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		type="submit"
 		name="submit"
 		class="button button-large button-primary"
-		value="<?php echo esc_html_e( 'Activate License' ); ?>"
+		value="<?php echo esc_html_e( 'Activate License', 'bigbox' ); ?>"
 		<# if ( data.isPending || data.isValid ) { #>disabled<# } #>
 	/>
 </form>
