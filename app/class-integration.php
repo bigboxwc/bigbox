@@ -49,14 +49,6 @@ abstract class Integration {
 	private $dependencies = [];
 
 	/**
-	 * If this integration is active and meets dependency requiremens.
-	 *
-	 * @var bool $active
-	 * @since 1.0.0
-	 */
-	protected $active = false;
-
-	/**
 	 * Setup integration.
 	 *
 	 * @since 1.0.0
@@ -109,11 +101,7 @@ abstract class Integration {
 	 * @since 1.0.0
 	 */
 	public function is_active() {
-		if ( ! in_array( false, $this->dependencies, true ) ) {
-			$this->active = true;
-		}
-
-		return (bool) $this->active;
+		return ! in_array( false, $this->dependencies, true );
 	}
 
 }
