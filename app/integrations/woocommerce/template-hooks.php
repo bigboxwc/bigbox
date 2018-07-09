@@ -135,6 +135,9 @@ add_filter( 'wc_product_enable_dimensions_display', '__return_true' );
 // Adjust gallery output.
 add_filter( 'woocommerce_single_product_carousel_options', 'bigbox_woocommerce_single_product_carousel_options' );
 
+// Adjust grouped product column order.
+add_filter( 'woocommerce_grouped_product_columns', 'bigbox_woocommerce_grouped_product_columns', 5 );
+
 /**
  * File: templates/cart/cart.php.
  */

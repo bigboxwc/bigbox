@@ -574,6 +574,25 @@ function bigbox_woocommerce_single_product_carousel_options( $args ) {
 }
 
 /**
+ * Grouped product table column order.
+ *
+ * @since 1.0.0
+ *
+ * @param array $columns Table columns.
+ * @return array
+ */
+function bigbox_woocommerce_grouped_product_columns( $columns ) {
+	$columns = [
+		'label',
+		'quantity',
+		'price',
+	];
+
+	return $columns;
+
+}
+
+/**
  * Output markup for mobile shop filter toggles.
  *
  * @since 1.0.0
