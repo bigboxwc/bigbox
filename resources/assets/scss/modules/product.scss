@@ -156,6 +156,11 @@
 	}
 }
 
+.woocommerce-product-gallery__image--placeholder,
+.woocommerce-placeholder {
+	border: 1px solid gray("300");
+}
+
 .product__description {
 	position: relative;
 	flex: 1;
