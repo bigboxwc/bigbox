@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'BIGBOX_VERSION', '%BIGBOX_VERSION%' );
 
 // Minimum PHP version.
-define( 'BIGBOX_PHP_VERSION', '9.0.0' );
+define( 'BIGBOX_PHP_VERSION', '7.0.0' );
 
 // Do not allow the theme to be active if the PHP version is not met.
 if ( version_compare( PHP_VERSION, BIGBOX_PHP_VERSION, '<' ) ) {
