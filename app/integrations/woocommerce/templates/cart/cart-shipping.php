@@ -61,7 +61,7 @@ $calculator_text          = __( '(update address)', 'bigbox' );
 			</li>
 		<?php endforeach; ?>
 
-		<?php if ( ! is_checkout() && ! empty( $show_shipping_calculator ) ) : ?>
+		<?php if ( ! is_checkout() && $show_shipping_calculator ) : ?>
 			<li>
 				<button class="shipping-calculator-button button--text"><?php echo esc_html( $calculator_text ); ?></button>
 			</li>
