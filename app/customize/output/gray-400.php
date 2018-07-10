@@ -22,6 +22,7 @@ return [
 			'ul.brands_index li span',
 			'.product__has-variations a:hover',
 			'.widget_layered_nav_filters a:hover',
+			'.cart_totals .shipping-methods',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray400 ),

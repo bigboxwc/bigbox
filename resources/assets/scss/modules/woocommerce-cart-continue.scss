@@ -1,11 +1,13 @@
 .cart_totals {
 
-	#shipping_method {
+	.shipping-methods {
 
 		@include reset-list();
 
 		font-size: $font-size-sm;
-		margin: 0 0 $spacer $spacer;
+		margin: $spacer 0;
+		padding-left: $spacer;
+		border-left: 1px dashed gray("400");
 
 		li {
 			display: flex;
@@ -47,15 +49,14 @@
 
 }
 
-.shipping-note {
-	margin-bottom: $spacer;
-	padding-left: $spacer;
-	font-size: $font-size-sm;
-	border-left: 1px dashed gray("400");
+.woocommerce-shipping-address,
+.woocommerce-shipping-destination,
+.woocommerce-shipping-contents {
+	font-size: $font-size-xs;
+}
 
-	p {
-		margin: 0;
-	}
+.woocommerce-shipping-address {
+	margin-left: ($spacer * 2);
 }
 
 .coupons-next {
