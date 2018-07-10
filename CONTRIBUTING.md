@@ -10,20 +10,7 @@ To test the plugin, or to contribute to it, you can clone this repository and bu
 
 ### Local Environment
 
-First, you need a WordPress Environment to run the plugin on. The quickest way to get up and running is to use the provided docker setup. Just install [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/) on your machine and run `./bin/setup-local-env.sh`.
-
-The WordPress installation should be available at `http://localhost:8888` (username: `admin`, password: `password`).
-Inside the "docker" directory, you can use any docker command to interact with your containers. If this port is in use, you can override it in your `docker-compose.override.yml` file.
-
-Alternatively, you can use your own local WordPress environment and clone this repository right into your `wp-content/themes` directory.
-
-Next, open a terminal (or if on Windows, a command prompt) and navigate to the repository you cloned. Now type `npm install` to get the dependencies all set up. Then you can type `npm run dev` in your terminal or command prompt to keep the plugin building in the background as you work on it.
-
-### On A Remote Server
-
-Open a terminal (or if on Windows, a command prompt) and navigate to the repository you cloned. Now type `npm install` to get the dependencies all set up. Once that finishes, you can type `npm run build`. You can now upload the entire repository to your `wp-content/themes` directory on your webserver and activate the theme from the WordPress admin.
-
-You can also type `npm run package-theme` which will run the two commands above and create a zip file automatically for you which you can use to install the theme through the WordPress admin.
+Next, open a terminal (or if on Windows, a command prompt) and navigate to the repository you cloned. Now type `npm run setup-theme` to get the dependencies all set up. Then you can type `npm run dev` in your terminal or command prompt to keep the theme building in the background as you work on it.
 
 ## Workflow
 
