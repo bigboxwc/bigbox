@@ -41,7 +41,7 @@ endif;
 
 	if ( $taxonomy ) :
 		$name = FWP()->helper->get_setting( 'prefix' ) . $dropdown['name'];
-		$all  = esc_html( isset( $dropdown['label_any'] ) ? $dropdown['label_any'] : esc_html__( 'All', 'bigbox' ) );
+		$all  = esc_html( isset( $dropdown['label_any'] ) ? $dropdown['label_any'] : __( 'All', 'bigbox' ) );
 	?>
 
 	<div id="navbar-search__category" class="navbar-search__category">

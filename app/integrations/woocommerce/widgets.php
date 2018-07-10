@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function bigbox_woocommerce_register_sidebars() {
 	register_sidebar(
 		[
-			// Translators: Widget area name.
+			/* translators: Widget area name. */
 			'name'          => __( 'Shop Sidebar (Left)', 'bigbox' ),
 			'id'            => 'shop',
 			'description'   => '',
@@ -34,7 +34,7 @@ function bigbox_woocommerce_register_sidebars() {
 
 	register_sidebar(
 		[
-			// Translators: Widget area name.
+			/* translators: Widget area name. */
 			'name'          => __( 'Shop Sidebar (Right)', 'bigbox' ),
 			'id'            => 'shop-tertiary',
 			'description'   => '',
@@ -47,7 +47,7 @@ function bigbox_woocommerce_register_sidebars() {
 
 	register_sidebar(
 		[
-			// Translators: Widget area name.
+			/* translators: Widget area name. */
 			'name'          => __( 'Shop Sidebar (Comments)', 'bigbox' ),
 			'id'            => 'shop-comments',
 			'description'   => '',

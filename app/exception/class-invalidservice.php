@@ -33,7 +33,7 @@ class InvalidService extends \InvalidArgumentException implements BigBoxExceptio
 	 */
 	public static function from_service( $service ) {
 		$message = sprintf(
-			// Translators: %s service name.
+			/* translators: %s service name. */
 			__( 'The service "%s" is not recognized and cannot be registered.', 'bigbox' ),
 			is_object( $service )
 				? get_class( $service )

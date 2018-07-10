@@ -37,7 +37,7 @@ function bigbox_woocommerce_get_starter_content( $content ) {
 			'woocommerce_product_categories' => [
 				'woocommerce_product_categories',
 				[
-					'title' => esc_html__( 'Categories', 'bigbox' ),
+					'title' => __( 'Categories', 'bigbox' ),
 				],
 			],
 		],

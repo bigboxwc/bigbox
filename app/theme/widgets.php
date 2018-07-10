@@ -67,7 +67,7 @@ function bigbox_register_sidebars() {
 	for ( $i = 1; $i <= $count; $i++ ) {
 		register_sidebar(
 			[
-				// Translators: Widget area name. %d: widget column number.
+				/* translators: Widget area name. %d: widget column number. */
 				'name'          => sprintf( __( 'Footer Navigation Column %d', 'bigbox' ), $i ),
 				'id'            => 'footer-' . $i,
 				'description'   => '',

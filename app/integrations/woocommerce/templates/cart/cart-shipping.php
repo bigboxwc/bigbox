@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 	<div class="action-list__item-value">
 		<?php if ( ! is_checkout() && ! empty( $show_shipping_calculator ) ) : ?>
-		<a href="#" class="shipping-calculator-button"><?php echo esc_html__( 'Calculate shipping', 'bigbox' ); ?></a>
+		<a href="#" class="shipping-calculator-button"><?php esc_html_e( 'Calculate shipping', 'bigbox' ); ?></a>
 		<?php endif; ?>
 	</div>
 </div>

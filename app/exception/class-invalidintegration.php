@@ -33,7 +33,7 @@ class InvalidIntegration extends \InvalidArgumentException implements BigBoxExce
 	 */
 	public static function from_integration( $integration ) {
 		$message = sprintf(
-			// Translators: %s integration name.
+			/* translators: %s integration name. */
 			__( 'The integration "%s" is not recognized and cannot be registered.', 'bigbox' ),
 			is_object( $integration )
 				? get_class( $integration )

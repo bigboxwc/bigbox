@@ -23,7 +23,7 @@ bigbox_view( 'global/header' );
 		if ( is_archive() ) :
 			the_archive_title();
 		else :
-			// Translators: Default blog page title.
+			/* translators: Default blog page title. */
 			echo get_option( 'page_for_posts' ) ? esc_html( get_the_title( get_option( 'page_for_posts' ) ) ) : esc_html__( 'Blog', 'bigbox' );
 		endif;
 		?>

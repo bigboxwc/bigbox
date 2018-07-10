@@ -24,8 +24,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 function bigbox_facetwp_customize_get_sources( $whitelist = [] ) {
 	$facets  = FWP()->helper->get_facets();
 	$choices = [
-		// Translators: Customize control label.
-		0 => esc_html__( '-- None --', 'bigbox' ),
+		/* translators: Customize control label. */
+		0 => __( '-- None --', 'bigbox' ),
 	];
 
 	foreach ( $facets as $facet ) {
@@ -93,10 +93,10 @@ function bigbox_facetwp_customize_register_navbar_controls_group( $wp_customize,
 	$wp_customize->add_control(
 		'navbar-source-dropdown' . $suffix, wp_parse_args(
 			[
-				// Translators: Customizer control label.
-				'label'       => esc_html__( 'Dropdown Facet', 'bigbox' ),
-				// Translators: Customizer control description.
-				'description' => esc_html__( 'Choose from one of your Dropdown facets. This facet cannot appear on the Shop page twice.', 'bigbox' ),
+				/* translators: Customizer control label. */
+				'label'       => __( 'Dropdown Facet', 'bigbox' ),
+				/* translators: Customizer control description. */
+				'description' => __( 'Choose from one of your Dropdown facets. This facet cannot appear on the Shop page twice.', 'bigbox' ),
 				'type'        => 'select',
 				'choices'     => bigbox_facetwp_customize_get_sources( [ 'dropdown' ] ),
 				'section'     => 'navbar',
@@ -108,10 +108,10 @@ function bigbox_facetwp_customize_register_navbar_controls_group( $wp_customize,
 	$wp_customize->add_control(
 		'navbar-source-search' . $suffix, wp_parse_args(
 			[
-				// Translators: Customizer control label.
-				'label'       => esc_html__( 'Keyword Facet', 'bigbox' ),
-				// Translators: Customizer control description.
-				'description' => esc_html__( 'Choose from one of your Search facets. This facet cannot appear on the Shop page twice.', 'bigbox' ),
+				/* translators: Customizer control label. */
+				'label'       => __( 'Keyword Facet', 'bigbox' ),
+				/* translators: Customizer control description. */
+				'description' => __( 'Choose from one of your Search facets. This facet cannot appear on the Shop page twice.', 'bigbox' ),
 				'type'        => 'select',
 				'choices'     => bigbox_facetwp_customize_get_sources( [ 'search' ] ),
 				'section'     => 'navbar',
@@ -141,8 +141,8 @@ function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
 			$wp_customize,
 			'bigbox-navbar-sources-dynamic',
 			[
-				'label'           => esc_html__( '⚡ These filters are dynamic', 'bigbox' ),
-				'content'         => '<p>' . esc_html__( 'Adjusting these settings will only affect the current page. Navigate to a page not assigned to "Shop" to adjust the global filters.', 'bigbox' ) . '</p><p><a href="" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Learn more about dynamic shop pages &rarr;', 'bigbox' ) . '</a></p>',
+				'label'           => __( '⚡ These filters are dynamic', 'bigbox' ),
+				'content'         => '<p>' . __( 'Adjusting these settings will only affect the current page. Navigate to a page not assigned to "Shop" to adjust the global filters.', 'bigbox' ) . '</p><p><a href="" target="_blank" rel="noopener noreferrer">' . __( 'Learn more about dynamic shop pages &rarr;', 'bigbox' ) . '</a></p>',
 				'priority'        => 15,
 				'section'         => 'navbar',
 				'active_callback' => function() {

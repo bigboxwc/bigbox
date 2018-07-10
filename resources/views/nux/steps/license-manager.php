@@ -18,7 +18,7 @@ wp_enqueue_script( 'bigbox-license-manager' );
 
 <p>
 <?php
-// Translators: %1$s Opening HTML <a> tag. Do not translate. %2$s Closing HTML tag. Do not transslate.
+/* translators: %1$s Opening HTML <a> tag. Do not translate. %2$s Closing HTML tag. Do not translate. */
 echo wp_kses_post( sprintf( __( 'Please enter the license key received with your purchase to enable automatic updates and ensure your website stays up to date and secure. You can find your license key on your %1$sBigBox account page%2$s.', 'bigbox' ), '<a href="https://bigboxwc.com/account">', '</a>' ) );
 ?>
 </p>

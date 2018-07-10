@@ -23,8 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 function bigbox_woocommerce_customize_get_dropdown_taxonomies() {
 	$taxonomies = get_object_taxonomies( 'product', 'objects' );
 	$choices    = [
-		// Translators: Customize control label.
-		0 => esc_html__( '-- None --', 'bigbox' ),
+		/* translators: Customizer control label. */
+		0 => __( '-- None --', 'bigbox' ),
 	];
 
 	foreach ( $taxonomies as $taxonomy ) {
@@ -62,8 +62,8 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 
 	$wp_customize->add_control(
 		'navbar-source-dropdown', [
-			// Translators: Customizer control label.
-			'label'           => esc_html__( 'Dropdown Source', 'bigbox' ),
+			/* translators: Customizer control label. */
+			'label'           => __( 'Dropdown Source', 'bigbox' ),
 			'type'            => 'select',
 			'choices'         => bigbox_woocommerce_customize_get_dropdown_taxonomies(),
 			'section'         => 'navbar',
@@ -85,8 +85,8 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 
 	$wp_customize->add_control(
 		'nav-item-account', [
-			// Translators: Customizer control label.
-			'label'    => esc_html__( 'Display account menu item', 'bigbox' ),
+			/* translators: Customizer control label. */
+			'label'    => __( 'Display account menu item', 'bigbox' ),
 			'type'     => 'checkbox',
 			'section'  => 'navbar',
 			'priority' => 10,
@@ -104,8 +104,8 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 
 	$wp_customize->add_control(
 		'nav-item-cart', [
-			// Translators: Customizer control label.
-			'label'    => esc_html__( 'Display cart menu item', 'bigbox' ),
+			/* translators: Customizer control label. */
+			'label'    => __( 'Display cart menu item', 'bigbox' ),
 			'type'     => 'checkbox',
 			'section'  => 'navbar',
 			'priority' => 10,

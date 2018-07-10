@@ -35,9 +35,9 @@ $plugins = [
 	<?php
 	foreach ( $plugins as $slug => $data ) :
 		$i18n = [
-			// Translators: %s Plugin name.
+			/* translators: %s Plugin name. */
 			'get'  => sprintf( esc_html__( 'Get %s', 'bigbox' ), $data['label'] ),
-			// Translators: %s Plugin name.
+			/* translators: %s Plugin name. */
 			'more' => sprintf( esc_html__( 'More information about %s', 'bigbox' ), $data['label'] ),
 		];
 	?>

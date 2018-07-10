@@ -21,12 +21,7 @@ define( 'BIGBOX_PHP_VERSION', '7.0.0' );
 
 // Do not allow the theme to be active if the PHP version is not met.
 if ( version_compare( PHP_VERSION, BIGBOX_PHP_VERSION, '<' ) ) {
-	add_action(
-		'admin_notices', function() {
-			// Translators: %s Minimum PHP version required for theme to run.
-			echo '<div class="notice notice-error"><p>' . sprintf( esc_html__( 'BigBox requires PHP version <code>%s</code> or above to be active. Please contact your web host to upgrade.', 'bigbox' ), esc_attr( BIGBOX_PHP_VERSION ) ) . '</p></div>';
-		}
-	);
+	add_action( 'admin_notices', 'bigbox_php_admin_notices' );
 
 	if ( current_user_can( 'switch_themes' ) ) {
 		switch_theme( WP_DEFAULT_THEME );
@@ -34,6 +29,17 @@ if ( version_compare( PHP_VERSION, BIGBOX_PHP_VERSION, '<' ) ) {
 
 	return;
 }
+
+/**
+ * Output a notice that the minimum PHP version is not met.
+ *
+ * @since 1.10.0
+ */
+function bigbox_php_admin_notices() {
+	/* translators: %s Minimum PHP version required for theme to run. */
+	echo '<div class="notice notice-error"><p>' . sprintf( esc_html__( 'BigBox requires PHP version <code>%s</code> or above to be active. Please contact your web host to upgrade.', 'bigbox' ), esc_attr( BIGBOX_PHP_VERSION ) ) . '</p></div>';
+}
+);
 
 // Composer autoloader.
 require_once __DIR__ . '/bootstrap/autoload.php';

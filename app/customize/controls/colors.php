@@ -25,7 +25,7 @@ function bigbox_customize_register_colors_panels( $wp_customize ) {
 	$wp_customize->add_panel(
 		'colors', [
 			// Translators: Customizer panel title.
-			'title'    => esc_html__( 'Colors', 'bigbox' ),
+			'title'    => __( 'Colors', 'bigbox' ),
 			'priority' => 30,
 		]
 	);
@@ -43,7 +43,7 @@ function bigbox_customize_register_colors_sections( $wp_customize ) {
 	$wp_customize->add_section(
 		'colors-palette', [
 			// Translators: Customizer section title.
-			'title'    => esc_html__( 'Palette', 'bigbox' ),
+			'title'    => __( 'Palette', 'bigbox' ),
 			'panel'    => 'colors',
 			'priority' => 10,
 		]
@@ -52,7 +52,7 @@ function bigbox_customize_register_colors_sections( $wp_customize ) {
 	$wp_customize->add_section(
 		'colors-elements', [
 			// Translators: Customizer section title.
-			'title'    => esc_html__( 'Elements', 'bigbox' ),
+			'title'    => __( 'Elements', 'bigbox' ),
 			'panel'    => 'colors',
 			'priority' => 30,
 		]
@@ -111,8 +111,8 @@ function bigbox_customize_register_colors_controls( $wp_customize ) {
 			$wp_customize,
 			'bigbox-colors-element-missing',
 			[
-				'label'    => esc_html__( '⚡ Want to see something else here?', 'bigbox' ),
-				'content'  => '<p>' . esc_html__( 'Want specific control over an individual element\'s color?', 'bigbox' ) . '</p><p><a href="https://bigboxwc.com/account/support" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Contact us with a suggestion &rarr;', 'bigbox' ) . '</a></p>',
+				'label'    => __( '⚡ Want to see something else here?', 'bigbox' ),
+				'content'  => '<p>' . __( 'Want specific control over an individual element\'s color?', 'bigbox' ) . '</p><p><a href="https://bigboxwc.com/account/support" target="_blank" rel="noopener noreferrer">' . __( 'Contact us with a suggestion &rarr;', 'bigbox' ) . '</a></p>',
 				'priority' => 9999,
 				'section'  => 'colors-elements',
 			]

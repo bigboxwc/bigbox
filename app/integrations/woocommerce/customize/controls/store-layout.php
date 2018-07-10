@@ -23,8 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 function bigbox_woocommerce_customize_register_layout_sections( $wp_customize ) {
 	$wp_customize->add_section(
 		'woocommerce-bigbox-layout', [
-			// Translators: Customizer section title.
-			'title'    => esc_html__( 'Layout', 'bigbox' ),
+			/* translators: Customizer section title. */
+			'title'    => __( 'Layout', 'bigbox' ),
 			'priority' => 50,
 			'panel'    => 'woocommerce',
 		]
@@ -50,8 +50,8 @@ function bigbox_woocommerce_customize_register_layout_controls( $wp_customize ) 
 
 	$wp_customize->add_control(
 		'hide-shop-sidebar', [
-			// Translators: Customizer control label.
-			'label'    => esc_html__( 'Hide shop sidebar', 'bigbox' ),
+			/* translators: Customizer control label. */
+			'label'    => __( 'Hide shop sidebar', 'bigbox' ),
 			'type'     => 'checkbox',
 			'section'  => 'woocommerce-bigbox-layout',
 			'priority' => 10,

@@ -31,8 +31,8 @@ function bigbox_woocommerce_customize_register_placeholder_controls( $wp_customi
 
 	$wp_customize->add_control(
 		'hide-image-placeholders', [
-			// Translators: Customizer control label.
-			'label'    => esc_html__( 'Hide Image Placeholders', 'bigbox' ),
+			/* translators: Customizer control label. */
+			'label'    => __( 'Hide Image Placeholders', 'bigbox' ),
 			'type'     => 'checkbox',
 			'section'  => 'woocommerce_product_images',
 			'priority' => 5,

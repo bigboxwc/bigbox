@@ -32,7 +32,7 @@ while ( have_posts() ) :
 	</div>
 
 	<?php
-	// Translators: %s category list.
+	/* translators: %s category list. */
 	printf( '<p class="blog-post__meta">' . esc_html__( 'Categories: %s', 'bigbox' ) . '</p>', get_the_category_list( ', ' ) ); // WPCS: XSS okay.
 	the_tags( '<p class="blog-post__meta">' . esc_html__( 'Tags:', 'bigbox' ) . ' ', ', ', '</p>' );
 	comments_template( '/resources/views/partials/content-comments.php' );
