@@ -40,9 +40,9 @@ add_filter( 'bigbox_customize_controls_js', 'bigbox_customize_controls_js_fonts'
 function bigbox_customize_register_type_sections( $wp_customize ) {
 	$wp_customize->add_section(
 		'type', [
-		/* translators: Customizer section title. */
-			'title'    => __( 'Typography', 'bigbox' ),
-			'priority' => 20,
+			/* translators: Customizer section title. */
+			'title' => __( 'Typography', 'bigbox' ),
+			'priority'  => 20,
 		]
 	);
 }
@@ -70,7 +70,7 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 			'label'   => __( 'Font Family', 'bigbox' ),
 			'type'    => 'select',
 			'choices' => [
-			/* translators: Customizer control value. */
+				/* translators: Customizer control value. */
 				'default' => __( 'System Default', 'bigbox' ),
 			],
 			'section' => 'type',
