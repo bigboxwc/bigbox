@@ -37,6 +37,11 @@ form.woocommerce-checkout {
 	@include section-title();
 }
 
+.woocommerce-shipping-fields h3 {
+
+	@include vertical-spacing("margin", "down");
+}
+
 .woocommerce-form__label-for-checkbox {
 	font-weight: $font-weight-base;
 	font-size: $font-size-sm;

@@ -37,7 +37,7 @@ $chosen_method_object     = false;
 	<div class="action-list__item-value woocommerce-shipping-address">
 		<?php
 		if ( $formatted_destination ) :
-			echo wp_kses_post( $formatted_destination );
+			echo wp_kses( str_replace( '<br />', ', ', $formatted_destination ), [] );
 		endif;
 		?>
 	</div>
