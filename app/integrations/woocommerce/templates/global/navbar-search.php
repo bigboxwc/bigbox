@@ -35,14 +35,14 @@ $form_url = apply_filters( 'bigbox_navbar_search_form_url', wc_get_page_permalin
 	if ( $taxonomy ) :
 		$selected = isset( $_GET[ $taxonomy->name ] ) ? esc_attr( $_GET[ $taxonomy->name ] ) : null; // @codingStandardsIgnoreLine
 
-		// Translators: %s Header dropdown "All" label.
+		/* translators: %s Header dropdown "All" label. */
 		$all = esc_html( sprintf( __( 'All %s', 'bigbox' ), strtolower( $taxonomy->labels->name ) ) );
 	?>
 
 	<div id="navbar-search__category" class="navbar-search__category">
 		<label for="<?php echo esc_attr( $taxonomy->name ); ?>" class="screen-reader-text">
 			<?php
-			// Translators: %s Header dropdown taxonomy name.
+			/* translators: %s Header dropdown taxonomy name. */
 			echo esc_html( sprintf( __( 'Choose a %s', 'bigbox' ), strtolower( $taxonomy->labels->singular_name ) ) );
 			?>
 			:

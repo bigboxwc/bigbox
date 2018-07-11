@@ -378,18 +378,18 @@ function bigbox_add_to_cart() {
 function bigbox_woocommerce_product_tabs( $tabs ) {
 	add_filter(
 		'woocommerce_product_description_heading', function() {
-			return esc_html__( 'Product description', 'bigbox' );
+			return __( 'Product description', 'bigbox' );
 		}
 	);
 
 	add_filter(
 		'woocommerce_product_additional_information_heading', function() {
-			return esc_html__( 'Product information', 'bigbox' );
+			return __( 'Product information', 'bigbox' );
 		}
 	);
 
 	$tabs['upsells'] = [
-		'title'    => esc_html__( 'You may also enjoy', 'bigbox' ),
+		'title'    => __( 'You may also enjoy', 'bigbox' ),
 		'priority' => 20,
 		'callback' => 'woocommerce_upsell_display',
 	];
@@ -399,7 +399,7 @@ function bigbox_woocommerce_product_tabs( $tabs ) {
 	}
 
 	$tabs['related'] = [
-		'title'    => esc_html__( 'Related products', 'bigbox' ),
+		'title'    => __( 'Related products', 'bigbox' ),
 		'priority' => 40,
 		'callback' => 'woocommerce_output_related_products',
 	];
@@ -484,10 +484,10 @@ function bigbox_woocommerce_get_star_rating_html( $html, $rating, $count ) {
 	$half_stars  = ceil( $rating - floor( $rating ) );
 	$empty_stars = 5 - floor( $rating ) - ceil( $rating - floor( $rating ) );
 
-	// Translators: %1$s Rating value.
+	/* translators: %1$s Rating value. */
 	$title = __( '%1$s average rating', 'bigbox' );
 
-	// Translators: %1$s Number of ratings.
+	/* Translators: %1$s Number of ratings. */
 	$count_title = __( '%1$s customer ratings', 'bigbox' );
 
 	ob_start();
@@ -571,6 +571,25 @@ function bigbox_woocommerce_single_product_carousel_options( $args ) {
 	);
 
 	return $args;
+}
+
+/**
+ * Grouped product table column order.
+ *
+ * @since 1.0.0
+ *
+ * @param array $columns Table columns.
+ * @return array
+ */
+function bigbox_woocommerce_grouped_product_columns( $columns ) {
+	$columns = [
+		'label',
+		'quantity',
+		'price',
+	];
+
+	return $columns;
+
 }
 
 /**

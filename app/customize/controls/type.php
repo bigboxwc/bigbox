@@ -40,9 +40,9 @@ add_filter( 'bigbox_customize_controls_js', 'bigbox_customize_controls_js_fonts'
 function bigbox_customize_register_type_sections( $wp_customize ) {
 	$wp_customize->add_section(
 		'type', [
-			// Translators: Customizer section title.
-			'title'    => esc_html__( 'Typography', 'bigbox' ),
-			'priority' => 20,
+			/* translators: Customizer section title. */
+			'title' => __( 'Typography', 'bigbox' ),
+			'priority'  => 20,
 		]
 	);
 }
@@ -66,12 +66,12 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 
 	$wp_customize->add_control(
 		'type-font-family', [
-			// Translators: Customizer control label.
-			'label'   => esc_html__( 'Font Family', 'bigbox' ),
+			/* translators: Customizer control name. */
+			'label'   => __( 'Font Family', 'bigbox' ),
 			'type'    => 'select',
 			'choices' => [
-				// Translators: Customize control value.
-				'default' => esc_html__( 'System Default', 'bigbox' ),
+				/* translators: Customizer control value. */
+				'default' => __( 'System Default', 'bigbox' ),
 			],
 			'section' => 'type',
 		]
@@ -90,16 +90,16 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 			'active_callback' => '__return_false',
 			'type'            => 'select',
 			'choices'         => [
-				// Translators: Customize control value.
-				'serif'      => esc_html__( 'Serif', 'bigbox' ),
-				// Translators: Customize control value.
-				'sans-serif' => esc_html__( 'Sans Serif', 'bigbox' ),
-				// Translators: Customize control value.
-				'display'    => esc_html__( 'Display', 'bigbox' ),
-				// Translators: Customize control value.
-				'cursive'    => esc_html__( 'Handwriting', 'bigbox' ),
-				// Translators: Customize control value.
-				'monospace'  => esc_html__( 'Monospace', 'bigbox' ),
+				/* translators: Customizer control value. */
+				'serif'      => __( 'Serif', 'bigbox' ),
+				/* translators: Customizer control value. */
+				'sans-serif' => __( 'Sans Serif', 'bigbox' ),
+				/* translators: Customizer control value. */
+				'display'    => __( 'Display', 'bigbox' ),
+				/* translators: Customizer control value. */
+				'cursive'    => __( 'Handwriting', 'bigbox' ),
+				/* translators: Customizer control value. */
+				'monospace'  => __( 'Monospace', 'bigbox' ),
 			],
 			'section'         => 'type',
 		]
@@ -115,9 +115,9 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 
 	$wp_customize->add_control(
 		'type-font-size', [
-			// Translators: Customizer control label.
-			'label'       => esc_html__( 'Base Font Size', 'bigbox' ),
-			// Translators: Customizer control description.
+			/* translators: Customizer control label. */
+			'label'       => __( 'Base Font Size', 'bigbox' ),
+			/* translators: Customizer control description. */
 			'description' => wp_kses( __( 'Value is measured in <code>em</code>. 1em = 16px', 'bigbox' ), [ 'code' => [] ] ),
 			'type'        => 'number',
 			'input_atts'  => [
@@ -131,15 +131,15 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 
 	$weights = [
 		'base' => [
-			// Translators: Customizer control label.
-			'label'       => esc_html__( 'Base Font Weight', 'bigbox' ),
+			/* translators: Customizer control label. */
+			'label'       => __( 'Base Font Weight', 'bigbox' ),
 			'description' => '',
 			'weight'      => 'regular',
 		],
 		'bold' => [
-			// Translators: Customizer control label.
-			'label'       => esc_html__( 'Bold Font Weight', 'bigbox' ),
-			'description' => esc_html__( 'If no alternate weight is offered it will be faux-bolded by the web browser.', 'bigbox' ),
+			/* translators: Customizer control label. */
+			'label'       => __( 'Bold Font Weight', 'bigbox' ),
+			'description' => __( 'If no alternate weight is offered it will be faux-bolded by the web browser.', 'bigbox' ),
 			'weight'      => 700,
 		],
 	];

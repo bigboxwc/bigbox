@@ -35,3 +35,14 @@
 
 	@include button--size-block();
 }
+
+.button--text {
+	color: gray("700");
+	background: none;
+	border: 0;
+	padding: 0;
+
+	&:hover:after {
+		background: none;
+	}
+}

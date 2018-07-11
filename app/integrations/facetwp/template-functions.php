@@ -117,7 +117,7 @@ function bigbox_facetwp_result_count_output( $output, $params ) {
 	}
 
 	return sprintf(
-		// Translators: %1$s Lower count. %2$s Upper count. %3$s Total count.
+		/* translators: %1$s Lower count. %2$s Upper count. %3$s Total count. */
 		__( 'Showing %1$s&ndash;%2$s of %3$s results', 'bigbox' ),
 		$params['lower'],
 		$params['upper'],

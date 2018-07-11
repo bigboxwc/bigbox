@@ -84,8 +84,8 @@ function bigbox_woocommerce_dynamic_shop_page_template() {
  * @param array $page_templates The current list of templates.
  */
 function bigbox_woocommmerce_page_templates( $page_templates ) {
-	// Translators: Page template name.
-	$page_templates[ bigbox_woocommerce_dynamic_shop_page_template() ] = esc_html__( 'Shop', 'bigbox' );
+	/* translators: Page template name. */
+	$page_templates[ bigbox_woocommerce_dynamic_shop_page_template() ] = __( 'Shop', 'bigbox' );
 
 	return $page_templates;
 }
@@ -166,9 +166,9 @@ function bigbox_woocommerce_dynamic_shop_pages_create_sidebars() {
 			 */
 			apply_filters(
 				'bigbox_woocommerce_dynamic_shop_pages_widget_args', [
-					// Translators: %s: Dynamic widget area name.
+					/* translators: %s: Dynamic widget area name. */
 					'name'          => sprintf( __( 'Page: %s', 'bigbox' ), get_the_title( $page ) ),
-					// Translators: %s: Dynamic widget area descrption.
+					/* translators: %s: Dynamic widget area description. */
 					'description'   => sprintf( __( 'Widgets that appear on the "%s" page.', 'bigbox' ), get_the_title( $page ) ),
 					'id'            => 'page-' . $page,
 					'before_widget' => '<div id="%1$s" class="widget %2$s">',

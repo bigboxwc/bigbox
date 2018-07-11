@@ -1,3 +1,18 @@
+## [1.10.0]  - 2018-07-11
+
+### New
+
+- Improved cart and checkout Shipping + Totals UX.
+- Show product name first in Grouped Product table.
+- Add border to WooCommerce placeholder image.
+
+### Fix
+
+- Add missing text domain in license manager.
+- Remove unused file.
+- Avoid unnecessary double escaping.
+- Ensure theme remains active when PHP version is not met so message can be viewed.
+
 ## [1.9.0] - 2018-07-07
 
 ### New

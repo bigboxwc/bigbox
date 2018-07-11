@@ -82,6 +82,8 @@ return [
 			'.product-category-more__selector',
 			'.product-category-more__inner',
 			'.woocommerce-loop-category__title',
+			'.woocommerce-placeholder',
+			'.woocommerce-product-gallery__image--placeholder',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $rgba50 ),

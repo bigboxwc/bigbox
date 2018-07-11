@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php esc_html_e( 'Subtotal:', 'bigbox' ); ?>
 			</div>
 
-			<div class="action-list__item-value" aria-labelledby="subtotal">
+			<div class="action-list__item-value action-list__item-value--no-flex" aria-labelledby="subtotal">
 				<?php wc_cart_totals_subtotal_html(); ?>
 			</div>
 		</div>
@@ -63,7 +63,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php esc_html_e( 'Shipping:', 'bigbox' ); ?>
 			</div>
 			<div>
-				<a href="#" class="shipping-calculator-button"><?php echo esc_html__( 'Calculate shipping', 'bigbox' ); ?></a>
+				<a href="#" class="shipping-calculator-button"><?php esc_html_e( 'Calculate shipping', 'bigbox' ); ?></a>
 			</div>
 		</div>
 
@@ -86,7 +86,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		if ( wc_tax_enabled() && ! WC()->cart->display_prices_including_tax() ) :
 			$taxable_address = WC()->customer->get_taxable_address();
 			$estimated_text  = WC()->customer->is_customer_outside_base() && ! WC()->customer->has_calculated_shipping()
-					// Translators: %s Shipping estimate location.
+					/* translators: %s Shipping estimate location. */
 					? wp_kses_post( sprintf( ' <small>' . __( 'est. for %s', 'bigbox' ) . '</small>', WC()->countries->estimated_for_prefix( $taxable_address[0] ) . WC()->countries->countries[ $taxable_address[0] ] ) )
 					: '';
 
@@ -124,7 +124,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div id="total" class="order-total action-list__item-label">
 				<?php esc_html_e( 'Total:', 'bigbox' ); ?>
 			</div>
-			<div class="action-list__item-value" labelledby="total">
+			<div class="action-list__item-value action-list__item-value--no-flex" labelledby="total">
 				<?php wc_cart_totals_order_total_html(); ?>
 			</div>
 		</div>

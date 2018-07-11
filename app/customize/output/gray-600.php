@@ -17,6 +17,7 @@ return [
 		'selectors'    => [
 			'.product__stock',
 			'.wc_payment_method .payment_box p',
+			'.woocommerce-products-header .term-description',
 		],
 		'declarations' => [
 			'color' => esc_attr( $gray600 ),

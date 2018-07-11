@@ -5,6 +5,7 @@
 
 	<description>PHP_CodeSniffer ruleset.</description>
 	
+	<file>functions.php</file>
 	<file>./app</file>
 	<file>./resources/views/</file>
 

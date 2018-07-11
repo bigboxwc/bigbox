@@ -31,13 +31,13 @@ function bigbox_woocommerce_customize_register_store_notice_controls( $wp_custom
 
 	$wp_customize->add_control(
 		'demo-store-notice-position', [
-			// Translators: Customizer control label.
-			'label'    => esc_html__( 'Position', 'bigbox' ),
+			/* translators: Customizer control label. */
+			'label'    => __( 'Position', 'bigbox' ),
 			'type'     => 'select',
 			'choices'  => [
-				// Translators: Customizer control value.
+				/* translators: Customizer control value. */
 				'top'    => __( 'Top', 'bigbox' ),
-				// Translators: Customizer control value.
+				/* translators: Customizer control value. */
 				'bottom' => __( 'Bottom', 'bigbox' ),
 			],
 			'section'  => 'woocommerce_store_notice',
@@ -59,8 +59,8 @@ function bigbox_woocommerce_customize_register_store_notice_controls( $wp_custom
 			$wp_customize,
 			'demo-store-notice-color',
 			[
-				// Tranlators: Customizer control label.
-				'label'    => esc_html__( 'Text Color', 'bigbox' ),
+				/* translators: Customizer control label. */
+				'label'    => __( 'Text Color', 'bigbox' ),
 				'section'  => 'woocommerce_store_notice',
 				'priority' => 30,
 			]
@@ -80,8 +80,8 @@ function bigbox_woocommerce_customize_register_store_notice_controls( $wp_custom
 			$wp_customize,
 			'demo-store-notice-color-background',
 			[
-				// Tranlators: Customizer control label.
-				'label'    => esc_html__( 'Background Color', 'bigbox' ),
+				/* translators: Customizer control label. */
+				'label'    => __( 'Background Color', 'bigbox' ),
 				'section'  => 'woocommerce_store_notice',
 				'priority' => 40,
 			]

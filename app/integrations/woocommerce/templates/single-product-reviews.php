@@ -33,7 +33,7 @@ endif;
 		<div id="comments">
 			<h2 class="woocommerce-Reviews-title">
 			<?php
-			// Translators: %d Review count.
+			/* translators: %d Review count. */
 			echo esc_html( sprintf( _n( '%d customer review', '%d customer reviews', $product->get_review_count(), 'bigbox' ), $product->get_review_count() ) );
 			?>
 			</h2>
@@ -75,9 +75,9 @@ endif;
 					$commenter = wp_get_current_commenter();
 
 					$comment_form = [
-						'title_reply'         => esc_html__( 'Write a customer review', 'bigbox' ),
-						// Translators: %s Product title.
-						'title_reply_to'      => esc_html__( 'Write a customer review for %s', 'bigbox' ),
+						'title_reply'         => __( 'Write a customer review', 'bigbox' ),
+						/* translators: %s Product title. */
+						'title_reply_to'      => __( 'Write a customer review for %s', 'bigbox' ),
 						'title_reply_before'  => '<h2 id="reply-title" class="comment-reply-title">',
 						'title_reply_after'   => '</h2>',
 						'comment_notes_after' => '',
@@ -95,7 +95,7 @@ endif;
 					$account_page_url = wc_get_page_permalink( 'myaccount' );
 
 					if ( $account_page_url ) {
-						// Translators: %s Account page URL.
+						/* translators: %s Account page URL. */
 						$comment_form['must_log_in'] = '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a review.', 'bigbox' ), esc_url( $account_page_url ) ) . '</p>';
 					}
 

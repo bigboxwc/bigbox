@@ -20,10 +20,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function bigbox_register_nav_menus() {
 	$navs = [
-		// Translators: Navigation menu name.
-		'primary'   => esc_html__( 'Primary', 'bigbox' ),
-		// Translators: Navigation menu name.
-		'secondary' => esc_html__( 'Secondary', 'bigbox' ),
+		/* translators: Navigation menu name. */
+		'primary'   => __( 'Primary', 'bigbox' ),
+		/* translators: Navigation menu name. */
+		'secondary' => __( 'Secondary', 'bigbox' ),
 	];
 
 	/**

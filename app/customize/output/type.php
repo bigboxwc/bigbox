@@ -9,14 +9,18 @@
  * @author Spencer Finnell
  */
 
-$family      = bigbox_get_theme_font_family();
-$weight_base = bigbox_get_theme_font_weight( 'base' );
-$size        = get_theme_mod( 'type-font-size', 1 );
+$family = bigbox_get_theme_font_family();
+$size   = get_theme_mod( 'type-font-size', 1 );
 
+$weight_base = bigbox_get_theme_font_weight( 'base' );
 $weight_bold = bigbox_get_theme_font_weight( 'bold' );
 
+if ( 'regular' === $weight_base ) {
+	$weight_base = 'normal';
+}
+
 // Force a browser-rendered bold weight.
-if ( 'regular' == $weight_bold ) {
+if ( 'regular' === $weight_bold ) {
 	$weight_bold = 'bold';
 }
 

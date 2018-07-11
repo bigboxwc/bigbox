@@ -15,7 +15,6 @@ return [
 	// Solid color.
 	[
 		'selectors'    => [
-			'.woocommerce-products-header .term-description',
 			'.star-rating__count',
 			'.woocommerce-review-link',
 			'.coupons-next',

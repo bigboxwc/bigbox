@@ -27,12 +27,12 @@ function bigbox_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
 	// Update title of Tagline.
-	// Translators: Customizer control label.
-	$wp_customize->get_control( 'blogdescription' )->description = esc_html__( 'Not output but used for SEO', 'bigbox' );
+	/* translators: Customizer control label. */
+	$wp_customize->get_control( 'blogdescription' )->description = __( 'Not output but used for SEO', 'bigbox' );
 
 	// Update label of Header Text
-	// Translators: Customizer control label.
-	$wp_customize->get_control( 'header_text' )->label = esc_html__( 'Display Site Title', 'bigbox' );
+	/* translators: Customizer control label. */
+	$wp_customize->get_control( 'header_text' )->label = __( 'Display Site Title', 'bigbox' );
 
 	// Move background color.
 	$wp_customize->get_control( 'background_color' )->section = 'colors-elements';

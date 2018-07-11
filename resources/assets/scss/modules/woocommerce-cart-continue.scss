@@ -1,22 +1,24 @@
-.cart_totals {
+.cart_totals .shipping-methods {
 
-	#shipping_method {
+	@include reset-list();
 
-		@include reset-list();
-
-		font-size: $font-size-sm;
-		margin: 0 0 $spacer $spacer;
-
-		li {
-			display: flex;
-			align-items: center;
-			margin: 0 0 ($spacer / 2);
-		}
-
-		label {
-			margin: 0 0 0 5px;
-		}
+	li {
+		display: flex;
+		align-items: center;
+		margin: 0 0 ($spacer / 2);
 	}
+
+	label {
+		margin: 0 0 0 5px;
+	}
+}
+
+.woocommerce-shipping-note,
+.cart_totals .shipping-methods {
+	font-size: $font-size-sm;
+	margin: $spacer 0;
+	padding-left: $spacer;
+	border-left: 1px dashed gray("400");
 }
 
 .shipping-calculator-button {
@@ -47,15 +49,15 @@
 
 }
 
-.shipping-note {
-	margin-bottom: $spacer;
-	padding-left: $spacer;
-	font-size: $font-size-sm;
-	border-left: 1px dashed gray("400");
+.woocommerce-shipping-address,
+.woocommerce-shipping-destination,
+.woocommerce-shipping-contents {
+	font-size: $font-size-xs;
+}
 
-	p {
-		margin: 0;
-	}
+.woocommerce-shipping-address {
+	margin-left: ($spacer * 2);
+	line-height: 1.5;
 }
 
 .coupons-next {

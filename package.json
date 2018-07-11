@@ -2,8 +2,8 @@
 	"name": "bigbox",
 	"title": "BigBox",
 	"author": "Spencer Finnell",
-	"description": "WooCommerce theme for large stores.",
-	"version": "1.9.0",
+	"description": "Easily manage and scale WooCommerce product catalogs.",
+	"version": "1.10.0",
 	"license": "GPL-2.0-or-later",
 	"main": "webpack.config.js",
 	"engines": {

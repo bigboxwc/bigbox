@@ -28,6 +28,7 @@ return [
 			'.navbar-menu--secondary .sub-menu a',
 			'.breadcrumbs a',
 			'.woocommerce-breadcrumb a',
+			'.button--text',
 
 			// select2.
 			'.select2-container--default .select2-results__option[aria-selected=true]',

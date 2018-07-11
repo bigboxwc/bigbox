@@ -60,6 +60,11 @@
 
 	.action-list__item {
 		margin-bottom: 0;
+		justify-content: flex-start;
+	}
+
+	.action-list__item-label {
+		flex: 0;
 	}
 }
 

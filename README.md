@@ -1,11 +1,11 @@
 # BigBox
 
-WooCommerce theme for large product catalogs.
+Easily manage and scale WooCommerce product catalogs.
 
 ## Install
 
 ```
-$ git clone git@github.com:spencerfinnell/bigbox-theme bigbox && cd bigbox
+$ git clone git@github.com:bigboxwc/bigbox-theme bigbox && cd bigbox
 $ npm run setup-theme
 ```
 
