@@ -1,0 +1,9 @@
+.mailchimp-newsletter {
+
+	@include vertical-spacing("margin");
+
+	.woocommerce-form__label-for-checkbox {
+		display: inline;
+		margin: 0;
+	}
+}
