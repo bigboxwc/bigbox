@@ -47,6 +47,10 @@
 	align-items: center;
 	text-align: right;
 
+	&--no-flex {
+		display: inline-block;
+	}
+
 	select {
 		width: 100%;
 		min-width: 50px;

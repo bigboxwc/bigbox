@@ -27,6 +27,7 @@ $has_calculated_shipping  = ! empty( $has_calculated_shipping );
 $show_shipping_calculator = ! empty( $show_shipping_calculator );
 $calculator_text          = __( '(update address)', 'bigbox' );
 $note                     = false;
+$chosen_method_object     = false;
 ?>
 
 <div class="action-list__item">
@@ -36,7 +37,7 @@ $note                     = false;
 	<div class="action-list__item-value woocommerce-shipping-address">
 		<?php
 		if ( $formatted_destination ) :
-			echo esc_html( $formatted_destination );
+			echo wp_kses_post( $formatted_destination );
 		endif;
 		?>
 	</div>
@@ -56,6 +57,11 @@ $note                     = false;
 						checked( $method->id, $chosen_method, false ),
 						wc_cart_totals_shipping_method_label( $method ) // @codingStandardsIgnoreLine
 					);
+
+					// Track chosen method to display price later.
+					if ( $method->id === $chosen_method ) :
+						$chosen_method_object = $method;
+					endif;
 
 					do_action( 'woocommerce_after_shipping_rate', $method, $index );
 				?>
@@ -101,3 +107,17 @@ endif;
 if ( $show_shipping_calculator ) :
 	woocommerce_shipping_calculator( $calculator_text );
 endif;
+?>
+
+<?php if ( $chosen_method_object ) : ?>
+
+<div class="action-list__item">
+	<div class="action-list__item-label">
+		<?php esc_html_e( 'Shipping:', 'bigbox' ); ?>
+	</div>
+	<div class="action-list__item-value action-list__item-value--no-flex">
+		<?php echo wp_kses_post( bigbox_woocommerce_cart_shipping_method_price( $chosen_method_object ) ); ?>
+	</div>
+</div>
+
+<?php endif; ?>

@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php esc_html_e( 'Subtotal:', 'bigbox' ); ?>
 			</div>
 
-			<div class="action-list__item-value" aria-labelledby="subtotal">
+			<div class="action-list__item-value action-list__item-value--no-flex" aria-labelledby="subtotal">
 				<?php wc_cart_totals_subtotal_html(); ?>
 			</div>
 		</div>
@@ -124,7 +124,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div id="total" class="order-total action-list__item-label">
 				<?php esc_html_e( 'Total:', 'bigbox' ); ?>
 			</div>
-			<div class="action-list__item-value" labelledby="total">
+			<div class="action-list__item-value action-list__item-value--no-flex" labelledby="total">
 				<?php wc_cart_totals_order_total_html(); ?>
 			</div>
 		</div>

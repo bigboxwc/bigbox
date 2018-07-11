@@ -27,8 +27,16 @@ function bigbox_woocommerce_cart_shipping_method_price( $method ) {
 	if ( $method->cost >= 0 && $method->get_method_id() !== 'free_shipping' ) {
 		if ( WC()->cart->display_prices_including_tax() ) {
 			$price = wc_price( $method->cost + $method->get_shipping_tax() );
+
+			if ( $method->get_shipping_tax() > 0 && wc_prices_include_tax() ) {
+				$price .= ' <small class="tax_label">' . WC()->countries->inc_tax_or_vat() . '</small>';
+			}
 		} else {
 			$price = wc_price( $method->cost );
+
+			if ( $method->get_shipping_tax() > 0 && ! wc_prices_include_tax() ) {
+				$price .= ' <small class="tax_label">' . WC()->countries->ex_tax_or_vat() . '</small>';
+			}
 		}
 	}
 
@@ -45,13 +53,7 @@ function bigbox_woocommerce_cart_shipping_method_price( $method ) {
  * @return string
  */
 function bigbox_woocommerce_cart_shipping_method_full_label( $label, $method ) {
-	$label = $method->get_label() . ':';
-
-	if ( $method->get_method_id() !== 'free_shipping' ) {
-		$label .= ' <small class="tax_label">' . WC()->countries->ex_tax_or_vat() . '</small>';
-	}
-
-	return $label;
+	return $method->get_label();
 }
 add_filter( 'woocommerce_cart_shipping_method_full_label', 'bigbox_woocommerce_cart_shipping_method_full_label', 5, 2 );
 
