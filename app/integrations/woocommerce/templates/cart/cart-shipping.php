@@ -26,6 +26,7 @@ $formatted_destination    = isset( $formatted_destination ) ? $formatted_destina
 $has_calculated_shipping  = ! empty( $has_calculated_shipping );
 $show_shipping_calculator = ! empty( $show_shipping_calculator );
 $calculator_text          = __( '(update address)', 'bigbox' );
+$note                     = false;
 ?>
 
 <div class="action-list__item">
@@ -69,19 +70,28 @@ $calculator_text          = __( '(update address)', 'bigbox' );
 	</ul>
 
 <?php
-elseif ( ! $has_calculated_shipping || ! $formatted_destination ) :
-	echo '<p class="woocommerce-shipping-note">' . esc_html__( 'Enter your address to view shipping options.', 'bigbox' ) . '</p>';
+elseif ( ! $formatted_destination && $available_methods ) :
+	$note = __( 'Enter your address to view shipping options.', 'bigbox' );
 elseif ( ! is_cart() ) :
-	echo '<p class="woocommerce-shipping-note">';
-	echo wp_kses_post( apply_filters( 'woocommerce_no_shipping_available_html', __( 'There are no shipping methods available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'bigbox' ) ) );
-	echo '</p>';
+	$note = apply_filters( 'woocommerce_no_shipping_available_html', __( 'There are no shipping methods available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'bigbox' ) );
 else :
-	echo '<p class="woocommerce-shipping-note">';
 	/* translators: %s shipping destination. */
-	echo wp_kses_post( apply_filters( 'woocommerce_cart_no_shipping_available_html', sprintf( esc_html__( 'No shipping options were found for %s.', 'bigbox' ) . ' ', '<strong>' . esc_html( $formatted_destination ) . '</strong>' ) ) );
-	echo '</p>';
+	$note= apply_filters( 'woocommerce_cart_no_shipping_available_html', sprintf( esc_html__( 'No shipping options were found for %s.', 'bigbox' ) . ' ', '<strong>' . esc_html( $formatted_destination ) . '</strong>' ) );
+endif;
 
-	$calculator_text = __( 'Enter a different address', 'bigbox' );
+// Show note.
+if ( $note ) :
+?>
+
+<p class="woocommerce-shipping-note">
+	<?php echo wp_kses_post( $note ); ?>
+
+	<?php if ( $show_shipping_calculator ) : ?>
+	<button class="shipping-calculator-button button--text"><?php echo esc_html( $calculator_text ); ?></button>
+	<?php endif; ?>
+</p>
+
+<?php
 endif;
 
 if ( $show_package_details ) :
