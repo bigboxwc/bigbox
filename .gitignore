@@ -7,3 +7,4 @@ public
 vendor
 resources/languages/*.pot
 resources/data/*.json
+bigbox
