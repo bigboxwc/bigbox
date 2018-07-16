@@ -455,7 +455,7 @@ function bigbox_woocommerce_product_additional_information() {
 ?>
 
 	<p class="sku_wrapper">
-		<?php esc_html_e( 'SKU:', 'bigbox' ); ?>
+		<strong><?php esc_html_e( 'SKU:', 'bigbox' ); ?></strong>
 		<span class="sku"><?php echo esc_html( ( $product->get_sku() ) ? $product->get_sku() : __( 'N/A', 'bigbox' ) ); ?></span>
 	</p>
 
@@ -463,9 +463,9 @@ function bigbox_woocommerce_product_additional_information() {
 	endif;
 
 	// @codingStandardsIgnoreStart
-	echo wc_get_product_category_list( $product->get_id(), ', ', '<p class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'bigbox' ) . ' ', '</p>' );
+	echo wc_get_product_category_list( $product->get_id(), ', ', '<p class="posted_in"><strong>' . esc_html( _n( 'Category:', 'Categories:', count( $product->get_category_ids() ) ), 'bigbox' ) . '</strong> ', '</p>' );
 
-	echo wc_get_product_tag_list( $product->get_id(), ', ', '<p class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'bigbox' ) . ' ', '</p>' );
+	echo wc_get_product_tag_list( $product->get_id(), ', ', '<p class="tagged_as"><strong>' . esc_html( _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ) ), 'bigbox' ) . '</strong> ', '</p>' );
 	// @codingStandardsIgnoreEnd
 }
 
