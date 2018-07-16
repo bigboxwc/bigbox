@@ -306,6 +306,9 @@ function bigbox_woocommerce_product_subcategories_args( $args ) {
  */
 function bigbox_woocommerce_template_loop_variations() {
 	global $product;
+	if ( ! $product->is_in_stock() ) {
+		 return;
+	}
 
 	if ( 'variable' !== $product->get_type() ) {
 		return;
