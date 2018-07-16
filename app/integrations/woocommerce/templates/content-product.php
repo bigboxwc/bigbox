@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-global $product;
+$product = wc_get_product( get_the_ID() );
 
 // Ensure visibility.
 if ( empty( $product ) || ! $product->is_visible() ) {

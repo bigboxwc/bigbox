@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-global $product;
+$product = wc_get_product( get_the_ID() );
 
 $price_html = $product->get_price_html()
 ?>

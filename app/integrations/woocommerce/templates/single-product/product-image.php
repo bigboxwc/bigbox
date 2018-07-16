@@ -23,7 +23,7 @@ if ( ! function_exists( 'wc_get_gallery_image_html' ) ) :
 	return;
 endif;
 
-global $product;
+$product = wc_get_product( get_the_ID() );
 
 if ( ! bigbox_woocommerce_has_product_image( $product ) ) :
 	return;

@@ -17,7 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-global $product;
+$product = wc_get_product( get_the_ID() );
 
 $attribute_keys = array_keys( $attributes );
 

@@ -20,7 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-global $post, $product;
+global $post;
+
+$product = wc_get_product( get_the_ID() );
 
 if ( $product->is_on_sale() ) :
 	if ( 'simple' === $product->get_type() ) :

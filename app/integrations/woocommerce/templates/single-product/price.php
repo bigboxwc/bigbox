@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // @codingStandardsIgnoreFile
 
-global $product;
+$product = wc_get_product( get_the_ID() );
 
 if ( $price_html = $product->get_price_html() ) :
 ?>
