@@ -36,22 +36,24 @@ add_filter(
  * @param array $classes Body classes.
  * @return array
  */
-add_filter( 'body_class', function( $classes ) {
-	/**
+add_filter(
+	'body_class', function( $classes ) {
+		/**
 	 * Filters if the styles should use rounded corners.
 	 *
 	 * @since 1.11.0
 	 *
 	 * @param bool
 	 */
-	$rounded = apply_filters(
-		'bigbox_is_rounded', true
-	);
+		$rounded = apply_filters(
+			'bigbox_is_rounded', true
+		);
 
-	$classes[] = $rounded ? 'is-rounded' : null;
+		$classes[] = $rounded ? 'is-rounded' : null;
 
-	return $classes;
-} );
+		return $classes;
+	}
+);
 
 /**
  * Add rounded corners to admin body by default.
