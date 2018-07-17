@@ -36,12 +36,21 @@ add_filter(
  * @param array $classes Body classes.
  * @return array
  */
-add_filter(
-	'body_class', function( $classes ) {
-		$classes[] = 'is-rounded';
+add_filter( 'body_class', function( $classes ) {
+	/**
+	 * Filters if the styles should use rounded corners.
+	 *
+	 * @since 1.11.0
+	 *
+	 * @param bool
+	 */
+	$rounded = apply_filters(
+		'bigbox_is_rounded', true
+	);
 
-		return $classes;
-	}
+	$classes[] = $rounded ? 'is-rounded': null;
+
+	return $classes;
 );
 
 /**
