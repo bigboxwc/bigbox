@@ -33,7 +33,7 @@ final class Integrations implements Registerable, Service {
 	 * @throws Exception\InvalidService If a integration is not valid.
 	 */
 	public function register() {
-		add_action( 'after_setup_theme', [ $this, 'register_integrations' ], 5 );
+		add_action( 'after_setup_theme', [ $this, 'register_integrations' ] );
 	}
 
 	/**

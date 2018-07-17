@@ -30,8 +30,8 @@ final class Theme implements Registerable {
 	 * @throws Exception\InvalidService If a service is not valid.
 	 */
 	public function register() {
-		add_action( 'after_setup_theme', [ $this, 'load_helpers' ], 0 );
-		add_action( 'after_setup_theme', [ $this, 'register_services' ], 0 );
+		add_action( 'after_setup_theme', [ $this, 'load_helpers' ], 5 );
+		add_action( 'after_setup_theme', [ $this, 'register_services' ], 5 );
 	}
 
 	/**
