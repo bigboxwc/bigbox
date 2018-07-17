@@ -28,7 +28,14 @@ $price_html = $product->get_price_html()
 <?php if ( $price_html ) : ?>
 
 <div class="product__meta product__meta--price">
-	<?php woocommerce_show_product_loop_sale_flash(); ?>
+	<?php
+	/**
+	 * Allow content to be output before the price. By default it is the sale flash.
+	 *
+	 * @since 1.11.0
+	 */
+	do_action( 'bigbox_woocommerce_loop_product_price_before' )
+	?>
 
 	<span class="price">
 		<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>">
