@@ -59,8 +59,8 @@ $chosen_method_object     = false;
 					);
 
 					// Track chosen method to display price later.
-					if ( $method->id === $chosen_method ) :
-						$chosen_method_object = $method;
+				if ( $method->id === $chosen_method ) :
+					$chosen_method_object = $method;
 					endif;
 
 					do_action( 'woocommerce_after_shipping_rate', $method, $index );
@@ -82,7 +82,7 @@ elseif ( ! is_cart() ) :
 	$note = apply_filters( 'woocommerce_no_shipping_available_html', __( 'There are no shipping methods available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'bigbox' ) );
 else :
 	/* translators: %s shipping destination. */
-	$note= apply_filters( 'woocommerce_cart_no_shipping_available_html', sprintf( esc_html__( 'No shipping options were found for %s.', 'bigbox' ) . ' ', '<strong>' . esc_html( $formatted_destination ) . '</strong>' ) );
+	$note = apply_filters( 'woocommerce_cart_no_shipping_available_html', sprintf( esc_html__( 'No shipping options were found for %s.', 'bigbox' ) . ' ', '<strong>' . esc_html( $formatted_destination ) . '</strong>' ) );
 endif;
 
 // Show note.

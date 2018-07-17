@@ -41,8 +41,8 @@ function bigbox_customize_register_type_sections( $wp_customize ) {
 	$wp_customize->add_section(
 		'type', [
 			/* translators: Customizer section title. */
-			'title' => __( 'Typography', 'bigbox' ),
-			'priority'  => 20,
+			'title'    => __( 'Typography', 'bigbox' ),
+			'priority' => 20,
 		]
 	);
 }
