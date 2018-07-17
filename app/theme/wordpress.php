@@ -48,10 +48,10 @@ add_filter( 'body_class', function( $classes ) {
 		'bigbox_is_rounded', true
 	);
 
-	$classes[] = $rounded ? 'is-rounded': null;
+	$classes[] = $rounded ? 'is-rounded' : null;
 
 	return $classes;
-);
+} );
 
 /**
  * Add rounded corners to admin body by default.
