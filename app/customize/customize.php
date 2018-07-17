@@ -49,6 +49,15 @@ function bigbox_customize_inline_css() {
 
 		$config = include $file;
 
+		/**
+		 * Filter the inline CSS configuration for each control.
+		 *
+		 * @since 1.11.0
+		 *
+		 * @param array $data CSS configuration data.
+		 */
+		$config = apply_filters( 'bigbox_customize_inline_css_' . $key, $config );
+
 		foreach ( $config as $data ) {
 			$css->add( $data );
 		}

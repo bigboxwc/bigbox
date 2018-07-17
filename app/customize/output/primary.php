@@ -14,7 +14,7 @@ $rgba20  = bigbox_hex_to_rgba( $primary, 0.20 );
 
 return [
 	// Solid color.
-	[
+	'color' => [
 		'selectors'    => [
 			'a:hover',
 			'.navbar-menu--primary .sub-menu a:hover',
@@ -34,8 +34,9 @@ return [
 			'color' => esc_attr( $primary ),
 		],
 	],
+
 	// Solid background-color.
-	[
+	'background-color' => [
 		'selectors'    => [
 			'.navbar',
 			'.select2-container--default .select2-results__option--highlighted[data-selected]',
@@ -55,13 +56,23 @@ return [
 			'.flatpickr-calendar .flatpickr-day.selected.inRange',
 			'.flatpickr-calendar .flatpickr-day.startRange.inRange',
 			'.flatpickr-calendar .flatpickr-day.endRange.inRange',
+
+			// @button mixin
+			'.button',
+			'button',
+			'.woocommerce-form-coupon [name="apply_coupon"]',
+			'.comment-form [type="submit"]',
+			'.woocommerce-column--billing-address .edit',
+			'.woocommerce-column--shipping-address .edit',
+			'.woocommerce-Addresses .edit',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $primary ),
 		],
 	],
+
 	// Solid fill.
-	[
+	'fill' => [
 		'selectors'    => [
 			'a:hover .bigbox-icon',
 			'.navbar-search__submit svg',
@@ -70,8 +81,9 @@ return [
 			'fill' => esc_attr( $primary ),
 		],
 	],
+
 	// Solid border-color.
-	[
+	'border-color' => [
 		'selectors'    => [
 			'.widget_price_filter .ui-slider .ui-slider-handle',
 			'.facetwp-facet.facetwp-type-slider .facetwp-slider .noUi-handle',
@@ -90,29 +102,14 @@ return [
 			'border-color' => esc_attr( $primary ),
 		],
 	],
+
 	// Solid outline-color.
-	[
+	'outline-color' => [
 		'selectors'    => [
 			':focus',
 		],
 		'declarations' => [
 			'outline-color' => esc_attr( $primary ),
-		],
-	],
-
-	// @mixin button.
-	[
-		'selectors'    => [
-			'.button',
-			'button',
-			'.woocommerce-form-coupon [name="apply_coupon"]',
-			'.comment-form [type="submit"]',
-			'.woocommerce-column--billing-address .edit',
-			'.woocommerce-column--shipping-address .edit',
-			'.woocommerce-Addresses .edit',
-		],
-		'declarations' => [
-			'background-color' => esc_attr( $primary ),
 		],
 	],
 ];
