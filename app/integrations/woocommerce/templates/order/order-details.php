@@ -78,7 +78,7 @@ $show_downloads        = $order->has_downloadable_item() && $order->is_download_
 					<?php foreach ( $order->get_order_item_totals() as $key => $total ) : ?>
 						<tr>
 							<th scope="row"><?php echo esc_html( $total['label'] ); ?></th>
-							<td><?php echo esc_html( $total['value'] ); ?></td>
+							<td><?php echo wp_kses_post( $total['value'] ); ?></td>
 						</tr>
 					<?php endforeach; ?>
 
