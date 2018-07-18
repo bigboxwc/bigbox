@@ -20,13 +20,6 @@
 }
 
 .woocommerce-shipping-package + .woocommerce-shipping-package {
-	margin-bottom: $spacer;
-	padding-top: $spacer;
-	border: 1px solid gray("200");
-	border-width: 1px 0;
-}
-
-.woocommerce-shipping-package--of-multiple[data-index="0"] {
 	padding-top: $spacer;
 	border-top: 1px solid gray("200");
 }

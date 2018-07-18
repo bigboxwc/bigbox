@@ -29,7 +29,7 @@ $show_shipping_calculator = ! empty( $show_shipping_calculator );
 $calculator_text          = __( 'Update Shipping Address', 'bigbox' );
 
 // Generate a label for the shipping package.
-$package_label = __( 'Shipping Method:', 'bigbox' );
+$package_label = __( 'Shipping:', 'bigbox' );
 
 if ( $show_package_details ) :
 	$package_label = sprintf( __( 'Shipment #%s:', 'bigbox' ), $index + 1 );
@@ -42,7 +42,7 @@ endif;
 	// Show shipping calcualtor first if there are multiple methods available with multiple packages.
 	if ( $show_shipping_calculator && $multiple_methods && $show_package_details ) :
 	?>
-		<p class="woocommerce-shipping-calculator-toggle">
+		<p class="woocommerce-shipping-calculator-toggle woocommerce-shipping-calculator-toggle--mini">
 			<button class="shipping-calculator-button button--text"><?php echo esc_html( $calculator_text ); ?></button>
 		</p>
 
@@ -143,7 +143,7 @@ endif;
 	<div class="action-list__item">
 		<div class="action-list__item-label">
 			<?php
-			if ( ! $show_package_details ) :
+			if ( ! $multiple_methods ) :
 				esc_html_e( 'Shipping:', 'bigbox' );
 			endif;
 			?>
