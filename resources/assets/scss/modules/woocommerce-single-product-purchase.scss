@@ -17,10 +17,7 @@
 
 	&:not(.woocommerce-purchase-form--grouped) {
 
-		@include card;
-
 		max-width: 400px;
-		padding: $spacer;
 	}
 
 	.stock {

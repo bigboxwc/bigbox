@@ -13,9 +13,8 @@ form.woocommerce-checkout {
 );
 
 .woocommerce-checkout-review-order {
-	padding: $spacer;
 
-	@include card;
+	@include card();
 }
 
 #place_order {
@@ -79,7 +78,10 @@ form.woocommerce-checkout {
 
 	[type="radio"]:checked + label[for^="payment_method"] {
 
-		@include card--primary;
+		@include card();
+		@include card--primary();
+
+		padding: 0;
 
 		&::before {
 			width: 7px;
@@ -98,13 +100,14 @@ form.woocommerce-checkout {
 		color: gray("500");
 		width: 100%;
 		margin: 0;
-		padding: $spacer $spacer $spacer ($spacer * 2.5) !important;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		position: relative;
 
-		@include card;
+		@include card();
+
+		padding: $spacer $spacer $spacer ($spacer * 2.5) !important;
 
 		&::before {
 			content: "";

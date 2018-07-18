@@ -28,10 +28,11 @@
 }
 
 .woocommerce-view-order-status {
-	padding: ($spacer / 2) $spacer;
 
 	@include card();
 	@include vertical-spacing("margin", "down");
+
+	padding: ($spacer / 2) $spacer;
 }
 
 .woocommerce-OrderUpdates {
