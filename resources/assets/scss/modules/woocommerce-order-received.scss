@@ -35,6 +35,28 @@
 	padding: ($spacer / 2) $spacer;
 }
 
+.order-status {
+
+	&--completed {
+		color: theme-color("success");
+	}
+
+	&--pending,
+	&--processing {
+		color: theme-color("information");
+	}
+
+	&--refunded,
+	&--on-hold {
+		color: theme-color("warning");
+	}
+
+	&--failed,
+	&--cancelled {
+		color: theme-color("danger");
+	}
+}
+
 .woocommerce-OrderUpdates {
 
 	@include reset-list();

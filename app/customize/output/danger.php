@@ -20,6 +20,8 @@ return [
 		'selectors'    => [
 			'.woocommerce-purchase-form .outofstock',
 			'label .required',
+			'.order-status--failed',
+			'.order-status--cancelled',
 		],
 		'declarations' => [
 			'color' => esc_attr( $danger ),

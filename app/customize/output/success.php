@@ -40,6 +40,7 @@ return [
 		'selectors'    => [
 			'.woocommerce-purchase-form p.instock',
 			'.wc-saved-payment-methods input:checked + label',
+			'.order-status--completed',
 		],
 		'declarations' => [
 			'color' => esc_attr( $success ),

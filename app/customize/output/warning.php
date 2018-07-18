@@ -22,11 +22,12 @@ return [
 			'background-color' => esc_attr( $warning ),
 		],
 	],
-
 	// Solid color.
 	[
 		'selectors'    => [
 			'.woocommerce-remove-coupon',
+			'.order-status--on-hold',
+			'.order-status--refunded',
 		],
 		'declarations' => [
 			'color' => esc_attr( $warning ),
