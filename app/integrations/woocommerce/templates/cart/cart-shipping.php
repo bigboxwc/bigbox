@@ -26,7 +26,7 @@ $multiple_methods     = count( $available_methods ) > 1;
 
 // Shipping calculator.
 $show_shipping_calculator = ! empty( $show_shipping_calculator );
-$calculator_text          = __( 'Update Shipping Address', 'bigbox' );
+$calculator_text          = __( 'Update Shipping Location', 'bigbox' );
 
 // Generate a label for the shipping package.
 $package_label = __( 'Shipping:', 'bigbox' );
@@ -168,10 +168,10 @@ endif;
 	if ( $show_shipping_calculator && ! $multiple_methods && ! $show_package_details ) :
 	?>
 		<p class="woocommerce-shipping-calculator-toggle woocommerce-shipping-calculator-toggle--mini">
-			<button class="shipping-calculator-button button--text"><?php echo esc_html_e( '(update address)', 'bigbox' ); ?></button>
+			<button class="shipping-calculator-button button--text"><?php echo esc_html_e( '(update location)', 'bigbox' ); ?></button>
 		</p>
 
-		<?php woocommerce_shipping_calculator( __( '(update address)', 'bigbox' ) ); ?>
+		<?php woocommerce_shipping_calculator( __( '(update location)', 'bigbox' ) ); ?>
 	<?php endif; ?>
 
 </div>
