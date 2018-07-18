@@ -19,8 +19,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
 ?>
+
 <div id="bigbox-cart-totals" class="cart_totals <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
@@ -37,17 +37,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		</div>
 
-		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
-			<div id="coupons" class="action-list__item cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
-				<div class="action-list__item-label" id="coupon-<?php echo esc_attr( $code ); ?>">
-					<?php wc_cart_totals_coupon_label( $coupon ); ?>:
-				</div>
-				<div class="action-list__item-value" aria-labelledby="coupon-<?php echo esc_attr( $code ); ?>">
-					<?php wc_cart_totals_coupon_html( $coupon ); ?>
-				</div>
-			</div>
-		<?php endforeach; ?>
-
 		<?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
 
 			<?php do_action( 'woocommerce_cart_totals_before_shipping' ); ?>
@@ -57,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php do_action( 'woocommerce_cart_totals_after_shipping' ); ?>
 
 		<?php elseif ( WC()->cart->needs_shipping() && 'yes' === get_option( 'woocommerce_enable_shipping_calc' ) ) : ?>
-hi
+
 		<div class="action-list__item">
 			<div id="shipping" class="shipping action-list__item-label">
 				<?php esc_html_e( 'Shipping:', 'bigbox' ); ?>
@@ -70,6 +59,17 @@ hi
 		<div labelledby="shipping"><?php woocommerce_shipping_calculator(); ?></div>
 
 		<?php endif; ?>
+
+		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
+			<div id="coupons" class="action-list__item cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
+				<div class="action-list__item-label" id="coupon-<?php echo esc_attr( $code ); ?>">
+					<?php wc_cart_totals_coupon_label( $coupon ); ?>:
+				</div>
+				<div class="action-list__item-value" aria-labelledby="coupon-<?php echo esc_attr( $code ); ?>">
+					<?php wc_cart_totals_coupon_html( $coupon ); ?>
+				</div>
+			</div>
+		<?php endforeach; ?>
 
 		<?php foreach ( WC()->cart->get_fees() as $fee ) : ?>
 			<div class="action-list__item" class="fee">
@@ -124,7 +124,7 @@ hi
 			<div id="total" class="order-total action-list__item-label">
 				<?php esc_html_e( 'Total:', 'bigbox' ); ?>
 			</div>
-			<div class="action-list__item-value action-list__item-value--no-flex" labelledby="total">
+			<div class="action-list__item-value action-list__item-value--no-flex has-success-color" labelledby="total">
 				<?php wc_cart_totals_order_total_html(); ?>
 			</div>
 		</div>

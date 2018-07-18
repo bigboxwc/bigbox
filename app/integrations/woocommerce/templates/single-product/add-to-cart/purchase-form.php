@@ -27,7 +27,7 @@ $product = wc_get_product( get_the_ID() );
 	do_action( 'bigbox_purchase_form_before' );
 	?>
 
-	<div class="woocommerce-purchase-form woocommerce-purchase-form--<?php echo esc_attr( $product->get_type() ); ?>">
+	<div class="card woocommerce-purchase-form woocommerce-purchase-form--<?php echo esc_attr( $product->get_type() ); ?>">
 		<?php
 		/**
 		 * Allow output in the custom purchase form.
