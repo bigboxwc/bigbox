@@ -96,6 +96,15 @@
 }
 
 // [1] Override standard sizing growth on larger devices.
+@mixin button--size-lg {
+	padding: 9px 20px;
+
+	@include media-breakpoint-up(md) {
+		padding: 18px 30px; // [1]
+	}
+}
+
+// [1] Override standard sizing growth on larger devices.
 @mixin button--size-sm {
 	padding: 9px 20px;
 

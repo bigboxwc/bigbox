@@ -49,7 +49,10 @@ p.has-background {
 	max-width: 200px;
 }
 
+// [1] Allow .button--size-x classes to be used to
+// adjust the size but do not apply the padding to the wrapper.
 .wp-block-button {
+	padding: 0 !important; // [1]
 
 	& .wp-block-button__link {
 
@@ -57,6 +60,27 @@ p.has-background {
 
 		&.editor-rich-text__tinymce[data-is-placeholder-visible=true] {
 			position: absolute;
+		}
+	}
+
+	&.button--size-lg {
+
+		.wp-block-button__link {
+			@include button--size-lg();
+		}
+	}
+
+	&.button--size-sm {
+
+		.wp-block-button__link {
+			@include button--size-sm();
+		}
+	}
+
+	&.button--size-xs {
+
+		.wp-block-button__link {
+			@include button--size-xs();
 		}
 	}
 }

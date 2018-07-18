@@ -1,48 +1,56 @@
 .button {
 
 	@include button--color("primary");
-}
 
-@each $name, $hex in $theme-colors {
+	// Sizes.
+	&--size-lg {
 
-	.button--#{$name} {
-
-		@include button--color($name);
+		@include button--size-sm();
 	}
-}
 
-.button--pill {
+	&--size-sm {
 
-	@include button--pill();
-}
+		@include button--size-sm();
+	}
 
-.button--blank {
+	&--size-xs {
 
-	@include button--blank();
-}
+		@include button--size-xs();
+	}
 
-.button--size-sm {
+	&--size-block {
 
-	@include button--size-sm();
-}
+		@include button--size-block();
+	}
 
-.button--size-xs {
+	// Colors.
+	@each $name, $hex in $theme-colors {
 
-	@include button--size-xs();
-}
+		&--#{$name} {
 
-.button--size-block {
+			@include button--color($name);
+		}
+	}
 
-	@include button--size-block();
-}
+	// Additional styles.
+	&--pill {
 
-.button--text {
-	color: gray("700");
-	background: none;
-	border: 0;
-	padding: 0;
+		@include button--pill();
+	}
 
-	&:hover:after {
+	&--blank {
+
+		@include button--blank();
+	}
+
+	&--text {
+		color: gray("700");
 		background: none;
+		border: 0;
+		padding: 0;
+
+		&:hover:after {
+			background: none;
+		}
 	}
 }
