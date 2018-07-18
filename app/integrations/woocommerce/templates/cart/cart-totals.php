@@ -57,13 +57,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php do_action( 'woocommerce_cart_totals_after_shipping' ); ?>
 
 		<?php elseif ( WC()->cart->needs_shipping() && 'yes' === get_option( 'woocommerce_enable_shipping_calc' ) ) : ?>
-
+hi
 		<div class="action-list__item">
 			<div id="shipping" class="shipping action-list__item-label">
 				<?php esc_html_e( 'Shipping:', 'bigbox' ); ?>
 			</div>
 			<div>
-				<a href="#" class="shipping-calculator-button"><?php esc_html_e( 'Calculate shipping', 'bigbox' ); ?></a>
+				<button class="shipping-calculator-button button--text"><?php esc_html_e( 'Calculate shipping', 'bigbox' ); ?></button>
 			</div>
 		</div>
 
