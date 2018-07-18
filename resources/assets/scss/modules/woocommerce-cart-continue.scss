@@ -4,12 +4,13 @@
 
 	li {
 		display: flex;
-		align-items: center;
-		margin: 0 0 ($spacer / 2);
+		align-items: flex-start;
+		margin: 0 0 ($spacer * 0.75);
 	}
 
 	label {
-		margin: 0 0 0 5px;
+		line-height: 1.1;
+		margin: 0 0 0 8px;
 	}
 }
 

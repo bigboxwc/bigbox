@@ -40,7 +40,7 @@ function bigbox_woocommerce_cart_shipping_method_price( $method ) {
 		}
 	}
 
-	return $price;
+	return $price ? $price : wc_price( 0 );
 }
 
 /**
