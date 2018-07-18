@@ -28,11 +28,27 @@ if ( $price_html = $product->get_price_html() ) :
 ?>
 
 <div class="woocommerce-product-price">
+	<?php
+	/**
+	 * Allow content to be output before the price.
+	 *
+	 * @since 1.11.0
+	 */
+	do_action( 'bigbox_woocommerce_product_price_before' )
+	?>
+
 	<div class="price">
 		<?php echo $price_html; ?>
 	</div>
 
-	<?php woocommerce_show_product_loop_sale_flash(); ?>
+	<?php
+	/**
+	 * Allow content to be output after the price. By default it is the sale flash.
+	 *
+	 * @since 1.11.0
+	 */
+	do_action( 'bigbox_woocommerce_product_price_after' )
+	?>
 </div>
 
 <?php

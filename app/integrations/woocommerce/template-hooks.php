@@ -105,8 +105,9 @@ add_filter( 'woocommerce_product_tabs', 'bigbox_woocommerce_product_tabs', 20 );
 remove_action( 'woocommerce_product_additional_information', 'wc_display_product_attributes', 10 );
 add_action( 'woocommerce_product_additional_information', 'bigbox_woocommerce_display_product_attributes', 10 );
 
-// Remove sale flash (output in price template).
+// Move sale flash.
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash' );
+add_action( 'bigbox_woocommerce_product_price_after', 'woocommerce_show_product_loop_sale_flash' );
 
 // Adjust add to cart position.
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );

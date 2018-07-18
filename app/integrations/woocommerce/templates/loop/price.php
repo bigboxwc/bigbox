@@ -42,6 +42,15 @@ $price_html = $product->get_price_html()
 			<?php echo $price_html; // WPCS: XSS okay. ?>
 		</a>
 	</span>
+
+	<?php
+	/**
+	 * Allow content to be output after the price.
+	 *
+	 * @since 1.11.0
+	 */
+	do_action( 'bigbox_woocommerce_loop_product_price_after' )
+	?>
 </div>
 
 <?php endif; ?>
