@@ -50,7 +50,7 @@
 		border: 0;
 		padding: 0;
 
-		&:hover:after {
+		&:hover::after {
 			background: none;
 		}
 	}

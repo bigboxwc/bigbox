@@ -66,6 +66,7 @@ p.has-background {
 	&.button--size-lg {
 
 		.wp-block-button__link {
+
 			@include button--size-lg();
 		}
 	}
@@ -73,6 +74,7 @@ p.has-background {
 	&.button--size-sm {
 
 		.wp-block-button__link {
+
 			@include button--size-sm();
 		}
 	}
@@ -80,6 +82,7 @@ p.has-background {
 	&.button--size-xs {
 
 		.wp-block-button__link {
+
 			@include button--size-xs();
 		}
 	}

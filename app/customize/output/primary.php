@@ -14,7 +14,7 @@ $rgba20  = bigbox_hex_to_rgba( $primary, 0.20 );
 
 return [
 	// Solid color.
-	'color' => [
+	'color'            => [
 		'selectors'    => [
 			'a:hover',
 			'.navbar-menu--primary .sub-menu a:hover',
@@ -72,7 +72,7 @@ return [
 	],
 
 	// Solid fill.
-	'fill' => [
+	'fill'             => [
 		'selectors'    => [
 			'a:hover .bigbox-icon',
 			'.navbar-search__submit svg',
@@ -83,7 +83,7 @@ return [
 	],
 
 	// Solid border-color.
-	'border-color' => [
+	'border-color'     => [
 		'selectors'    => [
 			'.widget_price_filter .ui-slider .ui-slider-handle',
 			'.facetwp-facet.facetwp-type-slider .facetwp-slider .noUi-handle',
@@ -104,7 +104,7 @@ return [
 	],
 
 	// Solid outline-color.
-	'outline-color' => [
+	'outline-color'    => [
 		'selectors'    => [
 			':focus',
 		],

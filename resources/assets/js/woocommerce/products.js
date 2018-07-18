@@ -69,7 +69,7 @@ domReady( () => {
 		// Contain whole gallery when thumbnails are on the bottom.
 		if ( 'bottom' === thumbnailPosition ) {
 			const wrapper = document.querySelector( '.woocommerce-product-gallery--with-images' );
-			const nav = document.querySelector( '.woocommerce-product-gallery--with-images .flex-control-nav' )
+			const nav = document.querySelector( '.woocommerce-product-gallery--with-images .flex-control-nav' );
 
 			nav.style.maxWidth = `${ itemWidth }px`;
 			wrapper.style.maxWidth = `${ itemWidth }px`;
