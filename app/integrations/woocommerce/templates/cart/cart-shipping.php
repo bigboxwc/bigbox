@@ -32,7 +32,7 @@ $chosen_method_object     = false;
 
 <div class="action-list__item">
 	<div id="package-name" class="action-list__item-label">
-		<?php echo esc_html( $show_package_details ? sprintf( __( 'Shipping Method (%s):', 'bigbox' ), $index ) : __( 'Shipping Method:', 'bigbox' ) ); ?>
+		<?php echo wp_kses_post( $show_package_details ? $package_name : __( 'Shipping Method:', 'bigbox' ) ); ?>
 	</div>
 	<div class="action-list__item-value woocommerce-shipping-address">
 		<?php
