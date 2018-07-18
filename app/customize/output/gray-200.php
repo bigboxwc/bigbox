@@ -32,8 +32,6 @@ return [
 			'.woocommerce-privacy-policy-text',
 			'.wc-social-login',
 			'.woocommerce-OrderUpdate',
-			'.woocommerce-shipping-package + .woocommerce-shipping-package',
-			'.woocommerce-shipping-package--of-multiple[data-index="0"]',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray200 ),

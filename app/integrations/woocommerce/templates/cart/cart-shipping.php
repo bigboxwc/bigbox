@@ -68,8 +68,8 @@ endif;
 	<?php endif; ?>
 
 	<?php
-	// Show what is being shipped in this package.
-	if ( $show_package_details ) :
+	// Show what is being shipped in this package after the methods if multiple.
+	if ( $show_package_details && $multiple_methods ) :
 	?>
 		<p class="woocommerce-shipping-contents"><?php echo esc_html( $package_details ); ?></p>
 	<?php endif; ?>
@@ -144,7 +144,7 @@ endif;
 		<div class="action-list__item-label">
 			<?php
 			if ( ! $multiple_methods ) :
-				esc_html_e( 'Shipping:', 'bigbox' );
+				echo esc_html( $package_label );
 			endif;
 			?>
 		</div>
@@ -153,6 +153,13 @@ endif;
 			<?php echo wp_kses_post( bigbox_woocommerce_cart_shipping_method_price( $chosen_method_object ) ); ?>
 		</div>
 	</div>
+
+	<?php
+	// Show what is being shipped in this package after the label if only one method.
+	if ( $show_package_details && ! $multiple_methods ) :
+	?>
+		<p class="woocommerce-shipping-contents"><?php echo esc_html( $package_details ); ?></p>
+	<?php endif; ?>
 
 	<?php endif; ?>
 

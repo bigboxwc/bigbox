@@ -19,11 +19,6 @@
 	}
 }
 
-.woocommerce-shipping-package + .woocommerce-shipping-package {
-	padding-top: $spacer;
-	border-top: 1px solid gray("200");
-}
-
 .woocommerce-shipping-note,
 .cart_totals .shipping-methods {
 	font-size: $font-size-sm;
@@ -72,6 +67,13 @@
 .woocommerce-shipping-destination,
 .woocommerce-shipping-contents {
 	font-size: $font-size-xs;
+}
+
+.woocommerce-shipping-contents {
+
+	&:first-child {
+		margin-top: 0;
+	}
 }
 
 .woocommerce-shipping-address {
