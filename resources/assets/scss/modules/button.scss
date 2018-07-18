@@ -1,5 +1,6 @@
 .button {
 
+	@include button();
 	@include button--color("primary");
 
 	// Sizes.
@@ -26,7 +27,7 @@
 	// Colors.
 	@each $name, $hex in $theme-colors {
 
-		&--#{$name} {
+		&--color-#{$name} {
 
 			@include button--color($name);
 		}

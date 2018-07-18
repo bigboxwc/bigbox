@@ -20,6 +20,7 @@ form.woocommerce-checkout {
 
 #place_order {
 
+	@include button();
 	@include button--color("success");
 	@include button--size-block();
 }

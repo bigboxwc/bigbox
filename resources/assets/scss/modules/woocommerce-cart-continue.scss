@@ -39,6 +39,14 @@
 	border-left: 1px dashed gray("400");
 }
 
+.woocommerce-shipping-calculator-toggle {
+	margin-top: 0;
+
+	&--mini {
+		margin-top: -($spacer / 2);
+	}
+}
+
 .shipping-calculator-button {
 	font-size: $font-size-xs;
 
@@ -62,7 +70,7 @@
 
 	button {
 
-		@include button--size-xs;
+		@include button--size-xs();
 	}
 
 }
@@ -87,6 +95,7 @@
 
 .checkout-button {
 
+	@include button();
 	@include button--color("success");
 	@include button--size-sm;
 	@include button--size-block;

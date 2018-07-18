@@ -74,6 +74,7 @@
 
 .single_add_to_cart_button {
 
+	@include button();
 	@include button--color("success");
 	@include button--size-sm();
 	@include button--size-block();
