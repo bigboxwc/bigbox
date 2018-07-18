@@ -141,7 +141,7 @@ endif;
 	?>
 
 	<div class="action-list__item">
-		<div class="">
+		<div class="action-list__item-label">
 			<?php
 			if ( ! $show_package_details ) :
 				esc_html_e( 'Shipping:', 'bigbox' );
