@@ -31,14 +31,14 @@ while ( have_posts() ) :
 		<?php if ( ! WC()->cart->is_empty() ) : ?>
 		<div class="woocommerce-cart-wrapper__purchase-form woocommerce-cart-continue">
 
-			<div class="woocommerce-purchase-form">
+			<div class="card woocommerce-purchase-form">
 				<div id="bigbox-cart-totals">
 					<?php woocommerce_cart_totals(); ?>
 				</div>
 			</div>
 
 			<?php if ( wc_coupons_enabled() ) : ?>
-				<p class="coupons-next"><?php esc_html_e( 'Do you have a coupon code? We\'ll ask you to enter your claim code when it\'s time to pay.', 'bigbox' ); ?></p>
+				<p class="coupons-next"><?php esc_html_e( 'Do you have a coupon code? We\'ll ask you to enter your code when it\'s time to pay.', 'bigbox' ); ?></p>
 			<?php endif; ?>
 
 		</div>

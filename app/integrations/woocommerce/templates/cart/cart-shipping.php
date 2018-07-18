@@ -141,10 +141,15 @@ endif;
 	?>
 
 	<div class="action-list__item">
-		<div class="action-list__item-label">
-			<?php esc_html_e( 'Shipping:', 'bigbox' ); ?>
+		<div class="">
+			<?php
+			if ( ! $show_package_details ) :
+				esc_html_e( 'Shipping:', 'bigbox' );
+			endif;
+			?>
 		</div>
 		<div class="action-list__item-value action-list__item-value--no-flex">
+			<span class="woocommerce-totals-plus">&plus; </span>
 			<?php echo wp_kses_post( bigbox_woocommerce_cart_shipping_method_price( $chosen_method_object ) ); ?>
 		</div>
 	</div>

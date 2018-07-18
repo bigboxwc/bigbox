@@ -22,4 +22,14 @@ return [
 			'background-color' => esc_attr( $warning ),
 		],
 	],
+
+	// Solid color.
+	[
+		'selectors'    => [
+			'.woocommerce-remove-coupon',
+		],
+		'declarations' => [
+			'color' => esc_attr( $warning ),
+		],
+	],
 ];

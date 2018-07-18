@@ -4,3 +4,11 @@
 		margin-top: 0;
 	}
 }
+
+.woocommerce-totals-plus {
+	color: gray("500");
+	font-size: $font-size-sm;
+	vertical-align: middle;
+	display: inline-block;
+	margin-top: -1px;
+}

@@ -160,6 +160,8 @@ add_filter(
 	}
 );
 
+add_filter( 'woocommerce_coupon_discount_amount_html', 'bigbox_woocommerce_coupon_discount_amount_html' );
+
 /**
  * File: wc-formatting-functions.php.
  */

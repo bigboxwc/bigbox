@@ -18,7 +18,6 @@ return [
 	// Solid color.
 	[
 		'selectors'    => [
-			'.woocommerce-remove-coupon',
 			'.woocommerce-purchase-form .outofstock',
 			'label .required',
 		],

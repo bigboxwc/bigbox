@@ -21,6 +21,9 @@ return [
 			'.wc_payment_method label[for^="payment_method"]',
 			'.woocommerce .input-text + span',
 			'.woocommerce-OrderUpdate-meta',
+			'.woocommerce-totals-plus',
+			'.tax_label',
+			'.action-list__item-label small',
 		],
 		'declarations' => [
 			'color' => esc_attr( $gray500 ),

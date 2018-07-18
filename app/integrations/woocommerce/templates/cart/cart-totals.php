@@ -63,9 +63,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
 			<div id="coupons" class="action-list__item cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
 				<div class="action-list__item-label" id="coupon-<?php echo esc_attr( $code ); ?>">
-					<?php wc_cart_totals_coupon_label( $coupon ); ?>:
+					<?php wc_cart_totals_coupon_label( $coupon ); ?>
 				</div>
-				<div class="action-list__item-value" aria-labelledby="coupon-<?php echo esc_attr( $code ); ?>">
+				<div class="action-list__item-value action-list__item-value--no-flex" aria-labelledby="coupon-<?php echo esc_attr( $code ); ?>">
 					<?php wc_cart_totals_coupon_html( $coupon ); ?>
 				</div>
 			</div>
@@ -77,6 +77,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php echo esc_html( $fee->name ); ?>:
 				</div>
 				<div class="action-list__item-value" labelledby="fee-<?php echo esc_attr( $fee->name ); ?>">
+					<span class="woocommerce-totals-plus">&plus; </span>
 					<?php wc_cart_totals_fee_html( $fee ); ?>
 				</div>
 			</div>
@@ -98,7 +99,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<div id="tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?>" class="action-list__item-label">
 							<?php echo wp_kses_post( $tax->label . ': ' . $estimated_text ); ?>
 						</div>
-						<div clas="action-list__item-value" labelledby="tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
+						<div class="action-list__item-value action-list__item-value--no-flex" labelledby="tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
+							<span class="woocommerce-totals-plus">&plus; </span>
 							<?php echo wp_kses_post( $tax->formatted_amount ); ?>
 						</div>
 					</div>
@@ -110,7 +112,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div id="tax-total" class="tax-total action-list__item-label">
 						<?php echo wp_kses_post( WC()->countries->tax_or_vat() . ': ' . $estimated_text ); ?>
 					</div>
-					<div class="action-list__item-value" labelledby="tax-total">
+					<div class="action-list__item-value action-list__item-value--no-flex" labelledby="tax-total">
+						<span class="woocommerce-totals-plus">&plus; </span>
 						<?php wc_cart_totals_taxes_total_html(); ?>
 					</div>
 				</div>

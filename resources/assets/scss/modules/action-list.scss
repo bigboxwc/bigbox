@@ -30,8 +30,9 @@
 	}
 
 	small {
-		opacity: 0.7;
+		color: gray("500");
 		font-size: $font-size-xs;
+		font-weight: $font-weight-base;
 	}
 
 	.amount {

@@ -618,3 +618,20 @@ function bigbox_woocommerce_archive_mobile_filters() {
 function bigbox_woocommerce_demo_store( $notice ) {
 	return str_replace( 'demo_store', 'demo_store woocommerce-store-notice--' . get_theme_mod( 'demo-store-notice-position', 'bottom' ), $notice );
 };
+
+/**
+ * Adjust discount code price HTML.
+ *
+ * @since 1.11.0
+ *
+ * @param string $discount_amount_html
+ * @return string
+ */
+function bigbox_woocommerce_coupon_discount_amount_html( $discount_amount_html ) {
+	if ( '-' === substr( $discount_amount_html, 0, 1 ) ) {
+		$discount_amount_html = ltrim( $discount_amount_html, '-' );
+		$discount_amount_html = '<span class="woocommerce-totals-plus">- </span> ' . $discount_amount_html;
+	}
+
+	return $discount_amount_html;
+}
