@@ -1,3 +1,16 @@
+## [1.11.0]  - 2018-07-19
+
+### New
+
+- Column support for Gutenberg 3.2.
+- Bold product information titles.
+- Add `bigbox_integrations` and `bigbox_integrations` filters.
+- Improve cart totals and shipping UI.
+
+### Fix
+
+- Improvements for easier child theme integration.
+
 ## [1.10.0]  - 2018-07-11
 
 ### New
