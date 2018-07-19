@@ -79,6 +79,7 @@
 
 .single_variation_wrap {
 	border-top: 1px solid gray("200");
+	display: none !important;
 
 	$map: (
 		sm: 1,
@@ -86,6 +87,10 @@
 
 	@include vertical-spacing("margin", "up", $map);
 	@include vertical-spacing("padding", "up", $map);
+
+	.woocommerce-variation--loaded & {
+		display: block !important;
+	}
 }
 
 .woocommerce-variation {
@@ -149,6 +154,10 @@
 	p {
 		margin: 0;
 	}
+}
+
+.woocommerce-variation-add-to-cart-disabled {
+	display: none;
 }
 
 .tawcvs-swatches {
