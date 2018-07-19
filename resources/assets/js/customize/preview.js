@@ -11,7 +11,11 @@ wp.customize.bind( 'preview-ready', () => {
 				const selector = 'bigbox-inline-css';
 
 				// Remove old.
-				document.getElementById( selector ).remove();
+				const curStyles = document.getElementById( selector );
+
+				if ( curStyles ) {
+					curStyles.remove();
+				}
 
 				// Create new and append.
 				const newStyle = document.createElement( 'div' );
