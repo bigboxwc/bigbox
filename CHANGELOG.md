@@ -1,16 +1,35 @@
-## [1.11.0]  - 2018-07-19
+## [1.11.0]  - 2018-07-20
 
 ### New
 
+- Improve cart totals and shipping UI.
 - Column support for Gutenberg 3.2.
 - Bold product information titles.
-- Add `bigbox_integrations` and `bigbox_integrations` filters.
-- Improve cart totals and shipping UI.
+- Remove bottom border when there is only a single line of products.
+
+- Add filters:
+  - `bigbox_is_rounded` to turn off rounded edges.
+	- `bigbox_integrations` to allow child themes to add more integrations.
+	- `bigbox_services` to allow child themes to add more services.
+	- `bigbox_customize_inline_css_' . $key` to modify the configuration CSS for each customizer option.
+- Add hooks:
+	- `bigbox_woocommerce_product_price_before`
+  - `bigbox_woocommerce_product_price_after`
+	- `bigbox_woocommerce_loop_product_price_before`
+	- `bigbox_woocommerce_loop_product_price_after`
 
 ### Fix
 
 - Improvements for easier child theme integration.
 - Improvements to FacetWP integration.
+- Don't output "See More Options" when a product is out of stock.
+- WooCommerce view order escaping HTML.
+- Avoid Javascript error in the customizer when no previous customizations have been made.
+
+### Tweaks
+
+- Output product sale flash via `bigbox_woocommerce_loop_product_price_before` and `bigbox_woocommerce_product_price_after`
+- Add `product__meta` class to all product card meta items.
 
 ## [1.10.0]  - 2018-07-11
 
