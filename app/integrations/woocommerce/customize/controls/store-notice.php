@@ -55,7 +55,7 @@ function bigbox_woocommerce_customize_register_store_notice_controls( $wp_custom
 	);
 
 	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
+		new BigBox\Customize\WP_Customize_Color_Control(
 			$wp_customize,
 			'demo-store-notice-color',
 			[
@@ -63,6 +63,7 @@ function bigbox_woocommerce_customize_register_store_notice_controls( $wp_custom
 				'label'    => __( 'Text Color', 'bigbox' ),
 				'section'  => 'woocommerce_store_notice',
 				'priority' => 30,
+				'palettes' => bigbox_customize_controls_color_palettes(),
 			]
 		)
 	);
@@ -76,7 +77,7 @@ function bigbox_woocommerce_customize_register_store_notice_controls( $wp_custom
 	);
 
 	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
+		new BigBox\Customize\WP_Customize_Color_Control(
 			$wp_customize,
 			'demo-store-notice-color-background',
 			[
@@ -84,6 +85,7 @@ function bigbox_woocommerce_customize_register_store_notice_controls( $wp_custom
 				'label'    => __( 'Background Color', 'bigbox' ),
 				'section'  => 'woocommerce_store_notice',
 				'priority' => 40,
+				'palettes' => bigbox_customize_controls_color_palettes(),
 			]
 		)
 	);
