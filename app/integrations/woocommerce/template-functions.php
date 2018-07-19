@@ -337,10 +337,15 @@ function bigbox_woocommerce_template_loop_variations() {
  * @since 1.0.0
  */
 function bigbox_woocommerce_template_loop_stock() {
+	$html = wc_get_stock_html( wc_get_product( get_post() ) );
+
+	if ( '' === $html ) {
+		return;
+	}
 ?>
 
-<div class="product__stock">
-	<?php echo wc_get_stock_html( wc_get_product( get_post() ) ); // WPCS: XSS okay. ?>
+<div class="product__stock product__meta">
+	<?php echo $html; // WPCS: XSS okay. ?>
 </div>
 
 <?php

@@ -27,7 +27,7 @@ $price_html = $product->get_price_html()
 
 <?php if ( $price_html ) : ?>
 
-<div class="product__meta product__meta--price">
+<div class="product__price product__meta">
 	<?php
 	/**
 	 * Allow content to be output before the price. By default it is the sale flash.
