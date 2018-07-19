@@ -29,7 +29,7 @@ export const adjustWidth = () => {
 
 domReady( () => {
 	// Adjust on load.
-	adjustWidth()
+	adjustWidth();
 
 	/**
 	 * Don't push empty form values forward.
@@ -46,7 +46,7 @@ domReady( () => {
 				if ( node.options ) {
 					const selected = node.options[ node.selectedIndex ];
 
-					return selected.value !== '' && selected.value !== selected.text;
+					return selected.value !== '' && selected.value !== selected.text && parseInt( selected.value ) !== 0;
 				}
 
 				return node.value !== '';
