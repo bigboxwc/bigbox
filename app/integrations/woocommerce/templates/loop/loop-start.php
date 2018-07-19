@@ -24,7 +24,8 @@ $classes = [
 	'products',
 	'products-' . wc_get_loop_prop( 'products-loop', 'main' ),
 	'columns-' . wc_get_loop_prop( 'columns' ),
-	'main' === wc_get_loop_prop( 'products-loop' ) ? 'facetwp-template' : null,
+	( 'main' === wc_get_loop_prop( 'products-loop' ) ? 'facetwp-template' : null ),
+	( wc_get_loop_prop( 'total' ) <= wc_get_loop_prop( 'columns' ) ? 'products--single-row' : null ),
 ];
 ?>
 

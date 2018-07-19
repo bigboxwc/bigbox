@@ -36,6 +36,15 @@
 		@include vertical-card();
 	}
 
+	// Single row.
+	&.products--single-row {
+
+		li.product .product__inner {
+			padding-bottom: 0;
+			border-bottom: 0;
+		}
+	}
+
 	li.product--order-item,
 	li.product--cart-item {
 
@@ -132,10 +141,6 @@
 	width: 100%;
 	height: 100%;
 	border-bottom: 1px solid gray("200");
-
-	.product:only-child & {
-		border-bottom: 0;
-	}
 
 	a {
 		text-decoration: none;
