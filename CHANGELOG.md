@@ -7,16 +7,14 @@
 - Bold product information titles.
 - Remove bottom border when there is only a single line of products.
 
-- Add filters:
-  - `bigbox_is_rounded` to turn off rounded edges.
-	- `bigbox_integrations` to allow child themes to add more integrations.
-	- `bigbox_services` to allow child themes to add more services.
-	- `bigbox_customize_inline_css_' . $key` to modify the configuration CSS for each customizer option.
-- Add hooks:
-	- `bigbox_woocommerce_product_price_before`
-  - `bigbox_woocommerce_product_price_after`
-	- `bigbox_woocommerce_loop_product_price_before`
-	- `bigbox_woocommerce_loop_product_price_after`
+- `bigbox_is_rounded` filter to turn off rounded edges.
+- `bigbox_integrations` filter to allow child themes to add more integrations.
+- `bigbox_services` filter to allow child themes to add more services.
+- `bigbox_customize_inline_css_' . $key` filter to modify the configuration CSS for each customizer option.
+- `bigbox_woocommerce_product_price_before` action.
+- `bigbox_woocommerce_product_price_after` action.
+- `bigbox_woocommerce_loop_product_price_before` action.
+- `bigbox_woocommerce_loop_product_price_after` action.
 
 ### Fix
 
