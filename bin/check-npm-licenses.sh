@@ -28,14 +28,14 @@ for MODULE_DIR in $(npm ls --production --parseable); do
 	if ! in_array "${PACKAGE_LICENSE}" "${ALLOWED_LICENSES[@]}"; then
 		if ! $FOUND_INCOMPATIBLE_MODULE; then
 			FOUND_INCOMPATIBLE_MODULE=true;
-			echo "These modules have incompatible licences:"
+			error "These modules have incompatible licences:"
 		fi
 		echo "${PACKAGE_NAME}: ${PACKAGE_LICENSE}"
 	fi
 done
 
 if ! $FOUND_INCOMPATIBLE_MODULE; then
-	echo "All module licenses are compatible."
+	success "All module licenses are compatible."
 else
 	exit 1;
 fi
