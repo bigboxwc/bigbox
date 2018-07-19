@@ -189,6 +189,11 @@ function bigbox_woocommerce_before_shop_loop_item() {
  * @since 1.0.0
  */
 function bigbox_woocommerce_before_shop_loop() {
+	$product_categories = woocommerce_get_product_subcategories( is_product_category() ? get_queried_object_id() : 0 );
+	$has_categories     = ! empty( $product_categories ) && 'products' !== woocommerce_get_loop_display_mode();
+
+	wc_set_loop_prop( 'products-loop', $has_categories ? 'categories' : 'main' );
+
 	echo '<div class="woocommerce-products-meta">';
 }
 
@@ -280,6 +285,7 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 	wc_get_template( 'loop/loop-end.php' );
 
 	wc_set_loop_prop( 'products-loop', 'main' );
+
 	wc_get_template( 'loop/loop-start.php' );
 
 	return ob_get_clean();

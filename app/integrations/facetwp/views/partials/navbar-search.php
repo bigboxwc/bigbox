@@ -60,8 +60,8 @@ endif;
 				 */
 				apply_filters(
 					'bigbox_navbar_search_dropdown', [
-						'show_option_all'   => false,
-						'show_option_none'  => $all,
+						'show_option_all'   => $all,
+						'show_option_none'  => false,
 						'option_none_value' => '',
 						'name'              => $name,
 						'taxonomy'          => $taxonomy->name,
