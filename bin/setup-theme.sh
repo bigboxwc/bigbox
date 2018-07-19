@@ -16,6 +16,7 @@ status "Resetting the repository to pristine condition."
 git clean -xdf --dry-run
 warning "About to delete everything above! Is this okay?"
 echo -n "[Y]es/[N]o: "
+
 read answer
 if [ "$answer" != "${answer#[Yy]}" ]; then
 	# Remove ignored files to reset repository to pristine condition. Previous
@@ -24,7 +25,7 @@ if [ "$answer" != "${answer#[Yy]}" ]; then
 	git clean -xdf
 else
 	error "Aborting."
-	exit 1
+	exit 0
 fi
 
 status "Installing Node modules..."
