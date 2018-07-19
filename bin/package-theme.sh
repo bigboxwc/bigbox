@@ -55,7 +55,7 @@ if [ "$answer" != "${answer#[Yy]}" ]; then
 	git clean -xdf
 else
 	error "Aborting."
-	exit 1
+	exit 0
 fi
 
 # Run the build
