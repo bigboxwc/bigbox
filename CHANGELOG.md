@@ -10,6 +10,7 @@
 ### Fix
 
 - Improvements for easier child theme integration.
+- Improvements to FacetWP integration.
 
 ## [1.10.0]  - 2018-07-11
 
