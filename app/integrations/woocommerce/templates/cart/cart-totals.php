@@ -19,8 +19,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
 ?>
+
 <div id="bigbox-cart-totals" class="cart_totals <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
@@ -37,17 +37,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		</div>
 
-		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
-			<div id="coupons" class="action-list__item cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
-				<div class="action-list__item-label" id="coupon-<?php echo esc_attr( $code ); ?>">
-					<?php wc_cart_totals_coupon_label( $coupon ); ?>:
-				</div>
-				<div class="action-list__item-value" aria-labelledby="coupon-<?php echo esc_attr( $code ); ?>">
-					<?php wc_cart_totals_coupon_html( $coupon ); ?>
-				</div>
-			</div>
-		<?php endforeach; ?>
-
 		<?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
 
 			<?php do_action( 'woocommerce_cart_totals_before_shipping' ); ?>
@@ -63,7 +52,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php esc_html_e( 'Shipping:', 'bigbox' ); ?>
 			</div>
 			<div>
-				<a href="#" class="shipping-calculator-button"><?php esc_html_e( 'Calculate shipping', 'bigbox' ); ?></a>
+				<button class="shipping-calculator-button button--text"><?php esc_html_e( 'Calculate shipping', 'bigbox' ); ?></button>
 			</div>
 		</div>
 
@@ -71,12 +60,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php endif; ?>
 
+		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
+			<div id="coupons" class="action-list__item cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
+				<div class="action-list__item-label" id="coupon-<?php echo esc_attr( $code ); ?>">
+					<?php wc_cart_totals_coupon_label( $coupon ); ?>
+				</div>
+				<div class="action-list__item-value action-list__item-value--no-flex" aria-labelledby="coupon-<?php echo esc_attr( $code ); ?>">
+					<?php wc_cart_totals_coupon_html( $coupon ); ?>
+				</div>
+			</div>
+		<?php endforeach; ?>
+
 		<?php foreach ( WC()->cart->get_fees() as $fee ) : ?>
 			<div class="action-list__item" class="fee">
 				<div id="fee-<?php echo esc_attr( $fee->name ); ?>" class="action-list__item-label">
 					<?php echo esc_html( $fee->name ); ?>:
 				</div>
 				<div class="action-list__item-value" labelledby="fee-<?php echo esc_attr( $fee->name ); ?>">
+					<span class="woocommerce-totals-plus">&plus; </span>
 					<?php wc_cart_totals_fee_html( $fee ); ?>
 				</div>
 			</div>
@@ -98,7 +99,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<div id="tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?>" class="action-list__item-label">
 							<?php echo wp_kses_post( $tax->label . ': ' . $estimated_text ); ?>
 						</div>
-						<div clas="action-list__item-value" labelledby="tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
+						<div class="action-list__item-value action-list__item-value--no-flex" labelledby="tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
+							<span class="woocommerce-totals-plus">&plus; </span>
 							<?php echo wp_kses_post( $tax->formatted_amount ); ?>
 						</div>
 					</div>
@@ -110,7 +112,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div id="tax-total" class="tax-total action-list__item-label">
 						<?php echo wp_kses_post( WC()->countries->tax_or_vat() . ': ' . $estimated_text ); ?>
 					</div>
-					<div class="action-list__item-value" labelledby="tax-total">
+					<div class="action-list__item-value action-list__item-value--no-flex" labelledby="tax-total">
+						<span class="woocommerce-totals-plus">&plus; </span>
 						<?php wc_cart_totals_taxes_total_html(); ?>
 					</div>
 				</div>
@@ -124,7 +127,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div id="total" class="order-total action-list__item-label">
 				<?php esc_html_e( 'Total:', 'bigbox' ); ?>
 			</div>
-			<div class="action-list__item-value action-list__item-value--no-flex" labelledby="total">
+			<div class="action-list__item-value action-list__item-value--no-flex has-success-color" labelledby="total">
 				<?php wc_cart_totals_order_total_html(); ?>
 			</div>
 		</div>

@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-global $product;
+$product = wc_get_product( get_the_ID() );
 ?>
 
 <div class="product_meta">

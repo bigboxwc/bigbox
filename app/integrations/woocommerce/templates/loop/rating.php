@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-global $product;
+$product = wc_get_product( get_the_ID() );
 
 if ( get_option( 'woocommerce_enable_review_rating' ) === 'no' ) :
 	return;
@@ -33,6 +33,6 @@ if ( '' === $stars ) :
 endif;
 ?>
 
-<div class="product__rating">
+<div class="product__rating product__meta">
 	<?php echo $stars; // @codingStandardsIgnoreLine ?>
 </div>

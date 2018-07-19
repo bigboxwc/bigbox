@@ -21,7 +21,9 @@ while ( have_posts() ) :
 ?>
 
 <div id="main" class="site-primary site-primary--full" role="main">
+	<?php if ( '' !== get_the_title() ) : ?>
 	<h1 class="page-title"><?php the_title(); ?></h1>
+	<?php endif; ?>
 
 	<article class="hentry hentry--page">
 		<?php the_content(); ?>

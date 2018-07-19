@@ -2,14 +2,20 @@
 
 	@include reset-list();
 
+	// Hide when only one is available.
+	&[data-count="1"] {
+		display: none;
+	}
+
 	li {
 		display: flex;
-		align-items: center;
-		margin: 0 0 ($spacer / 2);
+		align-items: flex-start;
+		margin: 0 0 ($spacer * 0.75);
 	}
 
 	label {
-		margin: 0 0 0 5px;
+		line-height: 1.1;
+		margin: 0 0 0 8px;
 	}
 }
 
@@ -19,6 +25,14 @@
 	margin: $spacer 0;
 	padding-left: $spacer;
 	border-left: 1px dashed gray("400");
+}
+
+.woocommerce-shipping-calculator-toggle {
+	margin-top: 0;
+
+	&--mini {
+		margin-top: -($spacer / 2);
+	}
 }
 
 .shipping-calculator-button {
@@ -44,7 +58,7 @@
 
 	button {
 
-		@include button--size-xs;
+		@include button--size-xs();
 	}
 
 }
@@ -53,6 +67,13 @@
 .woocommerce-shipping-destination,
 .woocommerce-shipping-contents {
 	font-size: $font-size-xs;
+}
+
+.woocommerce-shipping-contents {
+
+	&:first-child {
+		margin-top: 0;
+	}
 }
 
 .woocommerce-shipping-address {
@@ -69,6 +90,7 @@
 
 .checkout-button {
 
+	@include button();
 	@include button--color("success");
 	@include button--size-sm;
 	@include button--size-block;

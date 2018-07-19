@@ -10,10 +10,23 @@ set -e
 cd "$(dirname "$0")"
 cd ..
 
-# Remove ignored files to reset repository to pristine condition. Previous test
-# ensures that changed files abort the plugin build.
-status "Cleaning working directory..."
-git clean -xdf
+# Do a dry run of the repository reset. Prompting the user for a list of all
+# files that will be removed should prevent them from losing important files!
+status "Resetting the repository to pristine condition."
+git clean -xdf --dry-run
+warning "About to delete everything above! Is this okay?"
+echo -n "[Y]es/[N]o: "
+
+read answer
+if [ "$answer" != "${answer#[Yy]}" ]; then
+	# Remove ignored files to reset repository to pristine condition. Previous
+	# test ensures that changed files abort the plugin build.
+	status "Cleaning working directory..."
+	git clean -xdf
+else
+	error "Aborting."
+	exit 0
+fi
 
 status "Installing Node modules..."
 npm install

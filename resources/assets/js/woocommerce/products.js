@@ -53,6 +53,8 @@ domReady( () => {
 		return;
 	}
 
+	const { itemWidth, thumbnailPosition } = params.flexslider;
+
 	const img = document.querySelector( '.woocommerce-product-gallery__wrapper .woocommerce-product-gallery__image .wp-post-image' );
 	const flex = document.querySelector( '.woocommerce-product-gallery--with-images .flex-viewport' );
 
@@ -61,6 +63,16 @@ domReady( () => {
 	}
 
 	img.addEventListener( 'load', () => {
-		flex.style.maxWidth = `${ params.flexslider.itemWidth }px`;
+		// Max width of wrapper.
+		flex.style.maxWidth = `${ itemWidth }px`;
+
+		// Contain whole gallery when thumbnails are on the bottom.
+		if ( 'bottom' === thumbnailPosition ) {
+			const wrapper = document.querySelector( '.woocommerce-product-gallery--with-images' );
+			const nav = document.querySelector( '.woocommerce-product-gallery--with-images .flex-control-nav' );
+
+			nav.style.maxWidth = `${ itemWidth }px`;
+			wrapper.style.maxWidth = `${ itemWidth }px`;
+		}
 	} );
 } );

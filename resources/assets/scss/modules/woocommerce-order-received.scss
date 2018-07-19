@@ -28,10 +28,33 @@
 }
 
 .woocommerce-view-order-status {
-	padding: ($spacer / 2) $spacer;
 
 	@include card();
 	@include vertical-spacing("margin", "down");
+
+	padding: ($spacer / 2) $spacer;
+}
+
+.order-status {
+
+	&--completed {
+		color: theme-color("success");
+	}
+
+	&--pending,
+	&--processing {
+		color: theme-color("information");
+	}
+
+	&--refunded,
+	&--on-hold {
+		color: theme-color("warning");
+	}
+
+	&--failed,
+	&--cancelled {
+		color: theme-color("danger");
+	}
 }
 
 .woocommerce-OrderUpdates {

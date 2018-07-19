@@ -33,7 +33,7 @@ final class Integrations implements Registerable, Service {
 	 * @throws Exception\InvalidService If a integration is not valid.
 	 */
 	public function register() {
-		add_action( 'after_setup_theme', [ $this, 'register_integrations' ], 5 );
+		add_action( 'after_setup_theme', [ $this, 'register_integrations' ], 9 );
 	}
 
 	/**
@@ -87,38 +87,45 @@ final class Integrations implements Registerable, Service {
 	 * @return array Array of fully qualified class names.
 	 */
 	public function get_integrations() {
-		return [
-			'woocommerce'        => [
-				'slug'         => 'woocommerce',
-				'class'        => Integration\WooCommerce::class,
-				'dependencies' => [
-					defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
+		/**
+		 * Filter registered integrations.
+		 *
+		 * @param array $services Fully qualified class names.
+		 */
+		return apply_filters(
+			'bigbox_integrations', [
+				'woocommerce'        => [
+					'slug'         => 'woocommerce',
+					'class'        => Integration\WooCommerce::class,
+					'dependencies' => [
+						defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
+					],
 				],
-			],
-			'woocommerce-brands' => [
-				'slug'         => 'woocommerce-brands',
-				'class'        => Integration\WooCommerce_Brands::class,
-				'dependencies' => [
-					defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
-					defined( 'WC_BRANDS_VERSION' ) && WC_BRANDS_VERSION,
+				'woocommerce-brands' => [
+					'slug'         => 'woocommerce-brands',
+					'class'        => Integration\WooCommerce_Brands::class,
+					'dependencies' => [
+						defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
+						defined( 'WC_BRANDS_VERSION' ) && WC_BRANDS_VERSION,
+					],
 				],
-			],
-			'facetwp'            => [
-				'slug'         => 'facetwp',
-				'class'        => Integration\FacetWP::class,
-				'dependencies' => [
-					defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
-					defined( 'FACETWP_VERSION' ) && FACETWP_VERSION,
+				'facetwp'            => [
+					'slug'         => 'facetwp',
+					'class'        => Integration\FacetWP::class,
+					'dependencies' => [
+						defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
+						defined( 'FACETWP_VERSION' ) && FACETWP_VERSION,
+					],
 				],
-			],
-			'gutenberg'          => [
-				'slug'         => 'gutenberg',
-				'class'        => Integration\Gutenberg::class,
-				'dependencies' => [
-					function_exists( 'the_gutenberg_project' ),
+				'gutenberg'          => [
+					'slug'         => 'gutenberg',
+					'class'        => Integration\Gutenberg::class,
+					'dependencies' => [
+						function_exists( 'the_gutenberg_project' ),
+					],
 				],
-			],
-		];
+			]
+		);
 	}
 
 }

@@ -72,6 +72,7 @@ return [
 			'.cart_totals #shipping_method label',
 			'.woocommerce-form__label-for-checkbox',
 			'.action-list__item-label .amount',
+			'.action-list__item-label small',
 		],
 		'declarations' => [
 			'font-weight' => $weight_base,

@@ -28,7 +28,7 @@ abstract class Integration {
 	 * @var string $dir
 	 * @since 1.0.0
 	 */
-	private $dir = null;
+	protected $dir = null;
 
 	/**
 	 * Current working path.
@@ -38,7 +38,7 @@ abstract class Integration {
 	 * @var string $dir
 	 * @since 1.0.0
 	 */
-	private $local_path = null;
+	protected $local_path = null;
 
 	/**
 	 * List of required dependencies.
@@ -46,7 +46,7 @@ abstract class Integration {
 	 * @var array $active
 	 * @since 1.0.0
 	 */
-	private $dependencies = [];
+	protected $dependencies = [];
 
 	/**
 	 * Setup integration.

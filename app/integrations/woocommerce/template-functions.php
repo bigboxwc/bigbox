@@ -144,7 +144,7 @@ function bigbox_is_shop() {
  */
 function bigbox_woocommerce_has_product_image( $product = null ) {
 	if ( ! $product ) {
-		global $product;
+		$product = wc_get_product( get_the_ID() );
 	}
 
 	if ( get_theme_mod( 'hide-image-placeholders', false ) ) {
@@ -189,6 +189,11 @@ function bigbox_woocommerce_before_shop_loop_item() {
  * @since 1.0.0
  */
 function bigbox_woocommerce_before_shop_loop() {
+	$product_categories = woocommerce_get_product_subcategories( is_product_category() ? get_queried_object_id() : 0 );
+	$has_categories     = ! empty( $product_categories ) && 'products' !== woocommerce_get_loop_display_mode();
+
+	wc_set_loop_prop( 'products-loop', $has_categories ? 'categories' : 'main' );
+
 	echo '<div class="woocommerce-products-meta">';
 }
 
@@ -280,6 +285,7 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 	wc_get_template( 'loop/loop-end.php' );
 
 	wc_set_loop_prop( 'products-loop', 'main' );
+
 	wc_get_template( 'loop/loop-start.php' );
 
 	return ob_get_clean();
@@ -305,7 +311,11 @@ function bigbox_woocommerce_product_subcategories_args( $args ) {
  * @since 1.0.0
  */
 function bigbox_woocommerce_template_loop_variations() {
-	global $product;
+	$product = wc_get_product( get_the_ID() );
+
+	if ( ! $product->is_in_stock() ) {
+		 return;
+	}
 
 	if ( 'variable' !== $product->get_type() ) {
 		return;
@@ -327,10 +337,15 @@ function bigbox_woocommerce_template_loop_variations() {
  * @since 1.0.0
  */
 function bigbox_woocommerce_template_loop_stock() {
+	$html = wc_get_stock_html( wc_get_product( get_post() ) );
+
+	if ( '' === $html ) {
+		return;
+	}
 ?>
 
-<div class="product__stock">
-	<?php echo wc_get_stock_html( wc_get_product( get_post() ) ); // WPCS: XSS okay. ?>
+<div class="product__stock product__meta">
+	<?php echo $html; // WPCS: XSS okay. ?>
 </div>
 
 <?php
@@ -455,7 +470,7 @@ function bigbox_woocommerce_product_additional_information() {
 ?>
 
 	<p class="sku_wrapper">
-		<?php esc_html_e( 'SKU:', 'bigbox' ); ?>
+		<strong><?php esc_html_e( 'SKU:', 'bigbox' ); ?></strong>
 		<span class="sku"><?php echo esc_html( ( $product->get_sku() ) ? $product->get_sku() : __( 'N/A', 'bigbox' ) ); ?></span>
 	</p>
 
@@ -463,9 +478,9 @@ function bigbox_woocommerce_product_additional_information() {
 	endif;
 
 	// @codingStandardsIgnoreStart
-	echo wc_get_product_category_list( $product->get_id(), ', ', '<p class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'bigbox' ) . ' ', '</p>' );
+	echo wc_get_product_category_list( $product->get_id(), ', ', '<p class="posted_in"><strong>' . esc_html( _n( 'Category:', 'Categories:', count( $product->get_category_ids() ) ), 'bigbox' ) . '</strong> ', '</p>' );
 
-	echo wc_get_product_tag_list( $product->get_id(), ', ', '<p class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'bigbox' ) . ' ', '</p>' );
+	echo wc_get_product_tag_list( $product->get_id(), ', ', '<p class="tagged_as"><strong>' . esc_html( _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ) ), 'bigbox' ) . '</strong> ', '</p>' );
 	// @codingStandardsIgnoreEnd
 }
 
@@ -570,6 +585,8 @@ function bigbox_woocommerce_single_product_carousel_options( $args ) {
 		]
 	);
 
+	$args['thumbnailPosition'] = 'side';
+
 	return $args;
 }
 
@@ -612,3 +629,20 @@ function bigbox_woocommerce_archive_mobile_filters() {
 function bigbox_woocommerce_demo_store( $notice ) {
 	return str_replace( 'demo_store', 'demo_store woocommerce-store-notice--' . get_theme_mod( 'demo-store-notice-position', 'bottom' ), $notice );
 };
+
+/**
+ * Adjust discount code price HTML.
+ *
+ * @since 1.11.0
+ *
+ * @param string $discount_amount_html
+ * @return string
+ */
+function bigbox_woocommerce_coupon_discount_amount_html( $discount_amount_html ) {
+	if ( '-' === substr( $discount_amount_html, 0, 1 ) ) {
+		$discount_amount_html = ltrim( $discount_amount_html, '-' );
+		$discount_amount_html = '<span class="woocommerce-totals-plus">- </span> ' . $discount_amount_html;
+	}
+
+	return $discount_amount_html;
+}

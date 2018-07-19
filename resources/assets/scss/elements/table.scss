@@ -5,6 +5,8 @@ table {
 
 	@include card();
 
+	padding: 0;
+
 	tr {
 		border-bottom: 1px solid gray("300");
 
@@ -12,7 +14,7 @@ table {
 			border-bottom: 0;
 		}
 	}
-	
+
 	td,
 	th {
 		padding: ($spacer / 2) $spacer;

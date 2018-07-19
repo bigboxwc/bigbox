@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-global $product;
+$product = wc_get_product( get_the_ID() );
 
 // Ensure visibility.
 if ( empty( $product ) || ! $product->is_visible() ) {
@@ -44,7 +44,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 			/**
 			 * Before shop loop item title.
 			 *
-			 * @hooked woocommerce_show_product_loop_sale_flash - 10
 			 * @hooked woocommerce_template_loop_product_thumbnail - 10
 			 */
 			do_action( 'woocommerce_before_shop_loop_item_title' );

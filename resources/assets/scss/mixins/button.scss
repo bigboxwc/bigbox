@@ -45,7 +45,6 @@
 // [1] Gutenberg adds their own !important declaration.
 @mixin button--color( $color ) {
 
-	@include button;
 	background-color: theme-color( $color );
 
 	&:hover {
@@ -92,6 +91,15 @@
 	&:hover {
 		text-decoration: none;
 		border: 1px solid gray("400");
+	}
+}
+
+// [1] Override standard sizing growth on larger devices.
+@mixin button--size-lg {
+	padding: 9px 20px;
+
+	@include media-breakpoint-up(md) {
+		padding: 18px 30px; // [1]
 	}
 }
 

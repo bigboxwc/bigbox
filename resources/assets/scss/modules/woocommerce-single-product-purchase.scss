@@ -17,10 +17,7 @@
 
 	&:not(.woocommerce-purchase-form--grouped) {
 
-		@include card;
-
 		max-width: 400px;
-		padding: $spacer;
 	}
 
 	.stock {
@@ -74,6 +71,7 @@
 
 .single_add_to_cart_button {
 
+	@include button();
 	@include button--color("success");
 	@include button--size-sm();
 	@include button--size-block();

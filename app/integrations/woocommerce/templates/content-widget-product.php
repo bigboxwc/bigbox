@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-global $product;
+$product = wc_get_product( get_the_ID() );
 ?>
 <li>
 	<?php do_action( 'woocommerce_widget_product_item_start', $args ); ?>
@@ -40,7 +40,7 @@ global $product;
 	<?php endif; ?>
 
 	<?php if ( '' !== $product->get_price_html() ) : ?>
-	<span class="product__meta price">
+	<span class="product__price product__meta">
 		<?php echo wp_kses_post( $product->get_price_html() ); ?>
 	</span>
 	<?php endif; ?>

@@ -2,15 +2,7 @@
 /**
  * Shipping Methods Display
  *
- * In 2.1 we show methods per package. This allows for multiple methods per order if so desired.
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/cart/cart-shipping.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
+ * This file has been heavily customized and has become a bit complicated. Sorry.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
@@ -22,33 +14,75 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$formatted_destination    = isset( $formatted_destination ) ? $formatted_destination : WC()->countries->get_formatted_address( $package['destination'], ', ' );
-$has_calculated_shipping  = ! empty( $has_calculated_shipping );
+// Address.
+$formatted_destination = isset( $formatted_destination ) ? $formatted_destination : WC()->countries->get_formatted_address( $package['destination'], ', ' );
+
+// Other information.
+$note = false;
+
+// Shipping methods.
+$chosen_method_object = false;
+$multiple_methods     = count( $available_methods ) > 1;
+
+// Shipping calculator.
 $show_shipping_calculator = ! empty( $show_shipping_calculator );
-$calculator_text          = __( '(update address)', 'bigbox' );
-$note                     = false;
-$chosen_method_object     = false;
+$calculator_text          = __( 'Update Shipping Location', 'bigbox' );
+
+// Generate a label for the shipping package.
+$package_label = __( 'Shipping:', 'bigbox' );
+
+if ( $show_package_details ) :
+	$package_label = sprintf( __( 'Shipment #%s:', 'bigbox' ), $index + 1 );
+endif;
 ?>
 
-<div class="action-list__item">
-	<div id="package-name" class="action-list__item-label">
-		<?php echo wp_kses_post( $package_name ); ?>:
-	</div>
-	<div class="action-list__item-value woocommerce-shipping-address">
-		<?php
-		if ( $formatted_destination ) :
-			echo wp_kses( str_replace( '<br />', ', ', $formatted_destination ), [] );
-		endif;
-		?>
-	</div>
-</div>
+<div class="woocommerce-shipping-package <?php echo esc_attr( $show_package_details ? 'woocommerce-shipping-package--of-multiple' : null ); ?>" data-index="<?php echo esc_attr( $index ); ?>">
 
-<?php if ( $available_methods ) : ?>
+	<?php
+	// Show shipping calcualtor first if there are multiple methods available with multiple packages.
+	if ( $show_shipping_calculator && $multiple_methods && $show_package_details ) :
+	?>
+		<p class="woocommerce-shipping-calculator-toggle woocommerce-shipping-calculator-toggle--mini">
+			<button class="shipping-calculator-button button--text"><?php echo esc_html( $calculator_text ); ?></button>
+		</p>
 
-	<ul id="shipping_method" class="shipping-methods">
-		<?php foreach ( $available_methods as $method ) : ?>
-			<li>
-				<?php
+		<?php woocommerce_shipping_calculator( $calculator_text ); ?>
+	<?php endif; ?>
+
+	<?php
+	// Show the package name if there are multiple methods available.
+	if ( $multiple_methods ) :
+	?>
+	<div class="action-list__item">
+		<div id="package-name" class="action-list__item-label">
+			<?php echo wp_kses_post( $package_label ); ?>
+		</div>
+		<div class="action-list__item-value woocommerce-shipping-address">
+			<?php
+			if ( $formatted_destination ) :
+				echo wp_kses( str_replace( '<br />', ', ', $formatted_destination ), [] );
+			endif;
+			?>
+		</div>
+	</div>
+	<?php endif; ?>
+
+	<?php
+	// Show what is being shipped in this package after the methods if multiple.
+	if ( $show_package_details && $multiple_methods ) :
+	?>
+		<p class="woocommerce-shipping-contents"><?php echo esc_html( $package_details ); ?></p>
+	<?php endif; ?>
+
+	<?php
+	// Show shipping methods. Will be hidden with CSS if only one is available.
+	if ( $available_methods ) :
+	?>
+
+		<ul id="shipping_method" class="shipping-methods" data-count="<?php echo esc_attr( count( $available_methods ) ); ?>">
+			<?php foreach ( $available_methods as $method ) : ?>
+				<li>
+					<?php
 					printf(
 						'<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s /> <label for="shipping_method_%1$d_%2$s">%5$s</label>',
 						esc_attr( $index ),
@@ -64,60 +98,80 @@ $chosen_method_object     = false;
 					endif;
 
 					do_action( 'woocommerce_after_shipping_rate', $method, $index );
-				?>
-			</li>
-		<?php endforeach; ?>
+					?>
+				</li>
+			<?php endforeach; ?>
+		</ul>
 
-		<?php if ( ! is_checkout() && $show_shipping_calculator ) : ?>
-			<li>
-				<button class="shipping-calculator-button button--text"><?php echo esc_html( $calculator_text ); ?></button>
-			</li>
-		<?php endif; ?>
-	</ul>
+	<?php
+	// No address available.
+	elseif ( ! $formatted_destination && $available_methods ) :
+		$note = __( 'Enter your address to view shipping options.', 'bigbox' );
+		// Nothing enabled in admin.
+	elseif ( ! is_cart() ) :
+		$note = apply_filters( 'woocommerce_no_shipping_available_html', __( 'There are no shipping methods available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'bigbox' ) );
+		// Nothing found for address.
+	else :
+		/* translators: %s shipping destination. */
+		$note = apply_filters( 'woocommerce_cart_no_shipping_available_html', sprintf( esc_html__( 'No shipping options were found for %s.', 'bigbox' ) . ' ', '<strong>' . esc_html( $formatted_destination ) . '</strong>' ) );
+	endif;
+	?>
 
-<?php
-elseif ( ! $formatted_destination && $available_methods ) :
-	$note = __( 'Enter your address to view shipping options.', 'bigbox' );
-elseif ( ! is_cart() ) :
-	$note = apply_filters( 'woocommerce_no_shipping_available_html', __( 'There are no shipping methods available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'bigbox' ) );
-else :
-	/* translators: %s shipping destination. */
-	$note= apply_filters( 'woocommerce_cart_no_shipping_available_html', sprintf( esc_html__( 'No shipping options were found for %s.', 'bigbox' ) . ' ', '<strong>' . esc_html( $formatted_destination ) . '</strong>' ) );
-endif;
-
-// Show note.
-if ( $note ) :
-?>
-
-<p class="woocommerce-shipping-note">
-	<?php echo wp_kses_post( $note ); ?>
-
-	<?php if ( $show_shipping_calculator ) : ?>
-	<button class="shipping-calculator-button button--text"><?php echo esc_html( $calculator_text ); ?></button>
+	<?php
+	// Show note.
+	if ( $note ) :
+	?>
+		<p class="woocommerce-shipping-note"><?php echo wp_kses_post( $note ); ?></p>
 	<?php endif; ?>
-</p>
 
-<?php
-endif;
+	<?php
+	// Show shipping calculator below method list if there are multiple methods and a single package.
+	if ( $show_shipping_calculator && $multiple_methods && ! $show_package_details ) :
+	?>
+		<p class="woocommerce-shipping-calculator-toggle">
+			<button class="shipping-calculator-button button--text"><?php echo esc_html( $calculator_text ); ?></button>
+		</p>
 
-if ( $show_package_details ) :
-	echo '<p class="woocommerce-shipping-contents">' . esc_html( $package_details ) . '</p>';
-endif;
+		<?php woocommerce_shipping_calculator( $calculator_text ); ?>
+	<?php endif; ?>
 
-if ( $show_shipping_calculator ) :
-	woocommerce_shipping_calculator( $calculator_text );
-endif;
-?>
+	<?php
+	// Show the price of the chosen method.
+	if ( $chosen_method_object ) :
+	?>
 
-<?php if ( $chosen_method_object ) : ?>
-
-<div class="action-list__item">
-	<div class="action-list__item-label">
-		<?php esc_html_e( 'Shipping:', 'bigbox' ); ?>
+	<div class="action-list__item">
+		<div class="action-list__item-label">
+			<?php
+			if ( ! $multiple_methods ) :
+				echo esc_html( $package_label );
+			endif;
+			?>
+		</div>
+		<div class="action-list__item-value action-list__item-value--no-flex">
+			<span class="woocommerce-totals-plus">&plus; </span>
+			<?php echo wp_kses_post( bigbox_woocommerce_cart_shipping_method_price( $chosen_method_object ) ); ?>
+		</div>
 	</div>
-	<div class="action-list__item-value action-list__item-value--no-flex">
-		<?php echo wp_kses_post( bigbox_woocommerce_cart_shipping_method_price( $chosen_method_object ) ); ?>
-	</div>
+
+	<?php
+	// Show what is being shipped in this package after the label if only one method.
+	if ( $show_package_details && ! $multiple_methods ) :
+	?>
+		<p class="woocommerce-shipping-contents"><?php echo esc_html( $package_details ); ?></p>
+	<?php endif; ?>
+
+	<?php endif; ?>
+
+	<?php
+	// Show shipping calculator after price if there is only a single method.
+	if ( $show_shipping_calculator && ! $multiple_methods && ! $show_package_details ) :
+	?>
+		<p class="woocommerce-shipping-calculator-toggle woocommerce-shipping-calculator-toggle--mini">
+			<button class="shipping-calculator-button button--text"><?php echo esc_html_e( '(update location)', 'bigbox' ); ?></button>
+		</p>
+
+		<?php woocommerce_shipping_calculator( __( '(update location)', 'bigbox' ) ); ?>
+	<?php endif; ?>
+
 </div>
-
-<?php endif; ?>

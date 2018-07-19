@@ -60,9 +60,7 @@ endif;
 				 */
 				apply_filters(
 					'bigbox_navbar_search_dropdown', [
-						'show_option_all'   => false,
-						'show_option_none'  => $all,
-						'option_none_value' => '',
+						'show_option_all'   => $all,
 						'name'              => $name,
 						'taxonomy'          => $taxonomy->name,
 						'hierarchical'      => 'no' !== $dropdown['hierarchical'],

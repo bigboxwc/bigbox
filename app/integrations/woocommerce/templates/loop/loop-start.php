@@ -22,11 +22,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $classes = [
 	'products',
-	'products-' . wc_get_loop_prop( 'products-loop', ( 'products' !== woocommerce_get_loop_display_mode() ? 'categories' : 'main' ) ),
+	'products-' . wc_get_loop_prop( 'products-loop', 'main' ),
 	'columns-' . wc_get_loop_prop( 'columns' ),
-	'main' === wc_get_loop_prop( 'products-loop' ) ? 'facetwp-template' : null,
+	( 'main' === wc_get_loop_prop( 'products-loop' ) ? 'facetwp-template' : null ),
+	( wc_get_loop_prop( 'total' ) <= wc_get_loop_prop( 'columns' ) ? 'products--single-row' : null ),
 ];
 ?>
 
 <ul class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+
+<?php if ( bigbox_is_integration_active( 'facetwp' ) ) : ?>
 <!--fwp-loop-->
+<?php endif; ?>

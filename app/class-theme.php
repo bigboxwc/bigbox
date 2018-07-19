@@ -30,8 +30,8 @@ final class Theme implements Registerable {
 	 * @throws Exception\InvalidService If a service is not valid.
 	 */
 	public function register() {
-		add_action( 'after_setup_theme', [ $this, 'load_helpers' ], 0 );
-		add_action( 'after_setup_theme', [ $this, 'register_services' ], 0 );
+		add_action( 'after_setup_theme', [ $this, 'load_helpers' ], 5 );
+		add_action( 'after_setup_theme', [ $this, 'register_services' ], 5 );
 	}
 
 	/**
@@ -111,12 +111,19 @@ final class Theme implements Registerable {
 	 * @return array Array of fully qualified class names.
 	 */
 	private function get_services() {
-		return [
-			Integrations::class,
-			NUX\Setup_Guide::class,
-			NUX\License_Manager::class,
-			NUX\Customize_Walkthrough::class,
-		];
+		/**
+		 * Filter registered services.
+		 *
+		 * @param array $services Fully qualified class names.
+		 */
+		return apply_filters(
+			'bigbox_services', [
+				Integrations::class,
+				NUX\Setup_Guide::class,
+				NUX\License_Manager::class,
+				NUX\Customize_Walkthrough::class,
+			]
+		);
 	}
 
 }

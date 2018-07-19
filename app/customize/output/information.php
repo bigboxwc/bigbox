@@ -21,4 +21,14 @@ return [
 			'background-color' => esc_attr( $info ),
 		],
 	],
+	// Solid color.
+	[
+		'selectors'    => [
+			'.order-status--processing',
+			'.order-status--pending',
+		],
+		'declarations' => [
+			'color' => esc_attr( $info ),
+		],
+	],
 ];

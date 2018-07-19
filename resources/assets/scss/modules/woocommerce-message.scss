@@ -4,16 +4,18 @@
 .woocommerce-message,
 .woocommerce-error li {
 	overflow: hidden;
-	padding: ($spacer / 2) $spacer;
 
 	@include card();
 	@include vertical-spacing("margin", "down");
+
+	padding: ($spacer / 2) $spacer;
 
 	.woocommerce-Button,
 	.wc-forward {
 		margin-right: ($spacer / 2);
 		margin-left: -($spacer / 2);
 
+		@include button();
 		@include button--color("success");
 		@include button--size-sm();
 	}
@@ -31,6 +33,7 @@
 
 	li {
 
+		@include card();
 		@include card--error();
 
 		padding: $spacer;
