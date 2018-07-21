@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Ensure we have access to wp-bin
+git submodule update --recursive
+
 # Include useful functions
 source "$(dirname "$0")/wp-bin/wp-bin.sh"
 
@@ -19,7 +22,6 @@ reset_cwd
 
 # Run the build
 status_message "Installing dependencies..."
-git submodule update --recursive
 npm install
 composer install
 
