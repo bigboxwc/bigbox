@@ -19,7 +19,6 @@ reset_cwd
 
 # Run the build
 status_message "Installing dependencies..."
-git submodule init --recursive
 git submodule update --recursive
 npm install
 composer install
