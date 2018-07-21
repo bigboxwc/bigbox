@@ -17,8 +17,8 @@ PACKAGE_VERSION_PLACEHOLDER="BIGBOX_VERSION"
 source "$(dirname "$0")/setup-theme.sh"
 
 # Update version in files.
-sed -i "" "s|%${PACKAGE_VERSION_PACEHOLDER}%|${PACKAGE_VERSION}|g" style.css
-sed -i "" "s|%${PACKAGE_VERSION_PACEHOLDER}%|${PACKAGE_VERSION}|g" functions.php
+sed -i "" "s|%${PACKAGE_VERSION_PLACEHOLDER}%|${PACKAGE_VERSION}|g" style.css
+sed -i "" "s|%${PACKAGE_VERSION_PLACEHOLDER}%|${PACKAGE_VERSION}|g" functions.php
 
 # Generate the theme zip file
 status_message "Creating archive..."
