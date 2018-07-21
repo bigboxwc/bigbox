@@ -1,3 +1,14 @@
+.wc-proceed-to-checkout {
+	margin-top: $spacer;
+}
+
+.woocommerce-shipping-package {
+
+	@include vertical-spacing("margin", "both", (
+		sm: 1
+	) );
+}
+
 .cart_totals .shipping-methods {
 
 	@include reset-list();
