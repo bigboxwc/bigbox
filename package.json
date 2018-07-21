@@ -57,16 +57,17 @@
 	},
 	"scripts": {
 		"build": "cross-env NODE_ENV=production webpack",
-		"check-licenses": "./bin/check-npm-licenses.sh; exit 0",
+		"check-npm-licenses": "./bin/wp-bin/bin/check-npm-licenses.sh; exit 0",
 		"css-lint": "./node_modules/.bin/stylelint resources/**/*.scss --syntax scss; exit 0",
 		"css-lint:fix": "./node_modules/.bin/stylelint resources/**/*.scss --syntax scss --fix; exit 0",
 		"dev": "cross-env NODE_ENV=default webpack --watch",
 		"generate-font-list": "./bin/generate-google-font-list.sh",
+		"install-node-nvm": "./bin/wp-bin/bin/install-node-nvm.sh; exit 0",
 		"lint": "./node_modules/.bin/eslint .; exit 0",
 		"lint:fix": "./node_modules/.bin/eslint . --fix; exit 0",
 		"lint:jsdoc": "eslint . --config eslint/jsdoc-config.js; exit 0",
 		"package-theme": "./bin/package-theme.sh",
-		"setup-theme": "./bin/setup-theme.sh"
+		"setup-theme": "./bin/setup-theme.sh",
 	},
 	"repository": {
 		"type": "git",
