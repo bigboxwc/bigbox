@@ -1,3 +1,11 @@
+## [1.11.1]  - 2018-07-21
+
+### Fix
+
+- Ensure out of stock variations cannot be added to the cart.
+- Spacing on cart totals.
+- Ensure footer remains sticky when using widgets.
+
 ## [1.11.0]  - 2018-07-20
 
 ### New

@@ -7,6 +7,11 @@
 	) );
 }
 
+// Keep sticky.
+.container + .footer-nav {
+	margin-top: auto;
+}
+
 .footer-nav__row {
 
 	@include make-row();

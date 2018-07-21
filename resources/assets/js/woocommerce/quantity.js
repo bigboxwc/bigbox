@@ -57,6 +57,11 @@ export const transformInput = function( qty, variation = false ) {
 	const min = variation.min_qty || ( original.getAttribute( 'min' ) || globalMax );
 	let max = variation.max_qty || ( original.getAttribute( 'max' ) || globalMax );
 
+	// Force 0 if out of stock.
+	if ( variation && ! variation.is_in_stock ) {
+		max = 0;
+	}
+
 	// Allow more items to be chosen if available.
 	if ( ( max <= selectedValue && selectedValue !== max && max !== 1 ) || ( max === globalMax && selectedValue !== 1 ) ) {
 		max = parseInt( selectedValue + globalMax );

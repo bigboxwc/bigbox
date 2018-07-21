@@ -1,9 +1,13 @@
 .action-list__item {
 	line-height: 1;
-	margin-bottom: 1rem;
+	margin-bottom: $spacer;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 .action-list__item--inset {

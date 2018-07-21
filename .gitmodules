@@ -1,0 +1,3 @@
+[submodule "bin/wp-bin"]
+	path = bin/wp-bin
+	url = git@github.com:bigboxwc/wp-bin.git
