@@ -33,3 +33,13 @@
 		bottom: 0;
 	}
 }
+
+.woocommerce-store-notice__dismiss-link {
+	text-decoration: none;
+
+	@include media-breakpoint-up(lg) {
+		position: absolute;
+		right: $spacer;
+		top: $spacer;
+	}
+}
