@@ -1,3 +1,12 @@
+## [1.11.2]  - 2018-07-24
+
+### Fix
+
+- Don't output shipping calculator toggle when calculator is not output.
+- Don't layload the custom logo.
+- Properly add available stock to dropdown quantity.
+- Spacing above checkout completion button.
+
 ## [1.11.1]  - 2018-07-21
 
 ### Fix
