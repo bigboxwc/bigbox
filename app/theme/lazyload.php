@@ -135,9 +135,12 @@ function bigbox_add_image_placeholders( $content ) {
  * @return bool
  */
 function bigbox_should_skip_image_with_blacklisted_class( $classes ) {
-	$blacklisted_classes = [
-		'skip-lazy',
-	];
+	$blacklisted_classes = apply_filters(
+		'bigbox_lazyload_blacklisted_classes', [
+			'skip-lazy',
+			'custom-logo',
+		]
+	);
 
 	foreach ( $blacklisted_classes as $class ) {
 		if ( false !== strpos( $classes, $class ) ) {
