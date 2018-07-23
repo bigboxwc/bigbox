@@ -25,7 +25,7 @@ $chosen_method_object = false;
 $multiple_methods     = count( $available_methods ) > 1;
 
 // Shipping calculator.
-$show_shipping_calculator = ! empty( $show_shipping_calculator );
+$show_shipping_calculator = ! empty( $show_shipping_calculator ) && 1 === get_option( 'woocommerce_enable_shipping_calc' );
 $calculator_text          = __( 'Update Shipping Location', 'bigbox' );
 
 // Generate a label for the shipping package.
