@@ -6,6 +6,7 @@
 - Don't layload the custom logo.
 - Properly add available stock to dropdown quantity.
 - Spacing above checkout completion button.
+- Ensure dynamic "Information" color is used for `.button--color-information` class.
 
 ## [1.11.1]  - 2018-07-21
 
