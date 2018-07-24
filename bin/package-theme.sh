@@ -30,10 +30,7 @@ zip -r $PACKAGE_NAME.zip \
 	style.css \
 	app \
 	bootstrap \
-	resources/languages/*.{po,mo,pot} \
-	resources/views \
-	resources/resources/assets/scss \
-	resources/data/*.json \
+	resources/**/*.{php,scss,json,po,mo,pot} \ # Excludes .js, .md, .svg, .png, .jpg
 	public \
 	vendor/ \
 	LICENSE \
