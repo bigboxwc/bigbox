@@ -15,7 +15,7 @@ return [
 	// Solid background-color.
 	[
 		'selectors'    => [
-			'.button--info',
+			'.button--information',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $info ),

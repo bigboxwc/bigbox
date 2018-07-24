@@ -215,11 +215,12 @@ form.woocommerce-checkout {
 }
 
 .wc-payment-form {
+	margin-left: 0;
 	padding: 0;
 	border: 0;
 	width: 100%;
 
-	@include vertical-spacing("margin", "up");
+	@include vertical-spacing("margin", "both");
 }
 
 #ship-to-different-address {

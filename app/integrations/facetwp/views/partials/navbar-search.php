@@ -60,15 +60,15 @@ endif;
 				 */
 				apply_filters(
 					'bigbox_navbar_search_dropdown', [
-						'show_option_all'   => $all,
-						'name'              => $name,
-						'taxonomy'          => $taxonomy->name,
-						'hierarchical'      => 'no' !== $dropdown['hierarchical'],
-						'value_field'       => 'slug',
-						'show_count'        => true,
-						'orderby'           => $dropdown['orderby'],
-						'order'             => 'ASC',
-						'number'            => $dropdown['count'],
+						'show_option_all' => $all,
+						'name'            => $name,
+						'taxonomy'        => $taxonomy->name,
+						'hierarchical'    => 'no' !== $dropdown['hierarchical'],
+						'value_field'     => 'slug',
+						'show_count'      => true,
+						'orderby'         => $dropdown['orderby'],
+						'order'           => 'ASC',
+						'number'          => $dropdown['count'],
 					]
 				)
 			);

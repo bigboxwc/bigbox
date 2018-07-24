@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Ensure we have access to wp-bin
+git submodule init
 git submodule update --recursive
 
 # Include useful functions
