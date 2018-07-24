@@ -1,3 +1,9 @@
+## [1.11.3]  - 2018-07-24
+
+### Fix
+
+- Avoid double faux inputs on FacetWP filters.
+
 ## [1.11.2]  - 2018-07-24
 
 ### Fix

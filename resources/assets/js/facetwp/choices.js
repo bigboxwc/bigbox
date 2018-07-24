@@ -1,4 +1,4 @@
-/* global $ */
+/* global $, _ */
 
 /**
  * Internal dependencies.
@@ -13,6 +13,14 @@ const $document = $( document );
 $document.on( 'facetwp-loaded', () => {
 	// Add a checkbox on load.
 	document.querySelectorAll( '.facetwp-checkbox, .facetwp-radio' ).forEach( ( wrapper ) => {
+		const hasInput = _.filter( wrapper.childNodes, ( node ) => {
+			return 'INPUT' === node.tagName;
+		} );
+
+		if ( hasInput.length > 0 ) {
+			return;
+		}
+
 		// Create an input.
 		const input = document.createElement( 'input' );
 
