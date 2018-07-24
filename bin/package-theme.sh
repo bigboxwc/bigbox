@@ -23,21 +23,21 @@ sed -i "" "s|%${PACKAGE_VERSION_PLACEHOLDER}%|${PACKAGE_VERSION}|g" functions.ph
 # Generate the theme zip file
 status_message "Creating archive..."
 zip -r $PACKAGE_NAME.zip \
-	# Base theme files.
-	{functions, footer, header, index}.php \
+	functions.php \
+	footer.php \
+	header.php \
+	index.php \
 	style.css \
+	app \
+	bootstrap \
+	resources/languages/*.{po,mo,pot} \
+	resources/views \
+	resources/data/*.json \
+	public \
+	vendor/ \
 	LICENSE \
 	CHANGELOG.md \
 	screenshot.png \
-
-	# App.
-	app \
-	bootstrap \
-	vendor \
-
-	# Resources.
-	resources/**/*.{php,scss,json,po,mo,pot} \
-	public \
 	-x *.git*
 
 # Rename and cleanup.
