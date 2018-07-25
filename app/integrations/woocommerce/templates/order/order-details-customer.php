@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.3.0
+ * @version 3.4.4
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -75,5 +75,7 @@ $notes = $order->get_customer_order_notes();
 	<address>
 		<?php echo wp_kses_post( $order->get_formatted_shipping_address( __( 'N/A', 'bigbox' ) ) ); ?>
 	</address>
+
+	<?php do_action( 'woocommerce_order_details_after_customer_details', $order ); ?>
 
 </section>
