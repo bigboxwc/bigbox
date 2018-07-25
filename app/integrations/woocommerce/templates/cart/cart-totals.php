@@ -76,8 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div id="fee-<?php echo esc_attr( $fee->name ); ?>" class="action-list__item-label">
 					<?php echo esc_html( $fee->name ); ?>:
 				</div>
-				<div class="action-list__item-value" labelledby="fee-<?php echo esc_attr( $fee->name ); ?>">
-					<span class="woocommerce-totals-plus">&plus; </span>
+				<div class="action-list__item-value action-list__item-value--no-flex" labelledby="fee-<?php echo esc_attr( $fee->name ); ?>">
 					<?php wc_cart_totals_fee_html( $fee ); ?>
 				</div>
 			</div>

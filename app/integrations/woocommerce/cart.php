@@ -58,6 +58,26 @@ function bigbox_woocommerce_cart_shipping_method_full_label( $label, $method ) {
 add_filter( 'woocommerce_cart_shipping_method_full_label', 'bigbox_woocommerce_cart_shipping_method_full_label', 5, 2 );
 
 /**
+ * Better formatting for fees in cart.
+ *
+ * @since 1.12.0
+ *
+ * @param string $fee_html Original HTML string.
+ * @param object $fee Fee.
+ * @return string
+ */
+function bigbox_woocommerce_cart_totals_fee_html( $fee_html, $fee ) {
+	if ( $fee->total >= 0 ) {
+		$fee_html = '<span class="woocommerce-totals-plus">&plus; </span>' . $fee_html;
+	} else {
+		$fee_html = '<span class="woocommerce-totals-plus">&ndash;&nbsp;</span>' . str_replace( '-', '', $fee_html );
+	}
+
+	return $fee_html;
+}
+add_filter( 'woocommerce_cart_totals_fee_html', 'bigbox_woocommerce_cart_totals_fee_html', 10, 2 );
+
+/**
  * Update global cart and totals.
  *
  * Note: This should not be called directly. It should be inside a previously
