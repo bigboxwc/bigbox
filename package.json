@@ -11,12 +11,12 @@
 		"npm": ">=6.0.0"
 	},
 	"devDependencies": {
+		"@babel/core": "7.0.0-beta.52",
 		"@wordpress/babel-preset-default": "2.0.2",
 		"@wordpress/dom-ready": "1.1.1",
 		"autoprefixer": "9.0.1",
-		"babel-core": "6.26.3",
-		"babel-eslint": "8.2.6",
-		"babel-loader": "7.1.5",
+		"babel-eslint": "8.0.3",
+		"babel-loader": "8.0.0-beta.4",
 		"babel-plugin-import-glob": "^2.0.0",
 		"babel-plugin-transform-react-jsx": "^6.24.1",
 		"bootstrap": "^4.1.1",
@@ -26,7 +26,6 @@
 		"eslint": "5.2.0",
 		"eslint-config-wordpress": "2.0.0",
 		"eslint-plugin-jsx-a11y": "6.1.1",
-		"eslint-plugin-react": "7.10.0",
 		"eslint-plugin-wordpress": "git://github.com/WordPress-Coding-Standards/eslint-plugin-wordpress.git#1774343f6226052a46b081e01db3fca8793cc9f1",
 		"exports-loader": "^0.7.0",
 		"extract-text-webpack-plugin": "4.0.0-beta.0",
@@ -41,7 +40,7 @@
 		"svg-sprite-loader": "^3.7.3",
 		"svgo": "^1.0.5",
 		"svgo-loader": "^2.1.0",
-		"webpack": "^4.8.1",
+		"webpack": "^4.8.3",
 		"webpack-cli": "^3.0.3",
 		"webpack-rtl-plugin": "github:yoavf/webpack-rtl-plugin#develop"
 	},
