@@ -96,7 +96,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : ?>
 					<div class="tax-rate action-list__item">
 						<div id="tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?>" class="action-list__item-label">
-							<?php echo $tax->label . ': ' . esc_html( $estimated_text ); // WPCS: XSS okay. ?>
+							<?php echo $tax->label . ': ' . $estimated_text; // WPCS: XSS okay. ?>
 						</div>
 						<div class="action-list__item-value action-list__item-value--no-flex" labelledby="tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
 							<span class="woocommerce-totals-plus">&plus; </span>
@@ -109,7 +109,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				<div class="action-list__item">
 					<div id="tax-total" class="tax-total action-list__item-label">
-						<?php echo esc_html( WC()->countries->tax_or_vat() . ': ' . $estimated_text ); ?>
+						<?php echo WC->countries->tax_or_vat() . ': ' . $estimated_text; // WPCS: XSS okay. ?>
 					</div>
 					<div class="action-list__item-value action-list__item-value--no-flex" labelledby="tax-total">
 						<span class="woocommerce-totals-plus">&plus; </span>
