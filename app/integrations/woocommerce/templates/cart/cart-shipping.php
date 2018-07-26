@@ -32,6 +32,7 @@ $calculator_text          = __( 'Update Shipping Location', 'bigbox' );
 $package_label = __( 'Shipping:', 'bigbox' );
 
 if ( $show_package_details ) :
+	/* translators: Shipment number index when there are multiple. e.g Shipment #1' */
 	$package_label = sprintf( __( 'Shipment #%s:', 'bigbox' ), $index + 1 );
 endif;
 ?>
@@ -150,7 +151,7 @@ endif;
 		</div>
 		<div class="action-list__item-value action-list__item-value--no-flex">
 			<span class="woocommerce-totals-plus">&plus; </span>
-			<?php echo wp_kses_post( bigbox_woocommerce_cart_shipping_method_price( $chosen_method_object ) ); ?>
+			<?php echo bigbox_woocommerce_cart_shipping_method_price( $chosen_method_object ); // WPCS: XSS okay. ?>
 		</div>
 	</div>
 

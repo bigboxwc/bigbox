@@ -27,7 +27,7 @@ $product = wc_get_product( get_the_ID() );
 	<a href="<?php echo esc_url( $product->get_permalink() ); ?>">
 		<?php
 		if ( bigbox_woocommerce_has_product_image( $product ) ) :
-			echo wp_kses_post( $product->get_image() );
+			echo $product->get_image(); // WPCS: XSS okay.
 		endif;
 		?>
 		<span class="product-title"><?php echo esc_html( $product->get_name() ); ?></span>
@@ -41,7 +41,7 @@ $product = wc_get_product( get_the_ID() );
 
 	<?php if ( '' !== $product->get_price_html() ) : ?>
 	<span class="product__price product__meta">
-		<?php echo wp_kses_post( $product->get_price_html() ); ?>
+		<?php echo $product->get_price_html(); // WPCS: XSS okay. ?>
 	</span>
 	<?php endif; ?>
 
