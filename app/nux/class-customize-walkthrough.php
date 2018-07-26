@@ -96,7 +96,7 @@ class Customize_Walkthrough implements Registerable, Service {
 			],
 			'type'    => [
 				'el'        => '#customize-control-type-font-family',
-				'title'     => esc_html__( 'Chose Your Typography', 'bigbox' ),
+				'title'     => esc_html__( 'Choose Your Typography', 'bigbox' ),
 				'content'   => esc_html__( 'Select the font family and weights used throughout your website.', 'bigbox' ),
 				'focusType' => 'section',
 				'focus'     => 'type',
