@@ -314,7 +314,7 @@ function bigbox_woocommerce_template_loop_variations() {
 	$product = wc_get_product( get_the_ID() );
 
 	if ( ! $product->is_in_stock() ) {
-		 return;
+		return;
 	}
 
 	if ( 'variable' !== $product->get_type() ) {
@@ -635,7 +635,7 @@ function bigbox_woocommerce_demo_store( $notice ) {
  *
  * @since 1.11.0
  *
- * @param string $discount_amount_html
+ * @param string $discount_amount_html Discount amount HTML.
  * @return string
  */
 function bigbox_woocommerce_coupon_discount_amount_html( $discount_amount_html ) {

@@ -42,7 +42,7 @@ $product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product
 		?>
 		<div class="product__preview">
 			<a href="<?php echo esc_url( $product_permalink ); ?>">
-				<?php echo wp_kses_post( $product_thumbnail ); ?>
+				<?php echo $product_thumbnail; // WPCS: XSS okay. ?>
 			</a>
 		</div>
 		<?php endif; ?>
