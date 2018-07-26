@@ -10,10 +10,10 @@ $h: 24px;
 //
 // Static social icons that can be output inline on the frontend.
 //
-// <i class="bigbox-icon bigbox-icon--social"></i>
+// <i class="bigbox-icon bigbox-icon--#{social}"></i>
 //
 
-$social: dribbble, facebook, github, google, reddit, rss, slack, twitch, twitter, wordpress;
+$social: dribbble, facebook, github, google, reddit, rss, slack, twitch, twitter, wordpress, youtube;
 
 i.bigbox-icon {
 	margin-right: ($spacer / 2);
