@@ -1,5 +1,34 @@
+$w: 24px;
+$h: 24px;
+
 .bigbox-icon {
-	width: 24px;
-	height: 24px;
+	width: $w;
+	height: $h;
 	fill: gray("700");
+}
+
+//
+// Static social icons that can be output inline on the frontend.
+//
+// <i class="bigbox-icon bigbox-icon--social"></i>
+//
+
+$social: dribbble, facebook, github, google, reddit, rss, slack, twitch, twitter, wordpress;
+
+i.bigbox-icon {
+	margin-right: ($spacer / 2);
+	mask-size: $w $h;
+	background-color: gray("700");
+	display: inline-block;
+
+	@each $logo in $social {
+
+		&--#{$logo} {
+			mask-image: url("../images/icons/logo-#{$logo}.svg");
+		}
+	}
+
+	a:hover & {
+		background-color: theme-color("primary");
+	}
 }

@@ -141,6 +141,14 @@ $menu-break-point: md;
 			visibility: visible;
 			opacity: 1;
 		}
+
+		// Inline icons.
+		i.bigbox-icon {
+			width: 16px;
+			height: 16px;
+			mask-size: 16px;
+			background-color: #fff;
+		}
 	}
 
 	// Dropdowns.

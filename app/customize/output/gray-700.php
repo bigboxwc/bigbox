@@ -53,6 +53,7 @@ return [
 	[
 		'selectors'    => [
 			'.woocommerce-product-gallery__trigger:after',
+			'i.bigbox-icon',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $gray700 ),
