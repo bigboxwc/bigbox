@@ -109,7 +109,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				<div class="action-list__item">
 					<div id="tax-total" class="tax-total action-list__item-label">
-						<?php echo WC->countries->tax_or_vat() . ': ' . $estimated_text; // WPCS: XSS okay. ?>
+						<?php echo WC()->countries->tax_or_vat() . ': ' . $estimated_text; // WPCS: XSS okay. ?>
 					</div>
 					<div class="action-list__item-value action-list__item-value--no-flex" labelledby="tax-total">
 						<span class="woocommerce-totals-plus">&plus; </span>
