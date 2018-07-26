@@ -8,12 +8,19 @@ $h: 24px;
 }
 
 //
-// Static social icons that can be output inline on the frontend.
+// Static social that can be output inline on the frontend.
 //
 // <i class="bigbox-icon bigbox-icon--#{social}"></i>
 //
 
 $social: dribbble, facebook, github, google, reddit, rss, slack, twitch, twitter, wordpress, youtube;
+$icons: arrow-right, arrow-left, cart, menu, search, star, star-empty, star-half, user;
+$sizes: (
+	xs: 0.5,
+	sm: 0.75,
+	lg: 1.25,
+	xl: 1.75,
+);
 
 i.bigbox-icon {
 	margin-right: ($spacer / 2);
@@ -21,10 +28,31 @@ i.bigbox-icon {
 	background-color: gray("700");
 	display: inline-block;
 
+	// Social icons.
 	@each $logo in $social {
 
 		&--#{$logo} {
 			mask-image: url("../images/icons/logo-#{$logo}.svg");
+		}
+	}
+
+	// Generic icons.
+	@each $icon in $icons {
+
+		&--#{$icon} {
+			mask-image: url("../images/icons/#{$icon}.svg");
+		}
+	}
+
+	// Sizes.
+	@each $size, $multiplier in $sizes {
+		$customW: ($w * $multiplier);
+		$customH: ($h * $multiplier);
+
+		&--size-#{$size} {
+			width: $customW;
+			height: $customH;
+			mask-size: $customW $customH;
 		}
 	}
 
