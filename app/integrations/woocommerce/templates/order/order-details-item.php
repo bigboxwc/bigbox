@@ -35,9 +35,9 @@ $product_permalink = apply_filters( 'woocommerce_order_item_permalink', $is_visi
 		<div class="product__preview">
 			<?php
 			if ( $product_permalink ) :
-				echo wp_kses_post( sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $product->get_image() ) );
+				printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $product->get_image() ); // WPCS: XSS okay.
 			else :
-				echo wp_kses_post( $product->get_image() );
+				echo $product->get_image(); // WPCS: XSS okay.
 			endif;
 			?>
 		</div>
@@ -46,14 +46,14 @@ $product_permalink = apply_filters( 'woocommerce_order_item_permalink', $is_visi
 		<div class="product__description">
 
 			<h2 class="product__title">
-				<?php echo wp_kses_post( apply_filters( 'woocommerce_order_item_name', $product_permalink ? sprintf( '<a href="%s">%s</a>', $product_permalink, $item->get_name() ) : $item->get_name(), $item, $is_visible ) ); ?>
+				<?php echo apply_filters( 'woocommerce_order_item_name', $product_permalink ? sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), esc_html( $item->get_name() ) ) : $item->get_name(), $item, $is_visible ); // WPCS: XSS okay. ?>
 			</h2>
 
 			<div class="product__meta price">
-				<?php echo wp_kses_post( $order->get_formatted_line_subtotal( $item ) ); ?>
+				<?php echo $order->get_formatted_line_subtotal( $item ); // WPCS: XSS okay. ?>
 
 				<del class="subtotal">
-					<?php echo wp_kses_post( apply_filters( 'woocommerce_order_item_quantity_html', sprintf( '&times; %s', $item->get_quantity() ), $item ) ); ?>
+					<?php echo apply_filters( 'woocommerce_order_item_quantity_html', sprintf( '&times; %s', $item->get_quantity() ), $item ); // WPCS: XSS okay. ?>
 				</del>
 			</div>
 

@@ -20,7 +20,7 @@ wp_enqueue_style( 'bigbox-nux' );
 	<h1><?php esc_html_e( '📦 Welcome to BigBox', 'bigbox' ); ?></h1>
 
 	<p class="about-text">
-		<?php echo wp_kses_post( __( 'Use the steps below to finish setting up your new website.', 'bigbox' ) ); ?>
+		<?php esc_html_e( 'Use the steps below to finish setting up your new website.', 'bigbox' ); ?>
 	</p>
 
 	<p class="helpful-links">

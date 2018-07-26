@@ -59,7 +59,7 @@ $notes = $order->get_customer_order_notes();
 	<h3 class="widget-title"><?php esc_html_e( 'Billing Address', 'bigbox' ); ?></h3>
 
 	<address>
-		<?php echo wp_kses_post( $order->get_formatted_billing_address( __( 'N/A', 'bigbox' ) ) ); ?>
+		<?php echo $order->get_formatted_billing_address( __( 'N/A', 'bigbox' ) ); // WPCS: XSS okay. ?>
 
 		<?php if ( $order->get_billing_phone() ) : ?>
 			<p class="woocommerce-customer-details--phone"><?php echo esc_html( $order->get_billing_phone() ); ?></p>
