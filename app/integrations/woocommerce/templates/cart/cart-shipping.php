@@ -104,7 +104,7 @@ endif;
 		// Nothing found for address.
 	else :
 		/* translators: %s shipping destination. */
-		$note = apply_filters( 'woocommerce_cart_no_shipping_available_html', sprintf( esc_html__( 'No shipping options were found for %s.', 'bigbox' ) . ' ', '<strong>' . esc_html( $formatted_destination ) . '</strong>' ) );
+		$note = apply_filters( 'woocommerce_cart_no_shipping_available_html', sprintf( esc_html__( 'No shipping options were found for %s.', 'bigbox' ) . ' ' .  $formatted_destination ) );
 	endif;
 	?>
 
