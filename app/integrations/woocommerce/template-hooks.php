@@ -150,7 +150,6 @@ remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' 
 
 add_filter(
 	'woocommerce_cross_sells_total',
-
 	/**
 	 * Crosell and Upsell total amount.
 	 *
@@ -165,7 +164,6 @@ add_filter(
 
 add_filter(
 	'woocommerce_cross_sells_columns',
-
 	/**
 	 * Crosell and Upsell items per row.
 	 *

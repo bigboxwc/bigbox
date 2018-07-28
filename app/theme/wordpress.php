@@ -18,7 +18,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 add_filter(
 	'get_search_form',
-
 	/**
 	 * Override get_search_form().
 	 *
@@ -36,7 +35,6 @@ add_filter(
  */
 add_filter(
 	'body_class',
-
 	/**
 	 * Add rounded corners to body by default.
 	 *
@@ -68,7 +66,6 @@ add_filter(
  */
 add_filter(
 	'admin_body_class',
-
 	/**
 	 * Add rounded corners to admin body by default.
 	 *

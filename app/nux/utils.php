@@ -36,7 +36,6 @@ function bigbox_nux_show_add_license_reminder() {
 
 	add_action(
 		'admin_notices',
-
 		/**
 		 * Output the license reminder notice.
 		 *

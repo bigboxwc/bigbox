@@ -14,7 +14,6 @@
  */
 add_action(
 	'bigbox_customize_inline_css',
-
 	/**
 	 * Append background color for FacetWP refresh.
 	 *

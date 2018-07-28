@@ -36,7 +36,6 @@ function bigbox_customize_controls_enqueue_scripts( $wp_customize ) {
 	wp_localize_script(
 		'bigbox-customize-controls',
 		'bigboxCustomizeControls',
-
 		/**
 		 * Filters the variables sent to the customize-controls.min.js script.
 		 *

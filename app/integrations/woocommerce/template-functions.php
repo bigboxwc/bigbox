@@ -394,7 +394,6 @@ function bigbox_add_to_cart() {
 function bigbox_woocommerce_product_tabs( $tabs ) {
 	add_filter(
 		'woocommerce_product_description_heading',
-
 		/**
 		 * Product Description tab content heading.
 		 *
@@ -409,7 +408,6 @@ function bigbox_woocommerce_product_tabs( $tabs ) {
 
 	add_filter(
 		'woocommerce_product_additional_information_heading',
-
 		/**
 		 * Product information tab content heading.
 		 *
