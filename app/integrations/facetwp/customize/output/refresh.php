@@ -11,13 +11,18 @@
 
 /**
  * Append background color for FacetWP refresh.
- *
- * @since 1.0.0
- *
- * @param $css BigBox\Customize\Build_Inline_CSS CSS object.
  */
 add_action(
-	'bigbox_customize_inline_css', function( $css ) {
+	'bigbox_customize_inline_css',
+
+	/**
+	 * Append background color for FacetWP refresh.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param $css BigBox\Customize\Build_Inline_CSS CSS object.
+	 */
+	function( $css ) {
 		$css->add(
 			[
 				'selectors'    => [

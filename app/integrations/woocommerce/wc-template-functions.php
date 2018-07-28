@@ -63,7 +63,8 @@ function woocommerce_subcategory_thumbnail( $category ) {
  */
 function woocommerce_output_product_categories( $args = [] ) {
 	$args = wp_parse_args(
-		$args, [
+		$args,
+		[
 			'before'    => apply_filters( 'woocommerce_before_output_product_categories', '' ),
 			'after'     => apply_filters( 'woocommerce_after_output_product_categories', '' ),
 			'parent_id' => 0,
@@ -86,7 +87,8 @@ function woocommerce_output_product_categories( $args = [] ) {
 
 	foreach ( $product_categories as $category ) {
 		wc_get_template(
-			'content-product_cat.php', [
+			'content-product_cat.php',
+			[
 				'category' => $category,
 			]
 		);

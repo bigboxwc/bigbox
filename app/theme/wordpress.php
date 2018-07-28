@@ -14,31 +14,39 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Plug in to get_search_form() and override with our own partial.
- *
- * @see https://developer.wordpress.org/reference/functions/get_search_form/
- *
- * @since 1.0.0
- *
- * @return string
+ * Override get_search_form().
  */
 add_filter(
-	'get_search_form', function() {
+	'get_search_form',
+
+	/**
+	 * Override get_search_form().
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string
+	 */
+	function() {
 		return bigbox_get_partial( 'searchform' );
 	}
 );
 
 /**
  * Add rounded corners to body by default.
- *
- * @since 1.0.0
- *
- * @param array $classes Body classes.
- * @return array
  */
 add_filter(
-	'body_class', function( $classes ) {
-		// @codingStandardsIgnoreStart 
+	'body_class',
+
+	/**
+	 * Add rounded corners to body by default.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $classes Body classes.
+	 * @return array
+	 */
+	function( $classes ) {
+		// @codingStandardsIgnoreStart
 		/**
 		 * Filters if the styles should use rounded corners.
 		 *
@@ -57,14 +65,19 @@ add_filter(
 
 /**
  * Add rounded corners to admin body by default.
- *
- * @since 1.0.0
- *
- * @param string $classes Body classes.
- * @return string
  */
 add_filter(
-	'admin_body_class', function( $classes ) {
+	'admin_body_class',
+
+	/**
+	 * Add rounded corners to admin body by default.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $classes Body classes.
+	 * @return string
+	 */
+	function( $classes ) {
 		$classes = $classes . ' is-rounded ';
 
 		return $classes;

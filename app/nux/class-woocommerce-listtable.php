@@ -77,10 +77,12 @@ class WooCommerce_ListTable extends \WP_Plugin_Install_List_Table {
 
 			foreach ( $plugins as $plugin ) {
 				$plugin = plugins_api(
-					'plugin_information', wp_parse_args(
+					'plugin_information',
+					wp_parse_args(
 						[
 							'slug' => $plugin,
-						], $args
+						],
+						$args
 					)
 				);
 

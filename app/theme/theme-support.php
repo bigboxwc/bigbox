@@ -33,7 +33,8 @@ function bigbox_add_theme_support() {
 
 	// Use HTML markup for WordPress-generated markup.
 	add_theme_support(
-		'html5', [
+		'html5',
+		[
 			'search-form',
 			'comment-form',
 			'commentlist',
@@ -47,7 +48,8 @@ function bigbox_add_theme_support() {
 
 	// Custom logo support.
 	add_theme_support(
-		'custom-logo', [
+		'custom-logo',
+		[
 			'flex-width'  => true,
 			'header-text' => true,
 		]
@@ -55,7 +57,8 @@ function bigbox_add_theme_support() {
 
 	// Background.
 	add_theme_support(
-		'custom-background', [
+		'custom-background',
+		[
 			'default-color' => '#ffffff',
 		]
 	);

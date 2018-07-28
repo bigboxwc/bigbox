@@ -22,7 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function bigbox_woocommerce_customize_register_navbar_sections( $wp_customize ) {
 	$wp_customize->add_section(
-		'navbar', [
+		'navbar',
+		[
 			'title'    => _x( 'Header Settings', 'customizer section title (header search)', 'bigbox' ),
 			'priority' => 90,
 		]

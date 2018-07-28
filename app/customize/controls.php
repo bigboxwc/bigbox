@@ -31,10 +31,20 @@ function bigbox_customize_controls_enqueue_scripts( $wp_customize ) {
 		true
 	);
 
+	$customize_contols_js = [];
+
 	wp_localize_script(
-		'bigbox-customize-controls', 'bigboxCustomizeControls', apply_filters(
-			'bigbox_customize_controls_js', []
-		)
+		'bigbox-customize-controls',
+		'bigboxCustomizeControls',
+
+		/**
+		 * Filters the variables sent to the customize-controls.min.js script.
+		 *
+		 * @since unknown
+		 *
+		 * @param array $customize_controls_js Javascript data.
+		 */
+		apply_filters( 'bigbox_customize_controls_js', $customize_controls_js ),
 	);
 
 	wp_enqueue_style(

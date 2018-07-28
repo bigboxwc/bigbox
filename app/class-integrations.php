@@ -47,13 +47,21 @@ final class Integrations implements Registerable, Service {
 		$integrations = $this->get_integrations();
 		$integrations = array_map( [ $this, 'instantiate_integration' ], $integrations );
 
-		array_walk(
-			$integrations, function( Integration $integration ) {
-				if ( $integration->is_active() ) {
-					$integration->register();
-				}
-			}
-		);
+		// Register.
+		array_walk( $integrations, [ $this, 'register_integration' ] );
+	}
+
+	/**
+	 * Register a single integration.
+	 *
+	 * @since 1.12.0
+	 *
+	 * @param Integration $integration Integration information.
+	 */
+	public function register_integration( Integration $integration ) {
+		if ( $integration->is_active() ) {
+			$integration->register();
+		}
 	}
 
 	/**
@@ -87,45 +95,45 @@ final class Integrations implements Registerable, Service {
 	 * @return array Array of fully qualified class names.
 	 */
 	public function get_integrations() {
+		$integrations = [
+			'woocommerce'        => [
+				'slug'         => 'woocommerce',
+				'class'        => Integration\WooCommerce::class,
+				'dependencies' => [
+					defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
+				],
+			],
+			'woocommerce-brands' => [
+				'slug'         => 'woocommerce-brands',
+				'class'        => Integration\WooCommerce_Brands::class,
+				'dependencies' => [
+					defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
+					defined( 'WC_BRANDS_VERSION' ) && WC_BRANDS_VERSION,
+				],
+			],
+			'facetwp'            => [
+				'slug'         => 'facetwp',
+				'class'        => Integration\FacetWP::class,
+				'dependencies' => [
+					defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
+					defined( 'FACETWP_VERSION' ) && FACETWP_VERSION,
+				],
+			],
+			'gutenberg'          => [
+				'slug'         => 'gutenberg',
+				'class'        => Integration\Gutenberg::class,
+				'dependencies' => [
+					function_exists( 'the_gutenberg_project' ),
+				],
+			],
+		];
+
 		/**
 		 * Filter registered integrations.
 		 *
 		 * @param array $services Fully qualified class names.
 		 */
-		return apply_filters(
-			'bigbox_integrations', [
-				'woocommerce'        => [
-					'slug'         => 'woocommerce',
-					'class'        => Integration\WooCommerce::class,
-					'dependencies' => [
-						defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
-					],
-				],
-				'woocommerce-brands' => [
-					'slug'         => 'woocommerce-brands',
-					'class'        => Integration\WooCommerce_Brands::class,
-					'dependencies' => [
-						defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
-						defined( 'WC_BRANDS_VERSION' ) && WC_BRANDS_VERSION,
-					],
-				],
-				'facetwp'            => [
-					'slug'         => 'facetwp',
-					'class'        => Integration\FacetWP::class,
-					'dependencies' => [
-						defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
-						defined( 'FACETWP_VERSION' ) && FACETWP_VERSION,
-					],
-				],
-				'gutenberg'          => [
-					'slug'         => 'gutenberg',
-					'class'        => Integration\Gutenberg::class,
-					'dependencies' => [
-						function_exists( 'the_gutenberg_project' ),
-					],
-				],
-			]
-		);
+		return apply_filters( 'bigbox_integrations', $integrations );
 	}
 
 }

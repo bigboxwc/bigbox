@@ -23,14 +23,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 function bigbox_woocommerce_customize_register_placeholder_controls( $wp_customize ) {
 	// Position.
 	$wp_customize->add_setting(
-		'hide-image-placeholders', [
+		'hide-image-placeholders',
+		[
 			'default'           => false,
 			'sanitize_callback' => 'absint',
 		]
 	);
 
 	$wp_customize->add_control(
-		'hide-image-placeholders', [
+		'hide-image-placeholders',
+		[
 			/* translators: Customizer control label. */
 			'label'    => __( 'Hide Image Placeholders', 'bigbox' ),
 			'type'     => 'checkbox',

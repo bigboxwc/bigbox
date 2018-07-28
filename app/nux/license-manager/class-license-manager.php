@@ -82,7 +82,9 @@ class License_Manager implements Registerable, Service {
 		add_action( 'wp_ajax_bigbox-license-request', [ $this, 'activate_or_deactivate_license' ] );
 
 		register_setting(
-			'general', 'bigbox_license', [
+			'general',
+			'bigbox_license',
+			[
 				'sanitize_callback' => 'esc_attr',
 				'show_in_rest'      => true,
 				'type'              => 'string',
@@ -91,7 +93,9 @@ class License_Manager implements Registerable, Service {
 		);
 
 		register_setting(
-			'general', 'bigbox_license_status', [
+			'general',
+			'bigbox_license_status',
+			[
 				'sanitize_callback' => 'esc_attr',
 				'show_in_rest'      => true,
 				'type'              => 'string',
@@ -111,7 +115,9 @@ class License_Manager implements Registerable, Service {
 		wp_register_script( 'bigbox-license-manager', get_template_directory_uri() . '/public/js/license-manager.min.js', [ 'wp-api', 'wp-util', 'wp-backbone' ], $version, true );
 
 		wp_localize_script(
-			'bigbox-license-manager', 'BigBoxLicenseManager', [
+			'bigbox-license-manager',
+			'BigBoxLicenseManager',
+			[
 				'nonce' => wp_create_nonce( 'bigbox-license-request' ),
 				'local' => [
 					'license' => $this->license,
@@ -135,7 +141,8 @@ class License_Manager implements Registerable, Service {
 	 */
 	protected function get_api_response( $api_params ) {
 		$response = wp_remote_post(
-			$this->remote_api_url, [
+			$this->remote_api_url,
+			[
 				'timeout' => 5,
 				'body'    => $api_params,
 			]

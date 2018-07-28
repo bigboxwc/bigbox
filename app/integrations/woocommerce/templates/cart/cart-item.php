@@ -82,7 +82,8 @@ $product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product
 
 				<?php
 				wc_get_template(
-					'single-product/add-to-cart/quantity.php', [
+					'single-product/add-to-cart/quantity.php',
+					[
 						'input_name'   => "cart[{$cart_item_key}][qty]",
 						'input_value'  => $cart_item['quantity'],
 						'input_id'     => "cart-{$cart_item_key}",

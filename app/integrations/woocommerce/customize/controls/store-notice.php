@@ -23,14 +23,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 function bigbox_woocommerce_customize_register_store_notice_controls( $wp_customize ) {
 	// Position.
 	$wp_customize->add_setting(
-		'demo-store-notice-position', [
+		'demo-store-notice-position',
+		[
 			'default'           => 'bottom',
 			'sanitize_callback' => 'sanitize_text_field',
 		]
 	);
 
 	$wp_customize->add_control(
-		'demo-store-notice-position', [
+		'demo-store-notice-position',
+		[
 			/* translators: Customizer control label. */
 			'label'    => __( 'Position', 'bigbox' ),
 			'type'     => 'select',
@@ -47,7 +49,8 @@ function bigbox_woocommerce_customize_register_store_notice_controls( $wp_custom
 
 	// Colors.
 	$wp_customize->add_setting(
-		'demo-store-notice-color', [
+		'demo-store-notice-color',
+		[
 			'default'           => '#565656',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
@@ -69,7 +72,8 @@ function bigbox_woocommerce_customize_register_store_notice_controls( $wp_custom
 	);
 
 	$wp_customize->add_setting(
-		'demo-store-notice-color-background', [
+		'demo-store-notice-color-background',
+		[
 			'default'           => '#e8bc55',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',

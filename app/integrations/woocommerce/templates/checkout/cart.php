@@ -20,7 +20,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php
 	foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) :
 		wc_get_template(
-			'cart/cart-item.php', [
+			'cart/cart-item.php',
+			[
 				'cart_item_key' => $cart_item_key,
 				'cart_item'     => $cart_item,
 			]

@@ -31,7 +31,8 @@ if ( is_singular( 'product' ) ) :
 	<div class="action-list__item-value">
 	<?php
 	wc_get_template(
-		'single-product/add-to-cart/quantity.php', [
+		'single-product/add-to-cart/quantity.php',
+		[
 			'min_value'   => $min_value,
 			'max_value'   => $max_value,
 			'input_id'    => $input_id,

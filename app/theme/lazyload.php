@@ -87,7 +87,8 @@ function bigbox_allow_lazy_attributes( $allowed_tags ) {
 
 	// But, if images are allowed, ensure that our attributes are allowed!
 	$img_attributes = array_merge(
-		$allowed_tags['img'], [
+		$allowed_tags['img'],
+		[
 			'data-src'    => 1,
 			'data-srcset' => 1,
 			'data-sizes'  => 1,
@@ -135,7 +136,8 @@ function bigbox_add_image_placeholders( $content ) {
  */
 function bigbox_should_skip_image_with_blacklisted_class( $classes ) {
 	$blacklisted_classes = apply_filters(
-		'bigbox_lazyload_blacklisted_classes', [
+		'bigbox_lazyload_blacklisted_classes',
+		[
 			'skip-lazy',
 			'custom-logo',
 		]

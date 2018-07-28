@@ -118,7 +118,7 @@ function bigbox_woocommerce_get_dynamic_shop_pages() {
 		$query = new WP_Query(
 			[
 				'fields'                 => 'ids',
-				'nopaging'               => true, 
+				'nopaging'               => true,
 				'post_type'              => 'page',
 				'update_post_meta_cache' => false,
 				'update_term_meta_cache' => false,
@@ -155,6 +155,18 @@ function bigbox_woocommerce_dynamic_shop_pages_create_sidebars() {
 		return;
 	}
 
+	$woocommerce_dynamic_shop_page_widget_args = [
+		/* translators: %s: Dynamic widget area name. */
+		'name'          => sprintf( __( 'Page: %s', 'bigbox' ), get_the_title( $page ) ),
+		/* translators: %s: Dynamic widget area description. */
+		'description'   => sprintf( __( 'Widgets that appear on the "%s" page.', 'bigbox' ), get_the_title( $page ) ),
+		'id'            => 'page-' . $page,
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	];
+
 	foreach ( $pages as $page ) {
 		register_sidebar(
 			/**
@@ -165,17 +177,9 @@ function bigbox_woocommerce_dynamic_shop_pages_create_sidebars() {
 			 * @param array $args The arguments used in register_sidebar()
 			 */
 			apply_filters(
-				'bigbox_woocommerce_dynamic_shop_pages_widget_args', [
-					/* translators: %s: Dynamic widget area name. */
-					'name'          => sprintf( __( 'Page: %s', 'bigbox' ), get_the_title( $page ) ),
-					/* translators: %s: Dynamic widget area description. */
-					'description'   => sprintf( __( 'Widgets that appear on the "%s" page.', 'bigbox' ), get_the_title( $page ) ),
-					'id'            => 'page-' . $page,
-					'before_widget' => '<div id="%1$s" class="widget %2$s">',
-					'after_widget'  => '</div>',
-					'before_title'  => '<h3 class="widget-title">',
-					'after_title'   => '</h3>',
-				], $page
+				'bigbox_woocommerce_dynamic_shop_pages_widget_args',
+				$woocommerce_dynamic_shop_page_widget_args
+				$page
 			)
 		);
 	}

@@ -54,23 +54,27 @@ endif;
 		if ( bigbox_is_shop() && ! is_customize_preview() ) :
 			echo facetwp_display( 'facet', $dropdown['name'] ); // WPCS: XSS okay.
 		else :
+			$navbar_search_dropdown = [
+				'show_option_all' => $all,
+				'name'            => $name,
+				'taxonomy'        => $taxonomy->name,
+				'hierarchical'    => 'no' !== $dropdown['hierarchical'],
+				'value_field'     => 'slug',
+				'show_count'      => true,
+				'orderby'         => $dropdown['orderby'],
+				'order'           => 'ASC',
+				'number'          => $dropdown['count'],
+			];
+
 			wp_dropdown_categories(
 				/**
 				 * This filter is documented in app/integrations/template/global/navbar-search.php
+				 *
+				 * @since 1.0.0
+				 *
+				 * @param array $bigbox_navbar_search_dropdown wp_dropdown_categories() arguments.
 				 */
-				apply_filters(
-					'bigbox_navbar_search_dropdown', [
-						'show_option_all' => $all,
-						'name'            => $name,
-						'taxonomy'        => $taxonomy->name,
-						'hierarchical'    => 'no' !== $dropdown['hierarchical'],
-						'value_field'     => 'slug',
-						'show_count'      => true,
-						'orderby'         => $dropdown['orderby'],
-						'order'           => 'ASC',
-						'number'          => $dropdown['count'],
-					]
-				)
+				apply_filters( 'bigbox_navbar_search_dropdown', $navbar_search_dropdown );
 			);
 		endif;
 		?>

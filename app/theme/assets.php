@@ -94,7 +94,13 @@ function bigbox_enqueue_scripts() {
 	wp_enqueue_script( $stylesheet, get_template_directory_uri() . '/public/js/app.min.js', $deps, $version, true );
 
 	// Send information to application scripts.
+	$js_data = [
+		'backgroundColor' => sanitize_hex_color( get_background_color() ),
+	];
+
 	wp_localize_script(
+		$stylesheet,
+		'bigbox',
 		/**
 		 * Filter the data sent to the main Javascript script.
 		 *
@@ -102,11 +108,7 @@ function bigbox_enqueue_scripts() {
 		 *
 		 * @param array $js JS object additions.
 		 */
-		$stylesheet, 'bigbox', apply_filters(
-			'bigbox_js', [
-				'backgroundColor' => sanitize_hex_color( get_background_color() ),
-			]
-		)
+		apply_filters( 'bigbox_js', $js_data ),
 	);
 }
 add_action( 'wp_enqueue_scripts', 'bigbox_enqueue_scripts' );

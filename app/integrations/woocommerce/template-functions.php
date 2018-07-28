@@ -363,7 +363,8 @@ function bigbox_woocommerce_template_tertiary() {
 		// Add (tertiary) sidebar on archives.
 	} else {
 		add_action(
-			'woocommerce_sidebar', function() {
+			'woocommerce_sidebar',
+			function() {
 				wc_get_template( 'global/sidebar-tertiary.php' );
 			}
 		);
@@ -392,13 +393,31 @@ function bigbox_add_to_cart() {
  */
 function bigbox_woocommerce_product_tabs( $tabs ) {
 	add_filter(
-		'woocommerce_product_description_heading', function() {
+		'woocommerce_product_description_heading',
+
+		/**
+		 * Product Description tab content heading.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @return string
+		 */
+		function() {
 			return __( 'Product description', 'bigbox' );
 		}
 	);
 
 	add_filter(
-		'woocommerce_product_additional_information_heading', function() {
+		'woocommerce_product_additional_information_heading',
+
+		/**
+		 * Product information tab content heading.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @return string
+		 */
+		function() {
 			return __( 'Product information', 'bigbox' );
 		}
 	);
