@@ -84,9 +84,7 @@ final class Theme implements Registerable {
 	 * @param Service $service service information.
 	 */
 	public function register_service( Service $service ) {
-		if ( $service->is_active() ) {
-			$service->register();
-		}
+		return $service->register();
 	}
 
 	/**
