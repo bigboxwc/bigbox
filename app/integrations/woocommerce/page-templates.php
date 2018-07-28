@@ -155,19 +155,19 @@ function bigbox_woocommerce_dynamic_shop_pages_create_sidebars() {
 		return;
 	}
 
-	$woocommerce_dynamic_shop_page_widget_args = [
-		/* translators: %s: Dynamic widget area name. */
-		'name'          => sprintf( __( 'Page: %s', 'bigbox' ), get_the_title( $page ) ),
-		/* translators: %s: Dynamic widget area description. */
-		'description'   => sprintf( __( 'Widgets that appear on the "%s" page.', 'bigbox' ), get_the_title( $page ) ),
-		'id'            => 'page-' . $page,
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	];
-
 	foreach ( $pages as $page ) {
+		$woocommerce_dynamic_shop_page_widget_args = [
+			/* translators: %s: Dynamic widget area name. */
+			'name'          => sprintf( __( 'Page: %s', 'bigbox' ), get_the_title( $page ) ),
+			/* translators: %s: Dynamic widget area description. */
+			'description'   => sprintf( __( 'Widgets that appear on the "%s" page.', 'bigbox' ), get_the_title( $page ) ),
+			'id'            => 'page-' . $page,
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		];
+
 		register_sidebar(
 			/**
 			 * Filters the argument used when registering sidebars for dynamic shop pages.
