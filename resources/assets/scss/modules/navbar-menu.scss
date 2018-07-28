@@ -142,11 +142,14 @@ $menu-break-point: md;
 			opacity: 1;
 		}
 
-		// Inline icons.
+		$icon-dim: $icon-w * map-get($icon-size-multipliers, "xs");
+
+		// Icons.
+		> a:before,
 		i.bigbox-icon {
-			width: 16px;
-			height: 16px;
-			mask-size: 16px;
+			width: $icon-dim;
+			height: $icon-dim;
+			mask-size: $icon-dim;
 			background-color: #fff;
 		}
 	}
