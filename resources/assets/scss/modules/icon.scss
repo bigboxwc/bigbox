@@ -1,9 +1,6 @@
-$w: 24px;
-$h: 24px;
-
 .bigbox-icon {
-	width: $w;
-	height: $h;
+	width: $icon-w;
+	height: $icon-h;
 	fill: gray("700");
 }
 
@@ -12,24 +9,14 @@ $h: 24px;
 //
 // <i class="bigbox-icon bigbox-icon--#{social}"></i>
 //
-
-$social: dribbble, facebook, github, google, reddit, rss, slack, twitch, twitter, wordpress, youtube;
-$icons: arrow-right, arrow-left, cart, menu, search, star, star-empty, star-half, user;
-$sizes: (
-	xs: 0.5,
-	sm: 0.75,
-	lg: 1.25,
-	xl: 1.75,
-);
-
 i.bigbox-icon {
 	margin-right: ($spacer / 2);
-	mask-size: $w $h;
+	mask-size: $icon-w $icon-h;
 	background-color: gray("700");
 	display: inline-block;
 
 	// Social icons.
-	@each $logo in $social {
+	@each $logo in map-get($icons, "social") {
 
 		&--#{$logo} {
 			mask-image: url("../images/icons/logo-#{$logo}.svg");
@@ -37,7 +24,7 @@ i.bigbox-icon {
 	}
 
 	// Generic icons.
-	@each $icon in $icons {
+	@each $icon in map-get($icons, "generic") {
 
 		&--#{$icon} {
 			mask-image: url("../images/icons/#{$icon}.svg");
@@ -45,9 +32,9 @@ i.bigbox-icon {
 	}
 
 	// Sizes.
-	@each $size, $multiplier in $sizes {
-		$customW: ($w * $multiplier);
-		$customH: ($h * $multiplier);
+	@each $size, $multiplier in $icon-size-multipliers {
+		$customW: ($icon-w * $multiplier);
+		$customH: ($icon-h * $multiplier);
 
 		&--size-#{$size} {
 			width: $customW;

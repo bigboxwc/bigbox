@@ -1,4 +1,18 @@
 .menu-item > a {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
+
+	// Social icons.
+	@each $network in map-get($icons, "social") {
+
+		&[href*="#{ $network }.com"]::before {
+			content: "";
+			width: $icon-w;
+			height: $icon-h;
+			margin-right: ($spacer / 2);
+			mask-image: url("../images/icons/logo-#{$network}.svg");
+			mask-size: $icon-w $icon-h;
+			background-color: gray("700");
+		}
+	}
 }
