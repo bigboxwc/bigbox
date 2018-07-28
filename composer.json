@@ -13,11 +13,20 @@
 		"classmap": ["app/"]
 	},
 	"scripts": {
-		"lint": "phpcs",
-		"lint:fix": "phpcbf"
+		"install-codestandards": [
+			"Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
+		],
+		"lint": "vendor/bin/phpcs",
+		"lint:fix": "vendor/bin/phpcbf"
 	},
 	"require": {
 		"a5hleyrich/wp-background-processing": "^1.0",
 		"bigboxwc/wp-template-loader": "1.0.2"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+		"squizlabs/php_codesniffer": "^3.3",
+		"phpcompatibility/phpcompatibility-wp": "*",
+		"wp-coding-standards/wpcs": "^1"
 	}
 }
