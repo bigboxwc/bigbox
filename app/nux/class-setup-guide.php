@@ -116,7 +116,9 @@ class Setup_Guide implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function admin_enqueue_scripts() {
-		wp_register_style( 'bigbox-nux', get_template_directory_uri() . '/public/css/nux.min.css' );
+		$version = bigbox_get_theme_version();
+
+		wp_register_style( 'bigbox-nux', get_template_directory_uri() . '/public/css/nux.min.css', [], $version );
 	}
 
 	/**

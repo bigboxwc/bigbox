@@ -23,7 +23,8 @@ function bigbox_customize_preview_init() {
 		'webfontloader',
 		'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js',
 		[],
-		'1.6.26'
+		'1.6.26',
+		true
 	);
 
 	wp_enqueue_script(

@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /* translators: %s: Quantity. */
-$labelledby = ! empty( $args['product_name'] ) ? sprintf( __( '%s quantity', 'bigbox' ), strip_tags( $args['product_name'] ) ) : '';
+$labelledby = ! empty( $args['product_name'] ) ? sprintf( __( '%s quantity', 'bigbox' ), wp_strip_all_tags( $args['product_name'] ) ) : '';
 ?>
 
 <div id="add-to-cart-quantity">

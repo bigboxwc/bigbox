@@ -106,7 +106,9 @@ class License_Manager implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function admin_enqueue_scripts() {
-		wp_register_script( 'bigbox-license-manager', get_template_directory_uri() . '/public/js/license-manager.min.js', [ 'wp-api', 'wp-util', 'wp-backbone' ] );
+		$version = bigbox_get_theme_version();
+
+		wp_register_script( 'bigbox-license-manager', get_template_directory_uri() . '/public/js/license-manager.min.js', [ 'wp-api', 'wp-util', 'wp-backbone' ], $version, true );
 
 		wp_localize_script(
 			'bigbox-license-manager', 'BigBoxLicenseManager', [

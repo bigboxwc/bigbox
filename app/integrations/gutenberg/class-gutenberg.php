@@ -72,7 +72,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 		$google = bigbox_get_google_fonts_url();
 
 		if ( $google ) {
-			wp_enqueue_style( $stylesheet . '-fonts', $google );
+			wp_enqueue_style( $stylesheet . '-fonts', $google, [], $version );
 		}
 
 		wp_enqueue_style( $stylesheet . '-gutenberg', get_template_directory_uri() . '/public/css/gutenberg.min.css', [], $version );
