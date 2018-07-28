@@ -141,7 +141,7 @@ const config = {
 		new CopyWebpackPlugin( [
 			{
 				from: 'resources/assets/images/icons',
-				to: 'public/images/icons'
+				to: 'public/images/icons',
 			},
 		] ),
 		new webpack.ProvidePlugin( {
