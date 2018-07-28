@@ -45,7 +45,7 @@ $plugins = [
 			/* translators: %s Plugin name. */
 			'more' => sprintf( esc_html__( 'More information about %s', 'bigbox' ), $data['label'] ),
 		];
-	?>
+		?>
 
 	<div class="plugin-card">
 		<div class="plugin-card-top">

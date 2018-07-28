@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'<mark class="order-date">' . esc_html( wc_format_datetime( $order->get_date_created() ) ) . '</mark>',
 		'<mark class="order-status order-status--' . esc_attr( $order->get_status() ) . '">' . esc_html( strtolower( wc_get_order_status_name( $order->get_status() ) ) ) . '</mark>'
 	); // WPCS: XSS okay.
-?>
+	?>
 </p>
 
 <?php do_action( 'woocommerce_view_order', $order_id ); ?>

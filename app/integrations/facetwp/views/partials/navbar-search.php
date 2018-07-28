@@ -42,7 +42,7 @@ endif;
 	if ( $taxonomy ) :
 		$name = FWP()->helper->get_setting( 'prefix' ) . $dropdown['name'];
 		$all  = esc_html( isset( $dropdown['label_any'] ) ? $dropdown['label_any'] : __( 'All', 'bigbox' ) );
-	?>
+		?>
 
 	<div id="navbar-search__category" class="navbar-search__category">
 		<label for="<?php echo esc_attr( $name ); ?>" class="screen-reader-text">
@@ -81,12 +81,12 @@ endif;
 		</select>
 	</div>
 
-	<?php
+		<?php
 	endif;
 
 	if ( $search ) :
 		$name = FWP()->helper->get_setting( 'prefix' ) . $search['name'];
-	?>
+		?>
 
 	<div class="navbar-search__keywords">
 		<label for="<?php echo esc_attr( $name ); ?>" class="screen-reader-text">
@@ -97,7 +97,7 @@ endif;
 		if ( bigbox_is_shop() && ! is_customize_preview() ) :
 			echo facetwp_display( 'facet', $search['name'] ); // WPCS: XSS okay.
 		else :
-		?>
+			?>
 			<input type="search" id="<?php echo esc_attr( $name ); ?>" name="<?php echo esc_attr( $name ); ?>" class="form-input" placeholder="<?php echo esc_attr( $search['placeholder'] ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" />
 		<?php endif; ?>
 	</div>

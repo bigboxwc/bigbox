@@ -47,7 +47,7 @@ endif;
 			<?php
 			// Show shipping calculator below method list.
 			if ( $show_shipping_calculator ) :
-			?>
+				?>
 				<button class="shipping-calculator-button button--text"><?php echo esc_html( $calculator_text ); ?></button>
 			<?php endif; ?>
 		</div>
@@ -61,14 +61,14 @@ endif;
 
 	// Show what is being shipped in this package after the methods if multiple.
 	if ( $show_package_details ) :
-	?>
+		?>
 		<p class="woocommerce-shipping-contents"><?php echo esc_html( $package_details ); ?></p>
 	<?php endif; ?>
 
 	<?php
 	// Show shipping methods. Will be hidden with CSS if only one is available.
 	if ( $available_methods ) :
-	?>
+		?>
 
 		<ul id="shipping_method" class="shipping-methods">
 			<?php foreach ( $available_methods as $method ) : ?>
@@ -94,8 +94,8 @@ endif;
 			<?php endforeach; ?>
 		</ul>
 
-	<?php
-	// No address available.
+		<?php
+		// No address available.
 	elseif ( ! $formatted_destination && $available_methods ) :
 		$note = __( 'Enter your address to view shipping options.', 'bigbox' );
 		// Nothing enabled in admin.
@@ -104,21 +104,21 @@ endif;
 		// Nothing found for address.
 	else :
 		/* translators: %s shipping destination. */
-		$note = apply_filters( 'woocommerce_cart_no_shipping_available_html', sprintf( esc_html__( 'No shipping options were found for %s.', 'bigbox' ) . ' ' .  $formatted_destination ) );
+		$note = apply_filters( 'woocommerce_cart_no_shipping_available_html', sprintf( esc_html__( 'No shipping options were found for %s.', 'bigbox' ) . ' ' . $formatted_destination ) );
 	endif;
 	?>
 
 	<?php
 	// Show note.
 	if ( $note ) :
-	?>
+		?>
 		<p class="woocommerce-shipping-note"><?php echo wp_kses_post( $note ); ?></p>
 	<?php endif; ?>
 
 	<?php
 	// Show the price of the chosen method.
 	if ( $chosen_method_object ) :
-	?>
+		?>
 
 		<div class="action-list__item">
 			<div class="action-list__item-label"></div>
@@ -131,7 +131,7 @@ endif;
 		<?php
 		// Show what is being shipped in this package after the label if only one method.
 		if ( $show_package_details && ! $multiple_methods ) :
-		?>
+			?>
 			<p class="woocommerce-shipping-contents"><?php echo esc_html( $package_details ); ?></p>
 		<?php endif; ?>
 

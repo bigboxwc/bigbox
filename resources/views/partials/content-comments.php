@@ -23,7 +23,7 @@ if ( ! comments_open() && ! have_comments() ) :
 endif;
 
 if ( have_comments() ) :
-?>
+	?>
 
 <div class="comments">
 	<h3 class="commentlist-title ">
@@ -44,7 +44,7 @@ if ( have_comments() ) :
 
 </div>
 
-<?php
+	<?php
 endif;
 
 if ( comments_open() ) :

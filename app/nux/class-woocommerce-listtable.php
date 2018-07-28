@@ -108,15 +108,15 @@ class WooCommerce_ListTable extends \WP_Plugin_Install_List_Table {
 
 		wp_print_request_filesystem_credentials_modal();
 		wp_print_admin_notice_templates();
-?>
+		?>
 
 <form id="plugin-filter" method="post">
 
-	<?php $this->display_rows_or_placeholder(); ?>
+		<?php $this->display_rows_or_placeholder(); ?>
 
 </form>
 
-<?php
+		<?php
 	}
 
 }

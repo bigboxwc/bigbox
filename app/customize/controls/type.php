@@ -173,7 +173,6 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 				'section'     => 'type',
 			]
 		);
-
 	}
 }
 add_action( 'customize_register', 'bigbox_customize_register_type_controls' );

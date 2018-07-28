@@ -22,7 +22,7 @@ endif;
 
 while ( have_posts() ) :
 	the_post();
-?>
+	?>
 
 <div id="main" class="site-primary site-primary--<?php echo esc_attr( $columns ); ?>" role="main">
 	<h1 class="page-title"><?php the_title(); ?></h1>
@@ -32,7 +32,7 @@ while ( have_posts() ) :
 	</article>
 </div>
 
-<?php
+	<?php
 endwhile;
 
 bigbox_view( 'global/footer-min' );

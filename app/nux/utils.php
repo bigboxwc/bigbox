@@ -137,7 +137,6 @@ function bigbox_install_plugin( $plugin_slug, $plugin ) {
 			}
 
 			$activate = true;
-
 		} catch ( Exception $e ) {
 			return $e->get_error_message();
 		}

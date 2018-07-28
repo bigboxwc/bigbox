@@ -41,7 +41,6 @@ function bigbox_lazyload_images() {
 	// Do not lazy load avatar in admin bar.
 	add_action( 'admin_bar_menu', 'bigbox_remove_filters', 0 );
 	add_filter( 'wp_kses_allowed_html', 'bigbox_allow_lazy_attributes' );
-
 }
 add_action( 'after_setup_theme', 'bigbox_lazyload_images' );
 

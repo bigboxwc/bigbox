@@ -31,15 +31,15 @@ do_action( 'woocommerce_before_main_content' );
 
 while ( have_posts() ) :
 	the_post();
-?>
+	?>
 
 <header class="woocommerce-products-header">
 	<h1 class="woocommerce-products-header__title page-title"><?php the_title(); ?></h1>
 </header>
 
-<?php the_content(); ?>
+	<?php the_content(); ?>
 
-<?php
+	<?php
 endwhile;
 
 /**

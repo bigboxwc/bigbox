@@ -37,7 +37,7 @@ $form_url = apply_filters( 'bigbox_navbar_search_form_url', wc_get_page_permalin
 
 		/* translators: %s Header dropdown "All" label. */
 		$all = esc_html( sprintf( __( 'All %s', 'bigbox' ), strtolower( $taxonomy->labels->name ) ) );
-	?>
+		?>
 
 	<div id="navbar-search__category" class="navbar-search__category">
 		<label for="<?php echo esc_attr( $taxonomy->name ); ?>" class="screen-reader-text">

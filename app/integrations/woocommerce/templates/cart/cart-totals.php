@@ -91,7 +91,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					: '';
 
 			if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) :
-			?>
+				?>
 
 				<?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : ?>
 					<div class="tax-rate action-list__item">

@@ -32,14 +32,14 @@ if ( $product->is_on_sale() ) :
 	else :
 		$flash = __( 'Sale', 'bigbox' );
 	endif;
-?>
+	?>
 
 <div class="product__sale">
-<?php
-/* translators: %1$s Sale price percentage. */
-echo esc_html( apply_filters( 'woocommerce_sale_flash', $flash, $post, $product ) );
-?>
+	<?php
+	/* translators: %1$s Sale price percentage. */
+	echo esc_html( apply_filters( 'woocommerce_sale_flash', $flash, $post, $product ) );
+	?>
 </div>
 
-<?php
+	<?php
 endif;

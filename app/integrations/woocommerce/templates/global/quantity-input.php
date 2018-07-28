@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( is_singular( 'product' ) ) :
-?>
+	?>
 
 <div class="action-list__item">
 
@@ -48,22 +48,22 @@ if ( is_singular( 'product' ) ) :
 
 </div>
 
-<?php
+	<?php
 	return;
 endif;
 
 if ( $max_value && $min_value === $max_value ) :
-?>
+	?>
 
 <div class="quantity hidden">
 	<input type="hidden" id="<?php echo esc_attr( $input_id ); ?>" class="qty" name="<?php echo esc_attr( $input_name ); ?>" value="<?php echo esc_attr( $min_value ); ?>" />
 </div>
 
-<?php
+	<?php
 else :
 	/* translators: %s: Quantity. */
 	$labelledby = ! empty( $args['product_name'] ) ? sprintf( __( '%s quantity', 'bigbox' ), strip_tags( $args['product_name'] ) ) : '';
-?>
+	?>
 
 <div class="quantity">
 	<label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'bigbox' ); ?></label>
@@ -84,5 +84,5 @@ else :
 		aria-labelledby="<?php echo esc_attr( $labelledby ); ?>" />
 </div>
 
-<?php
+	<?php
 endif;
