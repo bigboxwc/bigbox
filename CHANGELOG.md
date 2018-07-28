@@ -5,8 +5,8 @@
 - Improved UI for cart totals and shipping.
 - WooCommerce 3.4.4 compatibility.
 - Add Social Icons.
-  - Can be used inline with `<i class="bigbox-icon bigbox-icon--twitter"></i>`
-	- Automatically applied to menu item links with social URLs.
+  - Can be used inline with `<i class="bigbox-icon bigbox-icon--twitter"></i>`.
+  - Automatically applied to menu item links with social URLs.
 
 ### Fix
 
