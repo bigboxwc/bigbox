@@ -178,7 +178,7 @@ function bigbox_woocommerce_dynamic_shop_pages_create_sidebars() {
 			 */
 			apply_filters(
 				'bigbox_woocommerce_dynamic_shop_pages_widget_args',
-				$woocommerce_dynamic_shop_page_widget_args
+				$woocommerce_dynamic_shop_page_widget_args,
 				$page
 			)
 		);

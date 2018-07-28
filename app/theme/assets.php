@@ -108,7 +108,7 @@ function bigbox_enqueue_scripts() {
 		 *
 		 * @param array $js JS object additions.
 		 */
-		apply_filters( 'bigbox_js', $js_data ),
+		apply_filters( 'bigbox_js', $js_data )
 	);
 }
 add_action( 'wp_enqueue_scripts', 'bigbox_enqueue_scripts' );

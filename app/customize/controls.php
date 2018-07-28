@@ -43,7 +43,7 @@ function bigbox_customize_controls_enqueue_scripts( $wp_customize ) {
 		 *
 		 * @param array $customize_controls_js Javascript data.
 		 */
-		apply_filters( 'bigbox_customize_controls_js', $customize_controls_js ),
+		apply_filters( 'bigbox_customize_controls_js', $customize_controls_js )
 	);
 
 	wp_enqueue_style(

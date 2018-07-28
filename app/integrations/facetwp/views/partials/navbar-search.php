@@ -74,7 +74,7 @@ endif;
 				 *
 				 * @param array $bigbox_navbar_search_dropdown wp_dropdown_categories() arguments.
 				 */
-				apply_filters( 'bigbox_navbar_search_dropdown', $navbar_search_dropdown );
+				apply_filters( 'bigbox_navbar_search_dropdown', $navbar_search_dropdown )
 			);
 		endif;
 		?>
