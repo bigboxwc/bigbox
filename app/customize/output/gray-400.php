@@ -46,6 +46,7 @@ return [
 		],
 		'declarations' => [
 			'border-right-color' => esc_attr( $gray400 ),
+			'border-left-color' => 'transparent',
 		],
 	],
 ];

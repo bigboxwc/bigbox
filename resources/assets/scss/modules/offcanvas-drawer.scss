@@ -70,6 +70,10 @@
 	background: none;
 	transition: background 0.2s ease;
 	display: block;
+
+	.rtl & {
+		cursor: e-resize;
+	}
 }
 
 .offcanvas-drawer__close {
