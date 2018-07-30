@@ -26,6 +26,8 @@ return [
 			'select',
 			'.navbar-menu--primary .sub-menu a',
 			'.navbar-menu--secondary .sub-menu a',
+			'.navbar-menu--primary .sub-menu .menu-item > a:before',
+			'.navbar-menu--primary .sub-menu .menu-item i.bigbox-icon',
 			'.breadcrumbs a',
 			'.woocommerce-breadcrumb a',
 			'.button--text',
