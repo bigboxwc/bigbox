@@ -12,11 +12,6 @@ form.woocommerce-checkout {
 ".woocommerce-checkout__review"
 );
 
-.woocommerce-checkout-review-order {
-
-	@include card();
-}
-
 #place_order {
 
 	@include button();
@@ -77,10 +72,7 @@ form.woocommerce-checkout {
 	}
 
 	[type="radio"]:checked + label[for^="payment_method"] {
-
-		@include card();
-		@include card--primary();
-
+		color: theme-color("success");
 		padding: 0;
 
 		&::before {
@@ -100,14 +92,11 @@ form.woocommerce-checkout {
 		color: gray("500");
 		width: 100%;
 		margin: 0;
+		padding: $spacer $spacer $spacer ($spacer * 2.5) !important;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		position: relative;
-
-		@include card();
-
-		padding: $spacer $spacer $spacer ($spacer * 2.5) !important;
 
 		&::before {
 			content: "";
@@ -154,12 +143,18 @@ form.woocommerce-checkout {
 }
 
 .woocommerce-form-coupon-toggle {
+	padding: 0;
 
-	@include vertical-spacing("margin", "down", (
+	@include make-row();
+
+	.woocommerce-notice-list {
+
+		@include vertical-spacing("margin", "down", (
 		sm: 1,
-	));
+		));
+	}
 
-	.woocommerce-info {
+	.woocommerce-notice {
 		font-size: $font-size-sm;
 		margin: 0;
 		padding: 0;

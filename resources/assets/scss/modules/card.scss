@@ -1,4 +1,12 @@
 .card {
-  
+
 	@include card();
+
+	@each $name, $hex in $theme-colors {
+
+		&--color-#{$name} {
+
+			@include card--color(theme-color($name));
+		}
+	}
 }

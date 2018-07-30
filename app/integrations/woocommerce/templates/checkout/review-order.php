@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php woocommerce_checkout_coupon_form(); ?>
 
-	<div id="order_review" class="woocommerce-checkout-review-order">
+	<div id="order_review" class="card woocommerce-checkout-review-order">
 		<?php wc_get_template( 'cart/cart-totals.php' ); ?>
 		<?php wc_get_template( 'checkout/submit.php' ); ?>
 	</div>

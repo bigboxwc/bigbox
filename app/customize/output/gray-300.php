@@ -106,11 +106,6 @@ return [
 	[
 		'selectors'    => [
 			'.card',
-			'.woocommerce-checkout-review-order',
-			'.woocommerce-message',
-			'.woocommerce-info',
-			'.wc_payment_method [type="radio"] label[for^="payment_method"]',
-			'.woocommerce-verification-required',
 			'table',
 		],
 		'declarations' => [

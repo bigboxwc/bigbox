@@ -26,30 +26,23 @@ return [
 			'background-color' => esc_attr( $success ),
 		],
 	],
-	// Solid border-color.
-	[
-		'selectors'    => [
-			'.wc_payment_method [type="radio"]:checked + label[for^="payment_method"]:before',
-		],
-		'declarations' => [
-			'border-color' => esc_attr( $success ),
-		],
-	],
 	// Solid color.
 	[
 		'selectors'    => [
 			'.woocommerce-purchase-form p.instock',
 			'.wc-saved-payment-methods input:checked + label',
 			'.order-status--completed',
+			'.wc_payment_method [type="radio"]:checked + label[for^="payment_method"]',
 		],
 		'declarations' => [
 			'color' => esc_attr( $success ),
 		],
 	],
 
-	// @mixin card--primary.
+	// @mixin card--success.
 	[
 		'selectors'    => [
+			'.card.card--success',
 			'.wc_payment_method [type="radio"]:checked + label[for^="payment_method"]',
 		],
 		'declarations' => [
@@ -69,13 +62,8 @@ return [
 			'#place_order',
 			'.single_add_to_cart_button',
 
-			// @todo https://github.com/woocommerce/woocommerce/pull/18533
-			'.woocommerce-info .woocommerce-Button',
-			'.woocommerce-message .woocommerce-Button',
-			'.woocommerce-error li .woocommerce-Button',
-			'.woocommerce-info .wc-forward',
-			'.woocommerce-message .wc-forward',
-			'.woocommerce-error li .wc-forward',
+			'.woocommerce-notice-list__item .woocommerce-Button',
+			'.woocommerce-notice-list__item .wc-forward',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $success ),

@@ -120,7 +120,7 @@ endif;
 
 		<?php else : ?>
 
-			<p class="woocommerce-verification-required"><?php esc_html_e( 'Only logged in customers who have purchased this product may leave a review.', 'bigbox' ); ?></p>
+			<p class="card woocommerce-verification-required"><?php esc_html_e( 'Only logged in customers who have purchased this product may leave a review.', 'bigbox' ); ?></p>
 
 		<?php endif; ?>
 	</div>
