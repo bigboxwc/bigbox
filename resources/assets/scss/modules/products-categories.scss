@@ -10,15 +10,18 @@
 	padding-right: 2px;
 
 	&::after {
-		background: gray("200");
 
-		@include border-radius();
 		@include pseudo-overlay();
 
+		@if $is-rounded {
+			border-radius: $border-radius;
+		}
+
+		background: gray("200");
 		bottom: $spacer;
 		height: calc(100% - #{$spacer});
 	}
-	
+
 	@include vertical-spacing("margin", "down", (
 		sm: 1,
 	) );
