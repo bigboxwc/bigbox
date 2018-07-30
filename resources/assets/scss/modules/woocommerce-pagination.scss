@@ -57,6 +57,16 @@ $spacing: ( $spacer / 2 );
 		}
 	}
 
+	.button {
+
+		@include button();
+		@include button--size-sm();
+
+		+ .button {
+			margin-left: $spacer;
+		}
+	}
+
 	svg {
 		width: 16px;
 		height: 16px;

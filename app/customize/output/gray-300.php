@@ -107,6 +107,7 @@ return [
 		'selectors'    => [
 			'.card',
 			'table',
+			'.woocommerce-Message',
 		],
 		'declarations' => [
 			'box-shadow'       => esc_attr( "{$rgba50} 0 1px 2px" ),

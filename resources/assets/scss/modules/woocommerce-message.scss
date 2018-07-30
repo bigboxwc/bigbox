@@ -48,9 +48,20 @@
 }
 
 // Old.
+.woocommerce-Message,
 .woocommerce-error {
 
 	@include card();
 
 	padding: ($spacer / 2) $spacer;
+
+
+	.button {
+		margin-right: ($spacer / 2);
+		margin-left: -($spacer / 2);
+
+		@include button();
+		@include button--size-xs();
+		@include button--color(theme-color("success"));
+	}
 }
