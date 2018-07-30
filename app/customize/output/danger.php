@@ -32,6 +32,7 @@ return [
 	[
 		'selectors'    => [
 			'.card.card--color-danger',
+			'.woocommerce-error',
 		],
 		'declarations' => [
 			'color'        => esc_attr( $danger ),

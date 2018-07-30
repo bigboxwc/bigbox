@@ -2,6 +2,7 @@
 	width: 100%;
 }
 
+.woocommerce-error,
 .woocommerce-notice {
 	width: 100%;
 
@@ -12,6 +13,7 @@
 	}
 }
 
+.woocommerce-error,
 .woocommerce-notice {
 	padding: ($spacer / 2) $spacer;
 
@@ -43,4 +45,12 @@
 		@include button--size-xs();
 		@include button--color(theme-color("success"));
 	}
+}
+
+// Old.
+.woocommerce-error {
+
+	@include card();
+
+	padding: ($spacer / 2) $spacer;
 }
