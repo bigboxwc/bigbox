@@ -18,6 +18,7 @@ return [
 			'.product__stock',
 			'.wc_payment_method .payment_box p',
 			'.woocommerce-products-header .term-description',
+			'.cart_totals .shipping-methods',
 		],
 		'declarations' => [
 			'color' => esc_attr( $gray600 ),

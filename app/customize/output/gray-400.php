@@ -16,13 +16,10 @@ return [
 	[
 		'selectors'    => [
 			'.wc_payment_method [type="radio"] label:before',
-			'.action-list__item--inset',
-			'.shipping-note',
 			'ul.brands_index li a',
 			'ul.brands_index li span',
 			'.product__has-variations a:hover',
 			'.widget_layered_nav_filters a:hover',
-			'.cart_totals .shipping-methods',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray400 ),

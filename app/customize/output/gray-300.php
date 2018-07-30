@@ -35,6 +35,8 @@ return [
 			'.wc-credit-card-form #stripe-card-element',
 			'.navbar-search__category select',
 			'.widget ul ul',
+			'.action-list__item--inset',
+			'.shipping-note',
 
 			'.review-breakdown',
 			'.review-breakdown__item',
