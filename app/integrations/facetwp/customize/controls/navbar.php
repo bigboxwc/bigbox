@@ -53,17 +53,20 @@ function bigbox_facetwp_customize_get_sources( $whitelist = [] ) {
  */
 function bigbox_facetwp_customize_register_navbar_controls_group( $wp_customize, $suffix = false, $setting = [], $control = [] ) {
 	$wp_customize->add_setting(
-		'navbar-source-search' . $suffix, wp_parse_args(
+		'navbar-source-search' . $suffix,
+		wp_parse_args(
 			[
 				'default'           => 'keyword',
 				'transport'         => 'postMessage',
 				'sanitize_callback' => 'sanitize_text_field',
-			], $setting
+			],
+			$setting
 		)
 	);
 
 	$wp_customize->add_setting(
-		'navbar-source-dropdown' . $suffix, [
+		'navbar-source-dropdown' . $suffix,
+		[
 			'default'           => 'categories',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
@@ -71,7 +74,8 @@ function bigbox_facetwp_customize_register_navbar_controls_group( $wp_customize,
 	);
 
 	$wp_customize->selective_refresh->add_partial(
-		'navbar-source-search' . $suffix, [
+		'navbar-source-search' . $suffix,
+		[
 			'selector'            => '.navbar-search',
 			'container_inclusive' => true,
 			'render_callback'     => function() {
@@ -81,7 +85,8 @@ function bigbox_facetwp_customize_register_navbar_controls_group( $wp_customize,
 	);
 
 	$wp_customize->selective_refresh->add_partial(
-		'navbar-source-dropdown' . $suffix, [
+		'navbar-source-dropdown' . $suffix,
+		[
 			'selector'            => '.navbar-search',
 			'container_inclusive' => true,
 			'render_callback'     => function() {
@@ -91,7 +96,8 @@ function bigbox_facetwp_customize_register_navbar_controls_group( $wp_customize,
 	);
 
 	$wp_customize->add_control(
-		'navbar-source-dropdown' . $suffix, wp_parse_args(
+		'navbar-source-dropdown' . $suffix,
+		wp_parse_args(
 			[
 				/* translators: Customizer control label. */
 				'label'       => __( 'Dropdown Facet', 'bigbox' ),
@@ -101,12 +107,14 @@ function bigbox_facetwp_customize_register_navbar_controls_group( $wp_customize,
 				'choices'     => bigbox_facetwp_customize_get_sources( [ 'dropdown' ] ),
 				'section'     => 'navbar',
 				'priority'    => 20,
-			], $control
+			],
+			$control
 		)
 	);
 
 	$wp_customize->add_control(
-		'navbar-source-search' . $suffix, wp_parse_args(
+		'navbar-source-search' . $suffix,
+		wp_parse_args(
 			[
 				/* translators: Customizer control label. */
 				'label'       => __( 'Keyword Facet', 'bigbox' ),
@@ -116,7 +124,8 @@ function bigbox_facetwp_customize_register_navbar_controls_group( $wp_customize,
 				'choices'     => bigbox_facetwp_customize_get_sources( [ 'search' ] ),
 				'section'     => 'navbar',
 				'priority'    => 20,
-			], $control
+			],
+			$control
 		)
 	);
 }
@@ -131,7 +140,8 @@ function bigbox_facetwp_customize_register_navbar_controls_group( $wp_customize,
 function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
 	// Explain the dynamic nature.
 	$wp_customize->add_setting(
-		'bigbox-navbar-sources-dynamic', [
+		'bigbox-navbar-sources-dynamic',
+		[
 			'sanitize_callback' => '__return_false',
 		]
 	);
@@ -154,7 +164,10 @@ function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
 
 	// Global controls.
 	bigbox_facetwp_customize_register_navbar_controls_group(
-		$wp_customize, false, [], [
+		$wp_customize,
+		false,
+		[],
+		[
 			'active_callback' => function() {
 				return ! is_page_template( bigbox_woocommerce_dynamic_shop_page_template() );
 			},
@@ -170,7 +183,10 @@ function bigbox_facetwp_customize_register_navbar_controls( $wp_customize ) {
 
 	foreach ( $pages as $page ) {
 		bigbox_facetwp_customize_register_navbar_controls_group(
-			$wp_customize, ( '-page-' . $page ), [], [
+			$wp_customize,
+			( '-page-' . $page ),
+			[],
+			[
 				'active_callback' => function() use ( $page ) {
 					return is_page( $page ) && is_page_template( bigbox_woocommerce_dynamic_shop_page_template() );
 				},

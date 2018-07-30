@@ -149,13 +149,29 @@ remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cart_totals' );
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 
 add_filter(
-	'woocommerce_cross_sells_total', function() {
+	'woocommerce_cross_sells_total',
+	/**
+	 * Crosell and Upsell total amount.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return int.
+	 */
+	function() {
 		return wc_get_default_products_per_row() * 2;
 	}
 );
 
 add_filter(
-	'woocommerce_cross_sells_columns', function() {
+	'woocommerce_cross_sells_columns',
+	/**
+	 * Crosell and Upsell items per row.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return int.
+	 */
+	function() {
 		return wc_get_default_products_per_row();
 	}
 );

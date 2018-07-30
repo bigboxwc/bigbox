@@ -49,7 +49,8 @@ endif;
 					echo '<nav class="woocommerce-pagination">'; // WPCS: XSS okay.
 					paginate_comments_links(
 						apply_filters(
-							'woocommerce_comment_pagination_args', [
+							'woocommerce_comment_pagination_args',
+							[
 								'prev_text' => '&larr;',
 								'next_text' => '&rarr;',
 								'type'      => 'list',
@@ -127,7 +128,8 @@ endif;
 	<div class="woocommerce-reviews__info">
 		<?php
 		wc_get_template(
-			'single-product/review-breakdown.php', [
+			'single-product/review-breakdown.php',
+			[
 				'product' => $product,
 			]
 		);

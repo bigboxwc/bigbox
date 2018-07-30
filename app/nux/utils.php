@@ -35,7 +35,13 @@ function bigbox_nux_show_add_license_reminder() {
 	}
 
 	add_action(
-		'admin_notices', function() {
+		'admin_notices',
+		/**
+		 * Output the license reminder notice.
+		 *
+		 * @since 1.0.0
+		 */
+		function() {
 			bigbox_view( 'nux/license-reminder' );
 		}
 	);
@@ -137,7 +143,6 @@ function bigbox_install_plugin( $plugin_slug, $plugin ) {
 			}
 
 			$activate = true;
-
 		} catch ( Exception $e ) {
 			return $e->get_error_message();
 		}

@@ -15,7 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 bigbox_view(
-	'layout/minimal', [
+	'layout/minimal',
+	[
 		'columns' => 8,
 	]
 );

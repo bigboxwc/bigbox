@@ -76,8 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div id="fee-<?php echo esc_attr( $fee->name ); ?>" class="action-list__item-label">
 					<?php echo esc_html( $fee->name ); ?>:
 				</div>
-				<div class="action-list__item-value" labelledby="fee-<?php echo esc_attr( $fee->name ); ?>">
-					<span class="woocommerce-totals-plus">&plus; </span>
+				<div class="action-list__item-value action-list__item-value--no-flex" labelledby="fee-<?php echo esc_attr( $fee->name ); ?>">
 					<?php wc_cart_totals_fee_html( $fee ); ?>
 				</div>
 			</div>
@@ -88,20 +87,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$taxable_address = WC()->customer->get_taxable_address();
 			$estimated_text  = WC()->customer->is_customer_outside_base() && ! WC()->customer->has_calculated_shipping()
 					/* translators: %s Shipping estimate location. */
-					? wp_kses_post( sprintf( ' <small>' . __( 'est. for %s', 'bigbox' ) . '</small>', WC()->countries->estimated_for_prefix( $taxable_address[0] ) . WC()->countries->countries[ $taxable_address[0] ] ) )
+					? sprintf( ' <small>' . __( 'est. for %s', 'bigbox' ) . '</small>', WC()->countries->estimated_for_prefix( $taxable_address[0] ) . WC()->countries->countries[ $taxable_address[0] ] )
 					: '';
 
 			if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) :
-			?>
+				?>
 
 				<?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : ?>
 					<div class="tax-rate action-list__item">
 						<div id="tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?>" class="action-list__item-label">
-							<?php echo wp_kses_post( $tax->label . ': ' . $estimated_text ); ?>
+							<?php echo $tax->label . ': ' . $estimated_text; // WPCS: XSS okay. ?>
 						</div>
 						<div class="action-list__item-value action-list__item-value--no-flex" labelledby="tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
 							<span class="woocommerce-totals-plus">&plus; </span>
-							<?php echo wp_kses_post( $tax->formatted_amount ); ?>
+							<?php echo $tax->formatted_amount; // WPCS: XSS okay. ?>
 						</div>
 					</div>
 				<?php endforeach; ?>
@@ -110,7 +109,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				<div class="action-list__item">
 					<div id="tax-total" class="tax-total action-list__item-label">
-						<?php echo wp_kses_post( WC()->countries->tax_or_vat() . ': ' . $estimated_text ); ?>
+						<?php echo WC()->countries->tax_or_vat() . ': ' . $estimated_text; // WPCS: XSS okay. ?>
 					</div>
 					<div class="action-list__item-value action-list__item-value--no-flex" labelledby="tax-total">
 						<span class="woocommerce-totals-plus">&plus; </span>

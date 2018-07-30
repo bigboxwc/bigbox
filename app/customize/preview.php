@@ -23,7 +23,8 @@ function bigbox_customize_preview_init() {
 		'webfontloader',
 		'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js',
 		[],
-		'1.6.26'
+		'1.6.26',
+		true
 	);
 
 	wp_enqueue_script(
@@ -49,7 +50,8 @@ function bigbox_preview_css() {
 	// Filter `get_theme_mod()` calls for customized settings.
 	foreach ( $customized as $setting_id => $value ) {
 		add_filter(
-			'theme_mod_' . sanitize_key( $setting_id ), function( $value ) use ( $setting_id ) {
+			'theme_mod_' . sanitize_key( $setting_id ),
+			function( $value ) use ( $setting_id ) {
 				if ( isset( $customized[ $setting_id ] ) ) {
 					return $customized[ $setting_id ];
 				}

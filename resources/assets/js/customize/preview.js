@@ -1,4 +1,4 @@
-/* global WebFont, _ */
+/* global wp, WebFont, _ */
 
 // Wait for Preview ready.
 wp.customize.bind( 'preview-ready', () => {

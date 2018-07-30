@@ -1,6 +1,11 @@
 /* global wp, bigboxCustomizeControls, _ */
 
 /**
+ * External dependencies.
+ */
+import domReady from '@wordpress/dom-ready';
+
+/**
  * Internal dependencies.
  */
 const {
@@ -107,9 +112,5 @@ const addListeners = () => {
 
 // Only enable if active.
 if ( active ) {
-	// Wait for Customize ready.
-	wp.customize.bind( 'ready', () => {
-		showPointer( 0 );
-		addListeners();
-	} );
+	wp.customize.bind( 'preview-ready', domReady( () => showPointer( 0 ) ) );
 }

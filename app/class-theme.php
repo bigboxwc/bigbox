@@ -72,11 +72,19 @@ final class Theme implements Registerable {
 		$services = $this->get_services();
 		$services = array_map( [ $this, 'instantiate_service' ], $services );
 
-		array_walk(
-			$services, function( Service $service ) {
-				$service->register();
-			}
-		);
+		// Register.
+		array_walk( $services, [ $this, 'register_service' ] );
+	}
+
+	/**
+	 * Register a single service.
+	 *
+	 * @since 1.12.0
+	 *
+	 * @param Service $service service information.
+	 */
+	public function register_service( Service $service ) {
+		return $service->register();
 	}
 
 	/**
@@ -111,19 +119,19 @@ final class Theme implements Registerable {
 	 * @return array Array of fully qualified class names.
 	 */
 	private function get_services() {
+		$services = [
+			Integrations::class,
+			NUX\Setup_Guide::class,
+			NUX\License_Manager::class,
+			NUX\Customize_Walkthrough::class,
+		];
+
 		/**
 		 * Filter registered services.
 		 *
 		 * @param array $services Fully qualified class names.
 		 */
-		return apply_filters(
-			'bigbox_services', [
-				Integrations::class,
-				NUX\Setup_Guide::class,
-				NUX\License_Manager::class,
-				NUX\Customize_Walkthrough::class,
-			]
-		);
+		return apply_filters( 'bigbox_services', $services );
 	}
 
 }

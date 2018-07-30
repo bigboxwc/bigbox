@@ -39,7 +39,8 @@ add_filter( 'bigbox_customize_controls_js', 'bigbox_customize_controls_js_fonts'
  */
 function bigbox_customize_register_type_sections( $wp_customize ) {
 	$wp_customize->add_section(
-		'type', [
+		'type',
+		[
 			/* translators: Customizer section title. */
 			'title'    => __( 'Typography', 'bigbox' ),
 			'priority' => 20,
@@ -57,7 +58,8 @@ add_action( 'customize_register', 'bigbox_customize_register_type_sections' );
  */
 function bigbox_customize_register_type_controls( $wp_customize ) {
 	$wp_customize->add_setting(
-		'type-font-family', [
+		'type-font-family',
+		[
 			'default'           => 'Lato',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
@@ -65,7 +67,8 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		'type-font-family', [
+		'type-font-family',
+		[
 			/* translators: Customizer control name. */
 			'label'   => __( 'Font Family', 'bigbox' ),
 			'type'    => 'select',
@@ -78,7 +81,8 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'type-font-family-fallback', [
+		'type-font-family-fallback',
+		[
 			'default'           => 'sans-serif',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
@@ -86,7 +90,8 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		'type-font-family-fallback', [
+		'type-font-family-fallback',
+		[
 			'active_callback' => '__return_false',
 			'type'            => 'select',
 			'choices'         => [
@@ -106,7 +111,8 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'type-font-size', [
+		'type-font-size',
+		[
 			'default'           => 1,
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
@@ -114,7 +120,8 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		'type-font-size', [
+		'type-font-size',
+		[
 			/* translators: Customizer control label. */
 			'label'       => __( 'Base Font Size', 'bigbox' ),
 			/* translators: Customizer control description. */
@@ -148,7 +155,8 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 		$key = "type-font-weight-{$weight}";
 
 		$wp_customize->add_setting(
-			$key, [
+			$key,
+			[
 				'default'           => $data['weight'],
 				'transport'         => 'postMessage',
 				'sanitize_callback' => 'sanitize_text_field',
@@ -156,7 +164,8 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 		);
 
 		$wp_customize->add_control(
-			$key, [
+			$key,
+			[
 				'label'       => $data['label'],
 				'description' => $data['description'],
 				'type'        => 'select',
@@ -173,7 +182,6 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 				'section'     => 'type',
 			]
 		);
-
 	}
 }
 add_action( 'customize_register', 'bigbox_customize_register_type_controls' );

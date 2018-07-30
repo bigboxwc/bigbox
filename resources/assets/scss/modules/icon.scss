@@ -1,5 +1,49 @@
 .bigbox-icon {
-	width: 24px;
-	height: 24px;
+	width: $icon-w;
+	height: $icon-h;
 	fill: gray("700");
+}
+
+//
+// Static social that can be output inline on the frontend.
+//
+// <i class="bigbox-icon bigbox-icon--#{social}"></i>
+//
+i.bigbox-icon {
+	margin-right: ($spacer / 2);
+	mask-size: $icon-w $icon-h;
+	background-color: gray("700");
+	display: inline-block;
+
+	// Social icons.
+	@each $logo in map-get($icons, "social") {
+
+		&--#{$logo} {
+			mask-image: url("../images/icons/logo-#{$logo}.svg");
+		}
+	}
+
+	// Generic icons.
+	@each $icon in map-get($icons, "generic") {
+
+		&--#{$icon} {
+			mask-image: url("../images/icons/#{$icon}.svg");
+		}
+	}
+
+	// Sizes.
+	@each $size, $multiplier in $icon-size-multipliers {
+		$customW: ($icon-w * $multiplier);
+		$customH: ($icon-h * $multiplier);
+
+		&--size-#{$size} {
+			width: $customW;
+			height: $customH;
+			mask-size: $customW $customH;
+		}
+	}
+
+	a:hover & {
+		background-color: theme-color("primary");
+	}
 }

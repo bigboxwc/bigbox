@@ -53,7 +53,8 @@ function bigbox_woocommerce_customize_get_dropdown_taxonomies() {
 function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) {
 	// Choose which taxonomy appears in the dropdown.
 	$wp_customize->add_setting(
-		'navbar-source-dropdown', [
+		'navbar-source-dropdown',
+		[
 			'default'           => 'product_cat',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
@@ -61,7 +62,8 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 	);
 
 	$wp_customize->add_control(
-		'navbar-source-dropdown', [
+		'navbar-source-dropdown',
+		[
 			/* translators: Customizer control label. */
 			'label'           => __( 'Dropdown Source', 'bigbox' ),
 			'type'            => 'select',
@@ -76,7 +78,8 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 
 	// Toggle account menu item.
 	$wp_customize->add_setting(
-		'nav-item-account', [
+		'nav-item-account',
+		[
 			'default'           => true,
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'esc_attr',
@@ -84,7 +87,8 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 	);
 
 	$wp_customize->add_control(
-		'nav-item-account', [
+		'nav-item-account',
+		[
 			/* translators: Customizer control label. */
 			'label'    => __( 'Display account menu item', 'bigbox' ),
 			'type'     => 'checkbox',
@@ -95,7 +99,8 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 
 	// Toggle cart menu item.
 	$wp_customize->add_setting(
-		'nav-item-cart', [
+		'nav-item-cart',
+		[
 			'default'           => true,
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'absint',
@@ -103,7 +108,8 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 	);
 
 	$wp_customize->add_control(
-		'nav-item-cart', [
+		'nav-item-cart',
+		[
 			/* translators: Customizer control label. */
 			'label'    => __( 'Display cart menu item', 'bigbox' ),
 			'type'     => 'checkbox',
@@ -114,7 +120,8 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 
 	// Partial refreshes.
 	$wp_customize->selective_refresh->add_partial(
-		'navbar-source-dropdown', [
+		'navbar-source-dropdown',
+		[
 			'selector'            => '.navbar-search',
 			'container_inclusive' => true,
 			'render_callback'     => function() {
@@ -124,7 +131,8 @@ function bigbox_woocommerce_customize_register_navbar_controls( $wp_customize ) 
 	);
 
 	$wp_customize->selective_refresh->add_partial(
-		'navbar', [
+		'navbar',
+		[
 			'selector'            => '.navbar-menu--account',
 			'settings'            => [
 				'nav-item-account',

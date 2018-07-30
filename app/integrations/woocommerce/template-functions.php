@@ -52,7 +52,7 @@ function bigbox_woocommerce_wp_enqueue_scripts() {
 	$deps = [
 		$stylesheet,
 		'wp-util',
-		'jquery-blockui',
+		'woocommerce',
 	];
 
 	wp_enqueue_script( "{$stylesheet}-woocommerce", get_template_directory_uri() . '/public/js/woocommerce.min.js', $deps, $version, true );
@@ -236,23 +236,23 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 	}
 
 	if ( ! empty( $more_categories ) || has_nav_menu( 'product-category-list' ) ) {
-?>
+		?>
 
 <li class="product-category product product-category-more">
 	<div class="product-category-more__inner">
 
 		<?php if ( has_nav_menu( 'product-category-list' ) ) : ?>
 		<div class="product-category-more__menu">
-		<?php
-		wp_nav_menu(
-			[
-				'theme_location' => 'product-category-list',
-				'container'      => false,
-				'fallback_cb'    => false,
-				'depth'          => 1,
-			]
-		);
-		?>
+			<?php
+			wp_nav_menu(
+				[
+					'theme_location' => 'product-category-list',
+					'container'      => false,
+					'fallback_cb'    => false,
+					'depth'          => 1,
+				]
+			);
+			?>
 		</div>
 		<?php endif; ?>
 
@@ -265,7 +265,7 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 		 * @param bool $show Should the dropdown show?
 		 */
 		if ( ! empty( $more_categories ) && apply_filters( 'bigbox_woocommerce_after_output_product_categories_dropdown', true ) ) :
-		?>
+			?>
 		<form id="product-category-selector" action="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" method="GET" class="product-category-more__selector">
 			<select name="product_cat">
 				<option><?php echo esc_html_e( 'More...', 'bigbox' ); ?></option>
@@ -279,7 +279,7 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 	</div>
 </li>
 
-<?php
+		<?php
 	}
 
 	wc_get_template( 'loop/loop-end.php' );
@@ -314,13 +314,13 @@ function bigbox_woocommerce_template_loop_variations() {
 	$product = wc_get_product( get_the_ID() );
 
 	if ( ! $product->is_in_stock() ) {
-		 return;
+		return;
 	}
 
 	if ( 'variable' !== $product->get_type() ) {
 		return;
 	}
-?>
+	?>
 
 <div class="product__has-variations product__meta">
 	<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>">
@@ -328,7 +328,7 @@ function bigbox_woocommerce_template_loop_variations() {
 	</a>
 </div>
 
-<?php
+	<?php
 }
 
 /**
@@ -342,13 +342,13 @@ function bigbox_woocommerce_template_loop_stock() {
 	if ( '' === $html ) {
 		return;
 	}
-?>
+	?>
 
 <div class="product__stock product__meta">
 	<?php echo $html; // WPCS: XSS okay. ?>
 </div>
 
-<?php
+	<?php
 };
 
 /**
@@ -363,7 +363,8 @@ function bigbox_woocommerce_template_tertiary() {
 		// Add (tertiary) sidebar on archives.
 	} else {
 		add_action(
-			'woocommerce_sidebar', function() {
+			'woocommerce_sidebar',
+			function() {
 				wc_get_template( 'global/sidebar-tertiary.php' );
 			}
 		);
@@ -392,13 +393,29 @@ function bigbox_add_to_cart() {
  */
 function bigbox_woocommerce_product_tabs( $tabs ) {
 	add_filter(
-		'woocommerce_product_description_heading', function() {
+		'woocommerce_product_description_heading',
+		/**
+		 * Product Description tab content heading.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @return string
+		 */
+		function() {
 			return __( 'Product description', 'bigbox' );
 		}
 	);
 
 	add_filter(
-		'woocommerce_product_additional_information_heading', function() {
+		'woocommerce_product_additional_information_heading',
+		/**
+		 * Product information tab content heading.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @return string
+		 */
+		function() {
 			return __( 'Product information', 'bigbox' );
 		}
 	);
@@ -467,14 +484,14 @@ function bigbox_woocommerce_product_additional_information() {
 	$product = wc_get_product( get_post() );
 
 	if ( wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( 'variable' ) ) ) :
-?>
+		?>
 
 	<p class="sku_wrapper">
 		<strong><?php esc_html_e( 'SKU:', 'bigbox' ); ?></strong>
 		<span class="sku"><?php echo esc_html( ( $product->get_sku() ) ? $product->get_sku() : __( 'N/A', 'bigbox' ) ); ?></span>
 	</p>
 
-<?php
+		<?php
 	endif;
 
 	// @codingStandardsIgnoreStart
@@ -506,7 +523,7 @@ function bigbox_woocommerce_get_star_rating_html( $html, $rating, $count ) {
 	$count_title = __( '%1$s customer ratings', 'bigbox' );
 
 	ob_start();
-?>
+	?>
 
 <span class="star-rating__stars" aria-label="<?php esc_attr( sprintf( $title, $rating ) ); ?>">
 	<?php
@@ -518,15 +535,15 @@ function bigbox_woocommerce_get_star_rating_html( $html, $rating, $count ) {
 	?>
 </span>
 
-<?php if ( 0 !== $count && ! is_singular( 'product' ) ) : ?>
+	<?php if ( 0 !== $count && ! is_singular( 'product' ) ) : ?>
 
 	<span class="star-rating__count" aria-label="<?php esc_attr( sprintf( $count_title, $count ) ); ?>">
 		<?php echo esc_html( $count ); ?>
 	</span>
 
-<?php endif; ?>
+	<?php endif; ?>
 
-<?php
+	<?php
 	return ob_get_clean();
 }
 
@@ -606,7 +623,6 @@ function bigbox_woocommerce_grouped_product_columns( $columns ) {
 	];
 
 	return $columns;
-
 }
 
 /**
@@ -635,7 +651,7 @@ function bigbox_woocommerce_demo_store( $notice ) {
  *
  * @since 1.11.0
  *
- * @param string $discount_amount_html
+ * @param string $discount_amount_html Discount amount HTML.
  * @return string
  */
 function bigbox_woocommerce_coupon_discount_amount_html( $discount_amount_html ) {

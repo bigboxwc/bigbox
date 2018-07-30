@@ -41,7 +41,6 @@ function bigbox_lazyload_images() {
 	// Do not lazy load avatar in admin bar.
 	add_action( 'admin_bar_menu', 'bigbox_remove_filters', 0 );
 	add_filter( 'wp_kses_allowed_html', 'bigbox_allow_lazy_attributes' );
-
 }
 add_action( 'after_setup_theme', 'bigbox_lazyload_images' );
 
@@ -88,7 +87,8 @@ function bigbox_allow_lazy_attributes( $allowed_tags ) {
 
 	// But, if images are allowed, ensure that our attributes are allowed!
 	$img_attributes = array_merge(
-		$allowed_tags['img'], [
+		$allowed_tags['img'],
+		[
 			'data-src'    => 1,
 			'data-srcset' => 1,
 			'data-sizes'  => 1,
@@ -136,7 +136,8 @@ function bigbox_add_image_placeholders( $content ) {
  */
 function bigbox_should_skip_image_with_blacklisted_class( $classes ) {
 	$blacklisted_classes = apply_filters(
-		'bigbox_lazyload_blacklisted_classes', [
+		'bigbox_lazyload_blacklisted_classes',
+		[
 			'skip-lazy',
 			'custom-logo',
 		]

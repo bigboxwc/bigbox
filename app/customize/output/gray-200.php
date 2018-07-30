@@ -32,6 +32,7 @@ return [
 			'.woocommerce-privacy-policy-text',
 			'.wc-social-login',
 			'.woocommerce-OrderUpdate',
+			'.woocommerce-shipping-address',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray200 ),

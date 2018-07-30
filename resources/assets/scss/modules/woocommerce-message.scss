@@ -4,6 +4,7 @@
 .woocommerce-message,
 .woocommerce-error li {
 	overflow: hidden;
+	width: 100%;
 
 	@include card();
 	@include vertical-spacing("margin", "down");

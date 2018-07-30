@@ -55,7 +55,8 @@ function bigbox_get_starter_content() {
 	 * @param array $content The base content that does not plugins.
 	 */
 	return apply_filters(
-		'bigbox_get_starter_content', [
+		'bigbox_get_starter_content',
+		[
 			'posts'     => [
 				'home',
 				'blog',

@@ -24,6 +24,7 @@ function bigbox_facetwp_wp_enqueue_scripts() {
 
 	$deps = [
 		$stylesheet,
+		'jquery',
 	];
 
 	wp_enqueue_script( "{$stylesheet}-facetwp", get_template_directory_uri() . '/public/js/facetwp.min.js', $deps, $version, true );

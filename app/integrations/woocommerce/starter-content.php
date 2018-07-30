@@ -443,7 +443,8 @@ add_action( 'customize_preview_init', 'bigbox_woocommerce_starter_content_set_pr
 function bigbox_woocommerce_starter_content_filter_categories( $args ) {
 	// Get Categories.
 	$product_cats = get_terms(
-		'product_cat', [
+		'product_cat',
+		[
 			'fields'     => 'ids',
 			'hide_empty' => false,
 		]

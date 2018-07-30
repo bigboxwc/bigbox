@@ -16,8 +16,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 add_action(
-	'after_setup_theme', function() {
+	'after_setup_theme',
+	function() {
 		return ThemeFactory::create()
 			->register();
-	}, 0
+	},
+	0
 );

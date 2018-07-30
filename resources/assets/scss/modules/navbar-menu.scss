@@ -141,6 +141,17 @@ $menu-break-point: md;
 			visibility: visible;
 			opacity: 1;
 		}
+
+		$icon-dim: $icon-w * map-get($icon-size-multipliers, "xs");
+
+		// Icons.
+		> a:before,
+		i.bigbox-icon {
+			width: $icon-dim;
+			height: $icon-dim;
+			mask-size: $icon-dim;
+			background-color: #fff;
+		}
 	}
 
 	// Dropdowns.

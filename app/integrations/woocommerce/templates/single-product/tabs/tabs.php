@@ -43,13 +43,13 @@ if ( ! empty( $tabs ) ) : ?>
 			$content = trim( ob_get_clean() );
 
 			if ( '' !== $content ) :
-		?>
+				?>
 
 		<div class="woocommerce-single-product-data__section" id="tab-<?php echo esc_attr( $key ); ?>">
-			<?php echo $content; // WPCS: XSS okay. ?>
+				<?php echo $content; // WPCS: XSS okay. ?>
 		</div>
 
-	<?php
+				<?php
 			endif;
 		endif;
 	endforeach;

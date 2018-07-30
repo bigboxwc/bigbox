@@ -23,7 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 function bigbox_customize_register_colors_panels( $wp_customize ) {
 	// Create panel.
 	$wp_customize->add_panel(
-		'colors', [
+		'colors',
+		[
 			// Translators: Customizer panel title.
 			'title'    => __( 'Colors', 'bigbox' ),
 			'priority' => 30,
@@ -41,7 +42,8 @@ add_action( 'customize_register', 'bigbox_customize_register_colors_panels' );
  */
 function bigbox_customize_register_colors_sections( $wp_customize ) {
 	$wp_customize->add_section(
-		'colors-palette', [
+		'colors-palette',
+		[
 			// Translators: Customizer section title.
 			'title'    => __( 'Palette', 'bigbox' ),
 			'panel'    => 'colors',
@@ -50,7 +52,8 @@ function bigbox_customize_register_colors_sections( $wp_customize ) {
 	);
 
 	$wp_customize->add_section(
-		'colors-elements', [
+		'colors-elements',
+		[
 			// Translators: Customizer section title.
 			'title'    => __( 'Elements', 'bigbox' ),
 			'panel'    => 'colors',
@@ -79,7 +82,8 @@ function bigbox_customize_register_colors_controls( $wp_customize ) {
 		$key = "color-${theme_color}";
 
 		$wp_customize->add_setting(
-			$key, [
+			$key,
+			[
 				'default'           => $color['color'],
 				'transport'         => 'postMessage',
 				'sanitize_callback' => 'sanitize_hex_color',
@@ -101,7 +105,8 @@ function bigbox_customize_register_colors_controls( $wp_customize ) {
 
 	// Add a link to suggest other control elements.
 	$wp_customize->add_setting(
-		'bigbox-colors-element-missing', [
+		'bigbox-colors-element-missing',
+		[
 			'sanitize_callback' => '__return_false',
 		]
 	);

@@ -37,7 +37,7 @@ $form_url = apply_filters( 'bigbox_navbar_search_form_url', wc_get_page_permalin
 
 		/* translators: %s Header dropdown "All" label. */
 		$all = esc_html( sprintf( __( 'All %s', 'bigbox' ), strtolower( $taxonomy->labels->name ) ) );
-	?>
+		?>
 
 	<div id="navbar-search__category" class="navbar-search__category">
 		<label for="<?php echo esc_attr( $taxonomy->name ); ?>" class="screen-reader-text">
@@ -50,6 +50,19 @@ $form_url = apply_filters( 'bigbox_navbar_search_form_url', wc_get_page_permalin
 
 		<div id="search-dropdown-real">
 			<?php
+			$navbar_search_dropdown = [
+				'show_option_all' => $all,
+				'selected'        => $selected,
+				'name'            => $taxonomy->name,
+				'taxonomy'        => $taxonomy->name,
+				'hierarchical'    => true,
+				'value_field'     => 'slug',
+				'show_count'      => true,
+				'orderby'         => 'name',
+				'order'           => 'ASC',
+				'hide_if_empty'   => true,
+			];
+
 			wp_dropdown_categories(
 				/**
 				 * Filters the output of wp_dropdown_categories() in the navbar.
@@ -58,20 +71,7 @@ $form_url = apply_filters( 'bigbox_navbar_search_form_url', wc_get_page_permalin
 				 *
 				 * @param array $args The arguments used in wp_dropdown_categories().
 				 */
-				apply_filters(
-					'bigbox_navbar_search_dropdown', [
-						'show_option_all' => $all,
-						'selected'        => $selected,
-						'name'            => $taxonomy->name,
-						'taxonomy'        => $taxonomy->name,
-						'hierarchical'    => true,
-						'value_field'     => 'slug',
-						'show_count'      => true,
-						'orderby'         => 'name',
-						'order'           => 'ASC',
-						'hide_if_empty'   => true,
-					]
-				)
+				apply_filters( $navbar_search_dropdown, 'bigbox_navbar_search_dropdown' )
 			);
 			?>
 		</div>

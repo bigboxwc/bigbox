@@ -32,7 +32,7 @@ echo esc_html( sprintf( __( '%1$s out of 5 stars', 'bigbox' ), str_replace( '.0'
 	<?php
 	for ( $i = 1; $i <= 5; $i++ ) :
 		$percent = round( ( $product->get_rating_count( $i ) / $count ) * 100 );
-	?>
+		?>
 	<div class="review-breakdown__item">
 		<div class="review-breakdown__label">
 		<?php

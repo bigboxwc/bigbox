@@ -136,8 +136,7 @@ class Build_Inline_CSS {
 		// No matching selector set, add a new entry.
 		if ( false === $match ) {
 			$this->data[ $media ][] = $entry;
-		} // Yes, matching selector set, merge declarations.
-		else {
+		} else {
 			$this->data[ $media ][ $match ]['declarations'] = array_merge( $this->data[ $media ][ $match ]['declarations'], $entry['declarations'] );
 		}
 	}

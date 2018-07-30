@@ -13,11 +13,6 @@
 
 	@include reset-list();
 
-	// Hide when only one is available.
-	&[data-count="1"] {
-		display: none;
-	}
-
 	li {
 		display: flex;
 		align-items: flex-start;
@@ -74,7 +69,6 @@
 
 }
 
-.woocommerce-shipping-address,
 .woocommerce-shipping-destination,
 .woocommerce-shipping-contents {
 	font-size: $font-size-xs;
@@ -88,8 +82,7 @@
 }
 
 .woocommerce-shipping-address {
-	margin-left: ($spacer * 2);
-	line-height: 1.5;
+	border-bottom: 1px solid gray("200");
 }
 
 .coupons-next {

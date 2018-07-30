@@ -38,6 +38,7 @@ return [
 	// Solid background-color.
 	'background-color' => [
 		'selectors'    => [
+			'a:hover i.bigbox-icon',
 			'.navbar',
 			'.select2-container--default .select2-results__option--highlighted[data-selected]',
 			'.widget_price_filter .ui-slider .ui-slider-range',

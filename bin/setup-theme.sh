@@ -24,7 +24,7 @@ reset_cwd
 # Run the build
 status_message "Installing dependencies..."
 npm install
-composer install
+composer install --no-dev
 
 status_message "Creating language files..."
 wp i18n make-pot . resources/languages/bigbox.pot --domain=bigbox

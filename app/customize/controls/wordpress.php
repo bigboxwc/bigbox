@@ -40,7 +40,8 @@ function bigbox_customize_register( $wp_customize ) {
 	// Update branding partial when Site Title or text changes.
 	foreach ( [ 'blogname', 'header_text' ] as $setting ) {
 		$wp_customize->selective_refresh->add_partial(
-			$setting, [
+			$setting,
+			[
 				'selector'            => '.site-title',
 				'container_inclusive' => false,
 				'render_callback'     => function() {

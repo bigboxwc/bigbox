@@ -39,7 +39,8 @@ $show_downloads        = $order->has_downloadable_item() && $order->is_download_
 		<?php
 		if ( $show_downloads ) :
 			wc_get_template(
-				'order/order-downloads.php', [
+				'order/order-downloads.php',
+				[
 					'downloads'  => $downloads,
 					'show_title' => true,
 				]
@@ -58,7 +59,8 @@ $show_downloads        = $order->has_downloadable_item() && $order->is_download_
 				$product = $item->get_product();
 
 				wc_get_template(
-					'order/order-details-item.php', [
+					'order/order-details-item.php',
+					[
 						'order'              => $order,
 						'item_id'            => $item_id,
 						'item'               => $item,

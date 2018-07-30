@@ -29,7 +29,12 @@ $plugins = [
 ];
 ?>
 
-<p><?php echo wp_kses_post( 'Below is a list of recommended plugins to help optimize your WooCommerce website. You can read about theses suggestions and find more great information <a href="https://bigboxwc.com/blog">on our blog</a>.', 'bigbox' ); ?></p>
+<p>
+	<?php
+	/* translators: Do not translate. HTML tags. */
+	echo sprintf( __( 'Below is a list of recommended plugins to help optimize your WooCommerce website. You can read about theses suggestions and find more great information %1$son our blog%2$s.', 'bigbox' ), '<a href="https://bigboxwc.com/blog">', '</a>' ); // WPCS: XSS okay.
+	?>
+</p>
 
 <div class="plugin-list">
 	<?php
@@ -40,7 +45,7 @@ $plugins = [
 			/* translators: %s Plugin name. */
 			'more' => sprintf( esc_html__( 'More information about %s', 'bigbox' ), $data['label'] ),
 		];
-	?>
+		?>
 
 	<div class="plugin-card">
 		<div class="plugin-card-top">

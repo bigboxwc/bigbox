@@ -18,7 +18,7 @@ bigbox_view( 'global/header' );
 
 while ( have_posts() ) :
 	the_post();
-?>
+	?>
 
 <div id="main" class="site-primary site-primary--10" role="main">
 	<h1 class="page-title"><?php the_title(); ?></h1>
@@ -53,7 +53,7 @@ while ( have_posts() ) :
 	</div>
 </div>
 
-<?php
+	<?php
 endwhile;
 
 bigbox_view( 'global/footer' );

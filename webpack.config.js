@@ -5,6 +5,7 @@ const webpack = require( 'webpack' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const WebpackRTLPlugin = require( 'webpack-rtl-plugin' );
 const SpritePlugin = require( 'svg-sprite-loader/plugin' );
+const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 
 const themeCSS = new ExtractTextPlugin( {
 	filename: './public/css/app.min.css',
@@ -78,10 +79,9 @@ const config = {
 					},
 					'svgo-loader',
 				],
-				include: /icons/,
 			},
 			{
-				test: /\.(png|jp(e*)g|svg)$/,
+				test: /\.(png|jp(e*)g)$/,
 				use: [
 					{
 						loader: 'file-loader',
@@ -93,7 +93,6 @@ const config = {
 						},
 					},
 				],
-				exclude: /icons/,
 			},
 			{
 				test: /.js$/,
@@ -139,6 +138,12 @@ const config = {
 		gutenbergCSS,
 		customizeControlsCSS,
 		new SpritePlugin(),
+		new CopyWebpackPlugin( [
+			{
+				from: 'resources/assets/images/icons',
+				to: 'public/images/icons',
+			},
+		] ),
 		new webpack.ProvidePlugin( {
 			$: 'jquery',
 			jQuery: 'jquery',

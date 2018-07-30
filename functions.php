@@ -27,7 +27,7 @@ if ( version_compare( PHP_VERSION, BIGBOX_PHP_VERSION, '<' ) ) {
 		return;
 	}
 
-	wp_die( bigbox_get_php_notice_text() );
+	wp_die( esc_html( bigbox_get_php_notice_text() ) ); // WPCS: XSS okay.
 }
 
 /**
@@ -36,7 +36,7 @@ if ( version_compare( PHP_VERSION, BIGBOX_PHP_VERSION, '<' ) ) {
  * @since 1.10.0
  */
 function bigbox_php_admin_notices() {
-	echo '<div class="notice notice-error"><p>' . bigbox_get_php_notice_text() . '</p></div>';
+	echo '<div class="notice notice-error"><p>' . esc_html( bigbox_get_php_notice_text() ) . '</p></div>'; // WPCS: XSS okay.
 }
 
 /**
@@ -57,7 +57,7 @@ function bigbox_get_php_notice_text() {
 	return apply_filters(
 		'bigbox_php_notice_text',
 		/* translators: %s Minimum PHP version required for theme to run. */
-		wp_kses_post( sprintf( __( 'BigBox requires PHP version <code>%s</code> or above to be active. Please contact your web host to upgrade.', 'bigbox' ), esc_attr( BIGBOX_PHP_VERSION ) ) )
+		sprintf( __( 'BigBox requires PHP version %s or above to be active. Please contact your web host to upgrade.', 'bigbox' ), esc_attr( BIGBOX_PHP_VERSION ) )
 	);
 }
 

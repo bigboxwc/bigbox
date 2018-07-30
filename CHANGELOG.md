@@ -1,3 +1,21 @@
+## [1.12.0]  - 2018-07-30
+
+### New
+
+- Improved UI for cart totals and shipping.
+- WooCommerce 3.4.4 compatibility.
+- Add Social Icons.
+  - Can be used inline with `<i class="bigbox-icon bigbox-icon--twitter"></i>`.
+  - Automatically applied to menu item links with social URLs.
+
+### Fix
+
+- Remove unneeded usage of `wp_kses_post()`
+- Ensure scrolling is enabled after offcanvas drawer is closed.
+- Simplify FacetWP and WooCommerce asset depenencies.
+- Ensure WooCommece alert's are always 100% width.
+- Update to WordPress Coding Standards 1.0.0
+
 ## [1.11.3]  - 2018-07-24
 
 ### Fix

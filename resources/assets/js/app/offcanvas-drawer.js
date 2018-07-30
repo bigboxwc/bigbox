@@ -69,7 +69,7 @@ domReady( () => {
 	toggles.forEach( ( toggle ) => {
 		toggle.addEventListener( 'click', () => {
 			targetSourceSwap( toggle );
-			toggleBodyLock( ! hasClass( document, 'offcanvas-drawer-open' ) );
+			toggleBodyLock( ! hasClass( document.body, 'offcanvas-drawer-open' ) );
 		} );
 	} );
 
