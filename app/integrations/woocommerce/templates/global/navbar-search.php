@@ -71,7 +71,7 @@ $form_url = apply_filters( 'bigbox_navbar_search_form_url', wc_get_page_permalin
 				 *
 				 * @param array $args The arguments used in wp_dropdown_categories().
 				 */
-				apply_filters( $navbar_search_dropdown, 'bigbox_navbar_search_dropdown' )
+				apply_filters( 'bigbox_navbar_search_dropdown', $navbar_search_dropdown )
 			);
 			?>
 		</div>
