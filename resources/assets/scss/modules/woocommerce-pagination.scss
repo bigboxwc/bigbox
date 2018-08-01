@@ -59,8 +59,9 @@ $spacing: ( $spacer / 2 );
 
 	.button {
 
-		@include button();
-		@include button--size-sm();
+		@extend .button;
+		@extend .button--size-sm;
+		@extend .button--size-block;
 
 		+ .button {
 			margin-left: $spacer;

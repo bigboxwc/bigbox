@@ -70,8 +70,8 @@
 		margin-top: ($spacer / 2);
 		box-shadow: none;
 
-		@include button();
-		@include button--size-xs();
+		@extend .button;
+		@extend .button--size-xs;
 	}
 
 	.facetwp-radio,
@@ -162,7 +162,7 @@
 }
 
 .facetwp-facet.facetwp-type-search {
-	
+
 	.facetwp-search-wrap {
 		display: flex;
 	}
@@ -198,7 +198,7 @@
 }
 
 .facetwp-facet.facetwp-type-proximity {
-	
+
 	.location-wrap {
 		display: block;
 	}

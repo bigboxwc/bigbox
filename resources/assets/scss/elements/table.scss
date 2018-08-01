@@ -78,13 +78,13 @@ table {
 			float: right;
 		}
 
-		@include button--size-xs();
+		@extend .button;
 	}
 
 	// Trailing button (usually to add a new row).
 	+ .button {
 
+		@extend .button;
 		@include vertical-spacing("margin", "up");
-		@include button--size-sm();
 	}
 }

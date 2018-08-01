@@ -64,7 +64,8 @@
 
 	button {
 
-		@include button--size-xs();
+		@extend .button;
+		@extend .button--size-xs;
 	}
 
 }
@@ -96,8 +97,8 @@
 
 .checkout-button {
 
-	@include button();
-	@include button--color("success");
-	@include button--size-sm;
-	@include button--size-block;
+	@extend .button;
+	@extend .button--size-sm;
+	@extend .button--size-block;
+	@extend .button--color-success;
 }

@@ -257,6 +257,7 @@
 
 	a {
 
-		@include button--pill();
+		@extend .button;
+		@extend .button--pill;
 	}
 }

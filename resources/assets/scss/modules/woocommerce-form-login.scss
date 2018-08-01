@@ -12,7 +12,7 @@
 
 		.button {
 
-			@include button--size-sm;
+			@extend .button;
 		}
 	}
 

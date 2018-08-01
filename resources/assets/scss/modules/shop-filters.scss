@@ -77,7 +77,8 @@
 
 	a {
 
-		@include button--pill;
+		@extend .button;
+		@extend .button--pill;
 
 		padding-left: 20px;
 		position: relative;
@@ -195,7 +196,7 @@
 	&.chosen {
 
 		color: color("primary");
-		
+
 		a {
 			color: color("primary");
 

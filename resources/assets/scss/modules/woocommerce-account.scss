@@ -99,8 +99,7 @@
 	.edit {
 		margin-left: $spacer;
 
-		@include button();
-		@include button--color("primary");
-		@include button--size-xs();
+		@extend .button;
+		@extend .button--size-xs;
 	}
 }

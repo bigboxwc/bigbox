@@ -14,9 +14,9 @@ form.woocommerce-checkout {
 
 #place_order {
 
-	@include button();
-	@include button--color("success");
-	@include button--size-block();
+	@extend .button;
+	@extend .button--color-success;
+	@extend .button--size-block;
 }
 
 .woocommerce-billing-fields {
@@ -192,9 +192,9 @@ form.woocommerce-checkout {
 
 	[name="apply_coupon"] {
 
-		@include button();
-		@include button--size-sm();
-		@include button--size-block();
+		@extend .button;
+		@extend .button--size-sm;
+		@extend .button--size-block;
 	}
 }
 

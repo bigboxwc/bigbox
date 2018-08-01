@@ -41,9 +41,9 @@
 		margin-right: ($spacer / 2);
 		margin-left: -($spacer / 2);
 
-		@include button();
-		@include button--size-xs();
-		@include button--color(theme-color("success"));
+		@extend .button;
+		@extend .button--size-xs;
+		@extend .button--color-success;
 	}
 }
 
@@ -60,8 +60,8 @@
 		margin-right: ($spacer / 2);
 		margin-left: -($spacer / 2);
 
-		@include button();
-		@include button--size-xs();
-		@include button--color(theme-color("success"));
+		@extend .button;
+		@extend .button--size-xs;
+		@extend .button--color-success;
 	}
 }

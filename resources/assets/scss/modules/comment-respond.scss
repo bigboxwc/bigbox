@@ -12,7 +12,7 @@
 
 	[type="submit"] {
 
-		@include button();
+		@extend .button;
 	}
 }
 
