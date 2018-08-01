@@ -20,7 +20,6 @@ return [
 		'selectors'    => [
 			'.navbar-menu__cart-count',
 			'.product__sale',
-			'.button--success',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $success ),
@@ -57,14 +56,7 @@ return [
 
 	// @mixin button--success
 	[
-		'selectors'    => [
-			'.checkout-button',
-			'#place_order',
-			'.single_add_to_cart_button',
-
-			'.woocommerce-notice-list__item .woocommerce-Button',
-			'.woocommerce-notice-list__item .wc-forward',
-		],
+		'selectors'    => bigbox_customize_get_button_success_selectors(),
 		'declarations' => [
 			'background-color' => esc_attr( $success ),
 		],

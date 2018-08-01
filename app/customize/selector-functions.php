@@ -38,3 +38,22 @@ function bigbox_customize_get_button_selectors() {
     '.wp-block-button .wp-block-button__link',
   ];
 }
+
+/**
+ * List of base success button selectors.
+ *
+ * @since 1.0.0
+ *
+ * @return array
+ */
+function bigbox_customize_get_button_success_selectors() {
+  return [
+		'.button--color-success',
+		'.checkout-button',
+		'#place_order',
+		'.single_add_to_cart_button',
+		'.woocommerce-form-coupon [name="apply_coupon"]',
+		'.woocommerce-notice-list__item .woocommerce-Button',
+		'.woocommerce-notice-list__item .wc-forward',
+	];
+}

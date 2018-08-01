@@ -45,20 +45,12 @@
 @mixin button--color( $color ) {
 
 	background-color: theme-color( $color );
-
-	&:hover {
-		color: #fff;
-	}
 }
 
 @mixin button--gray( $gray ) {
 
-	@include button;
+	@include button();
 	background-color: gray( $gray );
-
-	&:hover {
-		color: #fff;
-	}
 }
 
 // [1] Gutenberg adds their own !important declaration.
