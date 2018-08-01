@@ -32,6 +32,7 @@ zip -r $PACKAGE_NAME.zip \
 	bootstrap \
 	resources/languages/*.{po,mo,pot} \
 	resources/views \
+	resources/assets/scss \
 	resources/data/*.json \
 	public \
 	vendor/ \
