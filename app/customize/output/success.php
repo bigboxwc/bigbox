@@ -32,7 +32,7 @@ return [
 			'.wc-saved-payment-methods input:checked + label',
 			'.order-status--completed',
 			'.wc_payment_method [type="radio"]:checked + label[for^="payment_method"]',
-			'.woocommerce-purchase-form .in-stock'
+			'.woocommerce-purchase-form .in-stock',
 		],
 		'declarations' => [
 			'color' => esc_attr( $success ),

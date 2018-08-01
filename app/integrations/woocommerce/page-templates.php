@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return array
  */
 function bigbox_woocommerce_assign_page_templates( $templates ) {
-	$add = [];
+	$add         = [];
 	$no_template = '' === get_page_template_slug();
 
 	if ( is_cart() && $no_template ) {

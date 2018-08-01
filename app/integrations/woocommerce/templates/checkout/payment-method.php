@@ -10,9 +10,9 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
+ * @see         https://docs.woocommerce.com/document/template-structure/
+ * @author      WooThemes
+ * @package     WooCommerce/Templates
  * @version     2.3.0
  */
 
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php echo $gateway->get_title(); ?> <?php echo $gateway->get_icon(); ?>
 	</label>
 	<?php if ( $gateway->has_fields() || $gateway->get_description() ) : ?>
-		<div class="payment_box payment_method_<?php echo $gateway->id; ?>" <?php if ( ! $gateway->chosen ) : ?>style="display:none;"<?php endif; ?>>
+		<div class="payment_box payment_method_<?php echo $gateway->id; ?>" <?php echo esc_attr( ! $gateway->chosen ? 'style="display: none;"' : null ); ?>>
 			<?php $gateway->payment_fields(); ?>
 		</div>
 	<?php endif; ?>
