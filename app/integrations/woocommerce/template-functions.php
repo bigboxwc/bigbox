@@ -323,7 +323,7 @@ function bigbox_woocommerce_template_loop_variations() {
 	?>
 
 <div class="product__has-variations product__meta">
-	<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>">
+	<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>" class="button button--pill">
 		<?php esc_html_e( 'See More Options', 'bigbox' ); ?>
 	</a>
 </div>

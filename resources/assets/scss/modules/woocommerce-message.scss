@@ -60,7 +60,6 @@
 		margin-right: ($spacer / 2);
 		margin-left: -($spacer / 2);
 
-		@extend .button;
 		@extend .button--size-xs;
 		@extend .button--color-success;
 	}

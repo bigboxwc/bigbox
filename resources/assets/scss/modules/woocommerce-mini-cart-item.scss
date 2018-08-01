@@ -44,7 +44,6 @@
 
 	.button {
 
-		@extend .button;
 		@extend .button--size-sm;
 		@extend .button--size-block;
 	}

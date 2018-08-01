@@ -9,6 +9,10 @@
  * @author Spencer Finnell
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * Get the chosen family.
  *

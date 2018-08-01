@@ -37,36 +37,30 @@ return [
 
 	// Solid background-color.
 	'background-color' => [
-		'selectors'    => [
-			'a:hover i.bigbox-icon',
-			'.navbar',
-			'.select2-container--default .select2-results__option--highlighted[data-selected]',
-			'.widget_price_filter .ui-slider .ui-slider-range',
+		'selectors'    => array_merge(
+			bigbox_customize_get_button_selectors(),
+			[
+				'a:hover i.bigbox-icon',
+				'.navbar',
+				'.select2-container--default .select2-results__option--highlighted[data-selected]',
+				'.widget_price_filter .ui-slider .ui-slider-range',
 
-			'.facetwp-facet .facetwp-slider .noUi-connect',
-			'.facetwp-template__loading:before',
-			'.facetwp-facet .facetwp-submit',
-			'.facetwp-facet .facetwp-autocomplete-update',
-			'.facetwp-facet .facetwp-slider-reset',
-			'.facetwp-facet.facetwp-type-slider .facetwp-slider .noUi-connect',
+				'.facetwp-facet .facetwp-slider .noUi-connect',
+				'.facetwp-template__loading:before',
+				'.facetwp-facet .facetwp-submit',
+				'.facetwp-facet .facetwp-autocomplete-update',
+				'.facetwp-facet .facetwp-slider-reset',
+				'.facetwp-facet.facetwp-type-slider .facetwp-slider .noUi-connect',
 
-			// Flatpickr.
-			'.flatpickr-calendar .flatpickr-day.selected',
-			'.flatpickr-calendar .flatpickr-day.startRange',
-			'.flatpickr-calendar .flatpickr-day.endRange',
-			'.flatpickr-calendar .flatpickr-day.selected.inRange',
-			'.flatpickr-calendar .flatpickr-day.startRange.inRange',
-			'.flatpickr-calendar .flatpickr-day.endRange.inRange',
-
-			// @button mixin
-			'.button',
-			'button',
-			'.woocommerce-form-coupon [name="apply_coupon"]',
-			'.comment-form [type="submit"]',
-			'.woocommerce-column--billing-address .edit',
-			'.woocommerce-column--shipping-address .edit',
-			'.woocommerce-Addresses .edit',
-		],
+				// Flatpickr.
+				'.flatpickr-calendar .flatpickr-day.selected',
+				'.flatpickr-calendar .flatpickr-day.startRange',
+				'.flatpickr-calendar .flatpickr-day.endRange',
+				'.flatpickr-calendar .flatpickr-day.selected.inRange',
+				'.flatpickr-calendar .flatpickr-day.startRange.inRange',
+				'.flatpickr-calendar .flatpickr-day.endRange.inRange',
+			]
+		),
 		'declarations' => [
 			'background-color' => esc_attr( $primary ),
 		],

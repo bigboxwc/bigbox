@@ -252,12 +252,3 @@
 
 	@include border-radius();
 }
-
-.product__has-variations {
-
-	a {
-
-		@extend .button;
-		@extend .button--pill;
-	}
-}

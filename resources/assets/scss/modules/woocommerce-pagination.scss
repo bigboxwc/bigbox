@@ -59,7 +59,6 @@ $spacing: ( $spacer / 2 );
 
 	.button {
 
-		@extend .button;
 		@extend .button--size-sm;
 		@extend .button--size-block;
 

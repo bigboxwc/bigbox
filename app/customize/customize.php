@@ -16,6 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Colors and Type helpers.
 require_once get_template_directory() . '/app/customize/color-functions.php';
 require_once get_template_directory() . '/app/customize/type-functions.php';
+require_once get_template_directory() . '/app/customize/selector-functions.php';
 
 // Controls.
 require_once get_template_directory() . '/app/customize/controls.php';
