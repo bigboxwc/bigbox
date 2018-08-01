@@ -28,8 +28,6 @@ function bigbox_customize_get_button_selectors() {
     '.woocommerce-notice-list__item .woocommerce-Button',
     '.woocommerce-notice-list__item .wc-forward',
     '.single_add_to_cart_button',
-    '.checkout-button',
-    '#place_order',
     '.woocommerce-Address-title .edit',
     '.widget_shopping_cart_content .checkout',
     '#wl-wrapper.wl-button-wrap .wl-add-to-single',

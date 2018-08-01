@@ -70,8 +70,8 @@
 		margin-top: ($spacer / 2);
 		box-shadow: none;
 
-		@extend .button;
-		@extend .button--size-xs;
+		@include button();
+		@include button--size-xs();
 	}
 
 	.facetwp-radio,

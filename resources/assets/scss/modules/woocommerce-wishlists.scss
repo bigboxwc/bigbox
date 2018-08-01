@@ -6,9 +6,8 @@
 
 	.wl-add-to-single {
 
-
-		@extend .button;
-		@extend .button--size-sm;
-		@extend .button--size-block;
+		@include button();
+		@include button--size-sm();
+		@include button--size-block();
 	}
 }

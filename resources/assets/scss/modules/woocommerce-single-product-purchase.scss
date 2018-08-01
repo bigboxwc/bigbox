@@ -71,10 +71,10 @@
 
 .single_add_to_cart_button {
 
-	@extend .button;
-	@extend .button--size-sm;
-	@extend .button--size-block;
-	@extend .button--color-success;
+
+	@include button--size-sm();
+	@include button--size-block();
+	@include button--color(theme-color("success"));
 }
 
 .single_variation_wrap {

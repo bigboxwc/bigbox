@@ -56,7 +56,7 @@ p.has-background {
 
 	& .wp-block-button__link {
 
-		@extend .button;
+		@include button();
 
 		&.editor-rich-text__tinymce[data-is-placeholder-visible=true] {
 			position: absolute;
@@ -67,7 +67,7 @@ p.has-background {
 
 		.wp-block-button__link {
 
-			@extend .button--size-lg;
+			@include button--size-lg();
 		}
 	}
 
@@ -75,7 +75,7 @@ p.has-background {
 
 		.wp-block-button__link {
 
-			@extend .button--size-sm;
+			@include button--size-sm();
 		}
 	}
 
@@ -83,7 +83,7 @@ p.has-background {
 
 		.wp-block-button__link {
 
-			@extend .button--size-xs;
+			@include button--size-xs();
 		}
 	}
 }

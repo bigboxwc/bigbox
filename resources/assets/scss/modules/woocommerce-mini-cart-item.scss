@@ -38,13 +38,13 @@
 	.checkout {
 		margin-top: ($spacer / 2);
 
-		@extend .button;
-		@extend .button--color-success;
+		@include button();
+		@include button--color(theme-color("success"));
 	}
 
 	.button {
 
-		@extend .button--size-sm;
-		@extend .button--size-block;
+		@include button--size-sm();
+		@include button--size-block();
 	}
 }
