@@ -21,8 +21,8 @@ $text = (bool) get_theme_mod( 'header_text', 1 );
 	<?php the_custom_logo(); ?>
 
 	<<?php echo esc_attr( $tag ); ?> class="site-title<?php echo esc_attr( $text ? null : ' screen-reader-text' ); ?>">
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<?php bloginfo( 'name' ); ?>
-		</a>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 	</<?php echo esc_attr( $tag ); ?>>
+
+	<p class="screen-reader-text"><?php bloginfo( 'description' ); ?></p>
 </div>
