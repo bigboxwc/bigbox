@@ -1,3 +1,11 @@
+## [1.12.1]  - 2018-08-02
+
+### Fix
+
+- Improved CSS architecture for easier child theme development.
+- Ensure shop category list uses arounded corners.
+- Fix syntax erorrs in `apply_filters()` calls.
+
 ## [1.12.0]  - 2018-07-30
 
 ### New

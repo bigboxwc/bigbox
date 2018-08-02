@@ -11,7 +11,7 @@
 }
 
 .action-list__item--inset {
-	border-left: 1px dashed gray("400");
+	border-left: 1px solid gray("300");
 
 	.action-list__item-label {
 		margin-left: $spacer;

@@ -9,11 +9,6 @@
 		.woocommerce-form__label {
 			margin-left: $spacer;
 		}
-
-		.button {
-
-			@include button--size-sm;
-		}
 	}
 
 	.lost_password {

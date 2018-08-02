@@ -1,15 +1,40 @@
-// @todo https://github.com/woocommerce/woocommerce/pull/18533
+.woocommerce-NoticeGroup {
+	width: 100%;
+}
 
-.woocommerce-info,
-.woocommerce-message,
-.woocommerce-error li {
-	overflow: hidden;
+.woocommerce-error,
+.woocommerce-notice {
 	width: 100%;
 
-	@include card();
-	@include vertical-spacing("margin", "down");
+	form.woocommerce-checkout & {
 
+		margin-left: $spacer;
+		margin-right: $spacer;
+	}
+}
+
+.woocommerce-error,
+.woocommerce-notice {
 	padding: ($spacer / 2) $spacer;
+
+	@include vertical-spacing("margin", "down");
+}
+
+.woocommerce-notice-list {
+
+	@include reset-list();
+}
+
+.woocommerce-notice-list__item {
+
+	@include vertical-spacing("margin", "down", (
+		sm: 0.5,
+	));
+
+	&:last-child,
+	&:only-child {
+		margin-bottom: 0;
+	}
 
 	.woocommerce-Button,
 	.wc-forward {
@@ -17,26 +42,25 @@
 		margin-left: -($spacer / 2);
 
 		@include button();
-		@include button--color("success");
-		@include button--size-sm();
+		@include button--size-xs();
+		@include button--color(theme-color("success"));
 	}
 }
 
-.woocommerce-NoticeGroup {
-	width: 100%;
-
-	@include make-col-ready();
-}
-
+// Old.
+.woocommerce-Message,
 .woocommerce-error {
 
-	@include reset-list();
+	@include card();
 
-	li {
+	padding: ($spacer / 2) $spacer;
 
-		@include card();
-		@include card--error();
 
-		padding: $spacer;
+	.button {
+		margin-right: ($spacer / 2);
+		margin-left: -($spacer / 2);
+
+		@include button--size-xs();
+		@include button--color(theme-color("success"));
 	}
 }

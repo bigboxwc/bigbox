@@ -140,6 +140,7 @@ function bigbox_should_skip_image_with_blacklisted_class( $classes ) {
 		[
 			'skip-lazy',
 			'custom-logo',
+			'woocommerce-product-gallery__image',
 		]
 	);
 

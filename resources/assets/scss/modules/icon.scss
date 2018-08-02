@@ -19,7 +19,7 @@ i.bigbox-icon {
 	@each $logo in map-get($icons, "social") {
 
 		&--#{$logo} {
-			mask-image: url("../images/icons/logo-#{$logo}.svg");
+			mask-image: url("#{$image-path}/icons/logo-#{$logo}.svg");
 		}
 	}
 
@@ -27,7 +27,7 @@ i.bigbox-icon {
 	@each $icon in map-get($icons, "generic") {
 
 		&--#{$icon} {
-			mask-image: url("../images/icons/#{$icon}.svg");
+			mask-image: url("#{$image-path}/icons/#{$icon}.svg");
 		}
 	}
 

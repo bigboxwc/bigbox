@@ -31,7 +31,8 @@ return [
 	// @mixin card--error.
 	[
 		'selectors'    => [
-			'.woocommerce-error li',
+			'.card.card--color-danger',
+			'.woocommerce-error',
 		],
 		'declarations' => [
 			'color'        => esc_attr( $danger ),
@@ -40,9 +41,10 @@ return [
 			'font-weight'  => esc_attr( bigbox_get_theme_font_weight( 'bold' ) ),
 		],
 	],
+	// @mixin button--color-danger
 	[
 		'selectors'    => [
-			'.button--danger',
+			'.button--color-danger',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $danger ),

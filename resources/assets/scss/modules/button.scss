@@ -1,25 +1,27 @@
+[type="submit"],
+button,
 .button {
 
 	@include button();
 	@include button--color("primary");
 
 	// Sizes.
-	&--size-lg {
+	&.button--size-lg {
 
 		@include button--size-sm();
 	}
 
-	&--size-sm {
+	&.button--size-sm {
 
 		@include button--size-sm();
 	}
 
-	&--size-xs {
+	&.button--size-xs {
 
 		@include button--size-xs();
 	}
 
-	&--size-block {
+	&.button--size-block {
 
 		@include button--size-block();
 	}
@@ -27,24 +29,24 @@
 	// Colors.
 	@each $name, $hex in $theme-colors {
 
-		&--color-#{$name} {
+		&.button--color-#{$name} {
 
 			@include button--color($name);
 		}
 	}
 
 	// Additional styles.
-	&--pill {
+	&.button--pill {
 
 		@include button--pill();
 	}
 
-	&--blank {
+	&.button--blank {
 
 		@include button--blank();
 	}
 
-	&--text {
+	&.button--text {
 		color: gray("700");
 		background: none;
 		border: 0;

@@ -9,6 +9,10 @@
  * @author Spencer Finnell
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * Get the chosen family.
  *
@@ -90,5 +94,14 @@ function bigbox_get_google_fonts_url() {
 
 	$base_url = '//fonts.googleapis.com/css';
 
-	return esc_url_raw( add_query_arg( [ 'family' => $family_string ], $base_url ) );
+	$url = add_query_arg( [ 'family' => $family_string ], $base_url );
+
+	/**
+	 * Filters the URL used to load Google fonts.
+	 *
+	 * @since 1.12.1
+	 *
+	 * @param string $url Google font URL.
+	 */
+	return esc_url_raw( apply_filters( 'bigbox_get_google_fonts_url', $url ) );
 }

@@ -31,7 +31,7 @@ function bigbox_customize_controls_enqueue_scripts( $wp_customize ) {
 		true
 	);
 
-	$customize_contols_js = [];
+	$customize_controls_js = [];
 
 	wp_localize_script(
 		'bigbox-customize-controls',

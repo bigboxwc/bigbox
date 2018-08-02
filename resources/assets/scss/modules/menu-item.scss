@@ -10,7 +10,7 @@
 			width: $icon-w;
 			height: $icon-h;
 			margin-right: ($spacer / 2);
-			mask-image: url("../images/icons/logo-#{$network}.svg");
+			mask-image: url("#{$image-path}/icons/logo-#{$network}.svg");
 			mask-size: $icon-w $icon-h;
 			background-color: gray("700");
 		}

@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<p class="woocommerce-view-order-status">
+<p class="woocommerce-view-order-status card">
 <?php
 	printf(
 		/* translators: 1: order date 2: order status. */

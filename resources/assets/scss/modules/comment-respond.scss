@@ -9,17 +9,9 @@
 
 		@include form-row();
 	}
-
-	[type="submit"] {
-
-		@include button();
-	}
 }
 
 .comment-form-cookies-consent {
 
-	label {
-
-		@include form-label--with-checkbox();
-	}
+	@include form-label--with-checkbox();
 }

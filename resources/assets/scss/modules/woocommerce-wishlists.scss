@@ -6,6 +6,7 @@
 
 	.wl-add-to-single {
 
+		@include button();
 		@include button--size-sm();
 		@include button--size-block();
 	}

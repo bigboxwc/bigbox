@@ -18,6 +18,7 @@ return [
 			'.product__stock',
 			'.wc_payment_method .payment_box p',
 			'.woocommerce-products-header .term-description',
+			'.cart_totals .shipping-methods',
 		],
 		'declarations' => [
 			'color' => esc_attr( $gray600 ),
@@ -37,8 +38,8 @@ return [
 	// @mixin button--pill.
 	[
 		'selectors'    => [
-			'.product__has-variations a',
-			'.widget_layered_nav_filters a',
+			'.product__has-variations .button.button--pill',
+			'.widget_layered_nav_filters .button.button--pill',
 		],
 		'declarations' => [
 			'color'            => esc_attr( $gray600 ),

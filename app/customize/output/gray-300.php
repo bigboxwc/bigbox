@@ -35,6 +35,8 @@ return [
 			'.wc-credit-card-form #stripe-card-element',
 			'.navbar-search__category select',
 			'.widget ul ul',
+			'.action-list__item--inset',
+			'.shipping-note',
 
 			'.review-breakdown',
 			'.review-breakdown__item',
@@ -104,12 +106,8 @@ return [
 	[
 		'selectors'    => [
 			'.card',
-			'.woocommerce-checkout-review-order',
-			'.woocommerce-message',
-			'.woocommerce-info',
-			'.wc_payment_method [type="radio"] label[for^="payment_method"]',
-			'.woocommerce-verification-required',
 			'table',
+			'.woocommerce-Message',
 		],
 		'declarations' => [
 			'box-shadow'       => esc_attr( "{$rgba50} 0 1px 2px" ),

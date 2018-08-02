@@ -183,6 +183,12 @@ $menu-break-point: md;
 			font-size: 0.9rem;
 			padding: ($spacer / 3) $spacer;
 			position: initial;
+
+			// Icons.
+			> a:before,
+			i.bigbox-icon {
+				background-color: gray("700");
+			}
 		}
 
 		.menu-item-has-children > a {
@@ -228,8 +234,10 @@ $menu-break-point: md;
 			&::after {
 				border-left: 4px solid gray("400");
 
+				/* rtl:ignore */
 				.rtl & {
 					border-right: 4px solid gray("400");
+					border-left-color: 0;
 				}
 			}
 		}

@@ -77,14 +77,11 @@ table {
 		@include media-breakpoint-up(md) {
 			float: right;
 		}
-
-		@include button--size-xs();
 	}
 
 	// Trailing button (usually to add a new row).
 	+ .button {
 
 		@include vertical-spacing("margin", "up");
-		@include button--size-sm();
 	}
 }

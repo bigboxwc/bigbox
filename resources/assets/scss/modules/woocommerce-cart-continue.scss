@@ -10,6 +10,8 @@
 }
 
 .cart_totals .shipping-methods {
+	color: gray("600");
+	font-size: $font-size-sm;
 
 	@include reset-list();
 
@@ -25,12 +27,10 @@
 	}
 }
 
-.woocommerce-shipping-note,
-.cart_totals .shipping-methods {
-	font-size: $font-size-sm;
+.woocommerce-shipping-note {
 	margin: $spacer 0;
 	padding-left: $spacer;
-	border-left: 1px dashed gray("400");
+	border-left: 1px solid gray("300");
 }
 
 .woocommerce-shipping-calculator-toggle {
@@ -69,6 +69,8 @@
 
 }
 
+
+.woocommerce-shipping-note,
 .woocommerce-shipping-destination,
 .woocommerce-shipping-contents {
 	font-size: $font-size-xs;
@@ -94,8 +96,7 @@
 
 .checkout-button {
 
-	@include button();
-	@include button--color("success");
-	@include button--size-sm;
-	@include button--size-block;
+	@include button--size-sm();
+	@include button--size-block();
+	@include button--color(theme-color("success"));
 }
