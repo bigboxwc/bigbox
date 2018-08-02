@@ -38,8 +38,8 @@ return [
 	// @mixin button--pill.
 	[
 		'selectors'    => [
-			'.product__has-variations a',
-			'.widget_layered_nav_filters a',
+			'.product__has-variations .button.button--pill',
+			'.widget_layered_nav_filters .button.button--pill',
 		],
 		'declarations' => [
 			'color'            => esc_attr( $gray600 ),
