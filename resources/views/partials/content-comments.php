@@ -48,5 +48,14 @@ if ( have_comments() ) :
 endif;
 
 if ( comments_open() ) :
-	comment_form();
+	/**
+	 * Filters the arguments used to build the blog comment form.
+	 *
+	 * @since 1.12.1
+	 *
+	 * @param array $args comment_fomr() arguments.
+	 */
+	$comment_form = apply_filters( 'bigbox_blog_comment_form_args', [] );
+
+	comment_form( $comment_form );
 endif;
