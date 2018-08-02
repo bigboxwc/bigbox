@@ -22,8 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function bigbox_customize_get_button_selectors() {
 	return [
-		'.button',
-		'button',
+		'.button:not(.button--text)',
+		'button:not(.button--text)',
 		'.widget_layered_nav_filters a',
 		'.woocommerce-notice-list__item .woocommerce-Button',
 		'.woocommerce-notice-list__item .wc-forward',
