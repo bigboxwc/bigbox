@@ -9,6 +9,10 @@
 
 	@include vertical-spacing("padding", "both", $map);
 	@include vertical-spacing("margin", "down", $map);
+
+	&:last-child {
+		border-bottom: 0;
+	}
 }
 
 .blog-post__title {
