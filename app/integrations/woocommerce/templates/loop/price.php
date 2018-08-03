@@ -38,7 +38,7 @@ $price_html = $product->get_price_html()
 	?>
 
 	<span class="price">
-		<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>">
+		<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>" tabindex="-1">
 			<?php echo $price_html; // WPCS: XSS okay. ?>
 		</a>
 	</span>
