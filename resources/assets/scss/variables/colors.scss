@@ -1,13 +1,13 @@
-$white:    #fff;
-$gray-100: #f7f7f7;
-$gray-200: #f2f2f2;
-$gray-300: #dbdbdb;
-$gray-400: #afafaf;
-$gray-500: #999;
-$gray-600: #717171;
-$gray-700: #565656;
-$gray-800: #333;
-$black:    #000;
+$white:    #ffffff;
+$gray-100: #f7f7f7 !default;
+$gray-200: #f2f2f2 !default;
+$gray-300: #dbdbdb !default;
+$gray-400: #afafaf !default;
+$gray-500: #999999 !default;
+$gray-600: #717171 !default;
+$gray-700: #565656 !default;
+$gray-800: #333333 !default;
+$black:    #000000;
 
 $grays: (
 	"100": $gray-100,
@@ -18,17 +18,24 @@ $grays: (
 	"600": $gray-600,
 	"700": $gray-700,
 	"800": $gray-800,
-) !default;
+);
+
+$primary:     #2571d4 !default;
+$success:     #8dbc54 !default;
+$information: #17a2b8 !default;
+$warning:     #f9c95d !default;
+$danger:      #e05f59 !default;
 
 $theme-colors: (
-	"primary":     #2571d4,
-	"success":     #8dbc54,
-	"information": #17a2b8,
-	"warning":     #f9c95d,
-	"danger":      #e05f59,
+	"primary":     $primary,
+	"success":     $success,
+	"information": $information,
+	"warning":     $warning,
+	"danger":      $danger,
 ) !default;
 
-$colors: ();
+// Required for Bootstrap functions.
+$colors:();
 
 $body-color: $gray-700 !default;
-$body-bg:    #fff;
+$body-bg:    $white !default;
