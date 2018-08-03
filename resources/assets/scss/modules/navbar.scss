@@ -1,6 +1,10 @@
 .navbar {
 	background: theme-color("primary");
 	position: relative;
+
+	:focus {
+		outline-color: $white;
+	}
 }
 
 .navbar__inner {
