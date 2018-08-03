@@ -2,11 +2,20 @@ $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
 
 $line-height-base: 1.5;
 
-$font-size-base: 1em;
-$font-size-xs: ($font-size-base * 0.8);
-$font-size-sm: ($font-size-base * 0.9);
-$font-size-lg: ($font-size-base * 1.3);
-$font-size-xl: ($font-size-base * 1.65);
+$font-size-base: 1em !default;
+
+$font-sizes: (
+	xs: $font-size-base * 0.8,
+	sm: $font-size-base * 0.9,
+	lg: $font-size-base * 1.3,
+	xl: $font-size-base * 1.65,
+) !default;
+
+// Backwards compatibility.
+$font-size-xs: map-get($font-sizes, "xs");
+$font-size-sm: map-get($font-sizes, "sm");
+$font-size-lg: map-get($font-sizes, "lg");
+$font-size-xl: map-get($font-sizes, "xl");
 
 $font-weight-base: 400;
 $font-weight-bold: 500;
