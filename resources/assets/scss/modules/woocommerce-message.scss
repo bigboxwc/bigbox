@@ -1,3 +1,21 @@
+//
+// Local mixin to keep this file DRY.
+//
+@mixin _woocommerce-alert-buttons() {
+
+	.woocommerce-Button,
+	.wc-forward {
+		margin-right: ($spacer / 2);
+		margin-left: -($spacer / 2);
+		position: relative;
+		vertical-align: bottom;
+
+		@include button();
+		@include button--size-xs();
+		@include button--color(theme-color("success"));
+	}
+}
+
 .woocommerce-NoticeGroup {
 	width: 100%;
 }
@@ -27,6 +45,7 @@
 
 .woocommerce-notice-list__item {
 
+	@include _woocommerce-alert-buttons();
 	@include vertical-spacing("margin", "down", (
 		sm: 0.5,
 	));
@@ -35,16 +54,6 @@
 	&:only-child {
 		margin-bottom: 0;
 	}
-
-	.woocommerce-Button,
-	.wc-forward {
-		margin-right: ($spacer / 2);
-		margin-left: -($spacer / 2);
-
-		@include button();
-		@include button--size-xs();
-		@include button--color(theme-color("success"));
-	}
 }
 
 // Old.
@@ -52,15 +61,7 @@
 .woocommerce-error {
 
 	@include card();
+	@include _woocommerce-alert-buttons();
 
 	padding: ($spacer / 2) $spacer;
-
-
-	.button {
-		margin-right: ($spacer / 2);
-		margin-left: -($spacer / 2);
-
-		@include button--size-xs();
-		@include button--color(theme-color("success"));
-	}
 }
