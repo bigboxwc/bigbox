@@ -8,7 +8,11 @@ textarea,
 	width: 100%;
 	display: block;
 
-	@include form-input;
+	@include form-input();
+
+	&:focus {
+		border-color: gray("400");
+	}
 
 	+ .button {
 		margin-left: $spacer;
