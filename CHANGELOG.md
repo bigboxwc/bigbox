@@ -1,10 +1,18 @@
+## [1.13.0]  - 2018-08-14
+
+### New
+
+- Improve keyboard accessibility user interface.
+- Allow CSS color variables to be overridden in a child theme.
+- Gutenberg 3.5 compatibility (including custom font size support).
+
 ## [1.12.1]  - 2018-08-02
 
 ### Fix
 
 - Improved CSS architecture for easier child theme development.
-- Ensure shop category list uses arounded corners.
-- Fix syntax erorrs in `apply_filters()` calls.
+- Ensure shop category list uses rounded corners.
+- Fix syntax errors in `apply_filters()` calls.
 
 ## [1.12.0]  - 2018-07-30
 
@@ -35,7 +43,7 @@
 ### Fix
 
 - Don't output shipping calculator toggle when calculator is not output.
-- Don't layload the custom logo.
+- Don't lazyload the custom logo.
 - Properly add available stock to dropdown quantity.
 - Spacing above checkout completion button.
 - Ensure dynamic "Information" color is used for `.button--color-information` class.
