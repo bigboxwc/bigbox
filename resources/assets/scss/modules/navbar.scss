@@ -2,9 +2,11 @@
 	background: theme-color("primary");
 	position: relative;
 
-	:focus {
-		outline-color: $white;
-		outline-offset: 2px;
+	.is-tabbing & {
+
+		:focus {
+			outline-color: $white;
+		}
 	}
 }
 

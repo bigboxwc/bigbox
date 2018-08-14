@@ -87,10 +87,6 @@
 		height: 100%;
 
 		@include border-left-radius();
-
-		&:focus {
-			outline: 0;
-		}
 	}
 
 	.facetwp-search-wrap {
