@@ -16,7 +16,7 @@ const handleFirstTab = ( e ) => {
 
 	window.removeEventListener( 'keydown', handleFirstTab );
 	window.addEventListener( 'mousedown', handleMouseDownOnce );
-}
+};
 
 /**
  * Remove body class when a click event is detected.
@@ -26,6 +26,6 @@ const handleMouseDownOnce = () => {
 
 	window.removeEventListener( 'mousedown', handleMouseDownOnce );
 	window.addEventListener( 'keydown', handleFirstTab );
-}
+};
 
 window.addEventListener( 'keydown', handleFirstTab );

@@ -22,10 +22,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php if ( $messages ) : ?>
 	<div class="woocommerce-notice woocommerce-notice woocommerce-notice--success card" role="alert">
-	<ul class="woocommerce-notice-list">
-	  <?php foreach ( $messages as $message ) : ?>
-		<li class="woocommerce-notice-list__item"><?php echo wp_kses_post( $message ); ?></li>
-		<?php endforeach; ?>
-	</ul>
+		<ul class="woocommerce-notice-list">
+			<?php foreach ( $messages as $message ) : ?>
+				<li class="woocommerce-notice-list__item"><?php echo wp_kses_post( $message ); ?></li>
+			<?php endforeach; ?>
+		</ul>
 	</div>
 <?php endif; ?>
