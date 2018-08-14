@@ -35,7 +35,6 @@ function bigbox_customize_get_button_selectors() {
 		'.facetwp-facet .facetwp-autocomplete-update',
 		'.facetwp-facet .facetwp-slider-reset',
 		'.comment-form [type="submit"]',
-		'.wp-block-button .wp-block-button__link',
 	];
 }
 
