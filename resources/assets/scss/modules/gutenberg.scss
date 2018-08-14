@@ -24,6 +24,7 @@ p.has-background {
 // Gutenberg currently uses <figure>
 // @see https://github.com/WordPress/gutenberg/pull/5706
 .wp-block-image {
+	max-width: none;
 
 	&.aligncenter {
 		display: block;

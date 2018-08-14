@@ -1,6 +1,13 @@
 .navbar {
 	background: theme-color("primary");
 	position: relative;
+
+	.is-tabbing & {
+
+		:focus {
+			outline-color: $white;
+		}
+	}
 }
 
 .navbar__inner {

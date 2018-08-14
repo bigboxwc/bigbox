@@ -1,0 +1,10 @@
+//
+// Generate font sizes for Gutenberg.
+//
+
+@each $slug, $size in $font-sizes {
+
+	.has-#{$slug}-font-size {
+		font-size: $size;
+	}
+}

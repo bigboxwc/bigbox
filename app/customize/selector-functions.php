@@ -14,9 +14,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Add an element state to a list of selectors.
+ *
+ * @since 1.13.0
+ *
+ * @param array  $selectors List of selectors.
+ * @param string $state State to append.
+ * @return array
+ */
+function bigbox_customize_add_state_to_selectors( $selectors, $state ) {
+	return array_map(
+		function( $selector ) use ( $state ) {
+			return sprintf( '%1$s:%2$s', $selector, $state );
+		},
+		$selectors
+	);
+}
+
+/**
  * List of base button selectors.
  *
- * @since 1.0.0
+ * @since 1.13.0
  *
  * @return array
  */
@@ -35,14 +53,13 @@ function bigbox_customize_get_button_selectors() {
 		'.facetwp-facet .facetwp-autocomplete-update',
 		'.facetwp-facet .facetwp-slider-reset',
 		'.comment-form [type="submit"]',
-		'.wp-block-button .wp-block-button__link',
 	];
 }
 
 /**
  * List of base success button selectors.
  *
- * @since 1.0.0
+ * @since 1.13.0
  *
  * @return array
  */
@@ -55,5 +72,31 @@ function bigbox_customize_get_button_success_selectors() {
 		'.woocommerce-form-coupon [name="apply_coupon"]',
 		'.woocommerce-notice-list__item .woocommerce-Button',
 		'.woocommerce-notice-list__item .wc-forward',
+	];
+}
+
+/**
+ * List of base form input selectors.
+ *
+ * @since 1.13.0
+ *
+ * @return array
+ */
+function bigbox_customize_get_form_input_selectors() {
+	return [
+		'textarea',
+		'[type="email"]',
+		'[type="search"]',
+		'[type="tel"]',
+		'[type="url"]',
+		'[type="password"]',
+		'[type="text"]',
+
+		'.navbar-search__submit [type="submit"]',
+
+		'.woocommerce .input-text',
+
+		'.select2-container--default .select2-selection--single',
+		'.select2-container--default:focus .select2-selection--single',
 	];
 }

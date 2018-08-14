@@ -25,6 +25,7 @@ return [
 			'border-color' => esc_attr( $gray400 ),
 		],
 	],
+
 	// Solid border-color.
 	[
 		'selectors'    => [
@@ -47,6 +48,14 @@ return [
 		'declarations' => [
 			'border-right-color' => esc_attr( $gray400 ),
 			'border-left-color'  => 'transparent',
+		],
+	],
+
+	// @mixin form--input
+	[
+		'selectors'    => bigbox_customize_add_state_to_selectors( bigbox_customize_get_form_input_selectors(), 'focus' ),
+		'declarations' => [
+			'border-color' => esc_attr( $gray400 ),
 		],
 	],
 ];

@@ -10,6 +10,19 @@ body {
 	display: flex;
 	flex-direction: column;
 
+	*:focus {
+		outline: 0;
+	}
+
+	&.is-tabbing {
+
+		*:focus {
+			outline-style: auto;
+			outline-width: initial;
+			outline-offset: 2px;
+		}
+	}
+
 	&.admin-bar {
 		min-height: calc(100vh - 32px);
 

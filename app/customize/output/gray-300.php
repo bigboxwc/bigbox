@@ -120,19 +120,7 @@ return [
 
 	// @mixin form--input
 	[
-		'selectors'    => [
-			'textarea',
-			'[type="email"]',
-			'[type="search"]',
-			'[type="tel"]',
-			'[type="url"]',
-			'[type="password"]',
-			'[type="text"]',
-			'.navbar-search__submit [type="submit"]',
-			'.woocommerce .input-text',
-			'.select2-container--default .select2-selection--single',
-			'.select2-container--default:focus .select2-selection--single',
-		],
+		'selectors'    => bigbox_customize_get_form_input_selectors(),
 		'declarations' => [
 			'border-color' => esc_attr( $gray300 ),
 		],

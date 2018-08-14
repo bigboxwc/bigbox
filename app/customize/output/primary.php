@@ -101,7 +101,7 @@ return [
 	// Solid outline-color.
 	'outline-color'    => [
 		'selectors'    => [
-			':focus',
+			'.is-tabbing *:focus',
 		],
 		'declarations' => [
 			'outline-color' => esc_attr( $primary ),

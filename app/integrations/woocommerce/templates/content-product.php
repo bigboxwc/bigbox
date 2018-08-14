@@ -39,7 +39,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 	<?php if ( bigbox_woocommerce_has_product_image( $product ) ) : ?>
 	<div class="product__preview">
-		<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>" aria-label="<?php echo esc_attr( $product->get_title() ); ?>">
+		<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>" aria-label="<?php echo esc_attr( $product->get_title() ); ?>" tabindex="-1">
 			<?php
 			/**
 			 * Before shop loop item title.

@@ -24,3 +24,4 @@ import './app/offcanvas-drawer.js';
 import './app/navbar.js';
 import './app/navbar-menu.js';
 import './app/embeds.js';
+import './app/tab-focus.js';

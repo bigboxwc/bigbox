@@ -57,6 +57,41 @@ class Gutenberg extends Integration implements Registerable, Service {
 		}
 
 		add_theme_support( 'editor-color-palette', $palette );
+
+		$sizes = [
+			[
+				'name'      => __( 'Extra Small', 'bigbox' ),
+				'shortName' => __( 'XS', 'bigbox' ),
+				'size'      => 12,
+				'slug'      => 'xs',
+			],
+			[
+				'name'      => __( 'Small', 'bigbox' ),
+				'shortName' => __( 'S', 'bigbox' ),
+				'size'      => 14,
+				'slug'      => 'sm',
+			],
+			[
+				'name'      => __( 'Medium', 'bigbox' ),
+				'shortName' => __( 'M', 'bigbox' ),
+				'size'      => 16,
+				'slug'      => 'base',
+			],
+			[
+				'name'      => __( 'Large', 'bigbox' ),
+				'shortName' => __( 'L', 'bigbox' ),
+				'size'      => 20,
+				'slug'      => 'lg',
+			],
+			[
+				'name'      => __( 'Extra Large', 'bigbox' ),
+				'shortName' => __( 'XL', 'bigbox' ),
+				'size'      => 26,
+				'slug'      => 'xl',
+			],
+		];
+
+		add_theme_support( 'editor-font-sizes', $sizes );
 	}
 
 	/**

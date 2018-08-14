@@ -20,14 +20,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<li class="wc_payment_method payment_method_<?php echo $gateway->id; ?>">
-	<input id="payment_method_<?php echo $gateway->id; ?>" type="radio" class="input-radio" name="payment_method" value="<?php echo esc_attr( $gateway->id ); ?>" <?php checked( $gateway->chosen, true ); ?> data-order_button_text="<?php echo esc_attr( $gateway->order_button_text ); ?>" />
+<li class="wc_payment_method payment_method_<?php echo esc_attr( $gateway->id ); ?>">
+	<input id="payment_method_<?php echo esc_attr( $gateway->id ); ?>" type="radio" class="input-radio" name="payment_method" value="<?php echo esc_attr( $gateway->id ); ?>" <?php checked( $gateway->chosen, true ); ?> data-order_button_text="<?php echo esc_attr( $gateway->order_button_text ); ?>" />
 
-	<label for="payment_method_<?php echo $gateway->id; ?>" class="card">
-		<?php echo $gateway->get_title(); ?> <?php echo $gateway->get_icon(); ?>
+	<label for="payment_method_<?php echo esc_attr( $gateway->id ); ?>" class="card">
+		<?php
+		echo $gateway->get_title(); // WPCS: XSS okay.
+		echo $gateway->get_icon(); // WPCS: XSS okay.
+		?>
 	</label>
+
 	<?php if ( $gateway->has_fields() || $gateway->get_description() ) : ?>
-		<div class="payment_box payment_method_<?php echo $gateway->id; ?>" <?php echo esc_attr( ! $gateway->chosen ? 'style="display: none;"' : null ); ?>>
+		<div class="payment_box payment_method_<?php echo esc_attr( $gateway->id ); ?>" <?php echo esc_attr( ! $gateway->chosen ? 'style="display: none;"' : null ); ?>>
 			<?php $gateway->payment_fields(); ?>
 		</div>
 	<?php endif; ?>
