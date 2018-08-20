@@ -20,7 +20,7 @@
 
 ul.brands_index,
 ul.brand-thumbnails {
-	
+
 	@include reset-list();
 	@include vertical-spacing("margin");
 	@include brand-image();
@@ -69,4 +69,13 @@ div#brands_a_z a.top {
 .wc-brand-list-layered-nav-product_brand {
 
 	@include reset-list();
+}
+
+// Additional information.
+.product span.posted_in {
+	font-weight: $font-weight-bold;
+
+	a {
+		font-weight: $font-weight-base;
+	}
 }

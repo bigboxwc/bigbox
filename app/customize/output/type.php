@@ -107,6 +107,7 @@ return [
 			'.woocommerce-MyAccount-navigation-link a',
 			'.shop-filters__mobile-toggle-link',
 			'.wp-block-cover-image-text',
+			'.product span.posted_in',
 		],
 		'declarations' => [
 			'font-weight' => esc_attr( $weight_bold ),
