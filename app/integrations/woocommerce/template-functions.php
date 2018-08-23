@@ -337,6 +337,10 @@ function bigbox_woocommerce_template_loop_variations() {
  * @since 1.0.0
  */
 function bigbox_woocommerce_template_loop_stock() {
+	if ( ! get_theme_mod( 'display-inventory', true ) ) {
+		return;
+	}
+
 	$html = wc_get_stock_html( wc_get_product( get_post() ) );
 
 	if ( '' === $html ) {
