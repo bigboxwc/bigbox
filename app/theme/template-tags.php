@@ -125,7 +125,7 @@ function bigbox_get_star_html( $rating ) {
 	$markup .= str_repeat( bigbox_get_svg( 'star-half' ), $half_stars );
 	$markup .= str_repeat( bigbox_get_svg( 'star-empty' ), $empty_stars );
 	// @codingStandardsIgnoreEnd
-	
+
 	$markup .= '</span>';
 
 	return $markup;

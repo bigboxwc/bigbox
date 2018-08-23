@@ -60,7 +60,7 @@ function bigbox_wcpv_add_sold_by_loop() {
 	$vendor      = $vendor[0];
 	$vendor_data = WC_Product_Vendors_Utils::get_vendor_data_by_id( $vendor->term_id );
 	$sold_by     = WC_Product_Vendors_Utils::get_sold_by_link( $post->ID );
-?>
+	?>
 
 <div class="product__price product__meta wcpv-sold-by-loop">
 	<a href="<?php echo esc_url( $sold_by['link'] ); ?>">
@@ -69,7 +69,7 @@ function bigbox_wcpv_add_sold_by_loop() {
 	</a>
 </div>
 
-<?php
+	<?php
 }
 
 /**
@@ -89,7 +89,7 @@ function bigbox_wcpv_vendor_page_title( $title ) {
 	$vendor = get_queried_object_id();
 
 	// Show avatar.
-	$show_logo  = get_option( 'wcpv_vendor_settings_vendor_display_logo', 'yes' );
+	$show_logo = get_option( 'wcpv_vendor_settings_vendor_display_logo', 'yes' );
 
 	if ( ! empty( $vendor_data['logo'] ) && 'yes' === $show_logo ) {
 		$title = wp_get_attachment_image( absint( $vendor_data['logo'] ), 'thumbnail' ) . $title;
@@ -114,7 +114,7 @@ function bigbox_wcpv_vendor_page_title( $title ) {
  */
 function bigbox_wcpv_display_vendor_logo_profile() {
 	$vendor_data = bigbox_wcpv_archive_get_current_vendor();
-	
+
 	if ( ! $vendor_data ) {
 		return;
 	}
@@ -132,7 +132,7 @@ function bigbox_wcpv_display_vendor_logo_profile() {
  * @since 1.14.0
  *
  * @param string $rating_html Current rating HTML.
- * @param int $rating Current rating.
+ * @param int    $rating Current rating.
  * @return string
  */
 function bigbox_wcpv_vendor_get_rating_html( $rating_html, $rating ) {

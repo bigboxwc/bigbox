@@ -33,7 +33,6 @@ if ( ! function_exists( 'remove_class_filter' ) ) {
 	 * @return bool Whether the function is removed.
 	 */
 	function remove_class_filter( $tag, $class_name = '', $method_name = '', $priority = 10 ) {
-
 		global $wp_filter;
 
 		// Check that filter actually exists first.
@@ -87,7 +86,6 @@ if ( ! function_exists( 'remove_class_filter' ) ) {
 				if ( isset( $fob ) ) {
 					// Handles removing filter, reseting callback priority keys mid-iteration, etc.
 					$fob->remove_filter( $tag, $filter['function'], $priority );
-
 				} else {
 					// Use legacy removal process (pre 4.7).
 					unset( $callbacks[ $priority ][ $filter_id ] );
@@ -98,7 +96,7 @@ if ( ! function_exists( 'remove_class_filter' ) ) {
 					}
 					// and if the only filter for that tag, set the tag to an empty array.
 					if ( empty( $callbacks ) ) {
-						$callbacks = array();
+						$callbacks = [];
 					}
 					// Remove this filter from merged_filters, which specifies if filters have been sorted.
 					unset( $GLOBALS['merged_filters'][ $tag ] );

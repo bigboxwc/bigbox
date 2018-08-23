@@ -92,7 +92,7 @@ add_filter(
  */
 function bigbox_generator( $gen, $type ) {
 	$theme = wp_get_theme( get_template() );
-	$items = array( $theme->Name . ' ' . $theme->Version ); // phpcs:ignore WordPress.NamingConventions.ValidVariableName
+	$items = [ $theme->Name . ' ' . $theme->Version ]; // phpcs:ignore WordPress.NamingConventions.ValidVariableName
 
 	if ( is_child_theme() ) {
 		$child_theme = wp_get_theme( get_stylesheet() );
