@@ -8,7 +8,7 @@
 
 	@include make-container();
 
-	padding: ($spacer * 0.75) $spacer;
+	padding: ($spacer * 0.75) ($spacer * 2);
 
 	@include media-breakpoint-up(sm) {
 		display: flex;
