@@ -23,18 +23,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 function bigbox_woocommerce_customize_register_placeholder_controls( $wp_customize ) {
 	// Position.
 	$wp_customize->add_setting(
-		'hide-image-placeholders',
+		'display-image-placeholders',
 		[
-			'default'           => false,
+			'default'           => true,
 			'sanitize_callback' => 'absint',
 		]
 	);
 
 	$wp_customize->add_control(
-		'hide-image-placeholders',
+		'display-image-placeholders',
 		[
 			/* translators: Customizer control label. */
-			'label'    => __( 'Hide Image Placeholders', 'bigbox' ),
+			'label'    => __( 'Display product image placeholders', 'bigbox' ),
 			'type'     => 'checkbox',
 			'section'  => 'woocommerce_product_images',
 			'priority' => 5,

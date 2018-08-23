@@ -147,7 +147,7 @@ function bigbox_woocommerce_has_product_image( $product = null ) {
 		$product = wc_get_product( get_the_ID() );
 	}
 
-	if ( get_theme_mod( 'hide-image-placeholders', false ) ) {
+	if ( ! get_theme_mod( 'display-image-placeholders', true ) ) {
 		return '' !== $product->get_image_id();
 	}
 
