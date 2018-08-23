@@ -92,6 +92,21 @@
 	text-align: right;
 }
 
+.woocommerce-orders-table__cell-order-actions {
+	text-align: right;
+
+	.woocommerce-button {
+		margin-left: ($spacer / 2);
+
+		@include button--size-xs();
+
+		&.cancel {
+
+			@include button--color(theme-color("danger"));
+		}
+	}
+}
+
 .woocommerce-Address-title {
 	display: flex;
 	align-items: center;

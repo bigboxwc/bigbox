@@ -33,6 +33,7 @@ return [
 			'.wc-social-login',
 			'.woocommerce-OrderUpdate',
 			'.woocommerce-shipping-address',
+			'.tax-wcpv_product_vendors .woocommerce-products-header__title img',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray200 ),

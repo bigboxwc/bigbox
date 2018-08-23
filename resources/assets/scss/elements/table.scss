@@ -42,17 +42,6 @@ table {
 				background: gray("100");
 			}
 		}
-
-		@include media-breakpoint-up(md) {
-
-			tr:first-child,
-			tr:only-child {
-
-				td {
-					border-top: 0;
-				}
-			}
-		}
 	}
 
 	tfoot {
@@ -69,14 +58,6 @@ table {
 
 	p {
 		margin-top: 0;
-	}
-
-	// Inner button (usually an action).
-	.button {
-
-		@include media-breakpoint-up(md) {
-			float: right;
-		}
 	}
 
 	// Trailing button (usually to add a new row).

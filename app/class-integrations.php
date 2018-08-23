@@ -111,6 +111,14 @@ final class Integrations implements Registerable, Service {
 					defined( 'WC_BRANDS_VERSION' ) && WC_BRANDS_VERSION,
 				],
 			],
+			'woocommerce-product-vendors' => [
+				'slug'         => 'woocommerce-product-vendors',
+				'class'        => Integration\WooCommerce_Product_Vendors::class,
+				'dependencies' => [
+					defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
+					defined( 'WC_PRODUCT_VENDORS_VERSION' ) && WC_PRODUCT_VENDORS_VERSION,
+				],
+			],
 			'facetwp'            => [
 				'slug'         => 'facetwp',
 				'class'        => Integration\FacetWP::class,
