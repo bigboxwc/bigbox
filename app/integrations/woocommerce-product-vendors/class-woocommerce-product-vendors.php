@@ -2,7 +2,7 @@
 /**
  * WooCommerce Product Vendors integration.
  *
- * @since 1.0.0
+ * @since 1.14.0
  *
  * @package BigBox
  * @category Integration
@@ -22,14 +22,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * WooCommerce Product Vendors.
  *
- * @since 1.0.0
+ * @since 1.14.0
  */
 class WooCommerce_Product_Vendors extends Integration implements Registerable, Service {
 
 	/**
 	 * Connect to WordPress.
 	 *
-	 * @since 1.0.0
+	 * @since 1.14.0
 	 */
 	public function register() {
 		include_once $this->get_dir() . '/template-hooks.php';
