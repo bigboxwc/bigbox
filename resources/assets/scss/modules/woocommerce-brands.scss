@@ -1,9 +1,10 @@
 @mixin brand-image {
 
 	a {
+		margin-right: ($spacer / 2);
 		padding: 3px;
 		border: 1px solid gray("200");
-		display: inline-block;
+		display: block;
 
 		@include border-radius();
 	}
@@ -14,8 +15,14 @@
 }
 
 .woocommerce-product-brand {
+	display: flex;
 
 	@include brand-image();
+	@include vertical-spacing("margin");
+
+	@include media-breakpoint-up(md) {
+		margin: 0;
+	}
 }
 
 ul.brands_index,

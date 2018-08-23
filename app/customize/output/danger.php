@@ -45,6 +45,7 @@ return [
 	[
 		'selectors'    => [
 			'.button--color-danger',
+			'.woocommerce-orders-table__cell-order-actions .woocommerce-button.cancel',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $danger ),

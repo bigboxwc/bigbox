@@ -80,3 +80,30 @@ add_filter(
 		return $classes;
 	}
 );
+
+/**
+ * Output theme (and child theme) version number in meta tag.
+ *
+ * @since 1.0.0
+ *
+ * @param string $gen  Generator.
+ * @param string $type Type.
+ * @return string
+ */
+function bigbox_generator( $gen, $type ) {
+	$theme = wp_get_theme( get_template() );
+	$items = array( $theme->Name . ' ' . $theme->Version ); // phpcs:ignore WordPress.NamingConventions.ValidVariableName
+
+	if ( is_child_theme() ) {
+		$child_theme = wp_get_theme( get_stylesheet() );
+		$items[]     = $child_theme->Name . ' ' . $child_theme->Version; // phpcs:ignore WordPress.NamingConventions.ValidVariableName
+	}
+
+	foreach ( $items as $item ) {
+		$gen .= "\n" . '<meta name="generator" content="' . esc_attr( $item ) . '"' . ( 'xhtml' === $type ? ' /' : null ) . '>';
+	}
+
+	return $gen;
+}
+add_action( 'get_the_generator_html', 'bigbox_generator', 10, 2 );
+add_action( 'get_the_generator_xhtml', 'bigbox_generator', 10, 2 );
