@@ -55,13 +55,9 @@ p.has-background {
 .wp-block-button {
 	padding: 0 !important; // [1]
 
-	& .wp-block-button__link {
+	.wp-block-button__link {
 
 		@include button();
-
-		&.editor-rich-text__tinymce[data-is-placeholder-visible=true] {
-			position: absolute;
-		}
 	}
 
 	&.button--size-lg {
@@ -85,6 +81,21 @@ p.has-background {
 		.wp-block-button__link {
 
 			@include button--size-xs();
+		}
+	}
+
+	&.is-style-squared {
+
+		.wp-block-button__link {
+			border-radius: 0 !important;
+		}
+	}
+
+	&.is-style-outline {
+
+		.wp-block-button__link {
+			border-width: 2px;
+			border-style: solid;
 		}
 	}
 }

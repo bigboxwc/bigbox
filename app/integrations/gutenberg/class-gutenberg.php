@@ -250,6 +250,18 @@ class Gutenberg extends Integration implements Registerable, Service {
 					],
 				]
 			);
+
+			$css->add(
+				[
+					'selectors'    => [
+						".edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link.has-{$color}-color",
+					],
+					'declarations' => [
+						'border-color' => esc_attr( bigbox_get_theme_color( $color ) ),
+						'color'        => esc_attr( bigbox_get_theme_color( $color ) ),
+					],
+				]
+			);
 		}
 
 		return $css->build();
