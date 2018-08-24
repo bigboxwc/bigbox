@@ -1,3 +1,16 @@
+// Columns.
+form.wcpv-shortcode-registration-form {
+
+	.form-row-first,
+	.form-row-last {
+		width: 100%;
+
+		@include media-breakpoint-up(lg) {
+			width: 48%;
+		}
+	}
+}
+
 // Page title.
 .woocommerce-products-header__title {
 
@@ -64,4 +77,22 @@
 // Order review.
 .product__meta.price + br {
 	display: none;
+}
+
+// Alerts.
+.wcpv-registration-message {
+
+	@include card();
+	@include vertical-spacing("margin", "down");
+
+	&.wcpv-shortcode-registration-form-errors {
+
+		@include card--color(theme-color("danger"));
+	}
+
+	&.wcpv-shortcode-registration-success {
+		padding: ($spacer / 2) $spacer;
+
+		@include card--color(theme-color("success"));
+	}
 }

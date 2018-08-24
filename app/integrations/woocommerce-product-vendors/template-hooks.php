@@ -15,6 +15,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $wcpv = new WC_Product_Vendors_Vendor_Frontend();
 
+// Filter shortcode-registration-form.php template location.
+add_filter(
+	'woocommerce_locate_template',
+	function( $template, $template_name ) {
+		if ( 'shortcode-registration-form.php' === $template_name ) {
+			return get_theme_file_path( 'app/integrations/woocommerce-product-vendors/templates/shortcode-registration-form.php' );
+		};
+
+		return $template;
+	},
+	10,
+	2
+);
+
 // Change "Sold by" on loop.
 remove_class_action( 'woocommerce_after_shop_loop_item', 'WC_Product_Vendors_Vendor_Frontend', 'add_sold_by_loop', 9 );
 add_action( 'woocommerce_after_shop_loop_item', 'bigbox_wcpv_add_sold_by_loop', 9 );

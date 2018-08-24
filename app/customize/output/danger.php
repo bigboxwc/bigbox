@@ -33,6 +33,7 @@ return [
 		'selectors'    => [
 			'.card.card--color-danger',
 			'.woocommerce-error',
+			'.wcpv-registration-message.wcpv-shortcode-registration-form-errors',
 		],
 		'declarations' => [
 			'color'        => esc_attr( $danger ),

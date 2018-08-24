@@ -40,7 +40,7 @@ foreach ( $colors as $color => $data ) {
 			".wp-block-button.is-style-outline .wp-block-button__link.has-{$color}-color:hover",
 		],
 		'declarations' => [
-			'color' => esc_attr( bigbox_get_theme_color( $color ) ),
+			'color'        => esc_attr( bigbox_get_theme_color( $color ) ),
 			'border-color' => esc_attr( bigbox_get_theme_color( $color ) ),
 		],
 	];
