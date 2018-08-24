@@ -11,7 +11,12 @@ import domReady from '@wordpress/dom-ready';
  */
 const horizontalMenu = ( menuClass, activeClass ) => {
   const menu = document.querySelector( menuClass );
-  const activeLink = document.querySelector( `${ menuClass } ${ activeClass }` ); 
+
+	if ( ! menu ) {
+		return;
+	}
+
+  const activeLink = document.querySelector( `${ menuClass } ${ activeClass }` );
 
   const activeOffset = activeLink.getBoundingClientRect();
   const menuOffset = menu.getBoundingClientRect();
