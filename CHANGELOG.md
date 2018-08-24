@@ -1,4 +1,14 @@
-## [1.13.0]  - 2018-08-14
+## [1.14.0] - 2018-08-23
+
+### New
+
+- WooCommerce Product Vendors support: https://woocommerce.com/products/product-vendors/
+- Improved Gutenberg 3.5+ button support.
+- Improved horizontal navigation user experience.
+- Option to hide inventory counts in the product catalog.
+- WooCommerce 3.5 template compatibility.
+
+## [1.13.0] - 2018-08-14
 
 ### New
 
@@ -6,7 +16,7 @@
 - Allow CSS color variables to be overridden in a child theme.
 - Gutenberg 3.5 compatibility (including custom font size support).
 
-## [1.12.1]  - 2018-08-02
+## [1.12.1] - 2018-08-02
 
 ### Fix
 
@@ -14,15 +24,15 @@
 - Ensure shop category list uses rounded corners.
 - Fix syntax errors in `apply_filters()` calls.
 
-## [1.12.0]  - 2018-07-30
+## [1.12.0] - 2018-07-30
 
 ### New
 
 - Improved UI for cart totals and shipping.
 - WooCommerce 3.4.4 compatibility.
 - Add Social Icons.
-  - Can be used inline with `<i class="bigbox-icon bigbox-icon--twitter"></i>`.
-  - Automatically applied to menu item links with social URLs.
+ - Can be used inline with `<i class="bigbox-icon bigbox-icon--twitter"></i>`.
+ - Automatically applied to menu item links with social URLs.
 
 ### Fix
 
@@ -32,13 +42,13 @@
 - Ensure WooCommece alert's are always 100% width.
 - Update to WordPress Coding Standards 1.0.0
 
-## [1.11.3]  - 2018-07-24
+## [1.11.3] - 2018-07-24
 
 ### Fix
 
 - Avoid double faux inputs on FacetWP filters.
 
-## [1.11.2]  - 2018-07-24
+## [1.11.2] - 2018-07-24
 
 ### Fix
 
@@ -48,7 +58,7 @@
 - Spacing above checkout completion button.
 - Ensure dynamic "Information" color is used for `.button--color-information` class.
 
-## [1.11.1]  - 2018-07-21
+## [1.11.1] - 2018-07-21
 
 ### Fix
 
@@ -56,7 +66,7 @@
 - Spacing on cart totals.
 - Ensure footer remains sticky when using widgets.
 
-## [1.11.0]  - 2018-07-20
+## [1.11.0] - 2018-07-20
 
 ### New
 
@@ -87,7 +97,7 @@
 - Output product sale flash via `bigbox_woocommerce_loop_product_price_before` and `bigbox_woocommerce_product_price_after`
 - Add `product__meta` class to all product card meta items.
 
-## [1.10.0]  - 2018-07-11
+## [1.10.0] - 2018-07-11
 
 ### New
 
