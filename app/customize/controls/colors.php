@@ -116,7 +116,7 @@ function bigbox_customize_register_colors_controls( $wp_customize ) {
 			$wp_customize,
 			'bigbox-colors-element-missing',
 			[
-				'label'    => __( '⚡ Want to see something else here?', 'bigbox' ),
+				'label'    => __( '📦 Want to see something else here?', 'bigbox' ),
 				'content'  => '<p>' . __( 'Want specific control over an individual element\'s color?', 'bigbox' ) . '</p><p><a href="https://bigboxwc.com/account/support" target="_blank" rel="noopener noreferrer">' . __( 'Contact us with a suggestion &rarr;', 'bigbox' ) . '</a></p>',
 				'priority' => 9999,
 				'section'  => 'colors-elements',

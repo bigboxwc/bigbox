@@ -33,9 +33,9 @@ $border:  1px solid #ccc;
 	width: 280px;
 	position: fixed;
 	padding: $padding;
+	box-shadow: 0 3px 30px rgba(25,30,35,.1);
+	border: 1px solid #e2e4e7;
 	background: #fff;
-	border-radius: 3px;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.075);
 	transform: translate3d(0, -50%, 0);
 
 	&[aria-hidden] {
@@ -45,22 +45,26 @@ $border:  1px solid #ccc;
 	&::before,
 	&::after {
 		content: " ";
-		width: 14px;
-		height: 14px;
 		border-radius: 100%;
 		background: #3c64ff;
 		position: absolute;
-		left: -17px;
 		top: 50%;
-		margin-top: -7px;
 	}
 
-	&::before {
-		opacity: 0.5;
+	&:before {
+		width: 10px;
+		height: 10px;
+		left: -15px;
+		margin-top: -5px;
 	}
 
 	&::after {
-		animation: growHint 2s infinite;
+		width: 20px;
+		height: 20px;
+		left: -20px;
+		margin-top: -10px;
+		opacity: 0.5;
+		animation: growHint 1.5s infinite;
 	}
 
 	h3 {
