@@ -25,3 +25,4 @@ import './app/navbar.js';
 import './app/navbar-menu.js';
 import './app/embeds.js';
 import './app/tab-focus.js';
+import './app/horizontal-menu.js';
