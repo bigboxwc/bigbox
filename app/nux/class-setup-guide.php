@@ -11,7 +11,6 @@
 
 namespace BigBox\NUX;
 
-use BigBox\ThemeFactory;
 use BigBox\Registerable;
 use BigBox\Service;
 

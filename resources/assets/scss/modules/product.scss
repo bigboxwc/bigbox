@@ -202,7 +202,7 @@
 		@each $bp in ("lg", "xl") {
 
 			@include media-breakpoint-up( $bp ) {
-				font-size: $font-size-sm;
+				font-size: $font-size-base;
 			}
 		}
 	}

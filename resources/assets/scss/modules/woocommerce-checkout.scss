@@ -149,7 +149,7 @@ form.woocommerce-checkout {
 	.woocommerce-notice-list {
 
 		@include vertical-spacing("margin", "down", (
-		sm: 1,
+			sm: 1,
 		));
 	}
 

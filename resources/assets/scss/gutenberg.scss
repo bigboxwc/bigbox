@@ -37,9 +37,13 @@ $use-margins: false;
 
 	.wp-block-button {
 
-		& .wp-block-button__link {
+		.wp-block-button__link {
 
 			@import "modules/gutenberg-colors";
+
+			&.editor-rich-text__tinymce[data-is-placeholder-visible=true] {
+				position: absolute;
+			}
 		}
 	}
 
@@ -71,4 +75,11 @@ $use-margins: false;
 
 .editor-rich-text__tinymce.mce-content-body {
 	line-height: ($line-height-base * 1.35);
+}
+
+.wp-block-button {
+
+	.wp-block-button__link {
+		border-radius: $border-radius;
+	}
 }

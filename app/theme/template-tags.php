@@ -101,3 +101,32 @@ function bigbox_get_navbar_search_source( $source, $default ) {
 	 */
 	return apply_filters( 'navbar_dropdown_search_source', $mod, $source, $default );
 }
+
+/**
+ * Build HTML star output.
+ *
+ * @since 1.14.0
+ *
+ * @param int $rating Rating out of 5 used to generate stars.
+ * @return string
+ */
+function bigbox_get_star_html( $rating ) {
+	$full_stars  = floor( $rating );
+	$half_stars  = ceil( $rating - floor( $rating ) );
+	$empty_stars = 5 - floor( $rating ) - ceil( $rating - floor( $rating ) );
+
+	/* translators: %1$s Rating value. */
+	$title = __( '%1$s stars average rating', 'bigbox' );
+
+	$markup = '<span class="star-rating__stars" aria-label="' . esc_attr( sprintf( $title, $rating ) ) . '">';
+
+	// @codingStandardsIgnoreStart
+	$markup .= str_repeat( bigbox_get_svg( 'star' ), $full_stars );
+	$markup .= str_repeat( bigbox_get_svg( 'star-half' ), $half_stars );
+	$markup .= str_repeat( bigbox_get_svg( 'star-empty' ), $empty_stars );
+	// @codingStandardsIgnoreEnd
+
+	$markup .= '</span>';
+
+	return $markup;
+}

@@ -1,0 +1,98 @@
+// Columns.
+form.wcpv-shortcode-registration-form {
+
+	.form-row-first,
+	.form-row-last {
+		width: 100%;
+
+		@include media-breakpoint-up(lg) {
+			width: 48%;
+		}
+	}
+}
+
+// Page title.
+.woocommerce-products-header__title {
+
+	.tax-wcpv_product_vendors & {
+
+		img {
+			margin-right: $spacer;
+			padding: 3px;
+			width: 56px;
+			float: left;
+			border: 1px solid gray("200");
+		}
+
+		.star-rating__stars {
+			display: block;
+			margin-top: 10px;
+
+			@include media-breakpoint-up(md) {
+				margin-top: 0;
+			}
+
+			.bigbox-icon:first-child {
+				margin-left: -2px;
+			}
+		}
+	}
+}
+
+// "Sold by"
+.wcpv-sold-by-order-details,
+.wcpv-sold-by-loop,
+.wcpv-sold-by-single {
+	font-style: normal;
+	font-weight: $font-weight-bold;
+	margin: $spacer 0;
+
+	a {
+		font-weight: $font-weight-base;
+		text-decoration: underline;
+	}
+}
+
+// "Sold by" loop.
+.wcpv-sold-by-loop {
+
+	a {
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+	}
+
+	img {
+		width: 25px;
+		height: 25px;
+		margin-right: ($spacer / 2);
+	}
+}
+
+// Cart
+.wcpv-sold-by-cart {
+	font-style: normal;
+}
+
+// Order review.
+.product__meta.price + br {
+	display: none;
+}
+
+// Alerts.
+.wcpv-registration-message {
+
+	@include card();
+	@include vertical-spacing("margin", "down");
+
+	&.wcpv-shortcode-registration-form-errors {
+
+		@include card--color(theme-color("danger"));
+	}
+
+	&.wcpv-shortcode-registration-success {
+		padding: ($spacer / 2) $spacer;
+
+		@include card--color(theme-color("success"));
+	}
+}

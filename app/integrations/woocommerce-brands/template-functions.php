@@ -35,7 +35,7 @@ function bigbox_woocommerce_single_brand_thumbnail() {
 		apply_filters(
 			'bigbox_woocommerce_product_brand_atts', [
 				'post_id' => wc_get_product()->get_id(),
-				'height'  => '35px',
+				'height'  => '50px',
 			]
 		)
 	);

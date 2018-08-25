@@ -147,7 +147,7 @@ function bigbox_woocommerce_has_product_image( $product = null ) {
 		$product = wc_get_product( get_the_ID() );
 	}
 
-	if ( get_theme_mod( 'hide-image-placeholders', false ) ) {
+	if ( ! get_theme_mod( 'display-image-placeholders', true ) ) {
 		return '' !== $product->get_image_id();
 	}
 
@@ -337,6 +337,10 @@ function bigbox_woocommerce_template_loop_variations() {
  * @since 1.0.0
  */
 function bigbox_woocommerce_template_loop_stock() {
+	if ( ! get_theme_mod( 'display-inventory', true ) ) {
+		return;
+	}
+
 	$html = wc_get_stock_html( wc_get_product( get_post() ) );
 
 	if ( '' === $html ) {
@@ -512,28 +516,13 @@ function bigbox_woocommerce_product_additional_information() {
  * @return string
  */
 function bigbox_woocommerce_get_star_rating_html( $html, $rating, $count ) {
-	$full_stars  = floor( $rating );
-	$half_stars  = ceil( $rating - floor( $rating ) );
-	$empty_stars = 5 - floor( $rating ) - ceil( $rating - floor( $rating ) );
-
-	/* translators: %1$s Rating value. */
-	$title = __( '%1$s average rating', 'bigbox' );
-
 	/* Translators: %1$s Number of ratings. */
 	$count_title = __( '%1$s customer ratings', 'bigbox' );
 
 	ob_start();
-	?>
 
-<span class="star-rating__stars" aria-label="<?php esc_attr( sprintf( $title, $rating ) ); ?>">
-	<?php
-	// @codingStandardsIgnoreStart
-	echo str_repeat( bigbox_get_svg( 'star' ), $full_stars );
-	echo str_repeat( bigbox_get_svg( 'star-half' ), $half_stars );
-	echo str_repeat( bigbox_get_svg( 'star-empty' ), $empty_stars );
-	// @codingStandardsIgnoreEnd
+	echo bigbox_get_star_html( $rating ); // WPCS: XSS okay.
 	?>
-</span>
 
 	<?php if ( 0 !== $count && ! is_singular( 'product' ) ) : ?>
 

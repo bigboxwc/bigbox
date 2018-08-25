@@ -145,7 +145,7 @@ $menu-break-point: md;
 		$icon-dim: $icon-w * map-get($icon-size-multipliers, "xs");
 
 		// Icons.
-		> a:before,
+		> a::before,
 		i.bigbox-icon {
 			width: $icon-dim;
 			height: $icon-dim;
@@ -185,7 +185,7 @@ $menu-break-point: md;
 			position: initial;
 
 			// Icons.
-			> a:before,
+			> a::before,
 			i.bigbox-icon {
 				background-color: gray("700");
 			}

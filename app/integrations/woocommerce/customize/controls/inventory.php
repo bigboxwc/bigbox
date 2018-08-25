@@ -1,6 +1,6 @@
 <?php
 /**
- * Image placeholder controls.
+ * Inventory controls.
  *
  * @since 1.0.0
  *
@@ -14,16 +14,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Image placeholder control.
+ * Inventory control.
  *
- * @since 1.0.0
+ * @since 1.14.0
  *
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
-function bigbox_woocommerce_customize_register_placeholder_controls( $wp_customize ) {
-	// Position.
+function bigbox_woocommerce_customize_register_inventory_controls( $wp_customize ) {
 	$wp_customize->add_setting(
-		'display-image-placeholders',
+		'display-inventory',
 		[
 			'default'           => true,
 			'sanitize_callback' => 'absint',
@@ -31,14 +30,14 @@ function bigbox_woocommerce_customize_register_placeholder_controls( $wp_customi
 	);
 
 	$wp_customize->add_control(
-		'display-image-placeholders',
+		'display-inventory',
 		[
 			/* translators: Customizer control label. */
-			'label'    => __( 'Display product image placeholders', 'bigbox' ),
+			'label'    => __( 'Display stock counts', 'bigbox' ),
 			'type'     => 'checkbox',
-			'section'  => 'woocommerce_product_images',
-			'priority' => 5,
+			'section'  => 'woocommerce_product_catalog',
+			'priority' => 50,
 		]
 	);
 }
-add_action( 'customize_register', 'bigbox_woocommerce_customize_register_placeholder_controls' );
+add_action( 'customize_register', 'bigbox_woocommerce_customize_register_inventory_controls' );

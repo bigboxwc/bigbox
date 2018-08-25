@@ -44,6 +44,8 @@ return [
 		'selectors'    => [
 			'.card.card--success',
 			'.wc_payment_method [type="radio"]:checked + label[for^="payment_method"]',
+
+			'.wcpv-registration-message.wcpv-shortcode-registration-success',
 		],
 		'declarations' => [
 			'border-color'     => esc_attr( $rgba50 ),

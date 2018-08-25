@@ -11,7 +11,6 @@
 
 namespace BigBox\NUX;
 
-use BigBox\ThemeFactory;
 use BigBox\Registerable;
 use BigBox\Service;
 
@@ -77,41 +76,41 @@ class Customize_Walkthrough implements Registerable, Service {
 		$pointers = [
 			'welcome' => [
 				'el'      => '#customize-info',
-				'title'   => esc_html__( '📦 Welcome to BigBox', 'bigbox' ),
-				'content' => esc_html__( 'Need some help getting started? No problem! I can guide you through the Customization options and get you on your way.', 'bigbox' ),
+				'title'   => __( '📦 Welcome to BigBox', 'bigbox' ),
+				'content' => __( 'Need some help getting started? No problem! I can guide you through the Customization options and get you on your way.', 'bigbox' ),
 			],
 			'logo'    => [
 				'el'        => '#customize-control-custom_logo',
-				'title'     => esc_html__( 'Add a Custom Logo', 'bigbox' ),
-				'content'   => esc_html__( 'Update your website\'s identity to reflect your unique brand.', 'bigbox' ),
+				'title'     => __( 'Add a Custom Logo', 'bigbox' ),
+				'content'   => __( 'Update your website\'s identity to reflect your unique brand.', 'bigbox' ),
 				'focusType' => 'control',
 				'focus'     => 'custom_logo',
 			],
 			'colors'  => [
 				'el'        => '#customize-control-color-primary',
-				'title'     => esc_html__( 'Choose Your Color Scheme', 'bigbox' ),
-				'content'   => esc_html__( 'Select the colors used to generate various parts of your website.', 'bigbox' ),
+				'title'     => __( 'Choose Your Color Scheme', 'bigbox' ),
+				'content'   => __( 'Select the colors used to generate various parts of your website.', 'bigbox' ),
 				'focusType' => 'control',
 				'focus'     => 'color-primary',
 			],
 			'type'    => [
 				'el'        => '#customize-control-type-font-family',
-				'title'     => esc_html__( 'Choose Your Typography', 'bigbox' ),
-				'content'   => esc_html__( 'Select the font family and weights used throughout your website.', 'bigbox' ),
+				'title'     => __( 'Choose Your Typography', 'bigbox' ),
+				'content'   => __( 'Select the font family and weights used throughout your website.', 'bigbox' ),
 				'focusType' => 'section',
 				'focus'     => 'type',
 			],
 			'widgets' => [
 				'el'        => '#sub-accordion-section-sidebar-widgets-shop li:first-child .customize-section-title',
-				'title'     => esc_html__( 'Adjust Your Widgets', 'bigbox' ),
-				'content'   => esc_html__( 'Modify the widgets used on your shop page to fit your needs.', 'bigbox' ),
+				'title'     => __( 'Adjust Your Widgets', 'bigbox' ),
+				'content'   => __( 'Modify the widgets used on your shop page to fit your needs.', 'bigbox' ),
 				'focusType' => 'section',
 				'focus'     => 'sidebar-widgets-shop',
 			],
 			'end'     => [
 				'el'        => '#customize-control-custom_logo',
-				'title'     => esc_html__( 'All Set!', 'bigbox' ),
-				'content'   => esc_html__( 'Continue customizing your site as much as you would like. You can always come back by visiting Appearance ▸ Customize', 'bigbox' ),
+				'title'     => __( 'All Set!', 'bigbox' ),
+				'content'   => __( 'Continue customizing your site as much as you would like. You can always come back by visiting Appearance ▸ Customize', 'bigbox' ),
 				'focusType' => 'control',
 				'focus'     => 'custom_logo',
 			],
