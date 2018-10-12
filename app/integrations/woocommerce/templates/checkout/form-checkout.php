@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 2.3.0
+ * @version 3.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -37,8 +37,6 @@ endif;
 	action="<?php echo esc_url( wc_get_checkout_url() ); ?>"
 	enctype="multipart/form-data"
 >
-
-	<?php wc_print_notices(); ?>
 
 	<div class="woocommerce-checkout__info">
 		<?php if ( $checkout->get_checkout_fields() ) : ?>
