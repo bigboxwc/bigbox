@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 $wc_tabs = apply_filters( 'woocommerce_product_tabs', [] );
 
-if ( ! empty( $tabs ) ) : ?>
+if ( ! empty( $wc_tabs ) ) : ?>
 
 	<div class="woocommerce-single-product-data">
 
