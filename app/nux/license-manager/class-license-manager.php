@@ -159,14 +159,14 @@ class License_Manager implements Registerable, Service {
 	 * @return array
 	 */
 	public function activate_or_deactivate_license() {
-		// @codingStandardsIgnoreStart
+		// @phpcs:disable
 		if ( ! check_ajax_referer( 'bigbox-license-request', '_wpnonce', false ) ) {
 			return wp_send_json_error();
 		}
 
 		$license = esc_attr( $_POST['license'] );
 		$action  = esc_attr( $_POST['edd_action'] );
-		// @codingStandardsIgnoreEnd
+		// @phpcs:enable
 
 		if ( ! in_array( $action, [ 'activate_license', 'deactivate_license' ], true ) ) {
 			return wp_send_json_error();

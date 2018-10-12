@@ -20,17 +20,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$order = wc_get_order( $order_id );
+$wc_order = wc_get_order( $order_id );
 
 if ( ! $order ) :
 	return;
 endif;
 
-$order_items           = $order->get_items( apply_filters( 'woocommerce_purchase_order_item_types', 'line_item' ) );
-$show_purchase_note    = $order->has_status( apply_filters( 'woocommerce_purchase_note_order_statuses', [ 'completed', 'processing' ] ) );
+$order_items           = $wc_order->get_items( apply_filters( 'woocommerce_purchase_order_item_types', 'line_item' ) );
+$show_purchase_note    = $wc_order->has_status( apply_filters( 'woocommerce_purchase_note_order_statuses', [ 'completed', 'processing' ] ) );
 $show_customer_details = is_user_logged_in() && $order->get_user_id() === get_current_user_id();
-$downloads             = $order->get_downloadable_items();
-$show_downloads        = $order->has_downloadable_item() && $order->is_download_permitted();
+$downloads             = $wc_order->get_downloadable_items();
+$show_downloads        = $wc_order->has_downloadable_item() && $wc_order->is_download_permitted();
 ?>
 
 <div class="woocommerce-receipt-wrapper">
@@ -49,11 +49,11 @@ $show_downloads        = $order->has_downloadable_item() && $order->is_download_
 		?>
 
 		<section class="woocommerce-order-details">
-			<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
+			<?php do_action( 'woocommerce_order_details_before_order_table', $wc_order ); ?>
 
 			<ul class="products products-main columns-1">
 			<?php
-			do_action( 'woocommerce_order_details_before_order_table_items', $order );
+			do_action( 'woocommerce_order_details_before_order_table_items', $wc_order );
 
 			foreach ( $order_items as $item_id => $item ) :
 				$product = $item->get_product();
@@ -61,7 +61,7 @@ $show_downloads        = $order->has_downloadable_item() && $order->is_download_
 				wc_get_template(
 					'order/order-details-item.php',
 					[
-						'order'              => $order,
+						'order'              => $wc_order,
 						'item_id'            => $item_id,
 						'item'               => $item,
 						'show_purchase_note' => $show_purchase_note,
@@ -71,20 +71,20 @@ $show_downloads        = $order->has_downloadable_item() && $order->is_download_
 				);
 			endforeach;
 
-			do_action( 'woocommerce_order_details_after_order_table_items', $order );
+			do_action( 'woocommerce_order_details_after_order_table_items', $wc_order );
 			?>
 			</ul>
 
 			<table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
 				<tfoot>
-					<?php foreach ( $order->get_order_item_totals() as $key => $total ) : ?>
+					<?php foreach ( $wc_order->get_order_item_totals() as $key => $total ) : ?>
 						<tr>
 							<th scope="row"><?php echo esc_html( $total['label'] ); ?></th>
 							<td><?php echo wp_kses_post( $total['value'] ); ?></td>
 						</tr>
 					<?php endforeach; ?>
 
-					<?php if ( $order->get_customer_note() ) : ?>
+					<?php if ( $wc_order->get_customer_note() ) : ?>
 						<tr>
 							<th><?php esc_html_e( 'Note:', 'bigbox' ); ?></th>
 							<td><?php echo wp_kses_post( wptexturize( $order->get_customer_note() ) ); ?></td>
@@ -93,13 +93,13 @@ $show_downloads        = $order->has_downloadable_item() && $order->is_download_
 				</tfoot>
 			</table>
 
-			<?php do_action( 'woocommerce_order_details_after_order_table', $order ); ?>
+			<?php do_action( 'woocommerce_order_details_after_order_table', $wc_order ); ?>
 		</section>
 	</div>
 
 	<?php if ( $show_customer_details ) : ?>
 	<div class="woocommerce-receipt-wrapper__info">
-		<?php wc_get_template( 'order/order-details-customer.php', [ 'order' => $order ] ); ?>
+		<?php wc_get_template( 'order/order-details-customer.php', [ 'order' => $wc_order ] ); ?>
 	</div>
 	<?php endif; ?>
 </div>

@@ -51,13 +51,13 @@ $css->add(
 	]
 );
 
-$type = [
+$type_base = [
 	'font-weight' => $weight_base,
 	'font-size'   => "{$size}em",
 ];
 
 if ( $family ) {
-	$type['font-family'] = $family;
+	$type_base['font-family'] = $family;
 }
 
 $css->add(
@@ -65,7 +65,7 @@ $css->add(
 		'selectors'    => [
 			'.mce-content-body',
 		],
-		'declarations' => $type,
+		'declarations' => $type_base,
 	]
 );
 

@@ -30,20 +30,20 @@ $form_url = apply_filters( 'bigbox_navbar_search_form_url', wc_get_page_permalin
 <form id="primary-search" action="<?php echo esc_url( $form_url ); ?>" method="GET" class="navbar-search">
 
 	<?php
-	$taxonomy = get_taxonomy( bigbox_get_navbar_search_source( 'dropdown', 'product_cat' ) );
+	$search_taxonomy = get_taxonomy( bigbox_get_navbar_search_source( 'dropdown', 'product_cat' ) );
 
-	if ( $taxonomy ) :
-		$selected = isset( $_GET[ $taxonomy->name ] ) ? esc_attr( $_GET[ $taxonomy->name ] ) : null; // @codingStandardsIgnoreLine
+	if ( $search_taxonomy ) :
+		$selected = isset( $_GET[ $search_taxonomy->name ] ) ? esc_attr( $_GET[ $search_taxonomy->name ] ) : null; // @codingStandardsIgnoreLine
 
 		/* translators: %s Header dropdown "All" label. */
-		$all = esc_html( sprintf( __( 'All %s', 'bigbox' ), strtolower( $taxonomy->labels->name ) ) );
+		$all = esc_html( sprintf( __( 'All %s', 'bigbox' ), strtolower( $search_taxonomy->labels->name ) ) );
 		?>
 
 	<div id="navbar-search__category" class="navbar-search__category">
-		<label for="<?php echo esc_attr( $taxonomy->name ); ?>" class="screen-reader-text">
+		<label for="<?php echo esc_attr( $search_taxonomy->name ); ?>" class="screen-reader-text">
 			<?php
-			/* translators: %s Header dropdown taxonomy name. */
-			echo esc_html( sprintf( __( 'Choose a %s', 'bigbox' ), strtolower( $taxonomy->labels->singular_name ) ) );
+			/* translators: %s Header dropdown search_taxonomy name. */
+			echo esc_html( sprintf( __( 'Choose a %s', 'bigbox' ), strtolower( $search_taxonomy->labels->singular_name ) ) );
 			?>
 			:
 		</label>
@@ -53,8 +53,8 @@ $form_url = apply_filters( 'bigbox_navbar_search_form_url', wc_get_page_permalin
 			$navbar_search_dropdown = [
 				'show_option_all' => $all,
 				'selected'        => $selected,
-				'name'            => $taxonomy->name,
-				'taxonomy'        => $taxonomy->name,
+				'name'            => $search_taxonomy->name,
+				'taxonomy'        => $search_taxonomy->name,
 				'hierarchical'    => true,
 				'value_field'     => 'slug',
 				'show_count'      => true,
