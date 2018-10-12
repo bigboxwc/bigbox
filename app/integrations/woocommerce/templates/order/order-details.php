@@ -22,13 +22,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $wc_order = wc_get_order( $order_id );
 
-if ( ! $order ) :
+if ( ! $wc_order ) :
 	return;
 endif;
 
 $order_items           = $wc_order->get_items( apply_filters( 'woocommerce_purchase_order_item_types', 'line_item' ) );
 $show_purchase_note    = $wc_order->has_status( apply_filters( 'woocommerce_purchase_note_order_statuses', [ 'completed', 'processing' ] ) );
-$show_customer_details = is_user_logged_in() && $order->get_user_id() === get_current_user_id();
+$show_customer_details = is_user_logged_in() && $wc_order->get_user_id() === get_current_user_id();
 $downloads             = $wc_order->get_downloadable_items();
 $show_downloads        = $wc_order->has_downloadable_item() && $wc_order->is_download_permitted();
 ?>
