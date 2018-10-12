@@ -27,18 +27,18 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @see woocommerce_default_product_tabs()
  */
-$tabs = apply_filters( 'woocommerce_product_tabs', [] );
+$wc_tabs = apply_filters( 'woocommerce_product_tabs', [] );
 
 if ( ! empty( $tabs ) ) : ?>
 
 	<div class="woocommerce-single-product-data">
 
 	<?php
-	foreach ( $tabs as $key => $tab ) :
-		if ( isset( $tab['callback'] ) ) :
+	foreach ( $wc_tabs as $key => $wc_tab ) :
+		if ( isset( $wc_tab['callback'] ) ) :
 			ob_start();
 
-			call_user_func( $tab['callback'] );
+			call_user_func( $wc_tab['callback'] );
 
 			$content = trim( ob_get_clean() );
 

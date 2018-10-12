@@ -10,7 +10,7 @@
  */
 
 // An annoying hack to ensure we can always importer starter content.
-// @codingStandardsIgnoreStart
+// @phpcs:disable
 if ( isset( $_GET['starter-content-redirect'] ) ) {
 	update_option( 'fresh_site', 1 );
 
@@ -27,7 +27,7 @@ if ( isset( $_GET['starter-content-redirect'] ) ) {
 
 	exit();
 }
-// @codingStandardsIgnoreEnd
+// @phpcs:enable
 
 /**
  * Starter content.

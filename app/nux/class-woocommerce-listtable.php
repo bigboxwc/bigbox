@@ -59,7 +59,7 @@ class WooCommerce_ListTable extends \WP_Plugin_Install_List_Table {
 	 */
 	public function query_dotorg() {
 		$plugins = [ 'woocommerce' ];
-		$key     = md5( serialize( $plugins ) ); // @codingStandardsIgnoreLine
+		$key     = md5( serialize( $plugins ) ); // @phpcs:ignore
 		$items   = get_transient( $key );
 
 		if ( false === $items ) {

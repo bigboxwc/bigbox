@@ -122,7 +122,9 @@ function bigbox_wcpv_display_vendor_logo_profile() {
 	$show_profile = get_option( 'wcpv_vendor_settings_vendor_display_profile', 'yes' );
 
 	if ( ! empty( $vendor_data['profile'] ) && 'yes' === $show_profile ) {
-		echo '<div class="wcpv-vendor-profile entry-summary">' . wpautop( wp_kses_post( do_shortcode( $vendor_data['profile'] ) ) ) . '</div>' . PHP_EOL;
+		echo '<div class="wcpv-vendor-profile entry-summary">';
+		echo wpautop( wp_kses_post( do_shortcode( $vendor_data['profile'] ) ) ); // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '</div>';
 	}
 }
 

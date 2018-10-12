@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$plugins = [
+$bigbox_plugins = [
 	'facetwp'  => [
 		'label' => 'FacetWP',
 		'buy'   => 'https://facetwp.com/buy/',
@@ -38,7 +38,7 @@ $plugins = [
 
 <div class="plugin-list">
 	<?php
-	foreach ( $plugins as $slug => $data ) :
+	foreach ( $bigbox_plugins as $slug => $data ) :
 		$i18n = [
 			/* translators: %s Plugin name. */
 			'get'  => sprintf( esc_html__( 'Get %s', 'bigbox' ), $data['label'] ),

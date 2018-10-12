@@ -93,14 +93,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 			if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) :
 				?>
 
-				<?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : ?>
+				<?php foreach ( WC()->cart->get_tax_totals() as $code => $tax_total ) : ?>
 					<div class="tax-rate action-list__item">
 						<div id="tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?>" class="action-list__item-label">
-							<?php echo $tax->label . ': ' . $estimated_text; // WPCS: XSS okay. ?>
+							<?php echo $tax_total->label . ': ' . $estimated_text; // WPCS: XSS okay. ?>
 						</div>
 						<div class="action-list__item-value action-list__item-value--no-flex" labelledby="tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
 							<span class="woocommerce-totals-plus">&plus; </span>
-							<?php echo $tax->formatted_amount; // WPCS: XSS okay. ?>
+							<?php echo $tax_total->formatted_amount; // WPCS: XSS okay. ?>
 						</div>
 					</div>
 				<?php endforeach; ?>

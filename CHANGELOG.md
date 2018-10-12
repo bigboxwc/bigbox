@@ -1,3 +1,10 @@
+## [1.15.0] - 2018-12-25
+
+### New
+
+- Gutenberg 3.9+ compatibility.
+- Continued codebase improvements.
+
 ## [1.14.0] - 2018-08-25
 
 ### New

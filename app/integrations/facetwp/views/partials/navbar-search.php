@@ -26,10 +26,10 @@ endif;
  */
 $form_url = apply_filters( 'bigbox_navbar_search_form_url', wc_get_page_permalink( 'shop' ) );
 
-$dropdown = FWP()->helper->get_facet_by_name( bigbox_get_navbar_search_source( 'dropdown', 'categories' ) );
-$search   = FWP()->helper->get_facet_by_name( bigbox_get_navbar_search_source( 'search', 'keyword' ) );
+$dropdown_facet = FWP()->helper->get_facet_by_name( bigbox_get_navbar_search_source( 'dropdown', 'categories' ) );
+$search_facet   = FWP()->helper->get_facet_by_name( bigbox_get_navbar_search_source( 'search', 'keyword' ) );
 
-if ( ! ( $search || $dropdown ) ) :
+if ( ! ( $search_facet || $dropdown_facet ) ) :
 	return;
 endif;
 ?>
@@ -37,33 +37,33 @@ endif;
 <form id="<?php echo esc_attr( bigbox_is_shop() ? 'facetwp-' : '' ); ?>primary-search" action="<?php echo esc_url( $form_url ); ?>" method="GET" class="navbar-search">
 
 	<?php
-	$taxonomy = get_taxonomy( str_replace( 'tax/', '', $dropdown['source'] ) );
+	$search_taxonomy = get_taxonomy( str_replace( 'tax/', '', $dropdown_facet['source'] ) );
 
-	if ( $taxonomy ) :
-		$name = FWP()->helper->get_setting( 'prefix' ) . $dropdown['name'];
-		$all  = esc_html( isset( $dropdown['label_any'] ) ? $dropdown['label_any'] : __( 'All', 'bigbox' ) );
+	if ( $search_taxonomy ) :
+		$name = FWP()->helper->get_setting( 'prefix' ) . $dropdown_facet['name'];
+		$all  = esc_html( isset( $dropdown['label_any'] ) ? $dropdown_facet['label_any'] : __( 'All', 'bigbox' ) );
 		?>
 
 	<div id="navbar-search__category" class="navbar-search__category">
 		<label for="<?php echo esc_attr( $name ); ?>" class="screen-reader-text">
-			<?php echo esc_html( $dropdown['label'] ); ?>:
+			<?php echo esc_html( $dropdown_facet['label'] ); ?>:
 		</label>
 
 		<div id="search-dropdown-real">
 		<?php
 		if ( bigbox_is_shop() && ! is_customize_preview() ) :
-			echo facetwp_display( 'facet', $dropdown['name'] ); // WPCS: XSS okay.
+			echo facetwp_display( 'facet', $dropdown_facet['name'] ); // WPCS: XSS okay.
 		else :
 			$navbar_search_dropdown = [
 				'show_option_all' => $all,
 				'name'            => $name,
-				'taxonomy'        => $taxonomy->name,
-				'hierarchical'    => 'no' !== $dropdown['hierarchical'],
+				'taxonomy'        => $search_taxonomy->name,
+				'hierarchical'    => 'no' !== $dropdown_facet['hierarchical'],
 				'value_field'     => 'slug',
 				'show_count'      => true,
-				'orderby'         => $dropdown['orderby'],
+				'orderby'         => $dropdown_facet['orderby'],
 				'order'           => 'ASC',
-				'number'          => $dropdown['count'],
+				'number'          => $dropdown_facet['count'],
 			];
 
 			wp_dropdown_categories(
@@ -88,21 +88,21 @@ endif;
 		<?php
 	endif;
 
-	if ( $search ) :
-		$name = FWP()->helper->get_setting( 'prefix' ) . $search['name'];
+	if ( $search_facet ) :
+		$name = FWP()->helper->get_setting( 'prefix' ) . $search_facet['name'];
 		?>
 
 	<div class="navbar-search__keywords">
 		<label for="<?php echo esc_attr( $name ); ?>" class="screen-reader-text">
-			<?php echo esc_html( $dropdown['label'] ); ?>:
+			<?php echo esc_html( $dropdown_facet['label'] ); ?>:
 		</label>
 
 		<?php
 		if ( bigbox_is_shop() && ! is_customize_preview() ) :
-			echo facetwp_display( 'facet', $search['name'] ); // WPCS: XSS okay.
+			echo facetwp_display( 'facet', $search_facet['name'] ); // WPCS: XSS okay.
 		else :
 			?>
-			<input type="search" id="<?php echo esc_attr( $name ); ?>" name="<?php echo esc_attr( $name ); ?>" class="form-input" placeholder="<?php echo esc_attr( $search['placeholder'] ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" />
+			<input type="search" id="<?php echo esc_attr( $name ); ?>" name="<?php echo esc_attr( $name ); ?>" class="form-input" placeholder="<?php echo esc_attr( $search_facet['placeholder'] ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" />
 		<?php endif; ?>
 	</div>
 

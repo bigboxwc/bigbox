@@ -12,8 +12,12 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
+
+// phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+// phpcs:disable WordPress.Security.NonceVerification.NoNonceVerification
+// phpcs:disable WordPress.Security.ValidatedSanitizedInput.MissingUnslash
 ?>
 
 <form class="wcpv-shortcode-registration-form">
@@ -63,7 +67,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<textarea class="input-text" name="vendor_description" id="wcpv-vendor-description" rows="4" tabindex="7">
 <?php
 if ( ! empty( $_POST['vendor_description'] ) ) :
-echo esc_textarea( $_POST['vendor_description'] );
+	echo esc_textarea( $_POST['vendor_description'] );
 endif;
 ?>
 		</textarea>
