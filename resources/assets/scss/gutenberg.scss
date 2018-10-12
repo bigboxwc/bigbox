@@ -3,72 +3,69 @@
  */
 $use-margins: false;
 
-@import "_config";
-
-.edit-post-visual-editor {
 
 	/**
 	 * Internal dependencies.
 	 */
-	@import "elements/h";
-	@import "elements/a";
-	@import "elements/p";
-	@import "elements/table";
-	@import "elements/img";
-	@import "elements/label";
-	@import "elements/strong";
-	@import "elements/small";
-	@import "elements/mark";
-	@import "modules/gutenberg-colors";
-	@import "modules/gutenberg-fonts";
-	@import "modules/gutenberg";
+@import "_config";
 
-	&,
-	.editor-default-block-appender input[type=text].editor-default-block-appender__content,
-	p {
-		color: $body-color;
-		font-family: $font-family-sans-serif;
-		font-size: #{$font-size-base} * 16px;
-	}
+@import "elements/h";
+@import "elements/a";
+@import "elements/p";
+@import "elements/table";
+@import "elements/img";
+@import "elements/label";
+@import "elements/strong";
+@import "elements/small";
+@import "elements/mark";
+@import "modules/gutenberg-colors";
+@import "modules/gutenberg-fonts";
+@import "modules/gutenberg";
 
-	p.wp-block-subhead {
-		color: inherit;
-	}
+.editor-default-block-appender input[type=text].editor-default-block-appender__content,
+p {
+	color: $body-color;
+	font-family: $font-family-sans-serif;
+	font-size: #{$font-size-base} * 16px;
+}
 
-	.wp-block-button {
+p.wp-block-subhead {
+	color: inherit;
+}
 
-		.wp-block-button__link {
+.wp-block-button {
 
-			@import "modules/gutenberg-colors";
+	.wp-block-button__link {
 
-			&.editor-rich-text__tinymce[data-is-placeholder-visible=true] {
-				position: absolute;
-			}
-		}
-	}
+		@import "modules/gutenberg-colors";
 
-	.wp-block-table {
-		display: block;
-
-		table {
-			display: table;
-		}
-
-		td,
-		th {
-			border: 0;
-		}
-	}
-
-	.wp-block-cover-image {
-
-		.wp-block-cover-image-text {
-			line-height: $line-height-base;
+		&.editor-rich-text__tinymce[data-is-placeholder-visible=true] {
+			position: absolute;
 		}
 	}
 }
 
-.editor-post-title .editor-post-title__input {
+.wp-block-table {
+	display: block;
+
+	table {
+		display: table;
+	}
+
+	td,
+	th {
+		border: 0;
+	}
+}
+
+.wp-block-cover-image {
+
+	.wp-block-cover-image-text {
+		line-height: $line-height-base;
+	}
+}
+
+.editor-post-title__input {
 	color: gray("800");
 	font-family: $font-family-sans-serif;
 }
