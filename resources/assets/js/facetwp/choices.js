@@ -36,7 +36,9 @@ $document.on( 'facetwp-loaded', () => {
 				return;
 			}
 
-			input.checked = ! input.getAttribute( 'checked' );
+			const foundInput = wrapper.querySelector( 'input' );
+
+			foundInput.checked = ! foundInput.checked;
 		} );
 	} );
 } );

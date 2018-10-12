@@ -25,4 +25,4 @@ $html_tag = bigbox_is_integration_active( 'facetwp' ) ? 'li' : 'div';
 
 <<?php echo esc_attr( $html_tag ); ?> class="woocommerce-info">
 	<?php esc_html_e( 'No products were found matching your selection.', 'bigbox' ); ?>
-</<?php echo esc_attr( $tag ); ?>>
+</<?php echo esc_attr( $html_tag ); ?>>

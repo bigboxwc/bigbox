@@ -1,3 +1,10 @@
+## [1.15.1] - 2018-10-12
+
+### Fix
+
+- Undefined PHP variables.
+- Better UI feedback when checking and unchecking inputs in FacetWP.
+
 ## [1.15.0] - 2018-10-12
 
 ### New
