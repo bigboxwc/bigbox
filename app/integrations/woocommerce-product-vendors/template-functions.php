@@ -97,7 +97,11 @@ function bigbox_wcpv_add_sold_by_loop() {
 
 <div class="product__price product__meta wcpv-sold-by-loop">
 	<a href="<?php echo esc_url( $sold_by['link'] ); ?>">
-		<?php echo wp_get_attachment_image( absint( $vendor_data['logo'] ), 'thumbnail' ); // WPCS: XSS okay. ?>
+		<?php
+		if ( isset( $vendor_data['logo'] ) ) :
+			echo wp_get_attachment_image( absint( $vendor_data['logo'] ), 'thumbnail' ); // WPCS: XSS okay.
+		endif;
+		?>
 		<span><?php echo esc_html( $sold_by['name'] ); ?></span>
 	</a>
 </div>

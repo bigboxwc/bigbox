@@ -157,7 +157,7 @@ function bigbox_woocomerce_bookings_customize_inline_css_gray_700( $data ) {
 			'.wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker-calendar th',
 			'.wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.ui-datepicker-today a',
 			'.wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.partial_booked a',
-			'.wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a',
+			'.wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a:not(.ui-state-active)',
 			'.wc-bookings-booking-form .wc-bookings-booking-cost',
 		],
 		'declarations' => [
