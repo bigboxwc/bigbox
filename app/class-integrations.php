@@ -119,7 +119,7 @@ final class Integrations implements Registerable, Service {
 					defined( 'WC_PRODUCT_VENDORS_VERSION' ) && WC_PRODUCT_VENDORS_VERSION,
 				],
 			],
-			'woocommerce-bookings' => [
+			'woocommerce-bookings'        => [
 				'slug'         => 'woocommerce-bookings',
 				'class'        => Integration\WooCommerce_Bookings::class,
 				'dependencies' => [

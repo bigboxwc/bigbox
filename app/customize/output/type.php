@@ -50,9 +50,6 @@ $base = [
 		'.navbar-menu--secondary .sub-menu li',
 		'.widget-title',
 		'#place_order',
-
-		'.wc-bookings-booking-form',
-		'.wc-bookings-booking-form .ui-widget',
 	],
 	'declarations' => [
 		'font-weight' => esc_attr( $weight_base ),

@@ -177,7 +177,7 @@ function bigbox_woocomerce_bookings_customize_inline_css_gray_700( $data ) {
  * @return array
  */
 function bigbox_woocomerce_bookings_customize_inline_css_type( $data ) {
-	$size   = get_theme_mod( 'type-font-size', 1 );
+	$size = get_theme_mod( 'type-font-size', 1 );
 
 	$weight_base = bigbox_get_theme_font_weight( 'base' );
 	$weight_bold = bigbox_get_theme_font_weight( 'bold' );
