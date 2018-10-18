@@ -11,7 +11,6 @@
 @import "helpers/animation-spin";
 @import "helpers/animation-scaleout";
 @import "helpers/align";
-@import "helpers/screen-reader-text";
 
 // HTML Elements
 @import "elements/html";
@@ -101,12 +100,6 @@
 @import "modules/price";
 @import "modules/star-rating";
 
-// FacetWP
-@import "modules/facetwp";
-@import "modules/facetwp-counts";
-@import "modules/facetwp-pager";
-@import "modules/facetwp-sort";
-
 // Blog
 @import "modules/hentry";
 @import "modules/blog-post";
@@ -121,5 +114,4 @@
 
 // Plugins
 @import "modules/sharedaddy.scss";
-@import "modules/flatpickr";
 @import "modules/mailchimp";

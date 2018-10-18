@@ -1,6 +1,6 @@
 .facetwp-pager {
 
-	@extend .woocommerce-pagination;
+	@include pagination();
 
 	.facetwp-page.last-page,
 	.facetwp-page.first-page {
@@ -10,7 +10,7 @@
 
 .facetwp-pager-label {
 
-	@extend .screen-reader-text;
+	@include screen-reader-text();
 }
 
 // Add ellipses between page jumps.

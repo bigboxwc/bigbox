@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Custom scripts.
-add_action( 'wp_enqueue_scripts', 'bigbox_facetwp_wp_enqueue_scripts', 20 );
+add_action( 'wp_enqueue_scripts', 'bigbox_facetwp_wp_enqueue_scripts' );
 
 /**
  * File: resources/views/partials/navbar-search.php.

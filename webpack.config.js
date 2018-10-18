@@ -13,6 +13,7 @@ const cssFiles = [
 	'editor',
 	'gutenberg',
 	'customize-controls',
+	'facetwp',
 	'woocommerce-bookings',
 	'woocommerce-brands',
 	'woocommerce-product-vendors',

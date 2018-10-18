@@ -111,4 +111,4 @@ function bigbox_enqueue_scripts() {
 		apply_filters( 'bigbox_js', $js_data )
 	);
 }
-add_action( 'wp_enqueue_scripts', 'bigbox_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'bigbox_enqueue_scripts', 20 );

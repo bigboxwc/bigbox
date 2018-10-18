@@ -1,3 +1,16 @@
+//
+// Global Config.
+//
+@import "_config";
+
+//
+// Internal dependencies.
+//
+@import "modules/facetwp-counts";
+@import "modules/facetwp-pager";
+@import "modules/facetwp-sort";
+@import "modules/facetwp-flatpickr";
+
 .facetwp-template {
 	position: relative;
 

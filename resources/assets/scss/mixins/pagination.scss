@@ -1,0 +1,76 @@
+//
+// Semi-generic pagination styles.
+//
+
+@mixin pagination {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@include border-radius();
+
+	&:not(:empty) {
+		margin: ( $spacer * 2 ) 0 $spacer;
+		padding: ( $spacer / 3 ) 0;
+	}
+
+	ul.page-numbers {
+
+		@include reset-list();
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.current,
+	a {
+		color: inherit;
+		text-decoration: none;
+		padding: 0 $spacer;
+		display: flex;
+		align-items: center;
+	}
+
+	.next,
+	.prev {
+		font-size: $font-size-base;
+	}
+
+	.active,
+	.current {
+		color: theme-color("primary");
+	}
+
+	.next {
+		margin-left: $spacer;
+
+		svg {
+			margin-left: $spacer;
+		}
+	}
+
+	.prev {
+		margin-right: $spacer;
+
+		svg {
+			margin-right: $spacer;
+		}
+	}
+
+	.button {
+
+		@include button--size-sm();
+		@include button--size-block();
+
+		+ .button {
+			margin-left: $spacer;
+		}
+	}
+
+	svg {
+		width: 16px;
+		height: 16px;
+	}
+}
