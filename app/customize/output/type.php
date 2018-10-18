@@ -52,6 +52,7 @@ $base = [
 		'#place_order',
 
 		'.wc-bookings-booking-form',
+		'.wc-bookings-booking-form .ui-widget',
 	],
 	'declarations' => [
 		'font-weight' => esc_attr( $weight_base ),
@@ -114,9 +115,6 @@ return [
 			'.wcpv-sold-by-single',
 			'.wcpv-sold-by-loop',
 			'.wcpv-sold-by-order-details',
-
-			'.wc-bookings-booking-form fieldset legend .label',
-			'.wc-bookings-booking-form .form-field label',
 		],
 		'declarations' => [
 			'font-weight' => esc_attr( $weight_bold ),

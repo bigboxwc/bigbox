@@ -3,6 +3,7 @@
  */
 
 @import "_config";
+
 //
 // Lots of nesting and specificity to override the plugin styles and jQuery UI styles.
 //
@@ -46,7 +47,7 @@
 	}
 
 	// Time
-	ul.block-picker {
+	.form-field ul.block-picker {
 		padding: 0;
 		display: flex;
 		flex-wrap: wrap;
@@ -191,7 +192,7 @@
 		}
 
 		.ui-datepicker-calendar th {
-			color: gray("800");
+			color: gray("700");
 			border-top: 0;
 		}
 
@@ -231,7 +232,7 @@
 		.ui-datepicker td.ui-datepicker-today a,
 		.ui-datepicker td.partial_booked a,
 		.ui-datepicker td.bookable a {
-			color: gray("800") !important;
+			color: gray("700") !important;
 			background-color: #fff !important;
 
 			&:hover {
@@ -240,8 +241,12 @@
 		}
 
 		.ui-datepicker td.ui-datepicker-current-day a {
-			color: #fff !important;
-			background-color: theme-color("success") !important;
+
+			&,
+			&:hover {
+				color: #fff !important;
+				background-color: theme-color("success") !important;
+			}
 		}
 
 		.ui-datepicker td.fully_booked a, 
@@ -259,7 +264,7 @@
 
 	// Total
 	.wc-bookings-booking-cost {
-		color: gray("800");
+		color: gray("700");
 		background: gray("200");
 		border: 1px solid gray("300");
 		border-width: 1px 0;

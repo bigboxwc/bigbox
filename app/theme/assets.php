@@ -44,7 +44,7 @@ function bigbox_enqueue_styles() {
 		wp_add_inline_style( $stylesheet, bigbox_customize_inline_css() );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'bigbox_enqueue_styles', 9 );
+add_action( 'wp_enqueue_scripts', 'bigbox_enqueue_styles', 20 );
 
 /**
  * Editor styles

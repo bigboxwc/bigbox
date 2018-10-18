@@ -54,6 +54,6 @@ function bigbox_woocommerce_brands_enqueue_styles() {
 	$parent     = bigbox_get_theme_name();
 	$stylesheet = $parent . '-woocommerce-brands';
 
-	wp_enqueue_style( $stylesheet, get_template_directory_uri() . '/public/css/woocommerce-brands.min.css', [ $parent ], $version );
+	wp_enqueue_style( $stylesheet, get_template_directory_uri() . '/public/css/woocommerce-brands.min.css', [], $version );
 	wp_style_add_data( $stylesheet, 'rtl', 'replace' );
 }

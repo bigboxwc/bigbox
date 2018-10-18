@@ -26,8 +26,6 @@ return [
 			'.action-list__item-value',
 
 			'.woocommerce-terms-and-conditions-text',
-
-			'.wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker-calendar th',
 		],
 		'declarations' => [
 			'color' => esc_attr( $gray800 ),
