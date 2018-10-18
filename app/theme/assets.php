@@ -76,20 +76,6 @@ function bigbox_editor_styles() {
 }
 add_action( 'after_setup_theme', 'bigbox_editor_styles' );
 
-// @codingStandardsIgnoreStart
-/**
- * Add type declarations to editor.
- *
- * @since 1.0.0
- */
-function bigbox_editor_inline_styles( $mceInit ) {
-	$mceInit['content_style'] = require_once get_template_directory() . '/app/customize/output/editor.php';
-
-	return $mceInit;
-}
-// @codingStandardsIgnoreEnd
-add_filter( 'tiny_mce_before_init', 'bigbox_editor_inline_styles' );
-
 /**
  * Enqueue scripts.
  *
