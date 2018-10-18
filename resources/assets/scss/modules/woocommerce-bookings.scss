@@ -1,0 +1,158 @@
+//
+// Lots of nesting and specificity to override the plugin styles and jQuery UI styles.
+//
+
+.wc-bookings-booking-form {
+	font-size: $font-size-base;
+	border: 0;
+	padding: 0;
+	
+	// Attributes.
+	.form-field {
+		line-height: 1;
+		margin-bottom: $spacer;
+
+		label {
+			line-height: 1;
+			font-size: $font-size-sm;
+			font-weight: $font-weight-bold;
+			margin: 0 ($spacer / 2) 0 0;
+		}
+	}
+
+	input[type="number"] {
+		font-size: $font-size-sm;
+		padding: 1px 3px 1px 5px;
+	}
+
+	// Wrapping.
+	.ui-widget {
+		font-size: $font-size-base;
+	}
+
+	.ui-widget-content {
+		box-shadow: none;
+	}
+
+	// Date picker.
+	fieldset {
+		border: 0;
+		padding: 0;
+
+		legend {
+			line-height: 1;
+			font-size: $font-size-sm;
+			font-weight: $font-weight-bold;
+			margin: 0 0 $spacer;
+			padding: 0;
+		}
+	}
+
+	.wc-bookings-date-picker {
+
+		.ui-datepicker-header {
+			font-size: $font-size-sm;
+			text-transform: none;
+			background-color: theme-color("information");
+			background-image: none;
+			border: 0;
+
+			@include border-top-radius();
+		}
+
+		.ui-datepicker-next,
+		.ui-datepicker-prev {
+			background-color: rgba(0, 0, 0, 0.30);
+			top: 0;
+
+			&:hover {
+				top: 0;
+				background-color: rgba(0, 0, 0, 0.50);
+			}
+		}
+
+		.ui-datepicker-next {
+
+			&,
+			&:hover {
+				right: 0;
+			}
+		}
+
+		.ui-datepicker-prev {
+
+			&,
+			&:hover {
+				left: 0;
+			}
+		}
+	}
+}
+
+/* Previous/Next month arrows if not allowed, and calendar dates that are not available */
+.ui-state-disabled, 
+.ui-widget-content .ui-state-disabled, 
+.ui-widget-header .ui-state-disabled {
+	opacity: 0.35;
+}
+
+/* Days of the week header background color */
+.ui-datepicker-calendar thead {
+	background-color: #000000;
+}
+
+/* Days of the week header font color */
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker th {
+	color: #000000;
+}
+
+/* Past calendar days background color (not available) */
+.ui-datepicker-calendar tbody {
+	background-color: #000000;
+}
+
+/* Available calendar days background color */
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a {
+	background-color: #000000 !important;
+}
+
+/* Available calendar day hover background color */
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a:hover {
+	background-color: #000000 !important;
+}
+
+/* Fully booked calendar days */
+.wc-bookings-date-picker .ui-datepicker td.fully_booked a, 
+.wc-bookings-date-picker .ui-datepicker td.fully_booked span {
+	background-color: #000000 !important;
+}
+
+/* Days not bookable based on the availability rules */
+.wc-bookings-date-picker .ui-datepicker td.not_bookable {
+	background-color: #FFFFFF !important;
+}
+
+/* Today's date on calendar background color */ 
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.ui-datepicker-today a { 
+	background-color: #000000 !important; 
+}
+
+/* Partially Booked Red Triangle */
+.wc-bookings-date-picker .ui-datepicker td.partial_booked a:before {
+    border-top: none; /* This style removes the red triangle */
+}
+
+/* Time Blocks */
+#wc-bookings-booking-form .block-picker li a {
+	background-color: #FFFFFF !important;
+}
+
+/* Time Blocks Hover */
+#wc-bookings-booking-form .block-picker li a:hover {
+	background-color: #000000 !important;
+}
+
+/* Selected Date*/ 
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.ui-datepicker-current-day a {
+	background-color: #000000 !important; 
+} 

@@ -50,7 +50,7 @@ function bigbox_facetwp_loop() {
  * @return string
  */
 function bigbox_facetwp_navbar_search() {
-	return bigbox_get_view( 'navbar-search', [], bigbox_get_integration( 'facetwp' )->get_local_path() . '/views/partials' );
+	return bigbox_get_view( 'integrations/facetwp/partials/navbar-search' );
 }
 
 /**

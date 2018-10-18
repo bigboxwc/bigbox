@@ -1,6 +1,6 @@
 <?php
 /**
- * WooCommerce Brands template functions.
+ * WooCommerce Product Vendors template functions.
  *
  * @since 1.14.0
  *
@@ -11,6 +11,25 @@
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
+}
+
+/**
+ * Point Product Vendor template overrides to our custom directory.
+ *
+ * @param string $template Current template path.
+ * @param string $template_name Current template name.
+ * @return string
+ */
+function bigbox_woocommerce_product_vendors_locate_template( $template, $template_name ) {
+	$overrides = [
+		'shortcode-registration-form.php',
+	];
+
+	if ( in_array( $template_name, $overrides, true ) ) {
+		return get_theme_file_path( 'resources/views/integrations/woocommerce-product-vendors/' . $template_name );
+	};
+
+	return $template;
 }
 
 /**
