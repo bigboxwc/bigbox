@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.2.0
+ * @version 3.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -84,9 +84,9 @@ endif;
 						'comment_notes_after' => '',
 						'fields'              => [
 							'author' => '<p class="comment-form-author"><label for="author">' . esc_html__( 'Name', 'bigbox' ) . ' <span class="required">*</span></label> ' .
-										'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" aria-required="true" required /></p>',
+										'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" required /></p>',
 							'email'  => '<p class="comment-form-email"><label for="email">' . esc_html__( 'Email', 'bigbox' ) . ' <span class="required">*</span></label> ' .
-										'<input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" aria-required="true" required /></p>',
+										'<input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" required /></p>',
 						],
 						'label_submit'        => esc_html__( 'Submit Review', 'bigbox' ),
 						'logged_in_as'        => '',
@@ -101,7 +101,7 @@ endif;
 					}
 
 					if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
-						$comment_form['comment_field'] = '<div class="comment-form-rating"><label for="rating">' . esc_html__( 'Your rating', 'bigbox' ) . '</label><select name="rating" id="rating" aria-required="true" required>
+						$comment_form['comment_field'] = '<div class="comment-form-rating"><label for="rating">' . esc_html__( 'Your rating', 'bigbox' ) . '</label><select name="rating" id="rating" required>
 								<option value="">' . esc_html__( 'Rate&hellip;', 'bigbox' ) . '</option>
 								<option value="5">' . esc_html__( 'Perfect', 'bigbox' ) . '</option>
 								<option value="4">' . esc_html__( 'Good', 'bigbox' ) . '</option>
@@ -111,7 +111,7 @@ endif;
 							</select></div>';
 					}
 
-						$comment_form['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Your review', 'bigbox' ) . ' <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required></textarea></p>';
+						$comment_form['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Your review', 'bigbox' ) . ' <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" required></textarea></p>';
 
 						comment_form( apply_filters( 'woocommerce_product_review_comment_form_args', $comment_form ) );
 					?>

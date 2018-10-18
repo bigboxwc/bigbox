@@ -2,6 +2,8 @@
 
 Easily manage and scale WooCommerce product catalogs.
 
+[Homepage](https://bigboxwc.com/) &mdash; [Theme Demos](https://bigboxwc.com/theme-demos/)
+
 ## Install
 
 ```
