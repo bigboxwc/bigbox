@@ -18,6 +18,9 @@ $wcpv = new WC_Product_Vendors_Vendor_Frontend();
 // Filter template loading.
 add_filter( 'woocommerce_locate_template', 'bigbox_woocommerce_product_vendors_locate_template', 10, 2 );
 
+// Assets.
+add_action( 'wp_enqueue_scripts', 'bigbox_woocommerce_product_vendors_enqueue_styles' );
+
 // Change "Sold by" on loop.
 remove_class_action( 'woocommerce_after_shop_loop_item', 'WC_Product_Vendors_Vendor_Frontend', 'add_sold_by_loop', 9 );
 add_action( 'woocommerce_after_shop_loop_item', 'bigbox_wcpv_add_sold_by_loop', 9 );

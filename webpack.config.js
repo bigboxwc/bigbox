@@ -7,25 +7,16 @@ const WebpackRTLPlugin = require( 'webpack-rtl-plugin' );
 const SpritePlugin = require( 'svg-sprite-loader/plugin' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 
-const themeCSS = new ExtractTextPlugin( {
-	filename: './public/css/app.min.css',
-} );
-
-const nuxCSS = new ExtractTextPlugin( {
-	filename: './public/css/nux.min.css',
-} );
-
-const editorCSS = new ExtractTextPlugin( {
-	filename: './public/css/editor.min.css',
-} );
-
-const gutenbergCSS = new ExtractTextPlugin( {
-	filename: './public/css/gutenberg.min.css',
-} );
-
-const customizeControlsCSS = new ExtractTextPlugin( {
-	filename: './public/css/customize-controls.min.css',
-} );
+const cssFiles = [
+	'app',
+	'nux',
+	'editor',
+	'gutenberg',
+	'customize-controls',
+	'woocommerce-bookings',
+	'woocommerce-brands',
+	'woocommerce-product-vendors',
+];
 
 // Configuration for the ExtractTextPlugin.
 const extractConfig = {
@@ -100,31 +91,6 @@ const config = {
 				exclude: /node_modules/,
 				include: /js/,
 			},
-			{
-				test: /nux\.scss$/,
-				use: nuxCSS.extract( extractConfig ),
-				include: /scss/,
-			},
-			{
-				test: /editor\.scss$/,
-				use: editorCSS.extract( extractConfig ),
-				include: /scss/,
-			},
-			{
-				test: /gutenberg\.scss$/,
-				use: gutenbergCSS.extract( extractConfig ),
-				include: /scss/,
-			},
-			{
-				test: /style\.scss$/,
-				use: themeCSS.extract( extractConfig ),
-				include: /scss/,
-			},
-			{
-				test: /customize\-controls\.scss$/,
-				use: customizeControlsCSS.extract( extractConfig ),
-				include: /scss/,
-			},
 		],
 	},
 	externals: {
@@ -132,11 +98,6 @@ const config = {
 		$: 'jQuery',
 	},
 	plugins: [
-		themeCSS,
-		nuxCSS,
-		editorCSS,
-		gutenbergCSS,
-		customizeControlsCSS,
 		new SpritePlugin(),
 		new CopyWebpackPlugin( [
 			{
@@ -155,6 +116,22 @@ const config = {
 		} ),
 	],
 };
+
+// Add CSS extraction.
+cssFiles.forEach( ( name ) => {
+	const plugin = new ExtractTextPlugin( {
+		filename: `./public/css/${ name }.min.css`,
+	} );
+
+	const rule = {
+		test: new RegExp( `${ name }\.scss$` ),
+		use: plugin.extract( extractConfig ),
+		include: /scss/,
+	};
+
+	config.plugins.push( plugin );
+	config.module.rules.push( rule );
+} );
 
 if ( config.mode !== 'production' ) {
 	config.devtool = process.env.SOURCEMAP || 'source-map';

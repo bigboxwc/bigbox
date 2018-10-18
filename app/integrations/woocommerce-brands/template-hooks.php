@@ -22,3 +22,6 @@ add_action( 'woocommerce_product_additional_information', [ $WC_Brands, 'show_br
 
 // Add brand logo to single products.
 add_action( 'woocommerce_single_product_summary', 'bigbox_woocommerce_single_brand_thumbnail', 1 );
+
+// Assets.
+add_action( 'wp_enqueue_scripts', 'bigbox_woocommerce_brands_enqueue_styles' );

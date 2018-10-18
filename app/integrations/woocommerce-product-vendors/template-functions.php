@@ -33,6 +33,20 @@ function bigbox_woocommerce_product_vendors_locate_template( $template, $templat
 }
 
 /**
+ * Enqueue styles.
+ *
+ * @since 1.16.0
+ */
+function bigbox_woocommerce_product_vendors_enqueue_styles() {
+	$version    = bigbox_get_theme_version();
+	$parent     = bigbox_get_theme_name();
+	$stylesheet = $parent . '-woocommerce-product-vendors';
+
+	wp_enqueue_style( $stylesheet, get_template_directory_uri() . '/public/css/woocommerce-product-vendors.min.css', [ $parent ], $version );
+	wp_style_add_data( $stylesheet, 'rtl', 'replace' );
+}
+
+/**
  * Get vendor data when on a taxonomy archive page.
  *
  * @since 1.14.0

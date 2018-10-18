@@ -3,7 +3,7 @@
  */
 
 // Styles
-import '../scss/style.scss';
+import '../scss/app.scss';
 import '../scss/gutenberg.scss';
 import '../scss/editor.scss';
 import '../scss/customize-controls.scss';
