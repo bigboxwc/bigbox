@@ -110,7 +110,12 @@ class Gutenberg extends Integration implements Registerable, Service {
 			wp_enqueue_style( $stylesheet . '-fonts', $google, [], $version );
 		}
 
-		wp_enqueue_style( $stylesheet . '-gutenberg', get_template_directory_uri() . '/public/css/gutenberg.min.css', [], $version );
+		wp_enqueue_style(
+			$stylesheet . '-gutenberg',
+			get_template_directory_uri() . '/public/css/gutenberg.min.css',
+			[],
+			$version
+		);
 
 		/**
 		 * This filter is documented in app/theme/assets.php

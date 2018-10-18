@@ -305,6 +305,17 @@ function bigbox_enqueue_assets() {
 	$stylesheet = bigbox_get_theme_name();
 	$version    = bigbox_get_theme_version();
 
-	wp_enqueue_script( $stylesheet . '-lazy-load-images', get_template_directory_uri() . '/public/js/lazyload.min.js', [], $version, false );
-	wp_script_add_data( $stylesheet . '-lazy-load-images', 'defer', true );
+	wp_enqueue_script(
+		$stylesheet . '-lazy-load-images',
+		get_template_directory_uri() . '/public/js/lazyload.min.js',
+		[],
+		$version,
+		false
+	);
+
+	wp_script_add_data(
+		$stylesheet . '-lazy-load-images',
+		'defer',
+		true
+	);
 }

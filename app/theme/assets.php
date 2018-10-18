@@ -26,11 +26,21 @@ function bigbox_enqueue_styles() {
 	$google = bigbox_get_google_fonts_url();
 
 	if ( $google ) {
-		wp_enqueue_style( $stylesheet . '-fonts', $google, [], $version );
+		wp_enqueue_style(
+			$stylesheet . '-fonts',
+			$google,
+			[],
+			$version
+		);
 	}
 
 	// Base and dynamic styles.
-	wp_enqueue_style( $stylesheet, get_template_directory_uri() . '/public/css/app.min.css', [], $version );
+	wp_enqueue_style(
+		$stylesheet,
+		get_template_directory_uri() . '/public/css/app.min.css',
+		[],
+		$version
+	);
 	wp_style_add_data( $stylesheet, 'rtl', 'replace' );
 
 	/**
@@ -41,7 +51,10 @@ function bigbox_enqueue_styles() {
 	 * @param bool
 	 */
 	if ( apply_filters( 'bigbox_customize_css_inline', true ) ) {
-		wp_add_inline_style( $stylesheet, bigbox_customize_inline_css() );
+		wp_add_inline_style(
+			$stylesheet,
+			bigbox_customize_inline_css()
+		);
 	}
 }
 add_action( 'wp_enqueue_scripts', 'bigbox_enqueue_styles', 20 );
@@ -91,7 +104,13 @@ function bigbox_enqueue_scripts() {
 	];
 
 	// Combined application scripts.
-	wp_enqueue_script( $stylesheet, get_template_directory_uri() . '/public/js/app.min.js', $deps, $version, true );
+	wp_enqueue_script(
+		$stylesheet,
+		get_template_directory_uri() . '/public/js/app.min.js',
+		$deps,
+		$version,
+		true
+	);
 
 	// Send information to application scripts.
 	$js_data = [

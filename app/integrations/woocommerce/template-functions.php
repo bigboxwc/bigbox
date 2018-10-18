@@ -55,7 +55,13 @@ function bigbox_woocommerce_wp_enqueue_scripts() {
 		'woocommerce',
 	];
 
-	wp_enqueue_script( "{$stylesheet}-woocommerce", get_template_directory_uri() . '/public/js/woocommerce.min.js', $deps, $version, true );
+	wp_enqueue_script(
+		"{$stylesheet}-woocommerce",
+		get_template_directory_uri() . '/public/js/woocommerce.min.js',
+		$deps,
+		$version,
+		true
+	);
 
 	if ( ! is_cart() || is_checkout() ) {
 		wp_dequeue_script( 'wc-cart-fragments' );

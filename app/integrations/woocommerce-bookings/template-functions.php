@@ -43,8 +43,18 @@ function bigbox_woocommerce_bookings_enqueue_styles() {
 	$parent     = bigbox_get_theme_name();
 	$stylesheet = $parent . '-woocommerce-bookings';
 
-	wp_enqueue_style( $stylesheet, get_template_directory_uri() . '/public/css/woocommerce-bookings.min.css', [], $version );
-	wp_style_add_data( $stylesheet, 'rtl', 'replace' );
+	wp_enqueue_style(
+		$stylesheet,
+		get_template_directory_uri() . '/public/css/woocommerce-bookings.min.css',
+		[],
+		$version
+	);
+
+	wp_style_add_data(
+		$stylesheet,
+		'rtl',
+		'replace'
+	);
 }
 
 /**

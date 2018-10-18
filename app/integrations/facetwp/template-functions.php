@@ -27,8 +27,20 @@ function bigbox_facetwp_wp_enqueue_scripts() {
 		'jquery',
 	];
 
-	wp_enqueue_script( "{$stylesheet}-facetwp", get_template_directory_uri() . '/public/js/facetwp.min.js', $deps, $version, true );
-	wp_enqueue_style( "{$stylesheet}-facetwp", get_template_directory_uri() . '/public/css/facetwp.min.css', [], $version );
+	wp_enqueue_script(
+		"{$stylesheet}-facetwp",
+		get_template_directory_uri() . '/public/js/facetwp.min.js',
+		$deps,
+		$version,
+		true
+	);
+
+	wp_enqueue_style(
+		"{$stylesheet}-facetwp",
+		get_template_directory_uri() . '/public/css/facetwp.min.css',
+		[],
+		$version
+	);
 }
 
 /**
