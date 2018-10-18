@@ -10,6 +10,12 @@
  */
 
 $gray300 = bigbox_get_theme_color( 'gray-300' );
+$default = bigbox_get_theme_default_color( 'gray-300' );
+
+if ( $gray300 === $default ) {
+	return [];
+}
+
 $rgba50  = bigbox_hex_to_rgba( $gray300, 0.50 );
 $rgba75  = bigbox_hex_to_rgba( $gray300, 0.75 );
 

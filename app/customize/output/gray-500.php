@@ -10,6 +10,11 @@
  */
 
 $gray500 = bigbox_get_theme_color( 'gray-500' );
+$default = bigbox_get_theme_default_color( 'gray-500' );
+
+if ( $gray500 === $default ) {
+	return [];
+}
 
 return [
 	// Solid color.

@@ -67,6 +67,11 @@ function bigbox_woocommerce_bookings_enqueue_styles() {
  */
 function bigbox_woocomerce_bookings_customize_inline_css_primary( $data ) {
 	$success = bigbox_get_theme_color( 'success' );
+	$default = bigbox_get_theme_default_color( 'success' );
+
+	if ( $success === $default ) {
+		return $data;
+	}
 
 	$data[] = [
 		'selectors'    => [
@@ -107,6 +112,11 @@ function bigbox_woocomerce_bookings_customize_inline_css_primary( $data ) {
  */
 function bigbox_woocomerce_bookings_customize_inline_css_gray_200( $data ) {
 	$gray200 = bigbox_get_theme_color( 'gray-200' );
+	$default = bigbox_get_theme_default_color( 'gray-200' );
+
+	if ( $gray200 === $default ) {
+		return $data;
+	}
 
 	$data[] = [
 		'selectors'    => [
@@ -132,6 +142,11 @@ function bigbox_woocomerce_bookings_customize_inline_css_gray_200( $data ) {
  */
 function bigbox_woocomerce_bookings_customize_inline_css_gray_300( $data ) {
 	$gray300 = bigbox_get_theme_color( 'gray-300' );
+	$default = bigbox_get_theme_default_color( 'gray-300' );
+
+	if ( $gray300 === $default ) {
+		return $data;
+	}
 
 	$data[] = [
 		'selectors'    => [
@@ -158,6 +173,11 @@ function bigbox_woocomerce_bookings_customize_inline_css_gray_300( $data ) {
  */
 function bigbox_woocomerce_bookings_customize_inline_css_gray_700( $data ) {
 	$gray700 = bigbox_get_theme_color( 'gray-700' );
+	$default = bigbox_get_theme_default_color( 'gray-700' );
+
+	if ( $gray700 === $default ) {
+		return $data;
+	}
 
 	$data[] = [
 		'selectors'    => [
@@ -165,7 +185,6 @@ function bigbox_woocomerce_bookings_customize_inline_css_gray_700( $data ) {
 			'.wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker-next:before',
 			'.wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker-prev:before',
 			'.wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker-calendar th',
-			'.wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.ui-datepicker-today a',
 			'.wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.partial_booked a',
 			'.wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a:not(.ui-state-active)',
 			'.wc-bookings-booking-form .wc-bookings-booking-cost',

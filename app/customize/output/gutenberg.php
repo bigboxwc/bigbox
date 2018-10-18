@@ -13,13 +13,20 @@ $colors = bigbox_get_theme_colors();
 $output = [];
 
 foreach ( $colors as $color => $data ) {
+	$theme_color = bigbox_get_theme_color( $color );
+	$default     = bigbox_get_theme_default_color( $color );
+
+	if ( $theme_color === $default ) {
+		continue;
+	}
+
 	$output[] = [
 		'selectors'    => [
 			".has-{$color}-background-color",
 			".wp-block-button .wp-block-button__link.has-{$color}-background-color",
 		],
 		'declarations' => [
-			'background-color' => esc_attr( bigbox_get_theme_color( $color ) ),
+			'background-color' => esc_attr( $theme_color ),
 		],
 	];
 
@@ -30,7 +37,7 @@ foreach ( $colors as $color => $data ) {
 			".wp-block-button .wp-block-button__link.has-{$color}-color",
 		],
 		'declarations' => [
-			'color' => esc_attr( bigbox_get_theme_color( $color ) ),
+			'color' => esc_attr( $theme_color ),
 		],
 	];
 
@@ -40,8 +47,8 @@ foreach ( $colors as $color => $data ) {
 			".wp-block-button.is-style-outline .wp-block-button__link.has-{$color}-color:hover",
 		],
 		'declarations' => [
-			'color'        => esc_attr( bigbox_get_theme_color( $color ) ),
-			'border-color' => esc_attr( bigbox_get_theme_color( $color ) ),
+			'color'        => esc_attr( $theme_color ),
+			'border-color' => esc_attr( $theme_color ),
 		],
 	];
 }

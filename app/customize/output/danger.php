@@ -9,7 +9,13 @@
  * @author Spencer Finnell
  */
 
-$danger = bigbox_get_theme_color( 'danger' );
+$danger  = bigbox_get_theme_color( 'danger' );
+$default = bigbox_get_theme_default_color( 'danger' );
+
+if ( $danger === $default ) {
+	return [];
+}
+
 $rgba10 = bigbox_hex_to_rgba( $danger, 0.10 );
 $rgba30 = bigbox_hex_to_rgba( $danger, 0.30 );
 $rgba50 = bigbox_hex_to_rgba( $danger, 0.50 );

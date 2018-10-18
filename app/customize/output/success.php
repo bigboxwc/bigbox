@@ -10,6 +10,12 @@
  */
 
 $success = bigbox_get_theme_color( 'success' );
+$default = bigbox_get_theme_default_color( 'success' );
+
+if ( $success === $default ) {
+	return [];
+}
+
 $rgba10  = bigbox_hex_to_rgba( $success, 0.10 );
 $rgba30  = bigbox_hex_to_rgba( $success, 0.30 );
 $rgba50  = bigbox_hex_to_rgba( $success, 0.50 );
