@@ -119,6 +119,14 @@ final class Integrations implements Registerable, Service {
 					defined( 'WC_PRODUCT_VENDORS_VERSION' ) && WC_PRODUCT_VENDORS_VERSION,
 				],
 			],
+			'woocommerce-bookings' => [
+				'slug'         => 'woocommerce-bookings',
+				'class'        => Integration\WooCommerce_Bookings::class,
+				'dependencies' => [
+					defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
+					defined( 'WC_BOOKINGS_VERSION' ) && WC_BOOKINGS_VERSION,
+				],
+			],
 			'facetwp'                     => [
 				'slug'         => 'facetwp',
 				'class'        => Integration\FacetWP::class,

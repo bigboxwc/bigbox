@@ -106,7 +106,6 @@ return [
 	[
 		'selectors'    => [
 			'.card',
-			'table',
 			'.woocommerce-Message',
 		],
 		'declarations' => [
