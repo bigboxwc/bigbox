@@ -26,6 +26,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class WooCommerce extends Integration implements Registerable, Service {
 
+	// Inline CSS output files.
+	protected $customize_inline_css_output = [
+		'store-notice',
+	];
+
 	/**
 	 * Connect to WordPress.
 	 *

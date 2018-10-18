@@ -26,6 +26,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Gutenberg extends Integration implements Registerable, Service {
 
+	// Inline CSS output files.
+	protected $customize_inline_css_output = [
+		'colors',
+	];
+
 	/**
 	 * Connect to WordPress.
 	 *
@@ -126,7 +131,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 	}
 
 	/**
-	 * Build inline CSS string.
+	 * Build inline CSS string for thte backend editor.
 	 *
 	 * @since 1.0.0
 	 *

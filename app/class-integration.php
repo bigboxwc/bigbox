@@ -60,6 +60,8 @@ abstract class Integration {
 		$this->dependencies = $dependencies;
 		$this->local_path   = trailingslashit( '/app/integrations' ) . $slug;
 		$this->dir          = get_template_directory() . $this->get_local_path();
+
+		add_action( 'bigbox_customize_inline_css', [ $this, 'customize_inline_css' ] );
 	}
 
 	/**
@@ -102,6 +104,31 @@ abstract class Integration {
 	 */
 	public function is_active() {
 		return ! in_array( false, $this->dependencies, true );
+	}
+
+	/**
+	 * Load inline CSS if any output controls are defined.
+	 *
+	 * @since 1.16.0
+	 */
+	public function customize_inline_css( $css ) {
+		if ( ! isset( $this->customize_inline_css_output ) ) {
+			return;
+		}
+
+		foreach ( $this->customize_inline_css_output as $key ) {
+			$file = $this->get_dir() . '/customize/output/' . $key . '.php';
+
+			if ( ! file_exists( $file ) ) {
+				continue;
+			}
+
+			$config = include $file;
+
+			foreach ( $config as $data ) {
+				$css->add( $data );
+			}
+		}
 	}
 
 }

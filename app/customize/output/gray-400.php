@@ -9,6 +9,10 @@
  * @author Spencer Finnell
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 $gray400 = bigbox_get_theme_color( 'gray-400' );
 $default = bigbox_get_theme_default_color( 'gray-400' );
 

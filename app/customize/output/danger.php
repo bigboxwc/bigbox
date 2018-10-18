@@ -9,6 +9,10 @@
  * @author Spencer Finnell
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 $danger  = bigbox_get_theme_color( 'danger' );
 $default = bigbox_get_theme_default_color( 'danger' );
 

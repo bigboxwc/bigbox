@@ -9,6 +9,10 @@
  * @author Spencer Finnell
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 $colors = bigbox_get_theme_colors();
 $output = [];
 

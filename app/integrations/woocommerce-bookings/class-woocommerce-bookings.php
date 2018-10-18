@@ -26,6 +26,15 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class WooCommerce_Bookings extends Integration implements Registerable, Service {
 
+	// Inline CSS output files.
+	protected $customize_inline_css_output = [
+		'success',
+		'gray-200',
+		'gray-300',
+		'gray-700',
+		'type',
+	];
+
 	/**
 	 * Connect to WordPress.
 	 *

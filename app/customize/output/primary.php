@@ -9,6 +9,10 @@
  * @author Spencer Finnell
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 $primary = bigbox_get_theme_color( 'primary' );
 $default = bigbox_get_theme_default_color( 'primary' );
 
@@ -16,7 +20,7 @@ if ( $primary === $default ) {
 	return [];
 }
 
-$rgba20  = bigbox_hex_to_rgba( $primary, 0.20 );
+$rgba20 = bigbox_hex_to_rgba( $primary, 0.20 );
 
 return [
 	// Solid color.

@@ -26,6 +26,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class FacetWP extends Integration implements Registerable, Service {
 
+	// Inline CSS output files.
+	protected $customize_inline_css_output = [
+		'refresh',
+	];
+
 	/**
 	 * Connect to WordPress.
 	 *
