@@ -9,12 +9,7 @@
  * @author Spencer Finnell
  */
 
-$info    = bigbox_get_theme_color( 'information' );
-$default = bigbox_get_theme_default_color( 'information' );
-
-if ( $info === $default ) {
-	return [];
-}
+$info = bigbox_get_theme_color( 'information' );
 
 return [
 	// Solid background-color.

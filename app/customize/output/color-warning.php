@@ -10,11 +10,6 @@
  */
 
 $warning = bigbox_get_theme_color( 'warning' );
-$default = bigbox_get_theme_default_color( 'warning' );
-
-if ( $warning === $default ) {
-	return [];
-}
 
 return [
 	// Solid background-color.
