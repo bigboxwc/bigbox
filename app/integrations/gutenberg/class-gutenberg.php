@@ -45,6 +45,13 @@ class Gutenberg extends Integration implements Registerable, Service {
 		add_filter( 'bigbox_customize_inline_css_configs', [ $this, 'inline_css_configs' ] );
 		add_action( 'after_setup_theme', [ $this, 'add_theme_support' ] );
 		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_assets' ] );
+
+		/**
+		 * This filter is documented in app/theme/assets.php
+		 */
+		if ( apply_filters( 'bigbox_customize_css_inline', true ) ) {
+			add_filter( 'block_editor_settings', [ $this, 'inline_editor_css' ], 9999 );
+		}
 	}
 
 	/**
@@ -125,23 +132,20 @@ class Gutenberg extends Integration implements Registerable, Service {
 		if ( $google ) {
 			wp_enqueue_style( $stylesheet . '-fonts', $google, [], $version );
 		}
-
-		/**
-		 * This filter is documented in app/theme/assets.php
-		 */
-		if ( apply_filters( 'bigbox_customize_css_inline', true ) ) {
-			wp_add_inline_style( 'wp-edit-blocks', $this->inline_css() );
-		}
 	}
 
 	/**
-	 * Build inline CSS string for thte backend editor.
+	 * Build inline CSS string for the backend editor.
 	 *
-	 * @since 1.0.0
+	 * Attaches to the editor settings so the CSS is wrapped by the editor
+	 * for matched specificity.
 	 *
-	 * @return string
+	 * @since 1.16.0
+	 *
+	 * @param array $settings Editor settings.
+	 * @return array
 	 */
-	private function inline_css() {
+	public function inline_editor_css( $settings ) {
 		$css = new \BigBox\Customize\Build_Inline_CSS();
 
 		$colors = bigbox_get_theme_colors();
@@ -194,7 +198,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 				'mark',
 				'table tfoot td',
 				'strong',
-				'wp-block-cover-image-text',
+				'wp-block-cover-text',
 			],
 			'declarations' => [
 				'font-weight' => esc_attr( $weight_bold ),
@@ -218,19 +222,15 @@ class Gutenberg extends Integration implements Registerable, Service {
 			],
 		];
 
-		// Do the same thing as https://github.com/WordPress/gutenberg/blob/master/packages/editor/src/editor-styles/transforms/wrap.js
 		foreach ( $config as $x => $items ) {
-			foreach ( $items['selectors'] as $y => $selector ) {
-				if ( 'body' === $selector ) {
-					$config[ $x ]['selectors'][ $y ] = '.editor-block-list__block';
-				} else {
-					$config[ $x ]['selectors'][ $y ] = '.editor-block-list__block ' . $selector;
-				}
-			}
-
 			$css->add( $config[ $x ] );
 		}
 
-		return $css->build();
+		$settings['styles'][] = [
+			'baseUrl' => null,
+			'css'     => $css->build(),
+		];
+
+		return $settings;
 	}
 }

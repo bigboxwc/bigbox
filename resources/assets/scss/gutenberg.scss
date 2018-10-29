@@ -8,6 +8,7 @@ $use-margins: false;
  */
 @import "_config";
 
+// Base HTML elements.
 @import "elements/h";
 @import "elements/a";
 @import "elements/p";
@@ -17,24 +18,14 @@ $use-margins: false;
 @import "elements/strong";
 @import "elements/small";
 @import "elements/mark";
+
+// Standard Gutenberg block styling.
 @import "modules/gutenberg";
 
-.wp-block-table {
-	display: block;
+// Editor-specific block changes.
+.wp-block-cover {
 
-	table {
-		display: table;
-	}
-
-	td,
-	th {
-		border: 0;
-	}
-}
-
-.wp-block-cover-image {
-
-	.wp-block-cover-image-text {
+	.wp-block-cover-text {
 		line-height: $line-height-base;
 	}
 }
@@ -49,8 +40,4 @@ $use-margins: false;
 			font-size: font-size("xl");
 		}
 	}
-}
-
-.editor-rich-text__tinymce.mce-content-body {
-	line-height: ($line-height-base * 1.35);
 }

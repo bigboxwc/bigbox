@@ -10,7 +10,6 @@ const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const cssFiles = [
 	'app',
 	'nux',
-	'editor',
 	'gutenberg',
 	'customize-controls',
 	'facetwp',

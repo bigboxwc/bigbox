@@ -18,5 +18,5 @@ $font-size-sm: map-get($font-sizes, "sm");
 $font-size-lg: map-get($font-sizes, "lg");
 $font-size-xl: map-get($font-sizes, "xl");
 
-$font-weight-base: 400;
-$font-weight-bold: 500;
+$font-weight-base: normal;
+$font-weight-bold: bold;

@@ -1,10 +1,10 @@
-p.has-background {
+.has-background {
 	padding: $spacer;
 
 	@include border-radius();
 }
 
-.wp-block-cover-image,
+.wp-block-cover,
 .wp-block-quote,
 .wp-block-gallery,
 .wp-block-separator,
@@ -130,7 +130,7 @@ p.wp-block-subhead {
 	}
 }
 
-.wp-block-cover-image-text {
+.wp-block-cover-text {
 	font-weight: $font-weight-bold;
 }
 
