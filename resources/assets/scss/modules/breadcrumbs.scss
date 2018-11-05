@@ -13,11 +13,6 @@
 		padding: ($spacer * 0.75) $spacer;
 	}
 
-	@include media-breakpoint-up(xl) {
-		padding-left: ($spacer * 2);
-		padding-right: ($spacer * 2);
-	}
-
 	a {
 		color: gray("700");
 	}
