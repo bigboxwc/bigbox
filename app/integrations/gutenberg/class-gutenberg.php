@@ -45,6 +45,13 @@ class Gutenberg extends Integration implements Registerable, Service {
 		add_filter( 'bigbox_customize_inline_css_configs', [ $this, 'inline_css_configs' ] );
 		add_action( 'after_setup_theme', [ $this, 'add_theme_support' ] );
 		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_assets' ] );
+
+		/**
+		 * This filter is documented in app/theme/assets.php
+		 */
+		if ( apply_filters( 'bigbox_customize_css_inline', true ) ) {
+			add_filter( 'block_editor_settings', [ $this, 'inline_editor_css' ], 9999 );
+		}
 	}
 
 	/**
@@ -55,6 +62,11 @@ class Gutenberg extends Integration implements Registerable, Service {
 	public function add_theme_support() {
 		add_theme_support( 'align-wide' );
 		add_theme_support( 'wp-block-styles' );
+		add_theme_support( 'responsive-embeds' );
+		add_theme_support( 'editor-styles' );
+
+		// Add editor style.
+		add_editor_style( 'public/css/gutenberg.min.css' );
 
 		$palette = [];
 		$colors  = bigbox_get_theme_colors();
@@ -83,7 +95,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 				'slug'      => 'sm',
 			],
 			[
-				'name'      => __( 'Medium', 'bigbox' ),
+				'name'      => __( 'Normal', 'bigbox' ),
 				'shortName' => __( 'M', 'bigbox' ),
 				'size'      => 16,
 				'slug'      => 'base',
@@ -120,30 +132,20 @@ class Gutenberg extends Integration implements Registerable, Service {
 		if ( $google ) {
 			wp_enqueue_style( $stylesheet . '-fonts', $google, [], $version );
 		}
-
-		wp_enqueue_style(
-			$stylesheet . '-gutenberg',
-			get_template_directory_uri() . '/public/css/gutenberg.min.css',
-			[],
-			$version
-		);
-
-		/**
-		 * This filter is documented in app/theme/assets.php
-		 */
-		if ( apply_filters( 'bigbox_customize_css_inline', true ) ) {
-			wp_add_inline_style( $stylesheet . '-gutenberg', $this->inline_css() );
-		}
 	}
 
 	/**
-	 * Build inline CSS string for thte backend editor.
+	 * Build inline CSS string for the backend editor.
 	 *
-	 * @since 1.0.0
+	 * Attaches to the editor settings so the CSS is wrapped by the editor
+	 * for matched specificity.
 	 *
-	 * @return string
+	 * @since 1.16.0
+	 *
+	 * @param array $settings Editor settings.
+	 * @return array
 	 */
-	private function inline_css() {
+	public function inline_editor_css( $settings ) {
 		$css = new \BigBox\Customize\Build_Inline_CSS();
 
 		$colors = bigbox_get_theme_colors();
@@ -157,130 +159,80 @@ class Gutenberg extends Integration implements Registerable, Service {
 		$weight_base = bigbox_get_theme_font_weight( 'base' );
 		$weight_bold = bigbox_get_theme_font_weight( 'bold' );
 
-		$css->add(
-			[
-				'selectors'    => [
-					'.editor-post-title .editor-post-title__input',
-					'.edit-post-visual-editor',
-					'.edit-post-visual-editor p',
-				],
-				'declarations' => [
-					'color'       => esc_attr( $gray700 ),
-					'font-family' => '"' . esc_attr( $family ) . '"',
-					'font-weight' => $weight_base,
-				],
-			]
-		);
+		$config = [];
 
-		$css->add(
-			[
-				'selectors'    => [
-					'.editor-post-title .editor-post-title__input',
-				],
-				'declarations' => [
-					'font-weight' => $weight_bold,
-				],
-			]
-		);
+		// Base
+		$config[] = [
+			'selectors'    => [
+				'body',
+				'.editor-post-title__block .editor-post-title__input',
+			],
+			'declarations' => [
+				'color'       => esc_attr( $gray700 ),
+				'font-size'   => ( $size * 16 ) . 'px',
+				'font-family' => esc_attr( $family ),
+				'font-weight' => $weight_base,
+			],
+		];
 
-		$css->add(
-			[
-				'selectors'    => [
-					'.editor-post-title__block > div',
-				],
-				'declarations' => [
-					'border-bottom' => '2px solid ' . esc_attr( $gray200 ),
-				],
-			]
-		);
+		// Title.
+		$config[] = [
+			'selectors'    => [
+				'.editor-post-title__block .editor-post-title__input',
+			],
+			'declarations' => [
+				'font-weight'   => $weight_bold,
+				'font-size'     => ( $size * 1.65 ) . 'em',
+				'border-bottom' => '2px solid ' . esc_attr( $gray200 ),
+			],
+		];
 
-		$css->add(
-			[
-				'selectors'    => [
-					'.edit-post-visual-editor',
-					'.edit-post-visual-editor p',
-					'.edit-post-visual-editor .editor-default-block-appender input[type=text].editor-default-block-appender__content',
-				],
-				'declarations' => [
-					'font-size' => ( $size * 16 ) . 'px',
-				],
-			]
-		);
+		// Bold items.
+		$config[] = [
+			'selectors'    => [
+				'h1',
+				'h2',
+				'h3',
+				'h4',
+				'h5',
+				'h6',
+				'label',
+				'mark',
+				'table tfoot td',
+				'strong',
+				'wp-block-cover-text',
+			],
+			'declarations' => [
+				'font-weight' => esc_attr( $weight_bold ),
+			],
+		];
 
-		$css->add(
-			[
-				'selectors'    => [
-					'.edit-post-visual-editor h1',
-					'.edit-post-visual-editor h2',
-					'.edit-post-visual-editor h3',
-					'.edit-post-visual-editor h4',
-					'.edit-post-visual-editor h5',
-					'.edit-post-visual-editor h6',
-					'.edit-post-visual-editor label',
-					'.edit-post-visual-editor mark',
-					'.edit-post-visual-editor table tfoot td',
-					'.edit-post-visual-editor strong',
-					'.edit-post-visual-editor .wp-block-cover-image-text',
-				],
-				'declarations' => [
-					'font-weight' => esc_attr( $weight_bold ),
-				],
-			]
-		);
+		// Darker items.
+		$config[] = [
+			'selectors'    => [
+				'.editor-post-title__block .editor-post-title__input',
+				'a',
+				'h1',
+				'h2',
+				'h3',
+				'h4',
+				'h5',
+				'h6',
+			],
+			'declarations' => [
+				'color' => esc_attr( $gray800 ),
+			],
+		];
 
-		$css->add(
-			[
-				'selectors'    => [
-					'.editor-post-title .editor-post-title__input',
-					'.edit-post-visual-editor a',
-				],
-				'declarations' => [
-					'color' => esc_attr( $gray800 ),
-				],
-			]
-		);
-
-		// Dynamic color classes.
-		foreach ( $colors as $color => $data ) {
-			$css->add(
-				[
-					'selectors'    => [
-						".edit-post-visual-editor p.has-{$color}-background-color",
-						".edit-post-visual-editor .wp-block-button .wp-block-button__link.has-{$color}-background-color",
-					],
-					'declarations' => [
-						'background-color' => esc_attr( bigbox_get_theme_color( $color ) ),
-					],
-				]
-			);
-
-			$css->add(
-				[
-					'selectors'    => [
-						".edit-post-visual-editor p.has-{$color}-color",
-						".edit-post-visual-editor p.has-{$color}-color a",
-						".edit-post-visual-editor .wp-block-button .wp-block-button__link.has-{$color}-color",
-					],
-					'declarations' => [
-						'color' => esc_attr( bigbox_get_theme_color( $color ) ),
-					],
-				]
-			);
-
-			$css->add(
-				[
-					'selectors'    => [
-						".edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link.has-{$color}-color",
-					],
-					'declarations' => [
-						'border-color' => esc_attr( bigbox_get_theme_color( $color ) ),
-						'color'        => esc_attr( bigbox_get_theme_color( $color ) ),
-					],
-				]
-			);
+		foreach ( $config as $x => $items ) {
+			$css->add( $config[ $x ] );
 		}
 
-		return $css->build();
-	}
+		$settings['styles'][] = [
+			'baseUrl' => null,
+			'css'     => $css->build(),
+		];
 
+		return $settings;
+	}
 }

@@ -139,7 +139,7 @@ final class Integrations implements Registerable, Service {
 				'slug'         => 'gutenberg',
 				'class'        => Integration\Gutenberg::class,
 				'dependencies' => [
-					function_exists( 'the_gutenberg_project' ),
+					function_exists( 'the_gutenberg_project' ) || version_compare( $GLOBALS['wp_version'], '4.9.9999', '>=' ),
 				],
 			],
 		];

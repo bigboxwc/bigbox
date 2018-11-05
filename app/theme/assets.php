@@ -60,23 +60,6 @@ function bigbox_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'bigbox_enqueue_styles', 20 );
 
 /**
- * Editor styles
- *
- * @since 1.0.0
- */
-function bigbox_editor_styles() {
-	$google = bigbox_get_google_fonts_url();
-	$styles = [ 'public/css/editor.min.css' ];
-
-	if ( $google ) {
-		$styles[] = $google;
-	}
-
-	add_editor_style( $styles );
-}
-add_action( 'after_setup_theme', 'bigbox_editor_styles' );
-
-/**
  * Enqueue scripts.
  *
  * @since 1.0.0
