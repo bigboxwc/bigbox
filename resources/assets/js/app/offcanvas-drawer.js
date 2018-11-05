@@ -9,6 +9,7 @@ import domReady from '@wordpress/dom-ready';
  * Internal dependencies.
  */
 import { hasClass } from './../utils';
+import constrainTabbing from './constrain-tabbing.js';
 
 /**
  * Swap the source and the target content as defined by the toggle.
@@ -33,6 +34,8 @@ const targetSourceSwap = ( toggle ) => {
 	} else {
 		sourceClose.tabIndex = -1;
 	}
+
+	constrainTabbing( document.querySelector( target ) );
 
 	document.dispatchEvent( new CustomEvent( 'offCanvasDrawerSwap' ), {
 		detail: { toggle, sourceEl, targetEl, source, target },

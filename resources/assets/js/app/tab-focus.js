@@ -1,3 +1,7 @@
+/**
+ * External dependencies.
+ */
+import { TAB } from '@wordpress/keycodes';
 
 // Class to add to <body>
 const bodyClass = 'is-tabbing';
@@ -8,7 +12,9 @@ const bodyClass = 'is-tabbing';
  * @param {Object} e Key event.
  */
 const handleFirstTab = ( e ) => {
-	if ( 9 !== e.keyCode ) {
+	const { keyCode } = e;
+
+	if ( TAB !== keyCode ) {
 		return;
 	}
 
