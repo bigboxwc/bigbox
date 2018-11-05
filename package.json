@@ -68,7 +68,8 @@
 		"lint:fix": "./node_modules/.bin/eslint . --fix; exit 0",
 		"lint:jsdoc": "eslint . --config eslint/jsdoc-config.js; exit 0",
 		"package-theme": "./bin/package-theme.sh",
-		"setup-theme": "./bin/setup-theme.sh"
+		"setup-theme": "./bin/setup-theme.sh",
+		"setup-theme-dev": "./bin/setup-theme-dev.sh"
 	},
 	"repository": {
 		"type": "git",
