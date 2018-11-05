@@ -59,7 +59,7 @@ function bigbox_add_theme_support() {
 	add_theme_support(
 		'custom-background',
 		[
-			'default-color' => '#ffffff',
+			'default-color' => 'ffffff',
 		]
 	);
 }

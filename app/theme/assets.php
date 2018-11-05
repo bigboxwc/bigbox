@@ -83,7 +83,7 @@ function bigbox_enqueue_scripts() {
 
 	// Send information to application scripts.
 	$js_data = [
-		'backgroundColor' => sanitize_hex_color( get_background_color() ),
+		'backgroundColor' => sanitize_hex_color( maybe_hash_hex_color( get_background_color() ) ),
 	];
 
 	wp_localize_script(
