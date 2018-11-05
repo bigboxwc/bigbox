@@ -3,6 +3,7 @@
 ### New
 
 - Gutenberg 4.2 compatibility.
+- WooCommerce 3.5.1 compatibility.
 - WooCommerce Bookings custom styles support.
 - Keyboard accessibility improvements.
 
