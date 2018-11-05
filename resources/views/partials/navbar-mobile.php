@@ -25,7 +25,7 @@ endif;
 </a>
 
 <nav id="navbar-mobile" class="offcanvas-drawer navbar--mobile">
-	<a href="#navbar-mobile-toggle" class="offcanvas-drawer__close offcanvas-drawer-toggle" aria-label="<?php esc_attr_e( 'Close menu', 'bigbox' ); ?>" data-source="#navbar-mobile" data-target="#navbar-primary">
+	<a href="#navbar-mobile-toggle" class="offcanvas-drawer__close offcanvas-drawer-toggle" tabindex="-1" aria-label="<?php esc_attr_e( 'Close menu', 'bigbox' ); ?>" data-source="#navbar-mobile" data-target="#navbar-primary">
 		<?php esc_html_e( 'Close', 'bigbox' ); ?>
 	</a>
 

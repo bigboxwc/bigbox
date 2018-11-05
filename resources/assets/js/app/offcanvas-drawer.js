@@ -10,9 +10,6 @@ import domReady from '@wordpress/dom-ready';
  */
 import { hasClass } from './../utils';
 
-// Keep track of things we've found before.
-const cache = {};
-
 /**
  * Swap the source and the target content as defined by the toggle.
  *
@@ -22,21 +19,20 @@ const targetSourceSwap = ( toggle ) => {
 	const target = toggle.dataset.target;
 	const source = toggle.dataset.source;
 
-	let targetEl, sourceEl;
+	const sourceEl = document.querySelector( `${ source } .offcanvas-drawer__content` );
+	const targetEl = document.querySelector( `${ target } .offcanvas-drawer__content` );
 
-	if ( ! cache.source || ! cache.target ) {
-		sourceEl = document.querySelector( `${ source } .offcanvas-drawer__content` );
-		targetEl = document.querySelector( `${ target } .offcanvas-drawer__content` );
-
-		cache[ source ] = sourceEl;
-		cache[ target ] = targetEl;
-	} else {
-		sourceEl = cache.source;
-		targetEl = cache.target;
-	}
+	const targetClose = document.querySelector( `${ target } .offcanvas-drawer__close` );
+	const sourceClose = document.querySelector( `${ source } .offcanvas-drawer__close` );
 
 	targetEl.innerHTML = sourceEl.innerHTML;
 	sourceEl.innerHTML = '';
+
+	if ( targetClose ) {
+		targetClose.tabIndex = 0;
+	} else {
+		sourceClose.tabIndex = -1;
+	}
 
 	document.dispatchEvent( new CustomEvent( 'offCanvasDrawerSwap' ), {
 		detail: { toggle, sourceEl, targetEl, source, target },
