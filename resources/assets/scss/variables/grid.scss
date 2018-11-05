@@ -15,3 +15,6 @@ $grid-breakpoints: (
 $container-max-widths: (
 	xl: 80%,
 ) !default;
+
+// When the mobile menu is toggled.
+$menu-break-point: md !default;

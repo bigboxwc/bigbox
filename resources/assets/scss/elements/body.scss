@@ -17,9 +17,8 @@ body {
 	&.is-tabbing {
 
 		*:focus {
-			outline-style: auto;
-			outline-width: initial;
-			outline-offset: 2px;
+			outline-style: solid;
+			outline-width: 2px;
 		}
 	}
 

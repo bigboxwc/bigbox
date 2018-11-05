@@ -8,7 +8,7 @@ import domReady from '@wordpress/dom-ready';
 /**
  * Internal dependencies.
  */
-import { hasClass, isHidden } from './../utils';
+import { hasClass, isHidden, findAncestor } from './../utils';
 
 /**
  * Better hover behavior.
@@ -48,13 +48,17 @@ const addHoverIntent = () => {
  */
 const addTabletSupport = () => {
 	const navigationSelector = '#navbar-primary .navbar-menu__items';
-	const navigation = document.querySelector( navigationSelector );
+	const navigations = document.querySelectorAll( navigationSelector );
 
-	if ( ! navigation ) {
+	if ( ! navigations ) {
 		return;
 	}
 
-	const toggles = document.querySelectorAll( `${ navigationSelector } .menu-item-has-children > a` );
+	const toggles = [];
+
+	navigations.forEach( ( navigation ) => {
+		navigation.querySelectorAll( '.menu-item-has-children > a' ).forEach( ( el ) => toggles.push( el ) );
+	} );
 
 	/**
 	 * Handle a touch event.
@@ -104,23 +108,37 @@ const addTabletSupport = () => {
 };
 
 /**
- * Mobile panels.
+ * Mobile support.
+ *
+ * When in mobile parent menu items are only used to toggle their children.
  */
-const addMobilePanels = () => {
-	document.querySelectorAll( '#navbar-mobile .menu-item-has-children' ).forEach( ( el ) => {
-		el.addEventListener( 'click', function( e ) {
-			e.stopPropagation();
-			el.classList.toggle( 'menu-item-has-children--active' );
-		} );
+const addMobileSupport = () => {
+	// Find all the toggles in multiple navigations.
+	const navigationSelector = '#navbar-mobile .navbar-menu__items';
+	const navigations = document.querySelectorAll( navigationSelector );
+
+	if ( ! navigations ) {
+		return;
+	}
+
+	const toggles = [];
+
+	navigations.forEach( ( navigation ) => {
+		navigation.querySelectorAll( '.menu-item-has-children > a, .menu-item-is-back > a' ).forEach( ( el ) => toggles.push( el ) );
 	} );
+
+	toggles.forEach( ( toggle ) => toggle.addEventListener( 'click', ( e ) => {
+		e.preventDefault();
+
+		// Remove active when a toggle is clicked.
+		findAncestor( e.target, 'menu-item-has-children' ).classList.toggle( 'menu-item-has-children--active' );
+	} ) );
 };
 
 // Init
 domReady( () => {
 	addHoverIntent();
 	addTabletSupport();
-	addMobilePanels();
 } );
 
-// Add Mobile Panels again when drawers swap.
-document.addEventListener( 'offCanvasDrawerSwap', addMobilePanels );
+document.addEventListener( 'offCanvasDrawerSwap', addMobileSupport );

@@ -27,12 +27,9 @@
 
 		a {
 			text-decoration: none;
+			display: block;
+			padding: ($spacer / 2) ($spacer * 1.5);
 		}
-	}
-
-	li {
-		padding: ($spacer / 2) ($spacer * 1.5);
-		display: flex;
 	}
 
 	.sub-menu,
@@ -79,9 +76,10 @@
 		> .sub-menu {
 			display: block;
 			position: absolute;
-			top: 40px;
+			top: 0;
 			left: 0;
 			right: 0;
+			background: #fff;
 		}
 	}
 
@@ -107,18 +105,19 @@
 			}
 		}
 	}
+
+	.menu-item-is-back {
+
+		a {
+			font-weight: $font-weight-bold;
+			padding-left: ($spacer * 2.75);
+		}
+	}
 }
 
-.mobile-menu-children-toggle {
-	cursor: e-resize;
-	max-height: #{$line-height-base}em;
-	display: block;
-	flex: 1;
-	margin-left: 1rem;
-	position: relative;
-	z-index: 2;
+.menu-item-is-back {
 
-	.menu-item--opened & {
-		cursor: w-resize;
+	@include media-breakpoint-up($menu-break-point) {
+		display: none;
 	}
 }

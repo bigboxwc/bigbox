@@ -33,12 +33,12 @@ const targetSourceSwap = ( toggle ) => {
 
 	if ( targetClose ) {
 		targetClose.tabIndex = 0;
+
+		// Move focus to drawer.
+		targetClose.focus();
 	} else {
 		sourceClose.tabIndex = -1;
 	}
-
-	// Move focus to drawer.
-	targetClose.focus();
 
 	// Keep tabbing in the drawer.
 	constrainTabbing( targetBase );
