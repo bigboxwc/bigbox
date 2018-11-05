@@ -20,6 +20,8 @@ const targetSourceSwap = ( toggle ) => {
 	const target = toggle.dataset.target;
 	const source = toggle.dataset.source;
 
+	const targetBase = document.querySelector( target );
+
 	const sourceEl = document.querySelector( `${ source } .offcanvas-drawer__content` );
 	const targetEl = document.querySelector( `${ target } .offcanvas-drawer__content` );
 
@@ -35,7 +37,11 @@ const targetSourceSwap = ( toggle ) => {
 		sourceClose.tabIndex = -1;
 	}
 
-	constrainTabbing( document.querySelector( target ) );
+	// Move focus to drawer.
+	targetClose.focus();
+
+	// Keep tabbing in the drawer.
+	constrainTabbing( targetBase );
 
 	document.dispatchEvent( new CustomEvent( 'offCanvasDrawerSwap' ), {
 		detail: { toggle, sourceEl, targetEl, source, target },
