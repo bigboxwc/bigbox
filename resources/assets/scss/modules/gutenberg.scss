@@ -34,16 +34,9 @@
 	}
 }
 
-// Gutenberg currently uses <ul>
-// @see https://github.com/WordPress/gutenberg/issues/5890
 .wp-block-gallery {
 	padding: 0;
 	list-style: none;
-
-	&.alignnone {
-		margin-left: -8px;
-		margin-right: -8px;
-	}
 }
 
 .wp-block-separator {
@@ -137,7 +130,10 @@ p.wp-block-subhead {
 .wp-block-columns {
 
 	.wp-block-column {
-		margin: 0 $spacer;
+
+		&:not(:last-child) {
+			padding-right: $spacer;
+		}
 	}
 
 	&.wp-block-flush-columns {
@@ -157,6 +153,18 @@ p.wp-block-subhead {
 
 	iframe,
 	object {
+		width: 100%;
+	}
+}
+
+// Audio
+.wp-block-audio {
+
+	&.aligncenter {
+		text-align: center;
+	}
+
+	audio {
 		width: 100%;
 	}
 }

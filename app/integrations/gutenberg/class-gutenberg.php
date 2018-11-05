@@ -165,6 +165,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 		$config[] = [
 			'selectors'    => [
 				'body',
+				'.editor-post-title__block .editor-post-title__input',
 			],
 			'declarations' => [
 				'color'       => esc_attr( $gray700 ),
@@ -181,6 +182,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 			],
 			'declarations' => [
 				'font-weight'   => $weight_bold,
+				'font-size'     => ( $size * 1.65 ) . 'em',
 				'border-bottom' => '2px solid ' . esc_attr( $gray200 ),
 			],
 		];

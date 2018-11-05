@@ -9,8 +9,9 @@
  * @author Spencer Finnell
  */
 
-$family = bigbox_get_theme_font_family();
-$size   = get_theme_mod( 'type-font-size', 1 );
+$family   = bigbox_get_theme_font_family();
+$fallback = get_theme_mod( 'type-font-family-fallback', 'sans-serif' );
+$size     = get_theme_mod( 'type-font-size', 1 );
 
 $weight_base = bigbox_get_theme_font_weight( 'base' );
 $weight_bold = bigbox_get_theme_font_weight( 'bold' );
@@ -53,15 +54,10 @@ $base = [
 	],
 	'declarations' => [
 		'font-weight' => esc_attr( $weight_base ),
+		'font-family' => sprintf( '"%1$s", %2$s', esc_attr( $family ), esc_attr( $fallback ) ),
 		'font-size'   => esc_attr( "{$size}em" ),
 	],
 ];
-
-if ( 'default' !== $family ) {
-	$fallback = get_theme_mod( 'type-font-family-fallback', 'sans-serif' );
-
-	$base['declarations']['font-family'] = '"' . esc_attr( $family ) . '", ' . esc_attr( $fallback );
-}
 
 return [
 	$base,

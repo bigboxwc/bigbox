@@ -23,12 +23,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 abstract class Integration {
 
 	/**
+	 * Track slug name.
+	 *
+	 * @var string $slug
+	 * @since 1.16.0
+	 */
+	protected $slug;
+
+	/**
 	 * Current working directory.
 	 *
 	 * @var string $dir
 	 * @since 1.0.0
 	 */
-	protected $dir = null;
+	protected $dir;
 
 	/**
 	 * Current working path.
@@ -38,7 +46,7 @@ abstract class Integration {
 	 * @var string $dir
 	 * @since 1.0.0
 	 */
-	protected $local_path = null;
+	protected $local_path;
 
 	/**
 	 * List of required dependencies.
@@ -46,7 +54,7 @@ abstract class Integration {
 	 * @var array $active
 	 * @since 1.0.0
 	 */
-	protected $dependencies = [];
+	protected $dependencies;
 
 	/**
 	 * Additional inline CSS configuration items.
@@ -65,6 +73,7 @@ abstract class Integration {
 	 * @param array  $dependencies List of required dependencies.
 	 */
 	public function __construct( $slug, $dependencies ) {
+		$this->slug         = $slug;
 		$this->dependencies = $dependencies;
 		$this->local_path   = trailingslashit( '/app/integrations' ) . $slug;
 		$this->dir          = get_template_directory() . $this->get_local_path();
@@ -119,11 +128,11 @@ abstract class Integration {
 	 */
 	public function inline_css_configs( $configs ) {
 		if ( empty( $this->inline_css_configs ) ) {
-			return;
+			return $configs;
 		}
 
 		foreach ( $this->inline_css_configs as $key ) {
-			$configs[ $key ] = include $this->get_dir() . '/customize/output/' . $key . '.php';
+			$configs[ $this->slug . '-' . $key ] = include $this->get_dir() . '/customize/output/' . $key . '.php';
 		}
 
 		return $configs;
