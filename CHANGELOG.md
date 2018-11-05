@@ -1,3 +1,22 @@
+## [1.16.0] - 2018-11-7
+
+### New
+
+- Gutenberg 4.2 compatibility.
+- WooCommerce Bookings custom styles support.
+- Keyboard accessibility improvements.
+
+### Fix
+
+- Do not output inline CSS for values that have not been customized.
+
+### Tweaks
+
+- Better separation of integration CSS.
+- Move integration views to main views directory.
+- Remove fitvids in favor of Gutenberg responsive embeds.
+- Remove offcanvas drawer cache for better dynamic content support.
+
 ## [1.15.2] - 2018-10-12
 
 ### Fix
