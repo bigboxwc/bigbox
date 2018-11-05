@@ -29,8 +29,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</head>
 
 	<body <?php body_class(); ?>>
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bigbox' ); ?></a>
 
 		<?php bigbox_partial( 'navbar' ); ?>
 
 		<div class="container">
-			<div class="page-flow">
+			<div id="content" class="page-flow">

@@ -100,3 +100,20 @@ function bigbox_enqueue_scripts() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'bigbox_enqueue_scripts', 20 );
+
+/**
+ * Fix skip link focus in IE11.
+ *
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
+ *
+ * @since 1.16.0
+ */
+function bigbox_skip_link_focus_fix() {
+	echo '<script>';
+	echo file_get_contents( get_template_directory() . '/public/js/skip-link-focus-fix.min.js' );
+	echo '</script>';
+}
+add_action( 'wp_print_footer_scripts', 'bigbox_skip_link_focus_fix' );
