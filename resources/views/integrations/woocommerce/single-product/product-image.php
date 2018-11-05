@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.5.0
+ * @version 3.5.1
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -35,7 +35,7 @@ $wrapper_classes = apply_filters(
 	'woocommerce_single_product_image_gallery_classes',
 	[
 		'woocommerce-product-gallery',
-		'woocommerce-product-gallery--' . ( has_post_thumbnail() ? 'with-images' : 'without-images' ),
+		'woocommerce-product-gallery--' . ( bigbox_woocommerce_has_product_image() ? 'with-images' : 'without-images' ),
 		'woocommerce-product-gallery--columns-' . absint( $columns ),
 		'woocommerce-product-gallery--' . ( ( $width >= 600 || 'grouped' === $product->get_type() ) ? 'wide' : 'default' ),
 		'images',
