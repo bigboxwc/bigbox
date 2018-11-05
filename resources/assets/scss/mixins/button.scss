@@ -71,6 +71,7 @@
 }
 
 @mixin button--pill {
+	color: gray("600");
 	font-size: $font-size-xs;
 	line-height: 1;
 	background: gray("100");
