@@ -1,0 +1,93 @@
+/**
+ * Global Config.
+ */
+@import "_config";
+
+@mixin brand-image {
+
+	a {
+		margin-right: ($spacer / 2);
+		padding: 3px;
+		border: 1px solid gray("200");
+		display: block;
+
+		@include border-radius();
+	}
+
+	img {
+		display: block;
+	}
+}
+
+.woocommerce-product-brand {
+	display: flex;
+
+	@include brand-image();
+	@include vertical-spacing("margin");
+
+	@include media-breakpoint-up(md) {
+		margin: 0;
+	}
+}
+
+ul.brands_index,
+ul.brand-thumbnails {
+
+	@include reset-list();
+	@include vertical-spacing("margin");
+	@include brand-image();
+}
+
+ul.brands_index {
+	display: flex;
+	flex-wrap: wrap;
+
+	li {
+		flex: 1 0 40px;
+		float: none;
+		margin: 0 ($spacer / 4) ($spacer / 4) 0;
+
+		span,
+		a {
+			text-align: center;
+			padding: 5px;
+			border: 1px solid gray("300");
+			display: block;
+			float: none;
+
+			@include border-radius();
+		}
+
+		a:hover {
+			padding: 5px;
+			border: 1px solid gray("400");
+		}
+	}
+}
+
+ul.brands {
+
+	@include reset-list();
+
+	a {
+		text-decoration: none;
+	}
+}
+
+div#brands_a_z a.top {
+	border-color: gray("300");
+}
+
+.wc-brand-list-layered-nav-product_brand {
+
+	@include reset-list();
+}
+
+// Additional information.
+.product span.posted_in {
+	font-weight: $font-weight-bold;
+
+	a {
+		font-weight: $font-weight-base;
+	}
+}

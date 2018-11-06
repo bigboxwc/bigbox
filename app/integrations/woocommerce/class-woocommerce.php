@@ -27,11 +27,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 class WooCommerce extends Integration implements Registerable, Service {
 
 	/**
+	 * Additional inline CSS configuration items.
+	 *
+	 * @var array $inline_css_configs
+	 * @since 1.16.0
+	 */
+	protected $inline_css_configs = [
+		'store-notice',
+	];
+
+	/**
 	 * Connect to WordPress.
 	 *
 	 * @since 1.0.0
 	 */
 	public function register() {
+		add_filter( 'bigbox_customize_inline_css_configs', [ $this, 'inline_css_configs' ] );
+		add_action( 'after_setup_theme', [ $this, 'add_theme_support' ] );
+
 		include_once $this->get_dir() . '/wc-template-functions.php';
 
 		include_once $this->get_dir() . '/starter-content.php';
@@ -46,8 +59,6 @@ class WooCommerce extends Integration implements Registerable, Service {
 
 		include_once $this->get_dir() . '/template-functions.php';
 		include_once $this->get_dir() . '/template-hooks.php';
-
-		add_action( 'after_setup_theme', [ $this, 'add_theme_support' ] );
 	}
 
 	/**

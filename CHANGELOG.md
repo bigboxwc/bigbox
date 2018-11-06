@@ -1,3 +1,38 @@
+## [2.0.0] - 2018-11-06
+
+### Breaking
+
+- Base stylesheet enqueued with wp_enqueue_script priority 20 (was 10).
+- Base stylesheet renamed to app.scss (was style.scss) -- child themes referencing this need to update.
+
+### New
+
+- Gutenberg 4.2 compatibility.
+- WooCommerce 3.5.1 compatibility.
+- WooCommerce Bookings custom styles support.
+- Keyboard accessibility improvements for desktop and mobile menus.
+
+### Fix
+
+- Do not output inline CSS for values that have not been customized.
+- Stripe gateway checkout styles.
+- More precise `em` to `px` conversions for better font smoothing.
+- Icon menu alignment for icons of all sizes.
+- WooCommerce message button alignment.
+- Ensure external WooCommerce products are purchaseable.
+- Ensure blockUI library uses accurate background color.
+
+### Tweaks
+
+- Default grid to be 80% page width at extra large device size.
+- Better separation of integration CSS.
+- Move integration views to main views directory.
+- Remove fitvids in favor of Gutenberg responsive embeds.
+- Remove offcanvas drawer cache for better dynamic content support.
+- More consistent dynamic widget area names ("Page Name Sidebar (Left)")
+- Adjust shop sidebar widths to be smaller.
+- Grouped product purchase form appearance.
+
 ## [1.15.2] - 2018-10-12
 
 ### Fix

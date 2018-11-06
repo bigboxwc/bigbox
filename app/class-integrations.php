@@ -119,6 +119,14 @@ final class Integrations implements Registerable, Service {
 					defined( 'WC_PRODUCT_VENDORS_VERSION' ) && WC_PRODUCT_VENDORS_VERSION,
 				],
 			],
+			'woocommerce-bookings'        => [
+				'slug'         => 'woocommerce-bookings',
+				'class'        => Integration\WooCommerce_Bookings::class,
+				'dependencies' => [
+					defined( 'WC_PLUGIN_FILE' ) && WC_PLUGIN_FILE,
+					defined( 'WC_BOOKINGS_VERSION' ) && WC_BOOKINGS_VERSION,
+				],
+			],
 			'facetwp'                     => [
 				'slug'         => 'facetwp',
 				'class'        => Integration\FacetWP::class,
@@ -131,7 +139,7 @@ final class Integrations implements Registerable, Service {
 				'slug'         => 'gutenberg',
 				'class'        => Integration\Gutenberg::class,
 				'dependencies' => [
-					function_exists( 'the_gutenberg_project' ),
+					function_exists( 'the_gutenberg_project' ) || version_compare( $GLOBALS['wp_version'], '4.9.9999', '>=' ),
 				],
 			],
 		];

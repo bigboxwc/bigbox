@@ -6,6 +6,13 @@
 import domReady from '@wordpress/dom-ready';
 
 /**
+ * Asset dependencies.
+ */
+
+// Styles
+import '../../scss/facetwp.scss';
+
+/**
  * Internal dependencies.
  */
 import './choices.js';

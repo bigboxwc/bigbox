@@ -1,6 +1,6 @@
 <?php
 /**
- * WooCommerce Brands template functions.
+ * WooCommerce Product Vendors template functions.
  *
  * @since 1.14.0
  *
@@ -11,6 +11,49 @@
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
+}
+
+/**
+ * Point Product Vendor template overrides to our custom directory.
+ *
+ * @param string $template Current template path.
+ * @param string $template_name Current template name.
+ * @return string
+ */
+function bigbox_woocommerce_product_vendors_locate_template( $template, $template_name ) {
+	$overrides = [
+		'shortcode-registration-form.php',
+	];
+
+	if ( in_array( $template_name, $overrides, true ) ) {
+		return get_theme_file_path( 'resources/views/integrations/woocommerce-product-vendors/' . $template_name );
+	};
+
+	return $template;
+}
+
+/**
+ * Enqueue styles.
+ *
+ * @since 1.16.0
+ */
+function bigbox_woocommerce_product_vendors_enqueue_styles() {
+	$version    = bigbox_get_theme_version();
+	$parent     = bigbox_get_theme_name();
+	$stylesheet = $parent . '-woocommerce-product-vendors';
+
+	wp_enqueue_style(
+		$stylesheet,
+		get_template_directory_uri() . '/public/css/woocommerce-product-vendors.min.css',
+		[],
+		$version
+	);
+
+	wp_style_add_data(
+		$stylesheet,
+		'rtl',
+		'replace'
+	);
 }
 
 /**
@@ -64,7 +107,11 @@ function bigbox_wcpv_add_sold_by_loop() {
 
 <div class="product__price product__meta wcpv-sold-by-loop">
 	<a href="<?php echo esc_url( $sold_by['link'] ); ?>">
-		<?php echo wp_get_attachment_image( absint( $vendor_data['logo'] ), 'thumbnail' ); // WPCS: XSS okay. ?>
+		<?php
+		if ( isset( $vendor_data['logo'] ) ) :
+			echo wp_get_attachment_image( absint( $vendor_data['logo'] ), 'thumbnail' ); // WPCS: XSS okay.
+		endif;
+		?>
 		<span><?php echo esc_html( $sold_by['name'] ); ?></span>
 	</a>
 </div>

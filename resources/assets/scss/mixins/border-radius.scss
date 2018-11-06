@@ -9,6 +9,17 @@
 	}
 }
 
+@mixin border-top-radius( $radius: $border-radius ) {
+	border-radius: 0;
+
+	@if $is-rounded {
+
+		.is-rounded & {
+			border-radius: $border-radius $border-radius 0 0;
+		}
+	}
+}
+
 @mixin border-bottom-radius( $radius: $border-radius ) {
 	border-radius: 0;
 

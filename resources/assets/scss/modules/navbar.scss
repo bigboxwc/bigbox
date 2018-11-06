@@ -2,6 +2,10 @@
 	background: theme-color("primary");
 	position: relative;
 
+	.container {
+		max-width: none;
+	}
+
 	.is-tabbing & {
 
 		:focus {

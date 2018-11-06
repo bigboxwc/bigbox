@@ -27,11 +27,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 class FacetWP extends Integration implements Registerable, Service {
 
 	/**
+	 * Additional inline CSS configuration items.
+	 *
+	 * @var array $inline_css_configs
+	 * @since 1.16.0
+	 */
+	protected $inline_css_configs = [
+		'refresh',
+	];
+
+	/**
 	 * Connect to WordPress.
 	 *
 	 * @since 1.0.0
 	 */
 	public function register() {
+		add_filter( 'bigbox_customize_inline_css_configs', [ $this, 'inline_css_configs' ] );
+
 		include_once $this->get_dir() . '/template-hooks.php';
 		include_once $this->get_dir() . '/template-functions.php';
 		include_once $this->get_dir() . '/default-facets.php';

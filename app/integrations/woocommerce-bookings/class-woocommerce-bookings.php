@@ -1,0 +1,55 @@
+<?php
+/**
+ * WooCommerce Bookings integration.
+ *
+ * @since 1.16.0
+ *
+ * @package BigBox
+ * @category Integration
+ * @author Spencer Finnell
+ */
+
+namespace BigBox\Integration;
+
+use BigBox\Integration;
+use BigBox\Registerable;
+use BigBox\Service;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+/**
+ * WooCommerce Bookings.
+ *
+ * @since 1.16.0
+ */
+class WooCommerce_Bookings extends Integration implements Registerable, Service {
+
+	/**
+	 * Additional inline CSS configuration items.
+	 *
+	 * @var array $inline_css_configs
+	 * @since 1.16.0
+	 */
+	protected $inline_css_configs = [
+		'success',
+		'gray-200',
+		'gray-300',
+		'gray-700',
+		'type',
+	];
+
+	/**
+	 * Connect to WordPress.
+	 *
+	 * @since 1.16.0
+	 */
+	public function register() {
+		add_filter( 'bigbox_customize_inline_css_configs', [ $this, 'inline_css_configs' ] );
+
+		include_once $this->get_dir() . '/template-hooks.php';
+		include_once $this->get_dir() . '/template-functions.php';
+	}
+
+}

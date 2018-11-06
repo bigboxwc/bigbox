@@ -33,6 +33,7 @@ zip -r $PACKAGE_NAME.zip \
 	resources/languages/*.{po,mo,pot} \
 	resources/views \
 	resources/assets/scss \
+	resources/assets/js \
 	resources/data/*.json \
 	public \
 	vendor/ \

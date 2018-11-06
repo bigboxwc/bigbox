@@ -39,8 +39,10 @@
 
 .alignleft {
 	float: left;
+	margin-right: ($spacer * 2);
 }
 
 .alignright {
 	float: right;
+	margin-left: ($spacer * 2);
 }

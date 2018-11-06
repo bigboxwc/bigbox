@@ -1,0 +1,271 @@
+//
+// Global Config.
+//
+@import "_config";
+
+//
+// Lots of nesting and specificity to override the plugin styles and jQuery UI styles.
+//
+
+.wc-bookings-booking-form {
+	font-size: $font-size-base;
+	border: 0;
+	padding: 0;
+	
+	// Attributes.
+	.form-field {
+		line-height: 1;
+		margin-bottom: $spacer;
+
+		label {
+			line-height: 1;
+			font-size: $font-size-sm;
+			font-weight: $font-weight-bold;
+			margin: 0 0 $spacer;
+		}
+	}
+
+	input[type="number"] {
+		font-size: $font-size-sm;
+		padding: 1px 3px 1px 5px;
+	}
+
+	// Wrapping.
+	.ui-widget {
+		font-size: $font-size-base;
+	}
+
+	.ui-widget-content {
+		box-shadow: none;
+	}
+
+	// Date fields.
+	.wc-bookings-date-picker-date-fields {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	// Time
+	.form-field ul.block-picker {
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+
+		@include border-radius();
+
+		li:not(.block) {
+			width: 100%;
+
+			@include card();
+			@include card--color(theme-color("warning"));
+		}
+
+		li {
+			margin: 3px;
+			min-width: 0;
+			float: none;
+
+			a.selected {
+				background-color: theme-color("success") !important;
+				border-color: theme-color("success") !important;
+			}
+
+			&:nth-child(odd) a,
+			&:nth-child(even) a {
+				background: none;
+				border: 1px solid gray("300");
+
+				@include border-radius();
+
+				&:hover {
+					background-color: theme-color("success");
+					border-color: theme-color("success");
+				}
+			}
+		}
+	}
+
+	// Date picker.
+	fieldset {
+		border: 0;
+		padding: 0;
+
+		legend {
+			line-height: 1;
+			margin-bottom: $spacer;
+			padding: 0;
+			width: 100%;
+
+			.label {
+				line-height: 1;
+				font-size: $font-size-sm;
+				font-weight: $font-weight-bold;
+				margin: 0 0 $spacer;
+				padding: 0;
+			}
+
+			.wc-bookings-date-picker-choose-date {
+				text-decoration: none;
+				float: right;
+			}
+		}
+	}
+
+	.wc-bookings-date-picker {
+
+		.ui-datepicker-header {
+			color: gray("700");
+			font-size: $font-size-sm;
+			text-transform: none;
+			background-color: gray("200");
+			background-image: none;
+			border: 1px solid gray("300");
+
+			@include border-top-radius();
+		}
+
+		.ui-datepicker-next,
+		.ui-datepicker-prev {
+			background-color: transparent;
+			top: 0;
+
+			span {
+				background: none;
+			}
+
+			&:before {
+				color: gray("700");
+				position: absolute;
+				top: 10px;
+				right: 12px;
+			}
+
+			&:hover {
+				top: 0;
+				background-color: transparent;
+			}
+		}
+
+		.ui-datepicker-next {
+
+			&:before {
+				content: '\0025B8';
+			}
+
+			&,
+			&:hover {
+				right: 0;
+			}
+		}
+
+		.ui-datepicker-prev {
+
+			&:before {
+				content: '\0025B8';
+				transform: rotate(180deg);
+				top: 11px;
+			}
+
+			&,
+			&:hover {
+				left: 0;
+			}
+		}
+
+		.ui-widget-header .ui-state-disabled {
+			opacity: 0.35;
+		}
+
+		.ui-state-disabled, 
+		.ui-widget-content .ui-state-disabled {
+			opacity: 0.25;
+		}
+
+		.ui-datepicker table {
+			font-size: $font-size-base;
+			border-top: 0;
+		}
+
+		.ui-datepicker-calendar thead {
+			border-bottom: 0;
+		}
+
+		.ui-datepicker-calendar th {
+			color: gray("700");
+			border-top: 0;
+		}
+
+		.ui-datepicker-calendar tr {
+			border: 0;
+		}
+
+		.ui-datepicker-calendar td {
+			border-top: 1px solid gray("300");
+			border-right: 1px solid gray("300");
+			background-color: #fff;
+			padding: 3px !important;
+
+			&.bookable-range {
+
+				.ui-state-default {
+
+					&,
+					&:hover {
+						background-color: theme-color("success") !important;
+					}
+				}
+			}
+		}
+
+		.ui-datepicker-calendar tbody {
+			background-color: #fff;
+		}
+
+		.ui-datepicker td.ui-datepicker-today a,
+		.ui-datepicker td.partial_booked a,
+		.ui-datepicker td.fully_booked a,
+		.ui-datepicker td.bookable a {
+			text-shadow: none;
+		}
+
+		.ui-datepicker td.ui-datepicker-today a,
+		.ui-datepicker td.partial_booked a,
+		.ui-datepicker td.bookable a {
+			color: gray("700") !important;
+			background-color: #fff !important;
+
+			&:hover {
+				background-color: gray("200") !important;
+			}
+		}
+
+		.ui-datepicker td.ui-datepicker-current-day a {
+
+			&,
+			&:hover {
+				color: #fff !important;
+				background-color: theme-color("success") !important;
+			}
+		}
+
+		.ui-datepicker td.fully_booked a, 
+		.ui-datepicker td.fully_booked span {
+			background-color: theme-color("warning") !important;
+		}
+
+		.ui-datepicker td.partial_booked a {
+
+			&:before {
+				border-top-color: theme-color("warning");
+			}
+		}
+	}
+
+	// Total
+	.wc-bookings-booking-cost {
+		color: gray("700");
+		background: gray("200");
+		border: 1px solid gray("300");
+		border-width: 1px 0;
+	}
+}

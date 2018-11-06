@@ -20,6 +20,11 @@
 		max-width: 400px;
 	}
 
+	&--grouped {
+
+		@include card--reset();
+	}
+
 	.stock {
 		font-size: $font-size-sm;
 		margin-top: 0;
@@ -39,9 +44,10 @@
 }
 
 .woocommerce-grouped-product-list {
-	margin-bottom: $spacer;
 
-	@include vertical-spacing("margin", "up");
+	@include vertical-spacing("margin", "both", (
+		sm: 1,
+	));
 }
 
 .woocommerce-grouped-product-list-item {
@@ -62,6 +68,12 @@
 
 	.action-list__item-label {
 		flex: 0;
+	}
+
+	.button {
+
+		@include button--pill();
+		@include button--size-xs();
 	}
 }
 

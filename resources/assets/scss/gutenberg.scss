@@ -3,12 +3,12 @@
  */
 $use-margins: false;
 
-
-	/**
-	 * Internal dependencies.
-	 */
+/**
+ * Internal dependencies.
+ */
 @import "_config";
 
+// Base HTML elements.
 @import "elements/h";
 @import "elements/a";
 @import "elements/p";
@@ -18,65 +18,30 @@ $use-margins: false;
 @import "elements/strong";
 @import "elements/small";
 @import "elements/mark";
-@import "modules/gutenberg-colors";
-@import "modules/gutenberg-fonts";
+
+// Standard Gutenberg block styling.
 @import "modules/gutenberg";
 
-.editor-default-block-appender input[type=text].editor-default-block-appender__content,
-p {
-	color: $body-color;
-	font-family: $font-family-sans-serif;
-	font-size: #{$font-size-base} * 16px;
-}
+// Editor-specific block changes.
+.wp-block-cover {
 
-p.wp-block-subhead {
-	color: inherit;
-}
-
-.wp-block-button {
-
-	.wp-block-button__link {
-
-		@import "modules/gutenberg-colors";
-
-		&.editor-rich-text__tinymce[data-is-placeholder-visible=true] {
-			position: absolute;
-		}
-	}
-}
-
-.wp-block-table {
-	display: block;
-
-	table {
-		display: table;
-	}
-
-	td,
-	th {
-		border: 0;
-	}
-}
-
-.wp-block-cover-image {
-
-	.wp-block-cover-image-text {
+	.wp-block-cover-text {
 		line-height: $line-height-base;
 	}
 }
 
-.editor-post-title__input {
-	color: gray("800");
-	font-family: $font-family-sans-serif;
-}
+.editor-post-title__block {
+	font-size: font-size("md");
 
-.editor-rich-text__tinymce.mce-content-body {
-	line-height: ($line-height-base * 1.35);
-}
+	.editor-post-title__input {
+		font-size: font-size("lg");
 
-.wp-block-button {
-
-	.wp-block-button__link {
-		border-radius: $border-radius;
+		@include media-breakpoint-up(md) {
+			font-size: font-size("xl");
+		}
 	}
+}
+
+.wp-block-table__cell-content {
+	padding: 0;
 }

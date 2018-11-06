@@ -1,4 +1,13 @@
 /**
+ * Asset dependencies.
+ */
+
+// Styles
+import '../../scss/woocommerce-bookings.scss';
+import '../../scss/woocommerce-brands.scss';
+import '../../scss/woocommerce-product-vendors.scss';
+
+/**
  * Internal dependencies.
  */
 import './notice.js';

@@ -13,9 +13,6 @@
 // [1] WordPress' built in class menu class name. To avoid having to add a custom one.
 //
 
-// When the mobile menu is toggled.
-$menu-break-point: md;
-
 // Both menu containers in the .navbar.
 .navbar-menu--account,
 .navbar-menu--primary {
@@ -93,6 +90,7 @@ $menu-break-point: md;
 
 		@include media-breakpoint-up( $menu-break-point ) {
 			display: flex;
+			align-items: center;
 		}
 
 		// Top level items.
@@ -136,6 +134,10 @@ $menu-break-point: md;
 		position: relative;
 
 		// Show submenu items when intended.
+		&:hover > .sub-menu,
+		&:focus > .sub-menu,
+		.sub-menu:hover,
+		.sub-menu:focus,
 		&.focus > .sub-menu,
 		&.menu-item-has-children--active > .sub-menu {
 			visibility: visible;
@@ -152,6 +154,11 @@ $menu-break-point: md;
 			mask-size: $icon-dim;
 			background-color: #fff;
 		}
+	}
+
+	.menu-item:focus-within > .sub-menu {
+		visibility: visible;
+		opacity: 1;
 	}
 
 	// Dropdowns.

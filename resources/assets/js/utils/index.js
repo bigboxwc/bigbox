@@ -23,3 +23,16 @@ export const hasClass = ( el, className ) => {
 export const isHidden = ( el ) => {
 	return el.offsetParent === null;
 };
+
+/**
+ * Find the closest ancestor containing a class.
+ *
+ * @param {Object} el Node.
+ * @param {string} className Class name to search for.
+ * @return {boolean} If the DOM element is visible.
+ */
+export const findAncestor = ( el, className ) => {
+	while ( ( el = el.parentElement ) && ! hasClass( el, className ) );
+
+	return el;
+};
