@@ -5,11 +5,11 @@ $line-height-base: 1.5;
 $font-size-base: 1em !default;
 
 $font-sizes: (
-	xs: $font-size-base * 0.8,
-	sm: $font-size-base * 0.9,
+	xs: $font-size-base * 0.875,
+	sm: $font-size-base * 0.938,
 	md: $font-size-base,
-	lg: $font-size-base * 1.3,
-	xl: $font-size-base * 1.65,
+	lg: $font-size-base * 1.250,
+	xl: $font-size-base * 1.688,
 ) !default;
 
 // Backwards compatibility.
