@@ -14,10 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $product = wc_get_product( get_the_ID() );
-
-if ( ! $product->is_purchasable() ) :
-	return;
-endif;
 ?>
 
 <div id="purchase" class="woocommerce-single-product-purchase" role="complementary">
