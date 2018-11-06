@@ -15,6 +15,7 @@
 ### Fix
 
 - Do not output inline CSS for values that have not been customized.
+- Stripe gateway checkout styles.
 
 ### Tweaks
 
