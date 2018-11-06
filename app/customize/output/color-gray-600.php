@@ -44,6 +44,7 @@ return [
 		'selectors'    => [
 			'.product__has-variations .button.button--pill',
 			'.widget_layered_nav_filters .button.button--pill',
+			'.woocommerce-grouped-product-list-item__quantity .button',
 		],
 		'declarations' => [
 			'color'            => esc_attr( $gray600 ),
