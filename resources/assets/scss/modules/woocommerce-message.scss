@@ -44,6 +44,8 @@
 }
 
 .woocommerce-notice-list__item {
+	display: flex;
+	align-items: center;
 
 	@include _woocommerce-alert-buttons();
 	@include vertical-spacing("margin", "down", (
@@ -53,6 +55,15 @@
 	&:last-child,
 	&:only-child {
 		margin-bottom: 0;
+	}
+
+	> * {
+
+		// Fake space between inline elements collapsed from flexbox.
+		&:before,
+		&:after {
+			content: '\00a0';
+		}
 	}
 }
 
