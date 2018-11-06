@@ -1,4 +1,9 @@
-## [1.16.0] - 2018-11-7
+## [2.0.0] - 2018-11-07
+
+### Breaking
+
+- Base stylesheet enqueued with wp_enqueue_script priority 20 (was 10).
+- Base stylesheet renamed to app.scss (was style.scss) -- child themes referencing this need to update.
 
 ### New
 
