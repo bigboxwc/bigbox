@@ -126,7 +126,7 @@ function bigbox_woocommerce_get_dynamic_shop_pages() {
 				'meta_query'             => [
 					[
 						'key'     => '_wp_page_template',
-						'value'   => bigbox_woocommerce_template_path() . 'archive-product-page.php',
+						'value'   => bigbox_woocommerce_dynamic_shop_page_template(),
 						'compare' => '=',
 					],
 				],
@@ -159,7 +159,7 @@ function bigbox_woocommerce_dynamic_shop_pages_create_sidebars() {
 	foreach ( $pages as $page ) {
 		$woocommerce_dynamic_shop_page_widget_args = [
 			/* translators: %s: Dynamic widget area name. */
-			'name'          => sprintf( __( 'Page: %s', 'bigbox' ), get_the_title( $page ) ),
+			'name'          => sprintf( __( '%s Sidebar (Left)', 'bigbox' ), get_the_title( $page ) ),
 			/* translators: %s: Dynamic widget area description. */
 			'description'   => sprintf( __( 'Widgets that appear on the "%s" page.', 'bigbox' ), get_the_title( $page ) ),
 			'id'            => 'page-' . $page,
