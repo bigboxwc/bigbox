@@ -22,24 +22,22 @@ function bigbox_woocommerce_single_brand_thumbnail() {
 	// @codingStandardsIgnoreStart
 	global $WC_Brands;
 
+	$brand_atts = [
+		'post_id' => wc_get_product()->get_id(),
+		'height'  => '50px',
+	];
+
+	/**
+	 * Filters the arguments used to output a brand logo.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $atts Attributes used to output the brand logo.
+	 */
+	$brand_atts = apply_filters( 'bigbox_woocommerce_product_brand_atts', $brand_atts );
+
 	echo '<div class="woocommerce-product-brand">';
-
-	echo $WC_Brands->output_product_brand(
-		/**
-		 * Filters the arguments used to output a brand logo.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $atts Attributes used to output the brand logo.
-		 */
-		apply_filters(
-			'bigbox_woocommerce_product_brand_atts', [
-				'post_id' => wc_get_product()->get_id(),
-				'height'  => '50px',
-			]
-		)
-	);
-
+	echo $WC_Brands->output_product_brand( $brand_atts );
 	echo '</div>';
 	// @codingStandardsIgnoreEnd
 }

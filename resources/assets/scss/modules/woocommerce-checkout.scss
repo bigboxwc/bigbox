@@ -14,7 +14,7 @@ form.woocommerce-checkout {
 
 #place_order {
 
-	@include button--color(theme-color("success"));
+	@include button--color("success");
 	@include button--size-block();
 }
 
@@ -191,7 +191,7 @@ form.woocommerce-checkout {
 
 	[name="apply_coupon"] {
 
-		@include button--color(theme-color("success"));
+		@include button--color("success");
 		@include button--size-sm();
 		@include button--size-block();
 	}

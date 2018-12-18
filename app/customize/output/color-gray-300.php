@@ -31,6 +31,7 @@ return [
 	// Solid border-color.
 	[
 		'selectors'    => [
+			'hr',
 			'table',
 			'table tr',
 			'thead',

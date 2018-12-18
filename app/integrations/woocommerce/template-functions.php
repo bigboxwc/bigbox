@@ -91,20 +91,19 @@ function bigbox_woocommerce_widget_cart_is_hidden( $hidden ) {
  * @return array
  */
 function bigbox_woocommerce_js_settings( $settings ) {
+	/**
+	 * Filters the maximum number of products that can be added at one time.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param int $max The maximum number that can be used at one time.
+	 */
+	$global_max = apply_filters( 'bigbox_woocommerce_quantity_selector_max', 30 );
+
 	$settings['woocommerce']['products'] = [
 		'quantitySelector' => [
 			'zero'      => trim( 0 . ' ' . ( ! is_singular( 'product' ) ? esc_html__( '(remove)', 'bigbox' ) : null ) ),
-			/**
-			 * Filters the maximum number of products that can be added at one time.
-			 *
-			 * @since 1.0.0
-			 *
-			 * @param int $max The maximum number that can be used at one time.
-			 */
-			'globalMax' => apply_filters(
-				'bigbox_woocommerce_quantity_selector_max',
-				30
-			),
+			'globalMax' => $global_max,
 		],
 	];
 
@@ -124,6 +123,11 @@ function bigbox_woocommerce_js_settings( $settings ) {
  * @return bool
  */
 function bigbox_is_shop() {
+	$is_shop = (
+		( is_shop() || is_product_taxonomy() )
+		|| is_page_template( bigbox_woocommerce_dynamic_shop_page_template() )
+	);
+
 	/**
 	 * Filters a conditional to determine if the current page is a shop.
 	 *
@@ -131,13 +135,7 @@ function bigbox_is_shop() {
 	 *
 	 * @param bool $is_shop If the current page should be considered a shop.
 	 */
-	return apply_filters(
-		'bigbox_is_shop',
-		(
-			( is_shop() || is_product_taxonomy() )
-			|| is_page_template( bigbox_woocommerce_dynamic_shop_page_template() )
-		)
-	);
+	return apply_filters( 'bigbox_is_shop', $is_shop );
 }
 
 /**
@@ -263,27 +261,29 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 		<?php endif; ?>
 
 		<?php
-		/**
-		 * Filters if the product categories dropdown should be shown.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param bool $show Should the dropdown show?
-		 */
-		if ( ! empty( $more_categories ) && apply_filters( 'bigbox_woocommerce_after_output_product_categories_dropdown', true ) ) :
+			/**
+			 * Filters if the product categories dropdown should be shown.
+			 *
+			 * @since 1.0.0
+			 *
+			 * @param bool $show Should the dropdown show?
+			 */
+			$categories_dropdown = apply_filters( 'bigbox_woocommerce_after_output_product_categories_dropdown', true );
+
+		if ( ! empty( $more_categories ) && $categories_dropdown ) :
 			?>
-		<form id="product-category-selector" action="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" method="GET" class="product-category-more__selector">
-			<select name="product_cat">
-				<option><?php echo esc_html_e( 'More...', 'bigbox' ); ?></option>
+			<form id="product-category-selector" action="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" method="GET" class="product-category-more__selector">
+				<select name="product_cat">
+					<option><?php echo esc_html_e( 'More...', 'bigbox' ); ?></option>
 
 				<?php foreach ( $more_categories as $category ) : ?>
-				<option value="<?php echo esc_url( get_term_link( $category ) ); ?>"><?php echo esc_html( $category->name ); ?></option>
-				<?php endforeach; ?>
-			</select>
-		</form>
-		<?php endif; ?>
-	</div>
-</li>
+					<option value="<?php echo esc_url( get_term_link( $category ) ); ?>"><?php echo esc_html( $category->name ); ?></option>
+					<?php endforeach; ?>
+				</select>
+			</form>
+			<?php endif; ?>
+		</div>
+	</li>
 
 		<?php
 	}
@@ -326,10 +326,12 @@ function bigbox_woocommerce_template_loop_variations() {
 	if ( 'variable' !== $product->get_type() ) {
 		return;
 	}
+
+	$link = apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product );
 	?>
 
 <div class="product__has-variations product__meta">
-	<a href="<?php echo esc_url( apply_filters( 'woocommerce_loop_product_link', $product->get_permalink(), $product ) ); ?>" class="button button--pill">
+	<a href="<?php echo esc_url( $link ); ?>" class="button button--pill">
 		<?php esc_html_e( 'See More Options', 'bigbox' ); ?>
 	</a>
 </div>

@@ -50,7 +50,6 @@ class WooCommerce extends Integration implements Registerable, Service {
 		include_once $this->get_dir() . '/starter-content.php';
 		include_once $this->get_dir() . '/cart.php';
 		include_once $this->get_dir() . '/checkout.php';
-		include_once $this->get_dir() . '/account.php';
 		include_once $this->get_dir() . '/widgets.php';
 		include_once $this->get_dir() . '/emails.php';
 		include_once $this->get_dir() . '/nav-menus.php';
@@ -71,26 +70,27 @@ class WooCommerce extends Integration implements Registerable, Service {
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-slider' );
 
+		$wc_theme_support = [
+			'gallery_thumbnail_image_width' => 150,
+			'product_grid'                  => [
+				'default_columns' => 5,
+				'min_columns'     => 1,
+				'max_columns'     => 6,
+			],
+		];
+
+		/**
+		 * Filters WooCommerce theme support arguments.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $support The theme's specific settings.
+		 */
+		$wc_theme_support = apply_filters( 'bigbox_woocommerce_theme_support', $wc_theme_support );
+
 		add_theme_support(
 			'woocommerce',
-			/**
-			 * Filters WooCommerce theme support arguments.
-			 *
-			 * @since 1.0.0
-			 *
-			 * @param array $support The theme's specific settings.
-			 */
-			apply_filters(
-				'bigbox_woocommerce_theme_support',
-				[
-					'gallery_thumbnail_image_width' => 150,
-					'product_grid'                  => [
-						'default_columns' => 5,
-						'min_columns'     => 1,
-						'max_columns'     => 6,
-					],
-				]
-			)
+			$wc_theme_support
 		);
 	}
 }

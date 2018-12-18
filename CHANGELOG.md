@@ -1,3 +1,16 @@
+## [2.1.0] - 2018-12-18
+
+### New
+
+- WordPress 5.x compatibility.
+- Gutenberg 4.x compatibility.
+- WooCommerce 3.5.x compatibility.
+
+### Fix
+
+- Ensure button color is accurately reflected.
+- Coding standad updates.
+
 ## [2.0.0] - 2018-11-06
 
 ### Breaking

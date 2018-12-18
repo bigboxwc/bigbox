@@ -64,6 +64,8 @@ add_filter( 'page_template_hierarchy', 'bigbox_woocommerce_assign_page_templates
  * @return string
  */
 function bigbox_woocommerce_dynamic_shop_page_template() {
+	$path = bigbox_woocommerce_template_path() . 'archive-product-page.php';
+
 	/**
 	 * Filters the name (path) of the template name used for dynamic shop pages.
 	 *
@@ -71,10 +73,7 @@ function bigbox_woocommerce_dynamic_shop_page_template() {
 	 *
 	 * @param string $name The name (including path from theme root) of the template file.
 	 */
-	return apply_filters(
-		'bigbox_woocommerce_dynamic_shop_page_template',
-		bigbox_woocommerce_template_path() . 'archive-product-page.php'
-	);
+	return apply_filters( 'bigbox_woocommerce_dynamic_shop_page_template', $path );
 }
 
 /**
@@ -169,20 +168,17 @@ function bigbox_woocommerce_dynamic_shop_pages_create_sidebars() {
 			'after_title'   => '</h3>',
 		];
 
-		register_sidebar(
-			/**
-			 * Filters the argument used when registering sidebars for dynamic shop pages.
-			 *
-			 * @since 1.0.0
-			 *
-			 * @param array $args The arguments used in register_sidebar()
-			 */
-			apply_filters(
-				'bigbox_woocommerce_dynamic_shop_pages_widget_args',
-				$woocommerce_dynamic_shop_page_widget_args,
-				$page
-			)
-		);
+		/**
+		 * Filters the argument used when registering sidebars for dynamic shop pages.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $args The arguments used in register_sidebar()
+		 * @param int   $page The current page ID.
+		 */
+		$sidebar = apply_filters( 'bigbox_woocommerce_dynamic_shop_pages_widget_args', $woocommerce_dynamic_shop_page_widget_args, $page );
+
+		register_sidebar( $sidebar );
 	}
 }
 add_action( 'widgets_init', 'bigbox_woocommerce_dynamic_shop_pages_create_sidebars' );

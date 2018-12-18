@@ -77,7 +77,7 @@ export const transformInput = function( qty, variation = false ) {
 	selectEl.setAttribute( 'name', original.getAttribute( 'name' ) );
 
 	// Append options.
-	const options = getOptions().slice( min, ( parseInt( max ) + 1 ) );
+	const options = getOptions( max ).slice( min, ( parseInt( max ) + 1 ) );
 	options.forEach( ( option ) => selectEl.options.add( option ) );
 
 	// Set value now that options are present.

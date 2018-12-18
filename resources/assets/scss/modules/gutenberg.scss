@@ -14,6 +14,11 @@
 
 	@if ( $use-margins ) {
 
+		&.alignleft,
+		&.alignright {
+			margin-top: 0;
+		}
+
 		@include vertical-spacing("margin", "both", (
 			sm: 2,
 			lg: 3,
@@ -32,6 +37,13 @@
 		margin-right: auto;
 		text-align: center;
 	}
+
+	&.alignfull {
+
+		img {
+			border-radius: 0;
+		}
+	}
 }
 
 .wp-block-gallery {
@@ -40,7 +52,26 @@
 }
 
 .wp-block-separator {
-	max-width: 200px;
+
+	&:before {
+		display: none;
+	}
+
+	&,
+	&.is-style-dots {
+		display: block;
+		border: 0;
+		border-top: 2px solid gray("300");
+	}
+
+	&.is-style-wide {
+		max-width: 400px;
+	}
+
+	&.is-style-dots {
+		border-top-style: dashed;
+		max-width: 100px;
+	}
 }
 
 // [1] Allow .button--size-x classes to be used to
@@ -85,6 +116,8 @@
 	}
 
 	&.is-style-outline {
+
+		@import "./gutenberg-colors.scss";
 
 		.wp-block-button__link {
 			border-width: 2px;

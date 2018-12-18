@@ -31,8 +31,14 @@ $document.on( 'facetwp-loaded', () => {
 		wrapper.prepend( input );
 
 		// Better visual feedback (automatically check when clicked.)
-		wrapper.addEventListener( 'click', () => {
+		wrapper.addEventListener( 'click', ( e ) => {
+			// Don't toggle if already disabled.
 			if ( hasClass( wrapper, 'disabled' ) ) {
+				return;
+			}
+
+			// Don't toggle if clicking the "[+]" or "[-]".
+			if ( e.target.className === 'facetwp-expand' ) {
 				return;
 			}
 

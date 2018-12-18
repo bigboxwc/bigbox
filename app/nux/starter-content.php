@@ -47,6 +47,44 @@ add_action( 'after_setup_theme', 'bigbox_add_starter_content' );
  * @return array
  */
 function bigbox_get_starter_content() {
+	$starter_content = [
+		'posts'     => [
+			'home',
+			'blog',
+		],
+
+		// Default to a static front page and assign the front and posts pages.
+		'options'   => [
+			'show_on_front'  => 'page',
+			'page_on_front'  => '{{home}}',
+			'page_for_posts' => '{{blog}}',
+		],
+
+		// Set up nav menus for each of the two areas registered in the theme.
+		'nav_menus' => [
+			'primary'   => [
+				'name'  => 'Primary',
+				'items' => [
+					'home' => [
+						'type'      => 'post_type',
+						'object'    => 'page',
+						'object_id' => '{{home}}',
+					],
+				],
+			],
+			'secondary' => [
+				'name'  => 'secondary',
+				'items' => [
+					'blog' => [
+						'type'      => 'post_type',
+						'object'    => 'page',
+						'object_id' => '{{blog}}',
+					],
+				],
+			],
+		],
+	];
+
 	/**
 	 * Filters starter content used for fresh installs.
 	 *
@@ -54,44 +92,5 @@ function bigbox_get_starter_content() {
 	 *
 	 * @param array $content The base content that does not plugins.
 	 */
-	return apply_filters(
-		'bigbox_get_starter_content',
-		[
-			'posts'     => [
-				'home',
-				'blog',
-			],
-
-			// Default to a static front page and assign the front and posts pages.
-			'options'   => [
-				'show_on_front'  => 'page',
-				'page_on_front'  => '{{home}}',
-				'page_for_posts' => '{{blog}}',
-			],
-
-			// Set up nav menus for each of the two areas registered in the theme.
-			'nav_menus' => [
-				'primary'   => [
-					'name'  => 'Primary',
-					'items' => [
-						'home' => [
-							'type'      => 'post_type',
-							'object'    => 'page',
-							'object_id' => '{{home}}',
-						],
-					],
-				],
-				'secondary' => [
-					'name'  => 'secondary',
-					'items' => [
-						'blog' => [
-							'type'      => 'post_type',
-							'object'    => 'page',
-							'object_id' => '{{blog}}',
-						],
-					],
-				],
-			],
-		]
-	);
+	return apply_filters( 'bigbox_get_starter_content', $starter_content );
 }
