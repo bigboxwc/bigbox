@@ -66,7 +66,7 @@ function bigbox_customize_get_button_selectors() {
 function bigbox_customize_get_button_success_selectors() {
 	return [
 		'.button--color-success',
-		'.checkout-button',
+		'.button.checkout-button',
 		'#place_order',
 		'.single_add_to_cart_button',
 		'.woocommerce-form-coupon [name="apply_coupon"]',

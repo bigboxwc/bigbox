@@ -85,7 +85,7 @@
 
 	@include button--size-sm();
 	@include button--size-block();
-	@include button--color(theme-color("success"));
+	@include button--color("success");
 }
 
 .single_variation_wrap {

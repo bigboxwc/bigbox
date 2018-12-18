@@ -12,7 +12,7 @@
 
 		@include button();
 		@include button--size-xs();
-		@include button--color(theme-color("success"));
+		@include button--color("success");
 	}
 }
 
