@@ -71,17 +71,23 @@ class WooCommerce extends Integration implements Registerable, Service {
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-slider' );
 
-		$wc_theme_support = apply_filters(
-			'bigbox_woocommerce_theme_support',
-			[
-				'gallery_thumbnail_image_width' => 150,
-				'product_grid'                  => [
-					'default_columns' => 5,
-					'min_columns'     => 1,
-					'max_columns'     => 6,
-				],
-			]
-		);
+		$wc_theme_support = [
+			'gallery_thumbnail_image_width' => 150,
+			'product_grid'                  => [
+				'default_columns' => 5,
+				'min_columns'     => 1,
+				'max_columns'     => 6,
+			],
+		];
+
+		/**
+		 * Filters WooCommerce theme support arguments.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $support The theme's specific settings.
+		 */
+		$wc_theme_support = apply_filters( 'bigbox_woocommerce_theme_support', $wc_theme_support );
 
 		add_theme_support(
 			'woocommerce',

@@ -92,8 +92,5 @@ function bigbox_get_starter_content() {
 	 *
 	 * @param array $content The base content that does not plugins.
 	 */
-	return apply_filters(
-		'bigbox_get_starter_content',
-		$starter_content
-	);
+	return apply_filters( 'bigbox_get_starter_content', $starter_content );
 }

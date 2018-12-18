@@ -54,8 +54,5 @@ function bigbox_get_php_notice_text() {
 	 *
 	 * @param string $text Text to display.
 	 */
-	return apply_filters(
-		'bigbox_php_notice_text',
-		$notice_text
-	);
+	return apply_filters( 'bigbox_php_notice_text', $notice_text );
 }

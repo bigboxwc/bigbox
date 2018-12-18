@@ -98,10 +98,7 @@ function bigbox_woocommerce_js_settings( $settings ) {
 	 *
 	 * @param int $max The maximum number that can be used at one time.
 	 */
-	$global_max = apply_filters(
-		'bigbox_woocommerce_quantity_selector_max',
-		30
-	);
+	$global_max = apply_filters( 'bigbox_woocommerce_quantity_selector_max', 30 );
 
 	$settings['woocommerce']['products'] = [
 		'quantitySelector' => [
@@ -138,10 +135,7 @@ function bigbox_is_shop() {
 	 *
 	 * @param bool $is_shop If the current page should be considered a shop.
 	 */
-	return apply_filters(
-		'bigbox_is_shop',
-		$is_shop
-	);
+	return apply_filters( 'bigbox_is_shop', $is_shop );
 }
 
 /**
@@ -276,13 +270,13 @@ function bigbox_woocommerce_after_output_product_categories( $output ) {
 			 */
 			$categories_dropdown = apply_filters( 'bigbox_woocommerce_after_output_product_categories_dropdown', true );
 
-			if ( ! empty( $more_categories ) && $categories_dropdown ) :
+		if ( ! empty( $more_categories ) && $categories_dropdown ) :
 			?>
 			<form id="product-category-selector" action="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" method="GET" class="product-category-more__selector">
 				<select name="product_cat">
 					<option><?php echo esc_html_e( 'More...', 'bigbox' ); ?></option>
 
-					<?php foreach ( $more_categories as $category ) : ?>
+				<?php foreach ( $more_categories as $category ) : ?>
 					<option value="<?php echo esc_url( get_term_link( $category ) ); ?>"><?php echo esc_html( $category->name ); ?></option>
 					<?php endforeach; ?>
 				</select>
