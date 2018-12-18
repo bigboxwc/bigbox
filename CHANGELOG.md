@@ -2,6 +2,8 @@
 
 ### New
 
+- WordPress 5.x compatibility.
+- Gutenberg 4.x compatibility.
 - WooCommerce 3.5.x compatibility.
 
 ### Fix
