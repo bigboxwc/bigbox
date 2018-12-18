@@ -71,13 +71,13 @@
 }
 
 @mixin button--pill {
-	color: gray("600");
+	color: gray("600") !important;
 	font-size: $font-size-xs;
 	line-height: 1;
-	background: gray("100");
+	background: gray("100") !important;
 	padding: 5px 5px 4px;
 	display: inline-block;
-	border: 1px solid gray("300");
+	border: 1px solid gray("300") !important;
 
 	@include border-radius();
 

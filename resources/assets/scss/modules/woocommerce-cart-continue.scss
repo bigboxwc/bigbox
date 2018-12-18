@@ -94,8 +94,7 @@
 	padding: 0 $spacer $spacer;
 }
 
-// Have to beat some specificity here.
-.button.checkout-button.wc-forward {
+.checkout-button {
 
 	@include button--size-sm();
 	@include button--size-block();

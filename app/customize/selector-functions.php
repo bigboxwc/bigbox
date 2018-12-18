@@ -40,8 +40,8 @@ function bigbox_customize_add_state_to_selectors( $selectors, $state ) {
  */
 function bigbox_customize_get_button_selectors() {
 	return [
-		'.button:not(.button--text):not(.button--pill)',
-		'button:not(.button--text):not(.button--pill)',
+		'.button',
+		'button',
 		'.widget_layered_nav_filters a',
 		'.woocommerce-notice-list__item .woocommerce-Button',
 		'.woocommerce-notice-list__item .wc-forward',
@@ -65,11 +65,11 @@ function bigbox_customize_get_button_selectors() {
 function bigbox_customize_get_button_success_selectors() {
 	return [
 		'.button--color-success',
-		'.button.checkout-button',
+		'.checkout-button',
 		'#place_order',
-		'button.button.single_add_to_cart_button.alt',
+		'.single_add_to_cart_button',
+		'.woocommerce-Button.button',
 		'.woocommerce-form-coupon [name="apply_coupon"]',
-		'.woocommerce-notice-list__item .woocommerce-Button',
 		'.woocommerce-notice-list__item .wc-forward',
 	];
 }
