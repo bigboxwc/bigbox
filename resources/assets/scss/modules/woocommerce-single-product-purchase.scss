@@ -81,7 +81,8 @@
 	font-size: $font-size-sm;
 }
 
-.single_add_to_cart_button {
+// Have to kill specificity again.
+button.button.single_add_to_cart_button.alt {
 
 	@include button--size-sm();
 	@include button--size-block();
