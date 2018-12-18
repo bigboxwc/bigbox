@@ -40,7 +40,19 @@
 }
 
 .wp-block-separator {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 2px solid gray("300");
 	max-width: 200px;
+
+	&.is-style-wide {
+		max-width: 500px;
+	}
+
+	&.is-style-dots {
+		border-top-style: dashed;
+	}
 }
 
 // [1] Allow .button--size-x classes to be used to
