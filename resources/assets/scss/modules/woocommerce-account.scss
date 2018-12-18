@@ -102,7 +102,7 @@
 
 		&.cancel {
 
-			@include button--color(theme-color("danger"));
+			@include button--color("danger");
 		}
 	}
 }
@@ -111,10 +111,15 @@
 	display: flex;
 	align-items: center;
 
+	h3 {
+		margin: 0;
+	}
+
 	.edit {
 		margin-left: $spacer;
 
 		@include button();
+		@include button--color("primary");
 		@include button--size-xs();
 	}
 }
