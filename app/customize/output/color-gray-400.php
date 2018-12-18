@@ -19,6 +19,13 @@ return [
 	// Solid border-color.
 	[
 		'selectors'    => [
+			'textarea:focus',
+			'[type="email"]:focus',
+			'[type="search"]:focus',
+			'[type="tel"]:focus',
+			'[type="url"]:focus',
+			'[type="password"]:focus',
+			'[type="text"]:focus',
 			'.wc_payment_method [type="radio"] label:before',
 			'ul.brands_index li a',
 			'ul.brands_index li span',
