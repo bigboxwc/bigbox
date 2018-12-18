@@ -21,6 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function bigbox_enqueue_styles() {
 	$version    = bigbox_get_theme_version();
 	$stylesheet = bigbox_get_theme_name();
+	$deps       = [];
 
 	// Load Google fonts if needed.
 	$google = bigbox_get_google_fonts_url();
@@ -32,13 +33,15 @@ function bigbox_enqueue_styles() {
 			[],
 			$version
 		);
+
+		$deps[] = $stylesheet . '-fonts';
 	}
 
 	// Base and dynamic styles.
 	wp_enqueue_style(
 		$stylesheet,
 		get_template_directory_uri() . '/public/css/app.min.css',
-		[],
+		$deps,
 		$version
 	);
 	wp_style_add_data( $stylesheet, 'rtl', 'replace' );
@@ -50,7 +53,9 @@ function bigbox_enqueue_styles() {
 	 *
 	 * @param bool
 	 */
-	if ( apply_filters( 'bigbox_customize_css_inline', true ) ) {
+	$inline_css = apply_filters( 'bigbox_customize_css_inline', true );
+
+	if ( $inline_css ) {
 		wp_add_inline_style(
 			$stylesheet,
 			bigbox_customize_inline_css()
@@ -86,17 +91,19 @@ function bigbox_enqueue_scripts() {
 		'backgroundColor' => sanitize_hex_color( maybe_hash_hex_color( get_background_color() ) ),
 	];
 
+	/**
+	 * Filter the data sent to the main Javascript script.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $js JS object additions.
+	 */
+	$js_data = apply_filters( 'bigbox_js', $js_data );
+
 	wp_localize_script(
 		$stylesheet,
 		'bigbox',
-		/**
-		 * Filter the data sent to the main Javascript script.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $js JS object additions.
-		 */
-		apply_filters( 'bigbox_js', $js_data )
+		$js_data
 	);
 }
 add_action( 'wp_enqueue_scripts', 'bigbox_enqueue_scripts', 20 );

@@ -44,6 +44,9 @@ function bigbox_php_admin_notices() {
  * @return string
  */
 function bigbox_get_php_notice_text() {
+	/* translators: %s Minimum PHP version required for theme to run. */
+	$notice_text = sprintf( __( 'BigBox requires PHP version %s or above to be active. Please contact your web host to upgrade.', 'bigbox' ), esc_attr( BIGBOX_PHP_VERSION ) );
+
 	/**
 	 * Filter text shown when current PHP version does not meet requirements.
 	 *
@@ -53,7 +56,6 @@ function bigbox_get_php_notice_text() {
 	 */
 	return apply_filters(
 		'bigbox_php_notice_text',
-		/* translators: %s Minimum PHP version required for theme to run. */
-		sprintf( __( 'BigBox requires PHP version %s or above to be active. Please contact your web host to upgrade.', 'bigbox' ), esc_attr( BIGBOX_PHP_VERSION ) )
+		$notice_text
 	);
 }
