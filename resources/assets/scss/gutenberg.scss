@@ -45,3 +45,21 @@ $use-margins: false;
 .wp-block-table__cell-content {
 	padding: 0;
 }
+
+.wp-block-button {
+
+	.wp-block-button__link[data-is-placeholder-visible=true] {
+		position: absolute;
+	}
+
+	&:not(.is-style-squared) {
+
+		.wp-block-button__link {
+
+			&,
+			&:after {
+				border-radius: $border-radius;
+			}
+		}
+	}
+}

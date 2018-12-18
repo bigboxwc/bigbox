@@ -98,6 +98,8 @@
 
 	&.is-style-outline {
 
+		@import "./gutenberg-colors.scss";
+
 		.wp-block-button__link {
 			border-width: 2px;
 			border-style: solid;
