@@ -14,6 +14,11 @@
 
 	@if ( $use-margins ) {
 
+		&.alignleft,
+		&.alignright {
+			margin-top: 0;
+		}
+
 		@include vertical-spacing("margin", "both", (
 			sm: 2,
 			lg: 3,
@@ -32,6 +37,13 @@
 		margin-right: auto;
 		text-align: center;
 	}
+
+	&.alignfull {
+
+		img {
+			border-radius: 0;
+		}
+	}
 }
 
 .wp-block-gallery {
@@ -40,18 +52,25 @@
 }
 
 .wp-block-separator {
-	display: block;
-	height: 1px;
-	border: 0;
-	border-top: 2px solid gray("300");
-	max-width: 200px;
+
+	&:before {
+		display: none;
+	}
+
+	&,
+	&.is-style-dots {
+		display: block;
+		border: 0;
+		border-top: 2px solid gray("300");
+	}
 
 	&.is-style-wide {
-		max-width: 500px;
+		max-width: 400px;
 	}
 
 	&.is-style-dots {
 		border-top-style: dashed;
+		max-width: 100px;
 	}
 }
 
