@@ -39,7 +39,6 @@ while ( have_posts() ) :
 
 	<?php
 	the_content();
-
 endwhile;
 
 /**
