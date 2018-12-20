@@ -53,6 +53,11 @@
 			}
 		]
 	},
+	"eslintConfig": {
+		"extends": [
+			"plugin:@wordpress/eslint-plugin/recommended"
+		]
+	},
 	"scripts": {
 		"build": "cross-env NODE_ENV=production webpack",
 		"check-npm-licenses": "./bin/wp-bin/bin/check-npm-licenses.sh; exit 0",

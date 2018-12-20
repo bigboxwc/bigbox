@@ -1,4 +1,4 @@
-/* global $, bigbox, URLSearchParams, FormData */
+/* global $, wp, URLSearchParams, FormData */
 
 /**
  * External dependencies.

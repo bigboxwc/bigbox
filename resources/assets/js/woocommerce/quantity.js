@@ -1,4 +1,4 @@
-/* global bigbox */
+/* global bigbox, _ */
 
 const { globalMax } = bigbox.woocommerce.products.quantitySelector;
 

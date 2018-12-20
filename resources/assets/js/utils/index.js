@@ -32,7 +32,9 @@ export const isHidden = ( el ) => {
  * @return {boolean} If the DOM element is visible.
  */
 export const findAncestor = ( el, className ) => {
-	while ( ( el = el.parentElement ) && ! hasClass( el, className ) );
+	while ( ( el = el.parentElement ) && ! hasClass( el, className ) ) {
+
+	}
 
 	return el;
 };
