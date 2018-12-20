@@ -35,9 +35,8 @@ add_filter( 'bigbox_navbar_search', 'bigbox_woocommerce_navbar_search' );
  * File: archive-product.php.
  */
 
-// Move sidebar before content for better tab order.
-remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar' );
-add_action( 'woocommerce_before_main_content', 'woocommerce_get_sidebar', 0 );
+// Remove sidebar on single product pages.
+add_action( 'wp', 'bigbox_woocommerce_template_sidebars' );
 
 // Replace outer content wrapper.
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper' );
@@ -103,9 +102,6 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_templa
 /**
  * File: content-single-product.php.
  */
-
-// Remove sidebar on single product pages.
-add_action( 'wp', 'bigbox_woocommerce_template_tertiary' );
 
 // Filter product tabs.
 add_filter( 'woocommerce_product_tabs', 'bigbox_woocommerce_product_tabs', 20 );

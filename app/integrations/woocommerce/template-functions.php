@@ -364,16 +364,19 @@ function bigbox_woocommerce_template_loop_stock() {
 };
 
 /**
- * Remove tertiary sidebar on inner pages.
+ * Manage sidebar locations and outputs.
  *
  * @since 1.0.0
  */
-function bigbox_woocommerce_template_tertiary() {
-	// Remove (filters) sidebar on single products.
-	if ( is_singular( 'product' ) ) {
-		remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar' );
-		// Add (tertiary) sidebar on archives.
-	} else {
+function bigbox_woocommerce_template_sidebars() {
+	// Remove default output.
+	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar' );
+
+	if ( ! is_singular( 'product' ) ) {
+		// Add sidebar before main column.
+		add_action( 'woocommerce_before_main_content', 'woocommerce_get_sidebar', 0 );
+
+		// Output tertiary sidebar.
 		add_action(
 			'woocommerce_sidebar',
 			function() {
