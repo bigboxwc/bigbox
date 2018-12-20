@@ -27,13 +27,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 class WooCommerce_Brands extends Integration implements Registerable, Service {
 
 	/**
+	 * Additional functional files.
+	 *
+	 * @var array $helper_files
+	 * @since 2.2.0
+	 */
+	protected $helper_files = [
+		'template-hooks',
+		'template-functions',
+	];
+
+	/**
 	 * Connect to WordPress.
 	 *
 	 * @since 1.0.0
 	 */
-	public function register() {
-		include_once $this->get_dir() . '/template-hooks.php';
-		include_once $this->get_dir() . '/template-functions.php';
-	}
+	public function register() {}
 
 }

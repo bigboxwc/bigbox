@@ -98,10 +98,6 @@ function bigbox_get_google_font_family_string() {
  * @return mixed URL if needed. False otherwise.
  */
 function bigbox_get_google_fonts_url() {
-	if ( ! bigbox_has_google_fonts() ) {
-		return false;
-	}
-
 	$family_string = bigbox_get_google_font_family_string();
 
 	if ( ! $family_string ) {

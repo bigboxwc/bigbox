@@ -27,6 +27,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 class WooCommerce_Bookings extends Integration implements Registerable, Service {
 
 	/**
+	 * Additional functional files.
+	 *
+	 * @var array $helper_files
+	 * @since 2.2.0
+	 */
+	protected $helper_files = [
+		'template-hooks',
+		'template-functions',
+	];
+
+	/**
 	 * Additional inline CSS configuration items.
 	 *
 	 * @var array $inline_css_configs
@@ -47,9 +58,6 @@ class WooCommerce_Bookings extends Integration implements Registerable, Service 
 	 */
 	public function register() {
 		add_filter( 'bigbox_customize_inline_css_configs', [ $this, 'inline_css_configs' ] );
-
-		include_once $this->get_dir() . '/template-hooks.php';
-		include_once $this->get_dir() . '/template-functions.php';
 	}
 
 }
