@@ -57,6 +57,8 @@ class WooCommerce_Bookings extends Integration implements Registerable, Service 
 	 * @since 1.16.0
 	 */
 	public function register() {
+		$this->load_helper_files();
+
 		add_filter( 'bigbox_customize_inline_css_configs', [ $this, 'inline_css_configs' ] );
 	}
 

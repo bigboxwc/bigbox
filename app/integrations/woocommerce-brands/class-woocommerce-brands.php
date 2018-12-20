@@ -42,6 +42,8 @@ class WooCommerce_Brands extends Integration implements Registerable, Service {
 	 *
 	 * @since 1.0.0
 	 */
-	public function register() {}
+	public function register() {
+		$this->load_helper_files();
+	}
 
 }

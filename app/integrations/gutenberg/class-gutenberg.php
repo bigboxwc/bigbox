@@ -42,6 +42,8 @@ class Gutenberg extends Integration implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function register() {
+		$this->load_helper_files();
+
 		add_filter( 'bigbox_customize_inline_css_configs', [ $this, 'inline_css_configs' ] );
 		add_action( 'after_setup_theme', [ $this, 'add_theme_support' ] );
 		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_assets' ] );

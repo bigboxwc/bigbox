@@ -55,6 +55,8 @@ class FacetWP extends Integration implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function register() {
+		$this->load_helper_files();
+
 		add_filter( 'bigbox_customize_inline_css_configs', [ $this, 'inline_css_configs' ] );
 	}
 

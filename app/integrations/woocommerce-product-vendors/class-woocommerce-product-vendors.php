@@ -42,6 +42,8 @@ class WooCommerce_Product_Vendors extends Integration implements Registerable, S
 	 *
 	 * @since 1.0.0
 	 */
-	public function register() {}
+	public function register() {
+		$this->load_helper_files();
+	}
 
 }
