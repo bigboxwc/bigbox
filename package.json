@@ -70,10 +70,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/bigboxwc/bigbox-theme/"
+		"url": "https://github.com/bigboxwc/bigbox/"
 	},
 	"bugs": {
-		"url": "https://github.com/bigboxwc/bigbox-theme/issues"
+		"url": "https://github.com/bigboxwc/bigbox/issues"
 	},
 	"homepage": "https://bigboxwc.com"
 }
