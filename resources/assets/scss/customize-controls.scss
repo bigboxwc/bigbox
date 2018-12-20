@@ -53,7 +53,7 @@ $border:  1px solid #ccc;
 		top: 50%;
 	}
 
-	&:before {
+	&::before {
 		width: 10px;
 		height: 10px;
 		left: -15px;

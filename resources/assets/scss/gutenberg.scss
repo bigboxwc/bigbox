@@ -57,7 +57,7 @@ $use-margins: false;
 		.wp-block-button__link {
 
 			&,
-			&:after {
+			&::after {
 				border-radius: $border-radius;
 			}
 		}

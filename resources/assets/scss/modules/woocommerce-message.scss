@@ -60,9 +60,9 @@
 	> * {
 
 		// Fake space between inline elements collapsed from flexbox.
-		&:before,
-		&:after {
-			content: '\00a0';
+		&::before,
+		&::after {
+			content: "\00a0";
 		}
 	}
 }
