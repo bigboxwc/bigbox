@@ -35,6 +35,10 @@ add_filter( 'bigbox_navbar_search', 'bigbox_woocommerce_navbar_search' );
  * File: archive-product.php.
  */
 
+// Move sidebar before content for better tab order.
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar' );
+add_action( 'woocommerce_before_main_content', 'woocommerce_get_sidebar', 0 );
+
 // Replace outer content wrapper.
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper' );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end' );

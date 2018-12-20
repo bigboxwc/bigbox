@@ -29,6 +29,8 @@ endif;
 ?>
 
 <div id="secondary" class="site-secondary shop-filters" role="complementary">
+	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to results', 'bigbox' ); ?></a>
+
 	<div class="offcanvas-drawer__content">
 		<?php echo $sidebar; // WPCS: XSS okay. ?>
 	</div>

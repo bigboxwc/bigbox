@@ -37,9 +37,9 @@ while ( have_posts() ) :
 	<h1 class="woocommerce-products-header__title page-title"><?php the_title(); ?></h1>
 </header>
 
-	<?php the_content(); ?>
-
 	<?php
+	the_content();
+
 endwhile;
 
 /**
