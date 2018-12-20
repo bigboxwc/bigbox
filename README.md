@@ -7,7 +7,7 @@ Easily manage and scale WooCommerce product catalogs.
 ## Install
 
 ```
-$ git clone git@github.com:bigboxwc/bigbox-theme bigbox && cd bigbox
+$ git clone git@github.com:bigboxwc/bigbox bigbox && cd bigbox
 $ npm run setup-theme
 ```
 
