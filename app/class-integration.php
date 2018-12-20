@@ -125,6 +125,9 @@ abstract class Integration {
 	 * Load inline CSS if any output controls are defined.
 	 *
 	 * @since 1.16.0
+	 *
+	 * @param array $configs Output configurations.
+	 * @return array $configs Output configurations with additional integration configurations.
 	 */
 	public function inline_css_configs( $configs ) {
 		if ( empty( $this->inline_css_configs ) ) {

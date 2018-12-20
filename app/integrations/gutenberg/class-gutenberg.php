@@ -161,7 +161,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 
 		$config = [];
 
-		// Base
+		// Base.
 		$config[] = [
 			'selectors'    => [
 				'body',

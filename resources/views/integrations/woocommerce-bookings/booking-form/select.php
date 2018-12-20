@@ -14,10 +14,12 @@
  * @author  Automattic
  * @version 1.8.0
  * @since   1.0.0
+ *
+ * @package BigBox
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 
 $class   = $field['class'];
