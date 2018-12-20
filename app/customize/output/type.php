@@ -54,10 +54,14 @@ $base = [
 	],
 	'declarations' => [
 		'font-weight' => esc_attr( $weight_base ),
-		'font-family' => sprintf( '"%1$s", %2$s', esc_attr( $family ), esc_attr( $fallback ) ),
 		'font-size'   => esc_attr( "{$size}em" ),
 	],
 ];
+
+// Only add family if not using system default.
+if ( 'default' !== $family ) {
+	$base['declarations']['font-family'] = sprintf( '"%1$s", %2$s', esc_attr( $family ), esc_attr( $fallback ) );
+}
 
 return [
 	$base,
