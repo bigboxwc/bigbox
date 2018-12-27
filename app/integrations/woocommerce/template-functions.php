@@ -1,6 +1,6 @@
 <?php
 /**
- * WooCommerce template functions.
+ * WooCommerce template functions (callbacks for actions).
  *
  * @since 1.0.0
  *
@@ -27,17 +27,6 @@ function bigbox_woocommerce_enqueue_styles( $styles ) {
 	unset( $styles['woocommerce-smallscreen'] );
 
 	return $styles;
-}
-
-/**
- * Look in the integration for templates.
- *
- * @since 1.0.0
- *
- * @return string
- */
-function bigbox_woocommerce_template_path() {
-	return 'resources/views/integrations/woocommerce/';
 }
 
 /**
@@ -108,54 +97,6 @@ function bigbox_woocommerce_js_settings( $settings ) {
 	];
 
 	return $settings;
-}
-
-/**
- * Determine if we are on a shop page.
- *
- * By default this checks for:
- *
- * - WooCommerce shop page.
- * - Dynamic shop page template.
- *
- * @since 1.0.0
- *
- * @return bool
- */
-function bigbox_is_shop() {
-	$is_shop = (
-		( is_shop() || is_product_taxonomy() )
-		|| is_page_template( bigbox_woocommerce_dynamic_shop_page_template() )
-	);
-
-	/**
-	 * Filters a conditional to determine if the current page is a shop.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param bool $is_shop If the current page should be considered a shop.
-	 */
-	return apply_filters( 'bigbox_is_shop', $is_shop );
-}
-
-/**
- * Determine if a WooCommerce thumbnail should display.
- *
- * @since 1.0.0
- *
- * @param WC_Product $product WooCommerce product. Attempts to find global if null.
- * @return mixed String of HTML for an image or null.
- */
-function bigbox_woocommerce_has_product_image( $product = null ) {
-	if ( ! $product ) {
-		$product = wc_get_product( get_the_ID() );
-	}
-
-	if ( ! get_theme_mod( 'display-image-placeholders', true ) ) {
-		return '' !== $product->get_image_id();
-	}
-
-	return '' !== $product->get_image();
 }
 
 /**
@@ -364,16 +305,19 @@ function bigbox_woocommerce_template_loop_stock() {
 };
 
 /**
- * Remove tertiary sidebar on inner pages.
+ * Manage sidebar locations and outputs.
  *
  * @since 1.0.0
  */
-function bigbox_woocommerce_template_tertiary() {
-	// Remove (filters) sidebar on single products.
-	if ( is_singular( 'product' ) ) {
-		remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar' );
-		// Add (tertiary) sidebar on archives.
-	} else {
+function bigbox_woocommerce_template_sidebars() {
+	// Remove default output.
+	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar' );
+
+	if ( ! is_singular( 'product' ) ) {
+		// Add sidebar before main column.
+		add_action( 'woocommerce_before_main_content', 'woocommerce_get_sidebar', 0 );
+
+		// Output tertiary sidebar.
 		add_action(
 			'woocommerce_sidebar',
 			function() {

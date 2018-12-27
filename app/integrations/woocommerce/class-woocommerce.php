@@ -27,6 +27,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 class WooCommerce extends Integration implements Registerable, Service {
 
 	/**
+	 * Additional functional files.
+	 *
+	 * @var array $helper_files
+	 * @since 2.2.0
+	 */
+	protected $helper_files = [
+		'wc-template-functions',
+		'starter-content',
+		'cart',
+		'checkout',
+		'widgets',
+		'emails',
+		'nav-menus',
+		'page-templates',
+		'template-tags',
+		'template-functions',
+		'template-hooks',
+	];
+
+	/**
 	 * Additional inline CSS configuration items.
 	 *
 	 * @var array $inline_css_configs
@@ -42,22 +62,10 @@ class WooCommerce extends Integration implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function register() {
+		$this->load_helper_files();
+
 		add_filter( 'bigbox_customize_inline_css_configs', [ $this, 'inline_css_configs' ] );
 		add_action( 'after_setup_theme', [ $this, 'add_theme_support' ] );
-
-		include_once $this->get_dir() . '/wc-template-functions.php';
-
-		include_once $this->get_dir() . '/starter-content.php';
-		include_once $this->get_dir() . '/cart.php';
-		include_once $this->get_dir() . '/checkout.php';
-		include_once $this->get_dir() . '/widgets.php';
-		include_once $this->get_dir() . '/emails.php';
-		include_once $this->get_dir() . '/nav-menus.php';
-		include_once $this->get_dir() . '/page-templates.php';
-		include_once $this->get_dir() . '/customize.php';
-
-		include_once $this->get_dir() . '/template-functions.php';
-		include_once $this->get_dir() . '/template-hooks.php';
 	}
 
 	/**

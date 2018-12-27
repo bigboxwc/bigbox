@@ -1,3 +1,5 @@
+/* global _ */
+
 /**
  * External dependencies.
  */

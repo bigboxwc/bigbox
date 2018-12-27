@@ -1,4 +1,4 @@
-/* global wp, BigBoxLicenseManager, Backbone */
+/* global BigBoxLicenseManager */
 
 /**
  * Internal dependencies.

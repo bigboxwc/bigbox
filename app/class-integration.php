@@ -57,6 +57,14 @@ abstract class Integration {
 	protected $dependencies;
 
 	/**
+	 * Additional functional files.
+	 *
+	 * @var array $helper_files
+	 * @since 2.2.0
+	 */
+	protected $helper_files = [];
+
+	/**
 	 * Additional inline CSS configuration items.
 	 *
 	 * @var array $inline_css_configs
@@ -77,6 +85,17 @@ abstract class Integration {
 		$this->dependencies = $dependencies;
 		$this->local_path   = trailingslashit( '/app/integrations' ) . $slug;
 		$this->dir          = get_template_directory() . $this->get_local_path();
+	}
+
+	/**
+	 * Load defined helper files.
+	 *
+	 * @since 2.2.0
+	 */
+	function load_helper_files() {
+		foreach ( $this->helper_files as $name ) {
+			include_once trailingslashit( $this->get_dir() ) . $name . '.php';
+		}
 	}
 
 	/**
@@ -125,6 +144,9 @@ abstract class Integration {
 	 * Load inline CSS if any output controls are defined.
 	 *
 	 * @since 1.16.0
+	 *
+	 * @param array $configs Output configurations.
+	 * @return array $configs Output configurations with additional integration configurations.
 	 */
 	public function inline_css_configs( $configs ) {
 		if ( empty( $this->inline_css_configs ) ) {

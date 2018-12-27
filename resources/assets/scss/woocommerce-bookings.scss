@@ -1,3 +1,5 @@
+/* stylelint-disable */
+
 //
 // Global Config.
 //
@@ -11,7 +13,7 @@
 	font-size: $font-size-base;
 	border: 0;
 	padding: 0;
-	
+
 	// Attributes.
 	.form-field {
 		line-height: 1;
@@ -133,7 +135,7 @@
 				background: none;
 			}
 
-			&:before {
+			&::before {
 				color: gray("700");
 				position: absolute;
 				top: 10px;
@@ -148,8 +150,8 @@
 
 		.ui-datepicker-next {
 
-			&:before {
-				content: '\0025B8';
+			&::before {
+				content: "\0025B8";
 			}
 
 			&,
@@ -160,8 +162,8 @@
 
 		.ui-datepicker-prev {
 
-			&:before {
-				content: '\0025B8';
+			&::before {
+				content: "\0025B8";
 				transform: rotate(180deg);
 				top: 11px;
 			}
@@ -176,7 +178,7 @@
 			opacity: 0.35;
 		}
 
-		.ui-state-disabled, 
+		.ui-state-disabled,
 		.ui-widget-content .ui-state-disabled {
 			opacity: 0.25;
 		}
@@ -248,14 +250,14 @@
 			}
 		}
 
-		.ui-datepicker td.fully_booked a, 
+		.ui-datepicker td.fully_booked a,
 		.ui-datepicker td.fully_booked span {
 			background-color: theme-color("warning") !important;
 		}
 
 		.ui-datepicker td.partial_booked a {
 
-			&:before {
+			&::before {
 				border-top-color: theme-color("warning");
 			}
 		}

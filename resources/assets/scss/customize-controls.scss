@@ -53,7 +53,7 @@ $border:  1px solid #ccc;
 		top: 50%;
 	}
 
-	&:before {
+	&::before {
 		width: 10px;
 		height: 10px;
 		left: -15px;
@@ -69,7 +69,6 @@ $border:  1px solid #ccc;
 	}
 
 	h3 {
-		line-height: 1.4em;
 		font-size: 14px;
 		margin-top: 0;
 	}
@@ -85,10 +84,10 @@ $border:  1px solid #ccc;
 
 	.close {
 		opacity: 0.5;
-		color: firebrick;
+		color: #b22222;
 	}
 
 	.next {
-		font-weight: bold;
+		font-weight: 500;
 	}
 }

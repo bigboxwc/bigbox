@@ -16,8 +16,8 @@
 		"install-codestandards": [
 			"Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
 		],
-		"lint": "vendor/bin/phpcs",
-		"lint:fix": "vendor/bin/phpcbf"
+		"lint": "vendor/bin/phpcs --standard=phpcs.xml.dist",
+		"lint:fix": "vendor/bin/phpcbf --standard=phpcs.xml.dist --report-summary --report-source"
 	},
 	"require": {
 		"a5hleyrich/wp-background-processing": "^1.0",

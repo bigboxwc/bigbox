@@ -1,4 +1,4 @@
-/* global wp, bigboxCustomizeControls, _ */
+/* global wp, bigboxCustomizeControls */
 
 /**
  * External dependencies.

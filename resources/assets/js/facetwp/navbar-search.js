@@ -1,4 +1,4 @@
-/* global FWP, _ */
+/* global FWP */
 
 /**
  * External dependencies.

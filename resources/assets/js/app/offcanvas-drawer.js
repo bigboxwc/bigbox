@@ -25,6 +25,10 @@ const targetSourceSwap = ( toggle ) => {
 	const sourceEl = document.querySelector( `${ source } .offcanvas-drawer__content` );
 	const targetEl = document.querySelector( `${ target } .offcanvas-drawer__content` );
 
+	if ( ! sourceEl || ! targetEl ) {
+		return;
+	}
+
 	const targetClose = document.querySelector( `${ target } .offcanvas-drawer__close` );
 	const sourceClose = document.querySelector( `${ source } .offcanvas-drawer__close` );
 

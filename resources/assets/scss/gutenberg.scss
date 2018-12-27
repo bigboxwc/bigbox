@@ -48,7 +48,7 @@ $use-margins: false;
 
 .wp-block-button {
 
-	.wp-block-button__link[data-is-placeholder-visible=true] {
+	.wp-block-button__link[data-is-placeholder-visible="true"] {
 		position: absolute;
 	}
 
@@ -57,7 +57,7 @@ $use-margins: false;
 		.wp-block-button__link {
 
 			&,
-			&:after {
+			&::after {
 				border-radius: $border-radius;
 			}
 		}

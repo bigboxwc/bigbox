@@ -30,6 +30,15 @@
 	}
 }
 
+ul.brands {
+
+	@include reset-list();
+
+	a {
+		text-decoration: none;
+	}
+}
+
 ul.brands_index,
 ul.brand-thumbnails {
 
@@ -62,15 +71,6 @@ ul.brands_index {
 			padding: 5px;
 			border: 1px solid gray("400");
 		}
-	}
-}
-
-ul.brands {
-
-	@include reset-list();
-
-	a {
-		text-decoration: none;
 	}
 }
 

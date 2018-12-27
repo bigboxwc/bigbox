@@ -5,7 +5,7 @@
 	border-bottom: 2px solid gray("200");
 
 	@include vertical-spacing("margin", "down", (
-		sm: 1,	
+		sm: 1,
 	) );
 
 	&:first-child {

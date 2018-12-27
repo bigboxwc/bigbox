@@ -14,6 +14,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Determine if the Google Font list is available.
+ *
+ * @since 2.2.0
+ *
+ * @return bool
+ */
+function bigbox_has_google_fonts() {
+	return file_exists( get_template_directory() . '/resources/data/google-fonts.json' );
+}
+
+/**
  * Get the chosen family.
  *
  * @since 1.0.0
@@ -21,7 +32,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return string
  */
 function bigbox_get_theme_font_family() {
-	$family = get_theme_mod( 'type-font-family', 'Lato' );
+	$default = bigbox_has_google_fonts() ? 'Lato' : 'default';
+	$family  = get_theme_mod( 'type-font-family', $default );
 
 	/**
 	 * Filters the name of the font family used to generate custom CSS.
@@ -42,7 +54,7 @@ function bigbox_get_theme_font_family() {
  * @return string
  */
 function bigbox_get_theme_font_weight( $weight_type = 'base' ) {
-	$weight = get_theme_mod( "type-font-weight-{$weight_type}", 'base' === $weight_type ? 'normal' : 'bold' );
+	$weight = get_theme_mod( "type-font-weight-{$weight_type}", 'base' === $weight_type ? 500 : 700 );
 
 	/**
 	 * Filters the font weight used to generate custom CSS.

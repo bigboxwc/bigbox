@@ -135,7 +135,7 @@ add_filter( 'wp_nav_menu_objects', 'bigbox_add_mobile_parent_nav_menu_items', 10
  * @return array
  */
 function bigbox_nav_menu_link_attributes( $atts, $item ) {
-	// Add [aria-haspopup] and [aria-expanded] to menu items that have children
+	// Add [aria-haspopup] and [aria-expanded] to menu items that have children.
 	$item_has_children = in_array( 'menu-item-has-children', $item->classes );
 
 	if ( $item_has_children ) {

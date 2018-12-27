@@ -1,4 +1,4 @@
-/* global $, wc_checkout_params, URLSearchParams, FormData */
+/* global $, wp, wc_checkout_params, URLSearchParams, FormData */
 
 /**
  * Internal dependencies.

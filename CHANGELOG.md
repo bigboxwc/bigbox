@@ -1,3 +1,23 @@
+## [2.2.0] - 2018-12-27
+
+### New
+
+- Accessibility improvements:
+  - Better tabbing order for shop filters and results.
+  - "Skip to content" and "Skip to result" skip links.
+  - Ensure all focus outlines are visible.
+- Upgrade developer experience:
+  - Use more `@wordpress` `npm` packages (`eslint`, `browserslist`)
+  - Update JS coding standards.
+  - Update PHP coding standards.
+  - Update CSS coding standards.
+- Request a Google Fonts API key when generating font list.
+- Allow integrations to define helper files to be autoloaded.
+
+### Fix
+
+- Avoid error if offcanvas drawer source or target does not exist.
+
 ## [2.1.0] - 2018-12-18
 
 ### New
@@ -9,7 +29,7 @@
 ### Fix
 
 - Ensure button color is accurately reflected.
-- Coding standad updates.
+- Coding standard updates.
 
 ## [2.0.0] - 2018-11-06
 

@@ -1,4 +1,4 @@
-/* global Backbone */
+/* global BigBoxLicenseManager, Backbone */
 
 /**
  * External dependencies.

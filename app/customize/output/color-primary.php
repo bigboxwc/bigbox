@@ -106,8 +106,9 @@ return [
 	'outline-color'    => [
 		'selectors'    => [
 			'.is-tabbing *:focus',
-			'.is-tabbing .navbar--mobile *:focus',
-			'.is-tabbing .sub-menu *:focus',
+			'.is-tabbing .navbar .navbar--mobile :focus',
+			'.is-tabbing .navbar .navbar-search :focus',
+			'.is-tabbing .navbar .sub-menu :focus',
 		],
 		'declarations' => [
 			'outline-color' => esc_attr( $primary ),

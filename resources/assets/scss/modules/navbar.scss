@@ -12,6 +12,18 @@
 			outline-color: $white;
 		}
 	}
+
+	.is-tabbing & {
+
+		.navbar--mobile,
+		.navbar-search,
+		.sub-menu {
+
+			:focus {
+				outline-color: theme-color("primary");
+			}
+		}
+	}
 }
 
 .navbar__inner {

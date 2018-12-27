@@ -1,4 +1,4 @@
-/* global $, _ */
+/* global bigbox, $, _ */
 
 const partialCache = {};
 

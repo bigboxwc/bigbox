@@ -22,8 +22,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return array
  */
 function bigbox_customize_controls_js_fonts( $settings ) {
+	$file = get_template_directory() . '/resources/data/google-fonts.json';
+
+	if ( ! file_exists( $file ) ) {
+		return $settings;
+	}
+
 	$settings['typography'] = [
-		'fontList' => json_decode( file_get_contents( get_template_directory() . '/resources/data/google-fonts.json' ) ), // @codingStandardsIgnoreLine
+		'fontList' => json_decode( file_get_contents( $file ) ), // @codingStandardsIgnoreLine
 	];
 
 	return $settings;
@@ -57,10 +63,12 @@ add_action( 'customize_register', 'bigbox_customize_register_type_sections' );
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
 function bigbox_customize_register_type_controls( $wp_customize ) {
+	$google = bigbox_has_google_fonts();
+
 	$wp_customize->add_setting(
 		'type-font-family',
 		[
-			'default'           => 'Lato',
+			'default'           => $google ? 'Lato' : 'default',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
 		]
@@ -141,7 +149,7 @@ function bigbox_customize_register_type_controls( $wp_customize ) {
 			/* translators: Customizer control label. */
 			'label'       => __( 'Base Font Weight', 'bigbox' ),
 			'description' => '',
-			'weight'      => 'regular',
+			'weight'      => $google ? 'regular' : 500,
 		],
 		'bold' => [
 			/* translators: Customizer control label. */
