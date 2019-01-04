@@ -52,8 +52,12 @@ button,
 		border: 0;
 		padding: 0;
 
-		&:hover::after {
-			background: none;
+		&:hover {
+			color: initial;
+			
+			&::after {
+				background: none;
+			}
 		}
 	}
 }

@@ -105,10 +105,10 @@ return [
 	// Solid outline-color.
 	'outline-color'    => [
 		'selectors'    => [
-			'.is-tabbing *:focus',
-			'.is-tabbing .navbar .navbar--mobile :focus',
-			'.is-tabbing .navbar .navbar-search :focus',
-			'.is-tabbing .navbar .sub-menu :focus',
+			'body.is-tabbing *:focus',
+			'body.is-tabbing .navbar .navbar--mobile :focus',
+			'body.is-tabbing .navbar .navbar-search :focus',
+			'body.is-tabbing .navbar .sub-menu :focus',
 		],
 		'declarations' => [
 			'outline-color' => esc_attr( $primary ),
