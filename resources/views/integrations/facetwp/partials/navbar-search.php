@@ -31,7 +31,10 @@ $search_facet   = FWP()->helper->get_facet_by_name( bigbox_get_navbar_search_sou
 
 if (
 	! ( $search_facet || $dropdown_facet ) ||
-	( 'search' !== $search_facet['type'] && 'dropdown' !== $dropdown_facet['type'] )
+	(
+		! in_array( $search_facet['type'], bigbox_facetwp_get_search_whitelist(), true ) &&
+		! in_array( $dropdown_facet['type'], bigbox_facetwp_get_dropdown_whitelist(), true )
+	)
 ) :
 	return;
 endif;
@@ -42,7 +45,7 @@ endif;
 	<?php
 	$search_taxonomy = get_taxonomy( str_replace( 'tax/', '', $dropdown_facet['source'] ) );
 
-	if ( $search_taxonomy && 'dropdown' === $dropdown_facet['type'] ) :
+	if ( $search_taxonomy && in_array( $search_facet['type'], bigbox_facetwp_get_dropdown_whitelist(), true ) ) :
 		$name = FWP()->helper->get_setting( 'prefix' ) . $dropdown_facet['name'];
 		$all  = esc_html( isset( $dropdown['label_any'] ) ? $dropdown_facet['label_any'] : __( 'All', 'bigbox' ) );
 		?>
@@ -91,7 +94,7 @@ endif;
 		<?php
 	endif;
 
-	if ( $search_facet && 'search' === $search_facet['type'] ) :
+	if ( $search_facet && in_array( $search_facet['type'], bigbox_facetwp_get_search_whitelist(), true ) ) :
 		$name = FWP()->helper->get_setting( 'prefix' ) . $search_facet['name'];
 		?>
 
