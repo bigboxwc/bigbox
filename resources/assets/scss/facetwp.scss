@@ -65,6 +65,24 @@
 			vertical-align: middle;
 		}
 	}
+	// Addon: Alpha
+	&.facetwp-type-alpha {
+		display: flex;
+		padding-bottom: 16px;
+		border-bottom: 1px solid gray("200");
+		overflow-x: scroll;
+
+		.facetwp-alpha {
+			text-align: center;
+			flex: 1;
+			margin: 0;
+			padding: 0 ($spacer / 2.5);
+
+			&.selected {
+				color: theme-color("primary");
+			}
+		}
+	}
 }
 
 .widget .facetwp-facet {
