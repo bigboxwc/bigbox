@@ -13,6 +13,10 @@ const horizontalMenu = ( menuClass, activeClass ) => {
 
 	const activeLink = document.querySelector( `${ menuClass } ${ activeClass }` );
 
+	if ( ! activeLink ) {
+		return;
+	}
+
 	const activeOffset = activeLink.getBoundingClientRect();
 	const menuOffset = menu.getBoundingClientRect();
 
