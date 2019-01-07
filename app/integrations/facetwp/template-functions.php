@@ -72,7 +72,11 @@ function bigbox_facetwp_navbar_search() {
  * @since 1.0.0
  */
 function bigbox_facetwp_pagination() {
-	echo do_shortcode( '[facetwp pager="true"]' );
+	if ( class_exists( 'FacetWP_Load_More_Addon' ) ) {
+		echo do_shortcode( '[facetwp load_more="true"]' );
+	} else {
+		echo do_shortcode( '[facetwp pager="true"]' );
+	}
 }
 
 /**
