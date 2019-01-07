@@ -310,7 +310,6 @@ function bigbox_facetwp_get_dropdown_whitelist() {
 function bigbox_facetwp_get_search_whitelist() {
 	$whitelist = [
 		'search',
-		'availability',
 	];
 
 	/**
