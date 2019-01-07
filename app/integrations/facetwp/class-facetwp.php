@@ -46,6 +46,8 @@ class FacetWP extends Integration implements Registerable, Service {
 	 * @since 1.16.0
 	 */
 	protected $inline_css_configs = [
+		'color-gray-200',
+		'color-primary',
 		'refresh',
 	];
 
