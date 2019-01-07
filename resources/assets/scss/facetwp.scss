@@ -65,6 +65,13 @@
 			vertical-align: middle;
 		}
 	}
+
+	// Addon: Hierarchy Select
+	.facetwp-hierarchy_select {
+		margin-bottom: ($spacer / 2);
+		width: 100%;
+	}
+
 	// Addon: Alpha
 	&.facetwp-type-alpha {
 		display: flex;
