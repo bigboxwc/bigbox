@@ -29,7 +29,10 @@ $form_url = apply_filters( 'bigbox_navbar_search_form_url', wc_get_page_permalin
 $dropdown_facet = FWP()->helper->get_facet_by_name( bigbox_get_navbar_search_source( 'dropdown', 'categories' ) );
 $search_facet   = FWP()->helper->get_facet_by_name( bigbox_get_navbar_search_source( 'search', 'keyword' ) );
 
-if ( ! ( $search_facet || $dropdown_facet ) ) :
+if (
+	! ( $search_facet || $dropdown_facet ) ||
+	( 'search' !== $search_facet['type'] && 'dropdown' !== $dropdown_facet['type'] )
+) :
 	return;
 endif;
 ?>
@@ -39,7 +42,7 @@ endif;
 	<?php
 	$search_taxonomy = get_taxonomy( str_replace( 'tax/', '', $dropdown_facet['source'] ) );
 
-	if ( $search_taxonomy ) :
+	if ( $search_taxonomy && 'dropdown' === $dropdown_facet['type'] ) :
 		$name = FWP()->helper->get_setting( 'prefix' ) . $dropdown_facet['name'];
 		$all  = esc_html( isset( $dropdown['label_any'] ) ? $dropdown_facet['label_any'] : __( 'All', 'bigbox' ) );
 		?>
@@ -88,7 +91,7 @@ endif;
 		<?php
 	endif;
 
-	if ( $search_facet ) :
+	if ( $search_facet && 'search' === $search_facet['type'] ) :
 		$name = FWP()->helper->get_setting( 'prefix' ) . $search_facet['name'];
 		?>
 
