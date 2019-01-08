@@ -14,7 +14,7 @@
 		"@babel/core": "7.2.2",
 		"@wordpress/babel-preset-default": "3.0.1",
 		"@wordpress/browserslist-config": "2.2.2",
-		"@wordpress/dom": "2.0.7",
+		"@wordpress/dom": "2.0.8",
 		"@wordpress/dom-ready": "2.0.2",
 		"@wordpress/eslint-plugin": "1.0.0",
 		"@wordpress/keycodes": "2.0.5",
