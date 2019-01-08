@@ -2,6 +2,7 @@
  * External dependencies
  */
 const webpack = require( 'webpack' );
+const path = require( 'path' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const WebpackRTLPlugin = require( 'webpack-rtl-plugin' );
 const SpritePlugin = require( 'svg-sprite-loader/plugin' );
@@ -81,8 +82,9 @@ const config = {
 						options: {
 							limit: 8000, // Convert images < 8kb to base64 strings
 							name: '[name].[ext]',
-							useRelativePath: true,
-							outputPath: './public/',
+							outputPath: ( url, resourcePath, context ) => {
+								return `./public/${ path.relative( context, resourcePath ).replace( 'resources/assets', '' ) }`
+							}
 						},
 					},
 				],
