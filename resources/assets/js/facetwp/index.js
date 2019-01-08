@@ -15,6 +15,8 @@ import '../../scss/facetwp.scss';
 /**
  * Internal dependencies.
  */
+import horizontalMenu from './../app/horizontal-menu.js';
+
 import './choices.js';
 import './categories.js';
 import './navbar-search.js';
@@ -35,4 +37,9 @@ domReady( () => {
 	 * Reinit lazy load once loaded.
 	 */
 	$document.on( 'facetwp-loaded', initLazyLoad );
+
+	/**
+	 * Horizontal scrolling for "Alpha" add-on.
+	 */
+	$document.on( 'facetwp-loaded', () => horizontalMenu( '.facetwp-type-alpha', '.selected' ) );
 } );

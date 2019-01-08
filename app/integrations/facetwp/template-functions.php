@@ -72,7 +72,11 @@ function bigbox_facetwp_navbar_search() {
  * @since 1.0.0
  */
 function bigbox_facetwp_pagination() {
-	echo do_shortcode( '[facetwp pager="true"]' );
+	if ( class_exists( 'FacetWP_Load_More_Addon' ) ) {
+		echo do_shortcode( '[facetwp load_more="true"]' );
+	} else {
+		echo do_shortcode( '[facetwp pager="true"]' );
+	}
 }
 
 /**
@@ -272,4 +276,48 @@ function bigbox_facetwp_is_main_query( $is_main_query, $wp_query ) {
 	}
 
 	return $is_main_query;
+}
+
+/**
+ * Get the allowed facet types for the navbar dropdown.
+ *
+ * @since 2.3.0
+ *
+ * @return array
+ */
+function bigbox_facetwp_get_dropdown_whitelist() {
+	$whitelist = [
+		'dropdown',
+	];
+
+	/**
+	 * Filter the allowed facet types for the navbar dropdown.
+	 *
+	 * @since 2.3.0
+	 *
+	 * @param array $whitelist Type whitelist.
+	 */
+	return apply_filters( 'bigbox_facetwp_get_dropdown_whitelist', $whitelist );
+}
+
+/**
+ * Get the allowed facet types for the navbar search.
+ *
+ * @since 2.3.0
+ *
+ * @return array
+ */
+function bigbox_facetwp_get_search_whitelist() {
+	$whitelist = [
+		'search',
+	];
+
+	/**
+	 * Filter the allowed facet types for the navbar search.
+	 *
+	 * @since 2.3.0
+	 *
+	 * @param array $whitelist Type whitelist.
+	 */
+	return apply_filters( 'bigbox_facetwp_get_search_whitelist', $whitelist );
 }

@@ -16,8 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 $sidebar_id = is_page_template( bigbox_woocommerce_dynamic_shop_page_template() ) ? 'page-' . get_the_ID() : 'shop';
 $sidebar    = bigbox_get_cached_sidebar( $sidebar_id );
 
+// Try again with default Shop
 if ( '' === $sidebar ) :
-	return;
+	$sidebar = bigbox_get_cached_sidebar( 'shop' );
+
+	// Still nothing, bail.
+	if ( '' === $sidebar ) :
+		return;
+	endif;
 endif;
 ?>
 

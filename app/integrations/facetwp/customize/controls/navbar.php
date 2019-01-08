@@ -104,7 +104,7 @@ function bigbox_facetwp_customize_register_navbar_controls_group( $wp_customize,
 				/* translators: Customizer control description. */
 				'description' => __( 'Choose from one of your Dropdown facets. This facet cannot appear on the Shop page twice.', 'bigbox' ),
 				'type'        => 'select',
-				'choices'     => bigbox_facetwp_customize_get_sources( [ 'dropdown' ] ),
+				'choices'     => bigbox_facetwp_customize_get_sources( bigbox_facetwp_get_dropdown_whitelist() ),
 				'section'     => 'navbar',
 				'priority'    => 20,
 			],
@@ -117,11 +117,11 @@ function bigbox_facetwp_customize_register_navbar_controls_group( $wp_customize,
 		wp_parse_args(
 			[
 				/* translators: Customizer control label. */
-				'label'       => __( 'Keyword Facet', 'bigbox' ),
+				'label'       => __( 'Search Facet', 'bigbox' ),
 				/* translators: Customizer control description. */
 				'description' => __( 'Choose from one of your Search facets. This facet cannot appear on the Shop page twice.', 'bigbox' ),
 				'type'        => 'select',
-				'choices'     => bigbox_facetwp_customize_get_sources( [ 'search' ] ),
+				'choices'     => bigbox_facetwp_customize_get_sources( bigbox_facetwp_get_search_whitelist() ),
 				'section'     => 'navbar',
 				'priority'    => 20,
 			],

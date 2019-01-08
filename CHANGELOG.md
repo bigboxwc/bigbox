@@ -1,3 +1,21 @@
+## [2.3.0] - 2018-01-08
+
+### New
+
+- Extended support for FacetWP addons:
+  - "Load More" https://facetwp.com/add-ons/load-more/
+  - "Bookings" https://facetwp.com/add-ons/bookings/
+  - "Hierarchy Select" https://facetwp.com/add-ons/hierarchy-select/
+  - "Alphabetical Listing" https://facetwp.com/add-ons/alphabetical-listing/
+  - "Color" https://facetwp.com/add-ons/color/
+
+### Fix
+
+- Further `:focus` accessibility improvements.
+- Fallback to default shop sidebar on dynamic shop page mobile filters.
+- Avoid Javascript error when focus element on horizontal nav bar does not exist.
+- Avoid PHP syntax error.
+
 ## [2.2.0] - 2018-12-27
 
 ### New

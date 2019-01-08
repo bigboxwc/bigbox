@@ -8,6 +8,7 @@
 //
 @import "modules/facetwp-counts";
 @import "modules/facetwp-pager";
+@import "modules/facetwp-load-more";
 @import "modules/facetwp-sort";
 @import "modules/facetwp-flatpickr";
 
@@ -62,6 +63,47 @@
 		[type="checkbox"] {
 			margin: -2px 8px 0 0;
 			vertical-align: middle;
+		}
+	}
+
+	// Addon: Hierarchy Select
+	.facetwp-hierarchy_select {
+		margin-bottom: ($spacer / 2);
+		width: 100%;
+	}
+
+	// Addon: Alpha
+	&.facetwp-type-alpha {
+		display: flex;
+		padding-bottom: 16px;
+		border-bottom: 1px solid gray("200");
+		overflow-x: scroll;
+
+		.facetwp-alpha {
+			text-align: center;
+			flex: 1;
+			margin: 0;
+			padding: 0 ($spacer / 2.5);
+
+			&.selected {
+				color: theme-color("primary");
+			}
+		}
+	}
+
+	// Addon: Colors
+	&.facetwp-type-color {
+
+		.facetwp-color {
+			border-radius: 50%;
+			border: 2px solid #fff;
+			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+			width: 34px;
+			height: 34px;
+
+			&.checked::after {
+				margin: 11px 0 0 6px;
+			}
 		}
 	}
 }
