@@ -45,7 +45,7 @@ endif;
 	<?php
 	$search_taxonomy = get_taxonomy( str_replace( 'tax/', '', $dropdown_facet['source'] ) );
 
-	if ( $search_taxonomy && in_array( $search_facet['type'], bigbox_facetwp_get_dropdown_whitelist(), true ) ) :
+	if ( $search_taxonomy && in_array( $dropdown_facet['type'], bigbox_facetwp_get_dropdown_whitelist(), true ) ) :
 		$name = FWP()->helper->get_setting( 'prefix' ) . $dropdown_facet['name'];
 		$all  = esc_html( isset( $dropdown['label_any'] ) ? $dropdown_facet['label_any'] : __( 'All', 'bigbox' ) );
 		?>

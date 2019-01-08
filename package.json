@@ -3,7 +3,7 @@
 	"title": "BigBox",
 	"author": "Spencer Finnell",
 	"description": "Easily manage and scale WooCommerce product catalogs.",
-	"version": "2.3.0",
+	"version": "2.3.1",
 	"license": "GPL-2.0-or-later",
 	"main": "webpack.config.js",
 	"engines": {

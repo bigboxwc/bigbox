@@ -1,3 +1,9 @@
+## [2.3.1] - 2018-01-08
+
+### Fix
+
+- Ensure header allows dropdown facet types.
+
 ## [2.3.0] - 2018-01-08
 
 ### New
