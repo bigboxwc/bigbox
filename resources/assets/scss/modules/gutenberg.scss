@@ -74,10 +74,7 @@
 	}
 }
 
-// [1] Allow .button--size-x classes to be used to
-// adjust the size but do not apply the padding to the wrapper.
 .wp-block-button {
-	padding: 0 !important; // [1]
 
 	.wp-block-button__link {
 
