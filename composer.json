@@ -24,9 +24,9 @@
 		"bigboxwc/wp-template-loader": "1.0.2"
 	},
 	"require-dev": {
-		"dealerdirect/phpcodesniffer-composer-installer": "0.4.4",
+		"dealerdirect/phpcodesniffer-composer-installer": "0.5.0",
 		"squizlabs/php_codesniffer": "3.4.0",
 		"phpcompatibility/phpcompatibility-wp": "*",
-		"wp-coding-standards/wpcs": "1.2.1"
+		"wp-coding-standards/wpcs": "2.0.0"
 	}
 }
