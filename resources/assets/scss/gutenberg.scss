@@ -19,8 +19,9 @@ $use-margins: false;
 @import "elements/small";
 @import "elements/mark";
 
-// Standard Gutenberg block styling.
+// Styles shared on the frontend.
 @import "modules/gutenberg";
+@import "modules/woocommerce-blocks";
 
 // Editor-specific block changes.
 .wp-block-cover {

@@ -1,7 +1,10 @@
 .has-background {
-	padding: $spacer;
 
 	@include border-radius();
+}
+
+p.has-background {
+	padding: $spacer;
 }
 
 .wp-block-cover,
