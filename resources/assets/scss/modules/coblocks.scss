@@ -1,0 +1,22 @@
+.wp-block-coblocks-accordion-item {
+
+  &__title {
+    line-height: 1;
+  }
+
+  &__content {
+    padding: $spacer;
+
+    p:last-of-type:not(:last-child) {
+      margin-bottom: $spacer;
+    }
+
+    > *:first-child {
+      margin-top: 0;
+    }
+    
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
