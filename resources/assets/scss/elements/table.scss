@@ -1,23 +1,4 @@
 table {
-	border-collapse: collapse;
-	border-style: hidden;
-	width: 100%;
 
-	@include card();
-
-	padding: 0;
-
-	a {
-		text-decoration: none;
-	}
-
-	p {
-		margin-top: 0;
-	}
-
-	// Trailing button (usually to add a new row).
-	+ .button {
-
-		@include vertical-spacing("margin", "up");
-	}
+	@include table();
 }

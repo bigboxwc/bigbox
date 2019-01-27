@@ -56,6 +56,18 @@
 	}
 }
 
+.woocommerce-order-notes {
+	padding: $spacer;
+	border: 2px solid rgba(theme-color("warning"), 0.30);
+
+	@include border-radius();
+	@include vertical-spacing("margin", "down", ( sm: 1 ) );
+
+	.widget-title {
+		color: theme-color("warning");
+	}
+}
+
 .woocommerce-OrderUpdates {
 
 	@include reset-list();
@@ -70,6 +82,12 @@
 
 	@include vertical-spacing("padding", "down", $map);
 	@include vertical-spacing("margin", "down", $map);
+
+	&:last-child {
+		border-bottom: 0;
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
 }
 
 .woocommerce-OrderUpdate-meta {

@@ -130,23 +130,11 @@ p.has-background {
 
 .wp-block-table {
 
-	td,
-	th {
-		padding: ($spacer / 2);
-		border: 1px solid gray("300");
-	}
+	@include table();
 
 	&.is-style-stripes {
-		border-collapse: collapse;
 
-		tr:nth-child(odd) {
-			background-color: gray("100");
-		}
-
-		td,
-		th {
-			border: 1px solid gray("300");
-		}
+		@include table("striped");
 	}
 }
 
