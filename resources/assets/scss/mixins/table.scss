@@ -1,45 +1,45 @@
 @mixin table( $striped: false ) {
-  border-collapse: collapse;
-  border-style: hidden;
-  width: 100%;
+	border-collapse: collapse;
+	border-style: hidden;
+	width: 100%;
 
-  @include card();
+	@include card();
 
-  padding: 0;
+	padding: 0;
 
-  td,
-  th {
-    padding: ($spacer / 2);
-    border: 1px solid gray("300");
-  }
+	td,
+	th {
+		padding: ($spacer / 2);
+		border: 1px solid gray("300");
+	}
 
-  th {
-    text-align: left;
-  }
-  
-  @if $striped {
+	th {
+		text-align: left;
+	}
 
-    tr:nth-child(even) {
-      background-color: gray("100");
-    }
+	@if $striped {
 
-    td,
-    th {
-      border: 1px solid gray("300");
-    }
-  }
+		tr:nth-child(even) {
+			background-color: gray("100");
+		}
 
-  a {
-    text-decoration: none;
-  }
+		td,
+		th {
+			border: 1px solid gray("300");
+		}
+	}
 
-  p {
-    margin-top: 0;
-  }
+	a {
+		text-decoration: none;
+	}
 
-  // Trailing button (usually to add a new row).
-  + .button {
+	p {
+		margin-top: 0;
+	}
 
-    @include vertical-spacing("margin", "up");
-  }
+	// Trailing button (usually to add a new row).
+	+ .button {
+
+		@include vertical-spacing("margin", "up");
+	}
 }

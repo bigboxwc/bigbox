@@ -5,31 +5,31 @@
 		font-size: $font-size-xl;
 	}
 
-  @include media-breakpoint-up(lg) {
-    font-weight: bolder;
-    font-size: ($font-size-xl * 1.5);
-  }
+	@include media-breakpoint-up(lg) {
+		font-weight: bolder;
+		font-size: ($font-size-xl * 1.5);
+	}
 
-  @include media-breakpoint-up(xl) {
-    font-size: ($font-size-xl * 2);
-  }
+	@include media-breakpoint-up(xl) {
+		font-size: ($font-size-xl * 2);
+	}
 }
 
 .wc-block-featured-product__description {
 
-  p {
-    line-height: ($line-height-base * 1.35);
-  }
+	p {
+		line-height: ($line-height-base * 1.35);
+	}
 
-  @include media-breakpoint-up(md) {
-    max-width: 80%;
-  }
+	@include media-breakpoint-up(md) {
+		max-width: 80%;
+	}
 
-  @include media-breakpoint-up(lg) {
-    max-width: 60%;
-  }
+	@include media-breakpoint-up(lg) {
+		max-width: 60%;
+	}
 
-  @include media-breakpoint-up(xl) {
-    max-width: 50%;
-  }
+	@include media-breakpoint-up(xl) {
+		max-width: 50%;
+	}
 }

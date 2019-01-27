@@ -62,10 +62,10 @@
 
 .woocommerce-order-notes {
 	padding: $spacer;
-	border: 2px solid rgba(theme-color("warning"), 0.30);
+	border: 2px solid rgba(theme-color("warning"), 0.3);
 
 	.is-high-contrast & {
-		border-color: rgba(theme-color-contrast("warning"), 0.30);
+		border-color: rgba(theme-color-contrast("warning"), 0.3);
 	}
 
 	@include border-radius();
