@@ -14,4 +14,4 @@ require_once bigbox_get_integration( 'woocommerce' )->get_dir() . '/customize/co
 require_once bigbox_get_integration( 'woocommerce' )->get_dir() . '/customize/controls/store-notice.php';
 require_once bigbox_get_integration( 'woocommerce' )->get_dir() . '/customize/controls/store-layout.php';
 require_once bigbox_get_integration( 'woocommerce' )->get_dir() . '/customize/controls/placeholders.php';
-require_once bigbox_get_integration( 'woocommerce' )->get_dir() . '/customize/controls/inventory.php';
+require_once bigbox_get_integration( 'woocommerce' )->get_dir() . '/customize/controls/catalog.php';

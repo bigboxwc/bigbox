@@ -26,6 +26,9 @@
 
 	ins {
 		text-decoration: none;
+		font-weight: $font-weight-bold;
+
+		@include theme-color("color", "success");
 	}
 
 	ins {

@@ -216,7 +216,7 @@
 
 .product__meta {
 	line-height: 1;
-	margin: $spacer 0;
+	margin: ($spacer / 2) 0;
 
 	&:last-child {
 		margin-bottom: 0;
@@ -244,12 +244,10 @@
 	color: #fff;
 	font-size: $font-size-xs;
 	line-height: 1;
-	text-transform: uppercase;
 	text-decoration: none;
-	font-weight: $font-weight-bold;
 	display: inline-block;
 	margin: 0 0 $spacer;
-	padding: 5px;
+	padding: 3px 5px;
 
 	@include theme-color("background-color", "success");
 	@include border-radius();

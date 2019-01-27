@@ -14,13 +14,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Inventory control.
+ * Catalog controls.
  *
- * @since 1.14.0
+ * @since 3.0.0
  *
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
-function bigbox_woocommerce_customize_register_inventory_controls( $wp_customize ) {
+function bigbox_woocommerce_customize_register_catalog_controls( $wp_customize ) {
 	$wp_customize->add_setting(
 		'display-inventory',
 		[
@@ -37,6 +37,25 @@ function bigbox_woocommerce_customize_register_inventory_controls( $wp_customize
 			'type'     => 'checkbox',
 			'section'  => 'woocommerce_product_catalog',
 			'priority' => 50,
+		]
+	);
+
+	$wp_customize->add_setting(
+		'display-sale-flash',
+		[
+			'default'           => false,
+			'sanitize_callback' => 'absint',
+		]
+	);
+
+	$wp_customize->add_control(
+		'display-sale-flash',
+		[
+			/* translators: Customizer control label. */
+			'label'    => __( 'Display sale "flash"', 'bigbox' ),
+			'type'     => 'checkbox',
+			'section'  => 'woocommerce_product_catalog',
+			'priority' => 60,
 		]
 	);
 }
