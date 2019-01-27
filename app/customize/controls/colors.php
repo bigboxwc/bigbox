@@ -78,25 +78,6 @@ function bigbox_customize_register_colors_controls( $wp_customize ) {
 
 	$wp_customize->register_control_type( 'BigBox\Customize\WP_Customize_Color_Control' );
 
-	$wp_customize->add_setting(
-		'is-high-contrast',
-		[
-			'default'           => false,
-			'sanitize_callback' => 'absint',
-		]
-	);
-
-	$wp_customize->add_control(
-		'is-high-contrast',
-		[
-			/* translators: Customizer control label. */
-			'label'    => __( 'Use high contrast colors', 'bigbox' ),
-			'type'     => 'checkbox',
-			'section'  => 'colors-palette',
-			'priority' => 5,
-		]
-	);
-
 	foreach ( $colors as $theme_color => $color ) {
 		$key = "color-${theme_color}";
 

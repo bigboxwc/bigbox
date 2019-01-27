@@ -34,7 +34,7 @@ return [
 	'danger'      => [
 		/* translators: Customizer control name. */
 		'name'  => __( 'Danger', 'bigbox' ),
-		'color' => bigbox_is_high_contrast() ? '#a00a00' : '#a00a00',
+		'color' => bigbox_is_high_contrast() ? '#a00a00' : '#e05f59',
 	],
 
 	'gray-100'    => [

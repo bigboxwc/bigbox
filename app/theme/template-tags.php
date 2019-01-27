@@ -139,8 +139,6 @@ function bigbox_get_star_html( $rating ) {
  * @return bool
  */
 function bigbox_is_rounded() {
-	$rounded = get_theme_mod( 'is-rounded', true );
-
 	/**
 	 * Filters if the styles should use rounded corners.
 	 *
@@ -148,7 +146,7 @@ function bigbox_is_rounded() {
 	 *
 	 * @param bool
 	 */
-	return apply_filters( 'bigbox_is_rounded', $rounded );
+	return apply_filters( 'bigbox_is_rounded', true );
 }
 
 /**
@@ -159,8 +157,6 @@ function bigbox_is_rounded() {
  * @return bool
  */
 function bigbox_is_high_contrast() {
-	$contrast = get_theme_mod( 'is-high-contrast', false );
-
 	/**
 	 * Filters if the styles should use high contrast colors.
 	 *
@@ -168,5 +164,5 @@ function bigbox_is_high_contrast() {
 	 *
 	 * @param bool
 	 */
-	return apply_filters( 'bigbox_is_high_contrast', $contrast );
+	return apply_filters( 'bigbox_is_high_contrast', false );
 }
