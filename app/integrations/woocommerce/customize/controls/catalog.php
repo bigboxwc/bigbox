@@ -24,7 +24,7 @@ function bigbox_woocommerce_customize_register_catalog_controls( $wp_customize )
 	$wp_customize->add_setting(
 		'display-inventory',
 		[
-			'default'           => true,
+			'default'           => false,
 			'sanitize_callback' => 'absint',
 		]
 	);
