@@ -1,19 +1,9 @@
-.has-background {
-
-	@include border-radius();
-}
-
 p.has-background {
 	padding: $spacer;
+	border-radius: $border-radius;
 }
 
-.wp-block-cover,
-.wp-block-quote,
-.wp-block-gallery,
-.wp-block-separator,
-.wp-block-image,
-.wp-block-embed,
-.wp-block-pullquote {
+.hentry > [class^="wp-block"] {
 
 	@if ( $use-margins ) {
 
@@ -26,6 +16,13 @@ p.has-background {
 			sm: 2,
 			lg: 3,
 		) );
+	}
+}
+
+@for $heading from 1 through 6 {
+
+	.hentry h#{$heading} + [class^="wp-block"] {
+		margin-top: 0;
 	}
 }
 
@@ -132,11 +129,24 @@ p.has-background {
 }
 
 .wp-block-table {
-	display: table;
 
 	td,
 	th {
-		border: 0;
+		padding: ($spacer / 2);
+		border: 1px solid gray("300");
+	}
+
+	&.is-style-stripes {
+		border-collapse: collapse;
+
+		tr:nth-child(odd) {
+			background-color: gray("100");
+		}
+
+		td,
+		th {
+			border: 1px solid gray("300");
+		}
 	}
 }
 
@@ -147,13 +157,6 @@ p.has-background {
 
 p.wp-block-subhead {
 	font-style: normal;
-}
-
-@for $heading from 1 through 6 {
-
-	h#{$heading} + p.wp-block-subhead {
-		margin-top: -($spacer);
-	}
 }
 
 .wp-block-cover-text {

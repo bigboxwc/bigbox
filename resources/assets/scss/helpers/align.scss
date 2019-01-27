@@ -1,5 +1,5 @@
-.alignfull,
-.alignwide {
+.hentry > *.alignfull,
+.hentry > *.alignwide {
 
 	&,
 	.site-primary--full & {
@@ -17,7 +17,7 @@
 
 @include media-breakpoint-up("lg", $container-max-widths) {
 
-	.alignwide {
+	.hentry > *.alignwide {
 
 		margin-left: -($grid-gutter-width * 2);
 		margin-right: -($grid-gutter-width * 2);
