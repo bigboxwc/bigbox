@@ -44,6 +44,7 @@ i.bigbox-icon {
 	}
 
 	a:hover & {
-		background-color: theme-color("primary");
+
+		@include theme-color("background-color", "primary");
 	}
 }

@@ -10,9 +10,15 @@
 @mixin card--color($color) {
 
 	color: gray("700");
-	border: 1px solid rgba($color, 0.5);
-	background: rgba($color, 0.1);
-	box-shadow: inset rgba($color, 0.1) 0 0 0 3px, rgba($color, 0.3) 0 1px 2px;
+	border: 1px solid rgba(theme-color($color), 0.5);
+	background-color: rgba(theme-color($color), 0.1);
+	box-shadow: inset rgba(theme-color($color), 0.1) 0 0 0 3px, rgba(theme-color($color), 0.3) 0 1px 2px;
+
+	.is-high-contrast & {
+		border-color: rgba(theme-color-contrast($color), 0.5);
+		background-color: rgba(theme-color-contrast($color), 0.1);
+		box-shadow: inset rgba(theme-color-contrast($color), 0.1) 0 0 0 3px, rgba(theme-color-contrast($color), 0.3) 0 1px 2px;
+	}
 }
 
 @mixin card--reset() {

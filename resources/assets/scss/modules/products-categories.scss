@@ -64,7 +64,8 @@
 			height: 100%;
 
 			&:hover h2 {
-				color: theme-color("primary");
+
+				@include theme-color("color", "primary");
 			}
 		}
 

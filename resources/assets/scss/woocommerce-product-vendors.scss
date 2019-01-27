@@ -92,12 +92,12 @@ form.wcpv-shortcode-registration-form {
 
 	&.wcpv-shortcode-registration-form-errors {
 
-		@include card--color(theme-color("danger"));
+		@include card--color("danger");
 	}
 
 	&.wcpv-shortcode-registration-success {
 		padding: ($spacer / 2) $spacer;
 
-		@include card--color(theme-color("success"));
+		@include card--color("success");
 	}
 }

@@ -2,7 +2,6 @@
 	position: relative;
 
 	.remove {
-		color: theme-color("danger");
 		text-align: center;
 		line-height: 20px;
 		background: #fff;
@@ -12,6 +11,8 @@
 		position: absolute;
 		top: ($spacer / 2);
 		right: ($spacer / 2);
+
+		@include theme-color("color", "danger");
 	}
 
 	a {

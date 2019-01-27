@@ -324,7 +324,6 @@
 	top: -4px;
 	left: 50%;
 	transform: translate3d(-25px, 0, 0);
-	background: theme-color("success");
 	border-radius: 15px;
 	min-width: 20px;
 	height: 20px;
@@ -332,4 +331,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	@include theme-color("background-color", "success");
 }

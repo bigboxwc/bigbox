@@ -20,18 +20,20 @@ $grays: (
 	"800": $gray-800,
 );
 
-$primary:     #2571d4 !default;
-$success:     #8dbc54 !default;
-$information: #17a2b8 !default;
-$warning:     #f9c95d !default;
-$danger:      #e05f59 !default;
-
 $theme-colors: (
-	"primary":     $primary,
-	"success":     $success,
-	"information": $information,
-	"warning":     $warning,
-	"danger":      $danger,
+	"primary":     #2571d4,
+	"success":     #8dbc54,
+	"information": #17a2b8,
+	"warning":     #f9c95d,
+	"danger":      #e05f59,
+) !default;
+
+$theme-colors-contrast: (
+	"primary":     #2571d4,
+	"success":     #5c8031,
+	"information": #118294,
+	"warning":     #8c7000,
+	"danger":      #a00a00,
 ) !default;
 
 // Required for Bootstrap functions.

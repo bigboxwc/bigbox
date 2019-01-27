@@ -19,6 +19,10 @@ $wb: (
 		background-color: $hex;
 
 		@include border-radius();
+
+		.is-high-contrast & {
+			background-color: theme-color-contrast($name);
+		}
 	}
 
 	&.has-#{$name}-color, // [2]
@@ -27,6 +31,10 @@ $wb: (
 		&,
 		a {
 			color: $hex;
+
+			.is-high-contrast & {
+				color: theme-color-contrast($name);
+			}
 		}
 	}
 }

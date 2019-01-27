@@ -130,3 +130,43 @@ function bigbox_get_star_html( $rating ) {
 
 	return $markup;
 }
+
+/**
+ * Determine if the theme is in "Rounded" mode.
+ *
+ * @since 3.0.0
+ *
+ * @return bool
+ */
+function bigbox_is_rounded() {
+	$rounded = get_theme_mod( 'is-rounded', true );
+
+	/**
+	 * Filters if the styles should use rounded corners.
+	 *
+	 * @since 1.11.0
+	 *
+	 * @param bool
+	 */
+	return apply_filters( 'bigbox_is_rounded', $rounded );
+}
+
+/**
+ * Determine if the theme is in "High Contrast" mode.
+ *
+ * @since 3.0.0
+ *
+ * @return bool
+ */
+function bigbox_is_high_contrast() {
+	$contrast = get_theme_mod( 'is-high-contrast', true );
+
+	/**
+	 * Filters if the styles should use high contrast colors.
+	 *
+	 * @since 3.0.0
+	 *
+	 * @param bool
+	 */
+	return apply_filters( 'bigbox_is_high_contrast', $contrast );
+}

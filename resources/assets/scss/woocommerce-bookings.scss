@@ -59,7 +59,7 @@
 			width: 100%;
 
 			@include card();
-			@include card--color(theme-color("warning"));
+			@include card--color("warning");
 		}
 
 		li {
@@ -68,8 +68,9 @@
 			float: none;
 
 			a.selected {
-				background-color: theme-color("success") !important;
-				border-color: theme-color("success") !important;
+
+				@include theme-color("background-color", "success");
+				@include theme-color("border-color", "success");
 			}
 
 			&:nth-child(odd) a,
@@ -80,8 +81,9 @@
 				@include border-radius();
 
 				&:hover {
-					background-color: theme-color("success");
-					border-color: theme-color("success");
+
+					@include theme-color("background-color", "success");
+					@include theme-color("border-color", "success");
 				}
 			}
 		}
@@ -213,7 +215,8 @@
 
 					&,
 					&:hover {
-						background-color: theme-color("success") !important;
+
+						@include theme-color("background-color", "success");
 					}
 				}
 			}
@@ -246,19 +249,22 @@
 			&,
 			&:hover {
 				color: #fff !important;
-				background-color: theme-color("success") !important;
+
+				@include theme-color("background-color", "success");
 			}
 		}
 
 		.ui-datepicker td.fully_booked a,
 		.ui-datepicker td.fully_booked span {
-			background-color: theme-color("warning") !important;
+
+			@include theme-color("background-color", "warning");
 		}
 
 		.ui-datepicker td.partial_booked a {
 
 			&::before {
-				border-top-color: theme-color("warning");
+
+				@include theme-color("border-top-color", "warning");
 			}
 		}
 	}

@@ -32,7 +32,8 @@
 	}
 
 	.select2-results__option--highlighted[data-selected] {
-		background-color: theme-color("primary");
+
+		@include theme-color("background-color", "primary");
 	}
 }
 

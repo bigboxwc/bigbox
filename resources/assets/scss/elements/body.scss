@@ -17,8 +17,10 @@ body {
 	&.is-tabbing {
 
 		*:focus {
-			outline: 2px solid theme-color("primary");
+			outline-style: solid;
 			outline-offset: 2px;
+
+			@include theme-color("outlined-color", "primary");
 		}
 	}
 

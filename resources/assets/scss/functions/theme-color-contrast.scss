@@ -1,0 +1,4 @@
+@function theme-color-contrast($key: "primary") {
+
+  @return map-get($theme-colors-contrast, $key);
+}

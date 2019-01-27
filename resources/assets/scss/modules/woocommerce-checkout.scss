@@ -72,19 +72,21 @@ form.woocommerce-checkout {
 	}
 
 	[type="radio"]:checked + label[for^="payment_method"] {
-		color: theme-color("success");
 		padding: 0;
+
+		@include theme-color("color", "success");
 
 		&::before {
 			width: 7px;
 			height: 11px;
-			border-color: theme-color("success");
 			border-width: 0 2px 2px 0;
 			transform: rotate(45deg);
 			border-radius: 0;
 			margin-left: 5px;
 			left: $spacer;
 			top: calc(50% - 7px);
+
+			@include theme-color("border-color", "success");
 		}
 	}
 
@@ -199,9 +201,10 @@ form.woocommerce-checkout {
 }
 
 .woocommerce-remove-coupon {
-	color: theme-color("warning");
 	font-size: $font-size-sm;
 	margin-left: 5px;
+
+	@include theme-color("color", "warning");
 }
 
 .wc-terms-and-conditions {
@@ -264,7 +267,8 @@ form.woocommerce-checkout {
 	}
 
 	input:checked + label {
-		color: theme-color("success");
+
+		@include theme-color("color", "success");
 	}
 }
 

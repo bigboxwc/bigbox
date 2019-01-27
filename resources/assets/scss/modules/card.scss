@@ -6,7 +6,7 @@
 
 		&--color-#{$name} {
 
-			@include card--color(theme-color($name));
+			@include card--color($name);
 		}
 	}
 }

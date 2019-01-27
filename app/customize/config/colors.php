@@ -19,22 +19,22 @@ return [
 	'success'     => [
 		/* translators: Customizer control name. */
 		'name'  => __( 'Success', 'bigbox' ),
-		'color' => '#8dbc54',
+		'color' => bigbox_is_high_contrast() ? '#5c8031' : '#8dbc54',
 	],
 	'information' => [
 		/* translators: Customizer control name. */
 		'name'  => __( 'Information', 'bigbox' ),
-		'color' => '#17a2b8',
+		'color' => bigbox_is_high_contrast() ? '#118294' : '#17a2b8',
 	],
 	'warning'     => [
 		/* translators: Customizer control name. */
 		'name'  => __( 'Warning', 'bigbox' ),
-		'color' => '#e8bc55',
+		'color' => bigbox_is_high_contrast() ? '#8c7000' : '#e8bc55',
 	],
 	'danger'      => [
 		/* translators: Customizer control name. */
 		'name'  => __( 'Danger', 'bigbox' ),
-		'color' => '#e05f59',
+		'color' => bigbox_is_high_contrast() ? '#a00a00' : '#a00a00',
 	],
 
 	'gray-100'    => [

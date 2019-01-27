@@ -1,0 +1,10 @@
+//
+// Choose a theme color based on the current contrast mode.
+//
+@mixin theme-color( $property, $theme-color ) {
+  #{$property}: theme-color($theme-color);
+
+  .is-high-contrast & {
+    #{$property}: theme-color-contrast($theme-color);
+  }
+}

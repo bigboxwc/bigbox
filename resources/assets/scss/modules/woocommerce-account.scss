@@ -43,7 +43,10 @@
 	&.is-active {
 
 		a {
-			border-bottom: 3px solid theme-color("primary");
+			border-width: 0 0 3px;
+			border-style: solid;
+
+			@include theme-color("border-color", "primary");
 		}
 	}
 }

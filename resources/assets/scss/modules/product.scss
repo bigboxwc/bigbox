@@ -250,7 +250,7 @@
 	display: inline-block;
 	margin: 0 0 $spacer;
 	padding: 5px;
-	background: theme-color("success");
 
+	@include theme-color("background-color", "success");
 	@include border-radius();
 }

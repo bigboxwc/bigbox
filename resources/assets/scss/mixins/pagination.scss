@@ -40,7 +40,8 @@
 
 	.active,
 	.current {
-		color: theme-color("primary");
+
+		@include theme-color("color", "primary");
 	}
 
 	.next {

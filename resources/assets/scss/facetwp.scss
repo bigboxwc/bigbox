@@ -30,9 +30,10 @@
 			width: 40px;
 			height: 40px;
 			margin-left: -20px;
-			background-color: theme-color("primary");
 			border-radius: 100%;
 			animation: scaleout 1s infinite ease-in-out;
+
+			@include theme-color("background-color", "primary");
 		}
 	}
 }
@@ -86,7 +87,8 @@
 			padding: 0 ($spacer / 2.5);
 
 			&.selected {
-				color: theme-color("primary");
+
+				@include theme-color("color", "primary");
 			}
 		}
 	}
@@ -167,17 +169,21 @@
 		}
 
 		.noUi-connect {
-			background-color: theme-color("primary");
+
+			@include theme-color("color", "primary");
 		}
 
 		.noUi-handle {
 			box-shadow: none;
-			border: 2px solid theme-color("primary");
+			border-width: 2px;
+			border-style: solid;
 			width: 16px;
 			height: 16px;
 			border-radius: 50%;
 			cursor: ew-resize;
 			top: -4px;
+
+			@include theme-color("border-color", "primary");
 
 			&::before,
 			&::after {

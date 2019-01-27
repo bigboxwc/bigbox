@@ -119,6 +119,7 @@
 	}
 
 	svg {
-		fill: theme-color("primary");
+
+		@include theme-color("fill", "primary");
 	}
 }

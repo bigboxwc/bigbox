@@ -10,12 +10,14 @@
 	}
 
 	.flatpickr-day.today {
-		border-color: theme-color("primary");
+
+		@include theme-color("border-color", "primary");
 
 		&:hover,
 		&:focus {
-			background-color: theme-color("primary");
-			border-color: theme-color("primary");
+
+			@include theme-color("background-color", "primary");
+			@include theme-color("border-color", "primary");
 		}
 	}
 
@@ -30,13 +32,15 @@
 	.flatpickr-day.selected.inRange,
 	.flatpickr-day.startRange.inRange,
 	.flatpickr-day.endRange.inRange {
-		background-color: theme-color("primary");
-		border-color: theme-color("primary");
+
+		@include theme-color("background-color", "primary");
+		@include theme-color("border-color", "primary");
 
 		&:focus,
 		&:hover {
-			background-color: theme-color("primary");
-			border-color: theme-color("primary");
+
+			@include theme-color("background-color", "primary");
+			@include theme-color("border-color", "primary");
 		}
 	}
 

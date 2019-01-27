@@ -37,6 +37,7 @@ button {
 }
 
 label .required {
-	color: theme-color("danger");
 	text-decoration: none;
+
+	@include theme-color("color", "danger");
 }

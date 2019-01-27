@@ -2,11 +2,13 @@ a {
 	color: gray("800");
 
 	&:hover {
-		color: theme-color("primary");
 		text-decoration: none;
 
+		@include theme-color("color", "primary");
+
 		.bigbox-icon {
-			color: theme-color("primary");
+
+			@include theme-color("color", "primary");
 		}
 	}
 }
