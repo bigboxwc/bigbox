@@ -159,7 +159,7 @@ function bigbox_is_rounded() {
  * @return bool
  */
 function bigbox_is_high_contrast() {
-	$contrast = get_theme_mod( 'is-high-contrast', true );
+	$contrast = get_theme_mod( 'is-high-contrast', false );
 
 	/**
 	 * Filters if the styles should use high contrast colors.
