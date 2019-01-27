@@ -222,9 +222,8 @@
 		margin-bottom: 0;
 	}
 
-	&.quantity {
-		display: flex;
-		align-items: center;
+	p {
+		margin: 0;
 	}
 }
 
@@ -251,4 +250,8 @@
 
 	@include theme-color("background-color", "success");
 	@include border-radius();
+}
+
+.product__short-description {
+	line-height: inherit;
 }

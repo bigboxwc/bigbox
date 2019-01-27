@@ -58,5 +58,24 @@ function bigbox_woocommerce_customize_register_catalog_controls( $wp_customize )
 			'priority' => 60,
 		]
 	);
+
+	$wp_customize->add_setting(
+		'display-short-description',
+		[
+			'default'           => false,
+			'sanitize_callback' => 'absint',
+		]
+	);
+
+	$wp_customize->add_control(
+		'display-short-description',
+		[
+			/* translators: Customizer control label. */
+			'label'    => __( 'Display short description', 'bigbox' ),
+			'type'     => 'checkbox',
+			'section'  => 'woocommerce_product_catalog',
+			'priority' => 60,
+		]
+	);
 }
-add_action( 'customize_register', 'bigbox_woocommerce_customize_register_inventory_controls' );
+add_action( 'customize_register', 'bigbox_woocommerce_customize_register_catalog_controls', 99 );

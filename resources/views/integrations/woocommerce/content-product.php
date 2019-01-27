@@ -73,8 +73,12 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		/**
 		 * After shop loop item title.
 		 *
-		 * @hooked woocommerce_template_loop_rating - 5
-		 * @hooked woocommerce_template_loop_price - 10
+		 * @hooked woocommerce_template_loop_rating - 1
+		 * @hooked woocommerce_template_loop_price - 3
+		 * @hooked woocommerce_show_product_loop_sale_flash - 6
+		 * @hooked bigbox_woocommerce_template_loop_variations - 9
+		 * @hooked bigbox_woocommerce_template_loop_stock - 12
+		 * @hooked bigbox_woocommerce_template_short_description - 15
 		 */
 		do_action( 'woocommerce_after_shop_loop_item_title' );
 		?>

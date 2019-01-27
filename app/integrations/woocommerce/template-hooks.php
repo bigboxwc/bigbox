@@ -98,6 +98,7 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop
 add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 6 );
 add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_template_loop_variations', 9 );
 add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_template_loop_stock', 12 );
+add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_template_short_description', 15 );
 
 /**
  * File: content-single-product.php.

@@ -305,6 +305,27 @@ function bigbox_woocommerce_template_loop_stock() {
 };
 
 /**
+ * Add short description to loop.
+ *
+ * @since 3.0.0
+ */
+function bigbox_woocommerce_template_short_description() {
+	if ( ! get_theme_mod( 'display-short-description', false ) ) {
+		return;
+	}
+
+	$product     = wc_get_product( get_post() );
+	$description = apply_filters( 'woocommerce_short_description', $product->get_short_description() );
+?>
+
+<div class="product__short-description product__meta">
+	<?php echo $description; // WPCS: XSS okay. ?>
+</div>
+
+<?php
+}
+
+/**
  * Manage sidebar locations and outputs.
  *
  * @since 1.0.0
