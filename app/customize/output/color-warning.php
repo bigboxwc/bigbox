@@ -37,7 +37,7 @@ return [
 			'.woocommerce-remove-coupon',
 			'.order-status--on-hold',
 			'.order-status--refunded',
-			'..woocommerce-order-notes .widget-title',
+			'.woocommerce-order-notes .widget-title',
 		],
 		'declarations' => [
 			'color' => esc_attr( $warning ),
