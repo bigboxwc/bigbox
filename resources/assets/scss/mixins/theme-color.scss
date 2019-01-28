@@ -1,9 +1,16 @@
 //
 // Choose a theme color based on set map.
 //
-@mixin theme-color( $property, $theme-color ) {
+@mixin theme-color( $property, $theme-color, $important: false ) {
 
 	@if $use-fallback-colors {
-		#{$property}: theme-color($theme-color);
+
+		@if $important {
+
+			#{$property}: theme-color($theme-color) !important;
+		} @else {
+
+			#{$property}: theme-color($theme-color);
+		}
 	}
 }

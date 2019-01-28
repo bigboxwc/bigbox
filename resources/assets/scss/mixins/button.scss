@@ -75,16 +75,16 @@
 	line-height: 1;
 	padding: 5px 5px 4px;
 	display: inline-block;
+	border-width: 1px;
+	border-style: solid;
 
-	@include gray("color", "600");
-	@include gray("background", "100");
-	@include gray("border-color", "300");
+	@include gray("color", "600", $important: true);
+	@include gray("background", "100", $important: true);
+	@include gray("border-color", "300", $important: true);
 	@include border-radius();
 
 	&:hover {
 		text-decoration: none;
-		border-width: 1px;
-		border-style: solid;
 
 		@include gray("border-color", "400");
 	}

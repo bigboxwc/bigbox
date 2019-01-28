@@ -69,8 +69,8 @@
 
 			a.selected {
 
-				@include theme-color("background-color", "success");
-				@include theme-color("border-color", "success");
+				@include theme-color("background-color", "success", $important: true);
+				@include theme-color("border-color", "success", $important: true);
 			}
 
 			&:nth-child(odd) a,
@@ -214,7 +214,7 @@
 			border-width: 1px 1px 0 0;
 			border-style: solid;
 
-			@include gray("background-color", "300");
+			@include gray("background-color", "300", $important: true);
 
 			&.bookable-range {
 
@@ -223,7 +223,7 @@
 					&,
 					&:hover {
 
-						@include theme-color("background-color", "success");
+						@include theme-color("background-color", "success", $important: true);
 					}
 				}
 			}
@@ -245,11 +245,11 @@
 		.ui-datepicker td.bookable a {
 			background-color: #fff !important;
 
-			@include gray("color", "700");
+			@include gray("color", "700", $important: true);
 
 			&:hover {
 
-				@include gray("background-color", "200");
+				@include gray("background-color", "200", $important: true);
 			}
 		}
 
@@ -259,7 +259,7 @@
 			&:hover {
 				color: #fff !important;
 
-				@include theme-color("background-color", "success");
+				@include theme-color("background-color", "success", $important: true);
 			}
 		}
 
