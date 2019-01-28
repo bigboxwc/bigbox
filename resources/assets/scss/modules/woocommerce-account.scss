@@ -5,13 +5,16 @@
 
 	&::after {
 		content: "";
-		border-bottom: 1px solid gray("200");
+		border-width: 0 0 1px;
+		border-style: solid;
 		width: 100%;
 		height: 1px;
 		position: absolute;
 		bottom: $spacer;
 		left: 0;
 		right: 0;
+
+		@include gray("border-color", "200");
 	}
 
 	ul {

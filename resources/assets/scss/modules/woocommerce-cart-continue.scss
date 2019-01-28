@@ -10,9 +10,9 @@
 }
 
 .cart_totals .shipping-methods {
-	color: gray("600");
 	font-size: $font-size-sm;
 
+	@include gray("color", "600");
 	@include reset-list();
 
 	li {
@@ -30,7 +30,10 @@
 .woocommerce-shipping-note {
 	margin: $spacer 0;
 	padding-left: $spacer;
-	border-left: 1px solid gray("300");
+	border-width: 0 0 0 1px;
+	border-style: solid;
+
+	@include gray("color", "300");
 }
 
 .woocommerce-shipping-calculator-toggle {
@@ -84,14 +87,18 @@
 }
 
 .woocommerce-shipping-address {
-	border-bottom: 1px solid gray("200");
+	border-width: 0 0 1px;
+	border-style: solid;
+
+	@include gray("color", "200");
 }
 
 .coupons-next {
-	color: gray("500");
 	text-align: center;
 	font-size: $font-size-xs;
 	padding: 0 $spacer $spacer;
+
+	@include gray("color", "500");
 }
 
 .checkout-button {

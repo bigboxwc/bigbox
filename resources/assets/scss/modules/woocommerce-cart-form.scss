@@ -6,8 +6,9 @@
 }
 
 .woocommerce-totals-plus {
-	color: gray("500");
 	font-size: $font-size-sm;
+
+	@include gray("color", "500");
 }
 
 #payment .methods {

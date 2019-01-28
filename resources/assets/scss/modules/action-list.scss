@@ -11,7 +11,10 @@
 }
 
 .action-list__item--inset {
-	border-left: 1px solid gray("300");
+	border-width: 0 0 0 1px;
+	border-style: solid;
+
+	@include gray("border-left-color", "300");
 
 	.action-list__item-label {
 		margin-left: $spacer;
@@ -34,9 +37,10 @@
 	}
 
 	small {
-		color: gray("500");
 		font-size: $font-size-xs;
 		font-weight: $font-weight-base;
+
+		@include gray("color", "500");
 	}
 
 	.amount {
@@ -45,12 +49,13 @@
 }
 
 .action-list__item-value {
-	color: gray("800");
 	font-size: $font-size-base;
 	justify-content: flex-end;
 	display: flex;
 	align-items: center;
 	text-align: right;
+
+	@include gray("color", "800");
 
 	&--no-flex {
 		display: inline-block;

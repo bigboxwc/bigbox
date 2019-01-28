@@ -77,8 +77,11 @@
 	&.facetwp-type-alpha {
 		display: flex;
 		padding-bottom: 16px;
-		border-bottom: 1px solid gray("200");
+		border-width: 0 0 1px;
+		border-style: solid;
 		overflow-x: scroll;
+
+		@include gray("border-bottom-color", "200");
 
 		.facetwp-alpha {
 			text-align: center;
@@ -160,9 +163,10 @@
 	.facetwp-slider {
 		border-color: transparent;
 		box-shadow: none;
-		background-color: gray("200");
 		height: 10px;
 		border-radius: 50px;
+
+		@include gray("background-color", "200");
 
 		&.noUi-target {
 			padding: 0 6px;
@@ -203,10 +207,11 @@
 	}
 
 	.facetwp-star {
-		color: gray("300");
 		font-size: $font-size-base;
 		margin-bottom: 0;
 		margin-right: 3px;
+
+		@include gray("color", "300");
 	}
 
 	.facetwp-star:hover,

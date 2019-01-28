@@ -113,8 +113,9 @@
 	.input-text {
 
 		+ span {
-			color: gray("500");
 			font-size: $font-size-sm;
+
+			@include gray("color", "500");
 
 			em {
 				font-style: normal;
@@ -145,5 +146,6 @@
 }
 
 .tax_label {
-	color: gray("500");
+
+	@include gray("color", "500");
 }

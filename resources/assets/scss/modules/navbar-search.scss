@@ -38,11 +38,12 @@
 	select {
 		appearance: none;
 		font-size: $font-size-xs;
-		background: gray("100");
-		border: 0;
-		border-right: 1px solid gray("300");
+		border-width: 0 1px 0 0;
+		border-style: solid;
 		padding: 0 30px 0 15px;
 
+		@include gray("background-color", "100");
+		@include gray("border-right-color", "300");
 		@include border-left-radius();
 	}
 
@@ -53,9 +54,13 @@
 		top: calc(50% - 2px);
 		width: 0;
 		height: 0;
+		border: 0;
+		border-style: solid;
 		border-left: 5px solid transparent;
 		border-right: 5px solid transparent;
-		border-top: 4px solid gray("600");
+		border-top-width: 4px;
+
+		@include gray("border-top-color", "600");
 	}
 
 	+ .navbar-search__keywordss {

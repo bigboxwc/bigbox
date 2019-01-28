@@ -1,10 +1,9 @@
 //
-// Choose a theme color based on the current contrast mode.
+// Choose a theme color based on set map.
 //
 @mixin theme-color( $property, $theme-color ) {
-	#{$property}: theme-color($theme-color);
 
-	.is-high-contrast & {
-		#{$property}: theme-color-contrast($theme-color);
+	@if $use-fallback-colors {
+		#{$property}: theme-color($theme-color);
 	}
 }

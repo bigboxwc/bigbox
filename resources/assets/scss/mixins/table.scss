@@ -10,7 +10,10 @@
 	td,
 	th {
 		padding: ($spacer / 2);
-		border: 1px solid gray("300");
+		border-width: 1px;
+		border-style: solid;
+
+		@include gray("border-color", "300");
 	}
 
 	th {
@@ -20,12 +23,16 @@
 	@if $striped {
 
 		tr:nth-child(even) {
-			background-color: gray("100");
+
+			@include gray("background-color", "100");
 		}
 
 		td,
 		th {
-			border: 1px solid gray("300");
+			border-width: 1px;
+			border-style: solid;
+
+			@include gray("border-color", "300");
 		}
 	}
 

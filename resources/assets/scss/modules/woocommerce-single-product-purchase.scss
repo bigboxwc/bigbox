@@ -91,13 +91,15 @@
 }
 
 .single_variation_wrap {
-	border-top: 1px solid gray("200");
+	border-width: 1px 0 0;
+	border-style: solid;
 	display: none !important;
 
 	$map: (
 		sm: 1,
 	);
 
+	@include gray("border-color", "200");
 	@include vertical-spacing("margin", "up", $map);
 	@include vertical-spacing("padding", "up", $map);
 
@@ -117,7 +119,10 @@
 	}
 
 	.woocommerce-variation--loaded & {
-		border-bottom: 1px solid gray("200");
+		border-width: 0 0 1px;
+		border-style: solid;
+
+		@include gray("border-color", "200");
 
 		$map: (
 			sm: 1,

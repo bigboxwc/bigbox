@@ -64,10 +64,6 @@
 	padding: $spacer;
 	border: 2px solid rgba(theme-color("warning"), 0.3);
 
-	.is-high-contrast & {
-		border-color: rgba(theme-color-contrast("warning"), 0.3);
-	}
-
 	@include border-radius();
 	@include vertical-spacing("margin", "down", ( sm: 1 ) );
 
@@ -100,9 +96,10 @@
 }
 
 .woocommerce-OrderUpdate-meta {
-	color: gray("500");
 	margin: 0;
 	font-size: $font-size-xs;
+
+	@include gray("color", "500");
 }
 
 .woocommerce-OrderUpdate-description {

@@ -15,13 +15,15 @@
 }
 
 .star-rating__count {
-	color: gray("500");
 	font-size: $font-size-xs;
 	margin-left: 5px;
+
+	@include gray("color", "500");
 }
 
 .woocommerce-review-link {
-	color: gray("500");
 	font-size: $font-size-xs;
 	margin-left: 8px;
+
+	@include gray("color", "500");
 }

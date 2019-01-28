@@ -2,7 +2,10 @@
 	font-size: $font-size-lg;
 	line-height: 1;
 	padding-bottom: $spacer;
-	border-bottom: 2px solid gray("200");
+	border-width: 2px;
+	border-style: solid;
+
+	@include gray("border-color", "200");
 
 	@include vertical-spacing("margin", "down", (
 		sm: 1,

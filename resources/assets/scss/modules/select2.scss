@@ -3,22 +3,26 @@
 	&:focus {
 
 		.select2-selection--single {
-			border-color: gray("300");
+
+			@include gray("border-color", "300");
 		}
 	}
 
 	.select2-selection--single {
 		margin: 0;
 		height: auto;
-		border: 1px solid gray("300");
+		border-width: 1px;
+		border-style: solid;
 
+		@include gray("border-color", "300");
 		@include border-radius();
 
 		.select2-selection__rendered {
-			color: gray("700");
 			font: #{$font-size-base}/1 $font-family-sans-serif;
 			padding: 13px ($spacer / 2) 12px;
 			min-height: 39px;
+
+			@include gray("color", "700");
 		}
 
 		.select2-selection__arrow {
@@ -39,11 +43,13 @@
 
 .select2-container--default .select2-results__option[aria-selected=true],
 .select2-container--default .select2-results__option[data-selected=true] {
-	color: gray("700");
-	background-color: gray("200");
+
+	@include gray("color", "700");
+	@include gray("background-color", "700");
 }
 
 .select2-container--default .select2-search--dropdown .select2-search__field,
 .select2-dropdown {
-	border-color: gray("300");
+
+	@include gray("border-color", "300");
 }

@@ -1,6 +1,8 @@
 .footer-nav {
-	border-top: 1px solid gray("100");
+	border-width: 1px 0 0;
+	border-style: solid;
 
+	@include gray("border-color", "100");
 	@include vertical-spacing("margin", "up");
 	@include vertical-spacing("padding", "both", (
 		sm: 2,

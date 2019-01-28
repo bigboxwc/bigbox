@@ -172,7 +172,8 @@
 		opacity: 0;
 		min-width: 250px;
 		background: #fff;
-		border: 1px solid gray("300");
+		border-width: 1px;
+		border-style: solid;
 		border-top: 0;
 		box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px;
 		position: absolute;
@@ -181,10 +182,12 @@
 		transition: all 0.1s ease-in-out;
 		transform-origin: top left;
 
+		@include gray("border-color", "300");
 		@include border-bottom-radius();
 
 		a {
-			color: gray("700");
+
+			@include gray("color", "700");
 		}
 
 		.menu-item {
@@ -195,7 +198,8 @@
 			// Icons.
 			> a::before,
 			i.bigbox-icon {
-				background-color: gray("700");
+
+				@include gray("background-color", "700");
 			}
 		}
 
@@ -240,12 +244,19 @@
 		.menu-item-has-children > a {
 
 			&::after {
-				border-left: 4px solid gray("400");
+				border-width: 0 0 0 4px;
+				border-style: solid;
+
+				@include gray("border-color", "400");
 
 				/* rtl:ignore */
 				.rtl & {
-					border-right: 4px solid gray("400");
 					border-left-color: 0;
+
+					border-width: 0 4px 0 0;
+					border-style: solid;
+
+					@include gray("border-color", "400");
 				}
 			}
 		}
@@ -275,10 +286,17 @@
 			&::after {
 				left: 0;
 				right: auto;
-				border-right: 4px solid gray("400");
+				border-width: 0 4px 0 0;
+				border-style: solid;
+
+				@include gray("border-color", "400");
 
 				.rtl & {
-					border-left: 4px solid gray("400");
+
+					border-width: 0 0 0 4px;
+					border-style: solid;
+
+					@include gray("border-color", "400");
 				}
 			}
 		}

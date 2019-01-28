@@ -61,7 +61,10 @@ p.has-background {
 	&.is-style-dots {
 		display: block;
 		border: 0;
-		border-top: 2px solid gray("300");
+		border-width: 2px 0 0;
+		border-style: solid;
+
+		@include gray("border-color", "300");
 	}
 
 	&.is-style-wide {
@@ -124,8 +127,11 @@ p.has-background {
 }
 
 .wp-block-quote:not(.is-large) {
-	border-left: 4px solid gray("700");
+	border-width: 0 0 0 4px;
+	border-style: solid;
 	padding-left: $spacer;
+
+	@include gray("border-color", "700");
 }
 
 .wp-block-table {

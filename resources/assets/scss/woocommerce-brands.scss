@@ -8,9 +8,11 @@
 	a {
 		margin-right: ($spacer / 2);
 		padding: 3px;
-		border: 1px solid gray("200");
+		border-width: 1px;
+		border-style: solid;
 		display: block;
 
+		@include gray("border-color", "200");
 		@include border-radius();
 	}
 
@@ -60,16 +62,21 @@ ul.brands_index {
 		a {
 			text-align: center;
 			padding: 5px;
-			border: 1px solid gray("300");
+			border-width: 1px;
+			border-style: solid;
 			display: block;
 			float: none;
 
+			@include gray("border-color", "300");
 			@include border-radius();
 		}
 
 		a:hover {
 			padding: 5px;
-			border: 1px solid gray("400");
+			border-width: 1px;
+			border-style: solid;
+
+			@include gray("border-color", "400");
 		}
 	}
 }

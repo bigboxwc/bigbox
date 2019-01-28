@@ -76,8 +76,10 @@
 			&:nth-child(odd) a,
 			&:nth-child(even) a {
 				background: none;
-				border: 1px solid gray("300");
+				border-width: 1px;
+				border-style: solid;
 
+				@include gray("border-color", "300");
 				@include border-radius();
 
 				&:hover {
@@ -118,13 +120,15 @@
 	.wc-bookings-date-picker {
 
 		.ui-datepicker-header {
-			color: gray("700");
 			font-size: $font-size-sm;
 			text-transform: none;
-			background-color: gray("200");
 			background-image: none;
-			border: 1px solid gray("300");
+			border-width: 1px;
+			border-style: solid;
 
+			@include gray("color", "700");
+			@include gray("background-color", "200");
+			@include gray("border-color", "300");
 			@include border-top-radius();
 		}
 
@@ -195,8 +199,9 @@
 		}
 
 		.ui-datepicker-calendar th {
-			color: gray("700");
 			border-top: 0;
+
+			@include gray("color", "700");
 		}
 
 		.ui-datepicker-calendar tr {
@@ -204,10 +209,12 @@
 		}
 
 		.ui-datepicker-calendar td {
-			border-top: 1px solid gray("300");
-			border-right: 1px solid gray("300");
 			background-color: #fff;
 			padding: 3px !important;
+			border-width: 1px 1px 0 0;
+			border-style: solid;
+
+			@include gray("background-color", "300");
 
 			&.bookable-range {
 
@@ -236,11 +243,13 @@
 		.ui-datepicker td.ui-datepicker-today a,
 		.ui-datepicker td.partial_booked a,
 		.ui-datepicker td.bookable a {
-			color: gray("700") !important;
 			background-color: #fff !important;
 
+			@include gray("color", "700");
+
 			&:hover {
-				background-color: gray("200") !important;
+
+				@include gray("background-color", "200");
 			}
 		}
 
@@ -271,9 +280,11 @@
 
 	// Total
 	.wc-bookings-booking-cost {
-		color: gray("700");
-		background: gray("200");
-		border: 1px solid gray("300");
 		border-width: 1px 0;
+		border-style: solid;
+
+		@include gray("ckground-color", "700");
+		@include gray("background-color", "200");
+		@include gray("border-color", "300");
 	}
 }

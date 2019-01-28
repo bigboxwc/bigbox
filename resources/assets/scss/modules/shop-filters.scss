@@ -134,9 +134,9 @@
 	}
 
 	.price_slider_wrapper .ui-widget-content {
-		background-color: gray("200");
 		border: 0;
 
+		@include gray("background-color", "200");
 		@include border-radius();
 	}
 
