@@ -11,7 +11,7 @@
 
 ### New
 
-- Enable WCAG 2.0 AA compliant theme color contrasts with `apply_filters( 'bigbox_is_high_contrast', '__return_true' );`
+- Output all colors in inline CSS instead of external stylesheet.
 - Support JSX transforms via `wp.element`.
 - Additional support for Table block "Striped" styles.
 - Additional support for [CoBlocks](https://coblocks.com/) plugin.
