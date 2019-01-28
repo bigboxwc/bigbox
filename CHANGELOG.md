@@ -2,6 +2,7 @@
 
 ### Breaking
 
+- WordPress 5.0+ minimum requirement.
 - Update `app/integrations/woocommerce/template-hooks.php` and `app/integrations/woocommerce/template-hooks.php` to adjust output order of product price, sale, stock, etc in WooCommerce product loop.
 - Update `resources/views/integrations/woocommerce/order/order-details.php` to remove duplicate order notes.
 - Hide "Sale Flash" by default. Now available in a Customizer setting.
