@@ -19,13 +19,13 @@ return [
 	// Solid background-color.
 	[
 		'selectors'    => [
-			'table tbody tr:nth-child(even) th',
-			'table tbody tr:nth-child(even) td',
 			'.footer-copyright',
 			'.navbar-mobile__close',
 			'.breadcrumbs',
 			'.woocommerce-breadcrumb',
 			'.navbar-search__category select',
+
+			'.wp-block-table.is-style-stripes tr:nth-child(odd)',
 
 			// Flatpickr.
 			'.flatpickr-calendar .flatpickr-day.inRange',

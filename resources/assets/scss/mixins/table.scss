@@ -22,7 +22,7 @@
 
 	@if $striped {
 
-		tr:nth-child(even) {
+		tr:nth-child(odd) {
 
 			@include gray("background-color", "100");
 		}

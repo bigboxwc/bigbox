@@ -9,6 +9,7 @@ $use-margins: false;
 @import "_config";
 
 // Base HTML elements.
+@import "elements/body";
 @import "elements/h";
 @import "elements/a";
 @import "elements/p";
@@ -35,6 +36,7 @@ $use-margins: false;
 	font-size: font-size("md");
 
 	.editor-post-title__input {
+		font-family: $font-family-sans-serif;
 		font-size: font-size("lg");
 
 		@include media-breakpoint-up(md) {
