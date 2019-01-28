@@ -131,7 +131,7 @@ p.has-background {
 	border-style: solid;
 	padding-left: $spacer;
 
-	@include gray("border-color", "700");
+	@include gray("border-left-color", "700");
 }
 
 .wp-block-table {

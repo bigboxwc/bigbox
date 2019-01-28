@@ -50,6 +50,9 @@ return [
 		'selectors'    => [
 			'.woocommerce-product-gallery__trigger:before',
 			'.offcanvas-drawer__close:before',
+
+			'.wp-block-quote:not(.is-large):not(.is-style-large)',
+			'.wp-block-pullquote',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray700 ),
