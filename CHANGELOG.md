@@ -1,3 +1,25 @@
+## [3.0.0] - 2018-02-01
+
+### Breaking
+
+- Update `app/integrations/woocommerce/template-hooks.php` and `app/integrations/woocommerce/template-hooks.php` to adjust output order of product price, sale, stock, etc in WooCommerce product loop.
+- Update `resources/views/integrations/woocommerce/order/order-details.php` to remove duplicate order notes.
+- Hide "Sale Flash" by default. Now available in a Customizer setting.
+- Hide "Inventory count" by default. Now available in a Customizer setting.
+- Update default font weight to 400 (from 500).
+
+### New
+
+- Enable WCAG 2.0 AA compliant theme color contrasts with `apply_filters( 'bigbox_is_high_contrast', '__return_true' );`
+- Additional support for Table block "Striped" styles.
+- Additional support for [CoBlocks](https://coblocks.com/) plugin.
+- WooCommerce 3.5.3 support.
+
+### Fix
+
+- Button sizing between small, default, and large are more obvious.
+- Heading and block spacing consistency.
+
 ## [2.3.1] - 2018-01-08
 
 ### Fix
