@@ -43,10 +43,6 @@ function bigbox_body_class( $classes ) {
 		$classes[] = 'is-rounded';
 	}
 
-	if ( bigbox_is_high_contrast() ) {
-		$classes[] = 'is-high-contrast';
-	}
-
 	return $classes;
 }
 add_filter( 'body_class', 'bigbox_body_class' );

@@ -148,21 +148,3 @@ function bigbox_is_rounded() {
 	 */
 	return apply_filters( 'bigbox_is_rounded', true );
 }
-
-/**
- * Determine if the theme is in "High Contrast" mode.
- *
- * @since 3.0.0
- *
- * @return bool
- */
-function bigbox_is_high_contrast() {
-	/**
-	 * Filters if the styles should use high contrast colors.
-	 *
-	 * @since 3.0.0
-	 *
-	 * @param bool
-	 */
-	return apply_filters( 'bigbox_is_high_contrast', false );
-}
