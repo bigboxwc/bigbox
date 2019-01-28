@@ -19,6 +19,13 @@ return [
 	// Solid color.
 	[
 		'selectors'    => [
+			'.wp-block-quote cite',
+			'.wp-block-quote footer',
+			'.wp-block-quote__citation',
+			'.wp-block-pullquote cite',
+			'.wp-block-pullquote footer',
+			'.wp-block-pullquote__citation',
+
 			'.star-rating__count',
 			'.woocommerce-review-link',
 			'.coupons-next',

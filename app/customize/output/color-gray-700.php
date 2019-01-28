@@ -36,6 +36,8 @@ return [
 			'.woocommerce-breadcrumb a',
 			'.button--text',
 
+			'.wp-block-pullquote p',
+
 			// select2.
 			'.select2-container--default .select2-results__option[aria-selected=true]',
 			'.select2-container--default .select2-results__option[data-selected=true]',

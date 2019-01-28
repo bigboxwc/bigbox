@@ -22,6 +22,15 @@ return [
 			'background-color' => esc_attr( $warning ),
 		],
 	],
+	// Semi-transparent background-color.
+	[
+		'selectors'    => [
+			'.review-breakdown__count-bar',
+		],
+		'declarations' => [
+			'background-color' => esc_attr( bigbox_hex_to_rgba( $warning, 0.30 ) ),
+		],
+	],
 	// Semi-transparent border-color.
 	[
 		'selectors'    => [
@@ -38,6 +47,15 @@ return [
 			'.order-status--on-hold',
 			'.order-status--refunded',
 			'.woocommerce-order-notes .widget-title',
+		],
+		'declarations' => [
+			'color' => esc_attr( $warning ),
+		],
+	],
+	// Darker solid color.
+	[
+		'selectors'    => [
+			'.review-breakdown__count-label',
 		],
 		'declarations' => [
 			'color' => esc_attr( $warning ),

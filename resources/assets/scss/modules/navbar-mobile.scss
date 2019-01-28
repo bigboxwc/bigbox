@@ -39,7 +39,7 @@
 		border-style: solid;
 		max-width: 320px; // [1]
 
-		@include gray("border-color", "200");
+		@include gray("border-bottom-color", "200");
 
 		&:last-child {
 			border-bottom: 0;
@@ -67,10 +67,11 @@
 			top: 23px;
 			left: ($spacer * 1.5);
 			right: auto;
-			border-width: 0 4px 0 0;
+			border-left-width: 0;
+			border-right-width: 4px;
 			border-style: solid;
 
-			@include gray("border-color", "400");
+			@include gray("border-right-color", "400");
 		}
 
 		> a {
@@ -100,6 +101,7 @@
 			height: 0;
 			border-style: solid;
 			border-top: 5px solid transparent;
+			border-right: 0;
 			border-bottom: 5px solid transparent;
 			border-left-width: 4px;
 

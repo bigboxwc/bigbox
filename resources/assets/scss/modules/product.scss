@@ -229,6 +229,11 @@
 	p {
 		margin: 0;
 	}
+
+	&.quantity {
+		align-items: center;
+		display: flex;
+	}
 }
 
 .product__meta-label {

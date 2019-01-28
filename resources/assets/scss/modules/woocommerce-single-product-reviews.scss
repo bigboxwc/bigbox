@@ -53,7 +53,7 @@
 	align-items: center;
 	width: 100%;
 	padding: ($spacer /2);
-	border-width: 1px;
+	border-width: 0 0 1px;
 	border-style: solid;
 
 	@include gray("border-color", "300");

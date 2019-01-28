@@ -42,6 +42,8 @@ return [
 			'.wp-block-table.is-style-stripes th',
 
 			'.navbar-mobile .sub-menu',
+			'.navbar-menu .sub-menu',
+
 			'.wc-credit-card-form #stripe-card-element',
 			'.navbar-search__category select',
 			'.widget ul ul',
