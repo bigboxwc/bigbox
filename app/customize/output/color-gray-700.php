@@ -65,6 +65,18 @@ return [
 		'selectors'    => [
 			'.woocommerce-product-gallery__trigger:after',
 			'i.bigbox-icon',
+
+			'.menu-item > a[href*="dribbble.com"]::before',
+			'.menu-item > a[href*="facebook.com"]::before',
+			'.menu-item > a[href*="github.com"]::before',
+			'.menu-item > a[href*="google.com"]::before',
+			'.menu-item > a[href*="reddit.com"]::before',
+			'.menu-item > a[href*="rss.com"]::before',
+			'.menu-item > a[href*="slack.com"]::before',
+			'.menu-item > a[href*="twitch.com"]::before',
+			'.menu-item > a[href*="twitter.com"]::before',
+			'.menu-item > a[href*="wordpress.com"]::before',
+			'.menu-item > a[href*="youtube.com"]::before',
 		],
 		'declarations' => [
 			'background-color' => esc_attr( $gray700 ),
