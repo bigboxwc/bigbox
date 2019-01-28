@@ -44,7 +44,7 @@ class WooCommerce_Bookings extends Integration implements Registerable, Service 
 	 * @since 1.16.0
 	 */
 	protected $inline_css_configs = [
-		'color-success',
+		'color-primary',
 		'color-gray-200',
 		'color-gray-300',
 		'color-gray-700',

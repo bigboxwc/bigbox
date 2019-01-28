@@ -20,6 +20,7 @@ return [
 		'selectors'    => [
 			'.wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker-header',
 			'.wc-bookings-booking-form .form-field ul.block-picker li:nth-child(even) a',
+			'.wc-bookings-booking-form .form-field ul.block-picker li:nth-child(odd) a',
 			'.wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker-calendar td',
 			'.wc-bookings-booking-form .wc-bookings-booking-cost',
 		],
