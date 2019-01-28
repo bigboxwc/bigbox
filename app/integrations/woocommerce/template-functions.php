@@ -316,6 +316,10 @@ function bigbox_woocommerce_template_short_description() {
 
 	$product     = wc_get_product( get_post() );
 	$description = apply_filters( 'woocommerce_short_description', $product->get_short_description() );
+
+	if ( '' === $description ) {
+		return;
+	}
 	?>
 
 <div class="product__short-description product__meta">
