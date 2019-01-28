@@ -182,25 +182,12 @@
 .woocommerce-loop-category__title,
 .woocommerce-loop-product__title,
 .product__title {
-	font-size: $font-size-sm;
+	font-size: font-size("sm");
 	margin: 0;
 	order: 0;
 
 	@include media-breakpoint-up(lg) {
 		font-size: $font-size-base;
-	}
-
-	@include media-breakpoint-up(xl) {
-		font-size: $font-size-lg;
-	}
-
-	// When using more columns keep titles small.
-	.columns-5 &,
-	.columns-6 & {
-
-		@include media-breakpoint-up(xl) {
-			font-size: $font-size-base;
-		}
 	}
 
 	// Shrink on cart and checkout.

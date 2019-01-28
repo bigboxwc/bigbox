@@ -45,7 +45,7 @@ if ( ! empty( $wc_tabs ) ) : ?>
 			if ( '' !== $content ) :
 				?>
 
-		<div class="woocommerce-single-product-data__section" id="tab-<?php echo esc_attr( $key ); ?>">
+		<div class="woocommerce-single-product-data__section woocommerce-single-product-data__section-<?php echo esc_attr( $key ); ?>" id="tab-<?php echo esc_attr( $key ); ?>">
 				<?php echo $content; // WPCS: XSS okay. ?>
 		</div>
 
