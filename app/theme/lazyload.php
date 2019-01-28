@@ -310,7 +310,7 @@ function bigbox_enqueue_assets() {
 		get_template_directory_uri() . '/public/js/lazyload.min.js',
 		[],
 		$version,
-		false
+		true
 	);
 
 	wp_script_add_data(
