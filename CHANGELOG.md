@@ -8,6 +8,7 @@
 - Hide "Sale Flash" by default. Now available in a Customizer setting.
 - Hide "Inventory count" by default. Now available in a Customizer setting.
 - Update default font weight to 400 (from 500).
+- Remove attempts to style classic editor.
 
 ### New
 
@@ -15,6 +16,7 @@
 - Support JSX transforms via `wp.element`.
 - Additional support for Table block "Striped" styles.
 - Additional support for [CoBlocks](https://coblocks.com/) plugin.
+- Additional support for WooCommerce Product Blocks.
 - WooCommerce 3.5.3 support.
 
 ### Fix
