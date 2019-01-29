@@ -33,7 +33,7 @@ function bigbox_woocommerce_customize_register_catalog_controls( $wp_customize )
 		'display-inventory',
 		[
 			/* translators: Customizer control label. */
-			'label'    => __( 'Display stock counts', 'bigbox' ),
+			'label'    => __( 'Display stock information', 'bigbox' ),
 			'type'     => 'checkbox',
 			'section'  => 'woocommerce_product_catalog',
 			'priority' => 50,
@@ -75,6 +75,25 @@ function bigbox_woocommerce_customize_register_catalog_controls( $wp_customize )
 			'type'     => 'checkbox',
 			'section'  => 'woocommerce_product_catalog',
 			'priority' => 60,
+		]
+	);
+
+	$wp_customize->add_setting(
+		'display-more-options',
+		[
+			'default'           => true,
+			'sanitize_callback' => 'absint',
+		]
+	);
+
+	$wp_customize->add_control(
+		'display-more-options',
+		[
+			/* translators: Customizer control label. */
+			'label'    => __( 'Display "More Options" link for variable products', 'bigbox' ),
+			'type'     => 'checkbox',
+			'section'  => 'woocommerce_product_catalog',
+			'priority' => 70,
 		]
 	);
 }

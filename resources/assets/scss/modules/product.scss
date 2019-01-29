@@ -243,7 +243,6 @@
 	line-height: 1;
 	text-decoration: none;
 	display: inline-block;
-	margin: 0 0 $spacer;
 	padding: 3px 5px;
 
 	@include theme-color("background-color", "success");
@@ -252,4 +251,5 @@
 
 .product__short-description {
 	line-height: inherit;
+	margin-top: $spacer;
 }

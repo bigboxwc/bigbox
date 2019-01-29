@@ -258,6 +258,10 @@ function bigbox_woocommerce_product_subcategories_args( $args ) {
  * @since 1.0.0
  */
 function bigbox_woocommerce_template_loop_variations() {
+	if ( ! get_theme_mod( 'display-more-options', true ) ) {
+		return;
+	}
+
 	$product = wc_get_product( get_the_ID() );
 
 	if ( ! $product->is_in_stock() ) {
