@@ -31,28 +31,10 @@ class Customize_Walkthrough implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	public function register() {
-		add_filter( 'bigbox_get_starter_content', [ $this, 'filter_starter_content' ], 99 );
-
 		if ( isset( $_GET['walkthrough'] ) ) { // @phpcs:ignore
 			add_action( 'customize_controls_print_footer_scripts', [ $this, 'customize_controls_print_footer_scripts' ] );
 			add_filter( 'bigbox_customize_controls_js', [ $this, 'bigbox_customize_controls_js' ] );
 		}
-	}
-
-	/**
-	 * Unset starter content if option is not checked.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param array $content Starter content.
-	 * @return array
-	 */
-	public function filter_starter_content( $content ) {
-		if ( ! isset( $_GET['starter-content'] ) || 1 !== absint( $_GET['starter-content'] ) ) { // @phpcs:ignore
-			$content = null;
-		}
-
-		return $content;
 	}
 
 	/**
