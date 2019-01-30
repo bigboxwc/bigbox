@@ -24,7 +24,7 @@ global $post;
 
 $product = wc_get_product( get_the_ID() );
 
-if ( $product->is_on_sale() && get_theme_mod( 'display-sale-flash', false ) ) :
+if ( $product->is_on_sale() ) :
 	if ( 'simple' === $product->get_type() ) :
 		$percentage = round( ( $product->get_regular_price() - $product->get_sale_price() ) / $product->get_regular_price() * 100 );
 		/* translators: %1$s Sale savings amount. */

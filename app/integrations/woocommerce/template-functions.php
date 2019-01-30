@@ -258,10 +258,6 @@ function bigbox_woocommerce_product_subcategories_args( $args ) {
  * @since 1.0.0
  */
 function bigbox_woocommerce_template_loop_variations() {
-	if ( ! get_theme_mod( 'display-more-options', true ) ) {
-		return;
-	}
-
 	$product = wc_get_product( get_the_ID() );
 
 	if ( ! $product->is_in_stock() ) {
@@ -290,10 +286,6 @@ function bigbox_woocommerce_template_loop_variations() {
  * @since 1.0.0
  */
 function bigbox_woocommerce_template_loop_stock() {
-	if ( ! get_theme_mod( 'display-inventory', true ) ) {
-		return;
-	}
-
 	$html = wc_get_stock_html( wc_get_product( get_post() ) );
 
 	if ( '' === $html ) {
@@ -314,10 +306,6 @@ function bigbox_woocommerce_template_loop_stock() {
  * @since 3.0.0
  */
 function bigbox_woocommerce_template_short_description() {
-	if ( ! get_theme_mod( 'display-short-description', false ) ) {
-		return;
-	}
-
 	$product     = wc_get_product( get_post() );
 	$description = apply_filters( 'woocommerce_short_description', $product->get_short_description() );
 
