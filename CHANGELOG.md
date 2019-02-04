@@ -18,6 +18,7 @@
 - Additional support for [CoBlocks](https://coblocks.com/) plugin.
 - Additional support for WooCommerce Product Blocks.
 - WooCommerce 3.5.3 support.
+- Remove `placeholder` input attributes.
 
 ### Fix
 
