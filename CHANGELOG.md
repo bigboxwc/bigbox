@@ -24,6 +24,7 @@
 
 - Button sizing between small, default, and large are more obvious.
 - Heading and block spacing consistency.
+- Only show Previous/Next pagination buttons on mobile devices.
 
 ## [2.3.1] - 2018-01-08
 

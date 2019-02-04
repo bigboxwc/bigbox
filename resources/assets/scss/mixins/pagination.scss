@@ -29,8 +29,17 @@
 		color: inherit;
 		text-decoration: none;
 		padding: 0 $spacer;
-		display: flex;
 		align-items: center;
+		display: flex;
+
+		&:not(.next):not(.prev) {
+
+			display: none;
+
+			@include media-breakpoint-up(md) {
+				display: flex;
+			}
+		}
 	}
 
 	.next,
