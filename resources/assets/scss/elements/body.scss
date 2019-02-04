@@ -19,8 +19,9 @@ body {
 		*:focus {
 			outline-style: solid;
 			outline-offset: 2px;
+			outline-width: 2px;
 
-			@include theme-color("outlined-color", "primary");
+			@include theme-color("outline-color", "primary");
 		}
 	}
 
