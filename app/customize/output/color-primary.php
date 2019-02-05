@@ -107,7 +107,6 @@ return [
 		'selectors'    => [
 			'body.is-tabbing *:focus',
 			'body.is-tabbing .navbar .navbar--mobile :focus',
-			'body.is-tabbing .navbar .navbar-search :focus',
 			'body.is-tabbing .navbar .sub-menu :focus',
 		],
 		'declarations' => [

@@ -32,54 +32,20 @@ add_filter(
 
 /**
  * Add rounded corners to body by default.
+ *
+ * @since 1.0.0
+ *
+ * @param array $classes Body classes.
+ * @return array
  */
-add_filter(
-	'body_class',
-	/**
-	 * Add rounded corners to body by default.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param array $classes Body classes.
-	 * @return array
-	 */
-	function( $classes ) {
-		// @codingStandardsIgnoreStart
-		/**
-		 * Filters if the styles should use rounded corners.
-		 *
-		 * @since 1.11.0
-		 *
-		 * @param bool
-		 */
-		$rounded = apply_filters( 'bigbox_is_rounded', true );
-
-		$classes[] = $rounded ? 'is-rounded' : null;
-		// @codingStandardsIgnoreEnd
-
-		return $classes;
+function bigbox_body_class( $classes ) {
+	if ( bigbox_is_rounded() ) {
+		$classes[] = 'is-rounded';
 	}
-);
 
-/**
- * Add rounded corners to admin body by default.
- */
-add_filter(
-	'admin_body_class',
-	/**
-	 * Add rounded corners to admin body by default.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param string $classes Body classes.
-	 * @return string
-	 */
-	function( $classes ) {
-		$classes = $classes . ' is-rounded ';
-
-		return $classes;
-	}
-);
+	return $classes;
+}
+add_filter( 'body_class', 'bigbox_body_class' );
 
 /**
  * Output theme (and child theme) version number in meta tag.

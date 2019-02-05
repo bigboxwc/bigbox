@@ -27,7 +27,7 @@ while ( have_posts() ) :
 <div id="main" class="site-primary site-primary--<?php echo esc_attr( $columns ); ?>" role="main">
 	<h1 class="page-title"><?php the_title(); ?></h1>
 
-	<article class="hentry">
+	<article class="hentry hentry--page">
 		<?php the_content(); ?>
 	</article>
 </div>

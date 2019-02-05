@@ -83,19 +83,23 @@
 	text-decoration: none;
 	display: block;
 	padding: $spacer ($spacer * 1.5);
-	background: gray("100");
-	border-bottom: 1px solid gray("200");
+	border-width: 0 0 1px;
+	border-style: solid;
 	position: relative;
+
+	@include gray("background-color", "100");
+	@include gray("border-color", "200");
 
 	&::before {
 		content: "";
 		border-width: 2px 2px 2px 6px;
 		border-style: solid;
-		border-color: gray("700");
 		width: 15px;
 		height: 17px;
 		display: inline-block;
 		vertical-align: middle;
 		margin: -3px 5px 0 0;
+
+		@include gray("border-color", "700");
 	}
 }

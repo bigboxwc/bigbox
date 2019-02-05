@@ -14,11 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $gray300 = bigbox_get_theme_color( 'gray-300' );
-$default = bigbox_get_theme_default_color( 'gray-300' );
-
-if ( $gray300 === $default ) {
-	return [];
-}
 
 return [
 	[

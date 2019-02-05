@@ -19,9 +19,11 @@
 	font: #{$font-size-base}/#{$line-height-base} $font-family-sans-serif;
 	margin: 0;
 	padding: ($spacer / 2);
-	border: 1px solid gray("300");
+	border-width: 1px;
+	border-style: solid;
 	appearance: none;
 
+	@include gray("border-color", "300");
 	@include border-radius();
 }
 

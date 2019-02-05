@@ -28,6 +28,7 @@ return [
 	// Solid color.
 	[
 		'selectors'    => [
+			'.price ins',
 			'.woocommerce-purchase-form p.instock',
 			'.wc-saved-payment-methods input:checked + label',
 			'.order-status--completed',

@@ -35,8 +35,11 @@
 	.sub-menu,
 	.navbar-menu__items {
 		padding: ($spacer / 2) 0;
-		border-bottom: 1px solid gray("200");
+		border-width: 0 0 1px;
+		border-style: solid;
 		max-width: 320px; // [1]
+
+		@include gray("border-bottom-color", "200");
 
 		&:last-child {
 			border-bottom: 0;
@@ -64,12 +67,15 @@
 			top: 23px;
 			left: ($spacer * 1.5);
 			right: auto;
-			border-left: none;
-			border-right: 4px solid gray("400");
+			border-left-width: 0;
+			border-right-width: 4px;
+			border-style: solid;
+
+			@include gray("border-right-color", "400");
 		}
 
 		> a {
-			font-weight: bold;
+			font-weight: $font-weight-bold;
 			padding-left: 1rem;
 		}
 
@@ -93,15 +99,21 @@
 			top: calc(50% - 5px);
 			width: 0;
 			height: 0;
+			border-style: solid;
 			border-top: 5px solid transparent;
+			border-right: 0;
 			border-bottom: 5px solid transparent;
-			border-left: 4px solid gray("400");
+			border-left-width: 4px;
+
+			@include gray("border-left-color", "400");
 
 			.rtl & {
 				border-left: 0;
-				border-right: 4px solid gray("400");
+				border-right-width: 4px;
 				left: 1rem;
 				right: auto;
+
+				@include gray("border-right-color", "400");
 			}
 		}
 	}

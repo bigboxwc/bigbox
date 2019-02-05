@@ -153,6 +153,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 		$colors = bigbox_get_theme_colors();
 
 		$gray200 = bigbox_get_theme_color( 'gray-200' );
+		$gray300 = bigbox_get_theme_color( 'gray-300' );
 		$gray700 = bigbox_get_theme_color( 'gray-700' );
 		$gray800 = bigbox_get_theme_color( 'gray-800' );
 
@@ -202,7 +203,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 				'mark',
 				'table tfoot td',
 				'strong',
-				'wp-block-cover-text',
+				'.wp-block-cover-text',
 			],
 			'declarations' => [
 				'font-weight' => esc_attr( $weight_bold ),
@@ -223,6 +224,29 @@ class Gutenberg extends Integration implements Registerable, Service {
 			],
 			'declarations' => [
 				'color' => esc_attr( $gray800 ),
+			],
+		];
+
+		// Block supplements.
+		$config[] = [
+			'selectors'    => [
+				'.wp-block-table td',
+				'.wp-block-table th',
+				'.wp-block-table.is-style-stripes td',
+				'.wp-block-table.is-style-stripes th',
+			],
+			'declarations' => [
+				'border-color' => esc_attr( $gray300 ),
+			],
+		];
+
+		$config[] = [
+			'selectors'    => [
+				'.wp-block-quote:not(.is-large):not(.is-style-large)',
+				'.wp-block-pullquote',
+			],
+			'declarations' => [
+				'border-color' => esc_attr( $gray700 ),
 			],
 		];
 

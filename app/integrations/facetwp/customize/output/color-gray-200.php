@@ -16,10 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 $gray200 = bigbox_get_theme_color( 'gray-200' );
 $default = bigbox_get_theme_default_color( 'gray-200' );
 
-if ( $gray200 === $default ) {
-	return [];
-}
-
 return [
 	[
 		'selectors'    => [

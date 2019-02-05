@@ -36,6 +36,8 @@ return [
 			'.woocommerce-breadcrumb a',
 			'.button--text',
 
+			'.wp-block-pullquote p',
+
 			// select2.
 			'.select2-container--default .select2-results__option[aria-selected=true]',
 			'.select2-container--default .select2-results__option[data-selected=true]',
@@ -50,6 +52,9 @@ return [
 		'selectors'    => [
 			'.woocommerce-product-gallery__trigger:before',
 			'.offcanvas-drawer__close:before',
+
+			'.wp-block-quote:not(.is-large):not(.is-style-large)',
+			'.wp-block-pullquote',
 		],
 		'declarations' => [
 			'border-color' => esc_attr( $gray700 ),

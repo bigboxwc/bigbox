@@ -8,6 +8,8 @@
 
 		.woocommerce-form__label {
 			margin-left: $spacer;
+			display: flex;
+			align-items: center;
 		}
 	}
 

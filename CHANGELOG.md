@@ -1,3 +1,31 @@
+## [3.0.0] - 2018-02-04
+
+### Breaking
+
+- WordPress 5.0+ minimum requirement.
+- Update `app/integrations/woocommerce/template-hooks.php` and `app/integrations/woocommerce/template-hooks.php` to adjust output order of product price, sale, stock, etc in WooCommerce product loop.
+- Update `resources/views/integrations/woocommerce/order/order-details.php` to remove duplicate order notes.
+- Hide "Sale Flash" by default. Now available in a Customizer setting.
+- Hide "Inventory count" by default. Now available in a Customizer setting.
+- Update default font weight to 400 (from 500).
+- Remove attempts to style classic editor.
+
+### New
+
+- Output all colors in inline CSS instead of external stylesheet.
+- Support JSX transforms via `wp.element`.
+- Additional support for Table block "Striped" styles.
+- Additional support for [CoBlocks](https://coblocks.com/) plugin.
+- Additional support for WooCommerce Product Blocks.
+- WooCommerce 3.5.3 support.
+- Remove `placeholder` input attributes.
+
+### Fix
+
+- Button sizing between small, default, and large are more obvious.
+- Heading and block spacing consistency.
+- Only show Previous/Next pagination buttons on mobile devices.
+
 ## [2.3.1] - 2018-01-08
 
 ### Fix

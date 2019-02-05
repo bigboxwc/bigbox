@@ -1,4 +1,5 @@
 form.woocommerce-checkout {
+	line-height: 1.725;
 
 	@include make-row();
 }
@@ -52,8 +53,9 @@ form.woocommerce-checkout {
 }
 
 .woocommerce-terms-and-conditions-text {
-	color: gray("800");
 	font-weight: $font-weight-bold;
+
+	@include gray("color", "800");
 }
 
 .wc_payment_methods {
@@ -71,24 +73,25 @@ form.woocommerce-checkout {
 	}
 
 	[type="radio"]:checked + label[for^="payment_method"] {
-		color: theme-color("success");
 		padding: 0;
+
+		@include theme-color("color", "success");
 
 		&::before {
 			width: 7px;
 			height: 11px;
-			border-color: theme-color("success");
 			border-width: 0 2px 2px 0;
 			transform: rotate(45deg);
 			border-radius: 0;
 			margin-left: 5px;
 			left: $spacer;
 			top: calc(50% - 7px);
+
+			@include theme-color("border-color", "success");
 		}
 	}
 
 	label[for^="payment_method"] {
-		color: gray("500");
 		width: 100%;
 		margin: 0;
 		padding: $spacer $spacer $spacer ($spacer * 2.5) !important;
@@ -97,6 +100,8 @@ form.woocommerce-checkout {
 		align-items: center;
 		position: relative;
 
+		@include gray("color", "500");
+
 		&::before {
 			content: "";
 			position: absolute;
@@ -104,8 +109,11 @@ form.woocommerce-checkout {
 			top: calc(50% - 6px);
 			width: 12px;
 			height: 12px;
-			border: 2px solid gray("400");
+			border-width: 2px;
+			border-style: solid;
 			border-radius: 50%;
+
+			@include gray("border-color", "400");
 		}
 
 		img {
@@ -115,9 +123,10 @@ form.woocommerce-checkout {
 	}
 
 	.payment_box p {
-		color: gray("600");
 		font-size: $font-size-sm;
 		margin: $spacer 0 0;
+
+		@include gray("color", "600");
 	}
 }
 
@@ -198,9 +207,10 @@ form.woocommerce-checkout {
 }
 
 .woocommerce-remove-coupon {
-	color: theme-color("warning");
 	font-size: $font-size-sm;
 	margin-left: 5px;
+
+	@include theme-color("color", "warning");
 }
 
 .wc-terms-and-conditions {
@@ -235,8 +245,10 @@ form.woocommerce-checkout {
 
 .woocommerce-privacy-policy-text:not(:empty) {
 	font-size: $font-size-sm;
-	border: 1px solid gray("200");
 	border-width: 1px 0;
+	border-style: solid;
+
+	@include gray("border-color", "200");
 }
 
 .woocommerce-SavedPaymentMethods-new,
@@ -263,7 +275,8 @@ form.woocommerce-checkout {
 	}
 
 	input:checked + label {
-		color: theme-color("success");
+
+		@include theme-color("color", "success");
 	}
 }
 

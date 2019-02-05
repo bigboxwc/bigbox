@@ -47,14 +47,15 @@ button,
 	}
 
 	&.button--text {
-		color: gray("700");
 		background: none;
 		border: 0;
 		padding: 0;
 
+		@include gray("color", "700");
+
 		&:hover {
 			color: initial;
-			
+
 			&::after {
 				background: none;
 			}

@@ -34,7 +34,7 @@ function bigbox_facetwp_facets( $facets ) {
 		'name'          => 'keyword',
 		'type'          => 'search',
 		'search_engine' => '',
-		'placeholder'   => 'Find a product...',
+		'placeholder'   => '',
 	];
 
 	$facets[] = [

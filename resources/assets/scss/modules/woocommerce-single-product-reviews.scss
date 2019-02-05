@@ -41,8 +41,10 @@
 
 .review-breakdown {
 	margin-bottom: ($spacer * 2);
-	border: 1px solid gray("300");
+	border-width: 1px;
+	border-style: solid;
 
+	@include gray("border-color", "300");
 	@include border-radius();
 }
 
@@ -51,7 +53,10 @@
 	align-items: center;
 	width: 100%;
 	padding: ($spacer /2);
-	border-bottom: 1px solid gray("300");
+	border-width: 0 0 1px;
+	border-style: solid;
+
+	@include gray("border-color", "300");
 
 	&:last-child {
 		border-bottom: 0;

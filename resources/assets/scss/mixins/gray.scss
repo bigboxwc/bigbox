@@ -1,0 +1,16 @@
+//
+// Choose a gray color based on set map.
+//
+@mixin gray( $property, $gray, $important: false ) {
+
+	@if $use-fallback-colors {
+
+		@if $important {
+
+			#{$property}: gray($gray) !important;
+		} @else {
+
+			#{$property}: gray($gray);
+		}
+	}
+}

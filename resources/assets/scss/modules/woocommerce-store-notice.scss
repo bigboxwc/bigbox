@@ -8,9 +8,10 @@
 	font-size: 1em;
 	padding: 1em 0;
 	text-align: center;
-	background-color: theme-color("warning");
 	z-index: 99998;
 	display: none;
+
+	@include theme-color("background-color", "warning");
 
 	a {
 		text-decoration: underline;

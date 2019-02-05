@@ -1,6 +1,9 @@
 .blog-post {
 	text-align: center;
-	border-bottom: 1px solid gray("200");
+	border-width: 0 0 1px;
+	border-style: solid;
+
+	@include gray("border-color", "200");
 
 	$map: (
 		md: 2,

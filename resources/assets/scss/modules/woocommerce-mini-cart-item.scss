@@ -2,7 +2,6 @@
 	position: relative;
 
 	.remove {
-		color: theme-color("danger");
 		text-align: center;
 		line-height: 20px;
 		background: #fff;
@@ -12,6 +11,8 @@
 		position: absolute;
 		top: ($spacer / 2);
 		right: ($spacer / 2);
+
+		@include theme-color("color", "danger");
 	}
 
 	a {
@@ -25,9 +26,10 @@
 }
 
 .woocommerce-mini-cart__total {
-	border: 1px solid gray("200");
 	border-width: 1px 0;
+	border-style: solid;
 
+	@include gray("border-color", "200");
 	@include vertical-spacing("padding", "both", (
 		sm: 1,
 	) );

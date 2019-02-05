@@ -17,8 +17,8 @@ if ( ! bigbox_is_integration_active( 'woocommerce' ) ) :
 	return;
 endif;
 
-$account = get_theme_mod( 'nav-item-account', true );
-$cart    = get_theme_mod( 'nav-item-cart', true );
+$account = get_theme_mod( 'nav-item-account', true ) && -1 !== wc_get_page_id( 'myaccount' );
+$cart    = get_theme_mod( 'nav-item-cart', true ) && -1 !== wc_get_page_id( 'shop' );
 
 if ( ! $account && ! $cart ) {
 	return;

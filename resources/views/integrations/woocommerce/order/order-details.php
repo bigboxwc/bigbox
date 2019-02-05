@@ -76,21 +76,14 @@ $show_downloads        = $wc_order->has_downloadable_item() && $wc_order->is_dow
 			</ul>
 
 			<table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
-				<tfoot>
+				<tbody>
 					<?php foreach ( $wc_order->get_order_item_totals() as $key => $total ) : ?>
 						<tr>
 							<th scope="row"><?php echo esc_html( $total['label'] ); ?></th>
 							<td><?php echo wp_kses_post( $total['value'] ); ?></td>
 						</tr>
 					<?php endforeach; ?>
-
-					<?php if ( $wc_order->get_customer_note() ) : ?>
-						<tr>
-							<th><?php esc_html_e( 'Note:', 'bigbox' ); ?></th>
-							<td><?php echo wp_kses_post( wptexturize( $order->get_customer_note() ) ); ?></td>
-						</tr>
-					<?php endif; ?>
-				</tfoot>
+				<tbody>
 			</table>
 
 			<?php do_action( 'woocommerce_order_details_after_order_table', $wc_order ); ?>

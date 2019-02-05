@@ -28,11 +28,15 @@
 @import "functions/font-size";
 
 // Mixins
+@import "mixins/theme-color";
+@import "mixins/gray";
+
 @import "mixins/complimentary-columns";
 @import "mixins/grow-column";
 @import "mixins/col";
 @import "mixins/button";
 @import "mixins/form";
+@import "mixins/table";
 @import "mixins/card";
 @import "mixins/vertical-spacing";
 @import "mixins/reset-list";

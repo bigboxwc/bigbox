@@ -21,6 +21,9 @@ return [
 		'selectors'    => [
 			'.blog-post',
 			'.navbar-mobile__close',
+			'.navbar--mobile .sub-menu',
+			'.navbar--mobile .navbar-menu__items',
+			'.offcanvas-drawer__close',
 			'.page-title',
 			'.product__inner',
 			'.widget',

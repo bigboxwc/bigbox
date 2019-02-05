@@ -34,6 +34,7 @@ class WooCommerce extends Integration implements Registerable, Service {
 	 */
 	protected $helper_files = [
 		'wc-template-functions',
+		'customize',
 		'starter-content',
 		'cart',
 		'checkout',

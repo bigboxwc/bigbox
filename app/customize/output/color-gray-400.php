@@ -50,6 +50,8 @@ return [
 	],
 	[
 		'selectors'    => [
+			'.navbar--mobile li.menu-item-has-children--active::after',
+
 			'.rtl .navbar-menu__items-primary .sub-menu .menu-item-has-children > a:after',
 			'.rtl .navbar-menu__items-secondary .sub-menu .menu-item-has-children > a:after',
 			'.rtl .navbar--mobile .menu-item-has-children:after',

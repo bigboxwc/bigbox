@@ -107,13 +107,16 @@
 		position: absolute;
 		z-index: 2;
 		background-color: #fff;
-		border: 2px solid theme-color("primary");
+		border-width: 2px;
+		border-style: solid;
 		width: 16px;
 		height: 16px;
 		border-radius: 50%;
 		cursor: ew-resize;
 		outline: none;
 		top: -5px;
+
+		@include theme-color("border-color", "primary");
 
 		/* rtl:ignore */
 		margin-left: -10px;
@@ -125,15 +128,15 @@
 		font-size: 0.7em;
 		display: block;
 		border: 0;
-		background-color: theme-color("primary");
 
+		@include theme-color("background-color", "primary");
 		@include border-radius();
 	}
 
 	.price_slider_wrapper .ui-widget-content {
-		background-color: gray("200");
 		border: 0;
 
+		@include gray("background-color", "200");
 		@include border-radius();
 	}
 

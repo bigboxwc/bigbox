@@ -1,16 +1,9 @@
-.has-background {
+p.has-background {
 	padding: $spacer;
-
-	@include border-radius();
+	border-radius: $border-radius;
 }
 
-.wp-block-cover,
-.wp-block-quote,
-.wp-block-gallery,
-.wp-block-separator,
-.wp-block-image,
-.wp-block-embed,
-.wp-block-pullquote {
+.hentry > [class^="wp-block"] {
 
 	@if ( $use-margins ) {
 
@@ -23,6 +16,13 @@
 			sm: 2,
 			lg: 3,
 		) );
+	}
+}
+
+@for $heading from 1 through 6 {
+
+	.hentry h#{$heading} + [class^="wp-block"] {
+		margin-top: 0;
 	}
 }
 
@@ -61,7 +61,10 @@
 	&.is-style-dots {
 		display: block;
 		border: 0;
-		border-top: 2px solid gray("300");
+		border-width: 2px 0 0;
+		border-style: solid;
+
+		@include gray("border-color", "300");
 	}
 
 	&.is-style-wide {
@@ -74,10 +77,7 @@
 	}
 }
 
-// [1] Allow .button--size-x classes to be used to
-// adjust the size but do not apply the padding to the wrapper.
 .wp-block-button {
-	padding: 0 !important; // [1]
 
 	.wp-block-button__link {
 
@@ -127,16 +127,20 @@
 }
 
 .wp-block-quote:not(.is-large) {
-	border-left: 4px solid gray("700");
+	border-width: 0 0 0 4px;
+	border-style: solid;
 	padding-left: $spacer;
+
+	@include gray("border-left-color", "700");
 }
 
 .wp-block-table {
-	display: table;
 
-	td,
-	th {
-		border: 0;
+	@include table();
+
+	&.is-style-stripes {
+
+		@include table("striped");
 	}
 }
 
@@ -147,13 +151,6 @@
 
 p.wp-block-subhead {
 	font-style: normal;
-}
-
-@for $heading from 1 through 6 {
-
-	h#{$heading} + p.wp-block-subhead {
-		margin-top: -($spacer);
-	}
 }
 
 .wp-block-cover-text {

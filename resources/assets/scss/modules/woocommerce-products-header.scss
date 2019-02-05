@@ -13,5 +13,6 @@
 }
 
 .woocommerce-products-header .term-description {
-	color: gray("600");
+
+	@include gray("color", "600");
 }

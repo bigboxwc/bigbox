@@ -1,0 +1,52 @@
+@mixin table( $striped: false ) {
+	border-collapse: collapse;
+	border-style: hidden;
+	width: 100%;
+
+	@include card();
+
+	padding: 0;
+
+	td,
+	th {
+		padding: ($spacer / 2);
+		border-width: 1px;
+		border-style: solid;
+
+		@include gray("border-color", "300");
+	}
+
+	th {
+		text-align: left;
+	}
+
+	@if $striped {
+
+		tr:nth-child(odd) {
+
+			@include gray("background-color", "100");
+		}
+
+		td,
+		th {
+			border-width: 1px;
+			border-style: solid;
+
+			@include gray("border-color", "300");
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	p {
+		margin-top: 0;
+	}
+
+	// Trailing button (usually to add a new row).
+	+ .button {
+
+		@include vertical-spacing("margin", "up");
+	}
+}

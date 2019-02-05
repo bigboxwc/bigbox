@@ -49,12 +49,9 @@ function bigbox_customize_inline_css() {
 		// Don't output non-customized colors.
 		$color   = bigbox_get_theme_color( $key );
 		$default = bigbox_get_theme_default_color( $key );
+		$config  = include $file;
 
-		if ( $color !== $default ) {
-			$config = include $file;
-
-			bigbox_customize_add_inline_css_by_config( $css, $key, $config );
-		}
+		bigbox_customize_add_inline_css_by_config( $css, $key, $config );
 	}
 
 	/**

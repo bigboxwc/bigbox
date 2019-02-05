@@ -35,6 +35,10 @@ if ( isset( $_GET['starter-content-redirect'] ) ) {
  * @since 1.0.0
  */
 function bigbox_add_starter_content() {
+	if ( ! isset( $_GET['starter-content'] ) || 1 !== absint( $_GET['starter-content'] ) ) { // @phpcs:ignore
+		return;
+	}
+
 	add_theme_support( 'starter-content', bigbox_get_starter_content() );
 }
 add_action( 'after_setup_theme', 'bigbox_add_starter_content' );

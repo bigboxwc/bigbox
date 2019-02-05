@@ -89,15 +89,16 @@ remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_ad
 remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title' );
 
 remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
-add_action( 'bigbox_woocommerce_loop_product_price_before', 'woocommerce_show_product_loop_sale_flash' );
 
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
 
-add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 5 );
-add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_template_loop_variations', 8 );
-add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 10 );
-add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_template_loop_stock', 15 );
+add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 1 );
+add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 3 );
+add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 6 );
+add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_template_loop_variations', 9 );
+add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_template_loop_stock', 12 );
+add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_template_short_description', 15 );
 
 /**
  * File: content-single-product.php.

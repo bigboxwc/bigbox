@@ -30,9 +30,10 @@
 			width: 40px;
 			height: 40px;
 			margin-left: -20px;
-			background-color: theme-color("primary");
 			border-radius: 100%;
 			animation: scaleout 1s infinite ease-in-out;
+
+			@include theme-color("background-color", "primary");
 		}
 	}
 }
@@ -76,8 +77,11 @@
 	&.facetwp-type-alpha {
 		display: flex;
 		padding-bottom: 16px;
-		border-bottom: 1px solid gray("200");
+		border-width: 0 0 1px;
+		border-style: solid;
 		overflow-x: scroll;
+
+		@include gray("border-bottom-color", "200");
 
 		.facetwp-alpha {
 			text-align: center;
@@ -86,7 +90,8 @@
 			padding: 0 ($spacer / 2.5);
 
 			&.selected {
-				color: theme-color("primary");
+
+				@include theme-color("color", "primary");
 			}
 		}
 	}
@@ -158,26 +163,31 @@
 	.facetwp-slider {
 		border-color: transparent;
 		box-shadow: none;
-		background-color: gray("200");
 		height: 10px;
 		border-radius: 50px;
+
+		@include gray("background-color", "200");
 
 		&.noUi-target {
 			padding: 0 6px;
 		}
 
 		.noUi-connect {
-			background-color: theme-color("primary");
+
+			@include theme-color("color", "primary");
 		}
 
 		.noUi-handle {
 			box-shadow: none;
-			border: 2px solid theme-color("primary");
+			border-width: 2px;
+			border-style: solid;
 			width: 16px;
 			height: 16px;
 			border-radius: 50%;
 			cursor: ew-resize;
 			top: -4px;
+
+			@include theme-color("border-color", "primary");
 
 			&::before,
 			&::after {
@@ -197,10 +207,11 @@
 	}
 
 	.facetwp-star {
-		color: gray("300");
 		font-size: $font-size-base;
 		margin-bottom: 0;
 		margin-right: 3px;
+
+		@include gray("color", "300");
 	}
 
 	.facetwp-star:hover,

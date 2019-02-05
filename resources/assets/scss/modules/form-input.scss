@@ -11,7 +11,8 @@ textarea,
 	@include form-input();
 
 	&:focus {
-		border-color: gray("400");
+
+		@include gray("border-color", "400");
 	}
 
 	+ .button {
@@ -37,6 +38,7 @@ button {
 }
 
 label .required {
-	color: theme-color("danger");
 	text-decoration: none;
+
+	@include theme-color("color", "danger");
 }

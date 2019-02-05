@@ -130,3 +130,21 @@ function bigbox_get_star_html( $rating ) {
 
 	return $markup;
 }
+
+/**
+ * Determine if the theme is in "Rounded" mode.
+ *
+ * @since 3.0.0
+ *
+ * @return bool
+ */
+function bigbox_is_rounded() {
+	/**
+	 * Filters if the styles should use rounded corners.
+	 *
+	 * @since 1.11.0
+	 *
+	 * @param bool
+	 */
+	return apply_filters( 'bigbox_is_rounded', true );
+}

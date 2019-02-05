@@ -32,11 +32,18 @@ return [
 	[
 		'selectors'    => [
 			'hr',
+
 			'table',
-			'table tr',
-			'thead',
-			'tfoot',
+			'table td',
+			'table th',
+			'.wp-block-table td',
+			'.wp-block-table th',
+			'.wp-block-table.is-style-stripes td',
+			'.wp-block-table.is-style-stripes th',
+
 			'.navbar-mobile .sub-menu',
+			'.navbar-menu .sub-menu',
+
 			'.wc-credit-card-form #stripe-card-element',
 			'.navbar-search__category select',
 			'.widget ul ul',

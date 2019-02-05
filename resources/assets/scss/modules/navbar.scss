@@ -1,6 +1,7 @@
 .navbar {
-	background: theme-color("primary");
 	position: relative;
+
+	@include theme-color("background-color", "primary");
 
 	.container {
 		max-width: none;
@@ -16,7 +17,6 @@
 	.is-tabbing & {
 
 		.navbar--mobile,
-		.navbar-search,
 		.sub-menu {
 
 			:focus {

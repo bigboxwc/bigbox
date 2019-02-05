@@ -45,13 +45,13 @@
 // [1] Gutenberg adds their own !important declaration.
 @mixin button--color( $color ) {
 
-	background-color: theme-color($color);
+	@include theme-color("background-color", $color);
 }
 
 @mixin button--gray( $gray ) {
 
 	@include button();
-	background-color: gray($gray);
+	@include gray("background-color", $gray);
 }
 
 // [1] Gutenberg adds their own !important declaration.
@@ -71,19 +71,22 @@
 }
 
 @mixin button--pill {
-	color: gray("600") !important;
 	font-size: $font-size-xs;
 	line-height: 1;
-	background: gray("100") !important;
 	padding: 5px 5px 4px;
 	display: inline-block;
-	border: 1px solid gray("300") !important;
+	border-width: 1px;
+	border-style: solid;
 
+	@include gray("color", "600", $important: true);
+	@include gray("background", "100", $important: true);
+	@include gray("border-color", "300", $important: true);
 	@include border-radius();
 
 	&:hover {
 		text-decoration: none;
-		border: 1px solid gray("400");
+
+		@include gray("border-color", "400");
 	}
 }
 
@@ -92,7 +95,11 @@
 	padding: 9px 20px;
 
 	@include media-breakpoint-up(md) {
-		padding: 18px 30px; // [1]
+		padding: 18px 35px; // [1]
+	}
+
+	@include media-breakpoint-up(lg) {
+		padding: 20px 40px; // [1]
 	}
 }
 

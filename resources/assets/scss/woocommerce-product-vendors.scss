@@ -26,7 +26,10 @@ form.wcpv-shortcode-registration-form {
 			padding: 3px;
 			width: 56px;
 			float: left;
-			border: 1px solid gray("200");
+			border-width: 1px;
+			border-style: solid;
+
+			@include gray("border-color", "200");
 		}
 
 		.star-rating__stars {
@@ -92,12 +95,12 @@ form.wcpv-shortcode-registration-form {
 
 	&.wcpv-shortcode-registration-form-errors {
 
-		@include card--color(theme-color("danger"));
+		@include card--color("danger");
 	}
 
 	&.wcpv-shortcode-registration-success {
 		padding: ($spacer / 2) $spacer;
 
-		@include card--color(theme-color("success"));
+		@include card--color("success");
 	}
 }

@@ -1,7 +1,8 @@
 .bigbox-icon {
 	width: $icon-w;
 	height: $icon-h;
-	fill: gray("700");
+
+	@include gray("fill", "700");
 }
 
 //
@@ -12,8 +13,9 @@
 i.bigbox-icon {
 	margin-right: ($spacer / 2);
 	mask-size: $icon-w $icon-h;
-	background-color: gray("700");
 	display: inline-block;
+
+	@include gray("backgroud-color", "700");
 
 	// Social icons.
 	@each $logo in map-get($icons, "social") {
@@ -44,6 +46,7 @@ i.bigbox-icon {
 	}
 
 	a:hover & {
-		background-color: theme-color("primary");
+
+		@include theme-color("background-color", "primary");
 	}
 }

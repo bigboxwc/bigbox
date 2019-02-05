@@ -18,11 +18,6 @@ $output = [];
 
 foreach ( $colors as $color => $data ) {
 	$theme_color = bigbox_get_theme_color( $color );
-	$default     = bigbox_get_theme_default_color( $color );
-
-	if ( $theme_color === $default ) {
-		continue;
-	}
 
 	$output[] = [
 		'selectors'    => [

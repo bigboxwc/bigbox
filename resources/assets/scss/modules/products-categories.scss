@@ -17,7 +17,8 @@
 			border-radius: $border-radius;
 		}
 
-		background: gray("200");
+
+		@include gray("background", "200");
 		bottom: $spacer;
 		height: calc(100% - #{$spacer});
 	}
@@ -27,12 +28,12 @@
 	) );
 
 	li.product.product-category {
-		background: gray("100");
 		display: flex;
 		flex-direction: column;
 		position: relative;
 		z-index: 1;
 
+		@include gray("background", "100");
 		@include make-col-ready;
 		@include make-col(5);
 
@@ -64,7 +65,8 @@
 			height: 100%;
 
 			&:hover h2 {
-				color: theme-color("primary");
+
+				@include theme-color("color", "primary");
 			}
 		}
 

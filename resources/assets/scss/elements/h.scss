@@ -1,11 +1,12 @@
 @for $heading from 1 through 6 {
 
 	h#{$heading} {
-		color: gray("800");
 		font-weight: $font-weight-bold;
 
+		@include gray("color", "800");
+
 		@if $use-margins {
-			margin: $spacer 0 0;
+			margin: $spacer 0;
 		}
 	}
 }
