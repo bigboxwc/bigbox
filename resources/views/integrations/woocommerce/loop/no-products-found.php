@@ -20,9 +20,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$html_tag = bigbox_is_integration_active( 'facetwp' ) ? 'li' : 'div';
-?>
+$facetwp = bigbox_is_integration_active( 'facetwp' );
 
-<<?php echo esc_attr( $html_tag ); ?> class="woocommerce-info">
-	<?php esc_html_e( 'No products were found matching your selection.', 'bigbox' ); ?>
-</<?php echo esc_attr( $html_tag ); ?>>
+if ( $facetwp ) : ?>
+
+<?php wc_get_template( 'loop/loop-start.php' ); ?>
+	<!--fwp-loop-->
+	<li class="woocommerce-notice woocommerce-notice--notice card facetwp-template__no-results" role="alert">
+		<?php esc_html_e( 'No products were found matching your selection.', 'bigbox' ); ?>
+	</li>
+<?php wc_get_template( 'loop/loop-end.php' ); ?>
+
+<?php
+else :
+
+esc_html_e( 'No products were found matching your selection.', 'bigbox' );
+
+endif;

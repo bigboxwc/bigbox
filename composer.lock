@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fcb75a8017e260d135ebd9f2f84cc182",
+    "content-hash": "584cb651d52cea1138df5d98c20fc53d",
     "packages": [
         {
             "name": "a5hleyrich/wp-background-processing",
@@ -74,6 +74,42 @@
             ],
             "description": "WordPress view/template loading helpers.",
             "time": "2018-06-15T19:38:26+00:00"
+        },
+        {
+            "name": "cjstroud/classnames-php",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CJStroud/classnames-php.git",
+                "reference": "0ed8df43de4d5116468d7b81819fd137ad60d813"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CJStroud/classnames-php/zipball/0ed8df43de4d5116468d7b81819fd137ad60d813",
+                "reference": "0ed8df43de4d5116468d7b81819fd137ad60d813",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/ClassNames.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Stroud",
+                    "email": "chris.stroud00@gmail.com"
+                }
+            ],
+            "description": "A simple PHP utility for conditionally joining classNames together",
+            "time": "2017-04-29T22:14:00+00:00"
         }
     ],
     "packages-dev": [

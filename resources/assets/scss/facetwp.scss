@@ -36,6 +36,10 @@
 			@include theme-color("background-color", "primary");
 		}
 	}
+
+	&__no-results {
+		margin-right: $spacer;
+	}
 }
 
 .facetwp-facet {

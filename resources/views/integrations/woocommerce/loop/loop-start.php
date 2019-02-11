@@ -27,17 +27,19 @@ $single_row = (
 
 $main = 'main' === wc_get_loop_prop( 'products-loop' );
 
-$classes = [
+$classes = classNames(
 	'products',
 	'products-' . wc_get_loop_prop( 'products-loop', 'main' ),
 	'columns-' . wc_get_loop_prop( 'columns' ),
-	( $main ? 'facetwp-template' : null ),
-	( $single_row ? 'products--single-row' : null ),
-];
+	[
+		'facetwp-template' => $main,
+		'products--single-row' => $single_row,
+	]
+);
 ?>
 
-<ul class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+<ul class="<?php echo esc_attr( $classes ); ?>">
 
-<?php if ( bigbox_is_integration_active( 'facetwp' ) ) : ?>
+<?php if ( bigbox_is_integration_active( 'facetwp' ) && $main ) : ?>
 <!--fwp-loop-->
 <?php endif; ?>
