@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="container">
 
-		<div class="navbar__inner">
+		<div class="navbar__inner" role="banner">
 			<?php
 			bigbox_partial( 'navbar-mobile' );
 			bigbox_partial( 'branding' );

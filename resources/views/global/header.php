@@ -34,4 +34,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php bigbox_partial( 'navbar' ); ?>
 
 		<div class="container">
-			<div id="content" class="page-flow">
+			<div id="content" class="page-flow" role="main">

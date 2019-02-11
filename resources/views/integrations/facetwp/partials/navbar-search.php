@@ -40,7 +40,7 @@ if (
 endif;
 ?>
 
-<form id="<?php echo esc_attr( bigbox_is_shop() ? 'facetwp-' : '' ); ?>primary-search" action="<?php echo esc_url( $form_url ); ?>" method="GET" class="navbar-search">
+<form id="<?php echo esc_attr( bigbox_is_shop() ? 'facetwp-' : '' ); ?>primary-search" action="<?php echo esc_url( $form_url ); ?>" method="GET" class="navbar-search" role="search">
 
 	<?php
 	$search_taxonomy = get_taxonomy( str_replace( 'tax/', '', $dropdown_facet['source'] ) );

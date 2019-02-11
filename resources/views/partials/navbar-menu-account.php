@@ -28,7 +28,7 @@ $count = count( WC()->cart->get_cart_contents() );
 ?>
 
 <div class="navbar-menu navbar-menu--account">
-	<ul class="navbar-menu__items">
+	<ul class="navbar-menu__items" role="navigation">
 
 		<?php if ( $account ) : ?>
 

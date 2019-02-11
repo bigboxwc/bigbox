@@ -29,7 +29,7 @@ endif;
 		<?php esc_html_e( 'Close', 'bigbox' ); ?>
 	</a>
 
-	<div class="offcanvas-drawer__content"></div>
+	<div class="offcanvas-drawer__content" role="navigation"></div>
 </nav>
 
 <a href="#navbar-mobile-toggle" class="offcanvas-drawer-backdrop offcanvas-drawer-toggle" tabindex="-1" aria-hidden="true" aria-label="<?php esc_attr_e( 'Close menu', 'bigbox' ); ?>" hidden="true" data-source="#navbar-mobile" data-target="#navbar-primary"></a>
