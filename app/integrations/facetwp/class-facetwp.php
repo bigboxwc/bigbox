@@ -49,6 +49,7 @@ class FacetWP extends Integration implements Registerable, Service {
 		'color-gray-200',
 		'color-primary',
 		'refresh',
+		'type',
 	];
 
 	/**

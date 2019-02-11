@@ -1,4 +1,4 @@
-## [3.0.0] - 2018-02-01
+## [3.0.0] - 2018-02-04
 
 ### Breaking
 
@@ -18,11 +18,13 @@
 - Additional support for [CoBlocks](https://coblocks.com/) plugin.
 - Additional support for WooCommerce Product Blocks.
 - WooCommerce 3.5.3 support.
+- Remove `placeholder` input attributes.
 
 ### Fix
 
 - Button sizing between small, default, and large are more obvious.
 - Heading and block spacing consistency.
+- Only show Previous/Next pagination buttons on mobile devices.
 
 ## [2.3.1] - 2018-01-08
 

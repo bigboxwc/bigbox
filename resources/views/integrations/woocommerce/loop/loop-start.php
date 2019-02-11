@@ -20,12 +20,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+$single_row = (
+	( wc_get_loop_prop( 'per_page' ) <= wc_get_loop_prop( 'columns' ) ) &&
+	( 0 !== wc_get_loop_prop( 'per_page' ) )
+);
+
+$main = 'main' === wc_get_loop_prop( 'products-loop' );
+
 $classes = [
 	'products',
 	'products-' . wc_get_loop_prop( 'products-loop', 'main' ),
 	'columns-' . wc_get_loop_prop( 'columns' ),
-	( 'main' === wc_get_loop_prop( 'products-loop' ) ? 'facetwp-template' : null ),
-	( wc_get_loop_prop( 'total' ) <= wc_get_loop_prop( 'columns' ) ? 'products--single-row' : null ),
+	( $main ? 'facetwp-template' : null ),
+	( $single_row ? 'products--single-row' : null ),
 ];
 ?>
 

@@ -56,6 +56,11 @@
 		position: relative;
 		padding-left: 0;
 
+		label {
+			margin: 0;
+			line-height: $line-height-base;
+		}
+
 		&.checked {
 			background: none;
 		}

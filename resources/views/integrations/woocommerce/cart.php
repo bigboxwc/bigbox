@@ -14,6 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+$page_content = apply_filters( 'the_content', str_replace( '[woocommerce_cart]', '', get_post()->post_content ) );
+
 bigbox_view( 'global/header' );
 
 while ( have_posts() ) :
@@ -22,6 +24,12 @@ while ( have_posts() ) :
 
 <div id="main" class="site-primary site-primary--10" role="main">
 	<h1 class="page-title"><?php the_title(); ?></h1>
+
+	<?php if ( '' !== trim( $page_content ) ) : ?>
+	<div class="hentry hentry--page">
+		<?php echo $page_content; // WPCS: XSS okay. ?>
+	</div>
+	<?php endif; ?>
 
 	<div class="woocommerce-cart-wrapper hentry">
 		<div class="woocommerce-cart-wrapper__content">
@@ -47,10 +55,6 @@ while ( have_posts() ) :
 	</div>
 
 	<?php woocommerce_cross_sell_display(); ?>
-
-	<div class="hentry hentry--page">
-		<?php echo apply_filters( 'the_content', str_replace( '[woocommerce_cart]', '', get_post()->post_content ) ); // @codingStandardsIgnoreLine ?>
-	</div>
 </div>
 
 	<?php

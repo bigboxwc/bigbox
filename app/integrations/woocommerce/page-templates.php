@@ -92,12 +92,12 @@ function bigbox_woocommmerce_page_templates( $page_templates ) {
 add_filter( 'theme_page_templates', 'bigbox_woocommmerce_page_templates' );
 
 /**
- * Delete transient when an object saves.
+ * Delete option when an object saves.
  *
  * @since 1.0.0
  */
 function bigbox_woocommerce_reset_dynamic_shop_pages() {
-	delete_transient( 'bigbox-dynamic-shop-pages' );
+	delete_option( 'bigbox-dynamic-shop-pages' );
 }
 add_action( 'save_post', 'bigbox_woocommerce_reset_dynamic_shop_pages' );
 
@@ -109,7 +109,7 @@ add_action( 'save_post', 'bigbox_woocommerce_reset_dynamic_shop_pages' );
  * @return array
  */
 function bigbox_woocommerce_get_dynamic_shop_pages() {
-	$pages = get_transient( 'bigbox-dynamic-shop-pages' );
+	$pages = get_option( 'bigbox-dynamic-shop-pages', false );
 
 	if ( false === $pages ) {
 		$pages = [];
@@ -137,7 +137,7 @@ function bigbox_woocommerce_get_dynamic_shop_pages() {
 			$pages = $query->posts;
 		}
 
-		set_transient( 'bigbox-dynamic-sidebar-pages', $pages );
+		update_option( 'bigbox-dynamic-sidebar-pages', $pages, true );
 	}
 
 	return $pages;
