@@ -19,13 +19,6 @@ return [
 	// Solid border-color.
 	[
 		'selectors'    => [
-			'textarea:focus',
-			'[type="email"]:focus',
-			'[type="search"]:focus',
-			'[type="tel"]:focus',
-			'[type="url"]:focus',
-			'[type="password"]:focus',
-			'[type="text"]:focus',
 			'.wc_payment_method [type="radio"] label:before',
 			'ul.brands_index li a',
 			'ul.brands_index li span',
@@ -61,14 +54,6 @@ return [
 		'declarations' => [
 			'border-right-color' => esc_attr( $gray400 ),
 			'border-left-color'  => 'transparent',
-		],
-	],
-
-	// @mixin form--input
-	[
-		'selectors'    => bigbox_customize_add_state_to_selectors( bigbox_customize_get_form_input_selectors(), 'focus' ),
-		'declarations' => [
-			'border-color' => esc_attr( $gray400 ),
 		],
 	],
 ];

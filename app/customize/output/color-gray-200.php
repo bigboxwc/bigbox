@@ -40,6 +40,7 @@ return [
 			'.wc-social-login',
 			'.woocommerce-OrderUpdate',
 			'.woocommerce-shipping-address',
+			'.woocommerce-mini-cart__total',
 			'.tax-wcpv_product_vendors .woocommerce-products-header__title img',
 		],
 		'declarations' => [

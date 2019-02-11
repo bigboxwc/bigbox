@@ -91,7 +91,6 @@
 
 		@include media-breakpoint-up( $menu-break-point ) {
 			display: flex;
-			align-items: center;
 		}
 
 		// Top level items.

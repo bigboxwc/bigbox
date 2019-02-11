@@ -23,7 +23,6 @@ $document.on( 'facetwp-loaded', () => {
 
 		// Get wrapper unique attribute.
 		const id = wrapper.dataset.value;
-		console.log(id);
 
 		// Create an input and label.
 		const input = document.createElement( 'input' );
