@@ -185,25 +185,6 @@ function bigbox_facetwp_sort_options( $options ) {
 }
 
 /**
- * Match "No Results Found" with WooCommerce.
- *
- * @since 1.0.0
- *
- * @param string $translated_text Text that has been translated.
- * @param string $text            Text to be translated.
- * @param string $domain          Text domain.
- */
-function bigbox_facetwp_gettext_no_results( $translated_text, $text, $domain ) {
-	if ( 'No results found' === $text && 'fwp' === $domain ) {
-		ob_start();
-		wc_get_template( 'loop/no-products-found.php' );
-		return ob_get_clean();
-	}
-
-	return $translated_text;
-}
-
-/**
  * Dynamic navbar facets.
  *
  * @since 1.0.0
