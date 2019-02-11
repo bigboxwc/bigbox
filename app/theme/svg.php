@@ -71,9 +71,6 @@ function bigbox_get_svg( $args = [] ) {
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
 
-	// Add default classes.
-	$args['classes'][] = 'bigbox-icon';
-
 	// Set aria hidden.
 	$aria_hidden = ' aria-hidden="true"';
 
@@ -93,8 +90,13 @@ function bigbox_get_svg( $args = [] ) {
 		}
 	}
 
+	$classes = classNames(
+		'bigbox-icon',
+		$args['classes']
+	);
+
 	// Begin SVG markup.
-	$svg = '<svg class="' . implode( ' ', $args['classes'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
+	$svg = '<svg class="' . $classes . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
 
 	// Display the title.
 	if ( $args['title'] ) {
