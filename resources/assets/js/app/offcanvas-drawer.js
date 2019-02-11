@@ -89,7 +89,7 @@ domReady( () => {
 	 * If the hash is prefixed with `toggle` then do not open again (closed state).
 	 */
 	if ( '' !== hash && ! hash.match( /toggle/i ) ) {
-		const findToggle = document.querySelector( `a[href="${ hash }"]` );
+		const findToggle = document.querySelector( `a[href="${ hash }"]:not(.skip-link)` );
 
 		if ( findToggle ) {
 			targetSourceSwap( findToggle );
