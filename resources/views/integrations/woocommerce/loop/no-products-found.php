@@ -24,16 +24,16 @@ $facetwp = bigbox_is_integration_active( 'facetwp' );
 
 if ( $facetwp ) : ?>
 
-<?php wc_get_template( 'loop/loop-start.php' ); ?>
+	<?php wc_get_template( 'loop/loop-start.php' ); ?>
 	<!--fwp-loop-->
 	<li class="woocommerce-notice woocommerce-notice--notice card facetwp-template__no-results" role="alert">
 		<?php esc_html_e( 'No products were found matching your selection.', 'bigbox' ); ?>
 	</li>
-<?php wc_get_template( 'loop/loop-end.php' ); ?>
+	<?php wc_get_template( 'loop/loop-end.php' ); ?>
 
-<?php
+	<?php
 else :
 
-esc_html_e( 'No products were found matching your selection.', 'bigbox' );
+	esc_html_e( 'No products were found matching your selection.', 'bigbox' );
 
 endif;

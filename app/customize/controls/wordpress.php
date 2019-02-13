@@ -30,7 +30,7 @@ function bigbox_customize_register( $wp_customize ) {
 	/* translators: Customizer control label. */
 	$wp_customize->get_control( 'blogdescription' )->description = __( 'Not output but used for SEO', 'bigbox' );
 
-	// Update label of Header Text
+	// Update label of Header Text.
 	/* translators: Customizer control label. */
 	$wp_customize->get_control( 'header_text' )->label = __( 'Display Site Title', 'bigbox' );
 

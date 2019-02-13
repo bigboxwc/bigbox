@@ -32,7 +32,7 @@ $classes = classNames(
 	'products-' . wc_get_loop_prop( 'products-loop', 'main' ),
 	'columns-' . wc_get_loop_prop( 'columns' ),
 	[
-		'facetwp-template' => $main,
+		'facetwp-template'     => $main,
 		'products--single-row' => $single_row,
 	]
 );

@@ -25,7 +25,7 @@ if ( ! wc_review_ratings_enabled() ) {
 }
 
 $product = wc_get_product( get_the_ID() );
-$stars  = wc_get_rating_html( $product->get_average_rating(), $product->get_review_count() );
+$stars   = wc_get_rating_html( $product->get_average_rating(), $product->get_review_count() );
 
 if ( '' === $stars ) :
 	return;
