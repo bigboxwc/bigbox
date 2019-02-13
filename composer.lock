@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "584cb651d52cea1138df5d98c20fc53d",
+    "content-hash": "4fefff48cf83e833d00949f2c36d626b",
     "packages": [
         {
             "name": "a5hleyrich/wp-background-processing",
@@ -181,16 +181,16 @@
         },
         {
             "name": "phpcompatibility/php-compatibility",
-            "version": "9.0.0",
+            "version": "9.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCompatibility/PHPCompatibility.git",
-                "reference": "e9f4047e5edf53c88f36f1dafc0d49454ce13e25"
+                "reference": "2b63c5d284ab8857f7b1d5c240ddb507a6b2293c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibility/zipball/e9f4047e5edf53c88f36f1dafc0d49454ce13e25",
-                "reference": "e9f4047e5edf53c88f36f1dafc0d49454ce13e25",
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibility/zipball/2b63c5d284ab8857f7b1d5c240ddb507a6b2293c",
+                "reference": "2b63c5d284ab8857f7b1d5c240ddb507a6b2293c",
                 "shasum": ""
             },
             "require": {
@@ -235,20 +235,20 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2018-10-07T17:38:02+00:00"
+            "time": "2018-12-30T23:16:27+00:00"
         },
         {
             "name": "phpcompatibility/phpcompatibility-paragonie",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCompatibility/PHPCompatibilityParagonie.git",
-                "reference": "67d89dcef47f351144d24b247aa968f2269162f7"
+                "reference": "9160de79fcd683b5c99e9c4133728d91529753ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityParagonie/zipball/67d89dcef47f351144d24b247aa968f2269162f7",
-                "reference": "67d89dcef47f351144d24b247aa968f2269162f7",
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityParagonie/zipball/9160de79fcd683b5c99e9c4133728d91529753ea",
+                "reference": "9160de79fcd683b5c99e9c4133728d91529753ea",
                 "shasum": ""
             },
             "require": {
@@ -285,7 +285,7 @@
                 "polyfill",
                 "standards"
             ],
-            "time": "2018-10-07T17:59:30+00:00"
+            "time": "2018-12-16T19:10:44+00:00"
         },
         {
             "name": "phpcompatibility/phpcompatibility-wp",
