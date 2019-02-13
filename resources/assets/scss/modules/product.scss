@@ -190,6 +190,19 @@
 		font-size: $font-size-base;
 	}
 
+	@include media-breakpoint-up(xl) {
+		font-size: $font-size-lg;
+	}
+
+	// When using more columns keep titles small.
+	.columns-5 &,
+	.columns-6 & {
+
+		@include media-breakpoint-up(xl) {
+			font-size: $font-size-base;
+		}
+	}
+
 	// Shrink on cart and checkout.
 	.product--order-item &,
 	.product--cart-item & {

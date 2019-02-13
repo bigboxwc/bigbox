@@ -118,4 +118,14 @@ return [
 			'outline-color' => esc_attr( $primary ),
 		],
 	],
+
+	// Inset box shadow where outline doesn't work.
+	'box-shadow'       => [
+		'selectors'    => [
+			'.is-tabbing .woocommerce-product-gallery__image a:focus:after',
+		],
+		'declarations' => [
+			'box-shadow' => esc_attr( 'inset 0 0 0 2px ' . $primary ),
+		],
+	],
 ];
