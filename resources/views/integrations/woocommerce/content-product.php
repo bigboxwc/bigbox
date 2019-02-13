@@ -27,7 +27,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<li <?php wc_product_class( '', $product ); ?>>
+<li <?php wc_product_class( 'product', $product ); ?>>
 	<?php
 	/**
 	 * Before shop loop item.

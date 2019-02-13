@@ -72,3 +72,17 @@ function bigbox_woocommerce_has_product_image( $product = null ) {
 	return '' !== $product->get_image();
 }
 
+/**
+ * Shim for `wc_review_ratings_enabled()` until 3.6 is minimum WooCommerce version.
+ *
+ * @since 3.1.0
+ *
+ * @return bool
+ */
+function bigbox_wc_review_ratings_enabled() {
+	if ( function_exists( 'wc_review_ratings_enabled' ) ) {
+		return wc_review_ratings_enabled();
+	} else {
+		return 'yes' === get_option( 'woocommerce_review_rating_required' ) && 'yes' === get_option( 'woocommerce_enable_review_rating' );
+	}
+}

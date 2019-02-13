@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! wc_review_ratings_enabled() ) {
+if ( ! bigbox_wc_review_ratings_enabled() ) {
 	return;
 }
 
