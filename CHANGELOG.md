@@ -1,3 +1,23 @@
+## [3.1.0] - 2018-02-14
+
+### New
+
+- Add ARIA landmarks.
+- Allow price, rating, stock information, sale flash, short description, and "more options" in the product catalog to be hidden via the Customizer.
+- Use primary site color for input `:focus` border color.
+- Add accessible `labels` for FacetWP checkbox and radio facets.
+- WooCommerce 3.6.0 compatibility.
+- Allow image lazyload script to load in the footer.
+- Further WooCommerce Blocks style improvements.
+
+### Fix
+
+- Ensure dynamic colors are applied to elements left out in 3.0.0 update.
+- Ensure "No results found" shows when no results are available in FacetWP.
+- Don't attempt to open offcanvas drawers when using content skip links.
+- Hide "First Page" and "Last Page" links in FacetWP pagination.
+- Ensure :focus outline is visible on WooCommerce image gallery items.
+
 ## [3.0.0] - 2018-02-04
 
 ### Breaking

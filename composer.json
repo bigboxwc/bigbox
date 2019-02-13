@@ -2,7 +2,7 @@
 	"name": "bigboxwc/bigbox",
 	"description": "WooCommerce theme for large stores.",
 	"type": "wordpress-theme",
-	"license": "GPL-3.0",
+	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
 			"name": "Spencer Finnell",
@@ -22,7 +22,7 @@
 	"require": {
 		"a5hleyrich/wp-background-processing": "1.0.1",
 		"bigboxwc/wp-template-loader": "1.0.2",
-		"cjstroud/classnames-php": "^1.0"
+		"cjstroud/classnames-php": "1.0"
 	},
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "0.5.0",
