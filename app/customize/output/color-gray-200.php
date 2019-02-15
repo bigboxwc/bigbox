@@ -29,6 +29,7 @@ return [
 			'.widget',
 			'.woocommerce-MyAccount-navigation:after',
 			'.woocommerce-single-product-data__section',
+			'.posted_in',
 			'.footer-nav',
 			'.wp-block-separator',
 			'.comment',
