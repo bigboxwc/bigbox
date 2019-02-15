@@ -44,6 +44,11 @@ $document.on( 'facetwp-loaded', () => {
 		wrapper.innerHTML = '';
 		wrapper.prepend( label );
 
+		// Don't trigger change event to ensure FWP is what executes a reload.
+		label.addEventListener( 'click', ( e ) => {
+			e.preventDefault();
+		} );
+
 		// Better visual feedback (automatically check when clicked.)
 		wrapper.addEventListener( 'click', ( e ) => {
 			// Don't toggle if already disabled.
