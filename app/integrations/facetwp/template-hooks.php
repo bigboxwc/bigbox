@@ -51,9 +51,6 @@ add_filter( 'facetwp_result_count', 'bigbox_facetwp_result_count_output', 10, 2 
 // Add custom sort options.
 add_filter( 'facetwp_sort_options', 'bigbox_facetwp_sort_options' );
 
-// Match "No Results Found" with WooCommerce.
-add_filter( 'gettext', 'bigbox_facetwp_gettext_no_results', 20, 3 );
-
 /**
  * General
  */

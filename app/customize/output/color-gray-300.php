@@ -48,7 +48,7 @@ return [
 			'.navbar-search__category select',
 			'.widget ul ul',
 			'.action-list__item--inset',
-			'.shipping-note',
+			'.woocommerce-shipping-note',
 
 			'.review-breakdown',
 			'.review-breakdown__item',

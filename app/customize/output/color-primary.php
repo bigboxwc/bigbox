@@ -21,6 +21,7 @@ return [
 	'color'            => [
 		'selectors'    => [
 			'a:hover',
+
 			'.navbar-menu--primary .sub-menu a:hover',
 			'.wc-layered-nav-term.chosen',
 			'.wc-layered-nav-term.chosen a',
@@ -83,20 +84,24 @@ return [
 
 	// Solid border-color.
 	'border-color'     => [
-		'selectors'    => [
-			'.widget_price_filter .ui-slider .ui-slider-handle',
-			'.facetwp-facet.facetwp-type-slider .facetwp-slider .noUi-handle',
+		'selectors'    => array_merge(
+			[
 
-			'.woocommerce-MyAccount-navigation-link.is-active a',
+				'.widget_price_filter .ui-slider .ui-slider-handle',
+				'.facetwp-facet.facetwp-type-slider .facetwp-slider .noUi-handle',
 
-			// Flatpickr.
-			'.flatpickr-calendar .flatpickr-day.selected',
-			'.flatpickr-calendar .flatpickr-day.startRange',
-			'.flatpickr-calendar .flatpickr-day.endRange',
-			'.flatpickr-calendar .flatpickr-day.selected.inRange',
-			'.flatpickr-calendar .flatpickr-day.startRange.inRange',
-			'.flatpickr-calendar .flatpickr-day.endRange.inRange',
-		],
+				'.woocommerce-MyAccount-navigation-link.is-active a',
+
+				// Flatpickr.
+				'.flatpickr-calendar .flatpickr-day.selected',
+				'.flatpickr-calendar .flatpickr-day.startRange',
+				'.flatpickr-calendar .flatpickr-day.endRange',
+				'.flatpickr-calendar .flatpickr-day.selected.inRange',
+				'.flatpickr-calendar .flatpickr-day.startRange.inRange',
+				'.flatpickr-calendar .flatpickr-day.endRange.inRange',
+			],
+			bigbox_customize_add_state_to_selectors( bigbox_customize_get_form_input_selectors(), 'focus' )
+		),
 		'declarations' => [
 			'border-color' => esc_attr( $primary ),
 		],
@@ -111,6 +116,16 @@ return [
 		],
 		'declarations' => [
 			'outline-color' => esc_attr( $primary ),
+		],
+	],
+
+	// Inset box shadow where outline doesn't work.
+	'box-shadow'       => [
+		'selectors'    => [
+			'.is-tabbing .woocommerce-product-gallery__image a:focus:after',
+		],
+		'declarations' => [
+			'box-shadow' => esc_attr( 'inset 0 0 0 2px ' . $primary ),
 		],
 	],
 ];

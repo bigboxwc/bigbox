@@ -21,14 +21,28 @@ $document.on( 'facetwp-loaded', () => {
 			return;
 		}
 
-		// Create an input.
+		// Get wrapper unique attribute.
+		const id = wrapper.dataset.value;
+
+		// Create an input and label.
 		const input = document.createElement( 'input' );
+		const label = document.createElement( 'label' );
 
 		input.type = hasClass( wrapper, 'facetwp-checkbox' ) ? 'checkbox' : 'radio';
 		input.checked = hasClass( wrapper, 'checked' );
+		input.id = id;
+
+		if ( hasClass( wrapper, 'disabled' ) ) {
+			input.setAttribute( 'disabled', true );
+		}
+
+		label.htmlFor = id;
+		label.innerHTML = wrapper.innerText;
+		label.prepend( input );
 
 		// Add to item.
-		wrapper.prepend( input );
+		wrapper.innerHTML = '';
+		wrapper.prepend( label );
 
 		// Better visual feedback (automatically check when clicked.)
 		wrapper.addEventListener( 'click', ( e ) => {

@@ -91,7 +91,6 @@
 
 		@include media-breakpoint-up( $menu-break-point ) {
 			display: flex;
-			align-items: center;
 		}
 
 		// Top level items.
@@ -153,7 +152,7 @@
 			width: $icon-dim;
 			height: $icon-dim;
 			mask-size: $icon-dim;
-			background-color: #fff;
+			background-color: #fff !important;
 		}
 	}
 

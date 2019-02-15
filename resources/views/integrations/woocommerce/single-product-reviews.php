@@ -13,11 +13,15 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.5.0
+ * @version 3.6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
+}
+
+if ( ! bigbox_wc_review_ratings_enabled() ) {
+	return;
 }
 
 $product = wc_get_product( get_the_ID() );

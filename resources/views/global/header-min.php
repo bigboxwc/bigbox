@@ -29,6 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</head>
 
 	<body <?php body_class( 'bigbox-minimal' ); ?>>
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bigbox' ); ?></a>
 
 		<div class="navbar navbar--min">
 
@@ -39,4 +40,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 
 		<div class="container">
-			<div class="page-flow">
+			<div id="content" class="page-flow" role="main">

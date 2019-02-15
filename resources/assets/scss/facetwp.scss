@@ -36,6 +36,10 @@
 			@include theme-color("background-color", "primary");
 		}
 	}
+
+	&__no-results {
+		margin-right: $spacer;
+	}
 }
 
 .facetwp-facet {
@@ -55,6 +59,11 @@
 		background: none;
 		position: relative;
 		padding-left: 0;
+
+		label {
+			margin: 0;
+			line-height: $line-height-base;
+		}
 
 		&.checked {
 			background: none;

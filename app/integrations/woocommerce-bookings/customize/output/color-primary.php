@@ -1,6 +1,6 @@
 <?php
 /**
- * Config for success color output.
+ * Config for primary color output.
  *
  * @since 1.16.0
  *
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$success = bigbox_get_theme_color( 'success' );
+$primary = bigbox_get_theme_color( 'primary' );
 
 return [
 	[
@@ -27,7 +27,7 @@ return [
 			'.wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker-calendar td.bookable-range .ui-state-default:hover',
 		],
 		'declarations' => [
-			'background-color' => esc_attr( $success ) . ' !important',
+			'background-color' => esc_attr( $primary ) . ' !important',
 		],
 	],
 	[
@@ -37,7 +37,7 @@ return [
 			'.wc-bookings-booking-form .form-field ul.block-picker li a.selected',
 		],
 		'declarations' => [
-			'border-color' => esc_attr( $success ) . ' !important',
+			'border-color' => esc_attr( $primary ) . ' !important',
 		],
 	],
 ];

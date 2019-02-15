@@ -182,7 +182,7 @@
 .woocommerce-loop-category__title,
 .woocommerce-loop-product__title,
 .product__title {
-	font-size: $font-size-sm;
+	font-size: font-size("sm");
 	margin: 0;
 	order: 0;
 
@@ -256,7 +256,6 @@
 	line-height: 1;
 	text-decoration: none;
 	display: inline-block;
-	margin: 0 0 $spacer;
 	padding: 3px 5px;
 
 	@include theme-color("background-color", "success");
@@ -265,4 +264,5 @@
 
 .product__short-description {
 	line-height: inherit;
+	margin-top: $spacer;
 }

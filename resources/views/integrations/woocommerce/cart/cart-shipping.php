@@ -7,7 +7,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.5.0
+ * @version 3.6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -97,7 +97,12 @@ endif;
 		<?php
 		// No address available.
 	elseif ( ! $formatted_destination && $available_methods ) :
-		$note = __( 'Enter your address to view shipping options.', 'bigbox' );
+		$note = echo wp_kses_post(
+			apply_filters(
+				'woocommerce_shipping_may_be_available_html',
+				__( 'Enter your address to view shipping options.', 'bigbox' )
+			)
+		);
 		// Nothing enabled in admin.
 	elseif ( ! is_cart() ) :
 		$note = apply_filters( 'woocommerce_no_shipping_available_html', __( 'There are no shipping methods available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'bigbox' ) );

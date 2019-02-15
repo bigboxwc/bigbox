@@ -52,6 +52,7 @@
 		padding: 0;
 		display: flex;
 		flex-wrap: wrap;
+		overflow: visible;
 
 		@include border-radius();
 
@@ -87,6 +88,14 @@
 					@include theme-color("background-color", "success");
 					@include theme-color("border-color", "success");
 				}
+
+				&:hover:focus {
+					color: #fff;
+				}
+
+				&:focus {
+					color: currentColor;
+				}
 			}
 		}
 	}
@@ -115,6 +124,12 @@
 				float: right;
 			}
 		}
+	}
+
+	.wc-bookings-date-picker-timezone-label {
+		font-size: $font-size-xs;
+		margin-top: 3px;
+		display: inline-block;
 	}
 
 	.wc-bookings-date-picker {

@@ -83,4 +83,10 @@
 		width: 16px;
 		height: 16px;
 	}
+
+	// [1] Heavy handed to override :not(.next):not(.prev).
+	.last-page,
+	.first-page {
+		display: none !important; // [1]
+	}
 }

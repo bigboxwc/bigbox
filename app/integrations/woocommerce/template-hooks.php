@@ -85,20 +85,46 @@ remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_pr
 // Remove add to cart.
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
 
-// Adjust position of title, sale, rating, and price output.
+// Remove default catalog information.
 remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title' );
 
 remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
-
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
 
-add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 1 );
-add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 3 );
-add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 6 );
-add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_template_loop_variations', 9 );
-add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_template_loop_stock', 12 );
-add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_template_short_description', 15 );
+/**
+ * Conditionally add catalog information.
+ *
+ * @since 3.1.0
+ */
+add_action(
+	'wp_loaded',
+	function() {
+		if ( get_theme_mod( 'display-rating', true ) ) {
+			add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 1 );
+		}
+
+		if ( get_theme_mod( 'display-price', true ) ) {
+			add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 3 );
+		}
+
+		if ( get_theme_mod( 'display-sale-flash', false ) ) {
+			add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 6 );
+		}
+
+		if ( get_theme_mod( 'display-more-options', true ) ) {
+			add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_template_loop_variations', 9 );
+		}
+
+		if ( get_theme_mod( 'display-inventory', true ) ) {
+			add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_template_loop_stock', 12 );
+		}
+
+		if ( get_theme_mod( 'display-short-description', false ) ) {
+			add_action( 'woocommerce_after_shop_loop_item_title', 'bigbox_woocommerce_template_short_description', 15 );
+		}
+	}
+);
 
 /**
  * File: content-single-product.php.

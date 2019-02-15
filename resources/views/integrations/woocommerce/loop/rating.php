@@ -13,20 +13,19 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.0.0
+ * @version 3.6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$product = wc_get_product( get_the_ID() );
-
-if ( get_option( 'woocommerce_enable_review_rating' ) === 'no' ) :
+if ( ! bigbox_wc_review_ratings_enabled() ) {
 	return;
-endif;
+}
 
-$stars = wc_get_rating_html( $product->get_average_rating(), $product->get_review_count() );
+$product = wc_get_product( get_the_ID() );
+$stars   = wc_get_rating_html( $product->get_average_rating(), $product->get_review_count() );
 
 if ( '' === $stars ) :
 	return;

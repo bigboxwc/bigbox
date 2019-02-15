@@ -25,6 +25,10 @@
 		margin-bottom: 0;
 	}
 
+	.woocommerce-single-product-data__section-description {
+		line-height: ($line-height-base * 1.15);
+	}
+
 	.no-products-found {
 		margin-left: ($grid-gutter-width / 2);
 		margin-right: ($grid-gutter-width / 2);

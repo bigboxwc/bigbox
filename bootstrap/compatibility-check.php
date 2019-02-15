@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-// Minimum versions
+// Minimum versions.
 define( 'BIGBOX_PHP_VERSION', '7.0.0' );
 define( 'BIGBOX_WORDPRESS_VERSION', '5.0' );
 
