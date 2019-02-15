@@ -55,24 +55,17 @@ domReady( () => {
 
 	const { itemWidth, thumbnailPosition } = params.flexslider;
 
-	const img = document.querySelector( '.woocommerce-product-gallery__wrapper .woocommerce-product-gallery__image .wp-post-image' );
-	const flex = document.querySelector( '.woocommerce-product-gallery--with-images .flex-viewport' );
+	const img = document.querySelector( '.woocommerce-product-gallery__wrapper .wp-post-image' );
+	let imgWrapper = document.querySelector( '.woocommerce-product-gallery--with-images .flex-viewport' );
 
-	if ( ! img || ! flex ) {
+	// Check for placeholder image wrapper.
+	if ( ! imgWrapper ) {
+		imgWrapper = document.querySelector( '.woocommerce-product-gallery--with-images .woocommerce-product-gallery__wrapper' )
+	}
+
+	if ( ! img || ! imgWrapper ) {
 		return;
 	}
 
-	img.addEventListener( 'load', () => {
-		// Max width of wrapper.
-		flex.style.maxWidth = `${ itemWidth }px`;
-
-		// Contain whole gallery when thumbnails are on the bottom.
-		if ( 'bottom' === thumbnailPosition ) {
-			const wrapper = document.querySelector( '.woocommerce-product-gallery--with-images' );
-			const nav = document.querySelector( '.woocommerce-product-gallery--with-images .flex-control-nav' );
-
-			nav.style.maxWidth = `${ itemWidth }px`;
-			wrapper.style.maxWidth = `${ itemWidth }px`;
-		}
-	} );
+	imgWrapper.style.maxWidth = `${ itemWidth }px`;
 } );
