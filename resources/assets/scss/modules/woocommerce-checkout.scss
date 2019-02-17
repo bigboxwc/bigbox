@@ -185,22 +185,22 @@ form.woocommerce-checkout {
 
 	.form-row-first,
 	.form-row-last {
-		flex: 1 0;
+		flex: 1 1 auto;
 		margin-bottom: 0;
 	}
 
-	.form-row-first {
-		flex-basis: 60%;
-	}
-
 	.form-row-last {
-		margin-left: $spacer;
-		flex-basis: auto;
+		margin: $spacer 0 0 0;
+		flex-basis: 100%;
+
+		@include media-breakpoint-up(sm) {
+			margin: 0 0 0 $spacer;
+			flex-basis: auto;
+		}
 	}
 
 	[name="apply_coupon"] {
 
-		@include button--color("success");
 		@include button--size-sm();
 		@include button--size-block();
 	}
