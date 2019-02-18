@@ -97,7 +97,7 @@ endif;
 		<?php
 		// No address available.
 	elseif ( ! $formatted_destination && $available_methods ) :
-		$note = echo wp_kses_post(
+		$note = wp_kses_post(
 			apply_filters(
 				'woocommerce_shipping_may_be_available_html',
 				__( 'Enter your address to view shipping options.', 'bigbox' )

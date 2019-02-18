@@ -560,8 +560,6 @@ function bigbox_woocommerce_single_product_carousel_options( $args ) {
 		]
 	);
 
-	$args['thumbnailPosition'] = 'side';
-
 	return $args;
 }
 
