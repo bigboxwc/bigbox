@@ -1,3 +1,14 @@
+## [3.1.1] - 2018-02-18
+
+### Fix
+
+- Avoid PHP error in cart-shipping.php
+- Ensure `.posted_in` uses the correct gray color.
+- Simplify WooCommerce gallery image widths.
+- Don't let FacetWP radio/checkbox labels trigger refresh.
+- Mobile WooCommerce coupon form styling.
+- Update Node dependencies.
+
 ## [3.1.0] - 2018-02-15
 
 ### New
