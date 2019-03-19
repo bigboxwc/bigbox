@@ -11,7 +11,7 @@
 		"npm": ">=6.0.0"
 	},
 	"devDependencies": {
-		"@babel/core": "7.3.4",
+		"@babel/core": "7.4.0",
 		"@wordpress/babel-plugin-import-jsx-pragma": "2.0.0",
 		"@wordpress/babel-preset-default": "4.0.0",
 		"@wordpress/browserslist-config": "2.3.0",
