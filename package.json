@@ -24,7 +24,7 @@
 		"babel-plugin-import-glob": "2.0.0",
 		"bootstrap": "4.2.1",
 		"classnames": "2.2.6",
-		"copy-webpack-plugin": "5.0.1",
+		"copy-webpack-plugin": "5.0.2",
 		"cross-env": "5.2.0",
 		"eslint": "5.15.3",
 		"exports-loader": "0.7.0",
