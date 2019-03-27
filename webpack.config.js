@@ -21,6 +21,7 @@ const cssFiles = [
 ];
 
 const config = {
+	devtool: 'source-map',
 	mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
 	entry: Object.assign(
 		cssFiles.reduce( ( memo, name ) => {
@@ -132,10 +133,5 @@ const config = {
 		} ),
 	],
 };
-
-
-if ( config.mode !== 'production' ) {
-	config.devtool = process.env.SOURCEMAP || 'source-map';
-}
 
 module.exports = config;
