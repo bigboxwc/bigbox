@@ -31,6 +31,8 @@ $labelledby = ! empty( $args['product_name'] ) ? sprintf( __( '%s quantity', 'bi
 		size="4"
 		pattern="<?php echo esc_attr( $pattern ); ?>"
 		inputmode="<?php echo esc_attr( $inputmode ); ?>"
+		<?php if ( ! empty( $labelledby ) ) : ?>
 		aria-labelledby="<?php echo esc_attr( $labelledby ); ?>"
+		<?php endif; ?>
 	/>
 </div>

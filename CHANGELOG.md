@@ -1,4 +1,10 @@
-## [3.1.1] - 2018-02-18
+## [3.2.0] - 2019-04-27
+
+### New
+
+- WooCommerce 3.6.x compatibility.
+
+## [3.1.1] - 2019-02-18
 
 ### Fix
 
@@ -9,7 +15,7 @@
 - Mobile WooCommerce coupon form styling.
 - Update Node dependencies.
 
-## [3.1.0] - 2018-02-15
+## [3.1.0] - 2019-02-15
 
 ### New
 
@@ -29,7 +35,7 @@
 - Hide "First Page" and "Last Page" links in FacetWP pagination.
 - Ensure :focus outline is visible on WooCommerce image gallery items.
 
-## [3.0.0] - 2018-02-04
+## [3.0.0] - 2019-02-04
 
 ### Breaking
 
@@ -57,13 +63,13 @@
 - Heading and block spacing consistency.
 - Only show Previous/Next pagination buttons on mobile devices.
 
-## [2.3.1] - 2018-01-08
+## [2.3.1] - 2019-01-08
 
 ### Fix
 
 - Ensure header allows dropdown facet types.
 
-## [2.3.0] - 2018-01-08
+## [2.3.0] - 2019-01-08
 
 ### New
 
