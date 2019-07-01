@@ -41,7 +41,7 @@
 		"svg-sprite-loader": "4.1.6",
 		"svgo": "1.2.2",
 		"svgo-loader": "2.2.1",
-		"webpack": "4.35.0",
+		"webpack": "4.35.2",
 		"webpack-cli": "3.3.5",
 		"webpack-fix-style-only-entries": "0.3.0",
 		"webpack-rtl-plugin": "github:yoavf/webpack-rtl-plugin#develop"
