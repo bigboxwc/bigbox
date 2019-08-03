@@ -54,7 +54,7 @@ function bigbox_woocommerce_brands_enqueue_styles() {
 
 	wp_enqueue_style(
 		$stylesheet,
-		get_template_directory_uri() . '/public/css/woocommerce-brands.min.css',
+		get_template_directory_uri() . '/public/css/woocommerce-brands-css.min.css',
 		[],
 		$version
 	);

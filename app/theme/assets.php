@@ -40,7 +40,7 @@ function bigbox_enqueue_styles() {
 	// Base and dynamic styles.
 	wp_enqueue_style(
 		$stylesheet,
-		get_template_directory_uri() . '/public/css/app.min.css',
+		get_template_directory_uri() . '/public/css/app-css.min.css',
 		$deps,
 		$version
 	);

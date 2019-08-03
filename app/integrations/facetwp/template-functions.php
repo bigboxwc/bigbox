@@ -37,7 +37,7 @@ function bigbox_facetwp_wp_enqueue_scripts() {
 
 	wp_enqueue_style(
 		"{$stylesheet}-facetwp",
-		get_template_directory_uri() . '/public/css/facetwp.min.css',
+		get_template_directory_uri() . '/public/css/facetwp-css.min.css',
 		[],
 		$version
 	);
