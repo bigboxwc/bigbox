@@ -45,7 +45,7 @@ function bigbox_woocommerce_bookings_enqueue_styles() {
 
 	wp_enqueue_style(
 		$stylesheet,
-		get_template_directory_uri() . '/public/css/woocommerce-bookings.min.css',
+		get_template_directory_uri() . '/public/css/woocommerce-bookings-css.min.css',
 		[],
 		$version
 	);

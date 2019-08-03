@@ -25,7 +25,7 @@ const config = {
 	mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
 	entry: Object.assign(
 		cssFiles.reduce( ( memo, name ) => {
-			memo[ name ] = `./resources/assets/scss/${ name }.scss`;
+			memo[ `${ name }-css` ] = `./resources/assets/scss/${ name }.scss`;
 			return memo;
 		}, {} ),
 		{

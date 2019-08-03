@@ -25,6 +25,24 @@ select {
 	margin: 0;
 }
 
+textarea,
+select,
+.select2-container--focus,
+[type="email"],
+[type="search"],
+[type="tel"],
+[type="url"],
+[type="password"],
+[type="text"] {
+
+	.is-tabbing & {
+
+		&:focus {
+			outline: none !important;
+		}
+	}
+}
+
 [type="submit"],
 button {
 

@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.5.0
+ * @version 3.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -49,6 +49,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<?php do_action( 'woocommerce_cart_actions' ); ?>
 	<?php do_action( 'woocommerce_after_cart_contents' ); ?>
 	<?php do_action( 'woocommerce_after_cart_table' ); ?>
+	<?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
 
 	<div class="cart-collaterals">
 		<?php

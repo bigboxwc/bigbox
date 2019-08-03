@@ -44,7 +44,7 @@ function bigbox_woocommerce_product_vendors_enqueue_styles() {
 
 	wp_enqueue_style(
 		$stylesheet,
-		get_template_directory_uri() . '/public/css/woocommerce-product-vendors.min.css',
+		get_template_directory_uri() . '/public/css/woocommerce-product-vendors-css.min.css',
 		[],
 		$version
 	);

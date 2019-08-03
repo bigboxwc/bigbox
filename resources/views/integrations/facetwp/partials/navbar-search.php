@@ -70,6 +70,7 @@ endif;
 				'orderby'         => $dropdown_facet['orderby'],
 				'order'           => 'ASC',
 				'number'          => $dropdown_facet['count'],
+				'hide_empty'      => false,
 			];
 
 			wp_dropdown_categories(

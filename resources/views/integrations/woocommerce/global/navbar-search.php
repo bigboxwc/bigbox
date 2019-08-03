@@ -60,7 +60,7 @@ $form_url = apply_filters( 'bigbox_navbar_search_form_url', wc_get_page_permalin
 				'show_count'      => true,
 				'orderby'         => 'name',
 				'order'           => 'ASC',
-				'hide_if_empty'   => true,
+				'hide_empty'      => false,
 			];
 
 			wp_dropdown_categories(

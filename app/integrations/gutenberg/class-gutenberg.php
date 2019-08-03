@@ -68,7 +68,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 		add_theme_support( 'editor-styles' );
 
 		// Add editor style.
-		add_editor_style( 'public/css/gutenberg.min.css' );
+		add_editor_style( 'public/css/gutenberg-css.min.css' );
 
 		$palette = [];
 		$colors  = bigbox_get_theme_colors();
@@ -162,6 +162,10 @@ class Gutenberg extends Integration implements Registerable, Service {
 		$weight_base = bigbox_get_theme_font_weight( 'base' );
 		$weight_bold = bigbox_get_theme_font_weight( 'bold' );
 
+		if ( 'default' === $family ) {
+			$family = "-apple-system, blinkmacsystemfont, 'Segoe UI', roboto, 'Helvetica Neue', arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
+		}
+
 		$config = [];
 
 		// Base.
@@ -173,7 +177,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 			'declarations' => [
 				'color'       => esc_attr( $gray700 ),
 				'font-size'   => ( $size * 16 ) . 'px',
-				'font-family' => esc_attr( $family ),
+				'font-family' => $family,
 				'font-weight' => $weight_base,
 			],
 		];
@@ -215,12 +219,6 @@ class Gutenberg extends Integration implements Registerable, Service {
 			'selectors'    => [
 				'.editor-post-title__block .editor-post-title__input',
 				'a',
-				'h1',
-				'h2',
-				'h3',
-				'h4',
-				'h5',
-				'h6',
 			],
 			'declarations' => [
 				'color' => esc_attr( $gray800 ),
@@ -255,8 +253,7 @@ class Gutenberg extends Integration implements Registerable, Service {
 		}
 
 		$settings['styles'][] = [
-			'baseUrl' => null,
-			'css'     => $css->build(),
+			'css' => $css->build(),
 		];
 
 		return $settings;
