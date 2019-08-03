@@ -30,7 +30,7 @@ function woocommerce_subcategory_thumbnail( $category ) {
 	// End modification.
 	$small_thumbnail_size = apply_filters( 'subcategory_archive_thumbnail_size', 'woocommerce_thumbnail' );
 	$dimensions           = wc_get_image_size( $small_thumbnail_size );
-	$thumbnail_id         = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true );
+	$thumbnail_id         = get_term_meta( $category->term_id, 'thumbnail_id', true );
 
 	if ( $thumbnail_id ) {
 		$image        = wp_get_attachment_image_src( $thumbnail_id, $small_thumbnail_size );

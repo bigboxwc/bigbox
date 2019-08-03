@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.2.0
+ * @version 3.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,7 +23,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="woocommerce-order">
 
-	<?php if ( $order ) : ?>
+		<?php
+		if ( $order ) : 
+			do_action( 'woocommerce_before_thankyou', $order->get_id() );
+		?>
 
 		<?php if ( $order->has_status( 'failed' ) ) : ?>
 

@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.0.0
+ * @version 3.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -53,7 +53,17 @@ $product_permalink = apply_filters( 'woocommerce_order_item_permalink', $is_visi
 				<?php echo $order->get_formatted_line_subtotal( $item ); // WPCS: XSS okay. ?>
 
 				<del class="subtotal">
-					<?php echo apply_filters( 'woocommerce_order_item_quantity_html', sprintf( '&times; %s', $item->get_quantity() ), $item ); // WPCS: XSS okay. ?>
+					<?php
+					$qty          = $item->get_quantity();
+					$refunded_qty = $order->get_qty_refunded_for_item( $item_id );
+
+					if ( $refunded_qty ) {
+						$qty_display = esc_html( $qty ) . '&nbsp;<strike>&nbsp;' . esc_html( $qty - ( $refunded_qty * -1 ) ) . '&nbsp;</strike>';
+					} else {
+						$qty_display = esc_html( $qty );
+					}
+
+					echo apply_filters( 'woocommerce_order_item_quantity_html', sprintf( '&times; %s', $qty_display ), $item ); // WPCS: XSS okay. ?>
 				</del>
 			</div>
 
