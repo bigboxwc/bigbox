@@ -35,7 +35,6 @@ $use-margins: false;
 	font-size: font-size("md");
 
 	.editor-post-title__input {
-		font-family: $font-family-sans-serif;
 		font-size: font-size("lg");
 
 		@include media-breakpoint-up(md) {
