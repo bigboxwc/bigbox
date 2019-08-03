@@ -1,3 +1,10 @@
+## [3.3.0] - 2019-08-03
+
+### New
+
+- WooCommerce 3.7 compatibility.
+- Updated block editor support.
+
 ## [3.2.0] - 2019-04-27
 
 ### New
