@@ -52,6 +52,7 @@ function bigbox_customize_get_button_selectors() {
 		'.facetwp-facet .facetwp-autocomplete-update',
 		'.facetwp-facet .facetwp-slider-reset',
 		'.comment-form [type="submit"]',
+		'.wc-block-grid .wc-block-grid__products .wc-block-grid__product .wc-block-grid__product-add-to-cart a:not(.added_to_cart)',
 	];
 }
 
@@ -71,6 +72,7 @@ function bigbox_customize_get_button_success_selectors() {
 		'.woocommerce-Button.button',
 		'.woocommerce-form-coupon [name="apply_coupon"]',
 		'.woocommerce-notice-list__item .wc-forward',
+		'.wc-block-grid .wc-block-grid__products .wc-block-grid__product .wc-block-grid__product-add-to-cart .added_to_cart',
 	];
 }
 
