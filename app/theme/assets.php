@@ -73,11 +73,21 @@ function bigbox_enqueue_scripts() {
 	$version    = bigbox_get_theme_version();
 	$stylesheet = bigbox_get_theme_name();
 
+	// SimpleBar.
+	wp_enqueue_script(
+		$stylesheet . '-simplebar',
+		get_template_directory_uri() . '/public/js/simplebar.min.js',
+		array(),
+		'4.1.0',
+		true
+	);
+
 	$deps = [
 		'hoverIntent',
+		( $stylesheet . '-simplebar' ),
 	];
 
-	// Combined application scripts.
+	// Application script.
 	wp_enqueue_script(
 		$stylesheet,
 		get_template_directory_uri() . '/public/js/app.min.js',

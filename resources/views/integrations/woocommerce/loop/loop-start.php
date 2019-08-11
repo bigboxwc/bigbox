@@ -38,6 +38,10 @@ $classes = classNames(
 );
 ?>
 
+<?php if ( ! $main ) : ?>
+<div class="woocommerce-product-categories-wrapper">
+<?php endif; ?>
+
 <ul class="<?php echo esc_attr( $classes ); ?>">
 
 <?php if ( bigbox_is_integration_active( 'facetwp' ) && $main ) : ?>
