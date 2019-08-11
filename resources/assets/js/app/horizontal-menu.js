@@ -1,7 +1,4 @@
-/**
- * Extenal dependencies.
- */
-import SimpleBar from 'simplebar';
+/* global SimpleBar */
 
 /**
  * Scroll a horizontal menu to the active item.
