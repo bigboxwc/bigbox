@@ -99,6 +99,7 @@ return [
 			'.action-list__item-label',
 			'.widget-title',
 			'.product-title',
+			'.wc-block-grid .wc-block-grid__products .wc-block-grid__product .wc-block-grid__product-title',
 			'.woocommerce-terms-and-conditions-text',
 			'.product-category-more__inner',
 			'.woocommerce-loop-category__title',
