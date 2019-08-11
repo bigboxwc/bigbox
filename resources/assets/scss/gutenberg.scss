@@ -20,6 +20,8 @@ $use-margins: false;
 @import "elements/mark";
 
 // Styles shared on the frontend.
+@import "modules/star-rating";
+@import "modules/price";
 @import "modules/product";
 @import "modules/gutenberg";
 @import "modules/woocommerce-blocks";

@@ -41,7 +41,6 @@ function bigbox_customize_add_state_to_selectors( $selectors, $state ) {
 function bigbox_customize_get_button_selectors() {
 	return [
 		'.button',
-		'button',
 		'.widget_layered_nav_filters a',
 		'.woocommerce-notice-list__item .woocommerce-Button',
 		'.woocommerce-notice-list__item .wc-forward',
