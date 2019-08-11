@@ -78,6 +78,7 @@ function woocommerce_output_product_categories( $args = [] ) {
 	if ( $total > 5 ) {
 		$product_categories = array_slice( $product_categories, 0, 5 );
 	}
+
 	// End modification.
 	if ( ! $product_categories ) {
 		return false;
