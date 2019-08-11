@@ -77,7 +77,12 @@ const config = {
 				test: /\.(scss|css)$/,
 				use: [
 					MiniCssExtractPlugin.loader,
-					'css-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							url: false,
+						},
+					},
 					{
 						loader: 'postcss-loader',
 						options: {
