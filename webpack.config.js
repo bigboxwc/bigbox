@@ -114,6 +114,7 @@ const config = {
 		jquery: 'jQuery',
 		$: 'jQuery',
 		'@wordpress/element': 'wp.element',
+		simplebar: 'window.SimpleBar',
 	},
 	plugins: [
 		new SpritePlugin(),
@@ -121,6 +122,10 @@ const config = {
 			{
 				from: 'resources/assets/images/icons',
 				to: 'public/images/icons',
+			},
+			{
+				from: './node_modules/simplebar/dist/simplebar.min.js',
+				to: 'public/js/simplebar.min.js',
 			},
 		] ),
 		new MiniCssExtractPlugin( {

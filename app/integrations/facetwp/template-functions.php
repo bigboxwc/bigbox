@@ -24,6 +24,7 @@ function bigbox_facetwp_wp_enqueue_scripts() {
 
 	$deps = [
 		$stylesheet,
+		( $stylesheet . '-simplebar' ),
 		'jquery',
 	];
 

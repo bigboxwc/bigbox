@@ -1,3 +1,5 @@
+/* global SimpleBar */
+
 /**
  * Scroll a horizontal menu to the active item.
  *
@@ -11,6 +13,8 @@ const horizontalMenu = ( menuClass, activeClass ) => {
 		return;
 	}
 
+	// Custom scrolling.
+	const simpleBar = new SimpleBar( menu );
 	const activeLink = document.querySelector( `${ menuClass } ${ activeClass }` );
 
 	if ( ! activeLink ) {
@@ -20,7 +24,7 @@ const horizontalMenu = ( menuClass, activeClass ) => {
 	const activeOffset = activeLink.getBoundingClientRect();
 	const menuOffset = menu.getBoundingClientRect();
 
-	menu.scrollLeft = activeOffset.x + ( activeOffset.width / 2 ) + menu.scrollLeft - ( menuOffset.width / 2 );
+	simpleBar.getScrollElement().scrollLeft = activeOffset.x + ( activeOffset.width / 2 ) + menu.scrollLeft - ( menuOffset.width / 2 );
 };
 
 export default horizontalMenu;
