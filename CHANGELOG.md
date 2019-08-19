@@ -1,3 +1,15 @@
+## [3.4.0] - 2019-08-08
+
+### New
+
+- Use a custom horizontal scrollbar for horizontal menu overflow.
+- Enhanced block editor support for WooCommerce product blocks.
+- Improved Stripe payment gateway errors.
+
+### Fix
+
+- Ensure CSS `url()` imports are handled correctly.
+
 ## [3.3.0] - 2019-08-03
 
 ### New
