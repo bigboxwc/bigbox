@@ -44,7 +44,7 @@
 		"svgo-loader": "2.2.1",
 		"webpack": "4.39.2",
 		"webpack-cli": "3.3.7",
-		"webpack-fix-style-only-entries": "0.3.0",
+		"webpack-fix-style-only-entries": "0.3.1",
 		"webpack-rtl-plugin": "github:yoavf/webpack-rtl-plugin#develop"
 	},
 	"babel": {
