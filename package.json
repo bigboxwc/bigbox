@@ -35,7 +35,7 @@
 		"postcss-focus-within": "3.0.0",
 		"postcss-loader": "3.0.0",
 		"raw-loader": "3.1.0",
-		"sass-loader": "7.3.1",
+		"sass-loader": "8.0.0",
 		"simplebar": "4.2.0",
 		"stylelint": "10.1.0",
 		"stylelint-config-wordpress": "14.0.0",
