@@ -17,7 +17,7 @@
 		"@wordpress/browserslist-config": "2.6.0",
 		"@wordpress/dom": "2.4.0",
 		"@wordpress/dom-ready": "2.5.0",
-		"@wordpress/eslint-plugin": "2.4.0",
+		"@wordpress/eslint-plugin": "3.0.0",
 		"@wordpress/keycodes": "2.5.0",
 		"autoprefixer": "9.6.1",
 		"babel-loader": "8.0.6",
