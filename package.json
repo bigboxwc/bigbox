@@ -36,7 +36,7 @@
 		"postcss-loader": "3.0.0",
 		"raw-loader": "3.1.0",
 		"sass-loader": "8.0.0",
-		"simplebar": "4.2.3",
+		"simplebar": "5.0.0",
 		"stylelint": "11.1.1",
 		"stylelint-config-wordpress": "15.0.0",
 		"svg-sprite-loader": "4.1.6",
