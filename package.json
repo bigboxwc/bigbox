@@ -34,7 +34,7 @@
 		"node-sass": "4.13.0",
 		"postcss-focus-within": "3.0.0",
 		"postcss-loader": "3.0.0",
-		"raw-loader": "3.1.0",
+		"raw-loader": "4.0.0",
 		"sass-loader": "8.0.0",
 		"simplebar": "5.0.7",
 		"stylelint": "12.0.0",
