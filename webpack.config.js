@@ -1,4 +1,8 @@
 /**
+ * WordPress dependencies
+ */
+const defaultConfig = require( '@wordpress/scripts/config/webpack.config.js' );/**
+
  * External dependencies
  */
 const webpack = require( 'webpack' );
@@ -21,6 +25,7 @@ const cssFiles = [
 ];
 
 const config = {
+	...defaultConfig,
 	devtool: 'source-map',
 	mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
 	entry: Object.assign(
@@ -45,6 +50,7 @@ const config = {
 	},
 	module: {
 		rules: [
+			...defaultConfig.module.rules,
 			{
 				test: /\.svg$/,
 				use: [
@@ -94,19 +100,10 @@ const config = {
 					},
 					{
 						loader: 'sass-loader',
-						query: {
-							outputStyle: 'production' === process.env.NODE_ENV ? 'compressed' : 'nested',
-						},
 					},
 				],
 				exclude: /node_modules/,
 				include: /scss/,
-			},
-			{
-				test: /.js$/,
-				use: 'babel-loader',
-				exclude: /node_modules/,
-				include: /js/,
 			},
 		],
 	},
