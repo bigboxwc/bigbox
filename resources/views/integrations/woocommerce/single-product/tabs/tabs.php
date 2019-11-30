@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 2.4.0
+ * @version 3.8.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -53,6 +53,8 @@ if ( ! empty( $wc_tabs ) ) : ?>
 			endif;
 		endif;
 	endforeach;
+			
+	do_action( 'woocommerce_product_after_tabs' );
 	?>
 
 	</div>
