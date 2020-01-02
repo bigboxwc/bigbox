@@ -13,11 +13,11 @@
 	"devDependencies": {
 		"@babel/core": "7.7.5",
 		"@wordpress/babel-plugin-import-jsx-pragma": "2.3.0",
-		"@wordpress/babel-preset-default": "4.7.0",
+		"@wordpress/babel-preset-default": "4.8.0",
 		"@wordpress/browserslist-config": "2.6.0",
 		"@wordpress/dom": "2.6.0",
 		"@wordpress/dom-ready": "2.5.1",
-		"@wordpress/eslint-plugin": "3.2.0",
+		"@wordpress/eslint-plugin": "3.3.0",
 		"@wordpress/keycodes": "2.7.0",
 		"autoprefixer": "9.7.3",
 		"babel-loader": "8.0.6",
