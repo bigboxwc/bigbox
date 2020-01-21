@@ -4,5 +4,11 @@
 	],
 	"ignoreDeps": [
 		"bootstrap"
-	]
+	],
+  "packageRules": [
+    {
+      "updateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    }
+  ]
 }
