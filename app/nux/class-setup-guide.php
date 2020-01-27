@@ -133,7 +133,7 @@ class Setup_Guide implements Registerable, Service {
 			'edit_theme_options',
 			'bigbox',
 			[ $this, 'output_page' ],
-			'dashicons-store'
+			90
 		);
 	}
 
