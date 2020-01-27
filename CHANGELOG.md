@@ -1,3 +1,13 @@
+## [3.5.0] - 2020-01-27
+
+### New
+
+- WooCommerce 3.9.0 support.
+
+### Dev
+
+- Use `@wordpress/scripts` package.
+
 ## [3.4.0] - 2019-08-08
 
 ### New
