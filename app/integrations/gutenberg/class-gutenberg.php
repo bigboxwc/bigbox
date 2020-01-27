@@ -252,8 +252,17 @@ class Gutenberg extends Integration implements Registerable, Service {
 			$css->add( $config[ $x ] );
 		}
 
+		$css = $css->build();
+
+		/**  */
+		$inline_css = apply_filters( 'bigbox_customize_css_inline', true );
+
+		if ( $inline_css ) {
+			$css .= bigbox_customize_inline_css();
+		}
+
 		$settings['styles'][] = [
-			'css' => $css->build(),
+			'css' => $css,
 		];
 
 		return $settings;

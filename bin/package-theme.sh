@@ -40,6 +40,8 @@ zip -r $PACKAGE_NAME.zip \
 	LICENSE \
 	CHANGELOG.md \
 	screenshot.png \
+	package.json \
+	package-lock.json \
 	-x *.git*
 
 # Rename and cleanup.

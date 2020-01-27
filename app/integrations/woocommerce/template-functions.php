@@ -40,6 +40,7 @@ function bigbox_woocommerce_wp_enqueue_scripts() {
 
 	$deps = [
 		$stylesheet,
+		( $stylesheet . '-simplebar' ),
 		'wp-util',
 		'woocommerce',
 	];

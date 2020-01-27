@@ -8,4 +8,4 @@ import domReady from '@wordpress/dom-ready';
  */
 import horizontalMenu from './../app/horizontal-menu.js';
 
-domReady( horizontalMenu( '.woocommerce-MyAccount-navigation', '.is-active' ) );
+domReady( horizontalMenu( '.site-primary > .woocommerce-product-categories-wrapper' ) );

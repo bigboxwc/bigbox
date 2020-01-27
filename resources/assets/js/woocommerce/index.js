@@ -17,3 +17,4 @@ import './checkout.js';
 import './products.js';
 import './lazyload.js';
 import './account-menu.js';
+import './category-menu.js';

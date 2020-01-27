@@ -1,4 +1,8 @@
 /**
+ * WordPress dependencies
+ */
+const defaultConfig = require( '@wordpress/scripts/config/webpack.config.js' );/**
+
  * External dependencies
  */
 const webpack = require( 'webpack' );
@@ -21,6 +25,7 @@ const cssFiles = [
 ];
 
 const config = {
+	...defaultConfig,
 	devtool: 'source-map',
 	mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
 	entry: Object.assign(
@@ -45,6 +50,7 @@ const config = {
 	},
 	module: {
 		rules: [
+			...defaultConfig.module.rules,
 			{
 				test: /\.svg$/,
 				use: [
@@ -77,7 +83,12 @@ const config = {
 				test: /\.(scss|css)$/,
 				use: [
 					MiniCssExtractPlugin.loader,
-					'css-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							url: false,
+						},
+					},
 					{
 						loader: 'postcss-loader',
 						options: {
@@ -89,19 +100,10 @@ const config = {
 					},
 					{
 						loader: 'sass-loader',
-						query: {
-							outputStyle: 'production' === process.env.NODE_ENV ? 'compressed' : 'nested',
-						},
 					},
 				],
 				exclude: /node_modules/,
 				include: /scss/,
-			},
-			{
-				test: /.js$/,
-				use: 'babel-loader',
-				exclude: /node_modules/,
-				include: /js/,
 			},
 		],
 	},
@@ -109,6 +111,7 @@ const config = {
 		jquery: 'jQuery',
 		$: 'jQuery',
 		'@wordpress/element': 'wp.element',
+		simplebar: 'window.SimpleBar',
 	},
 	plugins: [
 		new SpritePlugin(),
@@ -116,6 +119,10 @@ const config = {
 			{
 				from: 'resources/assets/images/icons',
 				to: 'public/images/icons',
+			},
+			{
+				from: './node_modules/simplebar/dist/simplebar.min.js',
+				to: 'public/js/simplebar.min.js',
 			},
 		] ),
 		new MiniCssExtractPlugin( {

@@ -1,11 +1,15 @@
-// [1] Give any potential scrollbar more room so it does not overlap.
+.woocommerce-product-categories-wrapper {
+	-webkit-overflow-scrolling: touch;
+	margin-bottom: $spacer;
+}
+
 .woocommerce-page ul.products-categories,
 .woocommerce ul.products-categories {
 	display: flex;
-	overflow-x: scroll;
-	-webkit-overflow-scrolling: touch;
 	position: relative;
-	padding-bottom: $spacer; // [1]
+
+	@include reset-list();
+
 	padding-left: 2px;
 	padding-right: 2px;
 
@@ -17,10 +21,7 @@
 			border-radius: $border-radius;
 		}
 
-
 		@include gray("background", "200");
-		bottom: $spacer;
-		height: calc(100% - #{$spacer});
 	}
 
 	@include vertical-spacing("margin", "down", (

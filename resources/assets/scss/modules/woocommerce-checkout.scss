@@ -231,11 +231,25 @@ form.woocommerce-checkout {
 	font-size: $font-size-base;
 }
 
+// Stripe
+
 #stripe-card-element,
 #stripe-exp-element,
 #stripe-cvc-element {
 
 	@include form-input();
+}
+
+form.woocommerce-checkout {
+
+	.stripe-source-errors {
+		margin: $spacer 0 0;
+
+		.woocommerce-error {
+			margin: 0;
+			list-style: none;
+		}
+	}
 }
 
 .woocommerce-checkout #payment ul.payment_methods li img.stripe-icon,

@@ -26,6 +26,7 @@ return [
 			'.offcanvas-drawer__close',
 			'.page-title',
 			'.product__inner',
+			'.wc-block-grid__product',
 			'.widget',
 			'.woocommerce-MyAccount-navigation:after',
 			'.woocommerce-single-product-data__section',

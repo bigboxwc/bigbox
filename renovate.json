@@ -1,8 +1,14 @@
 {
-	"extends": [
-		"config:base"
-	],
-	"ignoreDeps": [
-		"bootstrap"
-	]
+  "extends": [
+    "config:base"
+  ],
+  "ignoreDeps": [
+    "bootstrap"
+  ],
+  "packageRules": [
+    {
+      "updateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    }
+  ]
 }

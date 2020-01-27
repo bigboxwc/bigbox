@@ -1,7 +1,8 @@
-// [1] Give any potential scrollbar more room so it does not overlap.
 .woocommerce-MyAccount-navigation {
 	margin: -($spacer) 0 $spacer;
+	padding: 0 0 $spacer;
 	position: relative;
+	-webkit-overflow-scrolling: touch;
 
 	&::after {
 		content: "";
@@ -21,11 +22,9 @@
 
 		@include reset-list();
 
-		padding: 0 0 $spacer; // [1]
+		margin: 0;
+		padding: 0;
 		display: flex;
-		overflow-x: scroll;
-		overflow-y: hidden;
-		-webkit-overflow-scrolling: touch;
 
 		li {
 			flex: 1 0 auto;
