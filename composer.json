@@ -25,8 +25,8 @@
 		"cjstroud/classnames-php": "1.0"
 	},
 	"require-dev": {
-		"dealerdirect/phpcodesniffer-composer-installer": "0.5.0",
-		"squizlabs/php_codesniffer": "3.5.2",
+		"dealerdirect/phpcodesniffer-composer-installer": "0.6.0",
+		"squizlabs/php_codesniffer": "3.5.3",
 		"phpcompatibility/phpcompatibility-wp": "*",
 		"wp-coding-standards/wpcs": "2.2.0"
 	}
