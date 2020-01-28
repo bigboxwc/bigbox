@@ -51,7 +51,7 @@ export const transformInput = function( qty, variation = false ) {
 
 	// Find original value.
 	const originalValue = original.value ? parseInt( original.value ) : 0;
-	const selectedValue = variation ? 0 : ( originalValue );
+	const selectedValue = variation ? 1 : ( originalValue );
 
 	// Try to get preset min/max values.
 	const min = variation.min_qty || ( original.getAttribute( 'min' ) || globalMax );
