@@ -21,7 +21,7 @@ export const hasClass = ( el, className ) => {
  * @return {boolean} If the DOM element is visible.
  */
 export const isHidden = ( el ) => {
-	return el.offsetParent === null;
+	return ! el || el.offsetParent === null;
 };
 
 /**
