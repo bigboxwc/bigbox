@@ -243,10 +243,3 @@ add_action( 'woocommerce_review_meta', 'woocommerce_review_display_rating', 15 )
  * File: class-wc-widget-cart.php
  */
 add_filter( 'woocommerce_widget_cart_is_hidden', 'bigbox_woocommerce_widget_cart_is_hidden' );
-
-/**
- * File: checkout/form-checkout.php
- */
-
-// Relocate coupon form. Manaully output.
-remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );

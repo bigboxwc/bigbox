@@ -27,8 +27,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php wc_get_template( 'checkout/cart.php' ); ?>
 	</div>
 
-	<?php woocommerce_checkout_coupon_form(); ?>
-
 	<div id="order_review" class="card woocommerce-checkout-review-order">
 		<?php wc_get_template( 'cart/cart-totals.php' ); ?>
 		<?php wc_get_template( 'checkout/submit.php' ); ?>
