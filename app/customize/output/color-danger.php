@@ -22,7 +22,7 @@ return [
 	// Solid color.
 	[
 		'selectors'    => [
-			'.woocommerce-purchase-form .outofstock',
+			'.woocommerce-purchase-form .out-of-stock',
 			'label .required',
 			'.order-status--failed',
 			'.order-status--cancelled',
