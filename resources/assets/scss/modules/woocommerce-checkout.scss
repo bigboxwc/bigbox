@@ -150,28 +150,6 @@ form.woocommerce-checkout {
 	}
 }
 
-.woocommerce-form-coupon-toggle {
-	padding: 0;
-
-	@include make-row();
-
-	.woocommerce-notice-list {
-
-		@include vertical-spacing("margin", "down", (
-			sm: 1,
-		));
-	}
-
-	.woocommerce-notice {
-		font-size: $font-size-sm;
-		margin: 0;
-		padding: 0;
-		background: none;
-		box-shadow: none;
-		border: 0;
-	}
-}
-
 .woocommerce-form-coupon {
 	display: flex;
 	flex-wrap: wrap;
@@ -185,7 +163,7 @@ form.woocommerce-checkout {
 
 	.form-row-first,
 	.form-row-last {
-		flex: 1 1 auto;
+		flex: 1 1 80%;
 		margin-bottom: 0;
 	}
 
