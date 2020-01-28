@@ -36,7 +36,7 @@ return [
 			'.comment',
 			'.comments',
 			'.single_variation_wrap',
-			'.woocommerce-variation--loaded .single_variation_wrap .woocommerce-variation-add-to-cart.woocommerce-variation-add-to-cart-enabled',
+			'.woocommerce-variation--loaded .single_variation_wrap .woocommerce-variation-add-to-cart',
 			'.woocommere-product-brand a',
 			'.woocommerce-privacy-policy-text',
 			'.wc-social-login',
