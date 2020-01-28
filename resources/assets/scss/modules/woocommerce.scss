@@ -132,6 +132,21 @@
 		visibility: visible;
 	}
 
+	// Password field.
+	.password-input {
+		display: block;
+		width: 100%;
+
+		input[type="password"] {
+			width: 100%;
+		}
+
+		// Hide the Edge "reveal password" native button.
+		input::-ms-reveal {
+			display: none;
+		}
+	}
+
 	// Lessen the input to select "flash"
 	.input-text.qty {
 		font-size: $font-size-xs;
