@@ -20,7 +20,7 @@
 		"lint:fix": "vendor/bin/phpcbf --standard=phpcs.xml.dist --report-summary --report-source"
 	},
 	"require": {
-		"a5hleyrich/wp-background-processing": "1.0.1",
+		"a5hleyrich/wp-background-processing": "1.0.2",
 		"bigboxwc/wp-template-loader": "1.0.2",
 		"cjstroud/classnames-php": "1.0"
 	},
