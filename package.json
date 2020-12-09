@@ -19,7 +19,7 @@
 		"babel-plugin-import-glob": "2.0.0",
 		"bootstrap": "4.4.1",
 		"classnames": "2.2.6",
-		"copy-webpack-plugin": "5.1.1",
+		"copy-webpack-plugin": "6.4.0",
 		"css-loader": "3.4.2",
 		"file-loader": "5.0.2",
 		"mini-css-extract-plugin": "0.9.0",
