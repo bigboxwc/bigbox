@@ -11,10 +11,10 @@
 		"npm": ">=6.0.0"
 	},
 	"devDependencies": {
-		"@wordpress/dom": "2.7.0",
-		"@wordpress/dom-ready": "2.6.0",
-		"@wordpress/keycodes": "2.8.0",
-		"@wordpress/scripts": "6.2.0",
+		"@wordpress/dom": "3.8.0",
+		"@wordpress/dom-ready": "3.8.0",
+		"@wordpress/keycodes": "3.8.0",
+		"@wordpress/scripts": "23.0.0",
 		"autoprefixer": "9.7.4",
 		"babel-plugin-import-glob": "2.0.0",
 		"bootstrap": "4.4.1",
